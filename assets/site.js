@@ -8,7 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   style.textContent = `
     .nav-links{gap:16px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
+    .footer{
+      margin-top:72px!important;
+      border-top:1px solid #ffffff!important;
+      box-shadow:0 -1px 0 var(--line);
+    }
+    main + .footer{display:block;}
     @media (max-width:1240px){.nav-links{gap:10px;font-size:12px}.nav-cta{padding:7px 10px!important}}
+    @media (max-width:980px){.footer{margin-top:52px!important;}}
   `;
   document.head.appendChild(style);
 
