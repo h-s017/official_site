@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const style = document.createElement("style");
   style.textContent = `
-    .nav-links{gap:18px;font-size:13px;}
+    .nav-links{gap:16px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
-    @media (max-width:1240px){.nav-links{gap:12px;font-size:12.5px}.nav-cta{padding:7px 10px!important}}
+    @media (max-width:1240px){.nav-links{gap:10px;font-size:12px}.nav-cta{padding:7px 10px!important}}
   `;
   document.head.appendChild(style);
 
@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nav) {
     nav.innerHTML = `
       <a href="index.html">首頁</a>
-      <a href="experiences.html">調香藝術課程</a>
+      <a href="helori-scent-lab.html">Helori 香氣探索所</a>
+      <a href="experiences.html">專業調香課程</a>
       <a href="scent-design.html">嗅覺設計服務</a>
       <a href="h-fugue-atelier.html">H.FUGUE ATELIER</a>
       <a href="projects.html">氣味誌</a>
@@ -30,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .replaceAll("心村限定｜Helori 香徑探索所", "心村限定｜Helori 香氣探索所")
         .replaceAll("Helori香徑探索課", "Helori香氣探索課")
         .replaceAll("Helori 香徑探索", "Helori 香氣探索")
-        .replaceAll("所有課程", "調香藝術課程")
-        .replaceAll("調香課程", "調香藝術課程")
+        .replaceAll("所有課程", "專業調香課程")
+        .replaceAll("調香藝術課程", "專業調香課程")
         .replaceAll("氣味設計服務線", "嗅覺設計服務線")
         .replaceAll("氣味設計", "嗅覺設計服務");
       return;
@@ -56,10 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const path = window.location.pathname.split("/").pop() || "index.html";
 
+  if (path === "helori-scent-lab.html") {
+    document.title = "Helori 香氣探索所｜HANA SCENT ARTIST";
+    const h1 = document.querySelector(".page-hero h1, .helori-hero h1");
+    if (h1 && !h1.innerHTML.includes("Helori")) h1.textContent = "Helori 香氣探索所";
+  }
+
   if (path === "experiences.html") {
-    document.title = "調香藝術課程｜HANA SCENT ARTIST";
+    document.title = "專業調香課程｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
-    if (h1) h1.textContent = "調香藝術課程";
+    if (h1) h1.textContent = "專業調香課程";
   }
 
   if (path === "scent-design.html") {
