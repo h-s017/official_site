@@ -6,27 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const style = document.createElement("style");
   style.textContent = `
-    .nav-links{gap:12px;font-size:12.5px;}
+    .nav-links{gap:18px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
-    @media (max-width:1240px){.nav-links{gap:9px;font-size:12px}.nav-cta{padding:7px 10px!important}}
+    @media (max-width:1240px){.nav-links{gap:12px;font-size:12.5px}.nav-cta{padding:7px 10px!important}}
   `;
   document.head.appendChild(style);
 
   const nav = document.querySelector(".nav-links");
-
-  function setText(href, label){
-    const link = document.querySelector(`.nav-links a[href="${href}"]`);
-    if (link) link.textContent = label;
-  }
-
-  function ensureLink(href, label, beforeHref){
-    if (!nav || nav.querySelector(`a[href="${href}"]`)) return;
-    const link = document.createElement("a");
-    link.href = href;
-    link.textContent = label;
-    const before = nav.querySelector(`a[href="${beforeHref}"]`) || nav.querySelector(".nav-cta");
-    if (before) nav.insertBefore(link, before);
-    else nav.appendChild(link);
+  if (nav) {
+    nav.innerHTML = `
+      <a href="index.html">首頁</a>
+      <a href="experiences.html">調香藝術課程</a>
+      <a href="scent-design.html">嗅覺設計服務</a>
+      <a href="h-fugue-atelier.html">H.FUGUE ATELIER</a>
+      <a href="projects.html">氣味誌</a>
+      <a href="visit.html">聯繫我們</a>
+    `;
   }
 
   function replaceText(node){
@@ -35,21 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
         .replaceAll("心村限定｜Helori 香徑探索所", "心村限定｜Helori 香氣探索所")
         .replaceAll("Helori香徑探索課", "Helori香氣探索課")
         .replaceAll("Helori 香徑探索", "Helori 香氣探索")
-        .replaceAll("所有課程", "調香課程")
-        .replaceAll("氣味設計服務線", "嗅覺設計服務線");
+        .replaceAll("所有課程", "調香藝術課程")
+        .replaceAll("調香課程", "調香藝術課程")
+        .replaceAll("氣味設計服務線", "嗅覺設計服務線")
+        .replaceAll("氣味設計", "嗅覺設計服務");
       return;
     }
     if (node.nodeType === Node.ELEMENT_NODE && !["SCRIPT", "STYLE"].includes(node.tagName)) {
       node.childNodes.forEach(replaceText);
     }
   }
-
-  setText("experiences.html", "調香課程");
-  setText("scent-design.html", "嗅覺設計服務");
-  setText("projects.html", "氣味誌");
-  ensureLink("h-fugue-atelier.html", "H.FUGUE ATELIER", "about.html");
-  ensureLink("about.html", "關於 HANA", "visit.html");
-  ensureLink("student-tools.html", "學員工具", "visit.html");
 
   replaceText(document.body);
 
@@ -67,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname.split("/").pop() || "index.html";
 
   if (path === "experiences.html") {
-    document.title = "調香課程｜HANA SCENT ARTIST";
+    document.title = "調香藝術課程｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
-    if (h1) h1.textContent = "調香課程";
+    if (h1) h1.textContent = "調香藝術課程";
   }
 
   if (path === "scent-design.html") {
@@ -82,6 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.title = "氣味誌｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
     if (h1) h1.textContent = "氣味誌";
+  }
+
+  if (path === "visit.html") {
+    document.title = "聯繫我們｜HANA SCENT ARTIST";
+    const h1 = document.querySelector(".page-hero h1");
+    if (h1) h1.textContent = "聯繫我們";
   }
 
   document.querySelectorAll(".nav-links a").forEach((a) => {
