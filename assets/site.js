@@ -10,6 +10,44 @@ document.addEventListener("DOMContentLoaded", () => {
     .nav-links a{white-space:nowrap;}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
+    .btn,
+    a.btn,
+    button.btn,
+    .btn.primary,
+    .btn.light,
+    .btn.light.primary,
+    .btn.red{
+      background:#ffffff!important;
+      color:var(--black)!important;
+      border:1px solid var(--black)!important;
+      box-shadow:none!important;
+      transform:none!important;
+    }
+    .btn:hover,
+    a.btn:hover,
+    button.btn:hover,
+    .btn.primary:hover,
+    .btn.light:hover,
+    .btn.light.primary:hover,
+    .btn.red:hover{
+      background:var(--black)!important;
+      color:#ffffff!important;
+      border-color:var(--black)!important;
+      transform:translateY(-1px)!important;
+      box-shadow:none!important;
+    }
+    .dark-band .btn,
+    .cta .btn{
+      background:#ffffff!important;
+      color:var(--black)!important;
+      border-color:#ffffff!important;
+    }
+    .dark-band .btn:hover,
+    .cta .btn:hover{
+      background:var(--black)!important;
+      color:#ffffff!important;
+      border-color:#ffffff!important;
+    }
     .footer{
       margin-top:72px!important;
       border-top:1px solid #ffffff!important;
