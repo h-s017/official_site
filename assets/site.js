@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const style = document.createElement("style");
   style.textContent = `
-    .nav-links{gap:14px;font-size:13px;}
+    .nav-links{gap:12px;font-size:12.5px;}
     .nav-links a{white-space:nowrap;}
-    @media (max-width:1180px){.nav-links{gap:11px;font-size:12.5px}.nav-cta{padding:7px 11px!important}}
+    @media (max-width:1240px){.nav-links{gap:9px;font-size:12px}.nav-cta{padding:7px 10px!important}}
   `;
   document.head.appendChild(style);
 
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setText("experiences.html", "所有課程");
   setText("projects.html", "氣味誌");
+  ensureLink("h-fugue-atelier.html", "H.FUGUE ATELIER", "about.html");
   ensureLink("about.html", "關於 HANA", "visit.html");
   ensureLink("student-tools.html", "學員工具", "visit.html");
 
