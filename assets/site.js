@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   style.textContent = `
     .nav-links{gap:16px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
+    .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
+    .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
     .footer{
       margin-top:72px!important;
       border-top:1px solid #ffffff!important;
@@ -15,10 +17,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     main + .footer{display:block;}
     @media (max-width:1240px){.nav-links{gap:10px;font-size:12px}.nav-cta{padding:7px 10px!important}}
-    @media (max-width:980px){.footer{margin-top:52px!important;}}
+    @media (max-width:980px){
+      .footer{margin-top:52px!important;}
+      .site-nav{align-items:flex-start;flex-wrap:wrap;}
+      .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;}
+      .nav-links{
+        display:none!important;
+        width:100%;
+        flex-basis:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0!important;
+        padding:18px 0 4px;
+        margin-top:10px;
+        border-top:1px solid var(--line);
+        font-size:15px!important;
+      }
+      .site-nav.menu-open .nav-links{display:flex!important;}
+      .nav-links a{
+        width:100%;
+        padding:12px 0;
+        border-bottom:1px solid var(--line);
+      }
+      .nav-links a:last-child{border-bottom:none;}
+    }
   `;
   document.head.appendChild(style);
 
+  const siteNav = document.querySelector(".site-nav");
   const nav = document.querySelector(".nav-links");
   if (nav) {
     nav.innerHTML = `
@@ -30,6 +56,38 @@ document.addEventListener("DOMContentLoaded", () => {
       <a href="projects.html">氣味誌</a>
       <a href="visit.html">聯繫我們</a>
     `;
+  }
+
+  const mobileMenu = document.querySelector(".mobile-note");
+  if (siteNav && mobileMenu) {
+    mobileMenu.setAttribute("role", "button");
+    mobileMenu.setAttribute("tabindex", "0");
+    mobileMenu.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-label", "開啟導覽選單");
+
+    const toggleMenu = () => {
+      const isOpen = siteNav.classList.toggle("menu-open");
+      mobileMenu.textContent = isOpen ? "CLOSE" : "MENU";
+      mobileMenu.setAttribute("aria-expanded", String(isOpen));
+      mobileMenu.setAttribute("aria-label", isOpen ? "關閉導覽選單" : "開啟導覽選單");
+    };
+
+    mobileMenu.addEventListener("click", toggleMenu);
+    mobileMenu.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    nav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("menu-open");
+        mobileMenu.textContent = "MENU";
+        mobileMenu.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-label", "開啟導覽選單");
+      });
+    });
   }
 
   function replaceText(node){
