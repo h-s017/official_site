@@ -15,10 +15,13 @@
     .course-card.large{min-height:360px;display:flex;flex-direction:column;justify-content:space-between}
     .course-label{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#777;margin-bottom:18px}
     .course-quote{font-size:clamp(28px,4vw,56px);line-height:1.35;letter-spacing:.08em;margin:0;color:#111}
-    .visual-sequence{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-    .visual-card{border:1px solid var(--line);background:#fff;min-height:190px;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
-    .visual-card b{font-size:13px;letter-spacing:.28em;color:#999;font-weight:500}
-    .visual-card span{font-size:20px;line-height:1.45;color:#111}
+    .course-image-stack{display:grid;gap:28px}
+    .course-slide{margin:0;border:1px solid var(--line);background:#fff;padding:14px}
+    .course-slide img{display:block;width:100%;height:auto}
+    .course-slide figcaption{display:flex;justify-content:space-between;gap:18px;padding:14px 4px 2px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#777}
+    .course-slide figcaption span:last-child{text-align:right;letter-spacing:.08em;color:#111}
+    .mini-sequence{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
+    .mini-sequence a{border:1px solid var(--line);padding:12px;text-decoration:none;color:#111;background:#fff;font-size:13px;letter-spacing:.12em;line-height:1.5}
     .fit-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .fit-item{border-top:1px solid var(--line);padding-top:20px;font-size:19px;line-height:1.8}
     .details-list{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -27,7 +30,7 @@
     .detail-block p{font-size:18px;line-height:1.8;color:#333}
     @media(max-width:980px){
       .course-hero .wrap{grid-template-columns:1fr}
-      .visual-sequence,.fit-list,.details-list{grid-template-columns:1fr}
+      .fit-list,.details-list,.mini-sequence{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -36,14 +39,11 @@
     <a class="logo" href="index.html">HANA SCENT ARTIST</a>
     <div class="nav-links">
       <a href="index.html">首頁</a>
-      <a href="experiences.html">調香課程</a>
+      <a href="experiences.html">調香藝術課程</a>
       <a href="scent-design.html">嗅覺設計服務</a>
-      <a href="projects.html">氣味誌</a>
       <a href="h-fugue-atelier.html">H.FUGUE ATELIER</a>
-      <a href="about.html">關於 HANA</a>
-      <a href="student-tools.html">學員工具</a>
-      <a href="visit.html">預約與到訪</a>
-      <a class="nav-cta" href="https://h-s017.github.io/reservation/">立即預約</a>
+      <a href="projects.html">氣味誌</a>
+      <a href="visit.html">聯繫我們</a>
     </div>
     <div class="mobile-note">MENU</div>
   </nav>
@@ -84,18 +84,40 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Visual Sequence</p>
+          <p class="kicker">Course Images</p>
           <div>
-            <h2>課程視覺順序</h2>
-            <p class="lead">依你提供的五張課程照片順序整理為：封面、課程內容、課程大綱、上課資訊、課後支援。</p>
+            <h2>課程視覺</h2>
+            <p class="lead">依你提供的五張正式圖片排序：1、2、3、4、5。</p>
           </div>
         </div>
-        <div class="visual-sequence">
-          <div class="visual-card"><b>01</b><span>課程封面<br>氣味藝術序曲</span></div>
-          <div class="visual-card"><b>02</b><span>課程內容<br>初階調香一日工作坊</span></div>
-          <div class="visual-card"><b>03</b><span>課程大綱<br>理論・賞析・構建・創作</span></div>
-          <div class="visual-card"><b>04</b><span>上課資訊<br>地點・預約・費用</span></div>
-          <div class="visual-card"><b>05</b><span>課後支援<br>教材・調香台・回訓</span></div>
+        <div class="mini-sequence" aria-label="課程圖片快速索引">
+          <a href="#slide-01">01<br>課程封面</a>
+          <a href="#slide-02">02<br>課程內容</a>
+          <a href="#slide-03">03<br>課程大綱</a>
+          <a href="#slide-04">04<br>上課資訊</a>
+          <a href="#slide-05">05<br>課後支援</a>
+        </div>
+        <div class="course-image-stack">
+          <figure class="course-slide" id="slide-01">
+            <img src="assets/1.png" alt="氣味藝術序曲課程封面">
+            <figcaption><span>01</span><span>課程封面｜氣味藝術序曲</span></figcaption>
+          </figure>
+          <figure class="course-slide" id="slide-02">
+            <img src="assets/2.png" alt="氣味藝術序曲課程內容">
+            <figcaption><span>02</span><span>課程內容｜初階調香一日工作坊</span></figcaption>
+          </figure>
+          <figure class="course-slide" id="slide-03">
+            <img src="assets/3.png" alt="氣味藝術序曲課程大綱">
+            <figcaption><span>03</span><span>課程大綱｜理論・賞析・構建・創作</span></figcaption>
+          </figure>
+          <figure class="course-slide" id="slide-04">
+            <img src="assets/4.png" alt="氣味藝術序曲上課資訊">
+            <figcaption><span>04</span><span>上課資訊｜地點・預約・費用</span></figcaption>
+          </figure>
+          <figure class="course-slide" id="slide-05">
+            <img src="assets/5.png" alt="氣味藝術序曲課後支援">
+            <figcaption><span>05</span><span>課後支援｜教材・調香台・回訓</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
