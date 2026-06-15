@@ -29,6 +29,16 @@
     .inline-link{border-bottom:1px solid var(--black);color:var(--black)}
     .enroll-panel{display:flex;flex-direction:column;justify-content:center;gap:22px}
     .enroll-panel .actions{justify-content:flex-start}
+    .student-gate{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.92);padding:24px}
+    .student-gate.is-open{display:flex}
+    .student-gate-card{width:min(100%,420px);background:#fff;border:1px solid var(--line);padding:34px;box-shadow:0 18px 60px rgba(0,0,0,.08)}
+    .student-gate-card h2{font-size:28px;margin:8px 0 12px;letter-spacing:.08em}
+    .student-gate-card p{font-size:15px;line-height:1.8;color:#444;margin:0 0 22px}
+    .student-gate-card label{display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#555;margin-bottom:8px}
+    .student-gate-card input{width:100%;border:0;border-bottom:1px solid var(--line);padding:10px 0;font-size:18px;background:#fff;color:#111}
+    .student-gate-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+    .student-error{display:none;margin-top:14px;font-size:14px;color:#8a1f1f}
+    .student-error.is-show{display:block}
     @media(max-width:980px){
       .course-hero{padding:70px 22px 48px}
       .course-hero .wrap{grid-template-columns:1fr}
@@ -124,7 +134,7 @@
           <div class="actions">
             <a class="btn light primary" href="https://portaly.cc/hanascent">私訊詢問 / 報名</a>
             <a class="btn light" href="professional-perfumer-course.html">回專業課程系列</a>
-            <a class="btn light" href="https://h-s017.github.io/overtrue-course/">學員工具</a>
+            <a class="btn light" href="https://h-s017.github.io/overtrue-course/" data-student-tool>學員工具</a>
           </div>
         </div>
       </div>
@@ -150,7 +160,7 @@
           </article>
           <article class="detail-block">
             <h3>課後支援</h3>
-            <p>課程專屬線上教材即時更新、<a class="inline-link" href="https://h-s017.github.io/overtrue-course/">學員工具</a>、學員專屬線上調香台、課程回訓、不定時開放回訓課程。</p>
+            <p>課程專屬線上教材即時更新、<a class="inline-link" href="https://h-s017.github.io/overtrue-course/" data-student-tool>學員工具</a>、學員專屬線上調香台、課程回訓、不定時開放回訓課程。</p>
           </article>
           <article class="detail-block">
             <h3>進修優惠</h3>
@@ -160,6 +170,21 @@
       </div>
     </section>
   </main>
+
+  <div class="student-gate" id="studentGate" aria-hidden="true">
+    <div class="student-gate-card" role="dialog" aria-modal="true" aria-labelledby="studentGateTitle">
+      <p class="kicker">Student Tools</p>
+      <h2 id="studentGateTitle">學員工具</h2>
+      <p>此區限已報名或已上課學員使用，請輸入課程密碼。</p>
+      <label for="studentPassword">Password</label>
+      <input id="studentPassword" type="password" autocomplete="current-password" placeholder="請輸入學員密碼">
+      <div class="student-error" id="studentError">密碼不正確，請重新輸入。</div>
+      <div class="student-gate-actions">
+        <button class="btn primary" type="button" id="studentSubmit">進入學員工具</button>
+        <button class="btn" type="button" id="studentCancel">取消</button>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer-grid">
@@ -181,6 +206,50 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function(){
+      const password = 'hana2026';
+      const target = 'https://h-s017.github.io/overtrue-course/';
+      const gate = document.getElementById('studentGate');
+      const input = document.getElementById('studentPassword');
+      const error = document.getElementById('studentError');
+      function openGate(event){
+        event.preventDefault();
+        if(sessionStorage.getItem('hanaStudentTools') === 'ok'){
+          window.location.href = target;
+          return;
+        }
+        gate.classList.add('is-open');
+        gate.setAttribute('aria-hidden','false');
+        error.classList.remove('is-show');
+        input.value = '';
+        setTimeout(() => input.focus(), 50);
+      }
+      function closeGate(){
+        gate.classList.remove('is-open');
+        gate.setAttribute('aria-hidden','true');
+      }
+      function submitPassword(){
+        if(input.value.trim() === password){
+          sessionStorage.setItem('hanaStudentTools','ok');
+          window.location.href = target;
+        }else{
+          error.classList.add('is-show');
+          input.select();
+        }
+      }
+      document.querySelectorAll('[data-student-tool]').forEach(link => link.addEventListener('click', openGate));
+      document.getElementById('studentSubmit').addEventListener('click', submitPassword);
+      document.getElementById('studentCancel').addEventListener('click', closeGate);
+      input.addEventListener('keydown', event => {
+        if(event.key === 'Enter') submitPassword();
+        if(event.key === 'Escape') closeGate();
+      });
+      gate.addEventListener('click', event => {
+        if(event.target === gate) closeGate();
+      });
+    })();
+  </script>
   <script src="assets/site.js"></script>
 </body>
 </html>
