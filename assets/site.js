@@ -10,6 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     .nav-links a{white-space:nowrap;}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
+    .tc-number,
+    .num,
+    .counter,
+    .course-meta,
+    .meta-line,
+    .fit-item,
+    .detail-block p,
+    .timeline-item b,
+    .timeline-item span,
+    .service-row b,
+    .service-row span{
+      font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
+    }
     .btn,
     a.btn,
     button.btn,
@@ -152,7 +165,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function wrapNumbers(node){
+    if (node.nodeType === Node.TEXT_NODE) {
+      if (!/[0-9０-９]/.test(node.nodeValue)) return;
+      const parent = node.parentNode;
+      if (!parent || parent.classList?.contains("tc-number")) return;
+      const parts = node.nodeValue.split(/([0-9０-９]+)/g);
+      const fragment = document.createDocumentFragment();
+      parts.forEach((part) => {
+        if (!part) return;
+        if (/^[0-9０-９]+$/.test(part)) {
+          const span = document.createElement("span");
+          span.className = "tc-number";
+          span.textContent = part;
+          fragment.appendChild(span);
+        } else {
+          fragment.appendChild(document.createTextNode(part));
+        }
+      });
+      parent.replaceChild(fragment, node);
+      return;
+    }
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"].includes(node.tagName)) return;
+      if (node.classList?.contains("tc-number")) return;
+      Array.from(node.childNodes).forEach(wrapNumbers);
+    }
+  }
+
   replaceText(document.body);
+  wrapNumbers(document.body);
 
   document.querySelectorAll("a").forEach((a) => {
     const label = a.textContent.trim();
@@ -210,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     root.querySelectorAll("*").forEach((el) => {
       if (seen.has(el)) return;
       if (el instanceof SVGElement) return;
+      if (el.classList?.contains("tc-number")) return;
       if (["SCRIPT", "STYLE", "IMG", "SVG", "PATH"].includes(el.tagName)) return;
       if (el.closest(".site-nav") || el.closest(".footer")) return;
       const hasDirectText = Array.from(el.childNodes).some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0);
@@ -223,6 +266,34 @@ document.addEventListener("DOMContentLoaded", () => {
   originalSizes.forEach(([el, size]) => {
     if (!Number.isFinite(size) || size <= 0) return;
     el.style.fontSize = `${Math.round(size * 0.8 * 1000) / 1000}px`;
+  });
+
+  const contentSelectors = [
+    "header.hero p:not(.eyebrow)",
+    ".page-hero p:not(.kicker)",
+    ".course-hero p:not(.kicker):not(.course-label):not(.course-quote):not(.subtitle):not(.en-title)",
+    ".helori-hero .subtitle",
+    "main p:not(.kicker):not(.course-label):not(.course-quote):not(.large-quote)",
+    "main .lead",
+    "main .card p",
+    "main .course-card p",
+    "main .course-meta",
+    "main .meta-line",
+    "main .fit-item",
+    "main .detail-block p",
+    "main .service-row span",
+    "main .timeline-item span",
+    "main .timeline-item b",
+    "main li"
+  ];
+  const contentSeen = new Set();
+  document.querySelectorAll(contentSelectors.join(",")).forEach((el) => {
+    if (contentSeen.has(el)) return;
+    if (el.closest(".site-nav") || el.closest(".footer")) return;
+    contentSeen.add(el);
+    const size = parseFloat(el.style.fontSize || window.getComputedStyle(el).fontSize);
+    if (!Number.isFinite(size) || size <= 0) return;
+    el.style.fontSize = `${Math.round(size * 1.05 * 1000) / 1000}px`;
   });
 
   if (path === "index.html") {
