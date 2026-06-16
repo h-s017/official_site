@@ -9,10 +9,20 @@
   <style>
     .btn.red{transform:none!important;}
     .btn.red:hover{transform:translateY(-1px)!important;}
-    .logo-panel{min-height:520px;display:grid;place-items:center;background:#ffffff;}
-    .logo-panel img{width:min(86%, 520px);height:auto;filter:none!important;}
     .about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111;}
-    @media (max-width:980px){.logo-panel{min-height:340px;}.logo-panel img{width:82%;}}
+    .place-vertical-wrap{min-height:560px;display:flex;align-items:center;justify-content:center;}
+    .place-vertical-copy{writing-mode:vertical-rl;text-orientation:mixed;display:flex;gap:42px;align-items:flex-start;justify-content:center;max-height:520px;margin:0 auto;}
+    .place-vertical-copy .kicker{margin:0;letter-spacing:.26em;line-height:1.7;color:var(--gray500);}
+    .place-vertical-copy .large-quote{margin:0;font-size:clamp(38px,4.4vw,76px);line-height:1.35;letter-spacing:.08em;}
+    .place-vertical-copy .lead{margin:0;font-size:22px;line-height:2.1;color:var(--gray700);max-height:500px;}
+    .place-vertical-copy .meta-line{margin:0;color:var(--gray500);letter-spacing:.14em;line-height:1.8;}
+    @media (max-width:980px){
+      .place-vertical-wrap{min-height:auto;display:block;}
+      .place-vertical-copy{writing-mode:horizontal-tb;display:block;max-height:none;text-align:left;}
+      .place-vertical-copy .kicker{margin-bottom:20px;}
+      .place-vertical-copy .large-quote{font-size:clamp(34px,10vw,54px);line-height:1.35;margin-bottom:28px;}
+      .place-vertical-copy .lead{font-size:22px;line-height:2;margin-bottom:28px;max-height:none;}
+    }
   </style>
 </head>
 <body>
@@ -53,11 +63,8 @@
 
   <main>
     <section>
-      <div class="wrap split">
-        <div class="photo-card logo-panel">
-          <img src="assets/logo黑.png" alt="HANA SCENT ARTIST 星芒標誌">
-        </div>
-        <div>
+      <div class="wrap place-vertical-wrap">
+        <div class="place-vertical-copy">
           <p class="kicker">Beitou Heart Village</p>
           <p class="large-quote">讓氣味成為地方記憶的入口。</p>
           <p class="lead">心村所不是單純的教室，而是一個可以停留、聞香、對話、帶走記憶的氣味敘事空間。這裡提供氣味樣本展示、小班調香體驗、限定香氣作品、品牌氣味諮詢與嗅覺藝術計畫。</p>
