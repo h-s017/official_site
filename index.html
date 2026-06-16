@@ -26,15 +26,14 @@
     .news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500;}
     .news-row p{margin:8px 0 0;color:var(--gray700);}
     .home-carousel{padding-top:72px;padding-bottom:82px;overflow:hidden;}
-    .carousel-window{overflow-x:auto;overflow-y:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:#fff;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
-    .carousel-track{display:flex;gap:22px;width:max-content;animation:hana-image-carousel 84s linear infinite;will-change:transform;}
-    .carousel-window:hover .carousel-track,
-    .carousel-window:focus-within .carousel-track,
-    .carousel-window:active .carousel-track{animation-play-state:paused;}
-    .carousel-slide{width:min(520px,78vw);aspect-ratio:4/3;flex:0 0 auto;overflow:hidden;background:#f7f7f7;border:1px solid var(--line);scroll-snap-align:start;}
-    .carousel-slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(8%) contrast(.98);}
-    @keyframes hana-image-carousel{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 11px))}}
-    @media (prefers-reduced-motion:reduce){.carousel-track{animation:none;}}
+    .carousel-window{overflow-x:auto;overflow-y:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:#fff;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+    .carousel-track{display:flex;gap:22px;width:max-content;}
+    .carousel-slide{position:relative;width:min(520px,78vw);aspect-ratio:4/3;flex:0 0 auto;overflow:hidden;background:#f7f7f7;border:1px solid var(--line);scroll-snap-align:center;margin:0;}
+    .carousel-slide a{display:block;width:100%;height:100%;position:relative;cursor:pointer;}
+    .carousel-slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(8%) contrast(.98);transition:transform .45s ease, filter .45s ease;}
+    .carousel-slide a:hover img{transform:scale(1.035);filter:grayscale(0%) contrast(1);}
+    .carousel-caption{position:absolute;left:18px;bottom:18px;display:inline-flex;align-items:center;gap:8px;padding:9px 13px;background:rgba(255,255,255,.92);border:1px solid var(--black);color:var(--black);font-size:14px;letter-spacing:.12em;line-height:1.3;}
+    .carousel-hint{margin:18px auto 0;text-align:center;color:var(--gray500);font-size:14px;letter-spacing:.14em;}
     @media (max-width:1100px){
       .about-me-grid{grid-template-columns:minmax(160px,220px) 1fr;}
       .about-me-grid .about-copy{grid-column:1 / -1;}
@@ -47,7 +46,8 @@
       .home-news{padding-top:64px;padding-bottom:68px;}
       .home-carousel{padding-top:60px;padding-bottom:68px;}
       .carousel-window{padding:16px 0;}
-      .carousel-track{gap:14px;animation-duration:68s;}
+      .carousel-track{gap:14px;}
+      .carousel-caption{left:14px;bottom:14px;font-size:13px;padding:8px 11px;}
       .about-me-grid{grid-template-columns:1fr;gap:32px;}
       .about-photo{max-width:280px;margin:0 auto;}
       .place-vertical-wrap{min-height:auto;display:block;}
@@ -144,20 +144,15 @@
       </div>
       <div class="carousel-window" aria-label="首頁圖片輪播" tabindex="0">
         <div class="carousel-track">
-          <figure class="carousel-slide"><img src="assets/homepage-cover.png" alt="HANA SCENT ARTIST 心村所外觀"></figure>
-          <figure class="carousel-slide"><img src="assets/1.png" alt="調香課程照片 1"></figure>
-          <figure class="carousel-slide"><img src="assets/2.png" alt="調香課程照片 2"></figure>
-          <figure class="carousel-slide"><img src="assets/3.png" alt="調香課程照片 3"></figure>
-          <figure class="carousel-slide"><img src="assets/4.png" alt="調香課程照片 4"></figure>
-          <figure class="carousel-slide"><img src="assets/5.png" alt="調香課程照片 5"></figure>
-          <figure class="carousel-slide"><img src="assets/homepage-cover.png" alt="HANA SCENT ARTIST 心村所外觀"></figure>
-          <figure class="carousel-slide"><img src="assets/1.png" alt="調香課程照片 1"></figure>
-          <figure class="carousel-slide"><img src="assets/2.png" alt="調香課程照片 2"></figure>
-          <figure class="carousel-slide"><img src="assets/3.png" alt="調香課程照片 3"></figure>
-          <figure class="carousel-slide"><img src="assets/4.png" alt="調香課程照片 4"></figure>
-          <figure class="carousel-slide"><img src="assets/5.png" alt="調香課程照片 5"></figure>
+          <figure class="carousel-slide"><a href="visit.html"><img src="assets/homepage-cover.png" alt="HANA SCENT ARTIST 心村所外觀"><span class="carousel-caption">點選查看心村所 →</span></a></figure>
+          <figure class="carousel-slide"><a href="scent-overture.html"><img src="assets/1.png" alt="調香課程照片 1"><span class="carousel-caption">點選查看課程 →</span></a></figure>
+          <figure class="carousel-slide"><a href="scent-overture.html"><img src="assets/2.png" alt="調香課程照片 2"><span class="carousel-caption">點選查看課程 →</span></a></figure>
+          <figure class="carousel-slide"><a href="experiences.html"><img src="assets/3.png" alt="調香課程照片 3"><span class="carousel-caption">點選查看專業調香 →</span></a></figure>
+          <figure class="carousel-slide"><a href="experiences.html"><img src="assets/4.png" alt="調香課程照片 4"><span class="carousel-caption">點選查看專業調香 →</span></a></figure>
+          <figure class="carousel-slide"><a href="https://h-s017.github.io/reservation/"><img src="assets/5.png" alt="調香課程照片 5"><span class="carousel-caption">點選預約體驗 →</span></a></figure>
         </div>
       </div>
+      <p class="carousel-hint">點選圖片進入對應頁面，也可以左右滑動瀏覽。</p>
     </section>
 
     <section>
@@ -256,5 +251,52 @@
     </div>
   </footer>
   <script src="assets/site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.querySelector(".carousel-window");
+      const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+      if (!carousel || !slides.length) return;
+
+      let index = 0;
+      let timer = null;
+      let resumeTimer = null;
+
+      const goToSlide = (targetIndex, behavior = "smooth") => {
+        index = (targetIndex + slides.length) % slides.length;
+        carousel.scrollTo({ left: slides[index].offsetLeft, behavior });
+      };
+
+      const start = () => {
+        if (timer) window.clearInterval(timer);
+        timer = window.setInterval(() => goToSlide(index + 1), 5000);
+      };
+
+      const pause = () => {
+        if (timer) window.clearInterval(timer);
+        if (resumeTimer) window.clearTimeout(resumeTimer);
+      };
+
+      const resumeLater = () => {
+        pause();
+        resumeTimer = window.setTimeout(start, 5000);
+      };
+
+      carousel.addEventListener("pointerdown", pause);
+      carousel.addEventListener("pointerup", resumeLater);
+      carousel.addEventListener("touchstart", pause, { passive: true });
+      carousel.addEventListener("touchend", resumeLater);
+      carousel.addEventListener("mouseenter", pause);
+      carousel.addEventListener("mouseleave", start);
+      carousel.addEventListener("scroll", () => {
+        const current = slides.reduce((nearest, slide, slideIndex) => {
+          const distance = Math.abs(slide.offsetLeft - carousel.scrollLeft);
+          return distance < nearest.distance ? { slideIndex, distance } : nearest;
+        }, { slideIndex: index, distance: Infinity });
+        index = current.slideIndex;
+      }, { passive: true });
+
+      start();
+    });
+  </script>
 </body>
 </html>
