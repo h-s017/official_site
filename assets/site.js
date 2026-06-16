@@ -194,4 +194,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = a.getAttribute("href");
     if (href === path) a.classList.add("active");
   });
+
+  const typographyRoots = Array.from(document.querySelectorAll("header.hero, .page-hero, .course-hero, .helori-hero, main"));
+  const textElements = [];
+  const seen = new Set();
+
+  typographyRoots.forEach((root) => {
+    root.querySelectorAll("*").forEach((el) => {
+      if (seen.has(el)) return;
+      if (el instanceof SVGElement) return;
+      if (["SCRIPT", "STYLE", "IMG", "SVG", "PATH"].includes(el.tagName)) return;
+      if (el.closest(".site-nav") || el.closest(".footer")) return;
+      const hasDirectText = Array.from(el.childNodes).some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0);
+      if (!hasDirectText) return;
+      seen.add(el);
+      textElements.push(el);
+    });
+  });
+
+  const originalSizes = textElements.map((el) => [el, parseFloat(window.getComputedStyle(el).fontSize)]);
+  originalSizes.forEach(([el, size]) => {
+    if (!Number.isFinite(size) || size <= 0) return;
+    el.style.fontSize = `${Math.round(size * 0.8 * 1000) / 1000}px`;
+  });
 });
