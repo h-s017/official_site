@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .service-row span{
       font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
     }
+    .en-text{font-size:1.1em;}
     .btn,
     a.btn,
     button.btn,
@@ -193,6 +194,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function wrapEnglish(node){
+    if (node.nodeType === Node.TEXT_NODE) {
+      if (!/[A-Za-z]/.test(node.nodeValue)) return;
+      const parent = node.parentNode;
+      if (!parent || parent.classList?.contains("en-text") || parent.classList?.contains("tc-number")) return;
+      const parts = node.nodeValue.split(/([A-Za-z][A-Za-z.'’&/| -]*[A-Za-z]|[A-Za-z])/g);
+      const fragment = document.createDocumentFragment();
+      parts.forEach((part) => {
+        if (!part) return;
+        if (/[A-Za-z]/.test(part)) {
+          const span = document.createElement("span");
+          span.className = "en-text";
+          span.textContent = part;
+          fragment.appendChild(span);
+        } else {
+          fragment.appendChild(document.createTextNode(part));
+        }
+      });
+      parent.replaceChild(fragment, node);
+      return;
+    }
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"].includes(node.tagName)) return;
+      if (node.classList?.contains("en-text") || node.classList?.contains("tc-number")) return;
+      Array.from(node.childNodes).forEach(wrapEnglish);
+    }
+  }
+
   replaceText(document.body);
   wrapNumbers(document.body);
 
@@ -303,4 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.fontSize = `${Math.round(size * 1.1 * 1000) / 1000}px`;
     });
   }
+
+  wrapEnglish(document.body);
 });
