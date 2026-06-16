@@ -217,4 +217,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!Number.isFinite(size) || size <= 0) return;
     el.style.fontSize = `${Math.round(size * 0.8 * 1000) / 1000}px`;
   });
+
+  if (path === "index.html") {
+    document.querySelectorAll("main .dark-band .service-row b, main .dark-band .service-row span").forEach((el) => {
+      const size = parseFloat(el.style.fontSize || window.getComputedStyle(el).fontSize);
+      if (!Number.isFinite(size) || size <= 0) return;
+      el.style.fontSize = `${Math.round(size * 1.1 * 1000) / 1000}px`;
+    });
+  }
 });
