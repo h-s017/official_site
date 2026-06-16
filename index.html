@@ -26,9 +26,12 @@
     .news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500;}
     .news-row p{margin:8px 0 0;color:var(--gray700);}
     .home-carousel{padding-top:72px;padding-bottom:82px;overflow:hidden;}
-    .carousel-window{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:#fff;}
-    .carousel-track{display:flex;gap:22px;width:max-content;animation:hana-image-carousel 42s linear infinite;}
-    .carousel-slide{width:min(520px,78vw);aspect-ratio:4/3;flex:0 0 auto;overflow:hidden;background:#f7f7f7;border:1px solid var(--line);}
+    .carousel-window{overflow-x:auto;overflow-y:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:#fff;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+    .carousel-track{display:flex;gap:22px;width:max-content;animation:hana-image-carousel 84s linear infinite;will-change:transform;}
+    .carousel-window:hover .carousel-track,
+    .carousel-window:focus-within .carousel-track,
+    .carousel-window:active .carousel-track{animation-play-state:paused;}
+    .carousel-slide{width:min(520px,78vw);aspect-ratio:4/3;flex:0 0 auto;overflow:hidden;background:#f7f7f7;border:1px solid var(--line);scroll-snap-align:start;}
     .carousel-slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(8%) contrast(.98);}
     @keyframes hana-image-carousel{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 11px))}}
     @media (prefers-reduced-motion:reduce){.carousel-track{animation:none;}}
@@ -44,7 +47,7 @@
       .home-news{padding-top:64px;padding-bottom:68px;}
       .home-carousel{padding-top:60px;padding-bottom:68px;}
       .carousel-window{padding:16px 0;}
-      .carousel-track{gap:14px;animation-duration:34s;}
+      .carousel-track{gap:14px;animation-duration:68s;}
       .about-me-grid{grid-template-columns:1fr;gap:32px;}
       .about-photo{max-width:280px;margin:0 auto;}
       .place-vertical-wrap{min-height:auto;display:block;}
@@ -140,7 +143,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-window" aria-label="首頁圖片輪播">
+      <div class="carousel-window" aria-label="首頁圖片輪播" tabindex="0">
         <div class="carousel-track">
           <figure class="carousel-slide"><img src="assets/homepage-cover.png" alt="HANA SCENT ARTIST 心村所外觀"></figure>
           <figure class="carousel-slide"><img src="assets/1.png" alt="調香課程照片 1"></figure>
