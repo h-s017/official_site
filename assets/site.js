@@ -48,6 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
       color:#ffffff!important;
       border-color:#ffffff!important;
     }
+    .dark-band .enroll-panel{
+      border:0!important;
+      outline:0!important;
+      box-shadow:none!important;
+      background:transparent!important;
+      padding:0!important;
+    }
     .footer{
       margin-top:72px!important;
       border-top:1px solid #ffffff!important;
