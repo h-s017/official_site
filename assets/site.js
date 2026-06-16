@@ -24,6 +24,60 @@ document.addEventListener("DOMContentLoaded", () => {
       font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
     }
     .en-text{font-size:1.1em;}
+    .page-hero,
+    .helori-hero{
+      padding:112px 6vw 92px!important;
+      background:#ffffff!important;
+      border-bottom:1px solid var(--line)!important;
+      text-align:center!important;
+    }
+    .page-hero .wrap,
+    .helori-hero .wrap{
+      max-width:980px!important;
+      margin:0 auto!important;
+      text-align:center!important;
+      display:block!important;
+    }
+    .page-hero .kicker,
+    .helori-hero .kicker{
+      margin:0 0 24px!important;
+      color:var(--gray500)!important;
+      letter-spacing:.28em!important;
+      line-height:1.7!important;
+      text-transform:uppercase!important;
+      font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
+      font-weight:500!important;
+    }
+    .page-hero h1,
+    .helori-hero h1{
+      margin:0 auto 30px!important;
+      max-width:980px!important;
+      font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
+      font-size:clamp(44px,5.8vw,76px)!important;
+      line-height:1.18!important;
+      letter-spacing:.08em!important;
+      font-weight:500!important;
+      color:var(--black)!important;
+      text-align:center!important;
+    }
+    .page-hero p:not(.kicker),
+    .helori-hero p:not(.kicker),
+    .helori-hero .subtitle{
+      max-width:880px!important;
+      margin-left:auto!important;
+      margin-right:auto!important;
+      text-align:center!important;
+      font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
+      font-size:22px!important;
+      line-height:2!important;
+      letter-spacing:.06em!important;
+      color:var(--gray700)!important;
+    }
+    .helori-hero .actions,
+    .page-hero .actions{
+      justify-content:center!important;
+      margin-top:40px!important;
+    }
     .btn,
     a.btn,
     button.btn,
@@ -77,6 +131,13 @@ document.addEventListener("DOMContentLoaded", () => {
     main + .footer{display:block;}
     @media (max-width:1240px){.nav-links{gap:10px;font-size:12px}.nav-cta{padding:7px 10px!important}}
     @media (max-width:980px){
+      .page-hero,
+      .helori-hero{padding:86px 22px 70px!important;}
+      .page-hero h1,
+      .helori-hero h1{font-size:clamp(38px,10vw,56px)!important;line-height:1.22!important;}
+      .page-hero p:not(.kicker),
+      .helori-hero p:not(.kicker),
+      .helori-hero .subtitle{font-size:20px!important;line-height:1.95!important;}
       .footer{margin-top:52px!important;}
       .site-nav{align-items:flex-start;flex-wrap:wrap;}
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;}
@@ -247,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (path === "experiences.html") {
     document.title = "專業調香課程｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
-    if (h1) h1.textContent = "專業調香課程";
+    if (h1) h1.innerHTML = "HANA SCENT ARTIST<br>專業調香課程系列";
   }
 
   if (path === "scent-design.html") {
