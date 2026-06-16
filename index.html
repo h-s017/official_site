@@ -10,13 +10,22 @@
     .btn.red{transform:none!important;}
     .btn.red:hover{transform:translateY(-1px)!important;}
     .about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111;}
+    .about-me-grid{display:grid;grid-template-columns:minmax(180px,260px) 1fr 1.15fr;gap:48px;align-items:center;}
+    .about-photo{margin:0;border:1px solid var(--line);background:#fff;padding:18px;}
+    .about-photo img{display:block;width:100%;height:auto;object-fit:cover;filter:grayscale(10%);}
     .place-vertical-wrap{min-height:560px;display:flex;align-items:center;justify-content:center;}
     .place-vertical-copy{writing-mode:vertical-rl;text-orientation:mixed;display:flex;gap:42px;align-items:flex-start;justify-content:center;max-height:520px;margin:0 auto;}
     .place-vertical-copy .kicker{margin:0;letter-spacing:.26em;line-height:1.7;color:var(--gray500);}
     .place-vertical-copy .large-quote{margin:0;font-size:clamp(38px,4.4vw,76px);line-height:1.35;letter-spacing:.08em;}
     .place-vertical-copy .lead{margin:0;font-size:22px;line-height:2.1;color:var(--gray700);max-height:500px;}
     .place-vertical-copy .meta-line{margin:0;color:var(--gray500);letter-spacing:.14em;line-height:1.8;}
+    @media (max-width:1100px){
+      .about-me-grid{grid-template-columns:minmax(160px,220px) 1fr;}
+      .about-me-grid .about-copy{grid-column:1 / -1;}
+    }
     @media (max-width:980px){
+      .about-me-grid{grid-template-columns:1fr;gap:32px;}
+      .about-photo{max-width:280px;margin:0 auto;}
       .place-vertical-wrap{min-height:auto;display:block;}
       .place-vertical-copy{writing-mode:horizontal-tb;display:block;max-height:none;text-align:left;}
       .place-vertical-copy .kicker{margin-bottom:20px;}
@@ -120,11 +129,14 @@
             <p class="lead">Founder of H.FUGUE ATELIER | by Hana</p>
           </div>
         </div>
-        <div class="split">
+        <div class="about-me-grid">
+          <figure class="about-photo">
+            <img src="assets/about-hana-photo.svg" alt="Hana 沈秉儀肖像照">
+          </figure>
           <div>
             <p class="about-signature">我相信氣味是一種創作語言，可以被體驗、被學習、被記住。</p>
           </div>
-          <div>
+          <div class="about-copy">
             <p class="lead">在所有感官中，嗅覺與聽覺沒有形體、沒有邊界，卻是最直接通往記憶與情緒的通道。</p>
             <p class="lead">一道香氣，能在無需解釋的情況下，喚醒你某個下午的自己。</p>
             <p class="meta-line">ISSA等法式香水師系統｜CLAB Candle Artist｜KPIA 大韓專業調香師雙證書講師｜KDCA 精油調香證書講師｜NAHA 芳療師認證</p>
