@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">HANA SCENT ARTIST logo mark</title>
+  <desc id="desc">A black H-shaped star logo mark for HANA SCENT ARTIST.</desc>
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <g fill="#050505">
+    <path d="M70 450 L455 431 L545 444 L590 444 L600 440 L610 444 L655 444 L745 431 L1130 450 L745 469 L655 456 L610 456 L600 460 L590 456 L545 456 L455 469 Z"/>
+    <path d="M600 42 L622 340 L607 430 L622 560 L600 858 L578 560 L593 430 L578 340 Z"/>
+    <polygon points="313,156 568,397 548,421 252,94"/>
+    <polygon points="887,156 632,397 652,421 948,94"/>
+    <polygon points="313,744 568,503 548,479 252,806"/>
+    <polygon points="887,744 632,503 652,479 948,806"/>
+    <polygon points="384,389 548,432 538,450"/>
+    <polygon points="384,511 548,468 538,450"/>
+    <polygon points="816,389 652,432 662,450"/>
+    <polygon points="816,511 652,468 662,450"/>
+    <rect x="532" y="322" width="48" height="256"/>
+    <rect x="620" y="322" width="48" height="256"/>
+    <rect x="560" y="440" width="80" height="20"/>
+    <polygon points="532,322 556,230 580,322"/>
+    <polygon points="620,322 644,230 668,322"/>
+    <polygon points="532,578 556,670 580,578"/>
+    <polygon points="620,578 644,670 668,578"/>
+  </g>
+</svg>
