@@ -6,7 +6,12 @@
   <title>專業調香課程｜HANA SCENT ARTIST</title>
   <meta name="description" content="HANA SCENT ARTIST 專業調香課程，包含 01 氣味藝術序曲、KPIA 大韓專業調香師雙證書課程與學員工具入口。" />
   <link rel="stylesheet" href="assets/style.css" />
-  <style>.cta{display:none!important;}</style>
+  <style>
+    .cta{display:none!important;}
+    .professional-course-hero .wrap{text-align:center;max-width:980px;}
+    .professional-course-hero h1{line-height:1.2;letter-spacing:.08em;}
+    .professional-course-hero p{margin-left:auto;margin-right:auto;max-width:880px;}
+  </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="主要導覽">
@@ -23,10 +28,10 @@
     <div class="mobile-note">MENU</div>
   </nav>
 
-  <header class="page-hero">
+  <header class="page-hero professional-course-hero">
     <div class="wrap">
       <p class="kicker">Professional Perfumer Course Series</p>
-      <h1> HANA SCENT ARTIST 專業調香課程系列 </h1>
+      <h1>HANA SCENT ARTIST<br>專業調香課程系列</h1>
       <p>如果氣味是流動的音符，調香就是感知譜成樂章的過程。</p>
       <p>氣味是載體，乘載著我們的記憶，透過系統化訓練，學會將嗅覺轉化成記憶，將想留下的那一刻轉化為香氣。</p>
     </div>
@@ -196,5 +201,11 @@
     </div>
   </footer>
   <script src="assets/site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const h1 = document.querySelector(".professional-course-hero h1");
+      if (h1) h1.innerHTML = "HANA SCENT ARTIST<br>專業調香課程系列";
+    });
+  </script>
 </body>
 </html>
