@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HANA SCENT ARTIST favicon">
-  <rect width="64" height="64" rx="12" fill="#ffffff"/>
-  <circle cx="32" cy="32" r="24" fill="none" stroke="#111111" stroke-width="1.8"/>
-  <path d="M32 12 C35.4 23.6 40.4 28.6 52 32 C40.4 35.4 35.4 40.4 32 52 C28.6 40.4 23.6 35.4 12 32 C23.6 28.6 28.6 23.6 32 12Z" fill="none" stroke="#111111" stroke-width="1.55" stroke-linejoin="round"/>
-  <circle cx="32" cy="32" r="3.4" fill="#111111"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="HANA SCENT ARTIST favicon">
+  <rect width="512" height="512" rx="96" fill="#ffffff"/>
+  <g fill="none" stroke="#111111" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M50 256H198" stroke-width="10"/>
+    <path d="M314 256H462" stroke-width="10"/>
+    <path d="M256 50V198" stroke-width="10"/>
+    <path d="M256 314V462" stroke-width="10"/>
+    <path d="M96 96L210 210" stroke-width="9"/>
+    <path d="M416 96L302 210" stroke-width="9"/>
+    <path d="M96 416L210 302" stroke-width="9"/>
+    <path d="M416 416L302 302" stroke-width="9"/>
+    <path d="M156 224L220 246" stroke-width="8"/>
+    <path d="M156 288L220 266" stroke-width="8"/>
+    <path d="M356 224L292 246" stroke-width="8"/>
+    <path d="M356 288L292 266" stroke-width="8"/>
+    <rect x="218" y="146" width="24" height="220" stroke-width="8"/>
+    <rect x="270" y="146" width="24" height="220" stroke-width="8"/>
+    <path d="M224 256H288" stroke-width="10"/>
+  </g>
 </svg>
