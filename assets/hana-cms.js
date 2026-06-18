@@ -10,7 +10,7 @@
     'blooming-tears': '/assets/殉情記.jpg'
   };
   const fallbackCover = index => `/assets/${(index % 5) + 1}.png`;
-  const postCover = (post, index) => coverOverrides[post.slug] || post.cover_url || fallbackCover(index);
+  const postCover = (post, index) => post.cover_url || coverOverrides[post.slug] || fallbackCover(index);
 
   function applySettings(s) {
     document.documentElement.style.setProperty('--hana-accent', s.accent_color);
