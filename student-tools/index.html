@@ -7,39 +7,179 @@
   <title>學員工具｜HANA SCENT ARTIST</title>
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    body{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}
+    :root{--tool-bg:#f7f7f4;--tool-card:#fff;--tool-text:#171717;--tool-muted:#68706a;--tool-border:#d9d7cf;--tool-soft:#f0efea;}
+    html{font-size:16px;}
+    body{background:var(--tool-bg);color:var(--tool-text);font-size:16px;line-height:1.75;}
+    button,input,textarea,select{font:inherit;font-size:16px;}
+    .student-gate{min-height:100vh;display:grid;place-items:center;padding:32px;}
+    .gate-card{width:min(560px,100%);background:var(--tool-card);border:1px solid var(--tool-border);padding:44px;box-shadow:0 18px 50px rgba(0,0,0,.04);}
+    .gate-card h1{font-size:clamp(36px,5vw,60px);line-height:1.1;margin:12px 0 18px;letter-spacing:.04em;}
+    .gate-card p{color:var(--tool-muted);}
+    .gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--tool-border);background:#fff;}
+    .gate-card button{width:100%;margin-top:8px;}
+    .error{min-height:24px;color:#9c3b35;}
+    .student-app{min-height:100vh;}
+    .tool-header{padding:28px clamp(20px,4vw,52px);border-bottom:1px solid var(--tool-border);background:#fff;display:flex;justify-content:space-between;gap:20px;align-items:flex-start;position:sticky;top:0;z-index:5;}
+    .tool-header h1{margin:6px 0 4px;font-size:clamp(30px,4vw,54px);line-height:1.1;}
+    .tool-header p{margin:0;color:var(--tool-muted);}
+    .tool-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    .tool-button,.tool-actions a,.tool-actions button{border:1px solid var(--tool-border);background:#fff;color:#111;padding:10px 14px;text-decoration:none;cursor:pointer;}
+    .tool-button.primary,.tool-actions .primary{background:#111;color:#fff;border-color:#111;}
+    .tool-layout{display:grid;grid-template-columns:250px 1fr;gap:0;min-height:calc(100vh - 120px);}
+    .tool-nav{border-right:1px solid var(--tool-border);padding:24px;background:#fff;position:sticky;top:116px;height:calc(100vh - 116px);box-sizing:border-box;}
+    .tool-nav button{display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--tool-border);padding:14px 0;cursor:pointer;color:#68706a;}
+    .tool-nav button.active{color:#111;font-weight:600;}
+    .tool-main{padding:32px clamp(20px,4vw,56px) 60px;}
+    .tool-section{display:none;}.tool-section.active{display:block;}
+    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:24px;}
+    .section-head h2{font-size:clamp(28px,3vw,42px);margin:4px 0;}.section-head p{color:var(--tool-muted);max-width:760px;}
+    .tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}.tool-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tool-card{background:#fff;border:1px solid var(--tool-border);padding:24px;}.tool-card h3{margin:4px 0 10px;font-size:22px;}.tool-card p,.tool-card li{color:#4f5751;}
+    .small{font-size:13px;color:var(--tool-muted);letter-spacing:.06em;text-transform:uppercase;}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}.form-grid .full{grid-column:1/-1;}
+    label{display:block;font-size:14px;color:#4f5751;} label span{display:block;margin-bottom:6px;color:#111;}
+    input,textarea,select{box-sizing:border-box;width:100%;border:1px solid var(--tool-border);background:#fff;padding:12px 13px;color:#111;} textarea{min-height:120px;resize:vertical;}
+    .table-wrap{overflow:auto;border:1px solid var(--tool-border);background:#fff;}.tool-table{width:100%;border-collapse:collapse;min-width:680px;}.tool-table th,.tool-table td{border-bottom:1px solid var(--tool-border);padding:12px;text-align:left;vertical-align:top;}.tool-table th{font-size:13px;color:#68706a;background:#fafaf7;font-weight:500;}.tool-table input{padding:9px 10px;}.right{text-align:right;}.muted{color:var(--tool-muted);} .button-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px;}.notice{background:#fff;border:1px solid var(--tool-border);padding:14px 16px;color:#4f5751;margin:12px 0;}.hidden{display:none!important;}
+    .record-list{display:grid;gap:12px;margin-top:20px;}.record-item{background:#fff;border:1px solid var(--tool-border);padding:18px;display:grid;gap:8px;}.record-meta{display:flex;gap:10px;flex-wrap:wrap;color:#68706a;font-size:14px;}.pill{display:inline-flex;border:1px solid var(--tool-border);padding:4px 8px;background:#fafaf7;color:#4f5751;}
+    @media(max-width:980px){.tool-layout{grid-template-columns:1fr}.tool-nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--tool-border);display:flex;gap:12px;overflow:auto}.tool-nav button{white-space:nowrap;border-bottom:0;border-right:1px solid var(--tool-border);padding:8px 14px}.tool-grid,.tool-grid.two{grid-template-columns:1fr}.tool-header{position:static;flex-direction:column}.form-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <main class="gate">
+  <main id="gate" class="student-gate">
     <section class="gate-card">
       <p class="kicker">Student Tools</p>
       <h1>學員工具</h1>
-      <p>此頁面提供課程資料、配方紀錄、原料筆記與課後補充。請輸入課後提供的密碼。</p>
+      <p>此頁面提供課程資料、配方紀錄、原料筆記、調香計算與課後補充。請輸入課後提供的密碼。</p>
       <form id="gate-form">
-        <label>密碼<input id="password" type="password" autocomplete="current-password" autofocus></label>
+        <label><span>密碼</span><input id="password" type="password" autocomplete="current-password" autofocus></label>
         <button class="btn primary" type="submit">進入學員工具</button>
         <p id="error" class="error" role="alert"></p>
       </form>
       <a class="small-link" href="/courses/">返回課程頁</a>
     </section>
   </main>
+
+  <main id="app" class="student-app hidden">
+    <header class="tool-header">
+      <div><p class="kicker">HANA SCENT ARTIST</p><h1>學員工具</h1><p>課程資料、配方紀錄、原料筆記與課後複習集中管理。</p></div>
+      <div class="tool-actions"><a href="/courses/">返回課程頁</a><button id="lock" type="button">鎖定工具</button></div>
+    </header>
+    <div class="tool-layout">
+      <nav class="tool-nav" aria-label="學員工具導覽">
+        <button class="active" data-tab="overview">總覽</button>
+        <button data-tab="course">課程資料</button>
+        <button data-tab="formula">配方紀錄</button>
+        <button data-tab="materials">原料筆記</button>
+        <button data-tab="calculator">調香計算</button>
+        <button data-tab="afterclass">課後補充</button>
+      </nav>
+      <section class="tool-main">
+        <section id="overview" class="tool-section active">
+          <div class="section-head"><div><p class="kicker">Overview</p><h2>課前、課中、課後都放在這裡。</h2><p>這一頁已整合到 hanascent.com/student-tools/，不再跳轉到外部 GitHub Pages。資料會暫存在目前瀏覽器中，適合課堂紀錄與個人練習。</p></div></div>
+          <div class="tool-grid">
+            <article class="tool-card"><p class="small">01</p><h3>課程資料</h3><p>整理學習流程、作品紀錄與上課前後要確認的事項。</p></article>
+            <article class="tool-card"><p class="small">02</p><h3>配方紀錄</h3><p>記錄香氣方向、總量、比例、材料與調整筆記。</p></article>
+            <article class="tool-card"><p class="small">03</p><h3>原料筆記</h3><p>建立自己的嗅覺語彙，記錄每支原料的印象與應用。</p></article>
+          </div>
+          <div class="notice">提醒：這是靜態網站的前端密碼保護，適合課後學員日常使用。請不要公開分享密碼或課程資料。</div>
+        </section>
+
+        <section id="course" class="tool-section">
+          <div class="section-head"><div><p class="kicker">Course Materials</p><h2>課程資料</h2><p>上課前可先確認工具與紀錄方式；上課後可依照這個架構整理自己的作品。</p></div></div>
+          <div class="tool-grid two">
+            <article class="tool-card"><h3>課前確認</h3><ul><li>確認課程日期與地點。</li><li>準備可以書寫的筆記本或平板。</li><li>避免上課前使用味道過重的香水、護手霜或髮品。</li><li>嗅聞過程中若感到不適，請立即暫停並告知老師。</li></ul></article>
+            <article class="tool-card"><h3>課中紀錄</h3><ul><li>每一輪調整都要記錄版本名稱。</li><li>比例、總量、原料與嗅覺描述分開寫。</li><li>先寫直覺感受，再補充結構判斷。</li><li>保留失敗版本，因為它通常能說明修香方向。</li></ul></article>
+            <article class="tool-card"><h3>作品檢查</h3><ul><li>命名是否符合香氣方向。</li><li>前中後段是否有可辨識的層次。</li><li>主體是否清楚，輔助材料是否過量。</li><li>是否完成保存方式與修改建議。</li></ul></article>
+            <article class="tool-card"><h3>安全提醒</h3><ul><li>所有原料僅供課程創作使用，請勿食用。</li><li>操作時保持通風，避免接觸眼口。</li><li>皮膚敏感、孕期或特殊健康狀況，請先主動告知。</li><li>作品使用前請依課程說明確認適用形式。</li></ul></article>
+          </div>
+        </section>
+
+        <section id="formula" class="tool-section">
+          <div class="section-head"><div><p class="kicker">Formula Record</p><h2>配方紀錄</h2><p>輸入作品名稱、方向、總量與原料比例，系統會先幫你換算每個材料的用量。資料會存於此瀏覽器。</p></div></div>
+          <form id="formula-form" class="tool-card">
+            <div class="form-grid">
+              <label><span>作品名稱</span><input name="name" placeholder="例：雨後木質花香"></label>
+              <label><span>香氣方向</span><input name="direction" placeholder="例：woody floral / clean musk"></label>
+              <label><span>總量</span><input name="total" type="number" step="0.01" min="0" value="10"></label>
+              <label><span>單位</span><select name="unit"><option value="g">g</option><option value="ml">ml</option></select></label>
+              <label class="full"><span>版本筆記</span><textarea name="note" placeholder="記錄這一版的目標、問題與下一步調整方向。"></textarea></label>
+            </div>
+            <div class="table-wrap" style="margin-top:18px"><table class="tool-table"><thead><tr><th>原料</th><th>比例 %</th><th>換算用量</th><th>備註</th><th></th></tr></thead><tbody id="formula-rows"></tbody></table></div>
+            <div class="button-row"><button class="tool-button" type="button" id="add-row">新增原料列</button><button class="tool-button primary" type="submit">儲存配方</button><button class="tool-button" type="button" id="clear-formula">清空表單</button></div>
+            <p id="formula-total" class="muted"></p>
+          </form>
+          <div id="formula-records" class="record-list"></div>
+        </section>
+
+        <section id="materials" class="tool-section">
+          <div class="section-head"><div><p class="kicker">Material Notes</p><h2>原料筆記</h2><p>建立你自己的嗅覺語彙。建議每次嗅聞都記錄「第一印象、結構位置、適合搭配、使用提醒」。</p></div></div>
+          <form id="material-form" class="tool-card">
+            <div class="form-grid">
+              <label><span>原料名稱</span><input name="name" required placeholder="例：Bergamot / Hedione / Cedarwood"></label>
+              <label><span>分類</span><input name="family" placeholder="例：柑橘、花香、木質、麝香"></label>
+              <label class="full"><span>嗅覺描述</span><textarea name="impression" placeholder="第一印象、擴散感、乾燥感、透明度、聯想到的畫面。"></textarea></label>
+              <label class="full"><span>使用筆記</span><textarea name="usage" placeholder="適合放在什麼位置、和哪些材料搭配、需要注意什麼。"></textarea></label>
+            </div>
+            <div class="button-row"><button class="tool-button primary" type="submit">儲存原料筆記</button><button class="tool-button" type="button" id="clear-material">清空</button></div>
+          </form>
+          <div id="material-records" class="record-list"></div>
+        </section>
+
+        <section id="calculator" class="tool-section">
+          <div class="section-head"><div><p class="kicker">Calculator</p><h2>調香計算</h2><p>快速換算比例與總量。這裡僅做課堂紀錄用，實際作品仍以老師課程說明與安全規範為準。</p></div></div>
+          <div class="tool-grid two">
+            <article class="tool-card"><h3>比例換算</h3><label><span>總量</span><input id="calc-total" type="number" step="0.01" min="0" value="10"></label><label><span>比例 %</span><input id="calc-percent" type="number" step="0.01" min="0" value="10"></label><label><span>單位</span><select id="calc-unit"><option value="g">g</option><option value="ml">ml</option></select></label><div class="notice"><strong id="calc-result">1 g</strong></div></article>
+            <article class="tool-card"><h3>紀錄原則</h3><ul><li>總量先固定，再調整比例。</li><li>每次只調整一到兩個變因。</li><li>保留版本號：V1、V2、V3。</li><li>不要只記成功版本，失敗版本也能幫你找到結構問題。</li></ul></article>
+          </div>
+        </section>
+
+        <section id="afterclass" class="tool-section">
+          <div class="section-head"><div><p class="kicker">After Class</p><h2>課後補充</h2><p>完成課程後，請用同一套紀錄方式整理作品，讓香氣不是一次性的體驗，而是可以被追蹤的創作。</p></div></div>
+          <div class="tool-grid two">
+            <article class="tool-card"><h3>回家後 24 小時</h3><ul><li>重新嗅聞作品，記錄剛完成與隔天的差異。</li><li>寫下最明顯的三個氣味印象。</li><li>標記想要加強、降低或保留的部分。</li></ul></article>
+            <article class="tool-card"><h3>一週後</h3><ul><li>確認香氣是否變得更圓融或更模糊。</li><li>比對課堂筆記與目前感受。</li><li>準備下一次調整方向。</li></ul></article>
+            <article class="tool-card"><h3>下次回訓可帶</h3><ul><li>原始配方紀錄。</li><li>作品樣品。</li><li>想修正的方向與參考語彙。</li></ul></article>
+            <article class="tool-card"><h3>聯絡方式</h3><p>若需要補課、回訓、作品討論或課程延伸，請透過官方 LINE 聯絡。</p><a class="tool-button primary" href="https://lin.ee/QvDGM79" target="_blank" rel="noopener">官方 LINE</a></article>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
   <script>
-    (() => {
-      const PASSWORD = 'hana2026';
-      const TARGET = 'https://student-tools.hanascent.com/';
-      const KEY = 'hana_student_tools_unlocked';
-      if (sessionStorage.getItem(KEY) === 'true') window.location.replace(TARGET);
-      document.getElementById('gate-form').addEventListener('submit', event => {
-        event.preventDefault();
-        const input = document.getElementById('password').value.trim();
-        if (input === PASSWORD) {
-          sessionStorage.setItem(KEY, 'true');
-          window.location.href = TARGET;
-        } else {
-          document.getElementById('error').textContent = '密碼錯誤，請確認課後提供的密碼。';
-        }
-      });
+    (()=>{
+      const PASSWORD='hana2026';
+      const KEY='hana_student_tools_unlocked';
+      const FKEY='hana_student_formula_records';
+      const MKEY='hana_student_material_records';
+      const $=(s,r=document)=>r.querySelector(s);
+      const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+      const gate=$('#gate');
+      const app=$('#app');
+      const escapeHtml=v=>String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+      const read=(key)=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return[]}};
+      const write=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
+      function unlock(){gate.classList.add('hidden');app.classList.remove('hidden');renderFormulaRecords();renderMaterialRecords();updateFormulaAmounts();updateCalc();}
+      if(sessionStorage.getItem(KEY)==='true') unlock();
+      $('#gate-form').addEventListener('submit',e=>{e.preventDefault();const value=$('#password').value.trim();if(value===PASSWORD){sessionStorage.setItem(KEY,'true');unlock();}else{$('#error').textContent='密碼錯誤，請確認課後提供的密碼。';}});
+      $('#lock').addEventListener('click',()=>{sessionStorage.removeItem(KEY);location.reload();});
+      $$('.tool-nav button').forEach(btn=>btn.addEventListener('click',()=>{$$('.tool-nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');$$('.tool-section').forEach(s=>s.classList.remove('active'));$('#'+btn.dataset.tab).classList.add('active');}));
+      function addFormulaRow(data={}){const tr=document.createElement('tr');tr.innerHTML=`<td><input data-field="material" value="${escapeHtml(data.material||'')}" placeholder="原料名稱"></td><td><input data-field="percent" type="number" step="0.01" min="0" value="${escapeHtml(data.percent||'')}"></td><td class="amount muted">0</td><td><input data-field="note" value="${escapeHtml(data.note||'')}" placeholder="備註"></td><td><button type="button" class="tool-button remove-row">刪除</button></td>`;$('#formula-rows').appendChild(tr);tr.querySelector('.remove-row').addEventListener('click',()=>{tr.remove();updateFormulaAmounts();});tr.querySelectorAll('input').forEach(i=>i.addEventListener('input',updateFormulaAmounts));updateFormulaAmounts();}
+      function updateFormulaAmounts(){const total=parseFloat($('#formula-form').elements.total.value)||0;const unit=$('#formula-form').elements.unit.value||'g';let sum=0;$$('#formula-rows tr').forEach(tr=>{const percent=parseFloat(tr.querySelector('[data-field="percent"]').value)||0;sum+=percent;tr.querySelector('.amount').textContent=((total*percent/100)||0).toFixed(3).replace(/\.0+$/,'')+' '+unit;});$('#formula-total').textContent=`目前比例合計：${sum.toFixed(2).replace(/\.00$/,'')}%`;}
+      function formulaRows(){return $$('#formula-rows tr').map(tr=>({material:tr.querySelector('[data-field="material"]').value.trim(),percent:tr.querySelector('[data-field="percent"]').value.trim(),note:tr.querySelector('[data-field="note"]').value.trim()})).filter(r=>r.material||r.percent||r.note);}
+      function clearFormula(){const form=$('#formula-form');form.reset();form.elements.total.value='10';$('#formula-rows').innerHTML='';addFormulaRow();addFormulaRow();addFormulaRow();updateFormulaAmounts();}
+      $('#add-row').addEventListener('click',()=>addFormulaRow());
+      $('#clear-formula').addEventListener('click',clearFormula);
+      $('#formula-form').elements.total.addEventListener('input',updateFormulaAmounts);
+      $('#formula-form').elements.unit.addEventListener('change',updateFormulaAmounts);
+      $('#formula-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;const records=read(FKEY);records.unshift({id:Date.now(),name:form.elements.name.value.trim()||'未命名作品',direction:form.elements.direction.value.trim(),total:form.elements.total.value,unit:form.elements.unit.value,note:form.elements.note.value.trim(),rows:formulaRows(),createdAt:new Date().toISOString()});write(FKEY,records);renderFormulaRecords();clearFormula();});
+      function renderFormulaRecords(){const list=$('#formula-records');const records=read(FKEY);if(!records.length){list.innerHTML='<div class="notice">尚未建立配方紀錄。</div>';return;}list.innerHTML=records.map(r=>`<article class="record-item"><div><strong>${escapeHtml(r.name)}</strong></div><div class="record-meta"><span class="pill">${escapeHtml(r.direction||'未分類')}</span><span>${escapeHtml(r.total||'0')} ${escapeHtml(r.unit||'g')}</span><span>${new Date(r.createdAt).toLocaleDateString('zh-TW')}</span></div><p>${escapeHtml(r.note||'')}</p><div class="table-wrap"><table class="tool-table"><thead><tr><th>原料</th><th>比例</th><th>備註</th></tr></thead><tbody>${(r.rows||[]).map(row=>`<tr><td>${escapeHtml(row.material)}</td><td>${escapeHtml(row.percent)}%</td><td>${escapeHtml(row.note)}</td></tr>`).join('')}</tbody></table></div><div class="button-row"><button type="button" class="tool-button" data-delete-formula="${r.id}">刪除紀錄</button></div></article>`).join('');$$('[data-delete-formula]').forEach(btn=>btn.addEventListener('click',()=>{write(FKEY,read(FKEY).filter(r=>String(r.id)!==String(btn.dataset.deleteFormula)));renderFormulaRecords();}));}
+      $('#material-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;const records=read(MKEY);records.unshift({id:Date.now(),name:form.elements.name.value.trim(),family:form.elements.family.value.trim(),impression:form.elements.impression.value.trim(),usage:form.elements.usage.value.trim(),createdAt:new Date().toISOString()});write(MKEY,records);form.reset();renderMaterialRecords();});
+      $('#clear-material').addEventListener('click',()=>$('#material-form').reset());
+      function renderMaterialRecords(){const list=$('#material-records');const records=read(MKEY);if(!records.length){list.innerHTML='<div class="notice">尚未建立原料筆記。</div>';return;}list.innerHTML=records.map(r=>`<article class="record-item"><div><strong>${escapeHtml(r.name)}</strong></div><div class="record-meta"><span class="pill">${escapeHtml(r.family||'未分類')}</span><span>${new Date(r.createdAt).toLocaleDateString('zh-TW')}</span></div><p><b>嗅覺描述：</b>${escapeHtml(r.impression||'')}</p><p><b>使用筆記：</b>${escapeHtml(r.usage||'')}</p><div class="button-row"><button type="button" class="tool-button" data-delete-material="${r.id}">刪除筆記</button></div></article>`).join('');$$('[data-delete-material]').forEach(btn=>btn.addEventListener('click',()=>{write(MKEY,read(MKEY).filter(r=>String(r.id)!==String(btn.dataset.deleteMaterial)));renderMaterialRecords();}));}
+      function updateCalc(){const total=parseFloat($('#calc-total').value)||0;const percent=parseFloat($('#calc-percent').value)||0;const unit=$('#calc-unit').value||'g';$('#calc-result').textContent=((total*percent/100)||0).toFixed(3).replace(/\.0+$/,'')+' '+unit;}
+      ['#calc-total','#calc-percent','#calc-unit'].forEach(s=>$(s).addEventListener('input',updateCalc));
+      clearFormula();
     })();
   </script>
 </body>
