@@ -62,10 +62,15 @@
   }
   function renderPosts(items, settings) {
     document.querySelectorAll('[data-hana-blog]').forEach(root => {
+      const direction = root.dataset.hanaBlogDirection || '';
+      const filtered = direction ? items.filter(post => directionFromBody(post.body) === direction) : items;
       const limit = Number(root.dataset.hanaBlogLimit || 0);
-      const rows = limit > 0 ? items.slice(0, limit) : items;
+      const rows = limit > 0 ? filtered.slice(0, limit) : filtered;
       root.hidden = !settings.show_blog || !rows.length;
-      if (!rows.length) return;
+      if (!rows.length) {
+        root.innerHTML = `<div class="hana-section-head"><h2>${esc(root.dataset.hanaBlogTitle || '氣味誌')}</h2></div><div class="empty">目前尚無文章。</div>`;
+        return;
+      }
       const heading = root.dataset.hanaBlogTitle || '氣味誌';
       const showDirection = root.dataset.hanaShowDirection === 'true';
       root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${rows.map((x, index) => `<article class="hana-post"><img src="${esc(postCover(x, index))}" alt="" loading="lazy">${showDirection ? `<span class="hana-direction">${esc(directionLabel(x))}</span>` : ''}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
