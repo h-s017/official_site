@@ -116,8 +116,8 @@
     <div id="post-upload-progress" class="full notice hidden"></div>
     <div class="full action-row"><p class="muted">內文圖片可從媒體庫選取，或直接上傳並插入到游標位置。</p><div class="button-row"><button type="button" class="secondary choose-media" data-target="body" data-mode="insert-image">從媒體庫插入圖片</button><label class="secondary file-button">上傳並插入圖片<input id="post-body-image-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div></div>
     <div class="full action-row"><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;h2&gt;小標題&lt;/h2&gt;">插入小標題</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;p&gt;段落文字&lt;/p&gt;">插入段落</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;blockquote&gt;引言文字&lt;/blockquote&gt;">插入引言</button></div>
-    <label class="full">內文 <small>可使用簡單 HTML（段落、標題、連結與圖片）；儲存後會置換該文章目前內容。</small><textarea name="body" rows="14" required></textarea></label>
-    <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button class="primary" type="submit">儲存</button></div>
+    <label class="full">內文 <small>可直接輸入一般文字；段落之間空一行即可。若貼入 HTML 也會保留。</small><textarea name="body" rows="14"></textarea></label>
+    <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-post" class="primary" type="button">儲存</button></div>
   </div></form></dialog>
 
   <dialog id="announcement-dialog"><form id="announcement-form" class="dialog-form"><header><h2>公告</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
@@ -133,5 +133,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./app.js"></script>
   <script src="./journal-fix.js"></script>
+  <script src="./emergency-actions.js"></script>
 </body>
 </html>
