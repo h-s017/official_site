@@ -5,6 +5,7 @@
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
+  const noCoverTitles = new Set(['HANA SCENT ARTIST 氣味敘事空間']);
   const directionLabels = {
     'olfactory-culture': '嗅覺文化',
     'scent-creation': '氣味創作',
@@ -19,7 +20,7 @@
     const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
     return match?.[1] && directionLabels[match[1]] ? match[1] : 'olfactory-culture';
   };
-  const directionLabel = post => directionLabels[directionFromBody(post.body)] || '嗅覺文化';
+  const shouldShowCover = post => Boolean(post.cover_url) && !noCoverTitles.has(String(post.title || '').trim());
 
   function applySettings(s) {
     document.documentElement.style.setProperty('--hana-accent', s.accent_color);
@@ -76,7 +77,7 @@
       root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${rows.map((x) => {
         const directionKey = directionFromBody(x.body);
         const directionTag = showDirection ? `<a class="hana-direction" href="${esc(directionUrls[directionKey] || '/projects/')}">${esc(directionLabels[directionKey] || '嗅覺文化')}</a>` : '';
-        const image = x.cover_url ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : '';
+        const image = shouldShowCover(x) ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : '';
         return `<article class="hana-post">${image}${directionTag}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`;
       }).join('')}</div>`;
     });
