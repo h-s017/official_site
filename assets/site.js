@@ -1,15 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
   const heloriUrl = "https://helori.hanascent.com/";
 
-  const year = document.querySelector("[data-year]");
-  if (year) year.textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-year]").forEach((year) => {
+    year.textContent = new Date().getFullYear();
+  });
 
   const style = document.createElement("style");
   style.textContent = `
+    :root{
+      --hana-page-hero-y:112px;
+      --hana-page-hero-bottom:92px;
+      --hana-section-y:96px;
+      --hana-section-head-gap:48px;
+      --hana-section-head-bottom:42px;
+      --hana-wrap:1180px;
+      --hana-reading-wrap:1064px;
+    }
+
+    body{
+      font-family:var(--font-serif)!important;
+      line-height:1.82!important;
+      letter-spacing:.035em!important;
+    }
+
     .nav-links{gap:16px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
+
     .tc-number,
     .num,
     .counter,
@@ -23,61 +41,224 @@ document.addEventListener("DOMContentLoaded", () => {
     .service-row span{
       font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
     }
-    .en-text{font-size:1.1em;}
+    .en-text{font-size:1.05em;}
+
+    .wrap{
+      max-width:var(--hana-wrap)!important;
+      margin-left:auto!important;
+      margin-right:auto!important;
+    }
+
+    section{
+      padding-top:var(--hana-section-y)!important;
+      padding-bottom:var(--hana-section-y)!important;
+    }
+
     .page-hero,
-    .helori-hero{
-      padding:112px 6vw 92px!important;
+    .helori-hero,
+    .course-hero{
+      padding:var(--hana-page-hero-y) 6vw var(--hana-page-hero-bottom)!important;
       background:#ffffff!important;
       border-bottom:1px solid var(--line)!important;
       text-align:center!important;
     }
+
+    .journal-hero{border-bottom:none!important;}
+
     .page-hero .wrap,
-    .helori-hero .wrap{
+    .helori-hero .wrap,
+    .course-hero .wrap{
       max-width:980px!important;
       margin:0 auto!important;
       text-align:center!important;
       display:block!important;
     }
+
+    .eyebrow,
+    .kicker,
     .page-hero .kicker,
-    .helori-hero .kicker{
-      margin:0 0 24px!important;
+    .helori-hero .kicker,
+    .course-hero .kicker{
+      margin:0 0 14px!important;
       color:var(--gray500)!important;
-      letter-spacing:.28em!important;
-      line-height:1.7!important;
+      letter-spacing:.22em!important;
       text-transform:uppercase!important;
+      font-size:14px!important;
+      line-height:1.7!important;
+      font-weight:500!important;
       font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
+    }
+
+    .page-hero .kicker,
+    .helori-hero .kicker,
+    .course-hero .kicker{
+      margin-bottom:24px!important;
+      letter-spacing:.28em!important;
+    }
+
+    .hero-title{
+      font-size:clamp(40px,5.4vw,88px)!important;
+      line-height:.96!important;
+      letter-spacing:.16em!important;
+      margin:0 0 18px!important;
+      font-weight:500!important;
+      font-family:var(--font-serif)!important;
+    }
+
+    .hero-title span{
+      display:block!important;
+      font-size:clamp(26px,3vw,43px)!important;
+      line-height:1.2!important;
+      letter-spacing:.24em!important;
+      margin-top:18px!important;
       font-weight:500!important;
     }
+
     .page-hero h1,
-    .helori-hero h1{
+    .helori-hero h1,
+    .course-hero h1{
       margin:0 auto 30px!important;
       max-width:980px!important;
-      font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
-      font-size:clamp(44px,5.8vw,76px)!important;
-      line-height:1.18!important;
-      letter-spacing:.08em!important;
+      font-family:var(--font-serif)!important;
+      font-size:clamp(40px,5.4vw,88px)!important;
+      line-height:1.08!important;
+      letter-spacing:.12em!important;
       font-weight:500!important;
       color:var(--black)!important;
       text-align:center!important;
     }
+
+    .page-hero h2,
+    .helori-hero h2,
+    .course-hero h2,
     .page-hero p:not(.kicker),
     .helori-hero p:not(.kicker),
-    .helori-hero .subtitle{
+    .helori-hero .subtitle,
+    .course-hero .subtitle{
       max-width:880px!important;
       margin-left:auto!important;
       margin-right:auto!important;
       text-align:center!important;
-      font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
-      font-size:22px!important;
-      line-height:2!important;
-      letter-spacing:.06em!important;
-      color:var(--gray700)!important;
+      font-family:var(--font-serif)!important;
+      font-size:clamp(26px,3vw,43px)!important;
+      line-height:1.45!important;
+      letter-spacing:.16em!important;
+      color:var(--black)!important;
+      font-weight:500!important;
     }
+
+    .page-hero p:not(.kicker),
+    .helori-hero p:not(.kicker){
+      color:var(--gray700)!important;
+      font-size:19px!important;
+      line-height:1.9!important;
+      letter-spacing:.06em!important;
+      font-weight:400!important;
+    }
+
+    h1,h2,h3,p{overflow-wrap:anywhere;}
+
+    h2,
+    main h2,
+    .section-head h2{
+      margin:0!important;
+      font-size:clamp(30px,3.4vw,48px)!important;
+      line-height:1.25!important;
+      letter-spacing:.12em!important;
+      font-weight:500!important;
+      font-family:var(--font-serif)!important;
+    }
+
+    h3,
+    main h3,
+    .card h3,
+    .project-card h3,
+    .course-card h3,
+    .helori-card h3,
+    .detail-block h3{
+      margin:0 0 12px!important;
+      font-size:25px!important;
+      line-height:1.34!important;
+      letter-spacing:.12em!important;
+      font-weight:500!important;
+      font-family:var(--font-serif)!important;
+    }
+
+    p,
+    main p,
+    .lead,
+    .card p,
+    .project-card p,
+    .course-card p,
+    .helori-card p,
+    .detail-block p,
+    .notice p,
+    main li{
+      font-size:19px!important;
+      line-height:1.82!important;
+      letter-spacing:.035em!important;
+      font-weight:400!important;
+      font-family:var(--font-serif)!important;
+    }
+
+    .lead{
+      margin:16px 0 0!important;
+      color:var(--gray700)!important;
+      max-width:760px!important;
+    }
+
+    .section-head{
+      display:grid!important;
+      grid-template-columns:minmax(180px,.34fr) 1fr!important;
+      gap:var(--hana-section-head-gap)!important;
+      align-items:start!important;
+      margin-bottom:var(--hana-section-head-bottom)!important;
+    }
+
+    .grid3,.grid2{gap:18px!important;}
+
+    .card,
+    .project-card,
+    .course-card,
+    .notice,
+    .form-card,
+    .helori-card,
+    .detail-block{
+      padding:28px!important;
+      border:1px solid var(--line);
+    }
+
+    .project-card,
+    .course-card,
+    .card{
+      min-height:260px!important;
+    }
+
+    .text-link,
+    a.text-link{
+      display:inline-block!important;
+      width:max-content!important;
+      margin-top:26px!important;
+      border-bottom:1px solid currentColor!important;
+      font-size:14px!important;
+      line-height:1.8!important;
+      letter-spacing:.15em!important;
+    }
+
+    .hero-actions,
+    .actions{
+      display:flex!important;
+      gap:12px!important;
+      flex-wrap:wrap!important;
+    }
+
     .helori-hero .actions,
-    .page-hero .actions{
+    .page-hero .actions,
+    .course-hero .actions{
       justify-content:center!important;
       margin-top:40px!important;
     }
+
     .btn,
     a.btn,
     button.btn,
@@ -85,12 +266,17 @@ document.addEventListener("DOMContentLoaded", () => {
     .btn.light,
     .btn.light.primary,
     .btn.red{
+      min-height:46px!important;
+      padding:12px 20px!important;
       background:#ffffff!important;
       color:var(--black)!important;
       border:1px solid var(--black)!important;
       box-shadow:none!important;
       transform:none!important;
+      font-size:15px!important;
+      letter-spacing:.12em!important;
     }
+
     .btn:hover,
     a.btn:hover,
     button.btn:hover,
@@ -104,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
       transform:translateY(-1px)!important;
       box-shadow:none!important;
     }
+
     .dark-band .btn,
     .cta .btn{
       background:#ffffff!important;
@@ -116,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
       color:#ffffff!important;
       border-color:#ffffff!important;
     }
+
     .linked-hover-card,
     .news-row:has(a[href]),
     .card:has(a[href]),
@@ -124,6 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .notice:has(a[href]){
       transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease!important;
     }
+
     .linked-hover-card:hover,
     .linked-hover-card:focus-within,
     .news-row:has(a[href]):hover,
@@ -139,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
       background:var(--gray100)!important;
       border-color:var(--gray300)!important;
     }
+
     .card:has(a[href]):hover,
     .card:has(a[href]):focus-within,
     .project-card:has(a[href]):hover,
@@ -149,6 +339,22 @@ document.addEventListener("DOMContentLoaded", () => {
     .notice:has(a[href]):focus-within{
       box-shadow:0 12px 32px rgba(0,0,0,.05)!important;
     }
+
+    .dark-band .enroll-panel{
+      border:0!important;
+      outline:0!important;
+      box-shadow:none!important;
+      background:transparent!important;
+      padding:0!important;
+    }
+
+    .footer{
+      margin-top:72px!important;
+      border-top:1px solid #ffffff!important;
+      box-shadow:0 -1px 0 var(--line);
+    }
+    main + .footer{display:block;}
+
     @media (prefers-reduced-motion:reduce){
       .linked-hover-card,
       .news-row:has(a[href]),
@@ -157,28 +363,30 @@ document.addEventListener("DOMContentLoaded", () => {
       .course-card:has(a[href]),
       .notice:has(a[href]){transition:none!important;}
     }
-    .dark-band .enroll-panel{
-      border:0!important;
-      outline:0!important;
-      box-shadow:none!important;
-      background:transparent!important;
-      padding:0!important;
+
+    @media (max-width:1240px){
+      .nav-links{gap:10px;font-size:12px;}
+      .nav-cta{padding:7px 10px!important;}
     }
-    .footer{
-      margin-top:72px!important;
-      border-top:1px solid #ffffff!important;
-      box-shadow:0 -1px 0 var(--line);
-    }
-    main + .footer{display:block;}
-    @media (max-width:1240px){.nav-links{gap:10px;font-size:12px}.nav-cta{padding:7px 10px!important}}
+
     @media (max-width:980px){
+      :root{
+        --hana-page-hero-y:86px;
+        --hana-page-hero-bottom:70px;
+        --hana-section-y:72px;
+        --hana-section-head-gap:20px;
+        --hana-section-head-bottom:32px;
+      }
       .page-hero,
-      .helori-hero{padding:86px 22px 70px!important;}
+      .helori-hero,
+      .course-hero{padding:var(--hana-page-hero-y) 22px var(--hana-page-hero-bottom)!important;}
       .page-hero h1,
-      .helori-hero h1{font-size:clamp(38px,10vw,56px)!important;line-height:1.22!important;}
+      .helori-hero h1,
+      .course-hero h1{font-size:clamp(38px,10vw,56px)!important;line-height:1.22!important;}
       .page-hero p:not(.kicker),
       .helori-hero p:not(.kicker),
       .helori-hero .subtitle{font-size:20px!important;line-height:1.95!important;}
+      .section-head{grid-template-columns:1fr!important;}
       .footer{margin-top:52px!important;}
       .site-nav{align-items:flex-start;flex-wrap:wrap;}
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;}
@@ -195,11 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
         font-size:15px!important;
       }
       .site-nav.menu-open .nav-links{display:flex!important;}
-      .nav-links a{
-        width:100%;
-        padding:12px 0;
-        border-bottom:1px solid var(--line);
-      }
+      .nav-links a{width:100%;padding:12px 0;border-bottom:1px solid var(--line);}
       .nav-links a:last-child{border-bottom:none;}
     }
   `;
@@ -241,7 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    nav?.querySelectorAll("a").forEach((link) => {
+    nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         siteNav.classList.remove("menu-open");
         mobileMenu.textContent = "MENU";
@@ -265,34 +469,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (node.nodeType === Node.ELEMENT_NODE && !["SCRIPT", "STYLE"].includes(node.tagName)) {
       node.childNodes.forEach(replaceText);
-    }
-  }
-
-  function wrapNumbers(node){
-    if (node.nodeType === Node.TEXT_NODE) {
-      if (!/[0-9０-９]/.test(node.nodeValue)) return;
-      const parent = node.parentNode;
-      if (!parent || parent.classList?.contains("tc-number")) return;
-      const parts = node.nodeValue.split(/([0-9０-９]+)/g);
-      const fragment = document.createDocumentFragment();
-      parts.forEach((part) => {
-        if (!part) return;
-        if (/^[0-9０-９]+$/.test(part)) {
-          const span = document.createElement("span");
-          span.className = "tc-number";
-          span.textContent = part;
-          fragment.appendChild(span);
-        } else {
-          fragment.appendChild(document.createTextNode(part));
-        }
-      });
-      parent.replaceChild(fragment, node);
-      return;
-    }
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      if (["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"].includes(node.tagName)) return;
-      if (node.classList?.contains("tc-number")) return;
-      Array.from(node.childNodes).forEach(wrapNumbers);
     }
   }
 
@@ -325,7 +501,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   replaceText(document.body);
-  wrapNumbers(document.body);
 
   document.querySelectorAll("a").forEach((a) => {
     const label = a.textContent.trim();
@@ -374,66 +549,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = a.getAttribute("href");
     if (href === path) a.classList.add("active");
   });
-
-  const typographyRoots = Array.from(document.querySelectorAll("header.hero, .page-hero, .course-hero, .helori-hero, main"));
-  const textElements = [];
-  const seen = new Set();
-
-  typographyRoots.forEach((root) => {
-    root.querySelectorAll("*").forEach((el) => {
-      if (seen.has(el)) return;
-      if (el instanceof SVGElement) return;
-      if (el.classList?.contains("tc-number")) return;
-      if (["SCRIPT", "STYLE", "IMG", "SVG", "PATH"].includes(el.tagName)) return;
-      if (el.closest(".site-nav") || el.closest(".footer")) return;
-      const hasDirectText = Array.from(el.childNodes).some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0);
-      if (!hasDirectText) return;
-      seen.add(el);
-      textElements.push(el);
-    });
-  });
-
-  const originalSizes = textElements.map((el) => [el, parseFloat(window.getComputedStyle(el).fontSize)]);
-  originalSizes.forEach(([el, size]) => {
-    if (!Number.isFinite(size) || size <= 0) return;
-    el.style.fontSize = `${Math.round(size * 0.8 * 1000) / 1000}px`;
-  });
-
-  const contentSelectors = [
-    "header.hero p:not(.eyebrow)",
-    ".page-hero p:not(.kicker)",
-    ".course-hero p:not(.kicker):not(.course-label):not(.course-quote):not(.subtitle):not(.en-title)",
-    ".helori-hero .subtitle",
-    "main p:not(.kicker):not(.course-label):not(.course-quote):not(.large-quote)",
-    "main .lead",
-    "main .card p",
-    "main .course-card p",
-    "main .course-meta",
-    "main .meta-line",
-    "main .fit-item",
-    "main .detail-block p",
-    "main .service-row span",
-    "main .timeline-item span",
-    "main .timeline-item b",
-    "main li"
-  ];
-  const contentSeen = new Set();
-  document.querySelectorAll(contentSelectors.join(",")).forEach((el) => {
-    if (contentSeen.has(el)) return;
-    if (el.closest(".site-nav") || el.closest(".footer")) return;
-    contentSeen.add(el);
-    const size = parseFloat(el.style.fontSize || window.getComputedStyle(el).fontSize);
-    if (!Number.isFinite(size) || size <= 0) return;
-    el.style.fontSize = `${Math.round(size * 1.05 * 1000) / 1000}px`;
-  });
-
-  if (path === "index.html") {
-    document.querySelectorAll("main .dark-band .service-row b, main .dark-band .service-row span").forEach((el) => {
-      const size = parseFloat(el.style.fontSize || window.getComputedStyle(el).fontSize);
-      if (!Number.isFinite(size) || size <= 0) return;
-      el.style.fontSize = `${Math.round(size * 1.1 * 1000) / 1000}px`;
-    });
-  }
 
   wrapEnglish(document.body);
 });
