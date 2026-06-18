@@ -53,7 +53,7 @@
           <article><strong id="stat-posts">0</strong><span>篇已發布氣味誌</span></article>
           <article><strong id="stat-announcements">0</strong><span>則有效公告</span></article>
         </div>
-        <article class="panel welcome"><h2>內容管理已就緒</h2><p>照片上傳後可直接設為氣味誌封面、插入文章內文，或設為首頁主視覺。草稿只有後台看得到，切換為「已發布」後才會出現在官網。</p></article>
+        <article class="panel welcome"><h2>內容管理已就緒</h2><p>照片可在媒體庫上傳，也可在撰寫氣味誌文章時直接上傳為封面或內文圖片。草稿只有後台看得到，切換為「已發布」後才會出現在官網。</p></article>
       </section>
 
       <section id="view-media" class="view">
@@ -63,7 +63,12 @@
 
       <section id="view-posts" class="view">
         <div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="new-post" class="primary">新增氣味誌文章</button></div>
-        <p class="muted">已建立的草稿與已發布文章都可重新編輯標題、摘要、封面圖片與內文；圖片請先上傳到「照片與媒體」後選取或插入。</p>
+        <div class="panel form-grid compact-panel">
+          <label class="full">載入網站上的文章 <small>貼上 blog 連結或網址代稱，例如 olfactory-vulgarity-or-artistry</small>
+            <div class="input-action"><input id="post-slug-loader" type="text" placeholder="https://hanascent.com/blog.html?slug=..."><button type="button" id="load-post-by-slug" class="secondary">載入編輯</button></div>
+          </label>
+        </div>
+        <p class="muted">已建立的草稿與已發布文章都可重新編輯標題、摘要、封面圖片與內文；撰寫文章時也可直接上傳封面與內文圖片。</p>
         <div id="posts-list" class="list"></div>
       </section>
 
@@ -109,8 +114,11 @@
 
   <dialog id="post-dialog"><form id="post-form" class="dialog-form"><header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
     <input name="id" type="hidden"><label class="full">標題<input name="title" required></label><label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
-    <label class="full">摘要<textarea name="summary" rows="3"></textarea></label><label class="full">封面圖片<div class="input-action"><input name="cover_url" type="url"><button type="button" class="secondary choose-media" data-target="cover_url">從媒體庫選取 / 置換</button></div></label>
-    <div class="full action-row"><p class="muted">內文圖片請先上傳到「照片與媒體」，再按右側按鈕插入到游標位置。</p><button type="button" class="secondary choose-media" data-target="body" data-mode="insert-image">插入內文圖片</button></div>
+    <label class="full">摘要<textarea name="summary" rows="3"></textarea></label>
+    <label class="full">封面圖片網址<div class="input-action"><input name="cover_url" type="url"><button type="button" class="secondary choose-media" data-target="cover_url">從媒體庫選取 / 置換</button></div></label>
+    <div class="full action-row"><p class="muted">可直接上傳封面圖片，上傳後會自動填入上方封面圖片網址。</p><label class="secondary file-button">上傳封面圖片<input id="post-cover-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label></div>
+    <div id="post-upload-progress" class="full notice hidden"></div>
+    <div class="full action-row"><p class="muted">內文圖片可從媒體庫選取，或直接上傳並插入到游標位置。</p><div class="button-row"><button type="button" class="secondary choose-media" data-target="body" data-mode="insert-image">從媒體庫插入圖片</button><label class="secondary file-button">上傳並插入圖片<input id="post-body-image-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div></div>
     <div class="full action-row"><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;h2&gt;小標題&lt;/h2&gt;">插入小標題</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;p&gt;段落文字&lt;/p&gt;">插入段落</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;blockquote&gt;引言文字&lt;/blockquote&gt;">插入引言</button></div>
     <label class="full">內文 <small>可使用簡單 HTML（段落、標題、連結與圖片）；儲存後會置換該文章目前內容。</small><textarea name="body" rows="14" required></textarea></label>
     <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button class="primary" type="submit">儲存</button></div>
