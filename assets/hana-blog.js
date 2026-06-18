@@ -31,7 +31,7 @@
     if (error || !data) throw error || new Error('not found');
     document.title = `${data.title}｜HANA SCENT ARTIST`;
     const published = data.published_at ? new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'long',day:'numeric'}).format(new Date(data.published_at)) : '';
-    const cover = coverOverrides[slug] || data.cover_url || fallbackCover(slug);
+    const cover = data.cover_url || fallbackCover(slug);
     root.className = 'blog-article'; root.innerHTML = `<header><p>${esc(published)}</p><h1>${esc(data.title)}</h1>${data.summary ? `<p class="summary">${esc(data.summary)}</p>` : ''}</header><img class="blog-cover" src="${esc(cover)}" alt=""><div class="blog-body">${cleanHtml(data.body)}</div>`;
   }
   init().catch(() => { root.className = 'blog-state'; root.innerHTML = '<h1>找不到這篇文章</h1><p>文章可能尚未發布，或網址已變更。</p><p><a href="/">返回首頁</a></p>'; });
