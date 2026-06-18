@@ -5,12 +5,22 @@
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
+  const directionLabels = {
+    'olfactory-culture': '嗅覺文化',
+    'scent-creation': '氣味創作',
+    'heart-village-notes': '心村札記'
+  };
   const coverOverrides = {
     'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg',
     'blooming-tears': '/assets/殉情記.jpg'
   };
   const fallbackCover = index => `/assets/${(index % 5) + 1}.png`;
   const postCover = (post, index) => post.cover_url || coverOverrides[post.slug] || fallbackCover(index);
+  const directionFromBody = body => {
+    const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
+    return match?.[1] && directionLabels[match[1]] ? match[1] : 'olfactory-culture';
+  };
+  const directionLabel = post => directionLabels[directionFromBody(post.body)] || '嗅覺文化';
 
   function applySettings(s) {
     document.documentElement.style.setProperty('--hana-accent', s.accent_color);
@@ -52,10 +62,13 @@
   }
   function renderPosts(items, settings) {
     document.querySelectorAll('[data-hana-blog]').forEach(root => {
-      root.hidden = !settings.show_blog || !items.length;
-      if (!items.length) return;
+      const limit = Number(root.dataset.hanaBlogLimit || 0);
+      const rows = limit > 0 ? items.slice(0, limit) : items;
+      root.hidden = !settings.show_blog || !rows.length;
+      if (!rows.length) return;
       const heading = root.dataset.hanaBlogTitle || '氣味誌';
-      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${items.map((x, index) => `<article class="hana-post"><img src="${esc(postCover(x, index))}" alt="" loading="lazy"><h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
+      const showDirection = root.dataset.hanaShowDirection === 'true';
+      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${rows.map((x, index) => `<article class="hana-post"><img src="${esc(postCover(x, index))}" alt="" loading="lazy">${showDirection ? `<span class="hana-direction">${esc(directionLabel(x))}</span>` : ''}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
     });
   }
   function applySectionOrder(settings) {
@@ -71,13 +84,13 @@
     const [settings, announcements, posts, pageContents] = await Promise.all([
       db.from('site_settings').select('*').eq('id',1).single(),
       db.from('announcements').select('*').eq('status','published').order('priority').order('created_at',{ascending:false}),
-      db.from('posts').select('title,slug,summary,cover_url,published_at').eq('status','published').order('published_at',{ascending:false}),
+      db.from('posts').select('title,slug,summary,cover_url,published_at,body').eq('status','published').order('published_at',{ascending:false}),
       pageKey ? db.from('page_contents').select('field_key,content_type,value').eq('page_key', pageKey) : Promise.resolve({ data: [], error: null })
     ]);
     if (settings.error) throw settings.error; applySettings(settings.data);
     if (!pageContents.error) applyPageContents(pageContents.data || []);
     if (!announcements.error) renderAnnouncements(announcements.data, settings.data);
-    if (!posts.error) renderPosts(posts.data, settings.data);
+    if (!posts.error) renderPosts(posts.data || [], settings.data);
     applySectionOrder(settings.data);
     document.dispatchEvent(new CustomEvent('hana:cms-ready', { detail: settings.data }));
   }
