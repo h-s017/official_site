@@ -35,7 +35,7 @@
       <nav id="nav">
         <button data-view="dashboard" class="active">總覽</button>
         <button data-view="media">照片與媒體</button>
-        <button data-view="posts">部落格</button>
+        <button data-view="posts">氣味誌</button>
         <button data-view="announcements">公告</button>
         <button data-view="content">頁面內容</button>
         <button data-view="booking">預約設定</button>
@@ -50,19 +50,20 @@
       <section id="view-dashboard" class="view active">
         <div class="stats">
           <article><strong id="stat-media">0</strong><span>張照片</span></article>
-          <article><strong id="stat-posts">0</strong><span>篇已發布文章</span></article>
+          <article><strong id="stat-posts">0</strong><span>篇已發布氣味誌</span></article>
           <article><strong id="stat-announcements">0</strong><span>則有效公告</span></article>
         </div>
-        <article class="panel welcome"><h2>內容管理已就緒</h2><p>照片上傳後可直接設為文章封面或首頁主視覺。草稿只有後台看得到，切換為「已發布」後才會出現在官網。</p></article>
+        <article class="panel welcome"><h2>內容管理已就緒</h2><p>照片上傳後可直接設為氣味誌封面、插入文章內文，或設為首頁主視覺。草稿只有後台看得到，切換為「已發布」後才會出現在官網。</p></article>
       </section>
 
       <section id="view-media" class="view">
-        <div class="action-row"><p class="muted">支援 JPG、PNG、WebP、GIF，單檔上限 8 MB。</p><label class="primary file-button">上傳照片<input id="media-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div>
+        <div class="action-row"><p class="muted">支援 JPG、PNG、WebP、GIF，單檔上限 8 MB。上傳後可用於氣味誌封面、文章內文圖片或頁面主視覺。</p><label class="primary file-button">上傳照片<input id="media-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div>
         <div id="media-progress" class="notice hidden"></div><div id="media-grid" class="media-grid"></div>
       </section>
 
       <section id="view-posts" class="view">
-        <div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋文章"><button id="new-post" class="primary">新增文章</button></div>
+        <div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="new-post" class="primary">新增氣味誌文章</button></div>
+        <p class="muted">已建立的草稿與已發布文章都可重新編輯標題、摘要、封面圖片與內文；圖片請先上傳到「照片與媒體」後選取或插入。</p>
         <div id="posts-list" class="list"></div>
       </section>
 
@@ -79,8 +80,8 @@
           <label class="full">首頁副標題<input name="hero_subtitle"></label>
           <label class="full">首頁主視覺網址<div class="input-action"><input name="hero_image_url" type="url"><button type="button" class="secondary choose-media" data-target="hero_image_url">從媒體庫選取</button></div></label>
           <label>內容寬度（px）<input name="content_width" type="number" min="720" max="1600"></label>
-          <fieldset><legend>首頁顯示</legend><label class="check"><input name="show_announcements" type="checkbox">公告</label><label class="check"><input name="show_blog" type="checkbox">部落格</label></fieldset>
-          <label class="full">區塊順序<select name="section_order"><option value="announcements,blog">公告 → 部落格</option><option value="blog,announcements">部落格 → 公告</option></select></label>
+          <fieldset><legend>首頁顯示</legend><label class="check"><input name="show_announcements" type="checkbox">公告</label><label class="check"><input name="show_blog" type="checkbox">氣味誌</label></fieldset>
+          <label class="full">區塊順序<select name="section_order"><option value="announcements,blog">公告 → 氣味誌</option><option value="blog,announcements">氣味誌 → 公告</option></select></label>
           <div class="full form-actions"><button class="primary" type="submit">儲存版面設定</button></div>
         </form>
       </section>
@@ -106,10 +107,12 @@
     </section>
   </div>
 
-  <dialog id="post-dialog"><form id="post-form" class="dialog-form"><header><h2>文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
+  <dialog id="post-dialog"><form id="post-form" class="dialog-form"><header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
     <input name="id" type="hidden"><label class="full">標題<input name="title" required></label><label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
-    <label class="full">摘要<textarea name="summary" rows="3"></textarea></label><label class="full">封面圖片<div class="input-action"><input name="cover_url" type="url"><button type="button" class="secondary choose-media" data-target="cover_url">從媒體庫選取</button></div></label>
-    <label class="full">內文 <small>可使用簡單 HTML（段落、標題、連結與圖片）</small><textarea name="body" rows="14" required></textarea></label>
+    <label class="full">摘要<textarea name="summary" rows="3"></textarea></label><label class="full">封面圖片<div class="input-action"><input name="cover_url" type="url"><button type="button" class="secondary choose-media" data-target="cover_url">從媒體庫選取 / 置換</button></div></label>
+    <div class="full action-row"><p class="muted">內文圖片請先上傳到「照片與媒體」，再按右側按鈕插入到游標位置。</p><button type="button" class="secondary choose-media" data-target="body" data-mode="insert-image">插入內文圖片</button></div>
+    <div class="full action-row"><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;h2&gt;小標題&lt;/h2&gt;">插入小標題</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;p&gt;段落文字&lt;/p&gt;">插入段落</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;blockquote&gt;引言文字&lt;/blockquote&gt;">插入引言</button></div>
+    <label class="full">內文 <small>可使用簡單 HTML（段落、標題、連結與圖片）；儲存後會置換該文章目前內容。</small><textarea name="body" rows="14" required></textarea></label>
     <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button class="primary" type="submit">儲存</button></div>
   </div></form></dialog>
 
