@@ -6,12 +6,13 @@
   <title>氣味誌｜HANA SCENT ARTIST</title>
   <meta name="description" content="HANA SCENT ARTIST 的氣味誌，收錄嗅覺歷史、香水冷知識、場域氣味、Helori 與品牌氣味筆記。" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/hana-cms.css" />
   <style>
     .journal-actions-only{padding:64px 0 88px;background:#111;color:#fff;text-align:center;}
     .journal-actions-only .actions{justify-content:center;margin-top:0;}
   </style>
 </head>
-<body>
+<body data-hana-page="journal">
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="index.html">HANA SCENT ARTIST</a>
     <div class="nav-links">
@@ -30,8 +31,8 @@
   <header class="page-hero">
     <div class="wrap">
       <p class="kicker">Scent Journal</p>
-      <h1>氣味誌</h1>
-      <h2>從閱讀，進入氣味。</h2>
+      <h1 data-hana-field="hero_title">氣味誌</h1>
+      <h2 data-hana-field="hero_subtitle">從閱讀，進入氣味。</h2>
     </div>
   </header>
 
@@ -76,6 +77,8 @@
       </div>
     </section>
 
+    <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" hidden></section>
+
     <section class="journal-actions-only">
       <div class="wrap">
         <div class="actions">
@@ -107,5 +110,8 @@
     </div>
   </footer>
   <script src="assets/site.js"></script>
+  <script src="assets/cms-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/hana-cms.js"></script>
 </body>
 </html>

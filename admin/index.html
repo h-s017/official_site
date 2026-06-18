@@ -37,6 +37,8 @@
         <button data-view="media">照片與媒體</button>
         <button data-view="posts">部落格</button>
         <button data-view="announcements">公告</button>
+        <button data-view="content">頁面內容</button>
+        <button data-view="booking">預約設定</button>
         <button data-view="layout">版面設定</button>
       </nav>
       <div class="account"><span id="account-email"></span><button id="logout" class="text-button">登出</button></div>
@@ -80,6 +82,25 @@
           <fieldset><legend>首頁顯示</legend><label class="check"><input name="show_announcements" type="checkbox">公告</label><label class="check"><input name="show_blog" type="checkbox">部落格</label></fieldset>
           <label class="full">區塊順序<select name="section_order"><option value="announcements,blog">公告 → 部落格</option><option value="blog,announcements">部落格 → 公告</option></select></label>
           <div class="full form-actions"><button class="primary" type="submit">儲存版面設定</button></div>
+        </form>
+      </section>
+
+      <section id="view-content" class="view">
+        <div class="action-row"><p class="muted">修改後會套用到既有官網對應欄位；未設定的內容仍保留原始文字。</p><button id="save-page-content" class="primary">儲存頁面內容</button></div>
+        <div id="page-content-forms" class="content-groups"></div>
+      </section>
+
+      <section id="view-booking" class="view">
+        <form id="booking-form" class="panel form-grid">
+          <label>開放預約時間<input name="booking_start_at" type="datetime-local" required></label>
+          <label>開放截止日期<input name="booking_end_date" type="date" required></label>
+          <fieldset class="full"><legend>開放星期</legend><div class="weekday-grid">
+            <label class="check"><input type="checkbox" name="weekday" value="0">日</label><label class="check"><input type="checkbox" name="weekday" value="1">一</label><label class="check"><input type="checkbox" name="weekday" value="2">二</label><label class="check"><input type="checkbox" name="weekday" value="3">三</label><label class="check"><input type="checkbox" name="weekday" value="4">四</label><label class="check"><input type="checkbox" name="weekday" value="5">五</label><label class="check"><input type="checkbox" name="weekday" value="6">六</label>
+          </div></fieldset>
+          <label class="full">額外休館日期 <small>每行一個日期，例如 2027-02-05</small><textarea name="closed_dates" rows="7"></textarea></label>
+          <label class="full">特殊日期時段 <small>格式：日期 | 時段一, 時段二</small><textarea name="special_date_times" rows="5" placeholder="2026-07-17 | 09:00–12:00"></textarea></label>
+          <p class="full note">儲存後預約前台會立即讀取；Apps Script 更新部署前，後端仍使用既有備援規則。</p>
+          <div class="full form-actions"><button class="primary" type="submit">儲存預約設定</button></div>
         </form>
       </section>
     </section>

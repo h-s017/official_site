@@ -7,8 +7,9 @@
   if (!configured || !window.supabase) { $('#setup').classList.remove('hidden'); return; }
 
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
-  const state = { media: [], posts: [], announcements: [], settings: null, mediaTarget: null };
-  const titles = { dashboard: '總覽', media: '照片與媒體', posts: '部落格', announcements: '公告', layout: '版面設定' };
+  const state = { media: [], posts: [], announcements: [], pageContents: [], booking: null, settings: null, mediaTarget: null };
+  const titles = { dashboard: '總覽', media: '照片與媒體', posts: '部落格', announcements: '公告', content: '頁面內容', booking: '預約設定', layout: '版面設定' };
+  const pageNames = { home: '首頁', helori: 'HELORI 香氣探索所', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: 'H.FUGUE ATELIER', visit: '聯繫我們', journal: '氣味誌' };
   let toastTimer;
 
   function toast(message, error = false) {
@@ -22,19 +23,21 @@
   function slugify(value) { return value.trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`; }
 
   async function loadAll() {
-    const [media, posts, announcements, settings] = await Promise.all([
+    const [media, posts, announcements, pageContents, booking, settings] = await Promise.all([
       db.storage.from('site-media').list('', { limit: 200, sortBy: { column: 'created_at', order: 'desc' } }),
       db.from('posts').select('*').order('updated_at', { ascending: false }),
       db.from('announcements').select('*').order('updated_at', { ascending: false }),
+      db.from('page_contents').select('*').order('page_key').order('sort_order'),
+      db.from('booking_settings').select('*').eq('id', 1).single(),
       db.from('site_settings').select('*').eq('id', 1).single()
     ]);
-    for (const result of [media, posts, announcements, settings]) if (result.error) throw result.error;
+    for (const result of [media, posts, announcements, pageContents, booking, settings]) if (result.error) throw result.error;
     state.media = media.data.filter(x => x.name !== '.emptyFolderPlaceholder').map(file => ({ ...file, url: db.storage.from('site-media').getPublicUrl(file.name).data.publicUrl }));
-    state.posts = posts.data; state.announcements = announcements.data; state.settings = settings.data;
+    state.posts = posts.data; state.announcements = announcements.data; state.pageContents = pageContents.data; state.booking = booking.data; state.settings = settings.data;
     renderAll();
   }
 
-  function renderAll() { renderDashboard(); renderMedia(); renderPosts(); renderAnnouncements(); renderLayout(); }
+  function renderAll() { renderDashboard(); renderMedia(); renderPosts(); renderAnnouncements(); renderPageContents(); renderBooking(); renderLayout(); }
   function renderDashboard() {
     const today = new Date().toISOString().slice(0, 10);
     $('#stat-media').textContent = state.media.length;
@@ -55,6 +58,47 @@
   }
   function renderAnnouncements() {
     $('#announcements-list').innerHTML = state.announcements.length ? state.announcements.map(x => `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? '已發布' : '草稿'}</span><span class="badge ${x.priority}">${x.priority === 'high' ? '重要' : x.priority === 'low' ? '次要' : '一般'}</span><span>${x.starts_at || '不限'} ～ ${x.ends_at || '不限'}</span></div></div><button class="secondary edit-announcement" data-id="${x.id}">編輯</button></article>`).join('') : '<div class="empty">尚未建立公告</div>';
+  }
+  function renderPageContents() {
+    const groups = Object.entries(pageNames).map(([key, name]) => {
+      const fields = state.pageContents.filter(x => x.page_key === key);
+      if (!fields.length) return '';
+      return `<section class="content-group"><h2>${escapeHtml(name)}</h2><div class="content-fields">${fields.map(field => {
+        const wide = field.content_type === 'multiline' || field.content_type === 'image' ? 'wide' : '';
+        const control = field.content_type === 'multiline'
+          ? `<textarea rows="4" data-content-id="${field.id}">${escapeHtml(field.value)}</textarea>`
+          : field.content_type === 'image'
+            ? `<div class="input-action"><input type="url" data-content-id="${field.id}" value="${escapeHtml(field.value)}"><button type="button" class="secondary choose-content-media" data-content-id="${field.id}">從媒體庫選取</button></div>`
+            : `<input type="${field.content_type === 'url' ? 'url' : 'text'}" data-content-id="${field.id}" value="${escapeHtml(field.value)}">`;
+        return `<label class="${wide}">${escapeHtml(field.label)}${control}</label>`;
+      }).join('')}</div></section>`;
+    }).join('');
+    $('#page-content-forms').innerHTML = groups || '<div class="empty">尚未建立可編輯欄位</div>';
+  }
+  function toLocalInput(value) {
+    if (!value) return '';
+    const date = new Date(value); const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+    return local.toISOString().slice(0, 16);
+  }
+  function formatSpecialTimes(value = {}) {
+    return Object.entries(value).map(([day, times]) => `${day} | ${times.join(', ')}`).join('\n');
+  }
+  function parseSpecialTimes(value) {
+    const output = {};
+    value.split(/\r?\n/).map(x => x.trim()).filter(Boolean).forEach(line => {
+      const [day, text] = line.split('|').map(x => x.trim());
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !text) throw new Error(`特殊時段格式錯誤：${line}`);
+      output[day] = text.split(',').map(x => x.trim()).filter(Boolean);
+    });
+    return output;
+  }
+  function renderBooking() {
+    if (!state.booking) return; const f = $('#booking-form');
+    f.elements.booking_start_at.value = toLocalInput(state.booking.booking_start_at);
+    f.elements.booking_end_date.value = state.booking.booking_end_date || '';
+    $$('input[name="weekday"]', f).forEach(x => { x.checked = (state.booking.open_weekdays || []).includes(Number(x.value)); });
+    f.elements.closed_dates.value = (state.booking.closed_dates || []).join('\n');
+    f.elements.special_date_times.value = formatSpecialTimes(state.booking.special_date_times || {});
   }
   function renderLayout() {
     if (!state.settings) return; const f = $('#layout-form');
@@ -83,6 +127,16 @@
   $('#post-search').addEventListener('input', renderPosts);
   $('#new-post').addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form')));
   $('#new-announcement').addEventListener('click', () => openRecord($('#announcement-dialog'), $('#announcement-form')));
+  $('#save-page-content').addEventListener('click', async () => {
+    const inputs = $$('[data-content-id]', $('#page-content-forms')).filter(x => x.matches('input,textarea'));
+    try {
+      await Promise.all(inputs.map(async input => {
+        const { error } = await db.from('page_contents').update({ value: input.value }).eq('id', input.dataset.contentId);
+        if (error) throw error;
+      }));
+      toast('頁面內容已儲存'); await loadAll();
+    } catch (error) { fail(error); }
+  });
   $$('dialog .close').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
   $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
 
@@ -90,7 +144,8 @@
     const post = e.target.closest('.edit-post'); if (post) openRecord($('#post-dialog'), $('#post-form'), state.posts.find(x => x.id === post.dataset.id));
     const ann = e.target.closest('.edit-announcement'); if (ann) openRecord($('#announcement-dialog'), $('#announcement-form'), state.announcements.find(x => x.id === ann.dataset.id));
     const choose = e.target.closest('.choose-media'); if (choose) { state.mediaTarget = { form: choose.closest('form'), name: choose.dataset.target }; renderMedia(); $('#media-dialog').showModal(); }
-    const pick = e.target.closest('.pick-media'); if (pick) { state.mediaTarget.form.elements[state.mediaTarget.name].value = pick.dataset.url; $('#media-dialog').close(); }
+    const chooseContent = e.target.closest('.choose-content-media'); if (chooseContent) { state.mediaTarget = { input: $(`[data-content-id="${chooseContent.dataset.contentId}"]`, $('#page-content-forms')) }; renderMedia(); $('#media-dialog').showModal(); }
+    const pick = e.target.closest('.pick-media'); if (pick) { if (state.mediaTarget.input) state.mediaTarget.input.value = pick.dataset.url; else state.mediaTarget.form.elements[state.mediaTarget.name].value = pick.dataset.url; $('#media-dialog').close(); }
     const copy = e.target.closest('.copy-media'); if (copy) { await navigator.clipboard.writeText(copy.dataset.url); toast('照片網址已複製'); }
     const del = e.target.closest('.delete-media'); if (del && confirm(`確定刪除「${del.dataset.name}」？已使用此網址的頁面將無法顯示圖片。`)) {
       const { error } = await db.storage.from('site-media').remove([del.dataset.name]); if (error) return fail(error); toast('照片已刪除'); await loadAll();
@@ -133,6 +188,26 @@
   $('#layout-form').addEventListener('submit', async e => {
     e.preventDefault(); const data = formData(e.target); data.id = 1; data.content_width = Number(data.content_width); data.show_announcements = e.target.elements.show_announcements.checked; data.show_blog = e.target.elements.show_blog.checked; data.section_order = data.section_order.split(',');
     const { error } = await db.from('site_settings').update(data).eq('id', 1); if (error) return fail(error); toast('版面設定已儲存'); await loadAll();
+  });
+  $('#booking-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      const data = formData(e.target);
+      const open = $$('input[name="weekday"]:checked', e.target).map(x => Number(x.value));
+      if (!open.length) throw new Error('請至少選擇一個開放星期。');
+      const closedDates = data.closed_dates.split(/[\s,]+/).map(x => x.trim()).filter(Boolean);
+      if (closedDates.some(x => !/^\d{4}-\d{2}-\d{2}$/.test(x))) throw new Error('休館日期請使用 YYYY-MM-DD 格式。');
+      const payload = {
+        booking_start_at: new Date(data.booking_start_at).toISOString(),
+        booking_end_date: data.booking_end_date,
+        open_weekdays: open,
+        closed_weekdays: [0,1,2,3,4,5,6].filter(x => !open.includes(x)),
+        closed_dates: closedDates,
+        special_date_times: parseSpecialTimes(data.special_date_times)
+      };
+      const { error } = await db.from('booking_settings').update(payload).eq('id', 1); if (error) throw error;
+      toast('預約設定已儲存'); await loadAll();
+    } catch (error) { fail(error); }
   });
 
   db.auth.onAuthStateChange(async (_event, session) => {
