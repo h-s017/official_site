@@ -12,16 +12,20 @@
     .journal-hero .kicker,
     .journal-hero h1,
     .journal-hero h2{margin-left:auto;margin-right:auto;text-align:center;}
+    .journal-directions{background:#111;color:#fff;border-top:none;}
     .journal-directions .section-head{grid-template-columns:1fr;gap:16px;text-align:center;}
-    .journal-directions .section-head p{margin-left:auto;margin-right:auto;}
-    .journal-directions .project-card{display:flex;flex-direction:column;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
-    .journal-directions .project-card:hover,.journal-directions .project-card:focus-within{background:var(--gray100);border-color:var(--gray300);box-shadow:0 12px 32px rgba(0,0,0,.05);}
-    .journal-directions .project-card p{flex:1;}
+    .journal-directions .section-head p{margin-left:auto;margin-right:auto;color:#bfbfbf;}
+    .journal-directions .project-card{display:flex;flex-direction:column;background:#191919;border-color:#3a3a3a;color:#fff;transition:background-color .28s ease,border-color .28s ease,color .28s ease,box-shadow .28s ease;}
+    .journal-directions .project-card small{color:#bfbfbf;transition:color .28s ease;}
+    .journal-directions .project-card p{flex:1;color:#e5e5e5;transition:color .28s ease;}
+    .journal-directions .project-card .text-link{border-color:#fff;color:#fff;transition:color .28s ease,border-color .28s ease;}
+    .journal-directions .project-card:hover,.journal-directions .project-card:focus-within{background:#fff;border-color:#fff;color:#111;box-shadow:none;}
+    .journal-directions .project-card:hover small,.journal-directions .project-card:focus-within small,.journal-directions .project-card:hover p,.journal-directions .project-card:focus-within p,.journal-directions .project-card:hover .text-link,.journal-directions .project-card:focus-within .text-link{color:#111;border-color:#111;}
     .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .hana-post:hover,.hana-post:focus-within{background:var(--gray100);border-color:var(--gray300);box-shadow:0 12px 32px rgba(0,0,0,.05);}
     .journal-actions-only{padding:64px 0 88px;background:#111;color:#fff;text-align:center;}
     .journal-actions-only .actions{justify-content:center;margin-top:0;}
-    @media(prefers-reduced-motion:reduce){.journal-directions .project-card,.hana-post{transition:none;}}
+    @media(prefers-reduced-motion:reduce){.journal-directions .project-card,.journal-directions .project-card small,.journal-directions .project-card p,.journal-directions .project-card .text-link,.hana-post{transition:none;}}
   </style>
 </head>
 <body data-hana-page="journal">
