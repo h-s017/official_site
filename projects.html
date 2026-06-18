@@ -24,13 +24,13 @@
     .journal-directions .project-card:hover small,.journal-directions .project-card:focus-within small,.journal-directions .project-card:hover p,.journal-directions .project-card:focus-within p,.journal-directions .project-card:hover .text-link,.journal-directions .project-card:focus-within .text-link{color:#111;border-color:#111;}
     .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .hana-post:hover,.hana-post:focus-within{background:var(--gray100);border-color:var(--gray300);box-shadow:0 12px 32px rgba(0,0,0,.05);}
-    .journal-actions-only{padding:61px 0 84px;background:#111;color:#fff;text-align:center;display:flex;align-items:center;}
-    .journal-actions-only .wrap{width:min(95%,1064px);}
-    .journal-actions-only .actions{justify-content:center;margin-top:0;}
-    .journal-actions-only .btn,.journal-actions-only a.btn{background:#111!important;color:#fff!important;border-color:#fff!important;}
-    .journal-actions-only .btn:hover,.journal-actions-only a.btn:hover,.journal-actions-only .btn:focus,.journal-actions-only a.btn:focus{background:#fff!important;color:#111!important;border-color:#fff!important;}
+    body[data-hana-page="journal"] .journal-actions-only{padding:61px 0 84px!important;background:#111!important;color:#fff!important;text-align:center;display:flex;align-items:center;}
+    body[data-hana-page="journal"] .journal-actions-only .wrap{width:min(95%,1064px);}
+    body[data-hana-page="journal"] .journal-actions-only .actions{justify-content:center;margin-top:0;}
+    body[data-hana-page="journal"] .journal-actions-only .btn.light,body[data-hana-page="journal"] .journal-actions-only a.btn.light,body[data-hana-page="journal"] .journal-actions-only .btn.light.primary{background:#111!important;color:#fff!important;border-color:#fff!important;box-shadow:none!important;}
+    body[data-hana-page="journal"] .journal-actions-only .btn.light:hover,body[data-hana-page="journal"] .journal-actions-only a.btn.light:hover,body[data-hana-page="journal"] .journal-actions-only .btn.light:focus,body[data-hana-page="journal"] .journal-actions-only a.btn.light:focus{background:#fff!important;color:#111!important;border-color:#fff!important;box-shadow:none!important;}
     @media(prefers-reduced-motion:reduce){.journal-directions .project-card,.journal-directions .project-card small,.journal-directions .project-card p,.journal-directions .project-card .text-link,.hana-post{transition:none;}}
-    @media(max-width:980px){.journal-directions .wrap,.journal-actions-only .wrap{width:min(95%,calc(100% - 40px));}.journal-directions{padding:68px 0;}.journal-actions-only{padding:58px 0 80px;}}
+    @media(max-width:980px){.journal-directions .wrap,body[data-hana-page="journal"] .journal-actions-only .wrap{width:min(95%,calc(100% - 40px));}.journal-directions{padding:68px 0;}body[data-hana-page="journal"] .journal-actions-only{padding:58px 0 80px!important;}}
   </style>
 </head>
 <body data-hana-page="journal">
