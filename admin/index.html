@@ -1,1 +1,137 @@
-noop
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>HANA 官網後台</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="setup" class="setup hidden">
+    <section class="setup-card">
+      <p class="eyebrow">HANA SCENT ARTIST</p>
+      <h1>後台尚未連接</h1>
+      <p>請先建立 Supabase 專案，執行 <code>supabase/schema.sql</code>，再把 Project URL 與 anon public key 填入 <code>admin/config.js</code>。</p>
+      <p class="note">請勿放入 service_role key。</p>
+    </section>
+  </div>
+
+  <main id="login" class="login hidden">
+    <form id="login-form" class="login-card">
+      <p class="eyebrow">HANA SCENT ARTIST</p>
+      <h1>官網內容管理</h1>
+      <p class="muted">使用管理帳號登入</p>
+      <label>電子郵件<input id="login-email" type="email" autocomplete="username" required></label>
+      <label>密碼<input id="login-password" type="password" autocomplete="current-password" required minlength="8"></label>
+      <button class="primary" type="submit">登入</button>
+      <p id="login-error" class="error" role="alert"></p>
+    </form>
+  </main>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div><p class="brand">HANA <span>CMS</span></p><p class="brand-sub">官網內容管理</p></div>
+      <nav id="nav">
+        <button data-view="dashboard" class="active">總覽</button>
+        <button data-view="media">照片與媒體</button>
+        <button data-view="posts">氣味誌</button>
+        <button data-view="announcements">公告</button>
+        <button data-view="content">頁面內容</button>
+        <button data-view="booking">預約設定</button>
+        <button data-view="layout">版面設定</button>
+      </nav>
+      <div class="account"><span id="account-email"></span><button id="logout" class="text-button">登出</button></div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1 id="view-title">總覽</h1></div><a id="view-site" class="secondary" href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a></header>
+
+      <section id="view-dashboard" class="view active">
+        <div class="stats">
+          <article><strong id="stat-media">0</strong><span>張照片</span></article>
+          <article><strong id="stat-posts">0</strong><span>篇已發布氣味誌</span></article>
+          <article><strong id="stat-announcements">0</strong><span>則有效公告</span></article>
+        </div>
+        <article class="panel welcome"><h2>內容管理已就緒</h2><p>照片可在媒體庫上傳，也可在撰寫氣味誌文章時直接上傳為封面或內文圖片。氣味誌文章可選擇專題分類，前台會歸入對應子目錄。</p></article>
+      </section>
+
+      <section id="view-media" class="view">
+        <div class="action-row"><p class="muted">支援 JPG、PNG、WebP、GIF，單檔上限 8 MB。上傳後可用於氣味誌封面、文章內文圖片或頁面主視覺。</p><label class="primary file-button">上傳照片<input id="media-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div>
+        <div id="media-progress" class="notice hidden"></div><div id="media-grid" class="media-grid"></div>
+      </section>
+
+      <section id="view-posts" class="view">
+        <div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="new-post" class="primary">新增氣味誌文章</button></div>
+        <p class="muted">這裡會直接列出 projects.html 目前顯示的氣味誌文章。點「編輯」即可修改標題、摘要、專題分類、封面圖片與內文。</p>
+        <div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章…</div></div>
+      </section>
+
+      <section id="view-announcements" class="view">
+        <div class="action-row"><p class="muted">可設定顯示期間與重要程度。</p><button id="new-announcement" class="primary">新增公告</button></div>
+        <div id="announcements-list" class="list"></div>
+      </section>
+
+      <section id="view-layout" class="view">
+        <form id="layout-form" class="panel form-grid">
+          <label>網站名稱<input name="site_name" required></label>
+          <label>主色<input name="accent_color" type="color"></label>
+          <label class="full">首頁主標題<input name="hero_title"></label>
+          <label class="full">首頁副標題<input name="hero_subtitle"></label>
+          <label class="full">首頁主視覺網址<div class="input-action"><input name="hero_image_url" type="url"><button type="button" class="secondary choose-media" data-target="hero_image_url">從媒體庫選取</button></div></label>
+          <label>內容寬度（px）<input name="content_width" type="number" min="720" max="1600"></label>
+          <fieldset><legend>首頁顯示</legend><label class="check"><input name="show_announcements" type="checkbox">公告</label><label class="check"><input name="show_blog" type="checkbox">氣味誌</label></fieldset>
+          <label class="full">區塊順序<select name="section_order"><option value="announcements,blog">公告 → 氣味誌</option><option value="blog,announcements">氣味誌 → 公告</option></select></label>
+          <div class="full form-actions"><button class="primary" type="submit">儲存版面設定</button></div>
+        </form>
+      </section>
+
+      <section id="view-content" class="view">
+        <div class="action-row"><p class="muted">修改後會套用到既有官網對應欄位；未設定的內容仍保留原始文字。</p><button id="save-page-content" class="primary">儲存頁面內容</button></div>
+        <div id="page-content-forms" class="content-groups"></div>
+      </section>
+
+      <section id="view-booking" class="view">
+        <form id="booking-form" class="panel form-grid">
+          <label>開放預約時間<input name="booking_start_at" type="datetime-local" required></label>
+          <label>開放截止日期<input name="booking_end_date" type="date" required></label>
+          <fieldset class="full"><legend>開放星期</legend><div class="weekday-grid">
+            <label class="check"><input type="checkbox" name="weekday" value="0">日</label><label class="check"><input type="checkbox" name="weekday" value="1">一</label><label class="check"><input type="checkbox" name="weekday" value="2">二</label><label class="check"><input type="checkbox" name="weekday" value="3">三</label><label class="check"><input type="checkbox" name="weekday" value="4">四</label><label class="check"><input type="checkbox" name="weekday" value="5">五</label><label class="check"><input type="checkbox" name="weekday" value="6">六</label>
+          </div></fieldset>
+          <label class="full">額外休館日期 <small>每行一個日期，例如 2027-02-05</small><textarea name="closed_dates" rows="7"></textarea></label>
+          <label class="full">特殊日期時段 <small>格式：日期 | 時段一, 時段二</small><textarea name="special_date_times" rows="5" placeholder="2026-07-17 | 09:00–12:00"></textarea></label>
+          <p class="full note">儲存後預約前台會立即讀取；Apps Script 更新部署前，後端仍使用既有備援規則。</p>
+          <div class="full form-actions"><button class="primary" type="submit">儲存預約設定</button></div>
+        </form>
+      </section>
+    </section>
+  </div>
+
+  <dialog id="post-dialog"><form id="post-form" class="dialog-form"><header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
+    <input name="id" type="hidden"><label class="full">標題<input name="title" required></label><label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
+    <label>專題分類<select name="reading_direction"><option value="olfactory-culture">嗅覺文化</option><option value="scent-creation">氣味創作</option><option value="heart-village-notes">心村札記</option></select></label>
+    <label class="full">摘要<textarea name="summary" rows="3"></textarea></label>
+    <label class="full">封面圖片網址<div class="input-action"><input name="cover_url" type="url"><button type="button" class="secondary choose-media" data-target="cover_url">從媒體庫選取 / 置換</button></div></label>
+    <div class="full action-row"><p class="muted">可直接上傳封面圖片，上傳後會自動填入上方封面圖片網址。</p><label class="secondary file-button">上傳封面圖片<input id="post-cover-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label></div>
+    <div id="post-upload-progress" class="full notice hidden"></div>
+    <div class="full action-row"><p class="muted">內文圖片可從媒體庫選取，或直接上傳並插入到游標位置。</p><div class="button-row"><button type="button" class="secondary choose-media" data-target="body" data-mode="insert-image">從媒體庫插入圖片</button><label class="secondary file-button">上傳並插入圖片<input id="post-body-image-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label></div></div>
+    <div class="full action-row"><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;h2&gt;小標題&lt;/h2&gt;">插入小標題</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;p&gt;段落文字&lt;/p&gt;">插入段落</button><button type="button" class="secondary insert-html" data-target="body" data-html="&lt;blockquote&gt;引言文字&lt;/blockquote&gt;">插入引言</button></div>
+    <label class="full">內文 <small>可使用簡單 HTML（段落、標題、連結與圖片）；儲存後會置換該文章目前內容。</small><textarea name="body" rows="14" required></textarea></label>
+    <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button class="primary" type="submit">儲存</button></div>
+  </div></form></dialog>
+
+  <dialog id="announcement-dialog"><form id="announcement-form" class="dialog-form"><header><h2>公告</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid">
+    <input name="id" type="hidden"><label class="full">標題<input name="title" required></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label><label>重要程度<select name="priority"><option value="normal">一般</option><option value="high">重要</option><option value="low">次要</option></select></label>
+    <label class="full">內容<textarea name="content" rows="6" required></textarea></label><label class="full">連結網址<input name="link_url" type="url"></label><label>開始日期<input name="starts_at" type="date"></label><label>結束日期<input name="ends_at" type="date"></label>
+    <div class="full form-actions"><button type="button" id="delete-announcement" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button class="primary" type="submit">儲存</button></div>
+  </div></form></dialog>
+
+  <dialog id="media-dialog"><div class="dialog-form"><header><h2>選擇照片</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body"><div id="media-picker" class="media-grid"></div></div></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="./config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./app.js"></script>
+  <script src="./journal-fix.js"></script>
+</body>
+</html>
