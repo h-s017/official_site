@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   style.textContent = `
     :root{
       --hana-page-hero-y:65px;
-      --hana-page-hero-bottom:52px;
+      --hana-page-hero-bottom:49px;
       --hana-section-y:78px;
       --hana-section-head-gap:42px;
       --hana-section-head-bottom:36px;
