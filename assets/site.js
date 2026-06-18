@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const style = document.createElement("style");
   style.textContent = `
     :root{
-      --hana-page-hero-y:92px;
-      --hana-page-hero-bottom:76px;
+      --hana-page-hero-y:72px;
+      --hana-page-hero-bottom:58px;
       --hana-section-y:78px;
       --hana-section-head-gap:42px;
       --hana-section-head-bottom:36px;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     .journal-hero{border-bottom:none!important;}
     .page-hero .wrap,.helori-hero .wrap,.course-hero .wrap{
-      max-width:900px!important;
+      max-width:820px!important;
       margin:0 auto!important;
       text-align:center!important;
       display:block!important;
@@ -60,56 +60,56 @@ document.addEventListener("DOMContentLoaded", () => {
       font-weight:500!important;
       font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
     }
-    .page-hero .kicker,.helori-hero .kicker,.course-hero .kicker{margin-bottom:20px!important;letter-spacing:.26em!important;}
+    .page-hero .kicker,.helori-hero .kicker,.course-hero .kicker{margin-bottom:18px!important;letter-spacing:.26em!important;}
 
     .hero-title{
-      font-size:clamp(34px,4.7vw,74px)!important;
-      line-height:1!important;
-      letter-spacing:.16em!important;
-      margin:0 0 16px!important;
+      font-size:clamp(32px,4.1vw,64px)!important;
+      line-height:1.02!important;
+      letter-spacing:.15em!important;
+      margin:0 0 14px!important;
       font-weight:500!important;
       font-family:var(--font-serif)!important;
     }
     .hero-title span{
       display:block!important;
-      font-size:clamp(22px,2.55vw,34px)!important;
+      font-size:clamp(20px,2.25vw,30px)!important;
       line-height:1.24!important;
-      letter-spacing:.22em!important;
-      margin-top:16px!important;
+      letter-spacing:.21em!important;
+      margin-top:14px!important;
       font-weight:500!important;
     }
 
     .page-hero h1,.helori-hero h1,.course-hero h1{
-      margin:0 auto 24px!important;
-      max-width:900px!important;
+      margin:0 auto 20px!important;
+      max-width:820px!important;
       font-family:var(--font-serif)!important;
-      font-size:clamp(34px,4.7vw,74px)!important;
-      line-height:1.12!important;
-      letter-spacing:.12em!important;
+      font-size:clamp(32px,4.1vw,64px)!important;
+      line-height:1.14!important;
+      letter-spacing:.115em!important;
       font-weight:500!important;
       color:var(--black)!important;
       text-align:center!important;
     }
 
     .page-hero h2,.helori-hero h2,.course-hero h2,.helori-hero .subtitle,.course-hero .subtitle{
-      max-width:820px!important;
+      max-width:760px!important;
       margin-left:auto!important;
       margin-right:auto!important;
       text-align:center!important;
       font-family:var(--font-serif)!important;
-      font-size:clamp(22px,2.55vw,34px)!important;
+      font-size:clamp(20px,2.25vw,30px)!important;
       line-height:1.45!important;
-      letter-spacing:.15em!important;
+      letter-spacing:.14em!important;
       color:var(--black)!important;
       font-weight:500!important;
     }
     .page-hero p:not(.kicker),.helori-hero p:not(.kicker),.course-hero p:not(.kicker){
-      max-width:760px!important;
+      max-width:720px!important;
       margin-left:auto!important;
       margin-right:auto!important;
       color:var(--gray700)!important;
       font-size:17px!important;
-      line-height:1.88!important;
+      line-height:1.82!important;
       letter-spacing:.05em!important;
       font-weight:400!important;
     }
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     .hero-actions,.actions{display:flex!important;gap:12px!important;flex-wrap:wrap!important;}
-    .helori-hero .actions,.page-hero .actions,.course-hero .actions{justify-content:center!important;margin-top:34px!important;}
+    .helori-hero .actions,.page-hero .actions,.course-hero .actions{justify-content:center!important;margin-top:30px!important;}
     .btn,a.btn,button.btn,.btn.primary,.btn.light,.btn.light.primary,.btn.red{
       min-height:44px!important;
       padding:11px 18px!important;
