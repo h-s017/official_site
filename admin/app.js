@@ -7,6 +7,9 @@
   if (!configured || !window.supabase) { $('#setup').classList.remove('hidden'); return; }
 
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+  const publicDb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+    auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+  });
   const state = { media: [], posts: [], announcements: [], pageContents: [], booking: null, settings: null, mediaTarget: null };
   const titles = { dashboard: '總覽', media: '照片與媒體', posts: '氣味誌', announcements: '公告', content: '頁面內容', booking: '預約設定', layout: '版面設定' };
   const pageNames = { home: '首頁', helori: 'HELORI 香氣探索所', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: 'H.FUGUE ATELIER', visit: '聯繫我們', journal: '氣味誌' };
@@ -112,6 +115,14 @@
     } catch (_) {}
     return raw.replace(/^https?:\/\/[^/]+\/blog\.html\?slug=/i, '').replace(/^.*slug=/i, '').replace(/^\/+|\/+$/g, '').trim();
   }
+  async function fetchPostBySlug(slug) {
+    const adminResult = await db.from('posts').select('*').eq('slug', slug).limit(1);
+    if (!adminResult.error && adminResult.data && adminResult.data.length) return adminResult.data[0];
+    const publicResult = await publicDb.from('posts').select('*').eq('slug', slug).eq('status', 'published').limit(1);
+    if (!publicResult.error && publicResult.data && publicResult.data.length) return publicResult.data[0];
+    if (adminResult.error && publicResult.error) throw adminResult.error;
+    return null;
+  }
 
   async function loadAll() {
     const [media, posts, announcements, pageContents, booking, settings] = await Promise.all([
@@ -122,9 +133,10 @@
       db.from('booking_settings').select('*').eq('id', 1).single(),
       db.from('site_settings').select('*').eq('id', 1).single()
     ]);
-    for (const result of [media, posts, announcements, pageContents, booking, settings]) if (result.error) throw result.error;
+    for (const result of [media, announcements, pageContents, booking, settings]) if (result.error) throw result.error;
+    if (posts.error) console.warn('[HANA CMS posts]', posts.error);
     state.media = media.data.filter(x => x.name !== '.emptyFolderPlaceholder').map(file => ({ ...file, url: db.storage.from('site-media').getPublicUrl(file.name).data.publicUrl }));
-    state.posts = posts.data; state.announcements = announcements.data; state.pageContents = pageContents.data; state.booking = booking.data; state.settings = settings.data;
+    state.posts = posts.error ? [] : posts.data; state.announcements = announcements.data; state.pageContents = pageContents.data; state.booking = booking.data; state.settings = settings.data;
     renderAll();
   }
 
@@ -214,12 +226,11 @@
     if (!slug) return fail(new Error('請輸入文章網址代稱或 blog 連結。'));
     const local = state.posts.find(x => x.slug === slug);
     if (local) { openRecord($('#post-dialog'), $('#post-form'), local); return; }
-    const { data, error } = await db.from('posts').select('*').eq('slug', slug).limit(1);
-    if (error) return fail(error);
-    if (!data || !data.length) return fail(new Error(`找不到網址代稱為「${slug}」的文章。若這篇文章目前只存在於靜態檔，需先匯入 Supabase posts 資料表。`));
-    state.posts = [data[0], ...state.posts.filter(x => x.id !== data[0].id)];
+    const post = await fetchPostBySlug(slug);
+    if (!post) return fail(new Error(`找不到網址代稱為「${slug}」的文章。若前台文章可以顯示，請確認這篇文章是否真的存在於 Supabase posts 資料表，而不是舊的靜態 HTML。`));
+    state.posts = [post, ...state.posts.filter(x => x.id !== post.id)];
     renderPosts();
-    openRecord($('#post-dialog'), $('#post-form'), data[0]);
+    openRecord($('#post-dialog'), $('#post-form'), post);
   }
 
   $('#login-form').addEventListener('submit', async e => {
