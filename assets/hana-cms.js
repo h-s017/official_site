@@ -5,7 +5,10 @@
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
-  const coverOverrides = { 'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg' };
+  const coverOverrides = {
+    'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg',
+    'blooming-tears': '/assets/殉情記.jpg'
+  };
   const fallbackCover = index => `/assets/${(index % 5) + 1}.png`;
   const postCover = (post, index) => coverOverrides[post.slug] || post.cover_url || fallbackCover(index);
 
