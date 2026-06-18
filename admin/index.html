@@ -7,79 +7,18 @@
   <title>HANA 官網後台</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
-    .cms-version{font-size:12px;color:#8a928b;margin-top:8px}.admin-note{margin:14px 0 24px;color:#68706a}.row-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.dialog-body textarea[name="body"]{font-family:inherit;line-height:1.8}.simple-admin .view{display:block}.simple-admin .content{min-height:100vh}.simple-admin .list-item .badge{white-space:nowrap}.empty small{display:block;margin-top:8px;color:#8a928b;line-height:1.5}
+    .cms-version{font-size:12px;color:#8a928b;margin-top:8px}.admin-note{margin:14px 0 24px;color:#68706a}.row-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.dialog-body textarea[name="body"]{font-family:inherit;line-height:1.8}.simple-admin .view{display:block}.simple-admin .content{min-height:100vh}.simple-admin .list-item .badge{white-space:nowrap}.empty small{display:block;margin-top:8px;color:#8a928b;line-height:1.5}.cover-upload{display:grid;gap:10px;margin-top:10px}.cover-upload input[type="file"]{width:100%;padding:12px;border:1px dashed #c9cec7;background:#fafbf8}.cover-tools{display:flex;gap:10px;flex-wrap:wrap}.cover-tools button{min-height:42px}.cover-help{display:block;color:#68706a;line-height:1.6}@media(max-width:720px){.cover-tools{display:grid}.cover-tools button{width:100%}.dialog-form{max-width:100vw}.dialog-body{padding-bottom:90px}}
   </style>
 </head>
 <body class="simple-admin">
-  <div id="setup" class="setup hidden">
-    <section class="setup-card">
-      <p class="eyebrow">HANA SCENT ARTIST</p>
-      <h1>後台尚未連接</h1>
-      <p>請確認 <code>admin/config.js</code> 已填入 Supabase Project URL 與 anon public key。</p>
-    </section>
-  </div>
-
-  <main id="login" class="login hidden">
-    <form id="login-form" class="login-card">
-      <p class="eyebrow">HANA SCENT ARTIST</p>
-      <h1>官網內容管理</h1>
-      <p class="muted">使用管理帳號登入</p>
-      <label>電子郵件<input id="login-email" type="email" autocomplete="username" required></label>
-      <label>密碼<input id="login-password" type="password" autocomplete="current-password" required minlength="8"></label>
-      <button class="primary" type="submit">登入</button>
-      <p id="login-error" class="error" role="alert"></p>
-      <p class="cms-version">CMS single-file v20260619-2</p>
-    </form>
-  </main>
-
+  <div id="setup" class="setup hidden"><section class="setup-card"><p class="eyebrow">HANA SCENT ARTIST</p><h1>後台尚未連接</h1><p>請確認 <code>admin/config.js</code> 已填入 Supabase Project URL 與 anon public key。</p></section></div>
+  <main id="login" class="login hidden"><form id="login-form" class="login-card"><p class="eyebrow">HANA SCENT ARTIST</p><h1>官網內容管理</h1><p class="muted">使用管理帳號登入</p><label>電子郵件<input id="login-email" type="email" autocomplete="username" required></label><label>密碼<input id="login-password" type="password" autocomplete="current-password" required minlength="8"></label><button class="primary" type="submit">登入</button><p id="login-error" class="error" role="alert"></p><p class="cms-version">CMS single-file v20260619-3</p></form></main>
   <div id="app" class="app hidden">
-    <aside class="sidebar">
-      <div>
-        <p class="brand">HANA <span>CMS</span></p>
-        <p class="brand-sub">官網內容管理</p>
-        <p class="cms-version">single-file v20260619-2</p>
-      </div>
-      <nav id="nav">
-        <button data-view="posts" class="active">氣味誌</button>
-      </nav>
-      <div class="account"><span id="account-email"></span><button id="logout" class="text-button" type="button">登出</button></div>
-    </aside>
-
-    <section class="content">
-      <header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1>氣味誌</h1></div><a id="view-site" class="secondary" href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a></header>
-
-      <section id="view-posts" class="view active">
-        <div class="action-row">
-          <input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章">
-          <button id="reload-posts" class="secondary" type="button">重新載入</button>
-          <button id="new-post" class="primary" type="button">新增氣味誌文章</button>
-        </div>
-        <p class="admin-note">這是重建後的單一檔案版後台。可直接修改標題、摘要、專題分類、封面圖片與純文字內文。段落之間空一行即可，不需要輸入 HTML。</p>
-        <div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章…</div></div>
-      </section>
-    </section>
+    <aside class="sidebar"><div><p class="brand">HANA <span>CMS</span></p><p class="brand-sub">官網內容管理</p><p class="cms-version">single-file v20260619-3</p></div><nav id="nav"><button data-view="posts" class="active">氣味誌</button></nav><div class="account"><span id="account-email"></span><button id="logout" class="text-button" type="button">登出</button></div></aside>
+    <section class="content"><header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1>氣味誌</h1></div><a id="view-site" class="secondary" href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a></header><section id="view-posts" class="view active"><div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="reload-posts" class="secondary" type="button">重新載入</button><button id="new-post" class="primary" type="button">新增氣味誌文章</button></div><p class="admin-note">可直接修改標題、摘要、專題分類、封面圖片與純文字內文。手機可直接選相簿照片上傳；段落之間空一行即可，不需要輸入 HTML。</p><div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章…</div></div></section></section>
   </div>
-
-  <dialog id="post-dialog">
-    <form id="post-form" class="dialog-form" method="dialog">
-      <header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header>
-      <div class="dialog-body form-grid">
-        <input name="id" type="hidden">
-        <input name="published_at" type="hidden">
-        <label class="full">標題<input name="title" required></label>
-        <label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label>
-        <label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
-        <label>專題分類<select name="reading_direction"><option value="olfactory-culture">嗅覺文化</option><option value="scent-creation">氣味創作</option><option value="heart-village-notes">心村札記</option></select></label>
-        <label class="full">摘要<textarea name="summary" rows="3"></textarea></label>
-        <label class="full">封面圖片網址<input name="cover_url" type="url" placeholder="可貼圖片網址"></label>
-        <label class="full">內文 <small>直接輸入一般文字即可；段落之間空一行。若貼入 HTML 也會保留。</small><textarea name="body" rows="16" placeholder="在這裡直接輸入文章內容。"></textarea></label>
-        <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-post" class="primary" type="button">儲存</button></div>
-      </div>
-    </form>
-  </dialog>
-
+  <dialog id="post-dialog"><form id="post-form" class="dialog-form" method="dialog"><header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid"><input name="id" type="hidden"><input name="published_at" type="hidden"><label class="full">標題<input name="title" required></label><label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label><label>專題分類<select name="reading_direction"><option value="olfactory-culture">嗅覺文化</option><option value="scent-creation">氣味創作</option><option value="heart-village-notes">心村札記</option></select></label><label class="full">摘要<textarea name="summary" rows="3"></textarea></label><label class="full">封面圖片<input name="cover_url" type="url" placeholder="可貼圖片網址，或使用下方按鈕上傳照片"><span class="cover-upload"><input id="cover-file" type="file" accept="image/*"><span class="cover-tools"><button id="upload-cover" class="secondary" type="button">上傳封面照片</button><button id="clear-cover" class="secondary" type="button">清除封面</button></span><small class="cover-help">手機可直接選相簿照片。清除封面後，儲存文章，前台就不會顯示封面圖片。</small></span></label><label class="full">內文 <small>直接輸入一般文字即可；段落之間空一行。若貼入 HTML 也會保留。</small><textarea name="body" rows="16" placeholder="在這裡直接輸入文章內容。"></textarea></label><div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-post" class="primary" type="button">儲存</button></div></div></form></dialog>
   <div id="toast" class="toast" role="status"></div>
-
   <script src="./config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
@@ -91,185 +30,31 @@
       const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
       const directionLabels = { 'olfactory-culture': '嗅覺文化', 'scent-creation': '氣味創作', 'heart-village-notes': '心村札記' };
       const defaultDirection = 'olfactory-culture';
-      let db = null;
-      let posts = [];
-      let currentSession = null;
-      let saving = false;
-
-      if (!configured || !window.supabase) {
-        $('#setup')?.classList.remove('hidden');
-        return;
-      }
+      const mediaBucket = 'site-media';
+      let db = null, posts = [], currentSession = null, saving = false, uploading = false;
+      if (!configured || !window.supabase) { $('#setup')?.classList.remove('hidden'); return; }
       db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
-
-      function toast(message, error = false) {
-        const el = $('#toast');
-        if (!el) return;
-        el.textContent = message;
-        el.className = `toast show${error ? ' error-toast' : ''}`;
-        window.clearTimeout(el._timer);
-        el._timer = window.setTimeout(() => { el.className = 'toast'; }, error ? 7000 : 3600);
-      }
-      function escapeHtml(value = '') {
-        return String(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
-      }
-      function dateText(value) {
-        return value ? new Intl.DateTimeFormat('zh-TW', { dateStyle: 'medium' }).format(new Date(value)) : '未設定';
-      }
-      function slugify(value) {
-        return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`;
-      }
-      function getDirection(body = '') {
-        const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
-        return match?.[1] && directionLabels[match[1]] ? match[1] : defaultDirection;
-      }
-      function stripDirection(body = '') {
-        return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart();
-      }
-      function hasHtmlMarkup(value = '') {
-        return /<\/?[a-z][\s\S]*>/i.test(String(value || ''));
-      }
-      function textToHtml(value = '') {
-        return String(value || '').trim().split(/\n{2,}/).map(block => block.trim()).filter(Boolean).map(block => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`).join('\n');
-      }
-      function bodyForSave(body = '', direction = defaultDirection) {
-        const clean = stripDirection(body).trim();
-        const safeDirection = directionLabels[direction] ? direction : defaultDirection;
-        const html = hasHtmlMarkup(clean) ? clean : textToHtml(clean);
-        return `<!-- reading-direction:${safeDirection} -->\n${html}`;
-      }
-      function errorText(error) {
-        const message = error?.message || String(error || '');
-        if (/row-level security|policy|permission|not authorized|unauthorized/i.test(message)) return '儲存失敗：Supabase posts 尚未開放 authenticated update / insert 權限。請先執行 RLS SQL。';
-        return message || '操作失敗。';
-      }
-      function setAuth(session) {
-        currentSession = session;
-        $('#login')?.classList.toggle('hidden', !!session);
-        $('#app')?.classList.toggle('hidden', !session);
-        if (session) {
-          $('#account-email').textContent = session.user.email || '';
-          loadPosts();
-        }
-      }
-      async function loadPosts() {
-        const list = $('#posts-list');
-        if (list) list.innerHTML = '<div class="empty">正在載入氣味誌文章…</div>';
-        const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false });
-        if (error) {
-          if (list) list.innerHTML = `<div class="empty">無法載入文章。<small>${escapeHtml(error.message)}</small></div>`;
-          return;
-        }
-        posts = data || [];
-        renderPosts();
-      }
-      function renderPosts() {
-        const list = $('#posts-list');
-        if (!list) return;
-        const q = ($('#post-search')?.value || '').trim().toLowerCase();
-        const rows = posts.filter(post => !q || `${post.title || ''} ${post.summary || ''} ${post.slug || ''} ${directionLabels[getDirection(post.body)] || ''}`.toLowerCase().includes(q));
-        if (!rows.length) {
-          list.innerHTML = '<div class="empty">目前沒有氣味誌文章。</div>';
-          return;
-        }
-        list.innerHTML = rows.map(post => {
-          const direction = directionLabels[getDirection(post.body)] || directionLabels[defaultDirection];
-          const frontUrl = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
-          const statusLabel = post.status === 'published' ? '已發布' : '草稿';
-          return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span><span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`;
-        }).join('');
-      }
-      function openPost(post = {}) {
-        const form = $('#post-form');
-        form.reset();
-        form.elements.id.value = post.id || '';
-        form.elements.published_at.value = post.published_at || '';
-        form.elements.title.value = post.title || '';
-        form.elements.slug.value = post.slug || '';
-        form.elements.status.value = post.status || 'draft';
-        form.elements.reading_direction.value = getDirection(post.body);
-        form.elements.summary.value = post.summary || '';
-        form.elements.cover_url.value = post.cover_url || '';
-        form.elements.body.value = stripDirection(post.body || '');
-        $('#delete-post').classList.toggle('hidden', !post.id);
-        $('#post-dialog').showModal();
-      }
-      async function savePost() {
-        if (saving) return;
-        const form = $('#post-form');
-        const button = $('#save-post');
-        const id = form.elements.id.value;
-        const title = form.elements.title.value.trim();
-        const body = form.elements.body.value.trim();
-        if (!title) { toast('請先填寫標題。', true); form.elements.title.focus(); return; }
-        if (!body) { toast('請先填寫內文。', true); form.elements.body.focus(); return; }
-        saving = true;
-        button.disabled = true;
-        button.textContent = '儲存中…';
-        try {
-          const status = form.elements.status.value || 'draft';
-          const payload = {
-            title,
-            slug: slugify(form.elements.slug.value || title),
-            status,
-            summary: form.elements.summary.value || '',
-            cover_url: form.elements.cover_url.value || '',
-            body: bodyForSave(body, form.elements.reading_direction.value || defaultDirection),
-            published_at: status === 'published' ? (form.elements.published_at.value || new Date().toISOString()) : null
-          };
-          toast('正在儲存氣味誌文章…');
-          const result = id ? await db.from('posts').update(payload).eq('id', id) : await db.from('posts').insert(payload);
-          if (result.error) throw result.error;
-          toast('氣味誌文章已儲存。');
-          $('#post-dialog').close();
-          await loadPosts();
-        } catch (error) {
-          console.error(error);
-          toast(errorText(error), true);
-        } finally {
-          saving = false;
-          button.disabled = false;
-          button.textContent = '儲存';
-        }
-      }
-      async function deletePost() {
-        const id = $('#post-form').elements.id.value;
-        if (!id || !confirm('確定刪除這篇文章？')) return;
-        const { error } = await db.from('posts').delete().eq('id', id);
-        if (error) return toast(errorText(error), true);
-        toast('文章已刪除。');
-        $('#post-dialog').close();
-        await loadPosts();
-      }
-      async function logout() {
-        toast('正在登出…');
-        try { await db.auth.signOut(); } catch (_) {}
-        try { localStorage.clear(); sessionStorage.clear(); } catch (_) {}
-        setAuth(null);
-        window.location.reload();
-      }
-
-      $('#login-form').addEventListener('submit', async event => {
-        event.preventDefault();
-        $('#login-error').textContent = '';
-        const { data, error } = await db.auth.signInWithPassword({ email: $('#login-email').value, password: $('#login-password').value });
-        if (error) { $('#login-error').textContent = '登入失敗，請檢查帳號或密碼。'; return; }
-        setAuth(data.session);
-      });
-      $('#logout').addEventListener('click', logout);
-      $('#post-search').addEventListener('input', renderPosts);
-      $('#reload-posts').addEventListener('click', loadPosts);
-      $('#new-post').addEventListener('click', () => openPost({ status: 'draft', body: '' }));
-      $('#save-post').addEventListener('click', savePost);
-      $('#delete-post').addEventListener('click', deletePost);
-      $$('.close').forEach(button => button.addEventListener('click', () => button.closest('dialog')?.close()));
-      document.addEventListener('click', event => {
-        const edit = event.target.closest('[data-edit-post]');
-        if (edit) openPost(posts.find(post => post.id === edit.dataset.editPost));
-      });
-
-      db.auth.onAuthStateChange((_event, session) => setAuth(session));
-      db.auth.getSession().then(({ data }) => setAuth(data.session || null));
+      function toast(message, error = false) { const el = $('#toast'); if (!el) return; el.textContent = message; el.className = `toast show${error ? ' error-toast' : ''}`; window.clearTimeout(el._timer); el._timer = window.setTimeout(() => { el.className = 'toast'; }, error ? 7000 : 3600); }
+      function escapeHtml(value = '') { return String(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c])); }
+      function dateText(value) { return value ? new Intl.DateTimeFormat('zh-TW', { dateStyle: 'medium' }).format(new Date(value)) : '未設定'; }
+      function slugify(value) { return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`; }
+      function getDirection(body = '') { const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i); return match?.[1] && directionLabels[match[1]] ? match[1] : defaultDirection; }
+      function stripDirection(body = '') { return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart(); }
+      function hasHtmlMarkup(value = '') { return /<\/?[a-z][\s\S]*>/i.test(String(value || '')); }
+      function textToHtml(value = '') { return String(value || '').trim().split(/\n{2,}/).map(block => block.trim()).filter(Boolean).map(block => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`).join('\n'); }
+      function bodyForSave(body = '', direction = defaultDirection) { const clean = stripDirection(body).trim(); const safeDirection = directionLabels[direction] ? direction : defaultDirection; const html = hasHtmlMarkup(clean) ? clean : textToHtml(clean); return `<!-- reading-direction:${safeDirection} -->\n${html}`; }
+      function errorText(error) { const message = error?.message || String(error || ''); if (/row-level security|policy|permission|not authorized|unauthorized/i.test(message)) return '儲存失敗：Supabase 權限尚未開放。請先執行 RLS / Storage policy SQL。'; if (/bucket|storage|object/i.test(message)) return '圖片上傳失敗：請確認 Supabase Storage 已建立 site-media bucket，並開放 authenticated 上傳權限。'; return message || '操作失敗。'; }
+      function setAuth(session) { currentSession = session; $('#login')?.classList.toggle('hidden', !!session); $('#app')?.classList.toggle('hidden', !session); if (session) { $('#account-email').textContent = session.user.email || ''; loadPosts(); } }
+      async function loadPosts() { const list = $('#posts-list'); if (list) list.innerHTML = '<div class="empty">正在載入氣味誌文章…</div>'; const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false }); if (error) { if (list) list.innerHTML = `<div class="empty">無法載入文章。<small>${escapeHtml(error.message)}</small></div>`; return; } posts = data || []; renderPosts(); }
+      function renderPosts() { const list = $('#posts-list'); if (!list) return; const q = ($('#post-search')?.value || '').trim().toLowerCase(); const rows = posts.filter(post => !q || `${post.title || ''} ${post.summary || ''} ${post.slug || ''} ${directionLabels[getDirection(post.body)] || ''}`.toLowerCase().includes(q)); if (!rows.length) { list.innerHTML = '<div class="empty">目前沒有氣味誌文章。</div>'; return; } list.innerHTML = rows.map(post => { const direction = directionLabels[getDirection(post.body)] || directionLabels[defaultDirection]; const frontUrl = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`; const statusLabel = post.status === 'published' ? '已發布' : '草稿'; const coverLabel = post.cover_url ? '<span class="badge">有封面</span>' : '<span class="badge">無封面</span>'; return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span>${coverLabel}<span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`; }).join(''); }
+      function openPost(post = {}) { const form = $('#post-form'); form.reset(); form.elements.id.value = post.id || ''; form.elements.published_at.value = post.published_at || ''; form.elements.title.value = post.title || ''; form.elements.slug.value = post.slug || ''; form.elements.status.value = post.status || 'draft'; form.elements.reading_direction.value = getDirection(post.body); form.elements.summary.value = post.summary || ''; form.elements.cover_url.value = post.cover_url || ''; form.elements.body.value = stripDirection(post.body || ''); $('#cover-file').value = ''; $('#delete-post').classList.toggle('hidden', !post.id); $('#post-dialog').showModal(); }
+      async function uploadCoverFile(file) { if (uploading) return; if (!file) { $('#cover-file').click(); return; } if (!currentSession) return toast('請先登入後台。', true); if (!/^image\//i.test(file.type || '')) return toast('請選擇圖片檔。', true); uploading = true; const button = $('#upload-cover'); const old = button.textContent; button.disabled = true; button.textContent = '上傳中…'; try { const form = $('#post-form'); const ext = ((file.name || '').split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg'; const slug = slugify(form.elements.slug.value || form.elements.title.value || 'post'); const path = `posts/${slug}-${Date.now()}.${ext}`; const { data, error } = await db.storage.from(mediaBucket).upload(path, file, { cacheControl: '3600', upsert: false, contentType: file.type || undefined }); if (error) throw error; const { data: publicData } = db.storage.from(mediaBucket).getPublicUrl(data?.path || path); form.elements.cover_url.value = publicData.publicUrl; toast('封面圖片已上傳，請記得儲存文章。'); } catch (error) { console.error(error); toast(errorText(error), true); } finally { uploading = false; button.disabled = false; button.textContent = old; } }
+      async function savePost() { if (saving) return; const form = $('#post-form'); const button = $('#save-post'); const id = form.elements.id.value; const title = form.elements.title.value.trim(); const body = form.elements.body.value.trim(); if (!title) { toast('請先填寫標題。', true); form.elements.title.focus(); return; } if (!body) { toast('請先填寫內文。', true); form.elements.body.focus(); return; } saving = true; button.disabled = true; button.textContent = '儲存中…'; try { const status = form.elements.status.value || 'draft'; const payload = { title, slug: slugify(form.elements.slug.value || title), status, summary: form.elements.summary.value || '', cover_url: form.elements.cover_url.value || '', body: bodyForSave(body, form.elements.reading_direction.value || defaultDirection), published_at: status === 'published' ? (form.elements.published_at.value || new Date().toISOString()) : null }; toast('正在儲存氣味誌文章…'); const result = id ? await db.from('posts').update(payload).eq('id', id) : await db.from('posts').insert(payload); if (result.error) throw result.error; toast('氣味誌文章已儲存。'); $('#post-dialog').close(); await loadPosts(); } catch (error) { console.error(error); toast(errorText(error), true); } finally { saving = false; button.disabled = false; button.textContent = '儲存'; } }
+      async function deletePost() { const id = $('#post-form').elements.id.value; if (!id || !confirm('確定刪除這篇文章？')) return; const { error } = await db.from('posts').delete().eq('id', id); if (error) return toast(errorText(error), true); toast('文章已刪除。'); $('#post-dialog').close(); await loadPosts(); }
+      async function logout() { toast('正在登出…'); try { await db.auth.signOut(); } catch (_) {} try { localStorage.clear(); sessionStorage.clear(); } catch (_) {} setAuth(null); window.location.reload(); }
+      $('#login-form').addEventListener('submit', async event => { event.preventDefault(); $('#login-error').textContent = ''; const { data, error } = await db.auth.signInWithPassword({ email: $('#login-email').value, password: $('#login-password').value }); if (error) { $('#login-error').textContent = '登入失敗，請檢查帳號或密碼。'; return; } setAuth(data.session); });
+      $('#logout').addEventListener('click', logout); $('#post-search').addEventListener('input', renderPosts); $('#reload-posts').addEventListener('click', loadPosts); $('#new-post').addEventListener('click', () => openPost({ status: 'draft', body: '' })); $('#save-post').addEventListener('click', savePost); $('#delete-post').addEventListener('click', deletePost); $('#upload-cover').addEventListener('click', () => uploadCoverFile($('#cover-file').files?.[0])); $('#cover-file').addEventListener('change', event => { const file = event.target.files?.[0]; if (file) uploadCoverFile(file); }); $('#clear-cover').addEventListener('click', () => { const form = $('#post-form'); form.elements.cover_url.value = ''; $('#cover-file').value = ''; toast('已清除封面圖片網址，儲存後前台不會顯示封面。'); }); $$('.close').forEach(button => button.addEventListener('click', () => button.closest('dialog')?.close())); document.addEventListener('click', event => { const edit = event.target.closest('[data-edit-post]'); if (edit) openPost(posts.find(post => post.id === edit.dataset.editPost)); });
+      db.auth.onAuthStateChange((_event, session) => setAuth(session)); db.auth.getSession().then(({ data }) => setAuth(data.session || null));
     })();
   </script>
 </body>
