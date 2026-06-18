@@ -280,6 +280,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function wrapNumbers(node){
+    if (node.nodeType === Node.TEXT_NODE) {
+      if (!/[0-9０-９]/.test(node.nodeValue)) return;
+      const parent = node.parentNode;
+      if (!parent || parent.classList?.contains("tc-number")) return;
+      if (["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"].includes(parent.tagName)) return;
+      const parts = node.nodeValue.split(/([0-9０-９]+)/g);
+      const fragment = document.createDocumentFragment();
+      parts.forEach((part) => {
+        if (!part) return;
+        if (/^[0-9０-９]+$/.test(part)) {
+          const span = document.createElement("span");
+          span.className = "tc-number";
+          span.textContent = part;
+          fragment.appendChild(span);
+        } else {
+          fragment.appendChild(document.createTextNode(part));
+        }
+      });
+      parent.replaceChild(fragment, node);
+      return;
+    }
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"].includes(node.tagName)) return;
+      if (node.classList?.contains("tc-number")) return;
+      Array.from(node.childNodes).forEach(wrapNumbers);
+    }
+  }
+
   function wrapEnglish(node){
     if (node.nodeType === Node.TEXT_NODE) {
       if (!/[A-Za-z]/.test(node.nodeValue)) return;
@@ -349,5 +378,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (href === path) a.classList.add("active");
   });
 
+  wrapNumbers(document.body);
   wrapEnglish(document.body);
 });
