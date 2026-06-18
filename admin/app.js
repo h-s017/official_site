@@ -67,7 +67,7 @@
     if (!file.type.startsWith('image/') || file.type === 'image/gif') return file;
     const shouldCompress = file.size > 1.8 * 1024 * 1024 || file.type === 'image/png';
     if (!shouldCompress) return file;
-    progress.textContent = `正在處理圖片：${file.name}`;
+    if (progress) progress.textContent = `正在處理圖片：${file.name}`;
     try {
       const img = await loadImage(file);
       const maxEdge = 2200;
@@ -86,6 +86,31 @@
       console.warn(error);
       return file;
     }
+  }
+  async function uploadImageFile(source, progress, context = '照片', index = 1, total = 1) {
+    if (!source) throw new Error('請先選擇圖片。');
+    if (!source.type.startsWith('image/')) throw new Error(`${source.name} 不是支援的圖片格式。`);
+    if (source.size > 12 * 1024 * 1024) throw new Error(`${source.name} 超過 12 MB，請先縮小圖片後再上傳。`);
+    if (progress) progress.textContent = `正在準備 ${index} / ${total}：${source.name}`;
+    const file = await prepareImageFile(source, progress);
+    if (file.size > 8 * 1024 * 1024) throw new Error(`${source.name} 處理後仍超過 8 MB，請先壓縮後再上傳。`);
+    if (progress) progress.textContent = `正在上傳 ${index} / ${total}：${file.name}`;
+    const ext = fileExtension(file.name);
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeBaseName(file.name)}.${ext}`;
+    const upload = db.storage.from('site-media').upload(path, file, { contentType: file.type || 'application/octet-stream', upsert: false });
+    const { error } = await timeout(upload, 60000, `${context} ${file.name} 上傳`);
+    if (error) throw error;
+    return db.storage.from('site-media').getPublicUrl(path).data.publicUrl;
+  }
+  function extractSlug(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    try {
+      const url = new URL(raw, location.origin);
+      const slug = url.searchParams.get('slug');
+      if (slug) return slug.trim();
+    } catch (_) {}
+    return raw.replace(/^https?:\/\/[^/]+\/blog\.html\?slug=/i, '').replace(/^.*slug=/i, '').replace(/^\/+|\/+$/g, '').trim();
   }
 
   async function loadAll() {
@@ -119,7 +144,7 @@
   }
   function renderPosts() {
     const q = $('#post-search').value.trim().toLowerCase();
-    const items = state.posts.filter(x => !q || `${x.title} ${x.summary}`.toLowerCase().includes(q));
+    const items = state.posts.filter(x => !q || `${x.title} ${x.summary} ${x.slug}`.toLowerCase().includes(q));
     $('#posts-list').innerHTML = items.length ? items.map(x => `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? '已發布' : '草稿'}</span><span>更新 ${dateText(x.updated_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><button class="secondary edit-post" data-id="${x.id}">編輯</button></article>`).join('') : '<div class="empty">沒有符合的氣味誌文章</div>';
   }
   function renderAnnouncements() {
@@ -179,8 +204,22 @@
     $('#view-title').textContent = titles[name];
   }
   function openRecord(dialog, form, record = {}) {
-    form.reset(); Object.entries(record).forEach(([k,v]) => { if (form.elements[k]) form.elements[k].value = v ?? ''; });
+    form.reset();
+    const progress = $('#post-upload-progress'); if (progress) progress.classList.add('hidden');
+    Object.entries(record).forEach(([k,v]) => { if (form.elements[k]) form.elements[k].value = v ?? ''; });
     const del = $('[id^="delete-"]', form); if (del) del.classList.toggle('hidden', !record.id); dialog.showModal();
+  }
+  async function loadPostBySlug() {
+    const slug = extractSlug($('#post-slug-loader').value);
+    if (!slug) return fail(new Error('請輸入文章網址代稱或 blog 連結。'));
+    const local = state.posts.find(x => x.slug === slug);
+    if (local) { openRecord($('#post-dialog'), $('#post-form'), local); return; }
+    const { data, error } = await db.from('posts').select('*').eq('slug', slug).limit(1);
+    if (error) return fail(error);
+    if (!data || !data.length) return fail(new Error(`找不到網址代稱為「${slug}」的文章。若這篇文章目前只存在於靜態檔，需先匯入 Supabase posts 資料表。`));
+    state.posts = [data[0], ...state.posts.filter(x => x.id !== data[0].id)];
+    renderPosts();
+    openRecord($('#post-dialog'), $('#post-form'), data[0]);
   }
 
   $('#login-form').addEventListener('submit', async e => {
@@ -192,6 +231,8 @@
   $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-view]'); if (b) showView(b.dataset.view); });
   $('#post-search').addEventListener('input', renderPosts);
   $('#new-post').addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form')));
+  $('#load-post-by-slug').addEventListener('click', () => loadPostBySlug().catch(fail));
+  $('#post-slug-loader').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); loadPostBySlug().catch(fail); } });
   $('#new-announcement').addEventListener('click', () => openRecord($('#announcement-dialog'), $('#announcement-form')));
   $('#save-page-content').addEventListener('click', async () => {
     const inputs = $$('[data-content-id]', $('#page-content-forms')).filter(x => x.matches('input,textarea'));
@@ -235,22 +276,35 @@
     const files = [...e.target.files]; if (!files.length) return;
     const progress = $('#media-progress'); progress.classList.remove('hidden');
     try {
-      for (let i = 0; i < files.length; i++) {
-        const source = files[i];
-        if (source.size > 12 * 1024 * 1024) throw new Error(`${source.name} 超過 12 MB，請先縮小圖片後再上傳。`);
-        progress.textContent = `正在準備 ${i + 1} / ${files.length}：${source.name}`;
-        const file = await prepareImageFile(source, progress);
-        if (file.size > 8 * 1024 * 1024) throw new Error(`${source.name} 處理後仍超過 8 MB，請先壓縮後再上傳。`);
-        progress.textContent = `正在上傳 ${i + 1} / ${files.length}：${file.name}`;
-        const ext = fileExtension(file.name);
-        const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeBaseName(file.name)}.${ext}`;
-        const upload = db.storage.from('site-media').upload(path, file, { contentType: file.type || 'application/octet-stream', upsert: false });
-        const { error } = await timeout(upload, 60000, `${file.name} 上傳`);
-        if (error) throw error;
-      }
+      for (let i = 0; i < files.length; i++) await uploadImageFile(files[i], progress, '照片', i + 1, files.length);
       progress.textContent = '照片上傳完成，正在更新媒體庫…';
       toast('照片上傳完成'); await loadAll();
     } catch (error) { fail(error); } finally { progress.classList.add('hidden'); e.target.value = ''; }
+  });
+
+  $('#post-cover-upload').addEventListener('change', async e => {
+    const file = e.target.files?.[0]; if (!file) return;
+    const progress = $('#post-upload-progress'); progress.classList.remove('hidden');
+    try {
+      const url = await uploadImageFile(file, progress, '封面圖片', 1, 1);
+      $('#post-form').elements.cover_url.value = url;
+      progress.textContent = '封面圖片已上傳並填入網址。';
+      toast('封面圖片已置換'); await loadAll();
+    } catch (error) { fail(error); } finally { e.target.value = ''; }
+  });
+
+  $('#post-body-image-upload').addEventListener('change', async e => {
+    const files = [...e.target.files]; if (!files.length) return;
+    const progress = $('#post-upload-progress'); progress.classList.remove('hidden');
+    try {
+      const body = $('#post-form').elements.body;
+      for (let i = 0; i < files.length; i++) {
+        const url = await uploadImageFile(files[i], progress, '內文圖片', i + 1, files.length);
+        insertAtCursor(body, imageHtml(url));
+      }
+      progress.textContent = '內文圖片已上傳並插入。';
+      toast('內文圖片已插入'); await loadAll();
+    } catch (error) { fail(error); } finally { e.target.value = ''; }
   });
 
   $('#post-form').addEventListener('submit', async e => {
