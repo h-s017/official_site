@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://hanascent.com/" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/hana-cms.css" />
   <style>
     .site-nav{align-items:center!important;background:#fff!important;}
     .logo{display:inline-flex!important;align-items:center!important;gap:15px!important;}
@@ -58,7 +59,7 @@
   </header>
 
   <main>
-    <section class="home-news">
+    <section class="home-news" data-hana-announcements>
       <div class="wrap">
         <div class="section-head"><p class="kicker">News</p><div><h2>最新消息</h2></div></div>
         <div class="news-list">
@@ -68,6 +69,8 @@
         </div>
       </div>
     </section>
+
+    <section class="hana-blog" data-hana-blog hidden></section>
 
     <section>
       <div class="wrap">
@@ -100,5 +103,8 @@
     </div>
   </footer>
   <script src="/assets/site.js"></script>
+  <script src="/assets/cms-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/hana-cms.js"></script>
 </body>
 </html>
