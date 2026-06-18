@@ -5,7 +5,9 @@
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
+  const coverOverrides = { 'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg' };
   const fallbackCover = index => `/assets/${(index % 5) + 1}.png`;
+  const postCover = (post, index) => coverOverrides[post.slug] || post.cover_url || fallbackCover(index);
 
   function applySettings(s) {
     document.documentElement.style.setProperty('--hana-accent', s.accent_color);
@@ -50,7 +52,7 @@
       root.hidden = !settings.show_blog || !items.length;
       if (!items.length) return;
       const heading = root.dataset.hanaBlogTitle || '氣味誌';
-      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${items.map((x, index) => `<article class="hana-post"><img src="${esc(x.cover_url || fallbackCover(index))}" alt="" loading="lazy"><h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
+      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${items.map((x, index) => `<article class="hana-post"><img src="${esc(postCover(x, index))}" alt="" loading="lazy"><h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
     });
   }
   function applySectionOrder(settings) {
