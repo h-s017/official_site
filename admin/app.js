@@ -6,12 +6,21 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
   if (!configured || !window.supabase) {
-    const setup = $('#setup');
-    if (setup) setup.classList.remove('hidden');
+    $('#setup')?.classList.remove('hidden');
     return;
   }
 
+  const emptyStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {} };
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+  let publicDb = db;
+  try {
+    publicDb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false, storage: emptyStorage }
+    });
+  } catch (error) {
+    console.warn('[HANA CMS public client]', error);
+  }
+
   const state = { media: [], posts: [], announcements: [], pageContents: [], booking: null, settings: null, mediaTarget: null };
   const titles = { dashboard: '總覽', media: '照片與媒體', posts: '氣味誌', announcements: '公告', content: '頁面內容', booking: '預約設定', layout: '版面設定' };
   const pageNames = { home: '首頁', helori: 'HELORI 香氣探索所', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: 'H.FUGUE ATELIER', visit: '聯繫我們', journal: '氣味誌' };
@@ -124,10 +133,40 @@
     return raw.replace(/^https?:\/\/[^/]+\/blog\.html\?slug=/i, '').replace(/^.*slug=/i, '').replace(/^\/+|\/+$/g, '').trim();
   }
 
+  async function queryPublishedPostsForProjects() {
+    const admin = await db.from('posts').select('*').eq('status', 'published').order('published_at', { ascending: false });
+    if (!admin.error) return admin.data || [];
+    console.warn('[posts admin published]', admin.error);
+    const pub = await publicDb.from('posts').select('*').eq('status', 'published').order('published_at', { ascending: false });
+    if (!pub.error) return pub.data || [];
+    console.warn('[posts public published]', pub.error);
+    return [];
+  }
+  async function queryDraftPosts() {
+    const drafts = await db.from('posts').select('*').eq('status', 'draft').order('updated_at', { ascending: false });
+    if (drafts.error) {
+      console.warn('[posts drafts]', drafts.error);
+      return [];
+    }
+    return drafts.data || [];
+  }
+  async function loadProjectPosts() {
+    const [published, drafts] = await Promise.all([queryPublishedPostsForProjects(), queryDraftPosts()]);
+    const seen = new Set();
+    const rows = [];
+    [...published, ...drafts].forEach(row => {
+      const key = row.id || row.slug;
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      rows.push(row);
+    });
+    return { data: rows, error: null };
+  }
+
   async function loadAll() {
     const results = await Promise.allSettled([
       db.storage.from('site-media').list('', { limit: 200, sortBy: { column: 'created_at', order: 'desc' } }),
-      db.from('posts').select('*').order('updated_at', { ascending: false }),
+      loadProjectPosts(),
       db.from('announcements').select('*').order('updated_at', { ascending: false }),
       db.from('page_contents').select('*').order('page_key').order('sort_order'),
       db.from('booking_settings').select('*').eq('id', 1).single(),
@@ -154,12 +193,9 @@
   function renderAll() { renderDashboard(); renderMedia(); renderPosts(); renderAnnouncements(); renderPageContents(); renderBooking(); renderLayout(); }
   function renderDashboard() {
     const today = new Date().toISOString().slice(0, 10);
-    const mediaStat = $('#stat-media');
-    const postStat = $('#stat-posts');
-    const annStat = $('#stat-announcements');
-    if (mediaStat) mediaStat.textContent = state.media.length;
-    if (postStat) postStat.textContent = state.posts.filter(x => x.status === 'published').length;
-    if (annStat) annStat.textContent = state.announcements.filter(x => x.status === 'published' && (!x.starts_at || x.starts_at <= today) && (!x.ends_at || x.ends_at >= today)).length;
+    $('#stat-media') && ($('#stat-media').textContent = state.media.length);
+    $('#stat-posts') && ($('#stat-posts').textContent = state.posts.filter(x => x.status === 'published').length);
+    $('#stat-announcements') && ($('#stat-announcements').textContent = state.announcements.filter(x => x.status === 'published' && (!x.starts_at || x.starts_at <= today) && (!x.ends_at || x.ends_at >= today)).length);
   }
   function mediaCard(item, picker = false) {
     return `<article class="media-card"><img src="${escapeHtml(item.url)}" alt="" loading="lazy"><div class="media-info"><strong title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</strong><div class="media-actions">${picker ? `<button class="primary pick-media" data-url="${escapeHtml(item.url)}">選取</button>` : `<button class="secondary copy-media" data-url="${escapeHtml(item.url)}">複製網址</button><button class="danger delete-media" data-name="${escapeHtml(item.name)}">刪除</button>`}</div></div></article>`;
@@ -176,7 +212,10 @@
     if (!list) return;
     const q = (search?.value || '').trim().toLowerCase();
     const items = state.posts.filter(x => !q || `${x.title || ''} ${x.summary || ''} ${x.slug || ''}`.toLowerCase().includes(q));
-    list.innerHTML = items.length ? items.map(x => `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? '已發布' : '草稿'}</span><span>更新 ${dateText(x.updated_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><button class="secondary edit-post" data-id="${x.id}">編輯</button></article>`).join('') : '<div class="empty">沒有符合的氣味誌文章</div>';
+    list.innerHTML = items.length ? items.map(x => {
+      const frontUrl = `/blog.html?slug=${encodeURIComponent(x.slug || '')}`;
+      return `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? 'projects.html 顯示中' : '草稿'}</span><span>更新 ${dateText(x.updated_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><div class="button-row"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary edit-post" data-id="${x.id}">編輯</button></div></article>`;
+    }).join('') : '<div class="empty">projects.html 目前沒有可載入的氣味誌文章。若前台有文章但這裡沒有，請檢查 Supabase posts 的 select policy。</div>';
   }
   function renderAnnouncements() {
     const list = $('#announcements-list');
@@ -257,7 +296,7 @@
   async function loadPostBySlug() {
     const value = $('#post-slug-loader')?.value || '';
     if (/projects\.html/i.test(value)) {
-      toast('projects.html 是氣味誌列表頁。請從列表選文章，或貼單篇文章的 slug。', true);
+      toast('projects.html 是氣味誌列表頁。下方已直接列出它目前顯示的文章。', true);
       return;
     }
     const slug = extractSlug(value);
