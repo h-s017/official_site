@@ -7,7 +7,7 @@
   <title>學員工具｜HANA SCENT ARTIST</title>
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    body{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}
+    body{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}.loading{display:none;color:#68706a;margin-top:10px}
   </style>
 </head>
 <body>
@@ -15,10 +15,11 @@
     <section class="gate-card">
       <p class="kicker">Student Tools</p>
       <h1>學員工具</h1>
-      <p>此頁面提供課程資料、配方紀錄、原料筆記與課後補充。請輸入課後提供的密碼。</p>
+      <p>此頁面提供氣味藝術序曲調香台、課程原料庫與調香配方表。請輸入課後提供的密碼。</p>
       <form id="gate-form">
         <label>密碼<input id="password" type="password" autocomplete="current-password" autofocus></label>
         <button class="btn primary" type="submit">進入學員工具</button>
+        <p id="loading" class="loading">正在載入課程工具內容…</p>
         <p id="error" class="error" role="alert"></p>
       </form>
       <a class="small-link" href="/courses/">返回課程頁</a>
@@ -27,14 +28,65 @@
   <script>
     (() => {
       const PASSWORD = 'hana2026';
-      const TARGET = 'https://h-s017.github.io/overtrue-course/';
-      document.getElementById('gate-form').addEventListener('submit', event => {
+      const KEY = 'hana_student_tools_unlocked';
+      const ORIGINAL_URL = 'https://h-s017.github.io/overtrue-course/organ.html';
+      const ORIGINAL_BASE = 'https://h-s017.github.io/overtrue-course/';
+      const ERROR_TEXT = '目前無法載入原課程工具內容，請稍後再試，或先開啟原工具頁。';
+
+      const form = document.getElementById('gate-form');
+      const password = document.getElementById('password');
+      const error = document.getElementById('error');
+      const loading = document.getElementById('loading');
+
+      async function loadOriginalTool() {
+        loading.style.display = 'block';
+        error.textContent = '';
+        try {
+          const response = await fetch(ORIGINAL_URL, { cache: 'no-store' });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+
+          const base = doc.createElement('base');
+          base.href = ORIGINAL_BASE;
+          doc.head.prepend(base);
+
+          const style = doc.createElement('style');
+          style.textContent = `html{font-size:16px}body{font-size:16px}.tabs{top:74px}@media(max-width:780px){body{font-size:15px}.tabs{top:66px}}`;
+          doc.head.appendChild(style);
+
+          const lockScript = doc.createElement('script');
+          lockScript.textContent = `window.HANA_STUDENT_TOOLS_LOCK = function(){sessionStorage.removeItem('${KEY}');location.href='/student-tools/';};`;
+          doc.body.appendChild(lockScript);
+
+          const lockButton = doc.createElement('button');
+          lockButton.textContent = '鎖定工具';
+          lockButton.className = 'btn';
+          lockButton.type = 'button';
+          lockButton.setAttribute('onclick', 'window.HANA_STUDENT_TOOLS_LOCK()');
+          const topActions = doc.querySelector('.top-actions');
+          if (topActions) topActions.appendChild(lockButton);
+
+          document.open();
+          document.write('<!doctype html>\n' + doc.documentElement.outerHTML);
+          document.close();
+        } catch (err) {
+          loading.style.display = 'none';
+          error.innerHTML = ERROR_TEXT + '<br><a class="small-link" href="https://h-s017.github.io/overtrue-course/" target="_blank" rel="noopener">開啟原工具頁</a>';
+          console.error(err);
+        }
+      }
+
+      if (sessionStorage.getItem(KEY) === 'true') loadOriginalTool();
+
+      form.addEventListener('submit', event => {
         event.preventDefault();
-        const input = document.getElementById('password').value.trim();
+        const input = password.value.trim();
         if (input === PASSWORD) {
-          window.location.href = TARGET;
+          sessionStorage.setItem(KEY, 'true');
+          loadOriginalTool();
         } else {
-          document.getElementById('error').textContent = '密碼錯誤，請確認課後提供的密碼。';
+          error.textContent = '密碼錯誤，請確認課後提供的密碼。';
         }
       });
     })();
