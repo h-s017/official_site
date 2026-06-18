@@ -41,6 +41,52 @@
     fail(new Error(`請先填寫${label}。`));
     return false;
   }
+  function fileExtension(name, fallback = 'jpg') {
+    return (name.split('.').pop() || fallback).toLowerCase().replace(/[^a-z0-9]/g, '') || fallback;
+  }
+  function safeBaseName(name) {
+    return name.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 55) || 'image';
+  }
+  function timeout(promise, ms, label) {
+    let timer;
+    const guard = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`${label}逾時，請先重新整理後再試。若仍失敗，通常是圖片太大、網路不穩，或 Supabase Storage 權限設定未開放上傳。`)), ms);
+    });
+    return Promise.race([promise, guard]).finally(() => clearTimeout(timer));
+  }
+  function loadImage(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error(`${file.name} 圖片讀取失敗。`)); };
+      img.src = url;
+    });
+  }
+  async function prepareImageFile(file, progress) {
+    if (!file.type.startsWith('image/') || file.type === 'image/gif') return file;
+    const shouldCompress = file.size > 1.8 * 1024 * 1024 || file.type === 'image/png';
+    if (!shouldCompress) return file;
+    progress.textContent = `正在處理圖片：${file.name}`;
+    try {
+      const img = await loadImage(file);
+      const maxEdge = 2200;
+      const scale = Math.min(1, maxEdge / Math.max(img.naturalWidth || img.width, img.naturalHeight || img.height));
+      const width = Math.max(1, Math.round((img.naturalWidth || img.width) * scale));
+      const height = Math.max(1, Math.round((img.naturalHeight || img.height) * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = width; canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.86));
+      if (!blob) return file;
+      const compressed = new File([blob], `${safeBaseName(file.name)}.webp`, { type: 'image/webp', lastModified: Date.now() });
+      return compressed.size < file.size ? compressed : file;
+    } catch (error) {
+      console.warn(error);
+      return file;
+    }
+  }
 
   async function loadAll() {
     const [media, posts, announcements, pageContents, booking, settings] = await Promise.all([
@@ -190,11 +236,19 @@
     const progress = $('#media-progress'); progress.classList.remove('hidden');
     try {
       for (let i = 0; i < files.length; i++) {
-        const file = files[i]; if (file.size > 8 * 1024 * 1024) throw new Error(`${file.name} 超過 8 MB。`);
+        const source = files[i];
+        if (source.size > 12 * 1024 * 1024) throw new Error(`${source.name} 超過 12 MB，請先縮小圖片後再上傳。`);
+        progress.textContent = `正在準備 ${i + 1} / ${files.length}：${source.name}`;
+        const file = await prepareImageFile(source, progress);
+        if (file.size > 8 * 1024 * 1024) throw new Error(`${source.name} 處理後仍超過 8 MB，請先壓縮後再上傳。`);
         progress.textContent = `正在上傳 ${i + 1} / ${files.length}：${file.name}`;
-        const ext = (file.name.split('.').pop() || 'jpg').toLowerCase(); const safe = file.name.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-').slice(0, 55) || 'image';
-        const path = `${Date.now()}-${safe}.${ext}`; const { error } = await db.storage.from('site-media').upload(path, file, { contentType: file.type, upsert: false }); if (error) throw error;
+        const ext = fileExtension(file.name);
+        const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeBaseName(file.name)}.${ext}`;
+        const upload = db.storage.from('site-media').upload(path, file, { contentType: file.type || 'application/octet-stream', upsert: false });
+        const { error } = await timeout(upload, 60000, `${file.name} 上傳`);
+        if (error) throw error;
       }
+      progress.textContent = '照片上傳完成，正在更新媒體庫…';
       toast('照片上傳完成'); await loadAll();
     } catch (error) { fail(error); } finally { progress.classList.add('hidden'); e.target.value = ''; }
   });
