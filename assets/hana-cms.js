@@ -15,12 +15,6 @@
     'scent-creation': '/projects/scent-creation/',
     'heart-village-notes': '/projects/heart-village-notes/'
   };
-  const coverOverrides = {
-    'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg',
-    'blooming-tears': '/assets/殉情記.jpg'
-  };
-  const fallbackCover = index => `/assets/${(index % 5) + 1}.png`;
-  const postCover = (post, index) => post.cover_url || coverOverrides[post.slug] || fallbackCover(index);
   const directionFromBody = body => {
     const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
     return match?.[1] && directionLabels[match[1]] ? match[1] : 'olfactory-culture';
@@ -79,10 +73,11 @@
       }
       const heading = root.dataset.hanaBlogTitle || '氣味誌';
       const showDirection = root.dataset.hanaShowDirection === 'true';
-      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${rows.map((x, index) => {
+      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${rows.map((x) => {
         const directionKey = directionFromBody(x.body);
         const directionTag = showDirection ? `<a class="hana-direction" href="${esc(directionUrls[directionKey] || '/projects/')}">${esc(directionLabels[directionKey] || '嗅覺文化')}</a>` : '';
-        return `<article class="hana-post"><img src="${esc(postCover(x, index))}" alt="" loading="lazy">${directionTag}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`;
+        const image = x.cover_url ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : '';
+        return `<article class="hana-post">${image}${directionTag}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`;
       }).join('')}</div>`;
     });
   }
