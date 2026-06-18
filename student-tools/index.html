@@ -3,92 +3,125 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>學員工具｜HANA SCENT ARTIST</title>
-  <meta name="description" content="HANA SCENT ARTIST 學員工具入口，提供氣味藝術序曲調香台、課程原料庫與調香配方表。" />
+  <title>學員專屬工具｜HANA SCENT ARTIST</title>
+  <meta name="description" content="HANA SCENT ARTIST 學員專屬工具入口，包含配方紀錄、原料筆記與課後補充資料。" />
   <link rel="canonical" href="https://hanascent.com/student-tools/" />
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    body{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}.loading{display:none;color:#68706a;margin-top:10px}
+    [hidden]{display:none!important}body.is-locked{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}.student-actions{display:flex;justify-content:flex-end;padding:12px 4vw 0}.student-actions button{background:none;border:0;border-bottom:1px solid #111;padding:4px 0;cursor:pointer;font:inherit}
   </style>
 </head>
-<body>
-  <main class="gate">
+<body class="is-locked">
+  <main id="student-gate" class="gate">
     <section class="gate-card">
       <p class="kicker">Student Tools</p>
-      <h1>學員工具</h1>
-      <p>此頁面提供氣味藝術序曲調香台、課程原料庫與調香配方表。請輸入課後提供的密碼。</p>
+      <h1>學員專屬工具</h1>
+      <p>請輸入課後提供的密碼，進入配方紀錄、原料筆記與課後補充資料。</p>
       <form id="gate-form">
-        <label>密碼<input id="password" type="password" autocomplete="current-password" autofocus></label>
+        <label for="password">密碼</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus />
         <button class="btn primary" type="submit">進入學員工具</button>
-        <p id="loading" class="loading">正在載入課程工具內容…</p>
         <p id="error" class="error" role="alert"></p>
       </form>
       <a class="small-link" href="/courses/">返回課程頁</a>
     </section>
   </main>
+
+  <div id="student-content" hidden>
+    <nav class="site-nav" aria-label="主要導覽">
+      <a class="logo" href="/">HANA SCENT ARTIST</a>
+      <div class="nav-links">
+        <a href="/">首頁</a>
+        <a href="/courses/">所有課程</a>
+        <a href="/scent-design.html">氣味設計</a>
+        <a href="/projects.html">氣味誌</a>
+        <a href="/about.html">關於 HANA</a>
+        <a href="/student-tools/">學員工具</a>
+        <a href="/visit.html">預約與到訪</a>
+        <a class="nav-cta" href="https://reservation.hanascent.com/">立即預約</a>
+      </div>
+      <div class="mobile-note">MENU</div>
+    </nav>
+
+    <div class="student-actions"><button id="lock-tools" type="button">登出並鎖定</button></div>
+
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Student Tools</p>
+        <h1>學員專屬工具</h1>
+        <p>這裡作為學員課中與課後的工具入口。正式上線後可放入 Notion、表單、配方紀錄、原料筆記與課後補充資料。</p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="wrap grid3">
+          <article class="course-card">
+            <div><small>FORMULA</small><h3>配方紀錄表</h3><p>課程中用來記錄香氣方向、比例、調整紀錄與作品命名。正式版可連到 Notion 或 Google Form。</p></div>
+            <span class="text-link">待上線</span>
+          </article>
+          <article class="course-card">
+            <div><small>MATERIALS</small><h3>原料筆記</h3><p>整理課程中使用的香調分類、原料描述、嗅覺語彙與練習方式，供課後複習。</p></div>
+            <span class="text-link">待上線</span>
+          </article>
+          <article class="course-card">
+            <div><small>AFTER CLASS</small><h3>課後補充資料</h3><p>包含課後提醒、保存方式、作品使用建議、複習重點與延伸閱讀。</p></div>
+            <span class="text-link">待上線</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-band">
+        <div class="wrap split">
+          <div><p class="kicker">For Students</p><h2>建議把工具頁當成學員後台，不放太多對外銷售文字。</h2><p class="lead">這一頁的功能是降低學員迷路：複習、配方紀錄與課後資料都集中在同一個入口。</p></div>
+          <div class="dark-panel"><div class="service-list">
+            <div class="service-row"><b>課中</b><span>配方紀錄、原料筆記、調香流程。</span></div>
+            <div class="service-row"><b>課後</b><span>作品保存、補充資料、延伸課程。</span></div>
+          </div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="footer-grid">
+      <div><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>氣味藝術・感官體驗・空間氣味</div>
+      <div>臺北市北投區新民路 42 號<br>北投中心新村 心村所<br>預約制體驗 / 品牌合作洽詢</div>
+      <div><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>© <span data-year></span> Hana Scent Artist</div>
+    </div></footer>
+  </div>
+
+  <script src="/assets/site.js"></script>
   <script>
     (() => {
-      const PASSWORD = 'hana2026';
       const KEY = 'hana_student_tools_unlocked';
-      const ORIGINAL_URL = 'https://h-s017.github.io/overtrue-course/organ.html';
-      const ORIGINAL_BASE = 'https://h-s017.github.io/overtrue-course/';
-      const ERROR_TEXT = '目前無法載入原課程工具內容，請稍後再試，或先開啟原工具頁。';
-
+      const PASSWORD_HASH = '63b6b4afe76215d34934dd95159626733b6db7affd55112697670abe8d7c8b77';
+      const gate = document.getElementById('student-gate');
+      const content = document.getElementById('student-content');
       const form = document.getElementById('gate-form');
       const password = document.getElementById('password');
       const error = document.getElementById('error');
-      const loading = document.getElementById('loading');
+      const lock = document.getElementById('lock-tools');
 
-      async function loadOriginalTool() {
-        loading.style.display = 'block';
-        error.textContent = '';
-        try {
-          const response = await fetch(ORIGINAL_URL, { cache: 'no-store' });
-          if (!response.ok) throw new Error('HTTP ' + response.status);
-          const html = await response.text();
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-
-          const base = doc.createElement('base');
-          base.href = ORIGINAL_BASE;
-          doc.head.prepend(base);
-
-          const style = doc.createElement('style');
-          style.textContent = `html{font-size:16px}body{font-size:16px}.tabs{top:74px}@media(max-width:780px){body{font-size:15px}.tabs{top:66px}}`;
-          doc.head.appendChild(style);
-
-          const lockScript = doc.createElement('script');
-          lockScript.textContent = `window.HANA_STUDENT_TOOLS_LOCK = function(){sessionStorage.removeItem('${KEY}');location.href='/student-tools/';};`;
-          doc.body.appendChild(lockScript);
-
-          const lockButton = doc.createElement('button');
-          lockButton.textContent = '鎖定工具';
-          lockButton.className = 'btn';
-          lockButton.type = 'button';
-          lockButton.setAttribute('onclick', 'window.HANA_STUDENT_TOOLS_LOCK()');
-          const topActions = doc.querySelector('.top-actions');
-          if (topActions) topActions.appendChild(lockButton);
-
-          document.open();
-          document.write('<!doctype html>\n' + doc.documentElement.outerHTML);
-          document.close();
-        } catch (err) {
-          loading.style.display = 'none';
-          error.innerHTML = ERROR_TEXT + '<br><a class="small-link" href="https://h-s017.github.io/overtrue-course/" target="_blank" rel="noopener">開啟原工具頁</a>';
-          console.error(err);
-        }
-      }
-
-      if (sessionStorage.getItem(KEY) === 'true') loadOriginalTool();
-
-      form.addEventListener('submit', event => {
+      const digest = async value => {
+        const bytes = new TextEncoder().encode(value);
+        const hash = await crypto.subtle.digest('SHA-256', bytes);
+        return Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
+      };
+      const unlock = () => {
+        sessionStorage.setItem(KEY, 'true');
+        gate.hidden = true;
+        content.hidden = false;
+        document.body.classList.remove('is-locked');
+      };
+      if (sessionStorage.getItem(KEY) === 'true') unlock();
+      form.addEventListener('submit', async event => {
         event.preventDefault();
-        const input = password.value.trim();
-        if (input === PASSWORD) {
-          sessionStorage.setItem(KEY, 'true');
-          loadOriginalTool();
-        } else {
-          error.textContent = '密碼錯誤，請確認課後提供的密碼。';
-        }
+        error.textContent = '';
+        if (await digest(password.value.trim()) === PASSWORD_HASH) unlock();
+        else error.textContent = '密碼錯誤，請確認課後提供的密碼。';
+      });
+      lock.addEventListener('click', () => {
+        sessionStorage.removeItem(KEY);
+        location.reload();
       });
     })();
   </script>
