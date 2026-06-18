@@ -116,6 +116,47 @@ document.addEventListener("DOMContentLoaded", () => {
       color:#ffffff!important;
       border-color:#ffffff!important;
     }
+    .linked-hover-card,
+    .news-row:has(a[href]),
+    .card:has(a[href]),
+    .project-card:has(a[href]),
+    .course-card:has(a[href]),
+    .notice:has(a[href]){
+      transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease!important;
+    }
+    .linked-hover-card:hover,
+    .linked-hover-card:focus-within,
+    .news-row:has(a[href]):hover,
+    .news-row:has(a[href]):focus-within,
+    .card:has(a[href]):hover,
+    .card:has(a[href]):focus-within,
+    .project-card:has(a[href]):hover,
+    .project-card:has(a[href]):focus-within,
+    .course-card:has(a[href]):hover,
+    .course-card:has(a[href]):focus-within,
+    .notice:has(a[href]):hover,
+    .notice:has(a[href]):focus-within{
+      background:var(--gray100)!important;
+      border-color:var(--gray300)!important;
+    }
+    .card:has(a[href]):hover,
+    .card:has(a[href]):focus-within,
+    .project-card:has(a[href]):hover,
+    .project-card:has(a[href]):focus-within,
+    .course-card:has(a[href]):hover,
+    .course-card:has(a[href]):focus-within,
+    .notice:has(a[href]):hover,
+    .notice:has(a[href]):focus-within{
+      box-shadow:0 12px 32px rgba(0,0,0,.05)!important;
+    }
+    @media (prefers-reduced-motion:reduce){
+      .linked-hover-card,
+      .news-row:has(a[href]),
+      .card:has(a[href]),
+      .project-card:has(a[href]),
+      .course-card:has(a[href]),
+      .notice:has(a[href]){transition:none!important;}
+    }
     .dark-band .enroll-panel{
       border:0!important;
       outline:0!important;
