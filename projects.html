@@ -12,14 +12,17 @@
     .journal-hero .kicker,
     .journal-hero h1,
     .journal-hero h2{margin-left:auto;margin-right:auto;text-align:center;}
+    .journal-directions{background:#111;color:#fff;border-top:none;}
     .journal-directions .section-head{grid-template-columns:1fr;gap:16px;text-align:center;}
-    .journal-directions .section-head p{margin-left:auto;margin-right:auto;}
-    .journal-directions .project-card{display:flex;flex-direction:column;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
-    .journal-directions .project-card:hover,.journal-directions .project-card:focus-within{background:var(--gray100);border-color:var(--gray300);box-shadow:0 12px 32px rgba(0,0,0,.05);}
-    .journal-directions .project-card p{flex:1;}
+    .journal-directions .section-head p{margin-left:auto;margin-right:auto;color:#bfbfbf;}
+    .journal-directions .project-card{display:flex;flex-direction:column;background:#191919;border-color:#3a3a3a;color:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
+    .journal-directions .project-card:hover,.journal-directions .project-card:focus-within{background:#222;border-color:#666;box-shadow:0 12px 32px rgba(0,0,0,.24);}
+    .journal-directions .project-card small{color:#bfbfbf;}
+    .journal-directions .project-card p{flex:1;color:#e5e5e5;}
+    .journal-directions .text-link{border-color:#fff;color:#fff;}
     .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .hana-post:hover,.hana-post:focus-within{background:var(--gray100);border-color:var(--gray300);box-shadow:0 12px 32px rgba(0,0,0,.05);}
-    .journal-actions-only{padding:64px 0 88px;background:#111;color:#fff;text-align:center;}
+    .journal-actions-only{padding:64px 0 88px;background:#fff;color:#111;text-align:center;border-top:1px solid var(--line);}
     .journal-actions-only .actions{justify-content:center;margin-top:0;}
     @media(prefers-reduced-motion:reduce){.journal-directions .project-card,.hana-post{transition:none;}}
   </style>
@@ -84,7 +87,7 @@
       <div class="wrap">
         <div class="actions">
           <a class="btn light primary" href="experiences.html">查看所有課程</a>
-          <a class="btn light" href="scent-design.html">洽詢氣味設計</a>
+          <a class="btn light" href="scent-design.html">洽詢嗅覺設計服務</a>
         </div>
       </div>
     </section>
