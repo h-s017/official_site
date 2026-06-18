@@ -21,6 +21,12 @@
     console.warn('[HANA CMS public client]', error);
   }
 
+  const directionLabels = {
+    'olfactory-culture': '嗅覺文化',
+    'scent-creation': '氣味創作',
+    'heart-village-notes': '心村札記'
+  };
+  const defaultDirection = 'olfactory-culture';
   const state = { media: [], posts: [], announcements: [], pageContents: [], booking: null, settings: null, mediaTarget: null };
   const titles = { dashboard: '總覽', media: '照片與媒體', posts: '氣味誌', announcements: '公告', content: '頁面內容', booking: '預約設定', layout: '版面設定' };
   const pageNames = { home: '首頁', helori: 'HELORI 香氣探索所', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: 'H.FUGUE ATELIER', visit: '聯繫我們', journal: '氣味誌' };
@@ -49,6 +55,20 @@
   }
   function slugify(value) {
     return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`;
+  }
+  function getReadingDirection(body = '') {
+    const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
+    return match?.[1] && directionLabels[match[1]] ? match[1] : defaultDirection;
+  }
+  function stripReadingDirection(body = '') {
+    return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart();
+  }
+  function withReadingDirection(body = '', direction = defaultDirection) {
+    const safeDirection = directionLabels[direction] ? direction : defaultDirection;
+    return `<!-- reading-direction:${safeDirection} -->\n${stripReadingDirection(body)}`;
+  }
+  function directionLabel(body = '') {
+    return directionLabels[getReadingDirection(body)] || directionLabels[defaultDirection];
   }
   function insertAtCursor(textarea, text) {
     if (!textarea) return;
@@ -120,17 +140,6 @@
     const { error } = await timeout(db.storage.from('site-media').upload(path, file, { contentType: file.type || 'application/octet-stream', upsert: false }), 60000, `${context} ${file.name} 上傳`);
     if (error) throw error;
     return db.storage.from('site-media').getPublicUrl(path).data.publicUrl;
-  }
-  function extractSlug(value) {
-    const raw = String(value || '').trim();
-    if (!raw) return '';
-    try {
-      const url = new URL(raw, location.origin);
-      if (url.pathname.endsWith('/projects.html')) return '';
-      const slug = url.searchParams.get('slug');
-      if (slug) return slug.trim();
-    } catch (_) {}
-    return raw.replace(/^https?:\/\/[^/]+\/blog\.html\?slug=/i, '').replace(/^.*slug=/i, '').replace(/^\/+|\/+$/g, '').trim();
   }
 
   async function queryPublishedPostsForProjects() {
@@ -211,10 +220,10 @@
     const list = $('#posts-list');
     if (!list) return;
     const q = (search?.value || '').trim().toLowerCase();
-    const items = state.posts.filter(x => !q || `${x.title || ''} ${x.summary || ''} ${x.slug || ''}`.toLowerCase().includes(q));
+    const items = state.posts.filter(x => !q || `${x.title || ''} ${x.summary || ''} ${x.slug || ''} ${directionLabel(x.body)}`.toLowerCase().includes(q));
     list.innerHTML = items.length ? items.map(x => {
       const frontUrl = `/blog.html?slug=${encodeURIComponent(x.slug || '')}`;
-      return `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? 'projects.html 顯示中' : '草稿'}</span><span>更新 ${dateText(x.updated_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><div class="button-row"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary edit-post" data-id="${x.id}">編輯</button></div></article>`;
+      return `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? 'projects.html 顯示中' : '草稿'}</span><span class="badge">${escapeHtml(directionLabel(x.body))}</span><span>撰寫日 ${dateText(x.published_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><div class="button-row"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary edit-post" data-id="${x.id}">編輯</button></div></article>`;
     }).join('') : '<div class="empty">projects.html 目前沒有可載入的氣味誌文章。若前台有文章但這裡沒有，請檢查 Supabase posts 的 select policy。</div>';
   }
   function renderAnnouncements() {
@@ -288,29 +297,14 @@
     form.reset();
     const progress = $('#post-upload-progress');
     if (progress) progress.classList.add('hidden');
-    Object.entries(record).forEach(([k, v]) => { if (form.elements[k]) form.elements[k].value = v ?? ''; });
+    Object.entries(record).forEach(([k, v]) => {
+      if (!form.elements[k]) return;
+      form.elements[k].value = k === 'body' ? stripReadingDirection(v) : (v ?? '');
+    });
+    if (form.elements.reading_direction) form.elements.reading_direction.value = getReadingDirection(record.body);
     const del = $('[id^="delete-"]', form);
     if (del) del.classList.toggle('hidden', !record.id);
     dialog.showModal();
-  }
-  async function loadPostBySlug() {
-    const value = $('#post-slug-loader')?.value || '';
-    if (/projects\.html/i.test(value)) {
-      toast('projects.html 是氣味誌列表頁。下方已直接列出它目前顯示的文章。', true);
-      return;
-    }
-    const slug = extractSlug(value);
-    if (!slug) return fail(new Error('請輸入文章網址代稱或單篇文章連結。'));
-    let post = state.posts.find(x => x.slug === slug);
-    if (!post) {
-      const { data, error } = await db.from('posts').select('*').eq('slug', slug).limit(1);
-      if (error) throw error;
-      post = data?.[0];
-    }
-    if (!post) return fail(new Error(`找不到網址代稱為「${slug}」的文章。`));
-    if (!state.posts.some(x => x.id === post.id)) state.posts.unshift(post);
-    renderPosts();
-    openRecord($('#post-dialog'), $('#post-form'), post);
   }
 
   $('#login-form')?.addEventListener('submit', async e => {
@@ -323,9 +317,7 @@
   $('#logout')?.addEventListener('click', () => db.auth.signOut());
   $('#nav')?.addEventListener('click', e => { const b = e.target.closest('[data-view]'); if (b) showView(b.dataset.view); });
   $('#post-search')?.addEventListener('input', renderPosts);
-  $('#new-post')?.addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form')));
-  $('#load-post-by-slug')?.addEventListener('click', () => loadPostBySlug().catch(fail));
-  $('#post-slug-loader')?.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); loadPostBySlug().catch(fail); } });
+  $('#new-post')?.addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form'), { reading_direction: defaultDirection, status: 'draft' }));
   $('#new-announcement')?.addEventListener('click', () => openRecord($('#announcement-dialog'), $('#announcement-form')));
   $('#save-page-content')?.addEventListener('click', async () => {
     const inputs = $$('[data-content-id]', $('#page-content-forms')).filter(x => x.matches('input,textarea'));
@@ -422,8 +414,11 @@
     if (!$('#post-form').elements.body.value.trim()) return fail(new Error('請先填寫內文。'));
     const data = formData(e.target);
     const id = data.id;
+    const direction = data.reading_direction || defaultDirection;
     delete data.id;
+    delete data.reading_direction;
     data.slug = slugify(data.slug || data.title);
+    data.body = withReadingDirection(data.body, direction);
     data.published_at = data.status === 'published' ? (state.posts.find(x => x.id === id)?.published_at || new Date().toISOString()) : null;
     const query = id ? db.from('posts').update(data).eq('id', id) : db.from('posts').insert(data);
     const { error } = await query;
