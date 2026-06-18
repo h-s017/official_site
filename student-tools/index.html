@@ -21,13 +21,13 @@
         <button class="btn primary" type="submit">進入學員工具</button>
         <p id="error" class="error" role="alert"></p>
       </form>
-      <a class="small-link" href="/overture/">返回課程頁</a>
+      <a class="small-link" href="/courses/">返回課程頁</a>
     </section>
   </main>
   <script>
     (() => {
       const PASSWORD = 'hana2026';
-      const TARGET = 'https://h-s017.github.io/overtrue-course/';
+      const TARGET = '/student-tools/course/';
       const KEY = 'hana_student_tools_unlocked';
       if (sessionStorage.getItem(KEY) === 'true') window.location.replace(TARGET);
       document.getElementById('gate-form').addEventListener('submit', event => {
