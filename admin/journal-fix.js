@@ -19,13 +19,21 @@
   };
   const defaultDirection = 'olfactory-culture';
   let posts = [];
+  let saving = false;
 
   function toast(message, error = false) {
     const el = $('#toast');
     if (!el) return;
     el.textContent = message;
     el.className = `toast show${error ? ' error-toast' : ''}`;
-    setTimeout(() => { el.className = 'toast'; }, 3200);
+    setTimeout(() => { el.className = 'toast'; }, 4200);
+  }
+  function friendlySaveError(error) {
+    const message = error?.message || String(error || '');
+    if (/row-level security|policy|permission|not authorized|unauthorized/i.test(message)) {
+      return '文章儲存失敗：Supabase posts 的 update/insert 權限尚未開放給登入帳號。請到 Supabase 補 posts 的 authenticated update policy。';
+    }
+    return message || '文章儲存失敗。';
   }
   function getDirection(body = '') {
     const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
@@ -113,36 +121,77 @@
     dialog.showModal();
   }
 
+  async function writePost(id, existing, payload) {
+    if (id) {
+      const byId = await db.from('posts').update(payload).eq('id', id);
+      if (!byId.error) return byId;
+      if (existing?.slug) {
+        const bySlug = await db.from('posts').update(payload).eq('slug', existing.slug);
+        if (!bySlug.error) return bySlug;
+        return bySlug;
+      }
+      return byId;
+    }
+    return db.from('posts').insert(payload);
+  }
+
   async function savePost(event) {
     const form = event.target;
     if (!form || form.id !== 'post-form') return;
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
+    if (saving) return;
 
-    const id = form.elements.id.value;
-    const existing = posts.find(post => post.id === id);
-    const title = form.elements.title.value.trim();
-    const body = form.elements.body.value.trim();
-    if (!title) return toast('請先填寫標題。', true);
-    if (!body) return toast('請先填寫內文。', true);
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalLabel = submitButton?.textContent || '儲存';
+    saving = true;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = '儲存中…';
+    }
 
-    const payload = {
-      title,
-      slug: slugify(form.elements.slug.value || title),
-      status: form.elements.status.value || 'draft',
-      summary: form.elements.summary.value || '',
-      cover_url: form.elements.cover_url.value || '',
-      body: withDirection(body, form.elements.reading_direction?.value || defaultDirection),
-      published_at: form.elements.status.value === 'published' ? (existing?.published_at || new Date().toISOString()) : null
-    };
+    try {
+      const id = form.elements.id.value;
+      const existing = posts.find(post => post.id === id);
+      const title = form.elements.title.value.trim();
+      const body = form.elements.body.value.trim();
+      if (!title) throw new Error('請先填寫標題。');
+      if (!body) throw new Error('請先填寫內文。');
 
-    const query = id ? db.from('posts').update(payload).eq('id', id) : db.from('posts').insert(payload);
-    const { error } = await query;
-    if (error) return toast(error.message || '文章儲存失敗。', true);
-    $('#post-dialog')?.close();
-    toast('氣味誌文章已儲存');
-    await loadPosts();
+      const status = form.elements.status.value || 'draft';
+      const payload = {
+        title,
+        slug: slugify(form.elements.slug.value || title),
+        status,
+        summary: form.elements.summary.value || '',
+        cover_url: form.elements.cover_url.value || '',
+        body: withDirection(body, form.elements.reading_direction?.value || defaultDirection),
+        published_at: status === 'published' ? (existing?.published_at || new Date().toISOString()) : null
+      };
+
+      const { error } = await writePost(id, existing, payload);
+      if (error) throw error;
+
+      if (id) {
+        posts = posts.map(post => post.id === id ? { ...post, ...payload, id, updated_at: new Date().toISOString() } : post);
+      } else {
+        posts.unshift({ ...payload, id: `local-${Date.now()}`, updated_at: new Date().toISOString() });
+      }
+      renderPosts();
+      $('#post-dialog')?.close();
+      toast('氣味誌文章已儲存，專題分類已更新。');
+      loadPosts().catch(error => console.warn('[journal reload]', error));
+    } catch (error) {
+      console.error(error);
+      toast(friendlySaveError(error), true);
+    } finally {
+      saving = false;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      }
+    }
   }
 
   document.addEventListener('click', event => {
