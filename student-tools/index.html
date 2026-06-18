@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>學員工具｜HANA SCENT ARTIST</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    body{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}
+  </style>
+</head>
+<body>
+  <main class="gate">
+    <section class="gate-card">
+      <p class="kicker">Student Tools</p>
+      <h1>學員工具</h1>
+      <p>此頁面提供課程資料、配方紀錄、原料筆記與課後補充。請輸入課後提供的密碼。</p>
+      <form id="gate-form">
+        <label>密碼<input id="password" type="password" autocomplete="current-password" autofocus></label>
+        <button class="btn primary" type="submit">進入學員工具</button>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+      <a class="small-link" href="/overture/">返回課程頁</a>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const PASSWORD = 'hana2026';
+      const TARGET = 'https://h-s017.github.io/overtrue-course/';
+      const KEY = 'hana_student_tools_unlocked';
+      if (sessionStorage.getItem(KEY) === 'true') window.location.replace(TARGET);
+      document.getElementById('gate-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const input = document.getElementById('password').value.trim();
+        if (input === PASSWORD) {
+          sessionStorage.setItem(KEY, 'true');
+          window.location.href = TARGET;
+        } else {
+          document.getElementById('error').textContent = '密碼錯誤，請確認課後提供的密碼。';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
