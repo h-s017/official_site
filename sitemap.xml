@@ -33,6 +33,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hanascent.com/student-tools/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hanascent.com/blog.html?slug=olfactory-vulgarity-or-artistry</loc>
     <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
