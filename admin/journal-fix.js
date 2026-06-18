@@ -135,12 +135,13 @@
     return db.from('posts').insert(payload);
   }
 
-  async function savePost(event) {
-    const form = event.target;
+  async function savePostFromForm(form, event) {
     if (!form || form.id !== 'post-form') return;
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
     if (saving) return;
 
     const submitButton = form.querySelector('button[type="submit"]');
@@ -156,8 +157,14 @@
       const existing = posts.find(post => post.id === id);
       const title = form.elements.title.value.trim();
       const body = form.elements.body.value.trim();
-      if (!title) throw new Error('請先填寫標題。');
-      if (!body) throw new Error('請先填寫內文。');
+      if (!title) {
+        form.elements.title.focus();
+        throw new Error('請先填寫標題。');
+      }
+      if (!body) {
+        form.elements.body.focus();
+        throw new Error('請先填寫內文。');
+      }
 
       const status = form.elements.status.value || 'draft';
       const payload = {
@@ -170,6 +177,7 @@
         published_at: status === 'published' ? (existing?.published_at || new Date().toISOString()) : null
       };
 
+      toast('正在儲存氣味誌文章…');
       const { error } = await writePost(id, existing, payload);
       if (error) throw error;
 
@@ -194,7 +202,18 @@
     }
   }
 
+  function savePost(event) {
+    const form = event.target;
+    if (!form || form.id !== 'post-form') return;
+    savePostFromForm(form, event);
+  }
+
   document.addEventListener('click', event => {
+    const saveButton = event.target.closest('#post-form button[type="submit"]');
+    if (saveButton) {
+      savePostFromForm($('#post-form'), event);
+      return;
+    }
     const button = event.target.closest('[data-journal-id]');
     if (!button) return;
     event.preventDefault();
@@ -204,6 +223,13 @@
   }, true);
 
   $('#post-form')?.addEventListener('submit', savePost, true);
+  $('#post-form')?.addEventListener('invalid', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    const field = event.target;
+    field.focus();
+    toast(field.name === 'title' ? '請先填寫標題。' : field.name === 'body' ? '請先填寫內文。' : '請檢查必填欄位。', true);
+  }, true);
   $('#post-search')?.addEventListener('input', () => renderPosts());
 
   async function boot() {
