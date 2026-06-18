@@ -64,7 +64,7 @@
       <section id="view-posts" class="view">
         <div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="new-post" class="primary">新增氣味誌文章</button></div>
         <p class="muted">這裡會直接列出 projects.html 目前顯示的氣味誌文章。點「編輯」即可修改標題、摘要、閱讀方向、封面圖片與內文。</p>
-        <div id="posts-list" class="list"></div>
+        <div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章…</div></div>
       </section>
 
       <section id="view-announcements" class="view">
@@ -132,5 +132,6 @@
   <script src="./config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./app.js"></script>
+  <script src="./journal-fix.js"></script>
 </body>
 </html>
