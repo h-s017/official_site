@@ -49,7 +49,7 @@
       root.hidden = !settings.show_blog || !items.length;
       if (!items.length) return;
       const heading = root.dataset.hanaBlogTitle || '氣味誌';
-      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${items.map(x => `<article class="hana-post">${x.cover_url ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : ''}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time></article>`).join('')}</div>`;
+      root.innerHTML = `<div class="hana-section-head"><h2>${esc(heading)}</h2></div><div class="hana-blog-grid">${items.map(x => `<article class="hana-post">${x.cover_url ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : ''}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`).join('')}</div>`;
     });
   }
   function applySectionOrder(settings) {
