@@ -8,400 +8,211 @@ document.addEventListener("DOMContentLoaded", () => {
   const style = document.createElement("style");
   style.textContent = `
     :root{
-      --hana-page-hero-y:112px;
-      --hana-page-hero-bottom:92px;
-      --hana-section-y:96px;
-      --hana-section-head-gap:48px;
-      --hana-section-head-bottom:42px;
+      --hana-page-hero-y:92px;
+      --hana-page-hero-bottom:76px;
+      --hana-section-y:78px;
+      --hana-section-head-gap:42px;
+      --hana-section-head-bottom:36px;
       --hana-wrap:1180px;
-      --hana-reading-wrap:1064px;
     }
 
     body{
       font-family:var(--font-serif)!important;
-      line-height:1.82!important;
-      letter-spacing:.035em!important;
+      line-height:1.76!important;
+      letter-spacing:.032em!important;
     }
 
+    .wrap{max-width:var(--hana-wrap)!important;margin-left:auto!important;margin-right:auto!important;}
+    section{padding-top:var(--hana-section-y)!important;padding-bottom:var(--hana-section-y)!important;}
+
+    .site-nav{align-items:center;}
     .nav-links{gap:16px;font-size:13px;}
     .nav-links a{white-space:nowrap;}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
 
-    .tc-number,
-    .num,
-    .counter,
-    .course-meta,
-    .meta-line,
-    .fit-item,
-    .detail-block p,
-    .timeline-item b,
-    .timeline-item span,
-    .service-row b,
-    .service-row span{
+    .tc-number,.num,.counter,.course-meta,.meta-line,.fit-item,.detail-block p,.timeline-item b,.timeline-item span,.service-row b,.service-row span{
       font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;
     }
-    .en-text{font-size:1.05em;}
+    .en-text{font-size:1.03em;}
 
-    .wrap{
-      max-width:var(--hana-wrap)!important;
-      margin-left:auto!important;
-      margin-right:auto!important;
-    }
-
-    section{
-      padding-top:var(--hana-section-y)!important;
-      padding-bottom:var(--hana-section-y)!important;
-    }
-
-    .page-hero,
-    .helori-hero,
-    .course-hero{
+    .page-hero,.helori-hero,.course-hero{
       padding:var(--hana-page-hero-y) 6vw var(--hana-page-hero-bottom)!important;
       background:#ffffff!important;
       border-bottom:1px solid var(--line)!important;
       text-align:center!important;
     }
-
     .journal-hero{border-bottom:none!important;}
-
-    .page-hero .wrap,
-    .helori-hero .wrap,
-    .course-hero .wrap{
-      max-width:980px!important;
+    .page-hero .wrap,.helori-hero .wrap,.course-hero .wrap{
+      max-width:900px!important;
       margin:0 auto!important;
       text-align:center!important;
       display:block!important;
     }
 
-    .eyebrow,
-    .kicker,
-    .page-hero .kicker,
-    .helori-hero .kicker,
-    .course-hero .kicker{
+    .eyebrow,.kicker,.page-hero .kicker,.helori-hero .kicker,.course-hero .kicker{
       margin:0 0 14px!important;
       color:var(--gray500)!important;
       letter-spacing:.22em!important;
       text-transform:uppercase!important;
-      font-size:14px!important;
+      font-size:13px!important;
       line-height:1.7!important;
       font-weight:500!important;
       font-family:"Cormorant Garamond","Noto Serif TC","Source Han Serif TC",serif!important;
     }
-
-    .page-hero .kicker,
-    .helori-hero .kicker,
-    .course-hero .kicker{
-      margin-bottom:24px!important;
-      letter-spacing:.28em!important;
-    }
+    .page-hero .kicker,.helori-hero .kicker,.course-hero .kicker{margin-bottom:20px!important;letter-spacing:.26em!important;}
 
     .hero-title{
-      font-size:clamp(40px,5.4vw,88px)!important;
-      line-height:.96!important;
+      font-size:clamp(34px,4.7vw,74px)!important;
+      line-height:1!important;
       letter-spacing:.16em!important;
-      margin:0 0 18px!important;
+      margin:0 0 16px!important;
       font-weight:500!important;
       font-family:var(--font-serif)!important;
     }
-
     .hero-title span{
       display:block!important;
-      font-size:clamp(26px,3vw,43px)!important;
-      line-height:1.2!important;
-      letter-spacing:.24em!important;
-      margin-top:18px!important;
+      font-size:clamp(22px,2.55vw,34px)!important;
+      line-height:1.24!important;
+      letter-spacing:.22em!important;
+      margin-top:16px!important;
       font-weight:500!important;
     }
 
-    .page-hero h1,
-    .helori-hero h1,
-    .course-hero h1{
-      margin:0 auto 30px!important;
-      max-width:980px!important;
+    .page-hero h1,.helori-hero h1,.course-hero h1{
+      margin:0 auto 24px!important;
+      max-width:900px!important;
       font-family:var(--font-serif)!important;
-      font-size:clamp(40px,5.4vw,88px)!important;
-      line-height:1.08!important;
+      font-size:clamp(34px,4.7vw,74px)!important;
+      line-height:1.12!important;
       letter-spacing:.12em!important;
       font-weight:500!important;
       color:var(--black)!important;
       text-align:center!important;
     }
 
-    .page-hero h2,
-    .helori-hero h2,
-    .course-hero h2,
-    .page-hero p:not(.kicker),
-    .helori-hero p:not(.kicker),
-    .helori-hero .subtitle,
-    .course-hero .subtitle{
-      max-width:880px!important;
+    .page-hero h2,.helori-hero h2,.course-hero h2,.helori-hero .subtitle,.course-hero .subtitle{
+      max-width:820px!important;
       margin-left:auto!important;
       margin-right:auto!important;
       text-align:center!important;
       font-family:var(--font-serif)!important;
-      font-size:clamp(26px,3vw,43px)!important;
+      font-size:clamp(22px,2.55vw,34px)!important;
       line-height:1.45!important;
-      letter-spacing:.16em!important;
+      letter-spacing:.15em!important;
       color:var(--black)!important;
       font-weight:500!important;
     }
-
-    .page-hero p:not(.kicker),
-    .helori-hero p:not(.kicker){
+    .page-hero p:not(.kicker),.helori-hero p:not(.kicker),.course-hero p:not(.kicker){
+      max-width:760px!important;
+      margin-left:auto!important;
+      margin-right:auto!important;
       color:var(--gray700)!important;
-      font-size:19px!important;
-      line-height:1.9!important;
-      letter-spacing:.06em!important;
+      font-size:17px!important;
+      line-height:1.88!important;
+      letter-spacing:.05em!important;
       font-weight:400!important;
     }
 
     h1,h2,h3,p{overflow-wrap:anywhere;}
-
-    h2,
-    main h2,
-    .section-head h2{
+    h2,main h2,.section-head h2{
       margin:0!important;
-      font-size:clamp(30px,3.4vw,48px)!important;
-      line-height:1.25!important;
+      font-size:clamp(26px,2.8vw,40px)!important;
+      line-height:1.28!important;
       letter-spacing:.12em!important;
       font-weight:500!important;
       font-family:var(--font-serif)!important;
     }
-
-    h3,
-    main h3,
-    .card h3,
-    .project-card h3,
-    .course-card h3,
-    .helori-card h3,
-    .detail-block h3{
-      margin:0 0 12px!important;
-      font-size:25px!important;
-      line-height:1.34!important;
+    h3,main h3,.card h3,.project-card h3,.course-card h3,.helori-card h3,.detail-block h3{
+      margin:0 0 10px!important;
+      font-size:22px!important;
+      line-height:1.36!important;
       letter-spacing:.12em!important;
       font-weight:500!important;
       font-family:var(--font-serif)!important;
     }
-
-    p,
-    main p,
-    .lead,
-    .card p,
-    .project-card p,
-    .course-card p,
-    .helori-card p,
-    .detail-block p,
-    .notice p,
-    main li{
-      font-size:19px!important;
-      line-height:1.82!important;
-      letter-spacing:.035em!important;
+    p,main p,.lead,.card p,.project-card p,.course-card p,.helori-card p,.detail-block p,.notice p,main li{
+      font-size:17px!important;
+      line-height:1.78!important;
+      letter-spacing:.032em!important;
       font-weight:400!important;
       font-family:var(--font-serif)!important;
     }
-
-    .lead{
-      margin:16px 0 0!important;
-      color:var(--gray700)!important;
-      max-width:760px!important;
-    }
+    .lead{margin:14px 0 0!important;color:var(--gray700)!important;max-width:720px!important;}
 
     .section-head{
       display:grid!important;
-      grid-template-columns:minmax(180px,.34fr) 1fr!important;
+      grid-template-columns:minmax(160px,.32fr) 1fr!important;
       gap:var(--hana-section-head-gap)!important;
       align-items:start!important;
       margin-bottom:var(--hana-section-head-bottom)!important;
     }
-
     .grid3,.grid2{gap:18px!important;}
+    .card,.project-card,.course-card,.notice,.form-card,.helori-card,.detail-block{padding:26px!important;border:1px solid var(--line);}
+    .project-card,.course-card,.card{min-height:230px!important;}
 
-    .card,
-    .project-card,
-    .course-card,
-    .notice,
-    .form-card,
-    .helori-card,
-    .detail-block{
-      padding:28px!important;
-      border:1px solid var(--line);
-    }
-
-    .project-card,
-    .course-card,
-    .card{
-      min-height:260px!important;
-    }
-
-    .text-link,
-    a.text-link{
+    .text-link,a.text-link{
       display:inline-block!important;
       width:max-content!important;
-      margin-top:26px!important;
+      margin-top:22px!important;
       border-bottom:1px solid currentColor!important;
-      font-size:14px!important;
+      font-size:13.5px!important;
       line-height:1.8!important;
       letter-spacing:.15em!important;
     }
 
-    .hero-actions,
-    .actions{
-      display:flex!important;
-      gap:12px!important;
-      flex-wrap:wrap!important;
-    }
-
-    .helori-hero .actions,
-    .page-hero .actions,
-    .course-hero .actions{
-      justify-content:center!important;
-      margin-top:40px!important;
-    }
-
-    .btn,
-    a.btn,
-    button.btn,
-    .btn.primary,
-    .btn.light,
-    .btn.light.primary,
-    .btn.red{
-      min-height:46px!important;
-      padding:12px 20px!important;
+    .hero-actions,.actions{display:flex!important;gap:12px!important;flex-wrap:wrap!important;}
+    .helori-hero .actions,.page-hero .actions,.course-hero .actions{justify-content:center!important;margin-top:34px!important;}
+    .btn,a.btn,button.btn,.btn.primary,.btn.light,.btn.light.primary,.btn.red{
+      min-height:44px!important;
+      padding:11px 18px!important;
       background:#ffffff!important;
       color:var(--black)!important;
       border:1px solid var(--black)!important;
       box-shadow:none!important;
       transform:none!important;
-      font-size:15px!important;
+      font-size:14px!important;
       letter-spacing:.12em!important;
     }
-
-    .btn:hover,
-    a.btn:hover,
-    button.btn:hover,
-    .btn.primary:hover,
-    .btn.light:hover,
-    .btn.light.primary:hover,
-    .btn.red:hover{
+    .btn:hover,a.btn:hover,button.btn:hover,.btn.primary:hover,.btn.light:hover,.btn.light.primary:hover,.btn.red:hover{
       background:var(--black)!important;
       color:#ffffff!important;
       border-color:var(--black)!important;
       transform:translateY(-1px)!important;
       box-shadow:none!important;
     }
+    .dark-band .btn,.cta .btn{background:#ffffff!important;color:var(--black)!important;border-color:#ffffff!important;}
+    .dark-band .btn:hover,.cta .btn:hover{background:var(--black)!important;color:#ffffff!important;border-color:#ffffff!important;}
 
-    .dark-band .btn,
-    .cta .btn{
-      background:#ffffff!important;
-      color:var(--black)!important;
-      border-color:#ffffff!important;
-    }
-    .dark-band .btn:hover,
-    .cta .btn:hover{
-      background:var(--black)!important;
-      color:#ffffff!important;
-      border-color:#ffffff!important;
-    }
-
-    .linked-hover-card,
-    .news-row:has(a[href]),
-    .card:has(a[href]),
-    .project-card:has(a[href]),
-    .course-card:has(a[href]),
-    .notice:has(a[href]){
+    .linked-hover-card,.news-row:has(a[href]),.card:has(a[href]),.project-card:has(a[href]),.course-card:has(a[href]),.notice:has(a[href]){
       transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease!important;
     }
-
-    .linked-hover-card:hover,
-    .linked-hover-card:focus-within,
-    .news-row:has(a[href]):hover,
-    .news-row:has(a[href]):focus-within,
-    .card:has(a[href]):hover,
-    .card:has(a[href]):focus-within,
-    .project-card:has(a[href]):hover,
-    .project-card:has(a[href]):focus-within,
-    .course-card:has(a[href]):hover,
-    .course-card:has(a[href]):focus-within,
-    .notice:has(a[href]):hover,
-    .notice:has(a[href]):focus-within{
+    .linked-hover-card:hover,.linked-hover-card:focus-within,.news-row:has(a[href]):hover,.news-row:has(a[href]):focus-within,.card:has(a[href]):hover,.card:has(a[href]):focus-within,.project-card:has(a[href]):hover,.project-card:has(a[href]):focus-within,.course-card:has(a[href]):hover,.course-card:has(a[href]):focus-within,.notice:has(a[href]):hover,.notice:has(a[href]):focus-within{
       background:var(--gray100)!important;
       border-color:var(--gray300)!important;
     }
+    .card:has(a[href]):hover,.card:has(a[href]):focus-within,.project-card:has(a[href]):hover,.project-card:has(a[href]):focus-within,.course-card:has(a[href]):hover,.course-card:has(a[href]):focus-within,.notice:has(a[href]):hover,.notice:has(a[href]):focus-within{box-shadow:0 12px 32px rgba(0,0,0,.05)!important;}
 
-    .card:has(a[href]):hover,
-    .card:has(a[href]):focus-within,
-    .project-card:has(a[href]):hover,
-    .project-card:has(a[href]):focus-within,
-    .course-card:has(a[href]):hover,
-    .course-card:has(a[href]):focus-within,
-    .notice:has(a[href]):hover,
-    .notice:has(a[href]):focus-within{
-      box-shadow:0 12px 32px rgba(0,0,0,.05)!important;
-    }
-
-    .dark-band .enroll-panel{
-      border:0!important;
-      outline:0!important;
-      box-shadow:none!important;
-      background:transparent!important;
-      padding:0!important;
-    }
-
-    .footer{
-      margin-top:72px!important;
-      border-top:1px solid #ffffff!important;
-      box-shadow:0 -1px 0 var(--line);
-    }
+    .dark-band .enroll-panel{border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;padding:0!important;}
+    .footer{margin-top:60px!important;border-top:1px solid #ffffff!important;box-shadow:0 -1px 0 var(--line);}
     main + .footer{display:block;}
 
-    @media (prefers-reduced-motion:reduce){
-      .linked-hover-card,
-      .news-row:has(a[href]),
-      .card:has(a[href]),
-      .project-card:has(a[href]),
-      .course-card:has(a[href]),
-      .notice:has(a[href]){transition:none!important;}
-    }
-
-    @media (max-width:1240px){
-      .nav-links{gap:10px;font-size:12px;}
-      .nav-cta{padding:7px 10px!important;}
-    }
-
+    @media (prefers-reduced-motion:reduce){.linked-hover-card,.news-row:has(a[href]),.card:has(a[href]),.project-card:has(a[href]),.course-card:has(a[href]),.notice:has(a[href]){transition:none!important;}}
+    @media (max-width:1240px){.nav-links{gap:10px;font-size:12px;}.nav-cta{padding:7px 10px!important;}}
     @media (max-width:980px){
-      :root{
-        --hana-page-hero-y:86px;
-        --hana-page-hero-bottom:70px;
-        --hana-section-y:72px;
-        --hana-section-head-gap:20px;
-        --hana-section-head-bottom:32px;
-      }
-      .page-hero,
-      .helori-hero,
-      .course-hero{padding:var(--hana-page-hero-y) 22px var(--hana-page-hero-bottom)!important;}
-      .page-hero h1,
-      .helori-hero h1,
-      .course-hero h1{font-size:clamp(38px,10vw,56px)!important;line-height:1.22!important;}
-      .page-hero p:not(.kicker),
-      .helori-hero p:not(.kicker),
-      .helori-hero .subtitle{font-size:20px!important;line-height:1.95!important;}
+      :root{--hana-page-hero-y:72px;--hana-page-hero-bottom:58px;--hana-section-y:62px;--hana-section-head-gap:20px;--hana-section-head-bottom:28px;}
+      .page-hero,.helori-hero,.course-hero{padding:var(--hana-page-hero-y) 22px var(--hana-page-hero-bottom)!important;}
+      .page-hero h1,.helori-hero h1,.course-hero h1{font-size:clamp(34px,9vw,48px)!important;line-height:1.22!important;}
+      .page-hero h2,.helori-hero h2,.course-hero h2,.helori-hero .subtitle,.course-hero .subtitle{font-size:clamp(21px,5.6vw,30px)!important;line-height:1.45!important;}
+      .page-hero p:not(.kicker),.helori-hero p:not(.kicker),.course-hero p:not(.kicker){font-size:16px!important;line-height:1.85!important;}
+      h2,main h2,.section-head h2{font-size:clamp(25px,6.4vw,34px)!important;}
+      h3,main h3,.card h3,.project-card h3,.course-card h3,.helori-card h3,.detail-block h3{font-size:21px!important;}
+      p,main p,.lead,.card p,.project-card p,.course-card p,.helori-card p,.detail-block p,.notice p,main li{font-size:16px!important;}
       .section-head{grid-template-columns:1fr!important;}
-      .footer{margin-top:52px!important;}
+      .footer{margin-top:44px!important;}
       .site-nav{align-items:flex-start;flex-wrap:wrap;}
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;}
-      .nav-links{
-        display:none!important;
-        width:100%;
-        flex-basis:100%;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0!important;
-        padding:18px 0 4px;
-        margin-top:10px;
-        border-top:1px solid var(--line);
-        font-size:15px!important;
-      }
+      .nav-links{display:none!important;width:100%;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0!important;padding:18px 0 4px;margin-top:10px;border-top:1px solid var(--line);font-size:15px!important;}
       .site-nav.menu-open .nav-links{display:flex!important;}
       .nav-links a{width:100%;padding:12px 0;border-bottom:1px solid var(--line);}
       .nav-links a:last-child{border-bottom:none;}
@@ -429,14 +240,12 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.setAttribute("tabindex", "0");
     mobileMenu.setAttribute("aria-expanded", "false");
     mobileMenu.setAttribute("aria-label", "開啟導覽選單");
-
     const toggleMenu = () => {
       const isOpen = siteNav.classList.toggle("menu-open");
       mobileMenu.textContent = isOpen ? "CLOSE" : "MENU";
       mobileMenu.setAttribute("aria-expanded", String(isOpen));
       mobileMenu.setAttribute("aria-label", isOpen ? "關閉導覽選單" : "開啟導覽選單");
     };
-
     mobileMenu.addEventListener("click", toggleMenu);
     mobileMenu.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
@@ -444,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleMenu();
       }
     });
-
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         siteNav.classList.remove("menu-open");
@@ -504,41 +312,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("a").forEach((a) => {
     const label = a.textContent.trim();
-    if (
-      label.includes("心村限定｜Helori 香氣探索所") ||
-      label.includes("心村限定｜Helori 香徑探索所") ||
-      (a.classList.contains("red") && label.includes("心村限定"))
-    ) {
+    if (label.includes("心村限定｜Helori 香氣探索所") || label.includes("心村限定｜Helori 香徑探索所") || (a.classList.contains("red") && label.includes("心村限定"))) {
       a.href = heloriUrl;
     }
   });
 
   const path = window.location.pathname.split("/").pop() || "index.html";
-
   if (path === "helori-scent-lab.html") {
     document.title = "Helori 香氣探索所｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1, .helori-hero h1");
     if (h1 && !h1.innerHTML.includes("Helori")) h1.textContent = "Helori 香氣探索所";
   }
-
   if (path === "experiences.html") {
     document.title = "專業調香課程｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
     if (h1) h1.innerHTML = "HANA SCENT ARTIST<br>專業調香課程系列";
   }
-
   if (path === "scent-design.html") {
     document.title = "嗅覺設計服務｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
     if (h1) h1.textContent = "嗅覺設計服務";
   }
-
   if (path === "projects.html") {
     document.title = "氣味誌｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
     if (h1) h1.textContent = "氣味誌";
   }
-
   if (path === "visit.html") {
     document.title = "聯繫我們｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
