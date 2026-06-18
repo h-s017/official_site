@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>氣味誌｜HANA SCENT ARTIST</title>
-  <meta name="description" content="HANA SCENT ARTIST 的氣味誌，收錄嗅覺歷史、香水冷知識、場域氣味、Helori 與品牌氣味筆記。" />
+  <meta name="description" content="HANA SCENT ARTIST 的氣味誌，收錄嗅覺文化、氣味創作與心村所札記。" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="assets/hana-cms.css" />
   <style>
@@ -12,6 +12,8 @@
     .journal-hero .kicker,
     .journal-hero h1,
     .journal-hero h2{margin-left:auto;margin-right:auto;text-align:center;}
+    .journal-directions .section-head{grid-template-columns:1fr;gap:16px;text-align:center;}
+    .journal-directions .section-head p{margin-left:auto;margin-right:auto;}
     .journal-actions-only{padding:64px 0 88px;background:#111;color:#fff;text-align:center;}
     .journal-actions-only .actions{justify-content:center;margin-top:0;}
   </style>
@@ -41,47 +43,33 @@
   </header>
 
   <main>
-    <section>
+    <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" data-hana-blog-limit="3" data-hana-show-direction="true" hidden></section>
+
+    <section class="journal-directions">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Journal Categories</p>
-          </div>
-        <div class="grid2">
+          <p class="kicker">Reading Directions</p>
+          <h2>閱讀方向</h2>
+        </div>
+        <div class="grid3">
           <article class="project-card">
-            <small>HISTORY OF SMELL</small>
-            <h3>嗅覺歷史</h3>
-            <p>從古文明、哲學、宗教、醫療、香水產業到現代感官研究，整理人類如何理解氣味。</p>
+            <small>OLFACTORY CULTURE</small>
+            <h3>嗅覺文化</h3>
+            <p>從嗅覺歷史、香水文明、氣味語彙與感官研究，理解人類如何閱讀氣味。</p>
           </article>
           <article class="project-card">
-            <small>PERFUME NOTES</small>
-            <h3>香水冷知識</h3>
-            <p>以短篇方式整理香調、原料、香水文化、氣味語彙與常見誤解，適合延伸成 IG 系列。</p>
+            <small>SCENT CREATION</small>
+            <h3>氣味創作</h3>
+            <p>記錄香氣結構、調香方法、材料觀察、載體設計與品牌氣味的創作筆記。</p>
           </article>
           <article class="project-card">
-            <small>FORM OF SCENT</small>
-            <h3>氣味的形式</h3>
-            <p>討論香水、蠟燭、擴香、織品噴霧、空間氣味與展覽氣味等不同載體的差異。</p>
-          </article>
-          <article class="project-card">
-            <small>BEITOU HEART VILLAGE</small>
-            <h3>心村所札記</h3>
-            <p>記錄北投中心新村、白屋、老樹、奉茶、空間整理與地方氣味的觀察。</p>
-          </article>
-          <article class="project-card">
-            <small>HELORI</small>
-            <h3>Helori 氣味生物</h3>
-            <p>收錄 Helori 角色、七大香調、氣味測驗、香氣心理暗示與課程設計背後的想法。</p>
-          </article>
-          <article class="project-card">
-            <small>BRAND SCENT</small>
-            <h3>品牌氣味筆記</h3>
-            <p>整理品牌氣味設計、場域香氣、展覽嗅覺敘事與企業活動氣味案例。</p>
+            <small>HEART VILLAGE NOTES</small>
+            <h3>心村札記</h3>
+            <p>收錄北投中心新村、心村所、白屋、老樹、奉茶與地方氣味的觀察。</p>
           </article>
         </div>
       </div>
     </section>
-
-    <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" hidden></section>
 
     <section class="journal-actions-only">
       <div class="wrap">
