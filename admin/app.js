@@ -33,6 +33,14 @@
   function imageHtml(url) {
     return `\n<figure><img src="${escapeHtml(url)}" alt=""><figcaption></figcaption></figure>\n`;
   }
+  function requirePostField(form, name, label) {
+    const field = form.elements[name];
+    if (!field || String(field.value || '').trim()) return true;
+    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => field.focus(), 250);
+    fail(new Error(`請先填寫${label}。`));
+    return false;
+  }
 
   async function loadAll() {
     const [media, posts, announcements, pageContents, booking, settings] = await Promise.all([
@@ -151,6 +159,13 @@
   });
   $$('dialog .close').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
   $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
+  $('#post-form').addEventListener('invalid', e => {
+    e.preventDefault();
+    const label = e.target.name === 'title' ? '標題' : e.target.name === 'body' ? '內文' : '必填欄位';
+    e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => e.target.focus(), 250);
+    fail(new Error(`請先填寫${label}。`));
+  }, true);
 
   document.addEventListener('click', async e => {
     const post = e.target.closest('.edit-post'); if (post) openRecord($('#post-dialog'), $('#post-form'), state.posts.find(x => x.id === post.dataset.id));
@@ -185,7 +200,9 @@
   });
 
   $('#post-form').addEventListener('submit', async e => {
-    e.preventDefault(); const data = formData(e.target); const id = data.id; delete data.id; data.slug = slugify(data.slug || data.title); data.published_at = data.status === 'published' ? (state.posts.find(x => x.id === id)?.published_at || new Date().toISOString()) : null;
+    e.preventDefault();
+    if (!requirePostField(e.target, 'title', '標題') || !requirePostField(e.target, 'body', '內文')) return;
+    const data = formData(e.target); const id = data.id; delete data.id; data.slug = slugify(data.slug || data.title); data.published_at = data.status === 'published' ? (state.posts.find(x => x.id === id)?.published_at || new Date().toISOString()) : null;
     const query = id ? db.from('posts').update(data).eq('id', id) : db.from('posts').insert(data); const { error } = await query; if (error) return fail(error);
     $('#post-dialog').close(); toast('氣味誌文章已儲存'); await loadAll();
   });
