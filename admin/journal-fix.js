@@ -42,12 +42,46 @@
   function stripDirection(body = '') {
     return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart();
   }
+  function hasHtmlMarkup(value = '') {
+    return /<\/?[a-z][\s\S]*>/i.test(String(value || ''));
+  }
+  function plainTextToHtml(value = '') {
+    const text = String(value || '').trim();
+    if (!text) return '';
+    return text
+      .split(/\n{2,}/)
+      .map(block => block.trim())
+      .filter(Boolean)
+      .map(block => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`)
+      .join('\n');
+  }
+  function normalizeBodyInput(body = '') {
+    const clean = stripDirection(body).trim();
+    if (!clean) return '';
+    return hasHtmlMarkup(clean) ? clean : plainTextToHtml(clean);
+  }
   function withDirection(body = '', direction = defaultDirection) {
     const safe = directionLabels[direction] ? direction : defaultDirection;
-    return `<!-- reading-direction:${safe} -->\n${stripDirection(body)}`;
+    return `<!-- reading-direction:${safe} -->\n${normalizeBodyInput(body)}`;
   }
   function slugify(value) {
     return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`;
+  }
+  function setupEditorUi() {
+    const form = $('#post-form');
+    if (!form) return;
+    const saveButton = form.querySelector('#save-post, button[type="submit"]');
+    if (saveButton) {
+      saveButton.id = 'save-post';
+      saveButton.type = 'button';
+      saveButton.textContent = '儲存';
+    }
+    const body = form.elements.body;
+    if (body) {
+      body.placeholder = '可以直接輸入一般文章文字。段落之間空一行即可，儲存時會自動轉成前台可閱讀的段落格式。';
+      const small = body.closest('label')?.querySelector('small');
+      if (small) small.textContent = '可直接輸入一般文字；段落之間空一行即可。若貼入 HTML 也會保留。';
+    }
   }
 
   async function selectPosts(client, status) {
@@ -108,6 +142,7 @@
     const dialog = $('#post-dialog');
     const form = $('#post-form');
     if (!dialog || !form || !post) return;
+    setupEditorUi();
     form.reset();
     form.elements.id.value = post.id || '';
     form.elements.title.value = post.title || '';
@@ -144,12 +179,12 @@
     }
     if (saving) return;
 
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalLabel = submitButton?.textContent || '儲存';
+    const saveButton = form.querySelector('#save-post, button[type="submit"]');
+    const originalLabel = saveButton?.textContent || '儲存';
     saving = true;
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = '儲存中…';
+    if (saveButton) {
+      saveButton.disabled = true;
+      saveButton.textContent = '儲存中…';
     }
 
     try {
@@ -188,16 +223,16 @@
       }
       renderPosts();
       $('#post-dialog')?.close();
-      toast('氣味誌文章已儲存，專題分類已更新。');
+      toast('氣味誌文章已儲存，專題分類與內文已更新。');
       loadPosts().catch(error => console.warn('[journal reload]', error));
     } catch (error) {
       console.error(error);
       toast(friendlySaveError(error), true);
     } finally {
       saving = false;
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalLabel;
+      if (saveButton) {
+        saveButton.disabled = false;
+        saveButton.textContent = originalLabel;
       }
     }
   }
@@ -209,8 +244,8 @@
   }
 
   document.addEventListener('click', event => {
-    const saveButton = event.target.closest('#post-form button[type="submit"]');
-    if (saveButton) {
+    const saveButton = event.target.closest('#save-post, #post-form button[type="submit"], #post-form button.primary');
+    if (saveButton && saveButton.closest('#post-form')) {
       savePostFromForm($('#post-form'), event);
       return;
     }
@@ -222,6 +257,7 @@
     openPost(posts.find(post => post.id === button.dataset.journalId));
   }, true);
 
+  setupEditorUi();
   $('#post-form')?.addEventListener('submit', savePost, true);
   $('#post-form')?.addEventListener('invalid', event => {
     event.preventDefault();
@@ -233,6 +269,7 @@
   $('#post-search')?.addEventListener('input', () => renderPosts());
 
   async function boot() {
+    setupEditorUi();
     const { data } = await db.auth.getSession();
     if (!data?.session) return;
     $('#login')?.classList.add('hidden');
@@ -240,6 +277,7 @@
     await loadPosts();
   }
   db.auth.onAuthStateChange((_event, session) => {
+    setupEditorUi();
     if (session) loadPosts().catch(error => toast(error.message || '氣味誌載入失敗。', true));
   });
   boot().catch(error => toast(error.message || '氣味誌載入失敗。', true));
