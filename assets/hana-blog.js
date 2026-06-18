@@ -5,7 +5,10 @@
   const slug = new URLSearchParams(location.search).get('slug');
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const fallbackSlugs = ['olfactory-vulgarity-or-artistry','blooming-tears','from-perfume-product-to-scent-branding-system','proust-effect-fragrance-experience','taipei-corporate-fragrance-workshop'];
-  const coverOverrides = { 'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg' };
+  const coverOverrides = {
+    'olfactory-vulgarity-or-artistry': '/assets/柏拉圖.jpg',
+    'blooming-tears': '/assets/殉情記.jpg'
+  };
   const fallbackCover = value => coverOverrides[value] || `/assets/${Math.max(fallbackSlugs.indexOf(value), 0) + 1}.png`;
   function cleanHtml(html) {
     const doc = new DOMParser().parseFromString(String(html), 'text/html');
