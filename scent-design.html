@@ -16,15 +16,11 @@
     .page-hero .kicker{display:block;width:100%;max-width:none;margin-left:auto;margin-right:auto;text-align:center;}
     .page-hero h1{margin-left:auto;margin-right:auto;text-align:center;}
     .page-hero p:not(.kicker){margin-left:auto;margin-right:auto;text-align:center;}
-    .course-card,.process-card,.dark-panel,.tally-card{transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease,transform .28s ease;}
+    .course-card,.process-card,.tally-card{transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease,transform .28s ease;}
     .course-card:hover,.course-card:focus-within,.process-card:hover,.process-card:focus-within,.tally-card:hover,.tally-card:focus-within{background:#f7f7f7!important;border-color:#cfcfcf!important;box-shadow:0 12px 32px rgba(0,0,0,.05)!important;}
     .course-card:hover,.course-card:focus-within{transform:translateY(-2px);}
     .process-card{border:1px solid var(--line);background:#fff;padding:0;overflow:hidden;}
     .process-card .price-table{margin:0!important;border:0!important;width:100%;}
-    .dark-panel:hover,.dark-panel:focus-within{border-color:#fff!important;box-shadow:0 12px 32px rgba(255,255,255,.08)!important;}
-    .service-row{transition:background-color .24s ease,color .24s ease,border-color .24s ease;}
-    .service-row:hover{background:#fff!important;color:#111!important;border-color:#fff!important;}
-    .service-row:hover span,.service-row:hover b{color:#111!important;}
     .tally-card{border:1px solid var(--line);background:#fff;padding:24px;}
     .tally-frame{display:block;width:100%;min-height:760px;border:0;background:#fff;}
     .design-inquiry{padding-top:74px!important;}
@@ -40,7 +36,7 @@
     .form-disclosure[open] summary::after{content:'－';}
     .form-disclosure:hover,.form-disclosure:focus-within{border-color:#cfcfcf;box-shadow:0 12px 32px rgba(0,0,0,.05);}
     .form-disclosure .tally-card{border:0;box-shadow:none!important;background:#fff!important;}
-    @media(prefers-reduced-motion:reduce){.course-card,.process-card,.dark-panel,.tally-card,.service-row,.form-disclosure summary{transition:none!important;transform:none!important;}}
+    @media(prefers-reduced-motion:reduce){.course-card,.process-card,.tally-card,.form-disclosure summary{transition:none!important;transform:none!important;}}
     @media(max-width:980px){.tally-card{padding:14px}.tally-frame{min-height:820px}.design-inquiry{padding-top:59px!important}.form-options{justify-content:center}.form-disclosure summary{min-height:64px;font-size:15px}.process-card{overflow-x:auto}}
   </style>
 </head>
@@ -138,7 +134,7 @@
           <h2>從品牌記憶開始，而不是從香味清單開始。</h2>
           <p class="lead">合作前會先理解品牌故事、客群、空間材質、使用情境與預算。嗅覺設計的重點是「辨識度」與「合理的使用形式」。</p>
         </div>
-        <div class="dark-panel" tabindex="0">
+        <div class="dark-panel">
           <div class="service-list">
             <div class="service-row"><b>品牌</b><span>品牌氣味設計、商品氣味、識別氣味。</span></div>
             <div class="service-row"><b>空間</b><span>空間香氛、展覽氣味、場域氣味記憶。</span></div>
