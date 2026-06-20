@@ -6,6 +6,11 @@
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
   const noCoverTitles = new Set(['HANA SCENT ARTIST 氣味敘事空間']);
+  const defaultAnnouncements = [
+    { title:'心村限定調香體驗開放預約', content:'可預約探索調香體驗，完成一支屬於此刻狀態的氣味。', category:'2026.07', link_url:'https://reservation.hanascent.com/', link_label:'立即預約 →' },
+    { title:'專業調香課程系列上線', content:'從氣味藝術序曲開始，可銜接 KPIA 或後續專業進修路線。', category:'COURSE', link_url:'/courses/', link_label:'查看課程 →' },
+    { title:'HELORI 香氣探索所', content:'探索此刻屬於你的香氣夥伴。', category:'HELORI', link_url:'/helori/', link_label:'進入 HELORI →' }
+  ];
   const directionLabels = {
     'olfactory-culture': '嗅覺文化',
     'scent-creation': '氣味創作',
@@ -36,7 +41,6 @@
     document.querySelectorAll('[data-hana-site-name]').forEach(x => { if (s.site_name) x.textContent = s.site_name; });
     document.querySelectorAll('[data-hana-hero-title]').forEach(x => { if (s.hero_title) x.textContent = s.hero_title; });
     document.querySelectorAll('[data-hana-hero-subtitle]').forEach(x => { if (s.hero_subtitle) x.textContent = s.hero_subtitle; });
-
     const heroImageUrl = settingValue(s, 'home_hero_image_url', 'hero_image_url');
     const heroImageAlt = settingValue(s, 'home_hero_image_alt', 'hero_image_alt');
     document.querySelectorAll('[data-hana-hero-image]').forEach(x => {
@@ -70,7 +74,8 @@
         list.innerHTML = '';
         return;
       }
-      const rows = items.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
+      const source = items.length ? items : defaultAnnouncements;
+      const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.starts_at || x.date || x.created_at || '';
         const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
           ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit' }).format(new Date(sourceDate)).replace('/', '.')
