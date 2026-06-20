@@ -21,16 +21,33 @@
     return match?.[1] && directionLabels[match[1]] ? match[1] : 'olfactory-culture';
   };
   const shouldShowCover = post => Boolean(post.cover_url) && !noCoverTitles.has(String(post.title || '').trim());
+  const settingValue = (settings, ...keys) => {
+    for (const key of keys) {
+      const value = settings?.[key];
+      if (typeof value === 'string' && value.trim()) return value.trim();
+      if (value !== undefined && value !== null && typeof value !== 'string') return value;
+    }
+    return '';
+  };
 
-  function applySettings(s) {
-    document.documentElement.style.setProperty('--hana-accent', s.accent_color);
-    document.documentElement.style.setProperty('--hana-content-width', `${s.content_width}px`);
-    document.querySelectorAll('[data-hana-site-name]').forEach(x => { x.textContent = s.site_name; });
-    document.querySelectorAll('[data-hana-hero-title]').forEach(x => { x.textContent = s.hero_title; });
-    document.querySelectorAll('[data-hana-hero-subtitle]').forEach(x => { x.textContent = s.hero_subtitle; });
+  function applySettings(s = {}) {
+    if (s.accent_color) document.documentElement.style.setProperty('--hana-accent', s.accent_color);
+    if (s.content_width) document.documentElement.style.setProperty('--hana-content-width', `${s.content_width}px`);
+    document.querySelectorAll('[data-hana-site-name]').forEach(x => { if (s.site_name) x.textContent = s.site_name; });
+    document.querySelectorAll('[data-hana-hero-title]').forEach(x => { if (s.hero_title) x.textContent = s.hero_title; });
+    document.querySelectorAll('[data-hana-hero-subtitle]').forEach(x => { if (s.hero_subtitle) x.textContent = s.hero_subtitle; });
+
+    const heroImageUrl = settingValue(s, 'home_hero_image_url', 'hero_image_url');
+    const heroImageAlt = settingValue(s, 'home_hero_image_alt', 'hero_image_alt');
     document.querySelectorAll('[data-hana-hero-image]').forEach(x => {
-      if (!s.hero_image_url) return;
-      if (x.tagName === 'IMG') x.src = s.hero_image_url; else x.style.backgroundImage = `url("${s.hero_image_url.replace(/["\\]/g, '\\$&')}")`;
+      if (heroImageAlt && x.tagName === 'IMG') x.alt = heroImageAlt;
+      if (!heroImageUrl) return;
+      if (x.tagName === 'IMG') {
+        x.addEventListener('error', () => x.removeAttribute('data-hana-hero-image-loading'), { once: true });
+        x.src = heroImageUrl;
+      } else {
+        x.style.backgroundImage = `url("${heroImageUrl.replace(/["\\]/g, '\\$&')}")`;
+      }
     });
   }
   function applyPageContents(items) {
@@ -44,20 +61,25 @@
       });
     });
   }
-  function renderAnnouncements(items, settings) {
+  function renderAnnouncements(items = [], settings = {}) {
     document.querySelectorAll('[data-hana-announcements]').forEach(root => {
-      root.hidden = !settings.show_announcements;
+      root.hidden = settings.show_announcements === false;
       const list = root.querySelector('.news-list');
-      if (!list || !items.length) return;
-      list.querySelectorAll('[data-hana-announcement]').forEach(x => x.remove());
-      const rows = items.map(x => {
-        const sourceDate = x.starts_at || x.created_at || '';
+      if (!list) return;
+      if (root.hidden) {
+        list.innerHTML = '';
+        return;
+      }
+      const rows = items.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
+        const sourceDate = x.starts_at || x.date || x.created_at || '';
         const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
           ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit' }).format(new Date(sourceDate)).replace('/', '.')
-          : 'NEWS';
-        return `<article class="news-row" data-hana-announcement><div class="news-date">${esc(label)}</div><div><h3>${esc(x.title)}</h3><p>${esc(x.content)}</p></div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">了解更多 →</a>` : ''}</article>`;
+          : (x.category || 'NEWS');
+        const body = x.summary || x.content || '';
+        const linkLabel = x.link_label || '了解更多 →';
+        return `<article class="news-row" data-hana-announcement><div class="news-date">${esc(label)}</div><div><h3>${esc(x.title)}</h3><p>${esc(body)}</p></div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
-      list.insertAdjacentHTML('afterbegin', rows);
+      list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
     });
   }
   function renderPosts(items, settings) {
@@ -98,12 +120,12 @@
       db.from('posts').select('title,slug,summary,cover_url,published_at,body').eq('status','published').order('published_at',{ascending:false}),
       pageKey ? db.from('page_contents').select('field_key,content_type,value').eq('page_key', pageKey) : Promise.resolve({ data: [], error: null })
     ]);
-    if (settings.error) throw settings.error; applySettings(settings.data);
+    if (settings.error) throw settings.error; applySettings(settings.data || {});
     if (!pageContents.error) applyPageContents(pageContents.data || []);
-    if (!announcements.error) renderAnnouncements(announcements.data, settings.data);
-    if (!posts.error) renderPosts(posts.data || [], settings.data);
-    applySectionOrder(settings.data);
-    document.dispatchEvent(new CustomEvent('hana:cms-ready', { detail: settings.data }));
+    if (!announcements.error) renderAnnouncements(announcements.data || [], settings.data || {});
+    if (!posts.error) renderPosts(posts.data || [], settings.data || {});
+    applySectionOrder(settings.data || {});
+    document.dispatchEvent(new CustomEvent('hana:cms-ready', { detail: settings.data || {} }));
   }
   init().catch(error => console.error('[HANA CMS]', error));
 })();
