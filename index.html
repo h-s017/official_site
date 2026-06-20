@@ -22,7 +22,7 @@
     .nav-links{align-items:center!important;gap:16px!important;line-height:1!important;}
     .nav-links a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;border-bottom:1px solid transparent;}
     .nav-links a:hover,.nav-links a.active{border-color:var(--black)!important;}
-    .home-news{padding-top:78px;padding-bottom:84px}.home-news .section-head{grid-template-columns:160px 1fr;gap:28px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.news-date{color:var(--gray500);letter-spacing:.18em;font-size:14px}.news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500}.news-row p{margin:8px 0 0;color:var(--gray700)}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}
+    .home-news{padding-top:78px;padding-bottom:84px}.home-news .section-head{grid-template-columns:160px 1fr;gap:28px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.news-date{color:var(--gray500);letter-spacing:.18em;font-size:14px}.news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500}.news-row p{margin:8px 0 0;color:var(--gray700)}.news-empty{margin:0;padding:24px 0;border-bottom:1px solid var(--line);color:var(--gray500);letter-spacing:.08em}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}
     @media(max-width:980px){.site-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;column-gap:12px!important;flex-wrap:nowrap!important}.logo{min-width:0!important;white-space:nowrap!important;gap:10px!important;font-size:clamp(20px,5.2vw,28px)!important;letter-spacing:.22em!important;overflow:hidden!important}.logo::before{width:24px;height:24px;flex:0 0 24px}.mobile-note{grid-column:2!important;justify-self:end!important;margin-left:0!important;white-space:nowrap!important;text-align:right!important}.nav-links{grid-column:1 / -1!important}.hero-actions{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:16px!important}.hero-actions .btn{width:100%!important;box-sizing:border-box;text-align:center;justify-content:center!important}.home-news .section-head{grid-template-columns:1fr;gap:20px}.news-row{grid-template-columns:1fr;gap:10px;padding:24px 0}.nav-links a{height:auto!important;padding:12px 0!important;align-items:flex-start!important}}
     .news-row:has(a[href]),.card:has(a[href]){transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .news-row:has(a[href]){padding-left:18px;padding-right:18px;margin-left:-18px;margin-right:-18px;}
@@ -31,7 +31,7 @@
     @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}}
   </style>
 </head>
-<body>
+<body data-hana-page="home">
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="/">HANA SCENT ARTIST</a>
     <div class="nav-links">
@@ -48,7 +48,7 @@
 
   <header class="hero">
     <div class="hero-shell">
-      <div class="hero-visual"><img src="/assets/homepage-cover.png" alt="HANA SCENT ARTIST 首頁主視覺，白色工作室與氣味敘事空間標題"></div>
+      <div class="hero-visual"><img data-hana-hero-image src="/assets/homepage-cover.png" alt="HANA SCENT ARTIST 首頁主視覺，白色工作室與氣味敘事空間標題"></div>
       <div class="hero-panel">
         <div>
           <p class="eyebrow">Olfactory Narrative Space</p>
@@ -68,10 +68,8 @@
     <section class="home-news" data-hana-announcements>
       <div class="wrap">
         <div class="section-head"><p class="kicker">News</p><div><h2>最新消息</h2></div></div>
-        <div class="news-list">
-          <article class="news-row"><div class="news-date">2026.07</div><div><h3>心村限定調香體驗開放預約</h3><p>可預約探索調香體驗，完成一支屬於此刻狀態的氣味。</p></div><a class="text-link" href="https://reservation.hanascent.com/">立即預約 →</a></article>
-          <article class="news-row"><div class="news-date">COURSE</div><div><h3>專業調香課程系列上線</h3><p>從氣味藝術序曲開始，可銜接 KPIA 或後續專業進修路線。</p></div><a class="text-link" href="/courses/">查看課程 →</a></article>
-          <article class="news-row"><div class="news-date">HELORI</div><div><h3>HELORI 香氣探索所</h3><p>探索此刻屬於你的香氣夥伴。</p></div><a class="text-link" href="/helori/">進入 HELORI →</a></article>
+        <div class="news-list" aria-live="polite">
+          <p class="news-empty">最新消息載入中…</p>
         </div>
       </div>
     </section>
