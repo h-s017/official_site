@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>HANA 後台｜漏斗統計</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .analytics-page{min-height:100vh;background:#f7f7f3;color:#151713;font-family:"Noto Serif TC","Source Han Serif TC",serif}.analytics-shell{max-width:1180px;margin:0 auto;padding:40px 22px 72px}.analytics-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:26px}.analytics-top h1{margin:6px 0 8px;font-size:34px;letter-spacing:.12em;font-weight:500}.analytics-top p{margin:0;color:#68706a;line-height:1.7}.analytics-actions{display:flex;gap:10px;flex-wrap:wrap}.analytics-actions a,.analytics-actions button{min-height:42px;border:1px solid #111;background:#fff;color:#111;padding:9px 16px;text-decoration:none;letter-spacing:.08em;cursor:pointer}.analytics-actions button:hover,.analytics-actions a:hover{background:#111;color:#fff}.status{margin:16px 0 20px;color:#68706a}.panel{background:#fff;border:1px solid #d8ddd4;padding:22px;margin-top:18px}.panel h2{margin:0 0 18px;font-size:22px;letter-spacing:.12em;font-weight:500}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{border:1px solid #e2e5df;padding:18px;background:#fafbf8}.metric small{display:block;color:#8a928b;letter-spacing:.12em;text-transform:uppercase}.metric b{display:block;margin-top:8px;font-size:34px;font-weight:500}.source-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.source{border:1px solid #e2e5df;padding:14px;background:#fafbf8}.source span{display:block;color:#68706a;font-size:13px}.source b{display:block;margin-top:6px;font-size:24px;font-weight:500}.funnel{display:grid;gap:10px}.funnel-row{display:grid;grid-template-columns:minmax(240px,1fr) 120px 120px;gap:12px;align-items:center;border:1px solid #e2e5df;background:#fafbf8;padding:14px}.funnel-row b{font-weight:500}.funnel-row span{color:#68706a}.table-wrap{overflow:auto}.result-table{width:100%;border-collapse:collapse}.result-table th,.result-table td{border-bottom:1px solid #e2e5df;text-align:left;padding:12px;white-space:nowrap}.result-table th{font-size:13px;color:#68706a;font-weight:500}.notice{border:1px solid #d8ddd4;background:#fff;padding:18px;line-height:1.8;color:#68706a}.notice code{background:#f0f1ed;padding:2px 5px}@media(max-width:860px){.analytics-top{display:grid}.metric-grid,.source-grid{grid-template-columns:1fr 1fr}.funnel-row{grid-template-columns:1fr}.analytics-top h1{font-size:28px}}@media(max-width:560px){.metric-grid,.source-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="analytics-page">
+  <main class="analytics-shell">
+    <header class="analytics-top">
+      <div>
+        <p class="eyebrow">HANA SCENT ARTIST</p>
+        <h1>漏斗統計</h1>
+        <p>首頁、Find Your Helori 測驗、Helori 課程頁分開統計。資料來源：Supabase analytics_events。</p>
+      </div>
+      <div class="analytics-actions">
+        <button id="reload" type="button">重新載入</button>
+        <a href="./index.html">回內容後台</a>
+        <a href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a>
+      </div>
+    </header>
+
+    <div id="status" class="status">正在載入統計資料…</div>
+    <section id="app" class="hidden">
+      <div class="panel">
+        <h2>頁面觀看</h2>
+        <div id="page-metrics" class="metric-grid"></div>
+      </div>
+
+      <div class="panel">
+        <h2>來源</h2>
+        <div id="source-metrics" class="source-grid"></div>
+      </div>
+
+      <div class="panel">
+        <h2>漏斗統計</h2>
+        <div id="funnel" class="funnel"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Helori 測驗事件</h2>
+        <div id="quiz-metrics" class="metric-grid"></div>
+      </div>
+
+      <div class="panel">
+        <h2>各 Helori 結果人數</h2>
+        <div class="table-wrap"><table class="result-table"><thead><tr><th>結果</th><th>人數</th></tr></thead><tbody id="result-table"></tbody></table></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (() => {
+      'use strict';
+      const cfg = window.HANA_CMS_CONFIG || {};
+      const configured = /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(cfg.supabaseUrl || '') && cfg.supabaseAnonKey && !cfg.supabaseAnonKey.includes('YOUR_');
+      const $ = selector => document.querySelector(selector);
+      const sources = ['Instagram','LINE','Google','Direct','Other'];
+      const pageLabels = { home:'首頁', helori_quiz:'Find Your Helori 測驗', helori_course:'Helori 課程頁', course_page:'專業調香課程頁' };
+      const eventLabels = {
+        view:'觀看', click_helori:'點擊 Helori', click_quiz:'點擊測驗', quiz_start:'開始測驗', quiz_complete:'完成測驗',
+        click_line:'點擊 LINE', click_course:'點擊課程頁', click_booking:'點擊預約/報名', click_discount:'點擊領優惠券'
+      };
+      const db = configured && window.supabase ? window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey) : null;
+      const now = new Date();
+      const since = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString();
+
+      function count(rows, filter) { return rows.filter(filter).length; }
+      function within(days) { const floor = new Date(now.getTime() - days * 24 * 60 * 60 * 1000); return row => new Date(row.created_at) >= floor; }
+      function metric(label, value) { return `<div class="metric"><small>${label}</small><b>${value}</b></div>`; }
+      function sourceBox(label, value) { return `<div class="source"><span>${label}</span><b>${value}</b></div>`; }
+      function percent(a, b) { return b ? `${Math.round(a / b * 100)}%` : '—'; }
+      function eventCount(rows, page, event) { return count(rows, r => r.page === page && r.event_type === event); }
+      function escapeHtml(value = '') { return String(value).replace(/[&<>'"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[c])); }
+
+      function render(rows) {
+        const viewRows = rows.filter(r => r.event_type === 'view');
+        $('#page-metrics').innerHTML = ['home','helori_quiz','helori_course'].map(page => {
+          const pageRows = viewRows.filter(r => r.page === page);
+          return metric(`${pageLabels[page]}｜今日觀看`, count(pageRows, within(1))) + metric(`${pageLabels[page]}｜7 日觀看`, count(pageRows, within(7))) + metric(`${pageLabels[page]}｜30 日觀看`, pageRows.length);
+        }).join('');
+
+        $('#source-metrics').innerHTML = sources.map(source => sourceBox(source, count(rows, r => r.source === source))).join('');
+
+        const homeViews = eventCount(rows,'home','view');
+        const homeToHelori = eventCount(rows,'home','click_helori');
+        const heloriViews = eventCount(rows,'helori_quiz','view') + eventCount(rows,'helori_course','click_quiz');
+        const starts = eventCount(rows,'helori_quiz','quiz_start');
+        const completes = eventCount(rows,'helori_quiz','quiz_complete');
+        const lineClicks = eventCount(rows,'helori_quiz','click_line') + eventCount(rows,'helori_course','click_line');
+        const courseClicks = eventCount(rows,'helori_quiz','click_course') + eventCount(rows,'home','click_course');
+        const courseViews = eventCount(rows,'course_page','view');
+        const bookings = eventCount(rows,'course_page','click_booking') + eventCount(rows,'helori_course','click_booking');
+        const funnel = [
+          ['首頁觀看 → 點擊 Helori', homeToHelori, homeViews],
+          ['Helori 頁觀看 → 開始測驗', starts, heloriViews],
+          ['開始測驗 → 完成測驗', completes, starts],
+          ['完成測驗 → 點擊 LINE', lineClicks, completes],
+          ['完成測驗 → 點擊課程頁', courseClicks, completes],
+          ['課程頁 → 點擊報名', bookings, courseViews]
+        ];
+        $('#funnel').innerHTML = funnel.map(([label, value, base]) => `<div class="funnel-row"><b>${label}</b><span>${value} / ${base}</span><span>轉換率 ${percent(value, base)}</span></div>`).join('');
+
+        $('#quiz-metrics').innerHTML = [
+          ['開始測驗人數', starts], ['完成測驗人數', completes], ['點擊 LINE 領優惠券', eventCount(rows,'helori_quiz','click_discount')],
+          ['點擊課程頁', eventCount(rows,'helori_quiz','click_course')], ['點擊預約/報名按鈕', bookings], ['分享測驗', eventCount(rows,'helori_quiz','share_quiz')]
+        ].map(([label, value]) => metric(label, value)).join('');
+
+        const byResult = {};
+        rows.filter(r => r.page === 'helori_quiz' && r.event_type === 'quiz_complete').forEach(r => {
+          const key = r.result_type || '未記錄';
+          byResult[key] = (byResult[key] || 0) + 1;
+        });
+        const resultRows = Object.entries(byResult).sort((a,b) => b[1] - a[1]);
+        $('#result-table').innerHTML = resultRows.length ? resultRows.map(([label, value]) => `<tr><td>${escapeHtml(label)}</td><td>${value}</td></tr>`).join('') : '<tr><td colspan="2">目前沒有完成測驗資料。</td></tr>';
+      }
+
+      async function load() {
+        if (!db) {
+          $('#status').innerHTML = '<div class="notice">後台尚未連接 Supabase。請確認 <code>admin/config.js</code>。</div>';
+          return;
+        }
+        $('#status').textContent = '正在載入最近 30 日資料…';
+        $('#app').classList.add('hidden');
+        const { data, error } = await db.from('analytics_events').select('created_at,page,event_type,source,result_type,session_id').gte('created_at', since).order('created_at', { ascending:false }).limit(10000);
+        if (error) {
+          $('#status').innerHTML = `<div class="notice">無法載入 analytics_events。請先在 Supabase SQL Editor 執行 <code>supabase/analytics_events.sql</code>。<br>${escapeHtml(error.message || '')}</div>`;
+          return;
+        }
+        render(data || []);
+        $('#status').textContent = `已載入最近 30 日 ${data?.length || 0} 筆事件。`;
+        $('#app').classList.remove('hidden');
+      }
+
+      $('#reload').addEventListener('click', load);
+      load();
+    })();
+  </script>
+</body>
+</html>
