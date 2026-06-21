@@ -380,4 +380,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   wrapNumbers(document.body);
   wrapEnglish(document.body);
+
+  if (!window.location.pathname.startsWith('/admin')) {
+    const tracker = document.createElement('script');
+    tracker.src = '/assets/page-views.js';
+    tracker.defer = true;
+    document.body.appendChild(tracker);
+  }
 });
