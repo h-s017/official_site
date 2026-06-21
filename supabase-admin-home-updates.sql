@@ -3,7 +3,8 @@
 
 alter table public.site_settings
   add column if not exists registration_open_date date,
-  add column if not exists registration_open_text text;
+  add column if not exists registration_open_text text,
+  add column if not exists course_open_dates jsonb not null default '[]'::jsonb;
 
 create table if not exists public.page_views (
   id uuid primary key default gen_random_uuid(),
