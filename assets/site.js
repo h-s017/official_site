@@ -235,8 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".nav-links");
   if (nav) {
     nav.innerHTML = `
-      <a href="/ciyu.html">此域</a>
-      <a href="/h-fugue-atelier.html">H.FUGUE ATELIER</a>
+      <a href="/">首頁</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
@@ -245,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="/courses/">KPIA</a>
         </div>
       </div>
+      <a href="/h-fugue-atelier.html">H.FUGUE ATELIER</a>
+      <a href="/ciyu.html">此域</a>
       <a href="/scent-design.html">企業品牌合作</a>
       <a href="/projects.html">氣味誌</a>
     `;
@@ -394,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".nav-links a").forEach((a) => {
     const href = a.getAttribute("href");
-    if (href === path || href === `/${path}` || (window.location.pathname !== "/" && href === window.location.pathname)) a.classList.add("active");
+    if (href === path || href === `/${path}` || (href === "/" && (window.location.pathname === "/" || path === "index.html")) || (window.location.pathname !== "/" && href === window.location.pathname)) a.classList.add("active");
   });
 
   wrapNumbers(document.body);
