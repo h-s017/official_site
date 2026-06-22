@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="nav-drop-button" type="button" aria-haspopup="true">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/helori/">調香體驗探索</a>
-          <a href="/overture/">藝術調香師</a>
+          <a href="/overture/">01 氣味藝術序曲</a>
           <a href="/courses/">KPIA</a>
         </div>
       </div>
