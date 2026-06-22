@@ -26,8 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
     section{padding-top:var(--hana-section-y)!important;padding-bottom:var(--hana-section-y)!important;}
 
     .site-nav{align-items:center;}
-    .nav-links{gap:16px;font-size:13px;}
+    .nav-links{gap:16px;font-size:13px;align-items:center;}
     .nav-links a{white-space:nowrap;}
+    .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
+    .nav-drop-button{display:inline-flex;align-items:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
+    .nav-drop-button::after{content:"▾";font-size:10px;margin-left:6px;letter-spacing:0;}
+    .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button{border-color:var(--black);}
+    .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:190px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
+    .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+    .nav-dropdown-menu a{display:block!important;width:100%;height:auto!important;padding:10px 16px!important;border:0!important;line-height:1.6!important;white-space:nowrap!important;}
+    .nav-dropdown-menu a:hover{background:var(--gray100);}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
 
@@ -214,8 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;}
       .nav-links{display:none!important;width:100%;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0!important;padding:18px 0 4px;margin-top:10px;border-top:1px solid var(--line);font-size:15px!important;}
       .site-nav.menu-open .nav-links{display:flex!important;}
-      .nav-links a{width:100%;padding:12px 0;border-bottom:1px solid var(--line);}
+      .nav-links a,.nav-drop-button{width:100%;height:auto!important;padding:12px 0!important;border-bottom:1px solid var(--line);justify-content:flex-start;text-align:left;}
       .nav-links a:last-child{border-bottom:none;}
+      .nav-dropdown{display:block;width:100%;height:auto;}
+      .nav-dropdown-menu{position:static;display:block;min-width:0;width:100%;padding:0 0 0 18px;border:0;box-shadow:none;opacity:1;visibility:visible;transform:none;}
+      .nav-dropdown-menu a{padding:10px 0!important;font-size:14px!important;color:var(--gray700)!important;}
     }
   `;
   document.head.appendChild(style);
@@ -224,13 +235,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".nav-links");
   if (nav) {
     nav.innerHTML = `
-      <a href="index.html">首頁</a>
-      <a href="helori-scent-lab.html">Helori 香氣探索所</a>
-      <a href="experiences.html">專業調香課程</a>
-      <a href="scent-design.html">嗅覺設計服務</a>
-      <a href="h-fugue-atelier.html">H.FUGUE ATELIER</a>
-      <a href="projects.html">氣味誌</a>
-      <a href="visit.html">聯繫我們</a>
+      <a href="/ciyu.html">此域</a>
+      <a href="/h-fugue-atelier.html">H.FUGUE ATELIER</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" type="button" aria-haspopup="true">調香課程</button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/helori/">調香體驗探索</a>
+          <a href="/overture/">藝術調香師</a>
+          <a href="/courses/">KPIA</a>
+        </div>
+      </div>
+      <a href="/scent-design.html">企業品牌合作</a>
+      <a href="/projects.html">氣味誌</a>
     `;
   }
 
@@ -358,14 +374,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (h1) h1.innerHTML = "HANA SCENT ARTIST<br>專業調香課程系列";
   }
   if (path === "scent-design.html") {
-    document.title = "嗅覺設計服務｜HANA SCENT ARTIST";
+    document.title = "企業品牌合作｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
-    if (h1) h1.textContent = "嗅覺設計服務";
+    if (h1) h1.textContent = "企業品牌合作";
   }
   if (path === "projects.html") {
     document.title = "氣味誌｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1");
     if (h1) h1.textContent = "氣味誌";
+  }
+  if (path === "ciyu.html") {
+    document.title = "此域｜HANA SCENT ARTIST";
   }
   if (path === "visit.html") {
     document.title = "聯繫我們｜HANA SCENT ARTIST";
@@ -375,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".nav-links a").forEach((a) => {
     const href = a.getAttribute("href");
-    if (href === path) a.classList.add("active");
+    if (href === path || href === `/${path}` || (window.location.pathname !== "/" && href === window.location.pathname)) a.classList.add("active");
   });
 
   wrapNumbers(document.body);
