@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .nav-drop-button{display:inline-flex;align-items:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
     .nav-drop-button::after{content:"▾";font-size:10px;margin-left:6px;letter-spacing:0;}
     .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button,.nav-dropdown.is-open .nav-drop-button{border-color:var(--black);}
-    .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:190px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
+    .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:210px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
     .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.is-open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
     .nav-dropdown-menu a{display:block!important;width:100%;height:auto!important;padding:10px 16px!important;border:0!important;line-height:1.6!important;white-space:nowrap!important;}
     .nav-dropdown-menu a:hover{background:var(--gray100);}
@@ -241,14 +241,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/helori/">調香體驗探索</a>
+          <a href="/courses/">專業調香課程</a>
           <a href="/overture/">01 氣味藝術序曲</a>
-          <a href="/courses/">KPIA</a>
+          <a href="/KPIA/">KPIA</a>
         </div>
       </div>
-      <a href="/h-fugue-atelier.html">H.FUGUE ATELIER</a>
-      <a href="/ciyu.html">此域</a>
-      <a href="/scent-design.html">企業品牌合作</a>
-      <a href="/projects.html">氣味誌</a>
+      <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
+      <a href="/ciyu/">此域</a>
+      <a href="/business/">企業品牌合作</a>
+      <a href="/journal/">氣味誌</a>
     `;
   }
 
