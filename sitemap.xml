@@ -2,63 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hanascent.com/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hanascent.com/helori/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hanascent.com/courses/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hanascent.com/overture/</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hanascent.com/scent-design.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hanascent.com/h-fugue-atelier.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hanascent.com/projects.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hanascent.com/visit.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hanascent.com/student-tools/</loc>
-    <priority>0.6</priority>
+    <loc>https://hanascent.com/KPIA/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hanascent.com/h-fugue-atelier/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hanascent.com/ciyu/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hanascent.com/business/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hanascent.com/journal/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hanascent.com/blog.html?slug=olfactory-vulgarity-or-artistry</loc>
     <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hanascent.com/blog.html?slug=blooming-tears</loc>
     <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hanascent.com/blog.html?slug=from-perfume-product-to-scent-branding-system</loc>
     <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hanascent.com/blog.html?slug=proust-effect-fragrance-experience</loc>
     <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hanascent.com/blog.html?slug=taipei-corporate-fragrance-workshop</loc>
     <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>
