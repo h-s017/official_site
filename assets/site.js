@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
     .nav-drop-button{display:inline-flex;align-items:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
     .nav-drop-button::after{content:"▾";font-size:10px;margin-left:6px;letter-spacing:0;}
-    .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button{border-color:var(--black);}
+    .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button,.nav-dropdown.is-open .nav-drop-button{border-color:var(--black);}
     .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:190px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
-    .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+    .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.is-open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
     .nav-dropdown-menu a{display:block!important;width:100%;height:auto!important;padding:10px 16px!important;border:0!important;line-height:1.6!important;white-space:nowrap!important;}
     .nav-dropdown-menu a:hover{background:var(--gray100);}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
@@ -225,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .nav-links a,.nav-drop-button{width:100%;height:auto!important;padding:12px 0!important;border-bottom:1px solid var(--line);justify-content:flex-start;text-align:left;}
       .nav-links a:last-child{border-bottom:none;}
       .nav-dropdown{display:block;width:100%;height:auto;}
-      .nav-dropdown-menu{position:static;display:block;min-width:0;width:100%;padding:0 0 0 18px;border:0;box-shadow:none;opacity:1;visibility:visible;transform:none;}
+      .nav-dropdown-menu{position:static;display:none;min-width:0;width:100%;padding:0 0 0 18px;border:0;box-shadow:none;opacity:1;visibility:visible;transform:none;}
+      .nav-dropdown.is-open .nav-dropdown-menu{display:block!important;}
       .nav-dropdown-menu a{padding:10px 0!important;font-size:14px!important;color:var(--gray700)!important;}
     }
   `;
@@ -237,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.innerHTML = `
       <a href="/">首頁</a>
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-haspopup="true">調香課程</button>
+        <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/helori/">調香體驗探索</a>
           <a href="/overture/">01 氣味藝術序曲</a>
@@ -251,6 +252,22 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  const courseDropdown = nav?.querySelector(".nav-dropdown");
+  const courseButton = nav?.querySelector(".nav-drop-button");
+  const closeCourseDropdown = () => {
+    if (!courseDropdown || !courseButton) return;
+    courseDropdown.classList.remove("is-open");
+    courseButton.setAttribute("aria-expanded", "false");
+  };
+  if (courseDropdown && courseButton) {
+    courseButton.addEventListener("click", (event) => {
+      if (!window.matchMedia("(max-width: 980px)").matches) return;
+      event.preventDefault();
+      const isOpen = courseDropdown.classList.toggle("is-open");
+      courseButton.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
   const mobileMenu = document.querySelector(".mobile-note");
   if (siteNav && mobileMenu) {
     mobileMenu.setAttribute("role", "button");
@@ -259,6 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.setAttribute("aria-label", "開啟導覽選單");
     const toggleMenu = () => {
       const isOpen = siteNav.classList.toggle("menu-open");
+      if (!isOpen) closeCourseDropdown();
       mobileMenu.textContent = isOpen ? "CLOSE" : "MENU";
       mobileMenu.setAttribute("aria-expanded", String(isOpen));
       mobileMenu.setAttribute("aria-label", isOpen ? "關閉導覽選單" : "開啟導覽選單");
@@ -273,6 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         siteNav.classList.remove("menu-open");
+        closeCourseDropdown();
         mobileMenu.textContent = "MENU";
         mobileMenu.setAttribute("aria-expanded", "false");
         mobileMenu.setAttribute("aria-label", "開啟導覽選單");
