@@ -246,8 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="/KPIA/">KPIA</a>
         </div>
       </div>
-      <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
       <a href="/ciyu/">此域</a>
+      <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
     `;
