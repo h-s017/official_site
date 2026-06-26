@@ -6,7 +6,11 @@
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
   const noCoverTitles = new Set(['HANA SCENT ARTIST 氣味敘事空間']);
+  const pinnedAnnouncements = [
+    { title:'香氣作品《夏日青》與 66冊香-01《Blooming Tears》已發表', content:'兩件香氣作品已發表在 H.FUGUE ATELIER。', category:'H.FUGUE', link_url:'/h-fugue-atelier/', link_label:'前往 H.FUGUE ATELIER →' }
+  ];
   const defaultAnnouncements = [
+    ...pinnedAnnouncements,
     { title:'心村限定調香體驗開放預約', content:'可預約探索調香體驗，完成一支屬於此刻狀態的氣味。', category:'2026.07', link_url:'https://reservation.hanascent.com/', link_label:'立即預約 →' },
     { title:'專業調香課程系列上線', content:'從氣味藝術序曲開始，可銜接 KPIA 或後續專業進修路線。', category:'COURSE', link_url:'/courses/', link_label:'查看課程 →' },
     { title:'HELORI 香氣探索所', content:'探索此刻屬於你的香氣夥伴。', category:'HELORI', link_url:'/helori/', link_label:'進入 HELORI →' }
@@ -74,7 +78,7 @@
         list.innerHTML = '';
         return;
       }
-      const source = items.length ? items : defaultAnnouncements;
+      const source = items.length ? [...pinnedAnnouncements, ...items.filter(x => !pinnedAnnouncements.some(p => p.title === x.title))] : defaultAnnouncements;
       const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.starts_at || x.date || x.created_at || '';
         const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
