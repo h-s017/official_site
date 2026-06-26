@@ -5,17 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <base href="/" />
   <title>H.FUGUE ATELIER｜HANA SCENT ARTIST</title>
-  <meta name="description" content="H.FUGUE ATELIER 是 Hana 的氣味作品與研究線，收錄香水、蠟燭、Scent To Go、心村限定香氣作品與尚未商品化的創作紀錄。" />
+  <meta name="description" content="H.FUGUE ATELIER 是 Hana 的氣味作品與研究線，收錄尚未商品化的氣味作品、手稿研究與感官敘事創作。" />
   <link rel="canonical" href="https://hanascent.com/h-fugue-atelier/" />
   <link rel="stylesheet" href="/assets/style.css" />
-  <style>main .cta{display:none!important;}</style>
+  <style>
+    main .cta{display:none!important;}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .work-card{min-height:520px;display:flex;flex-direction:column;gap:22px;}
+    .work-image{height:230px;border:1px solid var(--line);background:#f7f7f7;position:relative;overflow:hidden;}
+    .work-image::before,.work-image::after{content:"";position:absolute;inset:auto;border:1px solid rgba(17,17,17,.28);}
+    .work-image.intention{background:linear-gradient(135deg,#f8f7f3,#e9e5dc);}
+    .work-image.intention::before{width:58%;height:58%;left:18%;top:20%;border-radius:50% 46% 52% 42%;transform:rotate(-8deg);}
+    .work-image.intention::after{width:34%;height:34%;right:16%;bottom:18%;border-radius:50%;background:rgba(255,255,255,.42);}
+    .work-image.summer{background:linear-gradient(135deg,#eef5ed,#dbe8dc 52%,#f8f4df);}
+    .work-image.summer::before{width:72%;height:1px;left:12%;top:45%;background:rgba(17,17,17,.34);transform:rotate(-12deg);}
+    .work-image.summer::after{width:42%;height:42%;right:14%;bottom:17%;border-radius:50%;background:rgba(255,255,255,.38);}
+    .work-image.tears{background:linear-gradient(135deg,#f5eeee,#efe7df 48%,#f8f7f3);}
+    .work-image.tears::before{width:64%;height:64%;left:16%;top:16%;border-radius:56% 42% 50% 46%;transform:rotate(10deg);}
+    .work-image.tears::after{width:1px;height:72%;right:28%;top:13%;background:rgba(17,17,17,.28);transform:rotate(18deg);}
+    .work-notes{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:15px;letter-spacing:.12em;}
+    @media(max-width:980px){.work-grid{grid-template-columns:1fr}.work-card{min-height:0}.work-image{height:210px;}}
+  </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
   <header class="page-hero"><div class="wrap"><p class="kicker">H.FUGUE ATELIER</p><h1>H.FUGUE ATELIER</h1><p>香氣的呈現形式有很多種，在這裡，承接 Hana Scent Artist 的嗅覺敘事方法，將記憶、場域與情緒轉化為可以被收藏、使用與帶走的香氣作品。</p></div></header>
   <main>
     <section class="dark-band"><div class="wrap split"><div><p class="kicker">Brand Statement</p><h2>氣味不只是一昧的流行，而是千年來記憶被直接保存的方式。</h2></div><div><p class="lead">在 H.FUGUE ATELIER，先理解你想被如何記得，再將記憶轉譯成可以被聞見的結構。</p></div></div></section>
-    <section><div class="wrap"><div class="section-head"><p class="kicker">Collections</p><div><h2>作品系列</h2><p class="lead">收錄 H.FUGUE ATELIER 的氣味作品、研究草稿與尚未商品化的創作紀錄。</p></div></div><div class="grid2"><article class="project-card"><small>HEART VILLAGE LIMITED</small><h3>心村限定系列</h3><p>以北投中心新村的白屋、老樹、奉茶、灰牆與午後空氣為靈感，發展只在心村所出現的限定氣味作品。</p></article><article class="project-card"><small>UNCOMMERCIALIZED WORK</small><h3>心村系列｜夏日青</h3><p>以青茶、冷泡茶湯、濕潤泥土、老牆樹蔭、苦檸檬與空氣木質構成的夏日氣味。像中心新村午後被蟬聲撐開的涼意，目前尚未商品化。</p></article><article class="project-card"><small>UNCOMMERCIALIZED WORK</small><h3>66冊香系列｜Blooming Tears</h3><p>由調香作業與手稿延伸出的氣味研究，將書寫、配方架構與情緒肖像轉化為香氣作品。目前尚未商品化。</p></article><article class="project-card"><small>H.FUGUE ATELIER</small><h3>作品紀錄</h3><p>H.FUGUE ATELIER 的氣味創作紀錄，作為香氣、影像與感官敘事之間的實驗。目前尚未商品化。</p><a class="text-link" href="https://www.instagram.com/reel/DYkXGa3zCbI/?utm_source=ig_web_copy_link&amp;igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">觀看作品紀錄 →</a></article><article class="project-card"><small>SCENT TO GO</small><h3>Scent To Go</h3><p>把場域氣味轉化為可以帶回家的形式。</p></article><article class="project-card"><small>PERFUME OBJECTS</small><h3>香水與氣味物件</h3><p>將個人記憶、角色香氣與場域敘事轉化為香水、擴香、織品噴霧等氣味載具。</p></article><article class="project-card"><small>LIMITED WORKS</small><h3>限定合作作品</h3><p>與藝術家、品牌、展覽或地方場域合作，製作少量、限期或專案式的氣味作品。</p></article></div></div></section>
+    <section><div class="wrap"><div class="section-head"><p class="kicker">Works</p><div><h2>作品系列</h2><p class="lead">H.FUGUE ATELIER 收錄尚未商品化的氣味作品與研究草稿。此處只公開作品意圖與氣味輪廓，不公開配方比例。</p></div></div><div class="work-grid"><article class="project-card work-card"><div class="work-image intention" aria-hidden="true"></div><small>INTENTION</small><h3>初衷</h3><p>H.FUGUE ATELIER 從「氣味如何保存記憶」出發，把香氣視為一種可被收藏的敘事物件。作品不急著成為商品，而是先保留氣味、文字、影像與場域經驗之間的關係。</p><p class="work-notes">記憶｜場域｜氣味物件｜尚未商品化</p></article><article class="project-card work-card"><div class="work-image summer" aria-hidden="true"></div><small>HEART VILLAGE SERIES</small><h3>夏日青</h3><p>以中心新村午後的熱、樹蔭下的濕度與奉茶記憶為起點。氣味呈現青茶、冷泡茶湯、濕潤泥土、老牆樹蔭、苦檸檬與空氣木質，像被蟬聲撐開的一口涼意。</p><p class="work-notes">青茶｜泥土氣息｜苦檸檬｜空氣木質</p></article><article class="project-card work-card"><div class="work-image tears" aria-hidden="true"></div><small>66冊香系列</small><h3>01 Blooming Tears</h3><p>一幅由眼淚、花瓣與肌膚溫度構成的氣味肖像。玫瑰像無聲落下的愛，茉莉帶出霧氣般的凝望，透明花感與柔軟麝香停留在身體邊緣，留下微微潮濕、苦甜而安靜的餘韻。</p><p class="work-notes">花瓣｜透明水感｜柔軟麝香｜情緒肖像</p></article></div></div></section>
   </main>
   <footer class="footer"><div class="footer-grid"><div><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>H.FUGUE ATELIER｜Scent Objects</div><div><a href="/ciyu/">北投中心新村｜此域 Hineni 氣味敘事空間</a></div><div><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://lin.ee/QvDGM79">官方 LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
   <script src="/assets/site.js"></script>
