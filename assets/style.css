@@ -240,6 +240,26 @@ h2{
 .photo-card img{
   filter:grayscale(.08) contrast(.98);
 }
+.about-profile{
+  align-items:center;
+}
+.about-portrait{
+  margin:0;
+  justify-self:center;
+  width:min(360px,100%);
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:50% / 42%;
+  border:1px solid var(--line);
+  background:#ffffff;
+}
+.about-portrait img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:grayscale(.04) contrast(.98);
+}
 .large-quote{
   margin:0 0 24px;
   font-size:clamp(32px,4vw,58px);
