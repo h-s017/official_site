@@ -44,11 +44,15 @@
       : '';
 
     document.title = `${data.title}｜HANA SCENT ARTIST`;
+    const description = document.querySelector('meta[name="description"]');
+    if (description && data.summary) description.setAttribute('content', data.summary);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', `https://hanascent.com/blog.html?slug=${encodeURIComponent(data.slug)}`);
     const published = data.published_at ? new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'long',day:'numeric'}).format(new Date(data.published_at)) : '';
     const showCover = data.cover_url && !noCoverTitles.has(String(data.title || '').trim());
     const cover = showCover ? `<img class="blog-cover" src="${esc(data.cover_url)}" alt="">` : '';
     root.className = 'blog-article';
     root.innerHTML = `<header><p>${esc(published)}</p><h1>${esc(data.title)}</h1>${data.summary ? `<p class="summary">${esc(data.summary)}</p>` : ''}</header>${cover}<div class="blog-body">${cleanHtml(data.body)}</div>${adjacentNav}`;
   }
-  init().catch(() => { root.className = 'blog-state'; root.innerHTML = '<h1>找不到這篇文章</h1><p>文章可能尚未發布，或網址已變更。</p><p><a href="/projects.html">返回氣味誌</a></p>'; });
+  init().catch(() => { root.className = 'blog-state'; root.innerHTML = '<h1>找不到這篇文章</h1><p>文章可能尚未發布，或網址已變更。</p><p><a href="/journal/">返回氣味誌</a></p>'; });
 })();
