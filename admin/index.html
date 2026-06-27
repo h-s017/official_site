@@ -149,7 +149,8 @@
         <input name="id" type="hidden">
         <label class="full">課程名稱<input name="course_title" required placeholder="例如 氣味藝術序曲"></label>
         <label>開課日期<input name="course_date" type="date" required></label>
-        <label>時間<input name="time_label" placeholder="例如 13:00-16:00"></label>
+        <label>開始時間<input name="start_time" type="time" required></label>
+        <label>結束時間<input name="end_time" type="time" required></label>
         <label>狀態<select name="status"><option value="open">開放報名</option><option value="full">額滿</option><option value="closed">暫停／關閉</option></select></label>
         <label>排序<input name="sort_order" type="number" value="0" step="1"></label>
         <label class="full">報名連結<input name="link_url" type="url" placeholder="https://reservation.hanascent.com/"></label>
@@ -241,6 +242,19 @@
       function formData(form) {
         return Object.fromEntries(new FormData(form).entries());
       }
+      function normalizeTime(value = '') {
+        return String(value || '').slice(0, 5);
+      }
+      function timeRange(item = {}) {
+        const start = normalizeTime(item.start_time);
+        const end = normalizeTime(item.end_time);
+        if (start && end) return `${start}-${end}`;
+        return item.time_label || '';
+      }
+      function parseTimeLabel(value = '') {
+        const match = String(value || '').match(/(\d{1,2}:\d{2})\s*[–-]\s*(\d{1,2}:\d{2})/);
+        return match ? { start_time: match[1].padStart(5, '0'), end_time: match[2].padStart(5, '0') } : {};
+      }
       function showView(name) {
         $$('.view').forEach(x => x.classList.toggle('active', x.id === `view-${name}`));
         $$('#nav button').forEach(x => x.classList.toggle('active', x.dataset.view === name));
@@ -318,11 +332,11 @@
         const list = $('#course-dates-list');
         if (!list) return;
         const q = ($('#course-date-search')?.value || '').trim().toLowerCase();
-        const rows = courseDates.filter(item => !q || `${item.course_title || ''} ${item.course_date || ''} ${item.time_label || ''} ${item.note || ''}`.toLowerCase().includes(q));
+        const rows = courseDates.filter(item => !q || `${item.course_title || ''} ${item.course_date || ''} ${timeRange(item)} ${item.note || ''}`.toLowerCase().includes(q));
         list.innerHTML = rows.length ? rows.map(item => {
           const status = dateStatusLabels[item.status] || item.status || '未設定';
           const href = item.link_url ? `<a class="link-muted" href="${escapeHtml(item.link_url)}" target="_blank" rel="noopener">報名連結</a>` : '無連結';
-          return `<article class="list-item"><div><h3>${escapeHtml(item.course_title || '未命名課程')}</h3><div class="meta"><span class="badge ${escapeHtml(item.status || '')}">${escapeHtml(status)}</span><strong>${escapeHtml(item.course_date || '')}</strong><span>${escapeHtml(item.time_label || '')}</span><span>${href}</span>${item.note ? `<span>${escapeHtml(item.note)}</span>` : ''}</div></div><div class="row-actions"><button class="secondary" type="button" data-edit-course-date="${escapeHtml(item.id)}">編輯</button></div></article>`;
+          return `<article class="list-item"><div><h3>${escapeHtml(item.course_title || '未命名課程')}</h3><div class="meta"><span class="badge ${escapeHtml(item.status || '')}">${escapeHtml(status)}</span><strong>${escapeHtml(item.course_date || '')}</strong><span>${escapeHtml(timeRange(item))}</span><span>${href}</span>${item.note ? `<span>${escapeHtml(item.note)}</span>` : ''}</div></div><div class="row-actions"><button class="secondary" type="button" data-edit-course-date="${escapeHtml(item.id)}">編輯</button></div></article>`;
         }).join('') : '<div class="empty">目前沒有開課日期。</div>';
       }
       function openPost(post = {}) {
@@ -393,7 +407,9 @@
         form.elements.id.value = item.id || '';
         form.elements.course_title.value = item.course_title || '';
         form.elements.course_date.value = item.course_date || todayDate();
-        form.elements.time_label.value = item.time_label || '';
+        const parsed = parseTimeLabel(item.time_label);
+        form.elements.start_time.value = normalizeTime(item.start_time) || parsed.start_time || '';
+        form.elements.end_time.value = normalizeTime(item.end_time) || parsed.end_time || '';
         form.elements.status.value = item.status || 'open';
         form.elements.sort_order.value = item.sort_order ?? 0;
         form.elements.link_url.value = item.link_url || '';
@@ -463,6 +479,9 @@
         delete data.id;
         if (!data.course_title.trim()) return toast('請先填寫課程名稱。', true);
         if (!data.course_date) return toast('請先填寫開課日期。', true);
+        if (!data.start_time || !data.end_time) return toast('請填寫開始與結束時間。', true);
+        if (data.end_time <= data.start_time) return toast('結束時間必須晚於開始時間。', true);
+        data.time_label = `${data.start_time}-${data.end_time}`;
         data.sort_order = Number(data.sort_order || 0);
         saving = true;
         try {
