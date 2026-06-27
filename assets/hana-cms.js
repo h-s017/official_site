@@ -30,6 +30,7 @@
     return match?.[1] && directionLabels[match[1]] ? match[1] : 'olfactory-culture';
   };
   const shouldShowCover = post => Boolean(post.cover_url) && !noCoverTitles.has(String(post.title || '').trim());
+  const postUrl = post => post?.slug ? `/blog.html?slug=${encodeURIComponent(post.slug)}` : '/journal/';
   const settingValue = (settings, ...keys) => {
     for (const key of keys) {
       const value = settings?.[key];
@@ -69,7 +70,26 @@
       });
     });
   }
-  function renderAnnouncements(items = [], settings = {}) {
+  function sortNewsItems(a, b) {
+    const left = new Date(a.news_date || a.starts_at || a.date || a.created_at || 0).getTime() || 0;
+    const right = new Date(b.news_date || b.starts_at || b.date || b.created_at || 0).getTime() || 0;
+    if (right !== left) return right - left;
+    return Number(a.priority ?? 100) - Number(b.priority ?? 100);
+  }
+  function postsAsNews(posts = []) {
+    return posts
+      .filter(post => post?.title && post?.slug)
+      .map(post => ({
+        title: post.title,
+        summary: post.summary || '最新氣味誌文章已發布。',
+        category: '氣味誌',
+        news_date: post.published_at,
+        link_url: postUrl(post),
+        link_label: '閱讀文章 →',
+        priority: 90
+      }));
+  }
+  function renderAnnouncements(items = [], settings = {}, posts = []) {
     document.querySelectorAll('[data-hana-announcements]').forEach(root => {
       root.hidden = settings.show_announcements === false;
       const list = root.querySelector('.news-list');
@@ -78,9 +98,15 @@
         list.innerHTML = '';
         return;
       }
-      const source = items.length ? [...pinnedAnnouncements, ...items.filter(x => !pinnedAnnouncements.some(p => p.title === x.title))] : defaultAnnouncements;
+      const blogNews = postsAsNews(posts);
+      const source = items.length || blogNews.length
+        ? [
+            ...pinnedAnnouncements,
+            ...[...items.filter(x => !pinnedAnnouncements.some(p => p.title === x.title)), ...blogNews].sort(sortNewsItems)
+          ]
+        : defaultAnnouncements;
       const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
-        const sourceDate = x.starts_at || x.date || x.created_at || '';
+        const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
         const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
           ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit' }).format(new Date(sourceDate)).replace('/', '.')
           : (x.category || 'NEWS');
@@ -131,7 +157,7 @@
     ]);
     if (settings.error) throw settings.error; applySettings(settings.data || {});
     if (!pageContents.error) applyPageContents(pageContents.data || []);
-    if (!announcements.error) renderAnnouncements(announcements.data || [], settings.data || {});
+    if (!announcements.error) renderAnnouncements(announcements.data || [], settings.data || {}, posts.error ? [] : posts.data || []);
     if (!posts.error) renderPosts(posts.data || [], settings.data || {});
     applySectionOrder(settings.data || {});
     document.dispatchEvent(new CustomEvent('hana:cms-ready', { detail: settings.data || {} }));
