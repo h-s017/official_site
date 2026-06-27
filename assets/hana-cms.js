@@ -100,10 +100,7 @@
       }
       const blogNews = postsAsNews(posts);
       const source = items.length || blogNews.length
-        ? [
-            ...pinnedAnnouncements,
-            ...[...items.filter(x => !pinnedAnnouncements.some(p => p.title === x.title)), ...blogNews].sort(sortNewsItems)
-          ]
+        ? [...items, ...blogNews].sort(sortNewsItems)
         : defaultAnnouncements;
       const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
