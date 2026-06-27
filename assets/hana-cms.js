@@ -108,8 +108,9 @@
           ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit' }).format(new Date(sourceDate)).replace('/', '.')
           : (x.category || 'NEWS');
         const body = x.summary || x.content || '';
+        const content = body ? `<p>${esc(body)}</p>` : '';
         const linkLabel = x.link_label || '了解更多 →';
-        return `<article class="news-row" data-hana-announcement><div class="news-date">${esc(label)}</div><div><h3>${esc(x.title)}</h3><p>${esc(body)}</p></div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
+        return `<article class="news-row" data-hana-announcement><div class="news-date">${esc(label)}</div><div><h3>${esc(x.title)}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
       list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
     });

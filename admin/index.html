@@ -7,18 +7,160 @@
   <title>HANA 官網後台</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
-    .cms-version{font-size:12px;color:#8a928b;margin-top:8px}.admin-note{margin:14px 0 24px;color:#68706a}.row-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.dialog-body textarea[name="body"]{font-family:inherit;line-height:1.8}.simple-admin .view{display:block}.simple-admin .content{min-height:100vh}.simple-admin .list-item .badge{white-space:nowrap}.empty small{display:block;margin-top:8px;color:#8a928b;line-height:1.5}.cover-upload{display:grid;gap:10px;margin-top:10px}.cover-upload input[type="file"]{width:100%;padding:12px;border:1px dashed #c9cec7;background:#fafbf8}.cover-tools{display:flex;gap:10px;flex-wrap:wrap}.cover-tools button{min-height:42px}.cover-help{display:block;color:#68706a;line-height:1.6}@media(max-width:720px){.cover-tools{display:grid}.cover-tools button{width:100%}.dialog-form{max-width:100vw}.dialog-body{padding-bottom:90px}}
+    .cms-version{font-size:12px;color:#8a928b;margin-top:8px}.admin-note{margin:14px 0 24px;color:#68706a}.row-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.dialog-body textarea[name="body"]{font-family:inherit;line-height:1.8}.simple-admin .view{display:none}.simple-admin .view.active{display:block}.simple-admin .content{min-height:100vh}.simple-admin .list-item .badge{white-space:nowrap}.empty small{display:block;margin-top:8px;color:#8a928b;line-height:1.5}.date-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.nav-group-label{margin:18px 0 7px;color:#99a59e;font-size:11px;letter-spacing:.14em}.list-item .meta strong{color:#3f4a44}.link-muted{color:#68706a;text-decoration:none}.link-muted:hover{text-decoration:underline}.cover-upload{display:grid;gap:10px;margin-top:10px}.cover-upload input[type="file"]{width:100%;padding:12px;border:1px dashed #c9cec7;background:#fafbf8}.cover-tools{display:flex;gap:10px;flex-wrap:wrap}.cover-tools button{min-height:42px}.cover-help{display:block;color:#68706a;line-height:1.6}@media(max-width:760px){.date-grid{grid-template-columns:1fr}.cover-tools{display:grid}.cover-tools button{width:100%}.dialog-form{max-width:100vw}.dialog-body{padding-bottom:90px}}
   </style>
 </head>
 <body class="simple-admin">
-  <div id="setup" class="setup hidden"><section class="setup-card"><p class="eyebrow">HANA SCENT ARTIST</p><h1>後台尚未連接</h1><p>請確認 <code>admin/config.js</code> 已填入 Supabase Project URL 與 anon public key。</p></section></div>
-  <main id="login" class="login hidden"><form id="login-form" class="login-card"><p class="eyebrow">HANA SCENT ARTIST</p><h1>官網內容管理</h1><p class="muted">使用管理帳號登入</p><label>電子郵件<input id="login-email" type="email" autocomplete="username" required></label><label>密碼<input id="login-password" type="password" autocomplete="current-password" required minlength="8"></label><button class="primary" type="submit">登入</button><p id="login-error" class="error" role="alert"></p><p class="cms-version">CMS single-file v20260619-3</p></form></main>
-  <div id="app" class="app hidden">
-    <aside class="sidebar"><div><p class="brand">HANA <span>CMS</span></p><p class="brand-sub">官網內容管理</p><p class="cms-version">single-file v20260619-3</p></div><nav id="nav"><button data-view="posts" class="active">氣味誌</button></nav><div class="account"><span id="account-email"></span><button id="logout" class="text-button" type="button">登出</button></div></aside>
-    <section class="content"><header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1>氣味誌</h1></div><a id="view-site" class="secondary" href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a></header><section id="view-posts" class="view active"><div class="action-row"><input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章"><button id="reload-posts" class="secondary" type="button">重新載入</button><button id="new-post" class="primary" type="button">新增氣味誌文章</button></div><p class="admin-note">可直接修改標題、摘要、專題分類、封面圖片與純文字內文。手機可直接選相簿照片上傳；段落之間空一行即可，不需要輸入 HTML。</p><div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章…</div></div></section></section>
+  <div id="setup" class="setup hidden">
+    <section class="setup-card">
+      <p class="eyebrow">HANA SCENT ARTIST</p>
+      <h1>後台尚未連接</h1>
+      <p>請確認 <code>admin/config.js</code> 已填入 Supabase Project URL 與 anon public key。</p>
+    </section>
   </div>
-  <dialog id="post-dialog"><form id="post-form" class="dialog-form" method="dialog"><header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header><div class="dialog-body form-grid"><input name="id" type="hidden"><input name="published_at" type="hidden"><label class="full">標題<input name="title" required></label><label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label><label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label><label>專題分類<select name="reading_direction"><option value="olfactory-culture">嗅覺文化</option><option value="scent-creation">氣味創作</option><option value="heart-village-notes">心村札記</option></select></label><label class="full">摘要<textarea name="summary" rows="3"></textarea></label><label class="full">封面圖片<input name="cover_url" type="url" placeholder="可貼圖片網址，或使用下方按鈕上傳照片"><span class="cover-upload"><input id="cover-file" type="file" accept="image/*"><span class="cover-tools"><button id="upload-cover" class="secondary" type="button">上傳封面照片</button><button id="clear-cover" class="secondary" type="button">清除封面</button></span><small class="cover-help">手機可直接選相簿照片。清除封面後，儲存文章，前台就不會顯示封面圖片。</small></span></label><label class="full">內文 <small>直接輸入一般文字即可；段落之間空一行。若貼入 HTML 也會保留。</small><textarea name="body" rows="16" placeholder="在這裡直接輸入文章內容。"></textarea></label><div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-post" class="primary" type="button">儲存</button></div></div></form></dialog>
+
+  <main id="login" class="login hidden">
+    <form id="login-form" class="login-card">
+      <p class="eyebrow">HANA SCENT ARTIST</p>
+      <h1>官網內容管理</h1>
+      <p class="muted">使用管理帳號登入</p>
+      <label>電子郵件<input id="login-email" type="email" autocomplete="username" required></label>
+      <label>密碼<input id="login-password" type="password" autocomplete="current-password" required minlength="8"></label>
+      <button class="primary" type="submit">登入</button>
+      <p id="login-error" class="error" role="alert"></p>
+      <p class="cms-version">CMS v20260627-news</p>
+    </form>
+  </main>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div>
+        <p class="brand">HANA <span>CMS</span></p>
+        <p class="brand-sub">官網內容管理</p>
+        <p class="cms-version">v20260627-news</p>
+      </div>
+      <nav id="nav">
+        <button data-view="posts" class="active">氣味誌</button>
+        <p class="nav-group-label">NEWS</p>
+        <button data-view="news">最新消息</button>
+        <button data-view="fragrance">香氣發布</button>
+        <button data-view="course">課程發布</button>
+        <p class="nav-group-label">COURSE</p>
+        <button data-view="course-dates">開課日期</button>
+      </nav>
+      <div class="account"><span id="account-email"></span><button id="logout" class="text-button" type="button">登出</button></div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1 id="view-title">氣味誌</h1></div><a id="view-site" class="secondary" href="https://hanascent.com" target="_blank" rel="noopener">查看官網</a></header>
+
+      <section id="view-posts" class="view active">
+        <div class="action-row">
+          <input id="post-search" class="search" type="search" placeholder="搜尋氣味誌文章">
+          <button id="reload-posts" class="secondary" type="button">重新載入</button>
+          <button id="new-post" class="primary" type="button">新增氣味誌文章</button>
+        </div>
+        <p class="admin-note">維持原本氣味誌設定：標題、網址代稱、狀態、專題分類、摘要、封面與內文。</p>
+        <div id="posts-list" class="list"><div class="empty">正在載入氣味誌文章...</div></div>
+      </section>
+
+      <section id="view-news" class="view" data-announcement-view="news">
+        <div class="action-row">
+          <input class="search announcement-search" data-category="news" type="search" placeholder="搜尋最新消息">
+          <button class="secondary reload-all" type="button">重新載入</button>
+          <button class="primary new-announcement" data-category="news" type="button">新增最新消息</button>
+        </div>
+        <p class="admin-note">適合首頁 News 與消息紀錄頁：只需要發布日、標題、連結；內容欄可留空。</p>
+        <div id="news-list" class="list"><div class="empty">正在載入最新消息...</div></div>
+      </section>
+
+      <section id="view-fragrance" class="view" data-announcement-view="fragrance">
+        <div class="action-row">
+          <input class="search announcement-search" data-category="fragrance" type="search" placeholder="搜尋香氣發布">
+          <button class="secondary reload-all" type="button">重新載入</button>
+          <button class="primary new-announcement" data-category="fragrance" type="button">新增香氣發布</button>
+        </div>
+        <p class="admin-note">例如「夏日青」這類 H.FUGUE ATELIER 新氣味發表。</p>
+        <div id="fragrance-list" class="list"><div class="empty">正在載入香氣發布...</div></div>
+      </section>
+
+      <section id="view-course" class="view" data-announcement-view="course">
+        <div class="action-row">
+          <input class="search announcement-search" data-category="course" type="search" placeholder="搜尋課程發布">
+          <button class="secondary reload-all" type="button">重新載入</button>
+          <button class="primary new-announcement" data-category="course" type="button">新增課程發布</button>
+        </div>
+        <p class="admin-note">適合課程上線、報名開放、課程內容更新等消息。</p>
+        <div id="course-list" class="list"><div class="empty">正在載入課程發布...</div></div>
+      </section>
+
+      <section id="view-course-dates" class="view">
+        <div class="action-row">
+          <input id="course-date-search" class="search" type="search" placeholder="搜尋開課日期">
+          <button class="secondary reload-all" type="button">重新載入</button>
+          <button id="new-course-date" class="primary" type="button">新增開課日期</button>
+        </div>
+        <p class="admin-note">用來管理單一課程場次，可新增、改日期／時間、暫停報名或刪除。</p>
+        <div id="course-dates-list" class="list"><div class="empty">正在載入開課日期...</div></div>
+      </section>
+    </section>
+  </div>
+
+  <dialog id="post-dialog">
+    <form id="post-form" class="dialog-form" method="dialog">
+      <header><h2>氣味誌文章</h2><button type="button" class="close" aria-label="關閉">×</button></header>
+      <div class="dialog-body form-grid">
+        <input name="id" type="hidden">
+        <input name="published_at" type="hidden">
+        <label class="full">標題<input name="title" required></label>
+        <label>網址代稱<input name="slug" placeholder="例如 scent-and-memory"></label>
+        <label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
+        <label>專題分類<select name="reading_direction"><option value="olfactory-culture">嗅覺文化</option><option value="scent-creation">氣味創作</option><option value="heart-village-notes">心村札記</option></select></label>
+        <label class="full">摘要<textarea name="summary" rows="3"></textarea></label>
+        <label class="full">封面圖片<input name="cover_url" type="url" placeholder="可貼圖片網址，或使用下方按鈕上傳照片"><span class="cover-upload"><input id="cover-file" type="file" accept="image/*"><span class="cover-tools"><button id="upload-cover" class="secondary" type="button">上傳封面照片</button><button id="clear-cover" class="secondary" type="button">清除封面</button></span><small class="cover-help">手機可直接選相簿照片。清除封面後，儲存文章，前台就不會顯示封面圖片。</small></span></label>
+        <label class="full">內文 <small>直接輸入一般文字即可；段落之間空一行。若貼入 HTML 也會保留。</small><textarea name="body" rows="16" placeholder="在這裡直接輸入文章內容。"></textarea></label>
+        <div class="full form-actions"><button type="button" id="delete-post" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-post" class="primary" type="button">儲存</button></div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="announcement-dialog">
+    <form id="announcement-form" class="dialog-form" method="dialog">
+      <header><h2 id="announcement-dialog-title">消息</h2><button type="button" class="close" aria-label="關閉">×</button></header>
+      <div class="dialog-body form-grid">
+        <input name="id" type="hidden">
+        <input name="category" type="hidden" value="news">
+        <label>發布日<input name="starts_at" type="date" required></label>
+        <label>狀態<select name="status"><option value="draft">草稿</option><option value="published">已發布</option></select></label>
+        <label class="full">標題<input name="title" required></label>
+        <label class="full">連結<input name="link_url" type="url" placeholder="https://hanascent.com/..."></label>
+        <label class="full">補充說明 <small>首頁可不顯示；消息紀錄頁可作為摘要。</small><textarea name="content" rows="5"></textarea></label>
+        <label>首頁排序<select name="priority"><option value="high">重要</option><option value="normal">一般</option><option value="low">次要</option></select></label>
+        <label>下架日 <small>可留空</small><input name="ends_at" type="date"></label>
+        <div class="full form-actions"><button type="button" id="delete-announcement" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-announcement" class="primary" type="button">儲存</button></div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="course-date-dialog">
+    <form id="course-date-form" class="dialog-form" method="dialog">
+      <header><h2>開課日期</h2><button type="button" class="close" aria-label="關閉">×</button></header>
+      <div class="dialog-body form-grid">
+        <input name="id" type="hidden">
+        <label class="full">課程名稱<input name="course_title" required placeholder="例如 氣味藝術序曲"></label>
+        <label>開課日期<input name="course_date" type="date" required></label>
+        <label>時間<input name="time_label" placeholder="例如 13:00-16:00"></label>
+        <label>狀態<select name="status"><option value="open">開放報名</option><option value="full">額滿</option><option value="closed">暫停／關閉</option></select></label>
+        <label>排序<input name="sort_order" type="number" value="0" step="1"></label>
+        <label class="full">報名連結<input name="link_url" type="url" placeholder="https://reservation.hanascent.com/"></label>
+        <label class="full">備註<textarea name="note" rows="4" placeholder="例如 小班制、剩餘名額、地點提醒"></textarea></label>
+        <div class="full form-actions"><button type="button" id="delete-course-date" class="danger hidden">刪除</button><span class="spacer"></span><button type="button" class="secondary close">取消</button><button id="save-course-date" class="primary" type="button">儲存</button></div>
+      </div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" role="status"></div>
+
   <script src="./config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
@@ -29,32 +171,380 @@
       const $ = (selector, root = document) => root.querySelector(selector);
       const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
       const directionLabels = { 'olfactory-culture': '嗅覺文化', 'scent-creation': '氣味創作', 'heart-village-notes': '心村札記' };
+      const announcementLabels = { news: '最新消息', fragrance: '香氣發布', course: '課程發布' };
+      const dateStatusLabels = { open: '開放報名', full: '額滿', closed: '暫停／關閉' };
+      const titles = { posts: '氣味誌', news: '最新消息', fragrance: '香氣發布', course: '課程發布', 'course-dates': '開課日期' };
       const defaultDirection = 'olfactory-culture';
       const mediaBucket = 'site-media';
-      let db = null, posts = [], currentSession = null, saving = false, uploading = false;
-      if (!configured || !window.supabase) { $('#setup')?.classList.remove('hidden'); return; }
+      let db = null;
+      let posts = [];
+      let announcements = [];
+      let courseDates = [];
+      let currentSession = null;
+      let saving = false;
+      let uploading = false;
+
+      if (!configured || !window.supabase) {
+        $('#setup')?.classList.remove('hidden');
+        return;
+      }
       db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
-      function toast(message, error = false) { const el = $('#toast'); if (!el) return; el.textContent = message; el.className = `toast show${error ? ' error-toast' : ''}`; window.clearTimeout(el._timer); el._timer = window.setTimeout(() => { el.className = 'toast'; }, error ? 7000 : 3600); }
-      function escapeHtml(value = '') { return String(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c])); }
-      function dateText(value) { return value ? new Intl.DateTimeFormat('zh-TW', { dateStyle: 'medium' }).format(new Date(value)) : '未設定'; }
-      function slugify(value) { return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`; }
-      function getDirection(body = '') { const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i); return match?.[1] && directionLabels[match[1]] ? match[1] : defaultDirection; }
-      function stripDirection(body = '') { return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart(); }
-      function hasHtmlMarkup(value = '') { return /<\/?[a-z][\s\S]*>/i.test(String(value || '')); }
-      function textToHtml(value = '') { return String(value || '').trim().split(/\n{2,}/).map(block => block.trim()).filter(Boolean).map(block => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`).join('\n'); }
-      function bodyForSave(body = '', direction = defaultDirection) { const clean = stripDirection(body).trim(); const safeDirection = directionLabels[direction] ? direction : defaultDirection; const html = hasHtmlMarkup(clean) ? clean : textToHtml(clean); return `<!-- reading-direction:${safeDirection} -->\n${html}`; }
-      function errorText(error) { const message = error?.message || String(error || ''); if (/row-level security|policy|permission|not authorized|unauthorized/i.test(message)) return '儲存失敗：Supabase 權限尚未開放。請先執行 RLS / Storage policy SQL。'; if (/bucket|storage|object/i.test(message)) return '圖片上傳失敗：請確認 Supabase Storage 已建立 site-media bucket，並開放 authenticated 上傳權限。'; return message || '操作失敗。'; }
-      function setAuth(session) { currentSession = session; $('#login')?.classList.toggle('hidden', !!session); $('#app')?.classList.toggle('hidden', !session); if (session) { $('#account-email').textContent = session.user.email || ''; loadPosts(); } }
-      async function loadPosts() { const list = $('#posts-list'); if (list) list.innerHTML = '<div class="empty">正在載入氣味誌文章…</div>'; const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false }); if (error) { if (list) list.innerHTML = `<div class="empty">無法載入文章。<small>${escapeHtml(error.message)}</small></div>`; return; } posts = data || []; renderPosts(); }
-      function renderPosts() { const list = $('#posts-list'); if (!list) return; const q = ($('#post-search')?.value || '').trim().toLowerCase(); const rows = posts.filter(post => !q || `${post.title || ''} ${post.summary || ''} ${post.slug || ''} ${directionLabels[getDirection(post.body)] || ''}`.toLowerCase().includes(q)); if (!rows.length) { list.innerHTML = '<div class="empty">目前沒有氣味誌文章。</div>'; return; } list.innerHTML = rows.map(post => { const direction = directionLabels[getDirection(post.body)] || directionLabels[defaultDirection]; const frontUrl = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`; const statusLabel = post.status === 'published' ? '已發布' : '草稿'; const coverLabel = post.cover_url ? '<span class="badge">有封面</span>' : '<span class="badge">無封面</span>'; return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span>${coverLabel}<span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`; }).join(''); }
-      function openPost(post = {}) { const form = $('#post-form'); form.reset(); form.elements.id.value = post.id || ''; form.elements.published_at.value = post.published_at || ''; form.elements.title.value = post.title || ''; form.elements.slug.value = post.slug || ''; form.elements.status.value = post.status || 'draft'; form.elements.reading_direction.value = getDirection(post.body); form.elements.summary.value = post.summary || ''; form.elements.cover_url.value = post.cover_url || ''; form.elements.body.value = stripDirection(post.body || ''); $('#cover-file').value = ''; $('#delete-post').classList.toggle('hidden', !post.id); $('#post-dialog').showModal(); }
-      async function uploadCoverFile(file) { if (uploading) return; if (!file) { $('#cover-file').click(); return; } if (!currentSession) return toast('請先登入後台。', true); if (!/^image\//i.test(file.type || '')) return toast('請選擇圖片檔。', true); uploading = true; const button = $('#upload-cover'); const old = button.textContent; button.disabled = true; button.textContent = '上傳中…'; try { const form = $('#post-form'); const ext = ((file.name || '').split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg'; const slug = slugify(form.elements.slug.value || form.elements.title.value || 'post'); const path = `posts/${slug}-${Date.now()}.${ext}`; const { data, error } = await db.storage.from(mediaBucket).upload(path, file, { cacheControl: '3600', upsert: false, contentType: file.type || undefined }); if (error) throw error; const { data: publicData } = db.storage.from(mediaBucket).getPublicUrl(data?.path || path); form.elements.cover_url.value = publicData.publicUrl; toast('封面圖片已上傳，請記得儲存文章。'); } catch (error) { console.error(error); toast(errorText(error), true); } finally { uploading = false; button.disabled = false; button.textContent = old; } }
-      async function savePost() { if (saving) return; const form = $('#post-form'); const button = $('#save-post'); const id = form.elements.id.value; const title = form.elements.title.value.trim(); const body = form.elements.body.value.trim(); if (!title) { toast('請先填寫標題。', true); form.elements.title.focus(); return; } if (!body) { toast('請先填寫內文。', true); form.elements.body.focus(); return; } saving = true; button.disabled = true; button.textContent = '儲存中…'; try { const status = form.elements.status.value || 'draft'; const payload = { title, slug: slugify(form.elements.slug.value || title), status, summary: form.elements.summary.value || '', cover_url: form.elements.cover_url.value || '', body: bodyForSave(body, form.elements.reading_direction.value || defaultDirection), published_at: status === 'published' ? (form.elements.published_at.value || new Date().toISOString()) : null }; toast('正在儲存氣味誌文章…'); const result = id ? await db.from('posts').update(payload).eq('id', id) : await db.from('posts').insert(payload); if (result.error) throw result.error; toast('氣味誌文章已儲存。'); $('#post-dialog').close(); await loadPosts(); } catch (error) { console.error(error); toast(errorText(error), true); } finally { saving = false; button.disabled = false; button.textContent = '儲存'; } }
-      async function deletePost() { const id = $('#post-form').elements.id.value; if (!id || !confirm('確定刪除這篇文章？')) return; const { error } = await db.from('posts').delete().eq('id', id); if (error) return toast(errorText(error), true); toast('文章已刪除。'); $('#post-dialog').close(); await loadPosts(); }
-      async function logout() { toast('正在登出…'); try { await db.auth.signOut(); } catch (_) {} try { localStorage.clear(); sessionStorage.clear(); } catch (_) {} setAuth(null); window.location.reload(); }
-      $('#login-form').addEventListener('submit', async event => { event.preventDefault(); $('#login-error').textContent = ''; const { data, error } = await db.auth.signInWithPassword({ email: $('#login-email').value, password: $('#login-password').value }); if (error) { $('#login-error').textContent = '登入失敗，請檢查帳號或密碼。'; return; } setAuth(data.session); });
-      $('#logout').addEventListener('click', logout); $('#post-search').addEventListener('input', renderPosts); $('#reload-posts').addEventListener('click', loadPosts); $('#new-post').addEventListener('click', () => openPost({ status: 'draft', body: '' })); $('#save-post').addEventListener('click', savePost); $('#delete-post').addEventListener('click', deletePost); $('#upload-cover').addEventListener('click', () => uploadCoverFile($('#cover-file').files?.[0])); $('#cover-file').addEventListener('change', event => { const file = event.target.files?.[0]; if (file) uploadCoverFile(file); }); $('#clear-cover').addEventListener('click', () => { const form = $('#post-form'); form.elements.cover_url.value = ''; $('#cover-file').value = ''; toast('已清除封面圖片網址，儲存後前台不會顯示封面。'); }); $$('.close').forEach(button => button.addEventListener('click', () => button.closest('dialog')?.close())); document.addEventListener('click', event => { const edit = event.target.closest('[data-edit-post]'); if (edit) openPost(posts.find(post => post.id === edit.dataset.editPost)); });
-      db.auth.onAuthStateChange((_event, session) => setAuth(session)); db.auth.getSession().then(({ data }) => setAuth(data.session || null));
+
+      function toast(message, error = false) {
+        const el = $('#toast');
+        if (!el) return;
+        el.textContent = message;
+        el.className = `toast show${error ? ' error-toast' : ''}`;
+        window.clearTimeout(el._timer);
+        el._timer = window.setTimeout(() => { el.className = 'toast'; }, error ? 7000 : 3600);
+      }
+      function escapeHtml(value = '') {
+        return String(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
+      }
+      function dateText(value) {
+        return value ? new Intl.DateTimeFormat('zh-TW', { dateStyle: 'medium' }).format(new Date(value)) : '未設定';
+      }
+      function todayDate() {
+        const date = new Date();
+        date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+        return date.toISOString().slice(0, 10);
+      }
+      function slugify(value) {
+        return String(value || '').trim().toLowerCase().normalize('NFKD').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || `post-${Date.now()}`;
+      }
+      function getDirection(body = '') {
+        const match = String(body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i);
+        return match?.[1] && directionLabels[match[1]] ? match[1] : defaultDirection;
+      }
+      function stripDirection(body = '') {
+        return String(body || '').replace(/<!--\s*reading-direction:\s*[a-z-]+\s*-->\s*/ig, '').trimStart();
+      }
+      function hasHtmlMarkup(value = '') {
+        return /<\/?[a-z][\s\S]*>/i.test(String(value || ''));
+      }
+      function textToHtml(value = '') {
+        return String(value || '').trim().split(/\n{2,}/).map(block => block.trim()).filter(Boolean).map(block => `<p>${escapeHtml(block).replace(/\n/g, '<br>')}</p>`).join('\n');
+      }
+      function bodyForSave(body = '', direction = defaultDirection) {
+        const clean = stripDirection(body).trim();
+        const safeDirection = directionLabels[direction] ? direction : defaultDirection;
+        const html = hasHtmlMarkup(clean) ? clean : textToHtml(clean);
+        return `<!-- reading-direction:${safeDirection} -->\n${html}`;
+      }
+      function errorText(error) {
+        const message = error?.message || String(error || '');
+        if (/category|course_dates|column|schema cache/i.test(message)) return '資料表欄位尚未更新。請先執行 supabase/2026-06-27_news_and_course_dates.sql。';
+        if (/row-level security|policy|permission|not authorized|unauthorized/i.test(message)) return '儲存失敗：請確認 Supabase RLS 已開放 CMS 編輯權限。';
+        if (/bucket|storage|object/i.test(message)) return '圖片上傳失敗：請確認 Supabase Storage 已建立 site-media bucket，並開放 authenticated 上傳權限。';
+        return message || '操作失敗。';
+      }
+      function formData(form) {
+        return Object.fromEntries(new FormData(form).entries());
+      }
+      function showView(name) {
+        $$('.view').forEach(x => x.classList.toggle('active', x.id === `view-${name}`));
+        $$('#nav button').forEach(x => x.classList.toggle('active', x.dataset.view === name));
+        $('#view-title').textContent = titles[name] || name;
+      }
+      function setAuth(session) {
+        currentSession = session;
+        $('#login')?.classList.toggle('hidden', !!session);
+        $('#app')?.classList.toggle('hidden', !session);
+        if (session) {
+          $('#account-email').textContent = session.user.email || '';
+          loadAll();
+        }
+      }
+      async function loadAll() {
+        await Promise.all([loadPosts(), loadAnnouncements(), loadCourseDates()]);
+      }
+      async function loadPosts() {
+        const list = $('#posts-list');
+        if (list) list.innerHTML = '<div class="empty">正在載入氣味誌文章...</div>';
+        const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false });
+        if (error) {
+          if (list) list.innerHTML = `<div class="empty">無法載入文章。<small>${escapeHtml(error.message)}</small></div>`;
+          return;
+        }
+        posts = data || [];
+        renderPosts();
+      }
+      async function loadAnnouncements() {
+        const { data, error } = await db.from('announcements').select('id,title,content,link_url,priority,status,starts_at,ends_at,category,created_at,updated_at').order('starts_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false });
+        if (error) {
+          ['news-list', 'fragrance-list', 'course-list'].forEach(id => { const list = $(`#${id}`); if (list) list.innerHTML = `<div class="empty">${escapeHtml(errorText(error))}</div>`; });
+          return;
+        }
+        announcements = (data || []).map(row => ({ ...row, category: row.category || 'news' }));
+        renderAnnouncements();
+      }
+      async function loadCourseDates() {
+        const list = $('#course-dates-list');
+        const { data, error } = await db.from('course_dates').select('*').order('course_date', { ascending: true }).order('sort_order', { ascending: true });
+        if (error) {
+          if (list) list.innerHTML = `<div class="empty">${escapeHtml(errorText(error))}</div>`;
+          return;
+        }
+        courseDates = data || [];
+        renderCourseDates();
+      }
+      function renderPosts() {
+        const list = $('#posts-list');
+        if (!list) return;
+        const q = ($('#post-search')?.value || '').trim().toLowerCase();
+        const rows = posts.filter(post => !q || `${post.title || ''} ${post.summary || ''} ${post.slug || ''} ${directionLabels[getDirection(post.body)] || ''}`.toLowerCase().includes(q));
+        list.innerHTML = rows.length ? rows.map(post => {
+          const direction = directionLabels[getDirection(post.body)] || directionLabels[defaultDirection];
+          const frontUrl = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
+          const statusLabel = post.status === 'published' ? '已發布' : '草稿';
+          const coverLabel = post.cover_url ? '<span class="badge">有封面</span>' : '<span class="badge">無封面</span>';
+          return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span>${coverLabel}<span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`;
+        }).join('') : '<div class="empty">目前沒有氣味誌文章。</div>';
+      }
+      function renderAnnouncements() {
+        Object.keys(announcementLabels).forEach(category => {
+          const list = $(`#${category}-list`);
+          if (!list) return;
+          const q = ($(`.announcement-search[data-category="${category}"]`)?.value || '').trim().toLowerCase();
+          const rows = announcements.filter(item => (item.category || 'news') === category).filter(item => !q || `${item.title || ''} ${item.content || ''} ${item.link_url || ''}`.toLowerCase().includes(q));
+          list.innerHTML = rows.length ? rows.map(item => {
+            const statusLabel = item.status === 'published' ? '已發布' : '草稿';
+            const href = item.link_url ? `<a class="link-muted" href="${escapeHtml(item.link_url)}" target="_blank" rel="noopener">${escapeHtml(item.link_url)}</a>` : '無連結';
+            return `<article class="list-item"><div><h3>${escapeHtml(item.title || '未命名消息')}</h3><div class="meta"><span class="badge ${escapeHtml(item.status || '')}">${statusLabel}</span><span>${escapeHtml(item.starts_at || '未設定發布日')}</span><span>${href}</span></div></div><div class="row-actions"><button class="secondary" type="button" data-edit-announcement="${escapeHtml(item.id)}">編輯</button></div></article>`;
+          }).join('') : `<div class="empty">目前沒有${announcementLabels[category]}。</div>`;
+        });
+      }
+      function renderCourseDates() {
+        const list = $('#course-dates-list');
+        if (!list) return;
+        const q = ($('#course-date-search')?.value || '').trim().toLowerCase();
+        const rows = courseDates.filter(item => !q || `${item.course_title || ''} ${item.course_date || ''} ${item.time_label || ''} ${item.note || ''}`.toLowerCase().includes(q));
+        list.innerHTML = rows.length ? rows.map(item => {
+          const status = dateStatusLabels[item.status] || item.status || '未設定';
+          const href = item.link_url ? `<a class="link-muted" href="${escapeHtml(item.link_url)}" target="_blank" rel="noopener">報名連結</a>` : '無連結';
+          return `<article class="list-item"><div><h3>${escapeHtml(item.course_title || '未命名課程')}</h3><div class="meta"><span class="badge ${escapeHtml(item.status || '')}">${escapeHtml(status)}</span><strong>${escapeHtml(item.course_date || '')}</strong><span>${escapeHtml(item.time_label || '')}</span><span>${href}</span>${item.note ? `<span>${escapeHtml(item.note)}</span>` : ''}</div></div><div class="row-actions"><button class="secondary" type="button" data-edit-course-date="${escapeHtml(item.id)}">編輯</button></div></article>`;
+        }).join('') : '<div class="empty">目前沒有開課日期。</div>';
+      }
+      function openPost(post = {}) {
+        const form = $('#post-form');
+        form.reset();
+        form.elements.id.value = post.id || '';
+        form.elements.published_at.value = post.published_at || '';
+        form.elements.title.value = post.title || '';
+        form.elements.slug.value = post.slug || '';
+        form.elements.status.value = post.status || 'draft';
+        form.elements.reading_direction.value = getDirection(post.body);
+        form.elements.summary.value = post.summary || '';
+        form.elements.cover_url.value = post.cover_url || '';
+        form.elements.body.value = stripDirection(post.body || '');
+        $('#cover-file').value = '';
+        $('#delete-post').classList.toggle('hidden', !post.id);
+        $('#post-dialog').showModal();
+      }
+      async function uploadCoverFile(file) {
+        if (uploading) return;
+        if (!file) { $('#cover-file').click(); return; }
+        if (!currentSession) return toast('請先登入後台。', true);
+        if (!/^image\//i.test(file.type || '')) return toast('請選擇圖片檔。', true);
+        uploading = true;
+        const button = $('#upload-cover');
+        const old = button.textContent;
+        button.disabled = true;
+        button.textContent = '上傳中...';
+        try {
+          const form = $('#post-form');
+          const ext = ((file.name || '').split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg';
+          const slug = slugify(form.elements.slug.value || form.elements.title.value || 'post');
+          const path = `posts/${slug}-${Date.now()}.${ext}`;
+          const { data, error } = await db.storage.from(mediaBucket).upload(path, file, { cacheControl: '3600', upsert: false, contentType: file.type || undefined });
+          if (error) throw error;
+          const { data: publicData } = db.storage.from(mediaBucket).getPublicUrl(data?.path || path);
+          form.elements.cover_url.value = publicData.publicUrl;
+          toast('封面圖片已上傳，請記得儲存文章。');
+        } catch (error) {
+          console.error(error);
+          toast(errorText(error), true);
+        } finally {
+          uploading = false;
+          button.disabled = false;
+          button.textContent = old;
+        }
+      }
+      function openAnnouncement(category, item = {}) {
+        const form = $('#announcement-form');
+        const type = category || item.category || 'news';
+        form.reset();
+        form.elements.id.value = item.id || '';
+        form.elements.category.value = type;
+        form.elements.starts_at.value = item.starts_at || todayDate();
+        form.elements.ends_at.value = item.ends_at || '';
+        form.elements.title.value = item.title || '';
+        form.elements.status.value = item.status || 'published';
+        form.elements.link_url.value = item.link_url || '';
+        form.elements.content.value = item.content || '';
+        form.elements.priority.value = item.priority || 'normal';
+        $('#announcement-dialog-title').textContent = announcementLabels[type] || '消息';
+        $('#delete-announcement').classList.toggle('hidden', !item.id);
+        $('#announcement-dialog').showModal();
+      }
+      function openCourseDate(item = {}) {
+        const form = $('#course-date-form');
+        form.reset();
+        form.elements.id.value = item.id || '';
+        form.elements.course_title.value = item.course_title || '';
+        form.elements.course_date.value = item.course_date || todayDate();
+        form.elements.time_label.value = item.time_label || '';
+        form.elements.status.value = item.status || 'open';
+        form.elements.sort_order.value = item.sort_order ?? 0;
+        form.elements.link_url.value = item.link_url || '';
+        form.elements.note.value = item.note || '';
+        $('#delete-course-date').classList.toggle('hidden', !item.id);
+        $('#course-date-dialog').showModal();
+      }
+      async function savePost() {
+        if (saving) return;
+        const form = $('#post-form');
+        const id = form.elements.id.value;
+        const title = form.elements.title.value.trim();
+        const body = form.elements.body.value.trim();
+        if (!title) return toast('請先填寫標題。', true);
+        if (!body) return toast('請先填寫內文。', true);
+        saving = true;
+        try {
+          const status = form.elements.status.value || 'draft';
+          const payload = {
+            title,
+            slug: slugify(form.elements.slug.value || title),
+            status,
+            summary: form.elements.summary.value || '',
+            cover_url: form.elements.cover_url.value || '',
+            body: bodyForSave(body, form.elements.reading_direction.value || defaultDirection),
+            published_at: status === 'published' ? (form.elements.published_at.value || new Date().toISOString()) : null
+          };
+          const result = id ? await db.from('posts').update(payload).eq('id', id) : await db.from('posts').insert(payload);
+          if (result.error) throw result.error;
+          toast('氣味誌文章已儲存。');
+          $('#post-dialog').close();
+          await loadPosts();
+        } catch (error) {
+          toast(errorText(error), true);
+        } finally {
+          saving = false;
+        }
+      }
+      async function saveAnnouncement() {
+        if (saving) return;
+        const form = $('#announcement-form');
+        const data = formData(form);
+        const id = data.id;
+        delete data.id;
+        if (!data.title.trim()) return toast('請先填寫標題。', true);
+        if (!data.starts_at) return toast('請先填寫發布日。', true);
+        if (!data.ends_at) data.ends_at = null;
+        if (data.ends_at && data.ends_at < data.starts_at) return toast('下架日不可早於發布日。', true);
+        saving = true;
+        try {
+          const result = id ? await db.from('announcements').update(data).eq('id', id) : await db.from('announcements').insert(data);
+          if (result.error) throw result.error;
+          toast(`${announcementLabels[data.category] || '消息'}已儲存。`);
+          $('#announcement-dialog').close();
+          await loadAnnouncements();
+        } catch (error) {
+          toast(errorText(error), true);
+        } finally {
+          saving = false;
+        }
+      }
+      async function saveCourseDate() {
+        if (saving) return;
+        const form = $('#course-date-form');
+        const data = formData(form);
+        const id = data.id;
+        delete data.id;
+        if (!data.course_title.trim()) return toast('請先填寫課程名稱。', true);
+        if (!data.course_date) return toast('請先填寫開課日期。', true);
+        data.sort_order = Number(data.sort_order || 0);
+        saving = true;
+        try {
+          const result = id ? await db.from('course_dates').update(data).eq('id', id) : await db.from('course_dates').insert(data);
+          if (result.error) throw result.error;
+          toast('開課日期已儲存。');
+          $('#course-date-dialog').close();
+          await loadCourseDates();
+        } catch (error) {
+          toast(errorText(error), true);
+        } finally {
+          saving = false;
+        }
+      }
+      async function deleteRecord(table, id, dialog, reload, message) {
+        if (!id || !confirm('確定刪除？')) return;
+        const { error } = await db.from(table).delete().eq('id', id);
+        if (error) return toast(errorText(error), true);
+        toast(message);
+        dialog.close();
+        await reload();
+      }
+      async function logout() {
+        toast('正在登出...');
+        try { await db.auth.signOut(); } catch (_) {}
+        try { localStorage.clear(); sessionStorage.clear(); } catch (_) {}
+        setAuth(null);
+        window.location.reload();
+      }
+
+      $('#login-form').addEventListener('submit', async event => {
+        event.preventDefault();
+        $('#login-error').textContent = '';
+        const { data, error } = await db.auth.signInWithPassword({ email: $('#login-email').value, password: $('#login-password').value });
+        if (error) { $('#login-error').textContent = '登入失敗，請檢查帳號或密碼。'; return; }
+        setAuth(data.session);
+      });
+      $('#logout').addEventListener('click', logout);
+      $('#nav').addEventListener('click', event => {
+        const button = event.target.closest('[data-view]');
+        if (button) showView(button.dataset.view);
+      });
+      $('#post-search').addEventListener('input', renderPosts);
+      $$('.announcement-search').forEach(input => input.addEventListener('input', renderAnnouncements));
+      $('#course-date-search').addEventListener('input', renderCourseDates);
+      $$('.reload-all').forEach(button => button.addEventListener('click', loadAll));
+      $('#reload-posts').addEventListener('click', loadPosts);
+      $('#new-post').addEventListener('click', () => openPost({ status: 'draft', body: '' }));
+      $$('.new-announcement').forEach(button => button.addEventListener('click', () => openAnnouncement(button.dataset.category)));
+      $('#new-course-date').addEventListener('click', () => openCourseDate());
+      $('#save-post').addEventListener('click', savePost);
+      $('#save-announcement').addEventListener('click', saveAnnouncement);
+      $('#save-course-date').addEventListener('click', saveCourseDate);
+      $('#delete-post').addEventListener('click', () => deleteRecord('posts', $('#post-form').elements.id.value, $('#post-dialog'), loadPosts, '文章已刪除。'));
+      $('#delete-announcement').addEventListener('click', () => deleteRecord('announcements', $('#announcement-form').elements.id.value, $('#announcement-dialog'), loadAnnouncements, '消息已刪除。'));
+      $('#delete-course-date').addEventListener('click', () => deleteRecord('course_dates', $('#course-date-form').elements.id.value, $('#course-date-dialog'), loadCourseDates, '開課日期已刪除。'));
+      $('#upload-cover').addEventListener('click', () => uploadCoverFile($('#cover-file').files?.[0]));
+      $('#cover-file').addEventListener('change', event => {
+        const file = event.target.files?.[0];
+        if (file) uploadCoverFile(file);
+      });
+      $('#clear-cover').addEventListener('click', () => {
+        const form = $('#post-form');
+        form.elements.cover_url.value = '';
+        $('#cover-file').value = '';
+        toast('已清除封面圖片網址，儲存後前台不會顯示封面。');
+      });
+      $$('.close').forEach(button => button.addEventListener('click', () => button.closest('dialog')?.close()));
+      document.addEventListener('click', event => {
+        const post = event.target.closest('[data-edit-post]');
+        if (post) openPost(posts.find(item => item.id === post.dataset.editPost));
+        const ann = event.target.closest('[data-edit-announcement]');
+        if (ann) {
+          const item = announcements.find(row => row.id === ann.dataset.editAnnouncement);
+          openAnnouncement(item?.category || 'news', item);
+        }
+        const date = event.target.closest('[data-edit-course-date]');
+        if (date) openCourseDate(courseDates.find(item => item.id === date.dataset.editCourseDate));
+      });
+
+      db.auth.onAuthStateChange((_event, session) => setAuth(session));
+      db.auth.getSession().then(({ data }) => setAuth(data.session || null));
     })();
   </script>
 </body>
