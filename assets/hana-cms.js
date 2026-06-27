@@ -71,10 +71,11 @@
     });
   }
   function sortNewsItems(a, b) {
+    const priorityRank = { high: 0, normal: 1, low: 2 };
     const left = new Date(a.news_date || a.starts_at || a.date || a.created_at || 0).getTime() || 0;
     const right = new Date(b.news_date || b.starts_at || b.date || b.created_at || 0).getTime() || 0;
     if (right !== left) return right - left;
-    return Number(a.priority ?? 100) - Number(b.priority ?? 100);
+    return (priorityRank[a.priority] ?? Number(a.priority ?? 100) ?? 100) - (priorityRank[b.priority] ?? Number(b.priority ?? 100) ?? 100);
   }
   function postsAsNews(posts = []) {
     return posts
@@ -99,9 +100,11 @@
         return;
       }
       const blogNews = postsAsNews(posts);
-      const source = items.length || blogNews.length
-        ? [...items, ...blogNews].sort(sortNewsItems)
-        : defaultAnnouncements;
+      const source = items.length
+        ? [...items].sort(sortNewsItems)
+        : blogNews.length
+          ? blogNews.sort(sortNewsItems)
+          : defaultAnnouncements;
       const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
         const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
@@ -149,7 +152,7 @@
     const pageKey = document.body.dataset.hanaPage || '';
     const [settings, announcements, posts, pageContents] = await Promise.all([
       db.from('site_settings').select('*').eq('id',1).single(),
-      db.from('announcements').select('*').eq('status','published').order('priority').order('created_at',{ascending:false}),
+      db.from('announcements').select('*').eq('status','published').order('starts_at',{ascending:false, nullsFirst:false}).order('created_at',{ascending:false}),
       db.from('posts').select('title,slug,summary,cover_url,published_at,body').eq('status','published').order('published_at',{ascending:false}),
       pageKey ? db.from('page_contents').select('field_key,content_type,value').eq('page_key', pageKey) : Promise.resolve({ data: [], error: null })
     ]);
