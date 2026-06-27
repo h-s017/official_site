@@ -142,9 +142,10 @@ button,input,textarea,select{font:inherit}
 .hero-title span{
   display:block;
   font-size:clamp(26px,3vw,43px);
-  letter-spacing:.24em;
+  letter-spacing:.12em;
   margin-top:18px;
   font-weight:500;
+  white-space:nowrap;
 }
 .hero-text{
   margin:0;
@@ -576,5 +577,5 @@ h2{
   .site-nav{padding:15px 20px}
   .logo{font-size:16px;letter-spacing:.2em}
   .hero-title{letter-spacing:.10em}
-  .hero-title span{letter-spacing:.16em}
+  .hero-title span{letter-spacing:.06em}
 }
