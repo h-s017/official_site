@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .site-nav{align-items:center;}
     .nav-links{gap:16px;font-size:13px;align-items:center;}
     .nav-links a{white-space:nowrap;}
-    .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
-    .nav-drop-button{display:inline-flex;align-items:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
+    .nav-dropdown{position:relative;display:inline-flex;align-items:center;}
+    .nav-drop-button{display:inline-flex;align-items:center;padding:6px 0;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;line-height:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
     .nav-drop-button::after{content:"▾";font-size:10px;margin-left:6px;letter-spacing:0;}
     .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button,.nav-dropdown.is-open .nav-drop-button{border-color:var(--black);}
     .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:210px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
