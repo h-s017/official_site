@@ -380,6 +380,27 @@ a.text-link:focus-visible{
     gap:24px!important;
     align-items:start!important;
   }
+  section{
+    padding:72px 6vw;
+  }
+  .section-head,
+  .split{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    align-items:start!important;
+  }
+  .section-head{
+    margin-bottom:34px;
+  }
+  .about-profile{
+    justify-items:center;
+  }
+  .about-profile > div{
+    width:100%;
+  }
+  .about-portrait{
+    width:min(220px,72vw);
+  }
   html body .hero-title span{
     font-size:clamp(16px,4.7vw,21px)!important;
     letter-spacing:.03em!important;
