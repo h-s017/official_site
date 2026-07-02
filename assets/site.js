@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .site-nav{align-items:center;}
     .nav-links{gap:16px;font-size:13px;align-items:center;}
     .nav-links a{white-space:nowrap;}
+    .nav-links > a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;box-sizing:border-box;}
     .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
     .nav-drop-button{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;line-height:1;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
     .nav-drop-button::after{content:"▾";display:inline-block;font-size:10px;margin-left:7px;letter-spacing:0;line-height:1;transform:translateY(1px);}
@@ -257,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.innerHTML = `
       <a href="/">首頁</a>
       <a href="/news/">最新消息</a>
-      <a href="/ciyu/">此域</a>
+      <a href="/ciyu/">此域HINENI</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
