@@ -30,13 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .site-nav{align-items:center;}
     .nav-links{gap:16px;font-size:13px;align-items:center;}
     .nav-links a{white-space:nowrap;}
-    .nav-dropdown{position:relative;display:inline-flex;align-items:center;}
-    .nav-drop-button{display:inline-flex;align-items:center;padding:6px 0;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;line-height:inherit;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
-    .nav-drop-button::after{content:"▾";font-size:10px;margin-left:6px;letter-spacing:0;}
+    .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
+    .nav-drop-button{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 0 9px;margin:0;border:0;border-bottom:1px solid transparent;background:transparent;color:inherit;font:inherit;font-size:inherit;line-height:1;letter-spacing:inherit;cursor:pointer;white-space:nowrap;}
+    .nav-drop-button::after{content:"▾";display:inline-block;font-size:10px;margin-left:7px;letter-spacing:0;line-height:1;transform:translateY(1px);}
     .nav-dropdown:hover .nav-drop-button,.nav-dropdown:focus-within .nav-drop-button,.nav-dropdown.is-open .nav-drop-button{border-color:var(--black);}
-    .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:210px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
+    .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:278px;padding:8px 0;background:#fff;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,.07);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:20;}
     .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.is-open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
     .nav-dropdown-menu a{display:block!important;width:100%;height:auto!important;padding:10px 16px!important;border:0!important;line-height:1.6!important;white-space:nowrap!important;}
+    .nav-dropdown-menu a.nav-subitem{padding-left:34px!important;color:var(--gray700);}
     .nav-dropdown-menu a:hover{background:var(--gray100);}
     .mobile-note{cursor:pointer;user-select:none;letter-spacing:.18em;}
     .mobile-note:focus{outline:1px solid var(--black);outline-offset:4px;}
@@ -232,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .nav-dropdown-menu{position:static;display:block;min-width:0;width:100%;max-height:0;overflow:hidden;padding:0 0 0 18px;border:0;box-shadow:none;opacity:0;visibility:visible;transform:translateY(-6px);transition:max-height .28s cubic-bezier(.2,.7,.2,1),opacity .22s ease,transform .28s cubic-bezier(.2,.7,.2,1);}
       .nav-dropdown.is-open .nav-dropdown-menu{max-height:260px;opacity:1;transform:translateY(0);}
       .nav-dropdown-menu a{padding:10px 0!important;font-size:14px!important;color:var(--gray700)!important;}
+      .nav-dropdown-menu a.nav-subitem{padding-left:18px!important;}
       .news-row:has(a[href]){margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important;}
       .btn:active,a.btn:active,.card:has(a[href]):active,.project-card:has(a[href]):active,.course-card:has(a[href]):active,.notice:has(a[href]):active{transform:translateY(-3px)!important;}
     }
@@ -255,16 +257,17 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.innerHTML = `
       <a href="/">首頁</a>
       <a href="/news/">最新消息</a>
+      <a href="/ciyu/">此域</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
-          <a href="/helori/">調香體驗探索</a>
-          <a href="/courses/">專業調香課程</a>
-          <a href="/overture/">01 氣味藝術序曲</a>
-          <a href="/KPIA/">KPIA</a>
+          <a href="/courses/">H.FUGUE 專業調香系列</a>
+          <a class="nav-subitem" href="/overture/">01 氣味藝術序曲</a>
+          <a class="nav-subitem" href="/student-tools/">02 調香自習室</a>
+          <a href="/helori/">Helori 氣味探索所體驗課程</a>
+          <a href="/KPIA/">KPIA大韓專業調香師證書</a>
         </div>
       </div>
-      <a href="/ciyu/">此域</a>
       <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
