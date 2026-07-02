@@ -22,7 +22,7 @@
     .nav-links{align-items:center!important;gap:16px!important;line-height:1!important;}
     .nav-links a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;border-bottom:1px solid transparent;}
     .nav-links a:hover,.nav-links a.active{border-color:var(--black)!important;}
-    .home-news{padding-top:78px;padding-bottom:84px}.home-news .section-head{grid-template-columns:160px 1fr;gap:28px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.news-date{color:var(--gray500);letter-spacing:.18em;font-size:14px}.news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500}.news-row p{margin:8px 0 0;color:var(--gray700)}.news-empty{margin:0;padding:24px 0;border-bottom:1px solid var(--line);color:var(--gray500);letter-spacing:.08em}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
+    .home-news{padding-top:78px;padding-bottom:84px}.home-news .section-head{grid-template-columns:160px 1fr;gap:28px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.news-date{color:var(--gray500);letter-spacing:.18em;font-size:14px}.news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500}.news-row p{margin:8px 0 0;color:var(--gray700)}.news-empty{margin:0;padding:24px 0;border-bottom:1px solid var(--line);color:var(--gray500);letter-spacing:.08em}.home-news-more{display:flex;justify-content:flex-end;margin-top:24px}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
     @media(max-width:980px){.site-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;column-gap:12px!important;flex-wrap:nowrap!important}.logo{min-width:0!important;white-space:nowrap!important;gap:10px!important;font-size:clamp(20px,5.2vw,28px)!important;letter-spacing:.22em!important;overflow:hidden!important}.logo::before{width:24px;height:24px;flex:0 0 24px}.mobile-note{grid-column:2!important;justify-self:end!important;margin-left:0!important;white-space:nowrap!important;text-align:right!important}.nav-links{grid-column:1 / -1!important}.hero-panel{display:grid!important;grid-template-columns:1fr!important;gap:24px!important;align-items:start!important}.hero-title .hero-place{font-size:clamp(22px,6vw,34px)!important;letter-spacing:.035em!important;line-height:1.2!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}.hero-actions{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:16px!important}.hero-actions .btn{width:100%!important;box-sizing:border-box;text-align:center;justify-content:center!important}.home-news .section-head{grid-template-columns:1fr;gap:20px}.news-row{grid-template-columns:1fr;gap:10px;padding:24px 0}.nav-links a{height:auto!important;padding:12px 0!important;align-items:flex-start!important}}
     .news-row:has(a[href]),.card:has(a[href]){transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .news-row:has(a[href]){padding-left:18px;padding-right:18px;margin-left:-18px;margin-right:-18px;}
@@ -57,12 +57,13 @@
   </header>
 
   <main>
-    <section class="home-news" data-hana-announcements>
+    <section class="home-news" data-hana-announcements data-hana-announcements-limit="5">
       <div class="wrap">
         <div class="section-head"><p class="kicker">News</p><div><h2>最新消息</h2></div></div>
         <div class="news-list" aria-live="polite">
           <p class="news-empty">最新消息載入中…</p>
         </div>
+        <div class="home-news-more"><a class="text-link" href="/news/">更多消息 →</a></div>
       </div>
     </section>
 
@@ -114,7 +115,7 @@
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-col"><b>HANA SCENT ARTIST</b><br>Olfactory Narrative Space<br>氣味藝術・感官體驗・專業調香課程</div>
-      <div class="footer-col"><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a><br><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br><a href="https://hanascent.com/h-fugue-atelier/">Founder of H.FUGUE ATELIER</a></div>
+      <div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br><a href="https://hanascent.com/h-fugue-atelier/">Founder of H.FUGUE ATELIER</a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div>
       <div class="footer-col"><a href="https://www.hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div>
     </div>
   </footer>

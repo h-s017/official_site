@@ -254,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nav) {
     nav.innerHTML = `
       <a href="/">首頁</a>
+      <a href="/news/">最新消息</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">

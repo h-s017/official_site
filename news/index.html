@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>最新消息｜HANA SCENT ARTIST</title>
+  <meta name="description" content="HANA SCENT ARTIST 最新消息，整理已發布的公告、香氣作品與課程消息。" />
+  <link rel="canonical" href="https://hanascent.com/news/" />
+  <meta property="og:title" content="最新消息｜HANA SCENT ARTIST" />
+  <meta property="og:description" content="查看 HANA SCENT ARTIST 已發布的公告、香氣作品與課程消息。" />
+  <meta property="og:url" content="https://hanascent.com/news/" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .news-hero .wrap{text-align:center;max-width:860px;}
+    .news-hero h1{letter-spacing:.12em;}
+    .news-archive{border-top:0;}
+    .news-archive-head{display:grid;grid-template-columns:160px 1fr;gap:36px;align-items:start;margin-bottom:30px;}
+    .news-archive-list{border-top:1px solid var(--line);}
+    .news-archive-row{display:grid;grid-template-columns:160px minmax(0,1fr) auto;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);}
+    .news-archive-date{color:var(--gray500);letter-spacing:.18em;font-size:14px;white-space:nowrap;}
+    .news-source{display:inline-block;margin:0 0 9px;padding:2px 9px;border:1px solid var(--line);color:var(--gray700);font-size:12px;letter-spacing:.16em;}
+    .news-archive-row h2{font-size:24px!important;letter-spacing:.08em!important;margin:0!important;}
+    .news-archive-row p{margin:8px 0 0;color:var(--gray700);}
+    .news-state{padding:28px 0;border-bottom:1px solid var(--line);color:var(--gray500);}
+    @media(max-width:980px){
+      .news-archive-head,.news-archive-row{grid-template-columns:1fr;gap:12px;}
+      .news-archive-row{align-items:start;}
+    }
+  </style>
+</head>
+<body data-hana-page="news">
+  <nav class="site-nav" aria-label="主要導覽">
+    <a class="logo" href="/">HANA SCENT ARTIST</a>
+    <div class="nav-links"></div>
+    <div class="mobile-note">MENU</div>
+  </nav>
+
+  <header class="page-hero news-hero">
+    <div class="wrap">
+      <p class="kicker">News</p>
+      <h1>最新消息</h1>
+      <p>整理 HANA SCENT ARTIST 已發布的公告、香氣作品與課程消息。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="news-archive">
+      <div class="wrap">
+        <div class="news-archive-head">
+          <p class="kicker">Archive</p>
+          <div>
+            <h2>已發布消息與公告</h2>
+            <p class="lead">依發布日由新到舊排列。</p>
+          </div>
+        </div>
+        <div class="news-archive-list" data-news-archive aria-live="polite">
+          <p class="news-state">最新消息載入中...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col"><b>HANA SCENT ARTIST</b><br>Olfactory Narrative Space<br>氣味敘事空間與專業調香課程</div>
+      <div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br><a href="https://hanascent.com/h-fugue-atelier/">Founder of H.FUGUE ATELIER</a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div>
+      <div class="footer-col"><a href="https://www.hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">線上預約</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>統一編號：91269475<br>&copy; <span data-year></span> Hana Scent Artist</div>
+    </div>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/cms-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (() => {
+      'use strict';
+      const root = document.querySelector('[data-news-archive]');
+      const cfg = window.HANA_CMS_CONFIG || {};
+      const esc = (value = '') => String(value).replace(/[&<>'"]/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[char]));
+      const sourceLabels = {
+        news: '最新消息',
+        fragrance: '新氣味發表',
+        course: '課程發布'
+      };
+      const formatDate = value => {
+        if (!value) return 'NEWS';
+        const date = new Date(`${String(value).slice(0, 10)}T00:00:00`);
+        if (Number.isNaN(date.getTime())) return value;
+        return new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit' }).format(date);
+      };
+      const render = rows => {
+        if (!rows.length) {
+          root.innerHTML = '<p class="news-state">目前尚無已發布的消息與公告。</p>';
+          return;
+        }
+        root.innerHTML = rows.map(item => {
+          const body = item.content ? `<p>${esc(item.content)}</p>` : '';
+          const link = item.link_url ? `<a class="text-link" href="${esc(item.link_url)}">查看內容 →</a>` : '';
+          const source = sourceLabels[item.category] || item.category || '公告';
+          return `<article class="news-archive-row"><div class="news-archive-date">${esc(formatDate(item.starts_at || item.created_at))}</div><div><span class="news-source">${esc(source)}</span><h2>${esc(item.title || '未命名消息')}</h2>${body}</div>${link}</article>`;
+        }).join('');
+      };
+      async function init() {
+        if (!root || !window.supabase || !cfg.supabaseUrl || !cfg.supabaseAnonKey) {
+          if (root) root.innerHTML = '<p class="news-state">目前無法載入最新消息。</p>';
+          return;
+        }
+        const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+        const { data, error } = await db
+          .from('announcements')
+          .select('title,content,link_url,starts_at,created_at,category')
+          .eq('status', 'published')
+          .order('starts_at', { ascending:false, nullsFirst:false })
+          .order('created_at', { ascending:false });
+        if (error) throw error;
+        render(data || []);
+      }
+      init().catch(error => {
+        console.error('[news archive]', error);
+        if (root) root.innerHTML = '<p class="news-state">最新消息暫時無法載入，請稍後再試。</p>';
+      });
+    })();
+  </script>
+</body>
+</html>
