@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
   const heloriUrl = "https://helori.hanascent.com/";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.documentElement.classList.add("motion-ready");
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="nav-dropdown-menu" role="menu">
           <a href="/courses/">H.FUGUE 專業調香系列</a>
           <a class="nav-subitem" href="/overture/">01 氣味藝術序曲</a>
-          <a class="nav-subitem" href="/student-tools/">02 調香自習室</a>
+          <a class="nav-subitem" href="/practice/">02 氣味自修室</a>
           <a href="/helori/">Helori 氣味探索所體驗課程</a>
           <a href="/KPIA/">KPIA大韓專業調香師證書</a>
         </div>
