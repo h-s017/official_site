@@ -20,24 +20,29 @@
     .course-hero .en-title{font-size:13px;letter-spacing:.32em;text-transform:uppercase;margin-top:30px;color:#333}
     .course-hero .kicker+.kicker{margin-top:10px}
     .hero-note{max-width:760px;margin:26px auto 0;color:var(--gray700);font-size:20px}
+    main{text-align:center}
+    main .wrap{margin-left:auto;margin-right:auto}
+    .section-head{justify-content:center;text-align:center}
+    .section-head>div{max-width:760px}
+    .section-head .lead{margin-left:auto;margin-right:auto}
     .mini-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
     .mini-nav a{font-size:14px;color:var(--gray700);border-bottom:1px solid currentColor}
     .mini-nav a:hover{color:#111}
     .statement{font-size:clamp(28px,4vw,48px);line-height:1.38;letter-spacing:.08em;margin:0}
     .soft-band{background:var(--gray100)}
     .info-list{border-top:1px solid var(--line)}
-    .info-row{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .info-row{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);text-align:left}
     .info-row b{letter-spacing:.12em}
     .info-row span{color:var(--gray700)}
     .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-    .price-card{display:flex;flex-direction:column;justify-content:space-between;min-height:270px;border:1px solid var(--line);background:#fff;padding:28px}
+    .price-card{display:flex;flex-direction:column;justify-content:space-between;min-height:270px;border:1px solid var(--line);background:#fff;padding:28px;text-align:center}
     .price-card small{display:block;margin-bottom:12px;color:var(--gray500);letter-spacing:.18em;text-transform:uppercase}
     .price-card h3{margin:0 0 12px;font-size:26px;line-height:1.35;font-weight:500}
     .price-card p{margin:0;color:var(--gray700)}
     .price-card .price{margin-top:22px;color:#111;font-size:20px;line-height:1.7;letter-spacing:.04em}
     .price-card .price strong{font-size:24px;font-weight:500}
     .price-card.featured{border-color:#111}
-    .includes{columns:2;column-gap:42px;margin:0;padding-left:1.2em;color:var(--gray700)}
+    .includes{columns:2;column-gap:42px;width:max-content;max-width:100%;margin:0 auto;padding-left:1.2em;color:var(--gray700);text-align:left}
     .includes li{break-inside:avoid;margin-bottom:10px}
     .notice{margin-top:26px;padding:20px;border:1px solid var(--line);background:#fff;color:var(--gray700)}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -46,7 +51,7 @@
     .final-cta h2{margin:0;font-size:clamp(30px,4.6vw,56px);line-height:1.25;letter-spacing:.08em;font-weight:500}
     .final-cta p{margin:18px auto 0;max-width:620px;color:var(--gray700);font-size:18px}
     .final-cta .cta-row{justify-content:center}
-    @media(max-width:880px){.course-hero{padding:70px 22px 48px}.price-grid{grid-template-columns:1fr}.info-row{grid-template-columns:1fr;gap:8px}.includes{columns:1}}
+    @media(max-width:880px){.course-hero{padding:70px 22px 48px}.price-grid{grid-template-columns:1fr}.info-row{grid-template-columns:1fr;gap:8px;text-align:center}.includes{columns:1}}
   </style>
 </head>
 <body>
