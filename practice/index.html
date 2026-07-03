@@ -13,15 +13,13 @@
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    .study-hero{padding:92px 6vw 72px;background:#fff;border-top:0}
-    .study-hero .wrap{max-width:1040px}
-    .study-hero h1{margin:0;font-size:clamp(42px,6vw,84px);line-height:1.08;letter-spacing:.1em;font-weight:500}
-    .study-hero h1 span{display:block;margin-top:16px;font-size:clamp(24px,3vw,38px);letter-spacing:.14em}
-    .hero-note{max-width:760px;margin-top:26px;color:var(--gray700);font-size:20px}
-    .hero-open-house{margin-top:38px;padding-top:30px;border-top:1px solid var(--line);max-width:860px}
-    .hero-open-house h2{margin:8px 0 20px;font-size:clamp(28px,4vw,48px);line-height:1.38;letter-spacing:.08em;font-weight:500}
-    .hero-open-house p{margin:0;color:var(--gray700);font-size:20px;line-height:1.9}
-    .hero-open-house p+p{margin-top:18px}
+    .course-hero{padding:84px 6vw 58px;background:#fff;border-bottom:1px solid var(--line);text-align:center}
+    .course-hero .wrap{max-width:980px;margin:0 auto}
+    .course-hero h1{font-size:clamp(34px,4.4vw,66px);line-height:1.08;margin:20px 0 22px;letter-spacing:.035em;font-weight:500}
+    .course-hero .subtitle{font-size:clamp(24px,3vw,42px);line-height:1.35;letter-spacing:.08em;color:#111}
+    .course-hero .en-title{font-size:13px;letter-spacing:.32em;text-transform:uppercase;margin-top:30px;color:#333}
+    .course-hero .kicker+.kicker{margin-top:10px}
+    .hero-note{max-width:760px;margin:26px auto 0;color:var(--gray700);font-size:20px}
     .mini-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
     .mini-nav a{font-size:14px;color:var(--gray700);border-bottom:1px solid currentColor}
     .mini-nav a:hover{color:#111}
@@ -48,7 +46,7 @@
     .final-cta h2{margin:0;font-size:clamp(30px,4.6vw,56px);line-height:1.25;letter-spacing:.08em;font-weight:500}
     .final-cta p{margin:18px auto 0;max-width:620px;color:var(--gray700);font-size:18px}
     .final-cta .cta-row{justify-content:center}
-    @media(max-width:880px){.price-grid{grid-template-columns:1fr}.info-row{grid-template-columns:1fr;gap:8px}.includes{columns:1}}
+    @media(max-width:880px){.course-hero{padding:70px 22px 48px}.price-grid{grid-template-columns:1fr}.info-row{grid-template-columns:1fr;gap:8px}.includes{columns:1}}
   </style>
 </head>
 <body>
@@ -58,27 +56,23 @@
     <div class="mobile-note">MENU</div>
   </nav>
 
-  <header class="study-hero">
+  <header class="course-hero">
     <div class="wrap">
       <div>
-        <p class="kicker">02 Scent Practice Room</p>
-        <h1>氣味自修室<span>Scent Practice Room</span></h1>
-        <p class="hero-note">Open Studio for Scent Practice</p>
-        <div class="hero-open-house" id="concept">
-          <p class="kicker">Scent Practice Room</p>
-          <h2>Open Studio for Scent Practice</h2>
-          <p>給已學過調香的人，一段回到氣味裡練習、試配與整理感受的時間。這不是一堂完整課程，而是一個開放式的氣味練習場。</p>
-          <p>你可以在這裡重新熟悉材料、修整配方、完成作品，也可以帶著親友同行，由你成為對方的老師，一起聞香、選材、練習配方，完成一件屬於自己的氣味作品。</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn primary" href="https://reservation.hanascent.com/">預約氣味自修室</a>
-          <a class="btn" href="#pricing">查看費用方案</a>
-        </div>
-        <div class="mini-nav">
-          <a href="/practice/#schedule">開放時段</a>
-          <a href="/practice/#pricing">費用方案</a>
-          <a href="/practice/#companion">舊生攜伴</a>
-        </div>
+        <p class="kicker">PERFUMERY COURSE．專業調香課程系列</p>
+        <p class="kicker">Open Studio for Scent Practice．為你而啟</p>
+        <h1>02 氣味自修室</h1>
+        <p class="subtitle">Scent Practice Room</p>
+        <p class="en-title">A Return to Practice, Memory and Scent</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="https://reservation.hanascent.com/">預約氣味自修室</a>
+        <a class="btn" href="#pricing">查看費用方案</a>
+      </div>
+      <div class="mini-nav">
+        <a href="/practice/#schedule">開放時段</a>
+        <a href="/practice/#pricing">費用方案</a>
+        <a href="/practice/#companion">舊生攜伴</a>
       </div>
     </div>
   </header>
