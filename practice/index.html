@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
@@ -14,44 +14,53 @@
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
     .course-hero{padding:84px 6vw 58px;background:#fff;border-bottom:1px solid var(--line);text-align:center}
-    .course-hero .wrap{max-width:980px;margin:0 auto}
-    .course-hero h1{font-size:clamp(34px,4.4vw,66px);line-height:1.08;margin:20px 0 22px;letter-spacing:.035em;font-weight:500}
-    .course-hero .subtitle{font-size:clamp(24px,3vw,42px);line-height:1.35;letter-spacing:.08em;color:#111}
-    .course-hero .en-title{font-size:13px;letter-spacing:.32em;text-transform:uppercase;margin-top:30px;color:#333}
+    .course-hero .wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .course-hero h1{font-size:clamp(34px,4.4vw,66px);line-height:1.08;margin:20px 0 22px;letter-spacing:.035em;font-weight:500;text-align:center}
+    .course-hero .subtitle{font-size:clamp(24px,3vw,42px);line-height:1.35;letter-spacing:.08em;color:#111;text-align:center}
+    .course-hero .en-title{font-size:13px;letter-spacing:.32em;text-transform:uppercase;margin-top:30px;color:#333;text-align:center}
     .course-hero .kicker+.kicker{margin-top:10px}
-    .hero-note{max-width:760px;margin:26px auto 0;color:var(--gray700);font-size:20px}
+    .hero-note{max-width:760px;margin:26px auto 0;color:var(--gray700);font-size:20px;text-align:center}
     main{text-align:center}
-    main .wrap{margin-left:auto;margin-right:auto}
-    .section-head{justify-content:center;text-align:center}
-    .section-head>div{max-width:760px}
-    .section-head .lead{margin-left:auto;margin-right:auto}
-    .mini-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+    main section{display:flex;justify-content:center;text-align:center}
+    main .wrap{width:min(1100px,88vw);margin-left:auto;margin-right:auto;text-align:center}
+    .section-head{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;max-width:820px;margin:0 auto 42px!important;text-align:center!important}
+    .section-head>div{max-width:760px;margin:0 auto;text-align:center}
+    .section-head h2,.section-head p,.section-head .lead{margin-left:auto;margin-right:auto;text-align:center}
+    .section-head .lead{max-width:700px}
+    .mini-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:28px;text-align:center}
     .mini-nav a{font-size:14px;color:var(--gray700);border-bottom:1px solid currentColor}
     .mini-nav a:hover{color:#111}
-    .statement{font-size:clamp(28px,4vw,48px);line-height:1.38;letter-spacing:.08em;margin:0}
+    .statement{font-size:clamp(28px,4vw,48px);line-height:1.38;letter-spacing:.08em;margin:0;text-align:center}
     .soft-band{background:var(--gray100)}
-    .info-list{border-top:1px solid var(--line)}
-    .info-row{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);text-align:left}
-    .info-row b{letter-spacing:.12em}
-    .info-row span{color:var(--gray700)}
-    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-    .price-card{display:flex;flex-direction:column;justify-content:space-between;min-height:270px;border:1px solid var(--line);background:#fff;padding:28px;text-align:center}
-    .price-card small{display:block;margin-bottom:12px;color:var(--gray500);letter-spacing:.18em;text-transform:uppercase}
-    .price-card h3{margin:0 0 12px;font-size:26px;line-height:1.35;font-weight:500}
-    .price-card p{margin:0;color:var(--gray700)}
-    .price-card .price{margin-top:22px;color:#111;font-size:20px;line-height:1.7;letter-spacing:.04em}
+    .info-list{width:min(760px,100%);margin:0 auto;border-top:1px solid var(--line)}
+    .info-row{display:grid;grid-template-columns:1fr;justify-items:center;gap:8px;padding:22px 0;border-bottom:1px solid var(--line);text-align:center}
+    .info-row b{letter-spacing:.12em;text-align:center}
+    .info-row span{color:var(--gray700);text-align:center}
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;width:min(940px,100%);margin:0 auto;justify-content:center;align-items:stretch}
+    .price-card{display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:270px;border:1px solid var(--line);background:#fff;padding:28px;text-align:center}
+    .price-card small{display:block;margin-bottom:12px;color:var(--gray500);letter-spacing:.18em;text-transform:uppercase;text-align:center}
+    .price-card h3{margin:0 0 12px;font-size:26px;line-height:1.35;font-weight:500;text-align:center}
+    .price-card p{max-width:360px;margin:0 auto;color:var(--gray700);text-align:center}
+    .price-card .price{margin-top:22px;color:#111;font-size:20px;line-height:1.7;letter-spacing:.04em;text-align:center}
     .price-card .price strong{font-size:24px;font-weight:500}
     .price-card.featured{border-color:#111}
+    .price-card:last-child:nth-child(odd){grid-column:1/-1;width:min(449px,100%);justify-self:center}
+    #companion .wrap.split{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:22px!important;max-width:820px;text-align:center!important}
+    #companion .wrap.split>div{max-width:760px;margin:0 auto;text-align:center}
+    #companion .lead{margin-left:auto;margin-right:auto;text-align:center}
     .includes{columns:2;column-gap:42px;width:max-content;max-width:100%;margin:0 auto;padding-left:1.2em;color:var(--gray700);text-align:left}
     .includes li{break-inside:avoid;margin-bottom:10px}
-    .notice{margin-top:26px;padding:20px;border:1px solid var(--line);background:#fff;color:var(--gray700)}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .notice{max-width:680px;margin:26px auto 0;padding:20px;border:1px solid var(--line);background:#fff;color:var(--gray700);text-align:center}
+    .cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px;text-align:center}
     .final-cta{border-top:1px solid var(--line);text-align:center}
     .final-cta .wrap{max-width:820px}
-    .final-cta h2{margin:0;font-size:clamp(30px,4.6vw,56px);line-height:1.25;letter-spacing:.08em;font-weight:500}
-    .final-cta p{margin:18px auto 0;max-width:620px;color:var(--gray700);font-size:18px}
+    .final-cta h2{margin:0 auto;font-size:clamp(30px,4.6vw,56px);line-height:1.25;letter-spacing:.08em;font-weight:500;text-align:center}
+    .final-cta p{margin:18px auto 0;max-width:620px;color:var(--gray700);font-size:18px;text-align:center}
     .final-cta .cta-row{justify-content:center}
-    @media(max-width:880px){.course-hero{padding:70px 22px 48px}.price-grid{grid-template-columns:1fr}.info-row{grid-template-columns:1fr;gap:8px;text-align:center}.includes{columns:1}}
+    .footer{text-align:center}
+    .footer .footer-grid{justify-items:center;text-align:center;margin-left:auto;margin-right:auto}
+    .footer .footer-col{text-align:center}
+    @media(max-width:880px){.course-hero{padding:70px 22px 48px}.course-hero .en-title{letter-spacing:.2em}.price-grid{grid-template-columns:1fr;width:min(520px,100%)}.price-card:last-child:nth-child(odd){grid-column:auto;width:100%}.includes{columns:1}.cta-row{width:100%}.cta-row .btn{width:100%;justify-content:center;text-align:center}}
   </style>
 </head>
 <body>
