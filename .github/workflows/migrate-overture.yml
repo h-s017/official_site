@@ -1,0 +1,75 @@
+name: Migrate Overture Course
+
+on:
+  push:
+    paths:
+      - '.github/workflows/migrate-overture.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout official site
+        uses: actions/checkout@v4
+        with:
+          path: official
+
+      - name: Checkout source course
+        uses: actions/checkout@v4
+        with:
+          repository: h-s017/overtrue-course
+          ref: main
+          path: source
+
+      - name: Copy complete course into official site
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="official/student-tools/overture"
+          rm -rf "$target"
+          mkdir -p "$target"
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='CNAME' \
+            source/ "$target/"
+          rm -f "$target/CNAME"
+
+          # Keep the migrated app unindexed.
+          if [ -f "$target/index.html" ]; then
+            python3 - <<'PY'
+          from pathlib import Path
+          p = Path('official/student-tools/overture/index.html')
+          s = p.read_text(encoding='utf-8-sig')
+          marker = '<meta name="robots" content="noindex,nofollow">'
+          if marker not in s:
+              if '</head>' in s:
+                  s = s.replace('</head>', marker + '\n</head>', 1)
+              else:
+                  s = marker + '\n' + s
+          p.write_text(s, encoding='utf-8')
+          PY
+          fi
+
+          # GitHub Pages service workers must stay within this nested scope.
+          # Relative registrations continue to work after the full directory copy.
+          find "$target" -maxdepth 2 -type f | sort
+
+      - name: Commit migrated course
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd official
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add student-tools/overture
+          if git diff --cached --quiet; then
+            echo "No migration changes to commit."
+            exit 0
+          fi
+          git commit -m "Migrate complete Overture course into student tools"
+          git push
