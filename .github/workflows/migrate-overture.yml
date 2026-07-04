@@ -39,24 +39,30 @@ jobs:
             source/ "$target/"
           rm -f "$target/CNAME"
 
-          # Keep the migrated app unindexed.
-          if [ -f "$target/index.html" ]; then
-            python3 - <<'PY'
-          from pathlib import Path
-          p = Path('official/student-tools/overture/index.html')
-          s = p.read_text(encoding='utf-8-sig')
-          marker = '<meta name="robots" content="noindex,nofollow">'
-          if marker not in s:
-              if '</head>' in s:
-                  s = s.replace('</head>', marker + '\n</head>', 1)
-              else:
-                  s = marker + '\n' + s
-          p.write_text(s, encoding='utf-8')
-          PY
-          fi
+          cat > "$target/access-guard.js" <<'EOF'
+          (() => {
+            const key = 'hana_student_tools_unlocked';
+            if (sessionStorage.getItem(key) !== 'true') {
+              const next = encodeURIComponent(location.pathname + location.search + location.hash);
+              location.replace('/student-tools/?next=' + next);
+            }
+          })();
+          EOF
 
-          # GitHub Pages service workers must stay within this nested scope.
-          # Relative registrations continue to work after the full directory copy.
+          python3 - <<'PY'
+          from pathlib import Path
+          target = Path('official/student-tools/overture')
+          for p in target.glob('*.html'):
+              s = p.read_text(encoding='utf-8-sig')
+              robots = '<meta name="robots" content="noindex,nofollow">'
+              guard = '<script src="/student-tools/overture/access-guard.js"></script>'
+              if robots not in s:
+                  s = s.replace('</head>', robots + '\n</head>', 1)
+              if guard not in s:
+                  s = s.replace('</head>', guard + '\n</head>', 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+
           find "$target" -maxdepth 2 -type f | sort
 
       - name: Commit migrated course
