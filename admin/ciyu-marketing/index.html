@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>此域｜12 週行銷追蹤</title>
+<style>
+:root{--bg:#f4f3ef;--paper:#fff;--ink:#191919;--muted:#77736d;--line:#d8d4cc;--soft:#ebe8e1;--accent:#2f312f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.55}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 60px}.hero{padding:34px 0 20px;border-bottom:1px solid var(--line);margin-bottom:22px}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-family:Georgia,"Noto Serif TC",serif;font-weight:500;font-size:clamp(34px,6vw,68px);margin:8px 0 10px;letter-spacing:-.03em}.sub{max-width:760px;color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 24px}.btn{border:1px solid var(--ink);background:transparent;padding:10px 14px;cursor:pointer;border-radius:999px;font-size:14px}.btn.primary{background:var(--ink);color:#fff}.btn:hover{opacity:.78}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}.stat{background:var(--paper);border:1px solid var(--line);padding:16px}.stat b{display:block;font-size:28px;font-family:Georgia,serif;font-weight:500}.stat span{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.section-title{display:flex;align-items:end;justify-content:space-between;margin:30px 0 12px}.section-title h2{font-size:22px;margin:0;font-weight:600}.section-title p{margin:0;color:var(--muted);font-size:13px}
+.table-wrap{overflow:auto;background:var(--paper);border:1px solid var(--line)}table{border-collapse:collapse;width:100%;min-width:1120px}th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:11px;vertical-align:top}th:last-child,td:last-child{border-right:0}th{position:sticky;top:0;background:#efede7;text-align:left;font-size:12px;letter-spacing:.05em;z-index:1}td{font-size:13px}.wk{font-family:Georgia,serif;font-size:20px;white-space:nowrap}.theme{font-weight:600}.muted{color:var(--muted)}input[type="text"],input[type="number"],textarea,select{width:100%;border:0;border-bottom:1px solid #c7c2b8;background:transparent;padding:5px 2px;font:inherit;color:inherit;outline:none}textarea{min-height:64px;resize:vertical}.check{width:18px;height:18px}.done-row{opacity:.55}.done-row td{background:#f7f6f2}
+.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.kpi-card{border:1px solid var(--line);background:var(--paper);padding:14px}.kpi-card label{font-size:12px;color:var(--muted);display:block;margin-bottom:4px}.kpi-card input{font-size:22px;font-family:Georgia,serif}
+.footer-note{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.wrap{padding:18px 12px 40px}.kpi{grid-template-columns:1fr}.hero{padding-top:18px}}
+@media print{.toolbar{display:none}.wrap{max-width:none;padding:0}.hero{margin-bottom:12px}.table-wrap{overflow:visible}table{min-width:0;font-size:9px}th,td{padding:5px}.grid{grid-template-columns:repeat(4,1fr)}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">CIYU · MARKETING FIELD NOTES</div>
+    <h1>此域｜12 週行銷追蹤</h1>
+    <p class="sub">核心節奏：每週一個來此域的理由；每 4 週一次小波峰；以北投地方氣味作為流量母題。資料會儲存在此瀏覽器。</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn primary" onclick="saveAll()">儲存紀錄</button>
+    <button class="btn" onclick="window.print()">列印 / 匯出 PDF</button>
+    <button class="btn" onclick="exportCSV()">匯出 CSV</button>
+    <button class="btn" onclick="resetData()">重設</button>
+  </div>
+
+  <div class="grid">
+    <div class="stat"><b id="progress">0%</b><span>整體完成率</span></div>
+    <div class="stat"><b id="spent">0</b><span>累計實際花費 NT$</span></div>
+    <div class="stat"><b id="visits">0</b><span>累計實際到訪</span></div>
+    <div class="stat"><b id="inquiries">0</b><span>累計詢問 / 名單</span></div>
+  </div>
+
+  <div class="section-title"><h2>總體 KPI</h2><p>每週更新一次即可</p></div>
+  <div class="kpi">
+    <div class="kpi-card"><label>IG / Threads 新增有效互動</label><input id="kpi_engagement" type="number" min="0" value="0"></div>
+    <div class="kpi-card"><label>Google Maps 導航 / 點擊</label><input id="kpi_maps" type="number" min="0" value="0"></div>
+    <div class="kpi-card"><label>活動 / 課程轉換數</label><input id="kpi_conversion" type="number" min="0" value="0"></div>
+  </div>
+
+  <div class="section-title"><h2>12 週推進表</h2><p>建議每週固定一天檢視</p></div>
+  <div class="table-wrap">
+  <table id="tracker">
+    <thead><tr>
+      <th>完成</th><th>週次</th><th>主題 / 任務</th><th>本週核心行動</th><th>內容輸出</th><th>目標 KPI</th><th>預算</th><th>實際花費</th><th>實際到訪</th><th>詢問 / 名單</th><th>實際結果與備註</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+
+  <div class="footer-note">建議只追蹤能影響決策的數字：到訪、詢問、收藏、分享、導航、活動轉換。不要被單純按讚數牽著走。</div>
+</div>
+<script>
+const plan = [
+[1,'入口整理','統一此域一句話定位；官網設「本週，此域」；整理 Google 商家資訊','IG/官網/Google 各更新 1 次','完成 3 個入口；取得首週基準值',500],
+[2,'第一個來訪理由｜雨後灰牆','發布第一個地方氣味題材，測試是否產生地址詢問與收藏','1 Reel＋1 Threads＋1 Google 動態','收藏、分享、地址詢問、官網點擊',300],
+[3,'種子來訪','邀請 5 位符合此域氣質的人到訪，不要求發文','來訪紀錄＋限時動態素材','5 人邀請；3 人實際到訪；自然分享 5 則',800],
+[4,'小波峰 01｜一間房子的氣味','辦 6–12 人小型開放事件；只放大前 3 週表現最好內容','活動頁＋1 主貼文＋提醒','8–12 報名；到場率 70%+；2 個後續詢問',1500],
+[5,'回流系統｜此域氣味護照','推出 A6 氣味護照，記錄到訪而非消費集點','護照照片＋使用說明','發出 10–20 張；記錄回訪意願',800],
+[6,'跨品牌合作 01','找 1 個陶器 / 紙品 / 小誌 / 茶 / 花藝品牌，做「一件物件，一種氣味」','雙方各 1 篇＋現場素材','1 個合作；5–10 個新詢問或到訪',1000],
+[7,'北投氣味採集 01','推出一條北投氣味散步內容，例如蟬聲、灰牆與冰茶','1 Carousel＋1 Threads','收藏、分享、Maps 導航、「下次想去」留言',300],
+[8,'小波峰 02｜Scent Field Notes: Beitou','12–20 人活動；邀微型創作者、飯店窗口、在地工作者','活動頁＋邀請＋主視覺','12–20 人；3–5 位關鍵來賓；3 個後續合作線索',2000],
+[9,'數據回顧與砍項','只保留前 8 週有效的 2 個渠道與 2 種內容格式','1 篇回顧型內容可選','辨認 TOP 3 內容；停止低效項目',0],
+[10,'創作者 / 選物月題','推出 1 位創作者或 1 件選物，與當月氣味主題連結','1 主貼文＋1 現場紀錄','合作觸及；新增陌生受眾；現場詢問',800],
+[11,'飯店 / 在地合作開發','寄出精簡合作提案；鎖定北投飯店、文化場域、散步品牌','合作信＋一頁式連結','至少 5 封精準接觸；2 個回覆；1 次會談',300],
+[12,'季度波峰｜此域氣味日','整合最佳主題、合作方與回流名單，形成季度事件','主視覺＋活動頁＋再行銷','20–30 人觸達名單；活動轉換；下一季預約',2500]
+];
+const tbody=document.querySelector('#tracker tbody');
+plan.forEach(r=>{
+ const tr=document.createElement('tr');
+ tr.innerHTML=`<td><input class="check done" type="checkbox"></td><td class="wk">W${r[0]}</td><td><div class="theme">${r[1]}</div></td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>NT$ ${r[5]}</td><td><input class="cost" type="number" min="0" value="0"></td><td><input class="visit" type="number" min="0" value="0"></td><td><input class="inq" type="number" min="0" value="0"></td><td><textarea class="note" placeholder="記錄：什麼有效？誰來了？下一步？"></textarea></td>`;
+ tbody.appendChild(tr);
+});
+function collect(){return [...tbody.rows].map((row,i)=>({done:row.querySelector('.done').checked,cost:+row.querySelector('.cost').value||0,visit:+row.querySelector('.visit').value||0,inq:+row.querySelector('.inq').value||0,note:row.querySelector('.note').value}))}
+function refresh(){const d=collect();document.getElementById('progress').textContent=Math.round(d.filter(x=>x.done).length/d.length*100)+'%';document.getElementById('spent').textContent=d.reduce((a,b)=>a+b.cost,0).toLocaleString();document.getElementById('visits').textContent=d.reduce((a,b)=>a+b.visit,0);document.getElementById('inquiries').textContent=d.reduce((a,b)=>a+b.inq,0);[...tbody.rows].forEach((r,i)=>r.classList.toggle('done-row',d[i].done))}
+function saveAll(){localStorage.setItem('ciyu12w',JSON.stringify({rows:collect(),kpi:[kpi_engagement.value,kpi_maps.value,kpi_conversion.value]}));refresh();alert('已儲存在這台裝置的瀏覽器。')}
+function load(){const s=JSON.parse(localStorage.getItem('ciyu12w')||'null');if(!s)return;[...tbody.rows].forEach((r,i)=>{const x=s.rows?.[i];if(!x)return;r.querySelector('.done').checked=x.done;r.querySelector('.cost').value=x.cost;r.querySelector('.visit').value=x.visit;r.querySelector('.inq').value=x.inq;r.querySelector('.note').value=x.note||''});if(s.kpi){kpi_engagement.value=s.kpi[0];kpi_maps.value=s.kpi[1];kpi_conversion.value=s.kpi[2]}refresh()}
+function resetData(){if(confirm('確定清除所有紀錄？')){localStorage.removeItem('ciyu12w');location.reload()}}
+function exportCSV(){const d=collect();let rows=[['週次','主題','完成','目標預算','實際花費','實際到訪','詢問名單','備註']];plan.forEach((p,i)=>rows.push(['W'+p[0],p[1],d[i].done?'是':'否',p[5],d[i].cost,d[i].visit,d[i].inq,d[i].note]));const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='此域_12週行銷追蹤.csv';a.click();URL.revokeObjectURL(a.href)}
+document.addEventListener('input',refresh);load();refresh();
+</script>
+</body>
+</html>
