@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>預覽｜此域首頁三入口</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="/assets/logo黑.png" type="image/png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    :root{--preview-bg:#f7f6f2;--preview-ink:#161616;--preview-muted:#73706a;--preview-line:#d8d4cc;}
+    *{box-sizing:border-box}
+    body{background:var(--preview-bg);color:var(--preview-ink)}
+    .preview-note{position:fixed;top:12px;right:12px;z-index:20;padding:7px 10px;border:1px solid var(--preview-line);background:rgba(247,246,242,.92);backdrop-filter:blur(8px);font-size:11px;letter-spacing:.12em;color:var(--preview-muted)}
+    .site-nav{align-items:center!important;background:rgba(247,246,242,.94)!important;border-bottom:1px solid var(--preview-line)}
+    .logo{display:inline-flex!important;align-items:center!important;gap:15px!important}
+    .logo::before{content:"";display:inline-block;width:35.2px;height:35.2px;flex:0 0 35.2px;background:url('/assets/logo黑.png') center/contain no-repeat}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:13px;letter-spacing:.08em;color:inherit;text-decoration:none}
+    .preview-hero{min-height:76vh;display:flex;align-items:flex-end;padding:128px 0 72px;border-bottom:1px solid var(--preview-line);position:relative;overflow:hidden}
+    .preview-hero::after{content:"";position:absolute;width:46vw;height:46vw;max-width:680px;max-height:680px;border-radius:48% 52% 58% 42%/54% 42% 58% 46%;border:1px solid rgba(0,0,0,.10);right:-10vw;top:-12vw;transform:rotate(14deg)}
+    .preview-wrap{width:min(1180px,calc(100% - 40px));margin:auto;position:relative;z-index:1}
+    .eyebrow{font-size:12px;letter-spacing:.19em;text-transform:uppercase;color:var(--preview-muted);margin:0 0 18px}
+    .preview-title{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(54px,9.2vw,138px);line-height:.94;letter-spacing:-.055em;font-weight:400;margin:0;max-width:1050px}
+    .preview-title span{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;font-size:clamp(24px,3vw,42px);line-height:1.25;letter-spacing:.12em;margin-top:24px;font-weight:500}
+    .preview-intro{max-width:720px;margin-top:30px;font-size:clamp(17px,1.7vw,23px);line-height:1.8;color:#343434}
+    .entrances{padding:86px 0 104px}
+    .entrance-head{display:grid;grid-template-columns:180px 1fr;gap:30px;margin-bottom:42px}
+    .entrance-head h2{font-family:Georgia,"Noto Serif TC",serif;font-weight:400;font-size:clamp(34px,5vw,64px);line-height:1.05;margin:0;letter-spacing:-.03em}
+    .entrance-grid{border-top:1px solid var(--preview-line)}
+    .entrance{display:grid;grid-template-columns:90px minmax(0,1.3fr) minmax(0,1fr) auto;gap:28px;align-items:center;padding:34px 0;border-bottom:1px solid var(--preview-line);text-decoration:none;color:inherit;transition:padding .25s ease,background .25s ease}
+    .entrance:hover{padding-left:16px;padding-right:16px;background:rgba(255,255,255,.46)}
+    .num{font-family:Georgia,serif;color:var(--preview-muted);font-size:15px;letter-spacing:.1em}
+    .entrance h3{margin:0;font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(28px,3.5vw,48px);font-weight:400;letter-spacing:-.025em}
+    .entrance p{margin:0;color:var(--preview-muted);font-size:15px;line-height:1.75}
+    .arrow{font-size:24px}
+    .micro{padding:34px 0 70px;border-top:1px solid var(--preview-line)}
+    .micro p{max-width:720px;margin:0;font-size:15px;line-height:1.85;color:var(--preview-muted)}
+    .micro strong{color:var(--preview-ink);font-weight:500}
+    @media(max-width:900px){
+      .nav-links{display:none}.preview-hero{min-height:72vh;padding-top:110px}.entrance-head{grid-template-columns:1fr;gap:12px}.entrance{grid-template-columns:54px 1fr auto}.entrance p{grid-column:2 / 4}.preview-title{font-size:clamp(48px,16vw,88px)}
+    }
+    @media(max-width:560px){.preview-wrap{width:min(100% - 28px,1180px)}.preview-hero{padding-bottom:48px}.entrances{padding:58px 0 76px}.entrance{padding:26px 0;gap:14px}.entrance h3{font-size:30px}.preview-title span{font-size:22px;letter-spacing:.08em}.preview-note{top:auto;bottom:10px;right:10px}}
+  </style>
+</head>
+<body>
+  <div class="preview-note">PREVIEW · NOT PUBLISHED</div>
+
+  <nav class="site-nav" aria-label="預覽導覽">
+    <a class="logo" href="#">HANA SCENT ARTIST</a>
+    <div class="nav-links">
+      <a href="#weekly">本週開放</a>
+      <a href="#experience">氣味體驗</a>
+      <a href="#about">關於此域</a>
+    </div>
+    <div class="mobile-note">MENU</div>
+  </nav>
+
+  <header class="preview-hero">
+    <div class="preview-wrap">
+      <p class="eyebrow">Hineni, here I am.</p>
+      <h1 class="preview-title">此域<span>一間讓氣味、記憶、地方與創作相遇的白色小屋</span></h1>
+      <p class="preview-intro">位於北投中心新村。以氣味為中心，讓聲音、記憶、閱讀、選物與創作在這裡慢慢發生。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="entrances">
+      <div class="preview-wrap">
+        <div class="entrance-head">
+          <p class="eyebrow">Three Entrances</p>
+          <h2>從此刻最需要的入口開始。</h2>
+        </div>
+
+        <div class="entrance-grid">
+          <a class="entrance" id="weekly" href="#">
+            <div class="num">01</div>
+            <h3>本週開放</h3>
+            <p>查看本週開放日期、時間與正在發生的氣味主題。</p>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="entrance" id="experience" href="#">
+            <div class="num">02</div>
+            <h3>氣味體驗</h3>
+            <p>從 Helori、氣味自修室與深度課程，找到適合你的嗅覺入口。</p>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="entrance" id="about" href="#">
+            <div class="num">03</div>
+            <h3>關於此域</h3>
+            <p>認識這間位於北投中心新村的白色小屋，以及它正在發展的氣味敘事。</p>
+            <div class="arrow">↗</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="micro">
+      <div class="preview-wrap">
+        <p><strong>此域</strong>是 HANA SCENT ARTIST 進駐北投中心新村的場域實踐。<br>Hineni，我在這裡。此時此刻，我在這裡。在這場域，等候氣味發生。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
