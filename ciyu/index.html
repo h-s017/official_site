@@ -95,31 +95,40 @@
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
       background:#fff;
+      text-align:center;
     }
     .ciyu-week-head{
-      display:grid;
-      grid-template-columns:160px 1fr;
-      gap:28px;
-      align-items:start;
+      display:block;
       margin-bottom:clamp(34px,5vw,58px);
+      text-align:center;
+    }
+    .ciyu-week-head .kicker{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
     }
     .ciyu-week-title{
-      margin:0;
+      margin:14px 0 0;
       font-family:"Cormorant Garamond","Noto Serif TC",serif;
       font-size:clamp(38px,5vw,68px);
       font-weight:500;
       line-height:1.05;
       letter-spacing:.02em;
       color:#191919;
+      text-align:center;
     }
     .ciyu-week-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) auto;
-      gap:clamp(24px,4vw,64px);
-      align-items:end;
-      padding:clamp(28px,4vw,48px) 0;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(28px,5vw,72px);
+      align-items:start;
+      padding:clamp(34px,4.5vw,54px) 0;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+    .ciyu-week-block{
+      text-align:center;
     }
     .ciyu-week-block small{
       display:block;
@@ -128,6 +137,7 @@
       font-size:12px;
       letter-spacing:.18em;
       text-transform:uppercase;
+      text-align:center;
     }
     .ciyu-week-block strong{
       display:block;
@@ -136,6 +146,7 @@
       line-height:1.2;
       font-weight:500;
       letter-spacing:.04em;
+      text-align:center;
     }
     .ciyu-week-times{
       margin:0;
@@ -143,18 +154,28 @@
       font-size:clamp(16px,1.6vw,20px);
       line-height:1.9;
       letter-spacing:.06em;
+      text-align:center;
+    }
+    .ciyu-week-action{
+      grid-column:1 / -1;
+      justify-self:center;
+      width:min(100%,420px);
+      margin-top:6px;
+      text-align:center;
+    }
+    .ciyu-week-action .btn{
+      width:100%;
+      justify-content:center;
+      text-align:center;
     }
     .ciyu-week-note{
-      margin:20px 0 0;
+      margin:22px auto 0;
       max-width:760px;
       color:var(--gray500);
       font-size:14px;
       line-height:1.8;
       letter-spacing:.04em;
-    }
-    .ciyu-week-action{
-      white-space:nowrap;
-      align-self:center;
+      text-align:center;
     }
 
     .ciyu-grid{
@@ -186,16 +207,12 @@
         line-height:1.9;
         letter-spacing:.055em;
       }
-      .ciyu-week-head{
-        grid-template-columns:1fr;
-        gap:14px;
-      }
       .ciyu-week-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
+        gap:30px;
       }
       .ciyu-week-action{
-        grid-column:1 / -1;
-        margin-top:4px;
+        grid-column:auto;
       }
       .ciyu-grid{
         grid-template-columns:1fr;
@@ -219,9 +236,6 @@
       .ciyu-week-grid{
         grid-template-columns:1fr;
         gap:26px;
-      }
-      .ciyu-week-action{
-        grid-column:auto;
       }
       .ciyu-week-action .btn{
         width:100%;
@@ -254,9 +268,7 @@
       <div class="wrap">
         <div class="ciyu-week-head">
           <p class="kicker">This Week</p>
-          <div>
-            <h2 class="ciyu-week-title" id="ciyu-week-title">本週開放</h2>
-          </div>
+          <h2 class="ciyu-week-title" id="ciyu-week-title">本週開放</h2>
         </div>
 
         <div class="ciyu-week-grid">
