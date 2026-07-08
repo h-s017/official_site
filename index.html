@@ -40,6 +40,31 @@
     .dark-band{padding-top:58px!important;padding-bottom:58px!important;}
     .about-profile{gap:40px!important;}
 
+    /* Choose Your Entrance: three portrait cards side by side. */
+    .entrance-grid{
+      display:grid!important;
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+      gap:22px!important;
+      align-items:stretch!important;
+    }
+    .entrance-card{
+      aspect-ratio:4 / 5;
+      min-height:0!important;
+      display:flex!important;
+      flex-direction:column!important;
+      justify-content:flex-start!important;
+      padding:30px!important;
+    }
+    .entrance-card small{
+      display:block;
+      margin-bottom:34px;
+      color:var(--gray500);
+      letter-spacing:.2em;
+    }
+    .entrance-card h3{margin-bottom:18px!important;}
+    .entrance-card p{margin:0!important;}
+    .entrance-card .text-link{margin-top:auto!important;}
+
     .home-news .section-head{grid-template-columns:160px 1fr;gap:28px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}.news-date{color:var(--gray500);letter-spacing:.18em;font-size:14px}.news-row h3{margin:0;font-size:24px;letter-spacing:.08em;font-weight:500}.news-row p{margin:8px 0 0;color:var(--gray700)}.news-empty{margin:0;padding:20px 0;border-bottom:1px solid var(--line);color:var(--gray500);letter-spacing:.08em}.home-news-more{display:flex;justify-content:flex-end;margin-top:18px}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
     @media(max-width:980px){
       .site-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;column-gap:12px!important;flex-wrap:nowrap!important}.logo{min-width:0!important;white-space:nowrap!important;gap:10px!important;font-size:clamp(20px,5.2vw,28px)!important;letter-spacing:.22em!important;overflow:hidden!important}.logo::before{width:24px;height:24px;flex:0 0 24px}.mobile-note{grid-column:2!important;justify-self:end!important;margin-left:0!important;white-space:nowrap!important;text-align:right!important}.nav-links{grid-column:1 / -1!important}
@@ -56,6 +81,9 @@
       .news-row{grid-template-columns:1fr;gap:8px;padding:18px 0}
       .grid3{gap:12px!important;}
       .card{padding:22px!important;}
+      .entrance-grid{grid-template-columns:1fr!important;gap:14px!important;}
+      .entrance-card{aspect-ratio:auto;min-height:300px!important;padding:26px!important;}
+      .entrance-card small{margin-bottom:24px;}
       .dark-band{padding-top:44px!important;padding-bottom:44px!important;}
       .about-profile{gap:28px!important;}
       .nav-links a{height:auto!important;padding:12px 0!important;align-items:flex-start!important}
@@ -106,10 +134,10 @@
     <section>
       <div class="wrap">
         <div class="section-head"><p class="kicker">Choose Your Entrance</p><div><h2>關於你，和氣味的連結</h2><p class="lead">初次接觸調香，可以從 Helori 香氣探索所開始；想深入學習的人進入專業調香課程；品牌、空間與企業團體合作，進入企業品牌合作。</p></div></div>
-        <div class="grid3">
-          <article class="card"><small>01</small><h3>Helori 香氣探索所</h3><p>從香氣測驗與心村限定調香體驗，探索此刻最貼近你的香氣夥伴。</p><a class="text-link" href="/helori/">進入探索 →</a></article>
-          <article class="card"><small>02</small><h3>專業調香課程</h3><p>從專業調香課程起步，建立氣味結構、香材理解、配方邏輯與創作方法。</p><a class="text-link" href="/courses/">查看課程 →</a></article>
-          <article class="card"><small>03</small><h3>企業品牌合作</h3><p>為品牌、空間、展覽與企業團體活動設計具有記憶點的氣味語言。</p><a class="text-link" href="/business/">了解服務 →</a></article>
+        <div class="entrance-grid">
+          <article class="card entrance-card"><small>01</small><h3>Helori 香氣探索所</h3><p>從香氣測驗與心村限定調香體驗，探索此刻最貼近你的香氣夥伴。</p><a class="text-link" href="/helori/">進入探索 →</a></article>
+          <article class="card entrance-card"><small>02</small><h3>專業調香課程</h3><p>從專業調香課程起步，建立氣味結構、香材理解、配方邏輯與創作方法。</p><a class="text-link" href="/courses/">查看課程 →</a></article>
+          <article class="card entrance-card"><small>03</small><h3>企業品牌合作</h3><p>為品牌、空間、展覽與企業團體活動設計具有記憶點的氣味語言。</p><a class="text-link" href="/business/">了解服務 →</a></article>
         </div>
       </div>
     </section>
