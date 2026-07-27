@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>會員中心｜HANA SCENT ARTIST</title>
+  <meta name="description" content="HANA SCENT ARTIST 會員註冊、登入、密碼重設與會員帳號管理。" />
+  <link rel="canonical" href="https://hanascent.com/member/" />
+  <link rel="icon" href="/assets/logo黑.png" type="image/png" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/member.css?v=20260728" />
+</head>
+<body data-hana-page="member">
+  <nav class="site-nav" aria-label="主要導覽">
+    <a class="logo" href="/">HANA SCENT ARTIST</a>
+    <div class="nav-links"></div>
+    <div class="mobile-note">MENU</div>
+  </nav>
+
+  <header class="page-hero member-hero">
+    <div class="wrap">
+      <p class="kicker">Member</p>
+      <h1>會員中心</h1>
+      <p>註冊或登入後，即可在此管理 HANA SCENT ARTIST 會員帳號。</p>
+    </div>
+  </header>
+
+  <main class="member-main">
+    <section class="member-section">
+      <div class="member-shell">
+        <div id="member-status" class="member-status" role="status" aria-live="polite" hidden></div>
+
+        <div id="auth-view" class="member-card" hidden>
+          <div class="member-tabs" role="tablist" aria-label="會員功能">
+            <button class="member-tab is-active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel" data-member-tab="login">登入</button>
+            <button class="member-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel" data-member-tab="register">註冊</button>
+          </div>
+
+          <section id="login-panel" class="member-panel" role="tabpanel" aria-labelledby="login-tab" data-member-panel="login">
+            <div class="member-heading">
+              <p class="kicker">Sign In</p>
+              <h2>登入會員</h2>
+            </div>
+            <form id="login-form" class="member-form" novalidate>
+              <label for="login-email">電子郵件</label>
+              <input id="login-email" name="email" type="email" inputmode="email" autocomplete="email" required />
+
+              <label for="login-password">密碼</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" minlength="8" required />
+
+              <button class="btn primary member-submit" type="submit">登入</button>
+              <button class="member-text-button" type="button" id="forgot-password">忘記密碼？</button>
+            </form>
+          </section>
+
+          <section id="register-panel" class="member-panel" role="tabpanel" aria-labelledby="register-tab" data-member-panel="register" hidden>
+            <div class="member-heading">
+              <p class="kicker">Create Account</p>
+              <h2>建立會員帳號</h2>
+            </div>
+            <form id="register-form" class="member-form" novalidate>
+              <label for="register-name">姓名或稱呼</label>
+              <input id="register-name" name="name" type="text" autocomplete="name" maxlength="60" required />
+
+              <label for="register-email">電子郵件</label>
+              <input id="register-email" name="email" type="email" inputmode="email" autocomplete="email" required />
+
+              <label for="register-password">密碼</label>
+              <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-note" />
+              <p id="password-note" class="member-note">請使用至少 8 個字元的密碼。</p>
+
+              <label for="register-password-confirm">再次輸入密碼</label>
+              <input id="register-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required />
+
+              <button class="btn primary member-submit" type="submit">註冊會員</button>
+            </form>
+            <p class="member-privacy">會員資料僅用於帳號管理及與會員服務相關的必要通知。</p>
+          </section>
+        </div>
+
+        <div id="reset-view" class="member-card" hidden>
+          <div class="member-heading">
+            <p class="kicker">Reset Password</p>
+            <h2>設定新密碼</h2>
+            <p>請輸入至少 8 個字元的新密碼。</p>
+          </div>
+          <form id="reset-form" class="member-form" novalidate>
+            <label for="reset-password">新密碼</label>
+            <input id="reset-password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+
+            <label for="reset-password-confirm">再次輸入新密碼</label>
+            <input id="reset-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required />
+
+            <button class="btn primary member-submit" type="submit">更新密碼</button>
+          </form>
+        </div>
+
+        <div id="account-view" class="member-card member-account" hidden>
+          <div class="member-heading">
+            <p class="kicker">Your Account</p>
+            <h2>會員帳號</h2>
+          </div>
+          <dl class="member-details">
+            <div><dt>姓名或稱呼</dt><dd id="account-name">—</dd></div>
+            <div><dt>電子郵件</dt><dd id="account-email">—</dd></div>
+            <div><dt>帳號狀態</dt><dd>已登入</dd></div>
+          </dl>
+          <div class="member-actions">
+            <a class="btn" href="/">回到首頁</a>
+            <button class="btn primary" type="button" id="sign-out">登出</button>
+          </div>
+        </div>
+
+        <noscript>
+          <div class="member-status is-error">會員功能需要啟用 JavaScript。</div>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col"><b>HANA SCENT ARTIST</b><br>Olfactory Narrative Space<br>氣味藝術・感官體驗・專業調香課程</div>
+      <div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br><a href="https://hanascent.com/h-fugue-atelier/">Founder of H.FUGUE ATELIER</a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div>
+      <div class="footer-col"><a href="https://www.hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div>
+    </div>
+  </footer>
+
+  <script src="/assets/site.js?v=20260702-nav2"></script>
+  <script src="/assets/cms-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/member.js?v=20260728"></script>
+</body>
+</html>
