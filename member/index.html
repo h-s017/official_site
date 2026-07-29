@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <base href="/" />
-  <title>會員中心｜HANA SCENT ARTIST</title>
-  <meta name="description" content="HANA SCENT ARTIST 會員註冊、登入、密碼重設與會員帳號管理。" />
+  <title>訂閱氣味通信｜HANA SCENT ARTIST</title>
+  <meta name="description" content="訂閱 HANA SCENT ARTIST 氣味通信，接收調香課程、此域活動與氣味產品消息。" />
   <link rel="canonical" href="https://hanascent.com/member/" />
   <link rel="icon" href="/assets/logo黑.png" type="image/png" />
-  <meta name="robots" content="noindex,follow" />
+  <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="/assets/style.css" />
-  <link rel="stylesheet" href="/assets/member.css?v=20260728" />
+  <link rel="stylesheet" href="/assets/member.css?v=20260729-subscribe" />
 </head>
-<body data-hana-page="member">
+<body data-hana-page="subscription">
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="/">HANA SCENT ARTIST</a>
     <div class="nav-links"></div>
@@ -21,100 +21,50 @@
 
   <header class="page-hero member-hero">
     <div class="wrap">
-      <p class="kicker">Member</p>
-      <h1>會員中心</h1>
-      <p>註冊或登入後，即可在此管理 HANA SCENT ARTIST 會員帳號。</p>
+      <p class="kicker">Scent Letter</p>
+      <h1>訂閱氣味通信</h1>
+      <p>留下 Email，優先收到調香課程、此域活動與氣味產品的最新消息。</p>
     </div>
   </header>
 
   <main class="member-main">
     <section class="member-section">
       <div class="member-shell">
-        <div id="member-status" class="member-status" role="status" aria-live="polite" hidden></div>
+        <div id="subscription-status" class="member-status" role="status" aria-live="polite" hidden></div>
 
-        <div id="auth-view" class="member-card" hidden>
-          <div class="member-tabs" role="tablist" aria-label="會員功能">
-            <button class="member-tab is-active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel" data-member-tab="login">登入</button>
-            <button class="member-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel" data-member-tab="register">註冊</button>
-          </div>
-
-          <section id="login-panel" class="member-panel" role="tabpanel" aria-labelledby="login-tab" data-member-panel="login">
-            <div class="member-heading">
-              <p class="kicker">Sign In</p>
-              <h2>登入會員</h2>
-            </div>
-            <form id="login-form" class="member-form" novalidate>
-              <label for="login-email">電子郵件</label>
-              <input id="login-email" name="email" type="email" inputmode="email" autocomplete="email" required />
-
-              <label for="login-password">密碼</label>
-              <input id="login-password" name="password" type="password" autocomplete="current-password" minlength="8" required />
-
-              <button class="btn primary member-submit" type="submit">登入</button>
-              <button class="member-text-button" type="button" id="forgot-password">忘記密碼？</button>
-            </form>
-          </section>
-
-          <section id="register-panel" class="member-panel" role="tabpanel" aria-labelledby="register-tab" data-member-panel="register" hidden>
-            <div class="member-heading">
-              <p class="kicker">Create Account</p>
-              <h2>建立會員帳號</h2>
-            </div>
-            <form id="register-form" class="member-form" novalidate>
-              <label for="register-name">姓名或稱呼</label>
-              <input id="register-name" name="name" type="text" autocomplete="name" maxlength="60" required />
-
-              <label for="register-email">電子郵件</label>
-              <input id="register-email" name="email" type="email" inputmode="email" autocomplete="email" required />
-
-              <label for="register-password">密碼</label>
-              <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-note" />
-              <p id="password-note" class="member-note">請使用至少 8 個字元的密碼。</p>
-
-              <label for="register-password-confirm">再次輸入密碼</label>
-              <input id="register-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required />
-
-              <button class="btn primary member-submit" type="submit">註冊會員</button>
-            </form>
-            <p class="member-privacy">會員資料僅用於帳號管理及與會員服務相關的必要通知。</p>
-          </section>
-        </div>
-
-        <div id="reset-view" class="member-card" hidden>
+        <div class="member-card">
           <div class="member-heading">
-            <p class="kicker">Reset Password</p>
-            <h2>設定新密碼</h2>
-            <p>請輸入至少 8 個字元的新密碼。</p>
+            <p class="kicker">Stay in Touch</p>
+            <h2>選擇您想收到的氣味消息</h2>
           </div>
-          <form id="reset-form" class="member-form" novalidate>
-            <label for="reset-password">新密碼</label>
-            <input id="reset-password" name="password" type="password" autocomplete="new-password" minlength="8" required />
 
-            <label for="reset-password-confirm">再次輸入新密碼</label>
-            <input id="reset-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required />
+          <form id="subscription-form" class="member-form" novalidate>
+            <label for="subscriber-name">姓名或稱呼</label>
+            <input id="subscriber-name" name="name" type="text" autocomplete="name" maxlength="80" required />
 
-            <button class="btn primary member-submit" type="submit">更新密碼</button>
+            <label for="subscriber-email">電子郵件</label>
+            <input id="subscriber-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required />
+
+            <fieldset class="subscription-interests">
+              <legend>感興趣的內容（可複選）</legend>
+              <label><input type="checkbox" name="interests" value="調香課程" />調香課程</label>
+              <label><input type="checkbox" name="interests" value="此域活動" />此域活動</label>
+              <label><input type="checkbox" name="interests" value="氣味產品" />氣味產品</label>
+            </fieldset>
+
+            <label class="subscription-consent">
+              <input id="subscriber-consent" name="consent" type="checkbox" required />
+              <span>我願意接收 HANA SCENT ARTIST 的課程、活動與新品通知。</span>
+            </label>
+
+            <button class="btn primary member-submit" type="submit">訂閱氣味通信</button>
           </form>
-        </div>
 
-        <div id="account-view" class="member-card member-account" hidden>
-          <div class="member-heading">
-            <p class="kicker">Your Account</p>
-            <h2>會員帳號</h2>
-          </div>
-          <dl class="member-details">
-            <div><dt>姓名或稱呼</dt><dd id="account-name">—</dd></div>
-            <div><dt>電子郵件</dt><dd id="account-email">—</dd></div>
-            <div><dt>帳號狀態</dt><dd>已登入</dd></div>
-          </dl>
-          <div class="member-actions">
-            <a class="btn" href="/">回到首頁</a>
-            <button class="btn primary" type="button" id="sign-out">登出</button>
-          </div>
+          <p class="member-privacy">您的資料僅用於寄送所選內容的相關消息，不會公開或提供給無關第三方。</p>
         </div>
 
         <noscript>
-          <div class="member-status is-error">會員功能需要啟用 JavaScript。</div>
+          <div class="member-status is-error">訂閱功能需要啟用 JavaScript。</div>
         </noscript>
       </div>
     </section>
@@ -128,9 +78,9 @@
     </div>
   </footer>
 
-  <script src="/assets/site.js?v=20260702-nav2"></script>
+  <script src="/assets/site.js?v=20260729-nav5"></script>
   <script src="/assets/cms-config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/assets/member.js?v=20260728"></script>
+  <script src="/assets/member.js?v=20260729-subscribe"></script>
 </body>
 </html>
