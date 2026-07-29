@@ -28,7 +28,7 @@
     section{padding-top:var(--hana-section-y)!important;padding-bottom:var(--hana-section-y)!important;}
 
     .site-nav{align-items:center;}
-    .nav-links{gap:16px;font-size:13px;align-items:center;}
+    .nav-links{gap:clamp(12px,1.15vw,18px);font-size:13.5px;align-items:center;justify-content:flex-end;}
     .nav-links a{white-space:nowrap;}
     .nav-links > a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;box-sizing:border-box;}
     .nav-dropdown{position:relative;display:inline-flex;align-items:center;height:34px;}
@@ -258,7 +258,7 @@
     nav.innerHTML = `
       <a href="/">首頁</a>
       <a href="/news/">最新消息</a>
-      <a href="/ciyu/">此域HINENI</a>
+      <a href="/ciyu/">此域 HINENI</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
@@ -272,6 +272,7 @@
       <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
+      <a class="nav-cta" href="/member/">會員登入</a>
     `;
   }
 
