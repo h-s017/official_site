@@ -238,6 +238,17 @@
       .news-row:has(a[href]){margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important;}
       .btn:active,a.btn:active,.card:has(a[href]):active,.project-card:has(a[href]):active,.course-card:has(a[href]):active,.notice:has(a[href]):active{transform:translateY(-3px)!important;}
     }
+    @media (min-width:761px) and (max-width:980px){
+      .site-nav{display:grid!important;grid-template-columns:1fr!important;align-items:center!important;padding-top:14px!important;padding-bottom:12px!important;}
+      .logo{justify-self:center!important;overflow:visible!important;}
+      .mobile-note{display:none!important;}
+      .nav-links{grid-column:1!important;display:flex!important;width:100%!important;flex-basis:auto!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:6px 16px!important;max-height:none!important;overflow:visible!important;opacity:1!important;pointer-events:auto!important;padding:10px 0 0!important;margin:0!important;border-top:1px solid var(--line)!important;font-size:13px!important;transform:none!important;}
+      .nav-links > a,.nav-drop-button{width:auto!important;height:32px!important;padding:0 0 7px!important;border-bottom:1px solid transparent!important;justify-content:center!important;text-align:center!important;}
+      .nav-dropdown{position:relative!important;display:inline-flex!important;width:auto!important;height:32px!important;}
+      .nav-dropdown-menu{position:absolute!important;display:block!important;top:100%!important;left:0!important;min-width:278px!important;width:auto!important;max-height:none!important;overflow:visible!important;padding:8px 0!important;border:1px solid var(--line)!important;box-shadow:0 12px 32px rgba(0,0,0,.07)!important;opacity:0!important;visibility:hidden!important;transform:translateY(8px)!important;}
+      .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;}
+      .nav-dropdown-menu a{width:100%!important;padding:10px 16px!important;text-align:left!important;}
+    }
     @media (max-width:420px){
       .logo{font-size:18px!important;letter-spacing:.14em!important;gap:8px!important;}
       .logo::before{width:22px!important;height:22px!important;flex-basis:22px!important;}
