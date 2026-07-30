@@ -283,7 +283,7 @@
       <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
-      <a class="nav-cta" href="/member/">訂閱氣味通信</a>
+      <a href="/member/">訂閱氣味通信</a>
     `;
   }
 
