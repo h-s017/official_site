@@ -6,21 +6,47 @@
   document.querySelectorAll("[data-year]").forEach((year) => {
     year.textContent = new Date().getFullYear();
   });
+  const footerGrid = document.querySelector(".footer-grid");
+  if (footerGrid) {
+    footerGrid.innerHTML = `
+      <div class="footer-col">
+        <b>HANA SCENT ARTIST</b><br><br>
+        Founder of<br>
+        <a href="/h-fugue-atelier/">H.FUGUE ATELIER｜Scent Objects</a><br>
+        <a href="/ciyu/">此域 氣味敘事空間｜Olfactory Narrative Space</a>
+      </div>
+      <div class="footer-col">
+        台北市北投區新民路42號<br>
+        <a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟
+      </div>
+      <div class="footer-col">
+        <div class="footer-actions">
+          <a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a>
+          <a class="footer-action" href="https://www.instagram.com/hanas.scent/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-action" href="https://lin.ee/QvDGM79" target="_blank" rel="noopener">LINE</a>
+        </div>
+        <div style="margin-top:14px">營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div>
+      </div>
+    `;
+    footerGrid.querySelectorAll("[data-year]").forEach((year) => {
+      year.textContent = new Date().getFullYear();
+    });
+  }
 
   const style = document.createElement("style");
   style.textContent = `
     :root{
       --hana-page-hero-y:65px;
       --hana-page-hero-bottom:49px;
-      --hana-section-y:78px;
-      --hana-section-head-gap:42px;
-      --hana-section-head-bottom:36px;
+      --hana-section-y:58px;
+      --hana-section-head-gap:30px;
+      --hana-section-head-bottom:26px;
       --hana-wrap:1180px;
     }
 
     body{
       font-family:var(--font-serif)!important;
-      line-height:1.76!important;
+      line-height:1.64!important;
       letter-spacing:.032em!important;
     }
 
@@ -145,7 +171,7 @@
     }
     p,main p,.lead,.card p,.project-card p,.course-card p,.helori-card p,.detail-block p,.notice p,main li{
       font-size:17px!important;
-      line-height:1.78!important;
+      line-height:1.68!important;
       letter-spacing:.032em!important;
       font-weight:400!important;
       font-family:var(--font-serif)!important;
@@ -161,12 +187,12 @@
     }
     .grid3,.grid2{gap:18px!important;}
     .card,.project-card,.course-card,.notice,.form-card,.helori-card,.detail-block{padding:26px!important;border:1px solid var(--line);}
-    .project-card,.course-card,.card{min-height:230px!important;}
+    .project-card,.course-card,.card{min-height:200px!important;}
 
     .text-link,a.text-link{
       display:inline-block!important;
       width:max-content!important;
-      margin-top:22px!important;
+      margin-top:16px!important;
       border-bottom:1px solid currentColor!important;
       font-size:13.5px!important;
       line-height:1.8!important;
@@ -207,13 +233,16 @@
     .card:has(a[href]):hover,.card:has(a[href]):focus-within,.project-card:has(a[href]):hover,.project-card:has(a[href]):focus-within,.course-card:has(a[href]):hover,.course-card:has(a[href]):focus-within,.notice:has(a[href]):hover,.notice:has(a[href]):focus-within{box-shadow:0 12px 32px rgba(0,0,0,.05)!important;}
 
     .dark-band .enroll-panel{border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;padding:0!important;}
-    .footer{margin-top:60px!important;border-top:1px solid #ffffff!important;box-shadow:0 -1px 0 var(--line);}
+    .footer{margin-top:32px!important;border-top:1px solid #ffffff!important;box-shadow:0 -1px 0 var(--line);}
     main + .footer{display:block;}
+    .footer-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+    .footer-action{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:6px 11px;border:1px solid var(--black)!important;color:var(--black)!important;background:#fff;font-size:12px;letter-spacing:.08em;line-height:1.4;}
+    .footer-action:hover{background:var(--black)!important;color:#fff!important;border-color:var(--black)!important;}
 
     @media (prefers-reduced-motion:reduce){.linked-hover-card,.news-row:has(a[href]),.card:has(a[href]),.project-card:has(a[href]),.course-card:has(a[href]),.notice:has(a[href]){transition:none!important;transform:none!important;}}
     @media (max-width:1240px){.nav-links{gap:10px;font-size:12px;}.nav-cta{padding:7px 10px!important;}}
     @media (max-width:980px){
-      :root{--hana-page-hero-y:72px;--hana-page-hero-bottom:58px;--hana-section-y:62px;--hana-section-head-gap:20px;--hana-section-head-bottom:28px;}
+      :root{--hana-page-hero-y:58px;--hana-page-hero-bottom:44px;--hana-section-y:48px;--hana-section-head-gap:16px;--hana-section-head-bottom:22px;}
       .page-hero,.helori-hero,.course-hero{padding:var(--hana-page-hero-y) 22px var(--hana-page-hero-bottom)!important;}
       .page-hero h1,.helori-hero h1,.course-hero h1{font-size:clamp(34px,9vw,48px)!important;line-height:1.22!important;}
       .page-hero h2,.helori-hero h2,.course-hero h2,.helori-hero .subtitle,.course-hero .subtitle{font-size:clamp(21px,5.6vw,30px)!important;line-height:1.45!important;}
@@ -222,7 +251,7 @@
       h3,main h3,.card h3,.project-card h3,.course-card h3,.helori-card h3,.detail-block h3{font-size:21px!important;}
       p,main p,.lead,.card p,.project-card p,.course-card p,.helori-card p,.detail-block p,.notice p,main li{font-size:16px!important;}
       .section-head{grid-template-columns:1fr!important;}
-      .footer{margin-top:44px!important;}
+      .footer{margin-top:26px!important;}
       .site-nav{align-items:flex-start;flex-wrap:wrap;}
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;transition:color .22s ease,letter-spacing .22s ease;}
       .site-nav.menu-open .mobile-note{color:var(--black);letter-spacing:.24em;}
