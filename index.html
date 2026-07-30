@@ -26,12 +26,16 @@
     body.intro-open{overflow:hidden!important;}
     .intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#fff;opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease;}
     .intro-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none;}
-    .intro-screen img{width:100%;height:100%;object-fit:cover;object-position:center;animation:intro-drift 12s ease-in-out infinite alternate;cursor:pointer;}
-    .intro-enter{position:absolute;left:50%;bottom:clamp(34px,7vh,72px);transform:translateX(-50%);z-index:1;padding:10px 18px;border:1px solid #111;background:rgba(255,255,255,.88);color:#111;font-family:var(--font-serif);font-size:13px;letter-spacing:.24em;cursor:pointer;backdrop-filter:blur(8px);}
-    @keyframes intro-drift{from{transform:scale(1.01)}to{transform:scale(1.055)}}
-    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-screen img{object-fit:contain;animation-name:intro-drift-mobile}.intro-enter{bottom:calc(env(safe-area-inset-bottom) + 70px)}}
-    @keyframes intro-drift-mobile{from{transform:scale(1)}to{transform:scale(1.035)}}
-    @media(prefers-reduced-motion:reduce){.intro-screen img{animation:none}.intro-screen{transition:none}}
+    .intro-slides{position:absolute;inset:0;overflow:hidden;background:#fff;cursor:pointer;}
+    .intro-slide{position:absolute;inset:-2%;margin:0;opacity:0;will-change:opacity,transform;animation:intro-sequence 15s ease-in-out infinite;}
+    .intro-slide:nth-child(1){--intro-from:-4%;--intro-to:2%;animation-delay:0s;}
+    .intro-slide:nth-child(2){--intro-from:4%;--intro-to:-2%;animation-delay:5s;}
+    .intro-slide:nth-child(3){--intro-from:-4%;--intro-to:2%;animation-delay:10s;}
+    .intro-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.82) contrast(.96);}
+    .intro-enter{position:absolute;left:50%;bottom:clamp(34px,7vh,72px);transform:translateX(-50%);z-index:2;padding:10px 18px;border:1px solid #111;background:rgba(255,255,255,.88);color:#111;font-family:var(--font-serif);font-size:13px;letter-spacing:.24em;cursor:pointer;backdrop-filter:blur(8px);}
+    @keyframes intro-sequence{0%{opacity:0;transform:translateX(var(--intro-from)) scale(1.04)}8%{opacity:1}28%{opacity:1}36%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}100%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}}
+    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-enter{bottom:calc(env(safe-area-inset-bottom) + 70px)}}
+    @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}}
 
     /* Homepage density: preserve the current design, shorten vertical travel. */
     .hero{padding:20px 5vw 42px!important;}
@@ -114,7 +118,11 @@
 </head>
 <body class="intro-open" data-hana-page="home">
   <div class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 首頁入口">
-    <img src="/assets/homepage-cover.png?v=20260730-intro2" alt="HANA SCENT ARTIST 動態主視覺">
+    <div class="intro-slides" aria-hidden="true">
+      <figure class="intro-slide"><img src="/assets/intro/ciyu-exterior.png?v=20260730-1" alt=""></figure>
+      <figure class="intro-slide"><img src="/assets/intro/perfume-notes.jpg?v=20260730-1" alt=""></figure>
+      <figure class="intro-slide"><img src="/assets/intro/perfume-materials.jpg?v=20260730-1" alt=""></figure>
+    </div>
     <button class="intro-enter" type="button">ENTER</button>
   </div>
   <nav class="site-nav" aria-label="主要導覽">
