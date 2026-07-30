@@ -23,6 +23,16 @@
     .nav-links a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;border-bottom:1px solid transparent;}
     .nav-links a:hover,.nav-links a.active{border-color:var(--black)!important;}
 
+    body.intro-open{overflow:hidden!important;}
+    .intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#fff;opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease;}
+    .intro-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none;}
+    .intro-screen img{width:100%;height:100%;object-fit:cover;object-position:center;animation:intro-drift 12s ease-in-out infinite alternate;cursor:pointer;}
+    .intro-enter{position:absolute;left:50%;bottom:clamp(34px,7vh,72px);transform:translateX(-50%);z-index:1;padding:10px 18px;border:1px solid #111;background:rgba(255,255,255,.88);color:#111;font-family:var(--font-serif);font-size:13px;letter-spacing:.24em;cursor:pointer;backdrop-filter:blur(8px);}
+    @keyframes intro-drift{from{transform:scale(1.01)}to{transform:scale(1.055)}}
+    @media(max-width:760px){.intro-screen img{object-fit:contain;animation-name:intro-drift-mobile}.intro-enter{bottom:42px}}
+    @keyframes intro-drift-mobile{from{transform:scale(1)}to{transform:scale(1.035)}}
+    @media(prefers-reduced-motion:reduce){.intro-screen img{animation:none}.intro-screen{transition:none}}
+
     /* Homepage density: preserve the current design, shorten vertical travel. */
     .hero{padding:20px 5vw 42px!important;}
     .hero-visual img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center top!important;}
@@ -72,8 +82,8 @@
       .hero-visual img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center top!important;}
       .hero-panel{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;align-items:start!important;margin-top:18px!important}
       .hero-title .hero-place{font-size:clamp(22px,6vw,34px)!important;letter-spacing:.035em!important;line-height:1.2!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
-      .hero-actions{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px!important}
-      .hero-actions .btn{width:auto!important;min-height:34px!important;padding:6px 11px!important;box-sizing:border-box;text-align:center;justify-content:center!important;font-size:12.5px!important}
+      .hero-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;gap:7px!important}
+      .hero-actions .btn{width:100%!important;min-width:0!important;min-height:42px!important;padding:7px 6px!important;box-sizing:border-box;text-align:center;justify-content:center!important;font-size:11.5px!important;line-height:1.45!important;letter-spacing:.04em!important;white-space:normal!important}
       main>section{padding-top:48px!important;padding-bottom:48px!important;}
       .home-news{padding-top:42px!important;padding-bottom:44px!important;}
       .home-news .wrap{max-width:100%!important;}
@@ -102,7 +112,11 @@
     @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}}
   </style>
 </head>
-<body data-hana-page="home">
+<body class="intro-open" data-hana-page="home">
+  <div class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 首頁入口">
+    <img src="/assets/homepage-cover.png" alt="HANA SCENT ARTIST 動態主視覺">
+    <button class="intro-enter" type="button">ENTER</button>
+  </div>
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="/">HANA SCENT ARTIST</a>
     <div class="nav-links"></div>
@@ -195,5 +209,22 @@
   <script src="/assets/cms-config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/assets/hana-cms.js?v=20260730-news2"></script>
+  <script>
+    (() => {
+      const intro = document.getElementById("intro-screen");
+      if (!intro) return;
+      const enterSite = () => {
+        if (intro.classList.contains("is-leaving")) return;
+        intro.classList.add("is-leaving");
+        document.body.classList.remove("intro-open");
+        window.setTimeout(() => intro.remove(), 750);
+      };
+      intro.addEventListener("click", enterSite);
+      intro.querySelector(".intro-enter")?.addEventListener("click", enterSite);
+      intro.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") enterSite();
+      });
+    })();
+  </script>
 </body>
 </html>
