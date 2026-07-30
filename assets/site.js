@@ -3,6 +3,27 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.documentElement.classList.add("motion-ready");
 
+  const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
+  if (isHomepage && !document.getElementById("intro-screen")) {
+    document.body.classList.add("intro-open");
+    const intro = document.createElement("div");
+    intro.id = "intro-screen";
+    intro.className = "intro-screen intro-screen-fallback";
+    intro.setAttribute("aria-label", "HANA SCENT ARTIST 首頁入口");
+    intro.innerHTML = '<img src="/assets/homepage-cover.png?v=20260730-intro2" alt="HANA SCENT ARTIST 動態主視覺"><button class="intro-enter" type="button">ENTER</button>';
+    const fallbackStyle = document.createElement("style");
+    fallbackStyle.textContent = '.intro-open{overflow:hidden!important}.intro-screen-fallback{position:fixed;inset:0;width:100%;height:100dvh;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#fff;transition:opacity .7s ease,visibility .7s ease}.intro-screen-fallback.is-leaving{opacity:0;visibility:hidden;pointer-events:none}.intro-screen-fallback img{width:100%;height:100%;object-fit:contain;animation:hanaIntroMobile 8s ease-in-out infinite alternate}.intro-screen-fallback .intro-enter{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom) + 70px);transform:translateX(-50%);padding:10px 18px;border:1px solid #111;background:rgba(255,255,255,.92);color:#111;font-family:serif;font-size:13px;letter-spacing:.24em}@keyframes hanaIntroMobile{from{transform:scale(1)}to{transform:scale(1.055)}}';
+    document.head.appendChild(fallbackStyle);
+    document.body.prepend(intro);
+    const enterSite = () => {
+      if (intro.classList.contains("is-leaving")) return;
+      intro.classList.add("is-leaving");
+      document.body.classList.remove("intro-open");
+      window.setTimeout(() => intro.remove(), 750);
+    };
+    intro.addEventListener("click", enterSite);
+  }
+
   document.querySelectorAll("[data-year]").forEach((year) => {
     year.textContent = new Date().getFullYear();
   });
