@@ -449,7 +449,8 @@
 
   document.querySelectorAll(".nav-links a").forEach((a) => {
     const href = a.getAttribute("href");
-    const isCurrentPage = href === path || href === `/${path}` || (href === "/" && (window.location.pathname === "/" || path === "index.html")) || (window.location.pathname !== "/" && href === window.location.pathname);\n    if (isCurrentPage && href !== "/") a.classList.add("active");
+    const isCurrentPage = href === path || href === `/${path}` || (href === "/" && (window.location.pathname === "/" || path === "index.html")) || (window.location.pathname !== "/" && href === window.location.pathname);
+    if (isCurrentPage && href !== "/") a.classList.add("active");
   });
 
   wrapNumbers(document.body);
