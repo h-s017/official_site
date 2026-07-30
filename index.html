@@ -34,7 +34,7 @@
     .intro-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.82) contrast(.96);}
     .intro-enter{position:absolute;left:50%;bottom:clamp(34px,7vh,72px);transform:translateX(-50%);z-index:2;padding:13px 25px;border:1px solid #111;background:rgba(255,255,255,.88);color:#111;font-family:var(--font-serif);font-size:17px;letter-spacing:.34em;cursor:pointer;backdrop-filter:blur(8px);}
     @keyframes intro-sequence{0%{opacity:0;transform:translateX(var(--intro-from)) scale(1.04)}8%{opacity:1}28%{opacity:1}36%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}100%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}}
-    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3) img{transform:scale(1.12);transform-origin:center top}.intro-enter{bottom:calc(env(safe-area-inset-bottom) + 70px)}}
+    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3) img{object-position:center center}.intro-enter{bottom:calc(env(safe-area-inset-bottom) + 70px)}}
     @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}}
 
     /* Homepage density: preserve the current design, shorten vertical travel. */
@@ -120,8 +120,8 @@
   <div class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 首頁入口">
     <div class="intro-slides" aria-hidden="true">
       <figure class="intro-slide"><img src="/assets/intro/ciyu-exterior.png?v=20260730-1" alt=""></figure>
-      <figure class="intro-slide"><img src="/assets/intro/perfume-notes.jpg?v=20260730-1" alt=""></figure>
-      <figure class="intro-slide"><img src="/assets/intro/perfume-materials.jpg?v=20260730-1" alt=""></figure>
+      <figure class="intro-slide"><img src="/assets/intro/perfume-worktable.jpg?v=20260730-2" alt=""></figure>
+      <figure class="intro-slide"><img src="/assets/intro/sunlit-perfume.jpg?v=20260730-2" alt=""></figure>
     </div>
     <button class="intro-enter" type="button">ENTER</button>
   </div>
