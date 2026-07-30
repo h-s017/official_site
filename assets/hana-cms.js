@@ -107,13 +107,15 @@
           : defaultAnnouncements;
       const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
-        const label = sourceDate && !isNaN(new Date(sourceDate).getTime())
-          ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit' }).format(new Date(sourceDate)).replace('/', '.')
-          : (x.category || 'NEWS');
+        const dateLabel = sourceDate && !isNaN(new Date(sourceDate).getTime())
+          ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit' }).format(new Date(sourceDate)).replaceAll('/', '.')
+          : '日期未定';
+        const categoryLabels = { news:'最新消息', fragrance:'氣味發布', course:'調香課程' };
+        const categoryLabel = categoryLabels[x.category] || x.category || '最新消息';
         const body = x.summary || x.content || '';
         const content = body ? `<p>${esc(body)}</p>` : '';
         const linkLabel = x.link_label || '了解更多 →';
-        return `<article class="news-row" data-hana-announcement><div class="news-date">${esc(label)}</div><div><h3>${esc(x.title)}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
+        return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${esc(x.title)}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
       list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
     });
