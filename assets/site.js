@@ -274,8 +274,8 @@
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/courses/">H.FUGUE 專業調香系列</a>
-          <a class="nav-subitem" href="/overture/">01 氣味藝術序曲</a>
-          <a class="nav-subitem" href="/practice/">02 氣味自修室</a>
+          <a class="nav-subitem" href="/overture/">氣味藝術序曲</a>
+          <a class="nav-subitem" href="/practice/">氣味自修室</a>
           <a href="/helori/">Helori 氣味探索所體驗課程</a>
           <a href="/KPIA/">KPIA大韓專業調香師證書</a>
         </div>
