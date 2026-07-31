@@ -271,6 +271,9 @@
       h3,main h3,.card h3,.project-card h3,.course-card h3,.helori-card h3,.detail-block h3{font-size:21px!important;}
       p,main p,.lead,.card p,.project-card p,.course-card p,.helori-card p,.detail-block p,.notice p,main li{font-size:16px!important;}
       .section-head{grid-template-columns:1fr!important;}
+      body[data-hana-page="home"] .dark-band{display:block!important;height:auto!important;min-height:0!important;padding:42px 6vw!important;}
+      body[data-hana-page="home"] .dark-band .wrap{display:block!important;height:auto!important;min-height:0!important;}
+      body[data-hana-page="home"] .dark-band .lead{display:none!important;}
       .footer{margin-top:26px!important;}
       .site-nav{align-items:flex-start;flex-wrap:wrap;}
       .mobile-note{display:block;font-size:12px;color:var(--gray500);padding:4px 0;transition:color .22s ease,letter-spacing .22s ease;}
