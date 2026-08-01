@@ -228,6 +228,20 @@ section{
   align-items:start;
   margin-bottom:42px;
 }
+.business-services{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.business-services .course-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.business-services .course-meta{
+  margin-top:auto;
+}
 h1,h2,h3,p{overflow-wrap:anywhere}
 .hero-title,
 .hero-title span{
@@ -360,6 +374,9 @@ a.text-link:focus-visible{
 }
 
 @media(max-width:760px){
+  .business-services{
+    grid-template-columns:1fr;
+  }
   .motion-ready .reveal-on-scroll{
     transform:translateY(34px);
     transition-duration:.82s;
