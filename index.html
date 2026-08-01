@@ -32,9 +32,9 @@
     .intro-slide:nth-child(2){--intro-from:4%;--intro-to:-2%;animation-delay:5s;}
     .intro-slide:nth-child(3){--intro-from:-4%;--intro-to:2%;animation-delay:10s;}
     .intro-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.82) contrast(.96);}
-    .intro-enter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;padding:0;border:0;background:transparent;color:#fff;font-family:var(--font-serif);font-size:clamp(34px,5.5vw,46px);line-height:1;letter-spacing:.2em;writing-mode:vertical-rl;text-orientation:upright;cursor:pointer;text-shadow:0 1px 4px rgba(0,0,0,.42);}
+    .intro-enter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;padding:0;border:0;background:transparent;color:#fff;font-family:var(--font-serif);font-size:clamp(26px,4vw,34px);line-height:1;letter-spacing:.2em;writing-mode:vertical-rl;text-orientation:upright;cursor:pointer;text-shadow:0 1px 4px rgba(0,0,0,.42);}
     @keyframes intro-sequence{0%{opacity:0;transform:translateX(var(--intro-from)) scale(1.04)}8%{opacity:1}28%{opacity:1}36%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}100%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}}
-    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3){display:grid;place-items:center;background:#fff}.intro-slide:nth-child(3) img{width:94%;height:94%;object-position:center center}.intro-enter{font-size:42px}}
+    @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3){display:grid;place-items:center;background:#fff}.intro-slide:nth-child(3) img{width:94%;height:94%;object-position:center center}.intro-enter{font-size:30px}}
     @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}}
 
     /* Homepage density: preserve the current design, shorten vertical travel. */
