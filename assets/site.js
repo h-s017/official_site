@@ -324,7 +324,6 @@
   }
   if (nav) {
     nav.innerHTML = `
-      <a href="/">首頁</a>
       <a href="/news/">最新消息</a>
       <a href="/ciyu/">此域 HINENI</a>
       <div class="nav-dropdown">
