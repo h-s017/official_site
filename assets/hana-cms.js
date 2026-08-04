@@ -70,7 +70,11 @@
       });
     });
   }
+  const pinnedNewsTitles = new Set(['亞洲香氛藝術大賽教室預約']);
+  const isPinnedNews = item => pinnedNewsTitles.has(String(item?.title || '').trim().replace(/\s*→\s*$/, ''));
   function sortNewsItems(a, b) {
+    const pinnedRank = Number(isPinnedNews(b)) - Number(isPinnedNews(a));
+    if (pinnedRank) return pinnedRank;
     const priorityRank = { high: 0, normal: 1, low: 2 };
     const left = new Date(a.news_date || a.starts_at || a.date || a.created_at || 0).getTime() || 0;
     const right = new Date(b.news_date || b.starts_at || b.date || b.created_at || 0).getTime() || 0;
