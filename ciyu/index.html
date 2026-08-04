@@ -233,6 +233,356 @@
       </div>
     </section>
 
+    <section class="ciyu-events" aria-label="2026年8月活動與演出資訊">
+      <div class="wrap" style="width:min(1600px,96vw);max-width:none;">
+<style>
+  .hineni-calendar {
+    --ink: #252525;
+    --line: #d5d7d4;
+    --header: #e4e8e5;
+    --closed: #f0f0ee;
+    --competition: #738275;
+    --hineni: #956f69;
+    --fringe: #647b91;
+    position: relative;
+    width: 100%;
+    padding: 28px;
+    background: #fff;
+    color: var(--ink);
+    font-family: "Noto Serif TC", "Source Han Serif TC", "PingFang TC", serif;
+    box-sizing: border-box;
+  }
+
+  .hineni-calendar * { box-sizing: border-box; }
+
+  .hineni-calendar__title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 0 20px;
+    padding: 0 0 18px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .hineni-calendar__title h2,
+  .hineni-calendar__title p { margin: 0; }
+
+  .hineni-calendar__title h2 {
+    font-size: clamp(24px, 3vw, 44px);
+    font-weight: 500;
+    letter-spacing: .08em;
+  }
+
+  .hineni-calendar__title p {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: clamp(20px, 2.4vw, 36px);
+    letter-spacing: .08em;
+  }
+
+  .hineni-calendar__scroll {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 6px;
+    margin: -6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hineni-calendar__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    min-width: 1050px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+
+  .hineni-calendar__weekday {
+    min-height: 42px;
+    padding: 10px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--header);
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: .08em;
+  }
+
+  .hineni-calendar__day {
+    position: relative;
+    min-height: 152px;
+    padding: 12px;
+    border: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    cursor: default;
+    transform-origin: center;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+
+  button.hineni-calendar__day { cursor: zoom-in; }
+  .hineni-calendar__day--empty { background: #fff; }
+  .hineni-calendar__day--gray { background: var(--closed); }
+  .hineni-calendar__day--past { color: #9a9a96; }
+
+  .hineni-calendar__day:hover,
+  .hineni-calendar__day:focus-visible,
+  .hineni-calendar__day.is-active {
+    z-index: 10;
+    background: #fff;
+    outline: 0;
+    transform: scale(1.22);
+    box-shadow: 0 10px 30px rgba(0,0,0,.16);
+  }
+
+  .hineni-calendar__date {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .hineni-calendar__event {
+    display: block;
+    margin: 5px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .hineni-calendar__event--competition { color: var(--competition); }
+  .hineni-calendar__event--hineni { color: var(--hineni); }
+  .hineni-calendar__event--fringe { color: var(--fringe); }
+  .hineni-calendar__event strong { font-weight: 600; }
+
+  .hineni-calendar__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin: 18px 0 0;
+    font-size: 13px;
+  }
+
+  .hineni-calendar__legend span::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+
+  .hineni-calendar__legend .competition::before { background: var(--competition); }
+  .hineni-calendar__legend .hineni::before { background: var(--hineni); }
+  .hineni-calendar__legend .fringe::before { background: var(--fringe); }
+
+  .hineni-calendar__offer {
+    margin: 16px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  @media (hover: none) {
+    .hineni-calendar__day:hover { transform: none; box-shadow: none; }
+    .hineni-calendar__day.is-active {
+      transform: scale(1.16);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hineni-calendar { padding: 18px 14px; }
+    .hineni-calendar__title { display: block; }
+    .hineni-calendar__title p { margin-top: 6px; }
+    .hineni-calendar__day { min-height: 145px; }
+  }
+</style>
+
+<section class="hineni-calendar" aria-labelledby="hineni-calendar-title">
+  <header class="hineni-calendar__title">
+    <h2 id="hineni-calendar-title">此域 HINENI</h2>
+    <p>2026 AUGUST</p>
+  </header>
+
+  <div class="hineni-calendar__scroll" tabindex="0" aria-label="2026年8月活動月曆，可左右滑動">
+    <div class="hineni-calendar__grid">
+      <div class="hineni-calendar__weekday">週日</div><div class="hineni-calendar__weekday">週一</div><div class="hineni-calendar__weekday">週二</div><div class="hineni-calendar__weekday">週三</div><div class="hineni-calendar__weekday">週四</div><div class="hineni-calendar__weekday">週五</div><div class="hineni-calendar__weekday">週六</div>
+      <div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div>
+      <button class="hineni-calendar__day hineni-calendar__day--gray hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">1</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">2</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">3</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">4</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">5</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">6</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">7</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">8</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">9</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">10</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray hineni-calendar__day--past" type="button"><span class="hineni-calendar__date">11</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">12</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">13</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">14</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray" type="button"><span class="hineni-calendar__date">15</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:30 沒有，也沒差／他抓走的他<br>17:40 他抓走的他<br>18:00 沒有，也沒差<br>19:30 兩場演出</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">16</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--hineni"><strong>OPEN HOUSE｜氣味探索所</strong></span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>12:30 他抓走的他<br>13:30 沒有，也沒差<br>14:10 他抓走的他<br>18:05 一顆心<br>19:00 煙霧中長大的孩子</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">17</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">18</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 拾撿荒蜃／他抓走的他<br>19:00 房間好亂</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">19</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00、19:00 房間好亂</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">20</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--hineni"><strong>OPEN HOUSE｜氣味探索所</strong></span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 拾撿荒蜃<br>19:00 找廁所<br>19:30 臨陣蘑槍</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">21</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>12:30–20:05 一顆心／臨陣蘑槍 多場</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray" type="button"><span class="hineni-calendar__date">22</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>12:30–19:30 一顆心／臨陣蘑槍 多場</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">23</span><span class="hineni-calendar__event hineni-calendar__event--competition">亞洲香氛藝術大賽</span><span class="hineni-calendar__event hineni-calendar__event--hineni"><strong>OPEN HOUSE｜氣味探索所</strong></span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 房間好亂／找廁所<br>18:00 找廁所<br>19:00 房間好亂</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">24</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">25</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:30 神不在／離火<br>19:00 神不在<br>19:30 離火</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">26</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 煙霧中長大的孩子<br>14:30、18:30 等，回去<br>19:00 拾撿荒蜃</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">27</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00、19:00 拾撿荒蜃／小雞歌手</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">28</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 煙霧中長大的孩子／他抓走的他<br>19:00 煙霧中長大的孩子／小雞歌手</span></button>
+      <button class="hineni-calendar__day hineni-calendar__day--gray" type="button"><span class="hineni-calendar__date">29</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 小雞歌手<br>14:30、19:30 離火<br>18:30 北投散步</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">30</span><span class="hineni-calendar__event hineni-calendar__event--fringe"><strong>臺北藝穗節場次</strong><br>14:00 土耳其／小雞歌手<br>18:05 一顆心<br>19:00 煙霧中長大的孩子</span></button>
+      <button class="hineni-calendar__day" type="button"><span class="hineni-calendar__date">31</span></button>
+      <div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div>
+    </div>
+  </div>
+
+  <div class="hineni-calendar__legend" aria-label="活動分類">
+    <span class="competition">亞洲香氛藝術大賽</span><span class="hineni">此域活動</span><span class="fringe">臺北藝穗節場次</span>
+  </div>
+  <p class="hineni-calendar__offer">臺北藝穗節期間，憑演出票根可兌換空間噴霧乙份，限量100份；兌換完畢後，改贈調香體驗85折優惠券。每張票根限兌換一次。</p>
+</section>
+
+<script>
+  (() => {
+    const calendar = document.querySelector('.hineni-calendar');
+    if (!calendar) return;
+    const days = [...calendar.querySelectorAll('button.hineni-calendar__day')];
+    const closeAll = (except) => days.forEach(day => {
+      if (day !== except) day.classList.remove('is-active');
+    });
+    days.forEach(day => day.addEventListener('click', event => {
+      event.stopPropagation();
+      const willOpen = !day.classList.contains('is-active');
+      closeAll(day);
+      day.classList.toggle('is-active', willOpen);
+    }));
+    document.addEventListener('click', () => closeAll());
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeAll();
+    });
+  })();
+</script>
+
+      </div>
+    </section>
+
+    <section class="ciyu-program-list" aria-label="臺北藝穗節演出整理">
+      <div class="wrap" style="width:min(1400px,92vw);max-width:none;">
+<style>
+  .hineni-fringe-programs {
+    --ink: #202020;
+    --line: #d8d8d4;
+    --soft: #f4f4f1;
+    color: var(--ink);
+    font-family: "Noto Serif TC", "Source Han Serif TC", "PingFang TC", serif;
+  }
+
+  .hineni-fringe-programs__scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hineni-fringe-programs table {
+    width: 100%;
+    min-width: 980px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #fff;
+  }
+
+  .hineni-fringe-programs th,
+  .hineni-fringe-programs td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.75;
+  }
+
+  .hineni-fringe-programs th {
+    background: var(--soft);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .08em;
+  }
+
+  .hineni-fringe-programs td {
+    font-size: 14px;
+  }
+
+  .hineni-fringe-programs th:nth-child(1) { width: 22%; }
+  .hineni-fringe-programs th:nth-child(2) { width: 24%; }
+  .hineni-fringe-programs th:nth-child(3) { width: 16%; }
+  .hineni-fringe-programs th:nth-child(4) { width: 38%; }
+
+  .hineni-fringe-programs a {
+    color: var(--ink);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+  }
+
+  .hineni-fringe-programs a:hover,
+  .hineni-fringe-programs a:focus-visible {
+    opacity: .58;
+  }
+
+  .hineni-fringe-programs__note {
+    margin: 12px 0 0;
+    color: #777;
+    font-size: 12px;
+  }
+
+  @media (max-width: 767px) {
+    .hineni-fringe-programs th,
+    .hineni-fringe-programs td {
+      padding: 14px 12px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+<section class="hineni-fringe-programs" aria-labelledby="hineni-fringe-title">
+  <h2 id="hineni-fringe-title">中心新村演出節目</h2>
+  <div class="hineni-fringe-programs__scroll" tabindex="0" aria-label="中心新村演出節目表，可左右滑動">
+    <table>
+      <thead><tr><th>節目</th><th>日期與時間</th><th>場地</th><th>內容簡介</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://tpac.org.taipei/program/1899" target="_blank" rel="noopener noreferrer">沒有，也沒差</a></td><td>8/15（六）14:30、18:00、19:30<br>8/16（日）13:30</td><td>C1 藝棧</td><td>演員化身不宣揚救世論的「佈道者」，談人在理想落空、資訊爆炸的時代，如何放下執念與信念。含部分裸露、飲酒及物質使用議題。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1873" target="_blank" rel="noopener noreferrer">《他抓走的他》推理互動劇場</a></td><td>8/15（六）14:30、17:40、19:30<br>8/16（日）12:30、14:10<br>8/18（二）14:00<br>8/28（五）14:00</td><td>E2-2＋E2-3</td><td>觀眾參加一場小說新書發表會，小說家卻突然失蹤；需從五位角色與線索中推理真相，並可能走向不同結局。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1855" target="_blank" rel="noopener noreferrer">思：一顆心的四個腔室</a></td><td>8/16（日）18:05<br>8/21（五）13:00、13:45、14:30、15:15、17:35、20:05<br>8/22（六）12:45<br>8/30（日）18:05</td><td>E2-2＋E2-3</td><td>空間被設計成一顆心臟，觀眾穿越四個「腔室」，透過聲音、影像、物件與書寫，思考女性身體、創傷與情緒。建議18歲以上。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1892" target="_blank" rel="noopener noreferrer">煙霧中長大的孩子：防空洞裡學會的事</a></td><td>8/16（日）19:00<br>8/26（三）14:00<br>8/28（五）14:00、19:00<br>8/30（日）19:00</td><td>C1 藝棧</td><td>以戰爭為背景，交織大人與孩子的視角，呈現大人如何用童趣語言包裝恐懼，以及孩子如何在遊戲中察覺失去。含暴力、裸露及較大聲響。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/festival-fringe/2026/program/1903" target="_blank" rel="noopener noreferrer">拾撿荒蜃</a></td><td>8/18（二）14:00<br>8/20（四）14:00<br>8/26（三）19:00<br>8/27（四）14:00、19:00</td><td>C1 藝棧</td><td>世界崩壞成垃圾山，最後一位人類拾荒者從廢棄物中尋找生命痕跡，探討存在、記憶與人類如何延續。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1956" target="_blank" rel="noopener noreferrer">“ㄍㄢˋ房間好亂”</a></td><td>8/18（二）19:00<br>8/19（三）14:00、19:00<br>8/23（日）14:00、19:00</td><td>C1 藝棧</td><td>四個身體與一間塞滿物品的房間，從個人歷史、漂泊與家鄉出發，追問「我是誰」以及「家是什麼」。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1980" target="_blank" rel="noopener noreferrer">16種找廁所的方式（小試身手版）</a></td><td>8/20（四）19:00<br>8/23（日）14:00、18:00</td><td>E2-2＋E2-3</td><td>以MBTI與角色徵選為框架，質疑人格測驗呈現的究竟是真實的自己，還是自己想成為的樣子。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1869" target="_blank" rel="noopener noreferrer">臨陣蘑槍：應變指引</a></td><td>8/20（四）19:30<br>8/21（五）12:30、14:30、17:30、19:30<br>8/22（六）12:30、14:30、17:30、19:30</td><td>C1 藝棧</td><td>觀眾成為「蘑菇蘑菇里」里民，一起完成颱風、地震、傳染病與資訊混亂等災難任務，爭取安全專家證書。演出中需要站立、移動與互動。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/2027" target="_blank" rel="noopener noreferrer">神不在的房間</a></td><td>8/25（二）14:30、19:00</td><td>E2-2＋E2-3</td><td>15歲少女把從母親身上學到的控制式愛，投射到寵物鸚鵡身上，描寫有毒親子關係、孤獨與以愛為名的窒息。含暴力內容，觀眾需要移動。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1961" target="_blank" rel="noopener noreferrer">離火</a></td><td>8/25（二）14:30、19:30<br>8/29（六）14:30、19:30</td><td>C1 藝棧</td><td>由聲音、打擊節奏與語言構成，從冰河、火山、岩洞等意象出發，探問自我毀滅、抵抗與內心之火。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1993" target="_blank" rel="noopener noreferrer">等，回去的那一天</a></td><td>8/26（三）14:30、18:30</td><td>E2-2＋E2-3</td><td>描寫獨居老父親與一對承受生活壓力的兒女，在孝順、照顧責任與現實之間不斷產生誤解，觸及高齡、孤獨與家庭關係。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1896" target="_blank" rel="noopener noreferrer">小雞歌手</a></td><td>8/27（四）14:00、19:00<br>8/28（五）19:00<br>8/29（六）14:00<br>8/30（日）14:00</td><td>E2-2＋E2-3</td><td>以小雞成長為母雞的過程，透過輕快歌舞呈現牠被迫進入狹窄格柵的處境，對照人類的生存牢籠與動物議題。3歲以上可看。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/festival-fringe/2026/program/1954" target="_blank" rel="noopener noreferrer">北投散步——微溫的星光散策</a></td><td>8/29（六）18:30</td><td>新北投站出發，終點中心新村</td><td>從捷運新北投站出發，沿途使用LINE、耳機與聲音內容認識北投，最後走進中心新村參與一場土地儀式。</td></tr>
+        <tr><td><a href="https://tpac.org.taipei/program/1935" target="_blank" rel="noopener noreferrer">穿越月光下的土耳其</a></td><td>8/30（日）14:00</td><td>C1 藝棧</td><td>主角在月光下穿越到土耳其，觀眾跟著劇情、鼓聲與舞者進入土耳其肚皮舞世界；風格輕鬆，也適合親子觀賞。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="hineni-fringe-programs__note">點選節目名稱，可前往臺北藝穗節官方網站查看完整介紹與購票資訊。</p>
+</section>
+
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <div class="ciyu-grid">
