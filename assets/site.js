@@ -44,6 +44,7 @@
           <a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a>
           <a class="footer-action" href="https://www.instagram.com/hanas.scent/" target="_blank" rel="noopener">Instagram</a>
           <a class="footer-action" href="https://lin.ee/QvDGM79" target="_blank" rel="noopener">LINE</a>
+          <a class="footer-action" href="/member/">訂閱氣味通信</a>
         </div>
         <div style="margin-top:14px">營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div>
       </div>
@@ -337,9 +338,9 @@
         </div>
       </div>
       <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
+      <a href="/shop/">商品</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
-      <a href="/member/">訂閱氣味通信</a>
     `;
   }
 
