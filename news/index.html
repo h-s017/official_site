@@ -83,7 +83,10 @@
         if (Number.isNaN(date.getTime())) return value;
         return new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit' }).format(date);
       };
+      const pinnedNewsTitles = new Set(['亞洲香氛藝術大賽教室預約']);
+      const isPinnedNews = item => pinnedNewsTitles.has(String(item?.title || '').trim().replace(/\s*→\s*$/, ''));
       const render = rows => {
+        rows = [...rows].sort((a, b) => Number(isPinnedNews(b)) - Number(isPinnedNews(a)));
         if (!rows.length) {
           root.innerHTML = '<p class="news-state">目前尚無已發布的消息與公告。</p>';
           return;
