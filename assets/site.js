@@ -325,6 +325,46 @@
       .logo{font-size:18px!important;letter-spacing:.14em!important;gap:8px!important;}
       .logo::before{width:22px!important;height:22px!important;flex-basis:22px!important;}
     }
+
+    /* Inner pages use the homepage's compact type rhythm. */
+    body:not([data-hana-page="home"]){
+      line-height:1.58!important;
+      letter-spacing:.012em!important;
+    }
+    body:not([data-hana-page="home"]) main p,
+    body:not([data-hana-page="home"]) main li,
+    body:not([data-hana-page="home"]) main td,
+    body:not([data-hana-page="home"]) main th{
+      line-height:1.62!important;
+      letter-spacing:.012em!important;
+    }
+    body:not([data-hana-page="home"]) main h1,
+    body:not([data-hana-page="home"]) main h2,
+    body:not([data-hana-page="home"]) main h3,
+    body:not([data-hana-page="home"]) main h4{
+      line-height:1.3!important;
+      letter-spacing:.035em!important;
+    }
+    body:not([data-hana-page="home"]) main .kicker,
+    body:not([data-hana-page="home"]) main .eyebrow,
+    body:not([data-hana-page="home"]) main small{
+      line-height:1.45!important;
+      letter-spacing:.12em!important;
+    }
+    body:not([data-hana-page="home"]) main .btn,
+    body:not([data-hana-page="home"]) main .text-link{
+      line-height:1.45!important;
+      letter-spacing:.055em!important;
+    }
+    @media(max-width:980px){
+      body:not([data-hana-page="home"]) main p,
+      body:not([data-hana-page="home"]) main li,
+      body:not([data-hana-page="home"]) main td,
+      body:not([data-hana-page="home"]) main th{
+        line-height:1.62!important;
+        letter-spacing:.008em!important;
+      }
+    }
   `;
   document.head.appendChild(style);
 
