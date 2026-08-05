@@ -15,6 +15,15 @@
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/hana-cms.css" />
+  <script>
+    (() => {
+      try {
+        if (window.sessionStorage.getItem("hana-intro-seen") === "1") {
+          document.documentElement.classList.add("skip-home-intro");
+        }
+      } catch (_) {}
+    })();
+  </script>
   <style>
     .site-nav{align-items:center!important;background:#fff!important;}
     .logo{display:inline-flex!important;align-items:center!important;gap:15px!important;}
@@ -23,7 +32,9 @@
     .nav-links a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;border-bottom:1px solid transparent;}
     .nav-links a:hover,.nav-links a.active{border-color:var(--black)!important;}
 
+    .skip-home-intro .intro-screen{display:none!important;}
     body.intro-open{overflow:hidden!important;}
+    .skip-home-intro body.intro-open{overflow:auto!important;}
     .intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#fff;opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease;}
     .intro-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none;}
     .intro-slides{position:absolute;inset:0;overflow:hidden;background:#fff;cursor:pointer;}
@@ -210,7 +221,7 @@
     </div>
   </footer>
 
-  <script src="/assets/site.js?v=20260804-shop1"></script>
+  <script src="/assets/site.js?v=20260805-intro1"></script>
   <script src="/assets/cms-config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/assets/hana-cms.js?v=20260804-pin1"></script>
@@ -218,8 +229,18 @@
     (() => {
       const intro = document.getElementById("intro-screen");
       if (!intro) return;
+      let hasSeenIntro = false;
+      try { hasSeenIntro = window.sessionStorage.getItem("hana-intro-seen") === "1"; }
+      catch (_) {}
+      if (hasSeenIntro) {
+        document.body.classList.remove("intro-open");
+        intro.remove();
+        return;
+      }
       const enterSite = () => {
         if (intro.classList.contains("is-leaving")) return;
+        try { window.sessionStorage.setItem("hana-intro-seen", "1"); }
+        catch (_) {}
         intro.classList.add("is-leaving");
         document.body.classList.remove("intro-open");
         window.setTimeout(() => intro.remove(), 750);
