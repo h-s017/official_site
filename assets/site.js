@@ -3,8 +3,21 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.documentElement.classList.add("motion-ready");
 
+  const introSessionKey = "hana-intro-seen";
+  const hasSeenIntro = (() => {
+    try { return window.sessionStorage.getItem(introSessionKey) === "1"; }
+    catch (_) { return false; }
+  })();
+  const rememberIntro = () => {
+    try { window.sessionStorage.setItem(introSessionKey, "1"); }
+    catch (_) {}
+  };
+  document.querySelectorAll("a.logo[href=\"/\"]").forEach((logo) => {
+    logo.addEventListener("click", rememberIntro);
+  });
+
   const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
-  if (isHomepage && !document.getElementById("intro-screen")) {
+  if (isHomepage && !hasSeenIntro && !document.getElementById("intro-screen")) {
     document.body.classList.add("intro-open");
     const intro = document.createElement("div");
     intro.id = "intro-screen";
@@ -16,6 +29,7 @@
     document.body.prepend(intro);
     const enterSite = () => {
       if (intro.classList.contains("is-leaving")) return;
+      rememberIntro();
       intro.classList.add("is-leaving");
       document.body.classList.remove("intro-open");
       window.setTimeout(() => intro.remove(), 750);
