@@ -234,7 +234,7 @@
     </section>
 
     <section class="ciyu-events" aria-label="2026年8月活動與演出資訊">
-      <div class="wrap" style="width:min(1600px,96vw);max-width:none;">
+      <div class="wrap" style="width:min(1600px,98vw);max-width:none;">
 <style>
   .hineni-calendar {
     --ink: #252525;
@@ -246,7 +246,7 @@
     --fringe: #647b91;
     position: relative;
     width: 100%;
-    padding: 28px;
+    padding: clamp(14px, 2vw, 28px);
     background: #fff;
     color: var(--ink);
     font-family: "Noto Serif TC", "Source Han Serif TC", "PingFang TC", serif;
@@ -281,40 +281,43 @@
   }
 
   .hineni-calendar__scroll {
-    overflow-x: auto;
-    overflow-y: visible;
-    padding: 18px 6px;
-    margin: -18px -6px;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
   }
 
   .hineni-calendar__grid {
     display: grid;
-    grid-template-columns: repeat(7, minmax(150px, 1fr));
-    min-width: 1050px;
-    gap: 4px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+    gap: clamp(1px, .25vw, 4px);
   }
 
   .hineni-calendar__weekday {
+    min-width: 0;
     min-height: 42px;
-    padding: 10px;
+    padding: clamp(6px, .7vw, 10px) 2px;
     border: 0;
     background: var(--header);
     text-align: center;
-    font-size: 14px;
-    letter-spacing: .08em;
+    font-size: clamp(9px, .9vw, 14px);
+    letter-spacing: .04em;
   }
 
   .hineni-calendar__day {
     position: relative;
-    min-height: 152px;
-    padding: 12px;
+    min-width: 0;
+    min-height: clamp(104px, 10.5vw, 152px);
+    padding: clamp(5px, .75vw, 12px);
     border: 0;
     background: #fff;
     color: var(--ink);
     font: inherit;
     text-align: left;
     cursor: default;
+    overflow-wrap: anywhere;
     transform-origin: center;
     transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
   }
@@ -330,22 +333,22 @@
     z-index: 10;
     background: #fff;
     outline: 0;
-    transform: scale(1.22);
+    transform: scale(1.12);
     box-shadow: 0 10px 30px rgba(0,0,0,.16);
   }
 
   .hineni-calendar__date {
     display: block;
-    margin-bottom: 8px;
-    font-size: 15px;
+    margin-bottom: clamp(3px, .5vw, 8px);
+    font-size: clamp(10px, .95vw, 15px);
     line-height: 1;
   }
 
   .hineni-calendar__event {
     display: block;
-    margin: 5px 0 0;
-    font-size: 11px;
-    line-height: 1.5;
+    margin: clamp(2px, .35vw, 5px) 0 0;
+    font-size: clamp(8px, .72vw, 11px);
+    line-height: 1.4;
   }
 
   .hineni-calendar__event--competition { color: var(--competition); }
@@ -388,16 +391,61 @@
   @media (hover: none) {
     .hineni-calendar__day:hover { transform: none; box-shadow: none; }
     .hineni-calendar__day.is-active {
-      transform: scale(1.16);
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      transform: none;
+      box-shadow: inset 0 0 0 1px rgba(37,37,37,.35);
     }
   }
 
   @media (max-width: 767px) {
-    .hineni-calendar { padding: 18px 14px; }
+    .hineni-calendar { padding: 16px 6px; }
     .hineni-calendar__title { display: block; }
     .hineni-calendar__title p { margin-top: 6px; }
-    .hineni-calendar__day { min-height: 145px; }
+    .hineni-calendar__grid { gap: 1px; }
+    .hineni-calendar__weekday {
+      min-height: 32px;
+      padding: 7px 1px;
+      font-size: 9px;
+      letter-spacing: 0;
+    }
+    .hineni-calendar__day {
+      min-height: 90px;
+      padding: 5px 3px;
+    }
+    .hineni-calendar__date {
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+    .hineni-calendar__event {
+      margin-top: 3px;
+      font-size: 7.5px;
+      line-height: 1.35;
+    }
+    .hineni-calendar__day:hover,
+    .hineni-calendar__day:focus-visible,
+    .hineni-calendar__day.is-active {
+      transform: none;
+      box-shadow: inset 0 0 0 1px rgba(37,37,37,.35);
+    }
+    .hineni-calendar__legend {
+      gap: 8px 14px;
+      font-size: 13px;
+    }
+    .hineni-calendar__offer { font-size: 14px; }
+  }
+
+  @media (max-width: 420px) {
+    .hineni-calendar { padding-inline: 2px; }
+    .hineni-calendar__day {
+      min-height: 82px;
+      padding: 4px 2px;
+    }
+    .hineni-calendar__weekday { font-size: 8px; }
+    .hineni-calendar__date { font-size: 9px; }
+    .hineni-calendar__event {
+      font-size: 6.8px;
+      line-height: 1.28;
+      letter-spacing: -.01em;
+    }
   }
 </style>
 
@@ -407,7 +455,7 @@
     <p>2026 AUGUST</p>
   </header>
 
-  <div class="hineni-calendar__scroll" tabindex="0" aria-label="2026年8月活動月曆，可左右滑動">
+  <div class="hineni-calendar__scroll" tabindex="0" aria-label="2026年8月活動月曆">
     <div class="hineni-calendar__grid">
       <div class="hineni-calendar__weekday">週日</div><div class="hineni-calendar__weekday">週一</div><div class="hineni-calendar__weekday">週二</div><div class="hineni-calendar__weekday">週三</div><div class="hineni-calendar__weekday">週四</div><div class="hineni-calendar__weekday">週五</div><div class="hineni-calendar__weekday">週六</div>
       <div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div><div class="hineni-calendar__day hineni-calendar__day--empty"></div>
