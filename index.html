@@ -56,7 +56,8 @@
     .hero-title .hero-place{margin-top:12px!important;}
     .hero-text{font-size:18px!important;}
     .hero-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;gap:8px!important;}
-    .hero-actions .btn{min-height:36px!important;padding:7px 13px!important;font-size:13px!important;letter-spacing:.1em!important;}
+    .hero-actions .btn{min-height:36px!important;padding:7px 13px!important;font-size:13px!important;letter-spacing:.1em!important;background:#111!important;color:#fff!important;border-color:#111!important;}
+    .hero-actions .btn:hover,.hero-actions .btn:focus-visible{background:#fff!important;color:#111!important;border-color:#111!important;}
     main>section{padding-top:68px!important;padding-bottom:68px!important;}
     .home-news{padding-top:52px!important;padding-bottom:56px!important;}
     .section-head{gap:36px!important;margin-bottom:30px!important;}
@@ -91,6 +92,17 @@
     .entrance-card p{margin:0!important;}
     .entrance-card .text-link{margin-top:auto!important;}
 
+    /* Compact artist introduction near the top of the homepage. */
+    .home-about-brief{padding-top:58px!important;padding-bottom:58px!important;background:#fff;}
+    .home-about-brief .wrap{max-width:860px!important;}
+    .about-brief-grid{display:grid;grid-template-columns:150px minmax(0,1fr);gap:38px;align-items:center;}
+    .about-brief-portrait{margin:0;width:150px;}
+    .about-brief-portrait img{display:block;width:100%;height:auto;}
+    .about-brief-copy .kicker{margin-bottom:10px;}
+    .about-brief-copy h2{margin:0 0 13px;font-size:clamp(25px,3vw,36px);line-height:1.25;letter-spacing:.05em;}
+    .about-brief-copy .lead{margin:0 0 13px;font-size:16.5px!important;line-height:1.85!important;}
+    .about-brief-credentials{margin:0 0 13px;color:var(--gray700);font-size:12.5px;line-height:1.8;letter-spacing:.05em;}
+
     /* August events carousel */
     .home-events{padding-top:56px!important;padding-bottom:60px!important;background:#fafafa;}
     .home-events .wrap{max-width:860px!important;}
@@ -107,7 +119,7 @@
     .events-dot{width:7px;height:7px;padding:0;border:1px solid #222;border-radius:50%;background:transparent;cursor:pointer;}
     .events-dot.is-active{background:#222;}
 
-    .home-news .wrap{max-width:860px!important}.home-news .section-head{grid-template-columns:120px 1fr;gap:24px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}.news-main{min-width:0}.news-meta{display:flex;align-items:center;gap:10px;margin-bottom:7px;color:var(--gray500);font-size:12.5px!important;line-height:1.5!important;letter-spacing:.12em}.news-category{color:var(--gray700)}.news-date{color:var(--gray500);white-space:nowrap}.news-date::before{content:"·";margin-right:10px}.news-row h3{margin:0!important;font-size:18px!important;line-height:1.5!important;letter-spacing:.06em!important;font-weight:500}.news-row p{margin:5px 0 0!important;color:var(--gray700);font-size:15px!important;line-height:1.65!important}.news-row>.text-link{margin-top:0!important;font-size:12.5px!important;white-space:nowrap}.news-empty{margin:0;padding:18px 0;border-bottom:1px solid var(--line);color:var(--gray500);font-size:14px!important;letter-spacing:.08em}.home-news-more{display:flex;justify-content:flex-end;margin-top:16px}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
+    .home-news .wrap{max-width:860px!important}.home-news .section-head{grid-template-columns:120px 1fr;gap:24px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}.news-main{min-width:0}.news-meta{display:flex;align-items:center;gap:10px;margin-bottom:7px;color:var(--gray500);font-size:11.5px!important;line-height:1.5!important;letter-spacing:.12em}.news-category{color:var(--gray700)}.news-date{color:var(--gray500);white-space:nowrap}.news-date::before{content:"·";margin-right:10px}.news-row h3{margin:0!important;font-size:16.5px!important;line-height:1.5!important;letter-spacing:.06em!important;font-weight:500}.news-row p{margin:5px 0 0!important;color:var(--gray700);font-size:14px!important;line-height:1.65!important}.news-row>.text-link{margin-top:0!important;font-size:11.5px!important;white-space:nowrap}.news-empty{margin:0;padding:18px 0;border-bottom:1px solid var(--line);color:var(--gray500);font-size:13px!important;letter-spacing:.08em}.home-news-more{display:flex;justify-content:flex-end;margin-top:16px}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
     @media(max-width:980px){
       .site-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto!important;align-items:center!important;column-gap:12px!important;row-gap:0!important;min-height:0!important;padding-top:18px!important;padding-bottom:18px!important;flex-wrap:nowrap!important}.logo{grid-column:1!important;grid-row:1!important;min-width:0!important;white-space:nowrap!important;gap:10px!important;font-size:clamp(20px,5.2vw,28px)!important;letter-spacing:.22em!important;overflow:hidden!important}.logo::before{width:24px;height:24px;flex:0 0 24px}.mobile-note{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:end!important;margin-left:0!important;white-space:nowrap!important;text-align:right!important}.nav-links{grid-column:1 / -1!important;grid-row:2!important}
       .hero{padding:16px 4.5vw 34px!important;}
@@ -117,6 +129,14 @@
       .hero-actions .btn{width:100%!important;min-width:0!important;min-height:34px!important;padding:5px 6px!important;box-sizing:border-box;text-align:center;justify-content:center!important;font-size:11.5px!important;line-height:1.45!important;letter-spacing:.04em!important;white-space:normal!important}
       .hero-title .hero-place{font-size:clamp(22px,6vw,34px)!important;letter-spacing:.035em!important;line-height:1.2!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
       main>section{padding-top:48px!important;padding-bottom:48px!important;}
+      .home-about-brief{padding-top:40px!important;padding-bottom:42px!important;}
+      .about-brief-grid{grid-template-columns:82px minmax(0,1fr);gap:17px;align-items:start;}
+      .about-brief-portrait{width:82px;}
+      .about-brief-copy .kicker{margin-bottom:6px;}
+      .about-brief-copy h2{margin-bottom:9px;font-size:20px;line-height:1.35;letter-spacing:.025em;}
+      .about-brief-copy .lead{font-size:13.5px!important;line-height:1.7!important;margin-bottom:9px;}
+      .about-brief-credentials{font-size:10.5px;line-height:1.65;letter-spacing:.02em;margin-bottom:9px;}
+      .about-brief-copy .text-link{font-size:11px!important;}
       .home-events{padding-top:38px!important;padding-bottom:42px!important;}
       .events-heading{margin-bottom:18px;}
       .event-slide{padding:10px;}
@@ -128,11 +148,11 @@
       .home-news .section-head{grid-template-columns:1fr;gap:10px!important}
       .section-head{gap:18px!important;margin-bottom:24px!important;}
       .news-row{grid-template-columns:1fr;gap:9px;padding:15px 0}
-      .news-meta{margin-bottom:5px;font-size:11.5px!important;gap:8px}
+      .news-meta{margin-bottom:5px;font-size:10.5px!important;gap:8px}
       .news-date::before{margin-right:8px}
-      .news-row h3{font-size:16.5px!important;line-height:1.55!important}
-      .news-row p{font-size:14px!important;line-height:1.65!important;margin-top:4px!important}
-      .news-row>.text-link{font-size:12px!important;margin-top:2px!important}
+      .news-row h3{font-size:15px!important;line-height:1.55!important}
+      .news-row p{font-size:13px!important;line-height:1.65!important;margin-top:4px!important}
+      .news-row>.text-link{font-size:11px!important;margin-top:2px!important}
       .grid3{gap:12px!important;}
       .card{padding:22px!important;}
       .entrance-grid{grid-template-columns:1fr!important;gap:14px!important;}
@@ -188,13 +208,30 @@
   </header>
 
   <main>
+    <section class="home-about-brief" aria-labelledby="about-hana-brief-title">
+      <div class="wrap">
+        <div class="about-brief-grid">
+          <figure class="about-brief-portrait">
+            <img src="/assets/about-me-homepage-oval-vertical-4x5.png" alt="嗅覺藝術家 Hana 沈秉儀肖像">
+          </figure>
+          <div class="about-brief-copy">
+            <p class="kicker">About Hana</p>
+            <h2 id="about-hana-brief-title">嗅覺藝術家 Hana 沈秉儀</h2>
+            <p class="lead">以嗅覺藝術、調香與感官敘事為核心，將記憶、音樂與場域轉譯成可被感知的氣味作品。於北投中心新村持續創作與教學，也發展品牌、空間與跨領域的氣味合作。</p>
+            <p class="about-brief-credentials">北投中心新村駐村嗅覺藝術家｜Founder of H.FUGUE ATELIER｜此域 氣味敘事空間｜中國文化大學推廣教育部桃園分部 調香課程講師</p>
+            <a class="text-link" href="#about-hana">深入認識 Hana →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="home-events" aria-labelledby="august-events-title">
       <div class="wrap">
         <div class="events-heading">
-          <p class="kicker">August Events</p>
-          <h2 id="august-events-title">8月活動</h2>
+          <p class="kicker">August at Hineni</p>
+          <h2 id="august-events-title">八月 此域</h2>
         </div>
-        <div class="events-carousel" data-events-carousel aria-roledescription="carousel" aria-label="8月活動">
+        <div class="events-carousel" data-events-carousel aria-roledescription="carousel" aria-label="八月 此域">
           <div class="events-viewport">
             <div class="events-track">
               <figure class="event-slide"><img src="/assets/events/2026-08-open-house.jpg" alt="此域 Hineni OPEN HOUSE：8月21日與8月23日 GOLDEN HOURS SCENT BAR 活動海報"></figure>
@@ -211,7 +248,7 @@
       </div>
     </section>
 
-    <section class="home-news" data-hana-announcements data-hana-announcements-limit="5">
+    <section class="home-news" data-hana-announcements data-hana-announcements-limit="5" data-hana-announcements-months="2">
       <div class="wrap">
         <div class="section-head"><p class="kicker">News</p><div><h2>最新消息</h2></div></div>
         <div class="news-list" aria-live="polite">
@@ -232,7 +269,7 @@
       </div>
     </section>
 
-    <section class="home-about">
+    <section class="home-about" id="about-hana">
       <div class="wrap">
         <div class="split home-about-intro">
           <div><p class="kicker">About Hana</p><h2>氣味，不只是好聞，而是能被記住的語言。</h2></div>
