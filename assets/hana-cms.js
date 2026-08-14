@@ -109,7 +109,17 @@
         : blogNews.length
           ? blogNews.sort(sortNewsItems)
           : defaultAnnouncements;
-      const rows = source.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
+      const months = Number(root.dataset.hanaAnnouncementsMonths || 0);
+      const cutoff = new Date();
+      if (months > 0) cutoff.setMonth(cutoff.getMonth() - months);
+      const filteredSource = months > 0
+        ? source.filter(x => {
+            const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
+            const timestamp = new Date(sourceDate).getTime();
+            return Number.isFinite(timestamp) && timestamp >= cutoff.getTime();
+          })
+        : source;
+      const rows = filteredSource.slice(0, Number(root.dataset.hanaAnnouncementsLimit || 5)).map(x => {
         const sourceDate = x.news_date || x.starts_at || x.date || x.created_at || '';
         const dateLabel = sourceDate && !isNaN(new Date(sourceDate).getTime())
           ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit' }).format(new Date(sourceDate)).replaceAll('/', '.')
