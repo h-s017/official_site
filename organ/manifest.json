@@ -1,0 +1,11 @@
+{
+  "name": "HANA 學生調香台",
+  "short_name": "學生調香台",
+  "description": "H.Fugue Atelier by Hana student perfume formula app",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#374151",
+  "orientation": "portrait-primary"
+}
