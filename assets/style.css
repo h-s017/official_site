@@ -463,3 +463,27 @@ a.text-link:focus-visible{
     transform:none!important;
   }
 }
+
+/* 此域：Open Days 下方顯示週六安息日公休 */
+body[data-hana-page="ciyu"] .ciyu-week-block:first-child strong::after{
+  content:"CLOSE DAY";
+  display:block;
+  margin:30px auto 12px;
+  color:var(--gray500);
+  font-family:"Cormorant Garamond","Noto Serif TC",serif;
+  font-size:12px;
+  line-height:1.7;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+body[data-hana-page="ciyu"] .ciyu-week-block:first-child::after{
+  content:"週六\A Sabbath Rest";
+  display:block;
+  white-space:pre-line;
+  font-family:"Cormorant Garamond","Noto Serif TC",serif;
+  font-size:clamp(22px,2.4vw,32px);
+  line-height:1.45;
+  font-weight:500;
+  letter-spacing:.04em;
+}
