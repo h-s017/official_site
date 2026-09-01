@@ -394,7 +394,6 @@
       </div>
       <a href="/business/">企業品牌合作</a>
       <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
-      <a href="/shop/">SHOP</a>
       <a href="/journal/">氣味誌</a>
     `;
   }
