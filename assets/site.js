@@ -569,8 +569,7 @@
 
   const revealGroups = [
     [".hero-visual", ".hero-panel > *"],
-    ["main section", ".section-head", ".grid3 > *", ".grid2 > *", ".split > *", ".news-row", ".notice", ".form-card", ".detail-block"],
-    [".footer-grid > *"]
+    ["main section", ".section-head", ".grid3 > *", ".grid2 > *", ".split > *", ".news-row", ".notice", ".form-card", ".detail-block"]
   ];
   const revealItems = [];
   const seenRevealItems = new Set();
