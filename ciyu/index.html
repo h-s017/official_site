@@ -53,6 +53,21 @@
     .ciyu-events{padding:44px 0 72px;background:#fff;}
     .ciyu-events .wrap{width:min(1600px,96vw);max-width:none;margin-inline:auto;}
 
+    .ciyu-carousel-section{padding:56px 0 60px;background:#fafafa!important;}
+    .ciyu-carousel-section .wrap{max-width:860px;margin-inline:auto;}
+    .events-heading{margin-bottom:24px;}
+    .events-heading .kicker{margin-bottom:8px;}
+    .events-carousel{position:relative;}
+    .events-viewport{overflow:hidden;background:#fff;border:1px solid var(--line);}
+    .events-track{display:flex;transition:transform .55s ease;will-change:transform;}
+    .event-slide{flex:0 0 100%;display:grid;place-items:center;margin:0;padding:18px;box-sizing:border-box;}
+    .event-slide img{display:block;width:auto;max-width:100%;height:min(72vw,720px);object-fit:contain;}
+    .events-control{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:38px;height:38px;border:1px solid rgba(0,0,0,.22);border-radius:50%;background:rgba(255,255,255,.88);color:#6f6f6a;font-size:19px;line-height:1;cursor:pointer;}
+    .events-prev{left:14px}.events-next{right:14px}
+    .events-dots{display:flex;justify-content:center;gap:9px;margin-top:16px;}
+    .events-dot{width:7px;height:7px;padding:0;border:1px solid #6f6f6a;border-radius:50%;background:transparent;cursor:pointer;}
+    .events-dot.is-active{background:#6f6f6a;}
+
     .hineni-calendar{
       --ink:#4a4a46;
       --line:#e2e0db;
@@ -93,6 +108,12 @@
       .ciyu-hero-logo{width:min(260px,72vw);margin-bottom:28px;}
       .ciyu-week-grid,.ciyu-grid{grid-template-columns:1fr;}
       .ciyu-week-action{grid-column:auto;}
+      .ciyu-carousel-section{padding:38px 0 42px;}
+      .events-heading{margin-bottom:18px;}
+      .event-slide{padding:10px;}
+      .event-slide img{width:100%;height:auto;max-height:none;}
+      .events-control{width:32px;height:32px;font-size:16px;}
+      .events-prev{left:8px}.events-next{right:8px}
       .hineni-calendar{padding:18px 14px;}
       .hineni-calendar__title{display:block;}
       .hineni-calendar__title p{margin-top:6px;}
@@ -100,6 +121,7 @@
     }
 
     body[data-hana-page="ciyu"],body[data-hana-page="ciyu"] .site-nav,body[data-hana-page="ciyu"] main,body[data-hana-page="ciyu"] section,body[data-hana-page="ciyu"] .footer,body[data-hana-page="ciyu"] .card{background:#fff!important;}
+    body[data-hana-page="ciyu"] .ciyu-carousel-section{background:#fafafa!important;}
     body[data-hana-page="ciyu"]{color:#6f6f6a!important;}
     body[data-hana-page="ciyu"] .site-nav,body[data-hana-page="ciyu"] .site-nav a,body[data-hana-page="ciyu"] .ciyu-page,body[data-hana-page="ciyu"] .ciyu-page h1,body[data-hana-page="ciyu"] .ciyu-page h2,body[data-hana-page="ciyu"] .ciyu-page h3,body[data-hana-page="ciyu"] .ciyu-page p,body[data-hana-page="ciyu"] .ciyu-page a,body[data-hana-page="ciyu"] .ciyu-page small,body[data-hana-page="ciyu"] .ciyu-page strong,body[data-hana-page="ciyu"] .footer,body[data-hana-page="ciyu"] .footer a,body[data-hana-page="ciyu"] .footer b{color:#6f6f6a!important;}
     body[data-hana-page="ciyu"] .ciyu-week-title,body[data-hana-page="ciyu"] .ciyu-week-times{color:#6f6f6a!important;}
@@ -123,6 +145,31 @@
         <p class="ciyu-hero-description lead">此域是 HANA SCENT ARTIST 入駐於北投中心新村的場域實踐：一間白色小屋，一個讓氣味、記憶、地方與創作相遇的嗅覺敘事空間。</p>
       </div>
     </header>
+
+    <section class="ciyu-carousel-section" aria-labelledby="ciyu-carousel-title">
+      <div class="wrap">
+        <div class="events-heading">
+          <p class="kicker">At Hineni</p>
+          <h2 id="ciyu-carousel-title">此域</h2>
+        </div>
+        <div class="events-carousel" data-events-carousel aria-roledescription="carousel" aria-label="At Hineni 此域活動">
+          <div class="events-viewport">
+            <div class="events-track">
+              <figure class="event-slide"><img src="/assets/events/2026-village-on-the-air.jpg" alt="2026 聽！眷村之聲文化村節：北投中心新村9月25日至26日、蟾蜍山煥民新村10月9日至10日活動海報"></figure>
+              <figure class="event-slide"><img src="/assets/events/2026-08-open-house.jpg" alt="此域 Hineni OPEN HOUSE：8月23日 GOLD HOURS SCENT BAR 活動海報"></figure>
+              <figure class="event-slide"><img src="/assets/events/2026-08-aroma-idol.jpg" alt="亞洲香氛藝術大賽 Aroma Idol 2026年8月活動海報"></figure>
+            </div>
+          </div>
+          <button class="events-control events-prev" type="button" aria-label="上一張活動">‹</button>
+          <button class="events-control events-next" type="button" aria-label="下一張活動">›</button>
+          <div class="events-dots" aria-label="選擇活動圖片">
+            <button class="events-dot is-active" type="button" aria-label="第1張活動" aria-current="true"></button>
+            <button class="events-dot" type="button" aria-label="第2張活動"></button>
+            <button class="events-dot" type="button" aria-label="第3張活動"></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="ciyu-week" aria-labelledby="ciyu-week-title">
       <div class="wrap">
@@ -234,6 +281,43 @@
       <div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://lin.ee/QvDGM79">官方 LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const carousel = document.querySelector("[data-events-carousel]");
+      if (!carousel) return;
+      const track = carousel.querySelector(".events-track");
+      const slides = [...carousel.querySelectorAll(".event-slide")];
+      const dots = [...carousel.querySelectorAll(".events-dot")];
+      const prev = carousel.querySelector(".events-prev");
+      const nextButton = carousel.querySelector(".events-next");
+      let index = 0;
+      let timer;
+      const show = (nextIndex) => {
+        index = (nextIndex + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === index);
+          if (dotIndex === index) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+      };
+      const start = () => {
+        window.clearInterval(timer);
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          timer = window.setInterval(() => show(index + 1), 5000);
+        }
+      };
+      prev.addEventListener("click", () => { show(index - 1); start(); });
+      nextButton.addEventListener("click", () => { show(index + 1); start(); });
+      dots.forEach((dot, dotIndex) => dot.addEventListener("click", () => { show(dotIndex); start(); }));
+      carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
+      carousel.addEventListener("mouseleave", start);
+      carousel.addEventListener("focusin", () => window.clearInterval(timer));
+      carousel.addEventListener("focusout", start);
+      show(0);
+      start();
+    })();
+  </script>
   <script src="/assets/site.js?v=20260702-nav2"></script>
 </body>
 </html>
