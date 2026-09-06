@@ -23,6 +23,11 @@
     document.head.appendChild(style);
   };
 
+  const hideLegacyFooter = () => {
+    const footerGrid = document.querySelector(".footer-grid");
+    if (footerGrid) footerGrid.style.visibility = "hidden";
+  };
+
   const renderFooter = () => {
     const footerGrid = document.querySelector(".footer-grid");
     if (!footerGrid) return;
@@ -57,12 +62,14 @@
     footerGrid.querySelectorAll("[data-year]").forEach((year) => {
       year.textContent = new Date().getFullYear();
     });
+    footerGrid.style.visibility = "visible";
   };
 
   installFooterStyle();
+  hideLegacyFooter();
 
   if (document.readyState === "loading") {
-    document.write('<script src="' + coreSrc + '"><\\/script>');
+    document.write('<script src="' + coreSrc + '"><\/script>');
     document.addEventListener("DOMContentLoaded", () => window.setTimeout(renderFooter, 0), {once:true});
   } else {
     const core = document.createElement("script");
