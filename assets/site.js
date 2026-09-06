@@ -31,6 +31,12 @@
   const renderFooter = () => {
     const footerGrid = document.querySelector(".footer-grid");
     if (!footerGrid) return;
+
+    const isCiyuPage = /^\/ciyu(?:\/|\/index\.html)?$/.test(window.location.pathname);
+    const addressBlock = isCiyuPage
+      ? `台北市北投區新民路42號<br>\n        <a href="https://www.beitouheartvillage.taipei/" target="_blank" rel="noopener">北投中心新村</a> D1區C棟<br>`
+      : "";
+
     footerGrid.innerHTML = `
       <div class="footer-col">
         <b>HANA SCENT ARTIST</b><br><br>
@@ -49,8 +55,7 @@
       </div>
 
       <div class="footer-col footer-right-col">
-        台北市北投區新民路42號<br>
-        <a href="https://www.beitouheartvillage.taipei/" target="_blank" rel="noopener">北投中心新村</a> D1區C棟
+        ${addressBlock}
         <div class="footer-actions">
           <a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a>
           <a class="footer-action" href="/member/">訂閱氣味通信</a>
