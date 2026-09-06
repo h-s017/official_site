@@ -52,13 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerStyle = document.createElement('style');
     footerStyle.id = 'hana-footer-social-style';
     footerStyle.textContent = `
-      .footer-social-col{display:flex;align-items:flex-start;justify-content:flex-start;}
-      .footer-social-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:2px;}
+      .footer-social-col{display:flex;align-items:center;justify-content:center;align-self:stretch;min-height:100%;text-align:center;}
+      .footer-social-links{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding-top:0;}
       .footer-social-link{display:inline-flex!important;align-items:center;justify-content:center;width:30px;height:30px;border:0!important;background:transparent;transition:opacity .2s ease;}
       .footer-social-link img{display:block;width:26px;height:26px;object-fit:contain;}
       .footer-social-link:hover,.footer-social-link:focus-visible{opacity:.55;border:0!important;}
       @media(max-width:760px){
-        .footer-social-links{gap:16px;}
+        .footer-social-col{align-self:auto;min-height:72px;}
+        .footer-social-links{gap:16px;justify-content:center;}
         .footer-social-link{width:28px;height:28px;}
         .footer-social-link img{width:24px;height:24px;}
       }
