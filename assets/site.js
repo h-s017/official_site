@@ -6,6 +6,7 @@
     const style = document.createElement("style");
     style.id = "hana-global-footer-style";
     style.textContent = `
+      .nav-links a[href="/h-fugue-atelier/"]{display:none!important;}
       .footer-grid{align-items:stretch!important;}
       .footer-social-col{display:flex!important;align-items:center!important;justify-content:center!important;align-self:stretch!important;min-height:100%;text-align:center;position:relative;padding-bottom:30px!important;}
       .footer-social-links{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:0;}
