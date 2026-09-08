@@ -42,9 +42,10 @@
     footerGrid.innerHTML = `
       <div class="footer-col">
         <b>HANA SCENT ARTIST</b><br><br>
-        Founder of<br>
-        <a href="/h-fugue-atelier/">H.FUGUE ATELIER｜Scent Objects</a><br>
-        <a href="/ciyu/">此域 氣味敘事空間｜Olfactory Narrative Space</a>
+        Olfactory Artist｜Founder &amp; Perfumer<br><br>
+        以氣味譜寫無形的感官旋律<br><br>
+        氣味品牌顧問｜專業調香課程<br>
+        藝術駐村計畫　<a href="/ciyu/">此域</a>
       </div>
 
       <div class="footer-col footer-social-col" aria-label="社群與聯絡方式">
