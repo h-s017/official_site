@@ -8,7 +8,8 @@
     style.textContent = `
       .nav-links a[href="/h-fugue-atelier/"],.nav-links a[href="/news/"]{display:none!important;}
       .nav-dropdown-menu{min-width:330px!important;}
-      .nav-group-label{display:block;padding:10px 16px 7px;color:var(--gray500);font-size:12px;letter-spacing:.14em;line-height:1.5;border-top:1px solid var(--line);margin-top:4px;}
+      .nav-group-label{display:block;padding:10px 16px 7px;color:var(--gray500);font-size:12px;letter-spacing:.14em;line-height:1.5;border-top:1px solid var(--line);margin-top:4px;text-decoration:none!important;}
+      .nav-group-label:hover,.nav-group-label:focus-visible{color:var(--black);background:var(--gray100);}
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
       .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
@@ -39,7 +40,7 @@
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
-          <span class="nav-group-label">氣味藝術序曲系列</span>
+          <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
           <a class="nav-subitem" href="/accord-etude/"><strong class="nav-vol">Vol. 2</strong>　調香師的和弦練習曲</a>
           <a class="nav-subitem" href="/practice/"><strong class="nav-vol">Vol. 0</strong>　氣味自修室</a>
