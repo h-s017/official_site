@@ -11,6 +11,7 @@
       .nav-group-label{display:block;padding:10px 16px 7px;color:var(--gray500);font-size:12px;letter-spacing:.14em;line-height:1.5;border-top:1px solid var(--line);margin-top:4px;}
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
+      .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-brand-copy{display:block;margin-bottom:24px}
       .footer-social-col{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding:4px 0 0!important}.footer-social-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-social-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px;height:30px;border:0!important}.footer-social-link img{display:block;width:26px;height:26px;object-fit:contain}.footer-right-col .footer-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}.footer-right-col .footer-action{display:inline!important;width:auto!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;box-shadow:none!important;text-decoration:none!important}.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:12px}.footer-legal{text-align:right}
@@ -34,15 +35,14 @@
     const mobileMenu = document.querySelector(".mobile-note");
     if (!nav) return;
     nav.innerHTML = `
-      <a href="/">首頁</a>
       <a href="/ciyu/">此域 HINENI</a>
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
           <span class="nav-group-label">氣味藝術序曲系列</span>
-          <a class="nav-subitem" href="/overture/"><strong>Vol. 1</strong>　一日專業調香師</a>
-          <a class="nav-subitem" href="/accord-etude/"><strong>Vol. 2</strong>　調香師的和弦練習曲</a>
-          <a class="nav-subitem" href="/practice/"><strong>Vol. 0</strong>　氣味自修室</a>
+          <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
+          <a class="nav-subitem" href="/accord-etude/"><strong class="nav-vol">Vol. 2</strong>　調香師的和弦練習曲</a>
+          <a class="nav-subitem" href="/practice/"><strong class="nav-vol">Vol. 0</strong>　氣味自修室</a>
           <a href="/helori/">Helori 香氣探索所體驗課程</a>
           <a href="/KPIA/">KPIA</a>
         </div>
@@ -62,7 +62,7 @@
     nav.querySelectorAll("a").forEach((link) => {
       const href = link.getAttribute("href");
       const path = window.location.pathname;
-      if ((href === "/" && (path === "/" || path === "/index.html")) || (href !== "/" && path.startsWith(href))) link.classList.add("active");
+      if (href !== "/" && path.startsWith(href)) link.classList.add("active");
       link.addEventListener("click", () => {
         siteNav?.classList.remove("menu-open");
         dropdown?.classList.remove("is-open");
