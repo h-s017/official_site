@@ -40,6 +40,72 @@
     return '';
   };
 
+  function installHomeNewsMarqueeStyles() {
+    if (document.getElementById('hana-home-news-marquee-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'hana-home-news-marquee-styles';
+    style.textContent = `
+      .home-news{padding-top:52px!important;padding-bottom:56px!important;}
+      .home-news .wrap{max-width:1100px!important;}
+      .home-news .section-head{grid-template-columns:120px 1fr;gap:24px;}
+      .home-news .news-list{border:0!important;}
+      .home-news .news-marquee{position:relative;width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%);}
+      .home-news .news-track{display:flex;align-items:stretch;gap:18px;width:max-content;animation:hanaNewsMarquee 34s linear infinite;will-change:transform;}
+      .home-news .news-set{display:flex;align-items:stretch;gap:18px;flex:0 0 auto;}
+      .home-news .news-marquee:hover .news-track{animation-play-state:paused;}
+      .home-news .news-row{flex:0 0 clamp(270px,28vw,340px);display:flex!important;flex-direction:column;justify-content:space-between;min-height:220px;padding:22px!important;margin:0!important;border:1px solid var(--line)!important;background:#fff;box-sizing:border-box;}
+      .home-news .news-row:hover,.home-news .news-row:focus-within{background:var(--gray100);}
+      .home-news .news-main{min-width:0;}
+      .home-news .news-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:var(--gray500);font-size:11.5px!important;line-height:1.5!important;letter-spacing:.12em;}
+      .home-news .news-category{color:var(--gray700);}
+      .home-news .news-date{color:var(--gray500);white-space:nowrap;}
+      .home-news .news-date::before{content:'·';margin-right:10px;}
+      .home-news .news-row h3{margin:0 0 10px!important;font-size:17px!important;line-height:1.5!important;letter-spacing:.05em!important;font-weight:500!important;}
+      .home-news .news-row p{margin:0!important;color:var(--gray700);font-size:14px!important;line-height:1.7!important;}
+      .home-news .news-row>.text-link{margin-top:18px!important;font-size:11.5px!important;letter-spacing:.12em!important;white-space:nowrap;}
+      .home-news .news-empty{margin:0;padding:18px 0;color:var(--gray500);font-size:13px!important;letter-spacing:.08em;}
+      .home-news-more{display:flex;justify-content:flex-end;margin-top:18px;}
+      @keyframes hanaNewsMarquee{from{transform:translateX(calc(-50% - 9px));}to{transform:translateX(0);}}
+      @media(max-width:980px){.home-news .wrap{max-width:1100px!important;}.home-news .section-head{grid-template-columns:120px 1fr;gap:24px!important;}}
+      @media(max-width:760px){
+        .home-news .section-head{grid-template-columns:1fr;gap:10px!important;}
+        .home-news .news-track,.home-news .news-set{gap:14px;}
+        .home-news .news-track{animation-duration:28s;}
+        .home-news .news-row{flex:0 0 78vw;min-height:200px;padding:18px!important;}
+        .home-news .news-row h3{font-size:16px!important;}
+        .home-news .news-row p{font-size:13.5px!important;}
+        @keyframes hanaNewsMarquee{from{transform:translateX(calc(-50% - 7px));}to{transform:translateX(0);}}
+      }
+      @media(prefers-reduced-motion:reduce){
+        .home-news .news-track{animation:none;}
+        .home-news .news-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function enhanceHomeNewsMarquee(root, list) {
+    if (!root.classList.contains('home-news')) return;
+    installHomeNewsMarqueeStyles();
+    let marquee = list.parentElement;
+    if (!marquee?.classList.contains('news-marquee')) {
+      marquee = document.createElement('div');
+      marquee.className = 'news-marquee';
+      list.parentNode.insertBefore(marquee, list);
+      marquee.appendChild(list);
+    }
+    list.classList.add('news-track');
+    const rows = [...list.querySelectorAll(':scope > [data-hana-announcement]')];
+    if (!rows.length) return;
+    const firstSet = document.createElement('div');
+    firstSet.className = 'news-set';
+    rows.forEach(row => firstSet.appendChild(row));
+    const secondSet = firstSet.cloneNode(true);
+    secondSet.setAttribute('aria-hidden', 'true');
+    secondSet.querySelectorAll('a,button,[tabindex]').forEach(el => el.setAttribute('tabindex', '-1'));
+    list.replaceChildren(firstSet, secondSet);
+  }
+
   function applySettings(s = {}) {
     if (s.accent_color) document.documentElement.style.setProperty('--hana-accent', s.accent_color);
     if (s.content_width) document.documentElement.style.setProperty('--hana-content-width', `${s.content_width}px`);
@@ -132,6 +198,7 @@
         return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${esc(x.title)}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
       list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
+      enhanceHomeNewsMarquee(root, list);
     });
   }
   function renderPosts(items, settings) {
