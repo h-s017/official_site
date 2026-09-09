@@ -132,6 +132,16 @@
     if (footerGrid) footerGrid.style.visibility = "hidden";
   };
 
+  const arrangeHomepageSections = () => {
+    const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
+    if (!isHomepage) return;
+    const news = document.querySelector("main .home-news");
+    const about = document.querySelector("main .home-about");
+    if (news && about && about.nextElementSibling !== news) {
+      about.insertAdjacentElement("afterend", news);
+    }
+  };
+
   const renderFooter = () => {
     const footerGrid = document.querySelector(".footer-grid");
     if (!footerGrid) return;
@@ -186,11 +196,15 @@
 
   if (document.readyState === "loading") {
     document.write('<script src="' + coreSrc + '"><\/script>');
-    document.addEventListener("DOMContentLoaded", () => window.setTimeout(renderFooter, 0), {once:true});
+    document.addEventListener("DOMContentLoaded", () => {
+      arrangeHomepageSections();
+      window.setTimeout(renderFooter, 0);
+    }, {once:true});
   } else {
     const core = document.createElement("script");
     core.src = coreSrc;
     document.head.appendChild(core);
+    arrangeHomepageSections();
     window.setTimeout(renderFooter, 0);
   }
 })();
