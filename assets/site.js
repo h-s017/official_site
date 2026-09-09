@@ -44,7 +44,7 @@
           <a class="nav-subitem" href="/accord-etude/"><strong class="nav-vol">Vol. 2</strong>　調香師的和弦練習曲</a>
           <a class="nav-subitem" href="/practice/"><strong class="nav-vol">Vol. 0</strong>　氣味自修室</a>
           <a href="/helori/">Helori 香氣探索所體驗課程</a>
-          <a href="/KPIA/">KPIA</a>
+          <a href="/KPIA/">KPIA 大韓專業調香師證書</a>
         </div>
       </div>
       <a href="/business/">企業品牌合作</a>
