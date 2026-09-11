@@ -13,13 +13,16 @@
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
+    .series-poster{padding:48px 0 8px}
+    .series-poster figure{max-width:480px;margin:0 auto}
+    .series-poster img{display:block;width:100%;height:auto}
     .series-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
     .series-card{display:flex;flex-direction:column;min-height:340px;padding:30px;border:1px solid var(--line);background:#fff}
     .series-card small{display:block;margin-bottom:28px;color:var(--gray500);letter-spacing:.14em}
     .series-card h3{margin-bottom:14px!important}.series-card p{margin:0!important}.series-card .text-link{margin-top:auto!important}
     .series-sequence{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .sequence-block{padding:28px;border-top:1px solid var(--line)}
-    @media(max-width:900px){.series-grid,.series-sequence{grid-template-columns:1fr}.series-card{min-height:auto}}
+    @media(max-width:900px){.series-poster{padding:32px 0 0}.series-grid,.series-sequence{grid-template-columns:1fr}.series-card{min-height:auto}}
   </style>
 </head>
 <body>
@@ -38,6 +41,14 @@
   </header>
 
   <main>
+    <section class="series-poster" aria-label="HANA SCENT ARTIST 調香課程主視覺">
+      <div class="wrap">
+        <figure>
+          <img src="/assets/overture-series-you-are-that-perfumer.webp" alt="YOU ARE THAT PERFUMER — HANA SCENT ARTIST" width="480" height="600" loading="eager" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <div class="section-head"><p class="kicker">Learning Path</p><div><h2>三個 Vol.，不是三堂彼此分離的課。</h2><p class="lead">Vol. 1 建立嗅覺與調香基礎；Vol. 2 進一步建立自己的 Accord，理解同一支氣味在不同載體中的變化；Vol. 0 則提供持續聞香、試配與修正的練習空間。</p></div></div>
