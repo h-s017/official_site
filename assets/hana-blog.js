@@ -29,6 +29,63 @@
     if (!post) return '<span></span>';
     return `<a href="/blog.html?slug=${encodeURIComponent(post.slug)}"><small>${label}</small><strong>${esc(publicCopy(post.title))}</strong></a>`;
   }
+  function setMeta(property, content) {
+    let meta = document.querySelector(`meta[property="${property}"]`);
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('property', property);
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+  }
+  function setArticleSchema(post, canonicalUrl, imageUrl) {
+    const direction = String(post.body || '').match(/<!--\s*reading-direction:\s*([a-z-]+)\s*-->/i)?.[1];
+    const articleSections = {
+      'olfactory-culture': '嗅覺文化',
+      'scent-creation': '氣味創作',
+      'heart-village-notes': '心村札記'
+    };
+    const graph = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Article',
+          '@id': `${canonicalUrl}#article`,
+          headline: post.title,
+          description: post.summary || undefined,
+          url: canonicalUrl,
+          mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+          image: imageUrl,
+          datePublished: post.published_at || undefined,
+          articleSection: articleSections[direction] || '氣味誌',
+          author: { '@type': 'Person', '@id': 'https://hanascent.com/#hana', name: 'Hana 沈秉儀' },
+          publisher: {
+            '@type': 'Organization',
+            '@id': 'https://hanascent.com/#organization',
+            name: 'HANA SCENT ARTIST',
+            url: 'https://hanascent.com/',
+            logo: { '@type': 'ImageObject', url: 'https://hanascent.com/assets/logo黑.png' }
+          },
+          inLanguage: 'zh-Hant'
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': `${canonicalUrl}#breadcrumb`,
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: '首頁', item: 'https://hanascent.com/' },
+            { '@type': 'ListItem', position: 2, name: '氣味誌', item: 'https://hanascent.com/journal/' },
+            { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl }
+          ]
+        }
+      ]
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'hana-article-schema';
+    script.textContent = JSON.stringify(graph);
+    document.getElementById(script.id)?.remove();
+    document.head.appendChild(script);
+  }
   async function init() {
     if (!slug || !window.supabase || !cfg.supabaseUrl || !cfg.supabaseAnonKey) throw new Error('missing');
     const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
@@ -54,10 +111,18 @@
     const description = document.querySelector('meta[name="description"]');
     if (description && data.summary) description.setAttribute('content', data.summary);
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `https://hanascent.com/blog.html?slug=${encodeURIComponent(data.slug)}`);
+    const canonicalUrl = `https://hanascent.com/blog.html?slug=${encodeURIComponent(data.slug)}`;
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
     const published = data.published_at ? new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'long',day:'numeric'}).format(new Date(data.published_at)) : '';
     const showCover = data.cover_url && !noCoverTitles.has(String(data.title || '').trim());
     const cover = showCover ? `<img class="blog-cover" src="${esc(data.cover_url)}" alt="">` : '';
+    const schemaImage = showCover ? data.cover_url : 'https://hanascent.com/assets/homepage-cover.png';
+    setMeta('og:title', document.title);
+    setMeta('og:description', data.summary || 'HANA SCENT ARTIST 氣味誌');
+    setMeta('og:url', canonicalUrl);
+    setMeta('og:type', 'article');
+    setMeta('og:image', schemaImage);
+    setArticleSchema(data, canonicalUrl, schemaImage);
     root.className = 'blog-article';
     root.innerHTML = `<header><p>${esc(published)}</p><h1>${esc(data.title)}</h1>${data.summary ? `<p class="summary">${esc(data.summary)}</p>` : ''}</header>${cover}<div class="blog-body">${cleanHtml(data.body)}</div>${adjacentNav}`;
   }
