@@ -1,7 +1,7 @@
 {
   "name": "HANA 學生調香台",
   "short_name": "學生調香台",
-  "description": "H.Fugue Atelier by Hana student perfume formula app",
+  "description": "Student perfume formula app by Hana",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

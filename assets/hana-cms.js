@@ -4,16 +4,22 @@
   if (!window.supabase || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return;
   const db = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
+  const publicCopy = value => typeof value === 'string' ? value
+    .replace(/六、H[.]FUGUE ATELIER 的做法/g, '六、我們的做法')
+    .replace(/在 H[.]FUGUE ATELIER，/g, '')
+    .replace(/H[.]FUGUE ATELIER｜/g, '')
+    .replace(/H[.]FUGUE ATELIER 新氣味發布。/g, '新氣味發布。')
+    .replace(/HELORI 香氣探索所/g, 'HELORI 香氣探索體驗') : value;
   const date = v => v ? new Intl.DateTimeFormat('zh-TW', { year:'numeric', month:'long', day:'numeric' }).format(new Date(v)) : '';
   const noCoverTitles = new Set(['HANA SCENT ARTIST 氣味敘事空間']);
   const pinnedAnnouncements = [
-    { title:'香氣作品《夏日青》與 66冊香-01《Blooming Tears》已發表', content:'兩件香氣作品已發表在 H.FUGUE ATELIER。', category:'H.FUGUE', link_url:'/h-fugue-atelier/', link_label:'前往 H.FUGUE ATELIER →' }
+    { title:'香氣作品《夏日青》與 66冊香-01《Blooming Tears》已發表', content:'兩件香氣作品已發表。', category:'氣味作品', link_url:'/h-fugue-atelier/', link_label:'查看作品 →' }
   ];
   const defaultAnnouncements = [
     ...pinnedAnnouncements,
     { title:'心村限定調香體驗開放預約', content:'可預約探索調香體驗，完成一支屬於此刻狀態的氣味。', category:'2026.07', link_url:'https://reservation.hanascent.com/', link_label:'立即預約 →' },
     { title:'專業調香課程系列上線', content:'從氣味藝術序曲開始，可銜接 KPIA 或後續專業進修路線。', category:'COURSE', link_url:'/courses/', link_label:'查看課程 →' },
-    { title:'HELORI 香氣探索所', content:'探索此刻屬於你的香氣夥伴。', category:'HELORI', link_url:'/helori/', link_label:'進入 HELORI →' }
+    { title:'HELORI 香氣探索體驗', content:'探索此刻屬於你的香氣夥伴。', category:'HELORI', link_url:'/helori/', link_label:'進入 HELORI →' }
   ];
   const directionLabels = {
     'olfactory-culture': '嗅覺文化',
@@ -192,10 +198,10 @@
           : '日期未定';
         const categoryLabels = { news:'最新消息', fragrance:'氣味發布', course:'調香課程' };
         const categoryLabel = categoryLabels[x.category] || x.category || '最新消息';
-        const body = x.summary || x.content || '';
+        const body = publicCopy(x.summary || x.content || '');
         const content = body ? `<p>${esc(body)}</p>` : '';
         const linkLabel = x.link_label || '了解更多 →';
-        return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${esc(x.title)}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
+        return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${esc(publicCopy(x.title))}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
       list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
       enhanceHomeNewsMarquee(root, list);
@@ -219,7 +225,7 @@
         const directionKey = directionFromBody(x.body);
         const directionTag = showDirection ? `<a class="hana-direction" href="${esc(directionUrls[directionKey] || '/projects/')}">${esc(directionLabels[directionKey] || '嗅覺文化')}</a>` : '';
         const image = shouldShowCover(x) ? `<img src="${esc(x.cover_url)}" alt="" loading="lazy">` : '';
-        return `<article class="hana-post">${image}${directionTag}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`;
+        return `<article class="hana-post">${image}${directionTag}<h3><a href="/blog.html?slug=${encodeURIComponent(x.slug)}">${esc(publicCopy(x.title))}</a></h3><p>${esc(publicCopy(x.summary))}</p><time datetime="${esc(x.published_at || '')}">${date(x.published_at)}</time><a class="text-link" href="/blog.html?slug=${encodeURIComponent(x.slug)}">繼續閱讀 →</a></article>`;
       }).join('')}</div>`;
     });
   }

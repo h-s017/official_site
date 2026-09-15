@@ -5,6 +5,12 @@
   const slug = new URLSearchParams(location.search).get('slug');
   const noCoverTitles = new Set(['HANA SCENT ARTIST 氣味敘事空間']);
   const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' }[c]));
+  const publicCopy = value => typeof value === 'string' ? value
+    .replace(/六、H[.]FUGUE ATELIER 的做法/g, '六、我們的做法')
+    .replace(/在 H[.]FUGUE ATELIER，/g, '')
+    .replace(/H[.]FUGUE ATELIER｜/g, '')
+    .replace(/H[.]FUGUE ATELIER 新氣味發布。/g, '新氣味發布。')
+    .replace(/HELORI 香氣探索所/g, 'HELORI 香氣探索體驗') : value;
   function cleanHtml(html) {
     const doc = new DOMParser().parseFromString(String(html), 'text/html');
     const allowed = new Set(['P','BR','H2','H3','H4','BLOCKQUOTE','UL','OL','LI','STRONG','EM','A','IMG','HR','FIGURE','FIGCAPTION']);
@@ -21,7 +27,7 @@
   }
   function postLink(post, label) {
     if (!post) return '<span></span>';
-    return `<a href="/blog.html?slug=${encodeURIComponent(post.slug)}"><small>${label}</small><strong>${esc(post.title)}</strong></a>`;
+    return `<a href="/blog.html?slug=${encodeURIComponent(post.slug)}"><small>${label}</small><strong>${esc(publicCopy(post.title))}</strong></a>`;
   }
   async function init() {
     if (!slug || !window.supabase || !cfg.supabaseUrl || !cfg.supabaseAnonKey) throw new Error('missing');
@@ -43,6 +49,7 @@
       ? `<nav class="post-nav" aria-label="文章導覽">${postLink(older, '上一篇')}${postLink(newer, '下一篇')}</nav>`
       : '';
 
+    ['title', 'summary', 'body'].forEach(key => { data[key] = publicCopy(data[key]); });
     document.title = `${data.title}｜HANA SCENT ARTIST`;
     const description = document.querySelector('meta[name="description"]');
     if (description && data.summary) description.setAttribute('content', data.summary);

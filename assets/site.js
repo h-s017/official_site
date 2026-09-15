@@ -44,7 +44,7 @@
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
           <a class="nav-subitem" href="/accord-etude/"><strong class="nav-vol">Vol. 2</strong>　調香師的和弦練習曲</a>
           <a class="nav-subitem" href="/practice/"><strong class="nav-vol">Vol. 0</strong>　氣味自修室</a>
-          <a href="/helori/">Helori 香氣探索所體驗課程</a>
+          <a href="/helori/">HELORI 香氣探索體驗</a>
           <a href="/KPIA/">KPIA 大韓專業調香師證書</a>
         </div>
       </div>
@@ -86,7 +86,7 @@
     const addressBlock = isCiyuPage ? `<div style="margin-bottom:20px">台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/" target="_blank" rel="noopener">北投中心新村</a> D1區C棟</div>` : "";
     const courseInfoLink = isCoursePage() ? `<a href="/course-info/">課程交易與履約資訊</a>　·　` : "";
     footerGrid.innerHTML = `
-      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta">Olfactory Artist｜Founder &amp; Perfumer</span><span class="footer-brand-copy">以氣味譜寫無形的感官旋律</span>氣味品牌顧問｜專業調香課程<br>藝術駐村計畫　<a href="/ciyu/">此域</a></div>
+      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta">Hana 沈秉儀｜嗅覺藝術家<br>Olfactory Artist</span><span class="footer-brand-copy">以氣味譜寫無形的感官旋律</span>氣味品牌顧問｜專業調香課程<br>藝術駐村計畫　<a href="/ciyu/">此域</a></div>
       <div class="footer-col footer-social-col"><div class="footer-social-links"><a class="footer-social-link" href="https://www.instagram.com/hanas.scent/" target="_blank" rel="noopener" aria-label="Instagram"><img src="/assets/footer-instagram.svg" alt=""></a><a class="footer-social-link" href="https://www.facebook.com/Hanas017" target="_blank" rel="noopener" aria-label="Facebook"><img src="/assets/footer-facebook.svg" alt=""></a><a class="footer-social-link" href="https://lin.ee/OI4bzr1" target="_blank" rel="noopener" aria-label="官方 LINE"><img src="/assets/footer-line.svg" alt=""></a><a class="footer-social-link" href="mailto:hanascent@gmail.com" aria-label="Email"><img src="/assets/footer-email.svg" alt=""></a></div></div>
       <div class="footer-col footer-right-col">${addressBlock}<div class="footer-actions"><a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a><a class="footer-action" href="/member/">訂閱氣味通信</a><a class="footer-action" href="/student-tools/">學員工具</a></div></div>
       <div class="footer-bottom"><div>© <span data-year></span> Hana Scent Artist</div><div class="footer-legal">${courseInfoLink}<a href="/terms/">消費者權益與服務條款</a>　·　<a href="/privacy/">隱私權政策</a>　·　<a href="/refund/">退換貨與退款政策</a></div></div>`;

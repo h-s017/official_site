@@ -1,4 +1,4 @@
-# H.Fugue Course App
+# Hana Course App
 
 ## GitHub Pages 上傳方式
 

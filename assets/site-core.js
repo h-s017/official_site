@@ -45,8 +45,8 @@
     footerGrid.innerHTML = `
       <div class="footer-col">
         <b>HANA SCENT ARTIST</b><br><br>
-        Founder of<br>
-        <a href="/h-fugue-atelier/">H.FUGUE ATELIER｜Scent Objects</a><br>
+        Hana 沈秉儀｜嗅覺藝術家<br>
+        <a href="/h-fugue-atelier/">Scent Objects</a><br>
         <a href="/ciyu/">此域 氣味敘事空間｜Olfactory Narrative Space</a>
       </div>
       <div class="footer-col">
@@ -385,15 +385,15 @@
       <div class="nav-dropdown">
         <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
         <div class="nav-dropdown-menu" role="menu">
-          <a href="/courses/">H.FUGUE 專業調香系列</a>
+          <a href="/courses/">專業調香系列</a>
           <a class="nav-subitem" href="/overture/">氣味藝術序曲</a>
           <a class="nav-subitem" href="/practice/">氣味自修室</a>
-          <a href="/helori/">Helori 氣味探索所體驗課程</a>
+          <a href="/helori/">HELORI 香氣探索體驗</a>
           <a href="/KPIA/">KPIA大韓專業調香師證書</a>
         </div>
       </div>
       <a href="/business/">企業品牌合作</a>
-      <a href="/h-fugue-atelier/">H.FUGUE ATELIER</a>
+      <a href="/h-fugue-atelier/">氣味作品</a>
       <a href="/journal/">氣味誌</a>
     `;
   }
@@ -448,7 +448,7 @@
   function replaceText(node){
     if (node.nodeType === Node.TEXT_NODE) {
       node.nodeValue = node.nodeValue
-        .replaceAll("心村限定｜Helori 香徑探索所", "心村限定｜Helori 香氣探索所")
+        .replaceAll("心村限定｜Helori 香徑探索所", "心村限定｜HELORI 香氣探索體驗")
         .replaceAll("Helori香徑探索課", "Helori香氣探索課")
         .replaceAll("Helori 香徑探索", "Helori 香氣探索")
         .replaceAll("所有課程", "專業調香課程")
@@ -523,16 +523,16 @@
 
   document.querySelectorAll("a").forEach((a) => {
     const label = a.textContent.trim();
-    if (label.includes("心村限定｜Helori 香氣探索所") || label.includes("心村限定｜Helori 香徑探索所") || (a.classList.contains("red") && label.includes("心村限定"))) {
+    if (label.includes("心村限定｜HELORI 香氣探索體驗") || label.includes("心村限定｜Helori 香徑探索所") || (a.classList.contains("red") && label.includes("心村限定"))) {
       a.href = heloriUrl;
     }
   });
 
   const path = window.location.pathname.split("/").pop() || "index.html";
   if (path === "helori-scent-lab.html") {
-    document.title = "Helori 香氣探索所｜HANA SCENT ARTIST";
+    document.title = "HELORI 香氣探索體驗｜HANA SCENT ARTIST";
     const h1 = document.querySelector(".page-hero h1, .helori-hero h1");
-    if (h1 && !h1.innerHTML.includes("Helori")) h1.textContent = "Helori 香氣探索所";
+    if (h1 && !h1.innerHTML.includes("Helori")) h1.textContent = "HELORI 香氣探索體驗";
   }
   if (path === "experiences.html") {
     document.title = "專業調香課程｜HANA SCENT ARTIST";

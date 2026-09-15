@@ -29,7 +29,7 @@
   const defaultDirection = 'olfactory-culture';
   const state = { media: [], posts: [], announcements: [], pageContents: [], booking: null, settings: null, mediaTarget: null };
   const titles = { dashboard: '總覽', media: '照片與媒體', posts: '氣味誌', announcements: '公告', content: '頁面內容', booking: '預約設定', layout: '版面設定' };
-  const pageNames = { home: '首頁', helori: 'HELORI 香氣探索所', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: 'H.FUGUE ATELIER', visit: '聯繫我們', journal: '氣味誌' };
+  const pageNames = { home: '首頁', helori: 'HELORI 香氣探索體驗', courses: '專業調香課程', scent_design: '嗅覺設計服務', atelier: '氣味作品', visit: '聯繫我們', journal: '氣味誌' };
   let toastTimer;
 
   function toast(message, error = false) {

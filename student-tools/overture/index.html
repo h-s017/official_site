@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H.Fugue Course App｜Professional Perfumery Foundation Course</title>
+<title>Hana Course App｜Professional Perfumery Foundation Course</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -206,7 +206,7 @@ body{font-family:'Noto Serif TC',serif;background:var(--bg);color:var(--text);ov
 
 
 /* ───────────────────────────────────────────────
-   MOBILE-FIRST REFINEMENT | H.FUGUE ATELIER
+   MOBILE-FIRST REFINEMENT | Hana
    white / silver / deep gray classroom edition
 ─────────────────────────────────────────────── */
 :root{
@@ -487,7 +487,7 @@ body.sidebar-collapsed .menu-toggle{left:13px;}
 
 /* Brand mark shown on every course page */
 .page::after{
-  content:'H.Fugue Atelier · by Hana';
+  content:'by Hana';
   display:block;
   margin:46px 0 0;
   padding-top:18px;
@@ -545,7 +545,7 @@ body,.main,.page{overscroll-behavior-y:contain;}
 <body>
 
 <div id="cover">
-  <div class="c-brand">H.FUGUE ATELIER | by Hana</div>
+  <div class="c-brand">by Hana</div>
   <div class="c-sub2">Professional Perfumery<br>Foundation Course</div>
   <div class="c-title">氣味藝術序曲</div>
   <div class="c-sub">Overture to the Art of Scent</div>
@@ -559,7 +559,7 @@ body,.main,.page{overscroll-behavior-y:contain;}
 <div id="app">
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <nav class="sidebar" id="sidebar">
-    <div class="sb-logo"><div class="sb-brand">H.Fugue Atelier · by Hana</div><div class="sb-name">氣味藝術序曲</div></div>
+    <div class="sb-logo"><div class="sb-brand">by Hana</div><div class="sb-name">氣味藝術序曲</div></div>
     <div class="nav-section">課程章節</div>
     <a class="nav-item active" onclick="showPage(0)" href="#"><span class="nav-num">序</span><span class="nav-txt">導言與流程</span></a>
     <a class="nav-item" onclick="showPage(1)" href="#"><span class="nav-num">一</span><span class="nav-txt">嗅覺記憶</span></a>
@@ -1047,8 +1047,7 @@ function drawWheel(){
 
   ctx.beginPath();ctx.arc(cx,cy,iR-1,0,Math.PI*2);ctx.fillStyle='#ffffff';ctx.fill();
   ctx.strokeStyle='#D1D5DB';ctx.lineWidth=1.7;ctx.stroke();
-  label('H FUGUE',cx,cy-9,'600 13px Cormorant Garamond, serif','#374151');
-  label('ATELIER',cx,cy+10,'500 8.5px Cormorant Garamond, serif','#9EA3AA');
+  label('Hana',cx,cy-9,'600 13px Cormorant Garamond, serif','#374151');
 
   canvas.onclick=function(e){
     const rect=canvas.getBoundingClientRect();const sx=canvas.width/dpr/rect.width,sy=canvas.height/dpr/rect.height;
@@ -1085,7 +1084,7 @@ function drawWheel(){
     top.className='mobile-topbar';
     top.innerHTML=`
       <button class="mobile-menu-btn" type="button" aria-label="開啟章節選單">☰</button>
-      <div class="mobile-titlebox"><div class="mobile-kicker">H.FUGUE MOBILE COURSE</div><div class="mobile-title">導言與流程</div></div>
+      <div class="mobile-titlebox"><div class="mobile-kicker">Hana MOBILE COURSE</div><div class="mobile-title">導言與流程</div></div>
       <button class="mobile-jump" type="button" aria-label="切換章節">章</button>
       <select class="mobile-chapter-select" aria-label="章節快速切換">${chapterNames.map((n,i)=>`<option value="${i}">${['序章','第一章','第二章','第二章-繪畫','第二章-音樂','第三章','第四章','第五章','第六章','Organ'][i]}｜${n}</option>`).join('')}</select>`;
     app.prepend(top);

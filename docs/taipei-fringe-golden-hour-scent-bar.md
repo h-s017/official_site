@@ -96,5 +96,4 @@ GOLDEN HOUR SCENT BAR
 
 - Hana 是創作者
 - 此域是容器與場域
-- H.FUGUE ATELIER 是作品與產品線
 - GOLDEN HOUR SCENT BAR 是此域在台北藝穗節期間的氣味體驗企劃
