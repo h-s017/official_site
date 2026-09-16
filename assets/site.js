@@ -16,13 +16,87 @@
       body[data-hana-page="home"] .hero-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important;width:100%!important;max-width:760px!important;}
       body[data-hana-page="home"] .hero-actions .btn{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:76px!important;box-sizing:border-box!important;padding:12px 18px!important;text-align:center!important;white-space:nowrap!important;}
       body[data-hana-page="home"] .hero-actions .btn:last-child{grid-column:auto!important;}
+      .about-role-en{display:block;margin-top:10px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:.12em;line-height:1.45;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-brand-copy{display:block;margin-bottom:24px}
       .footer-social-col{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding:4px 0 0!important}.footer-social-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-social-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px;height:30px;border:0!important}.footer-social-link img{display:block;width:26px;height:26px;object-fit:contain}.footer-right-col .footer-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}.footer-right-col .footer-action{display:inline!important;width:auto!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;box-shadow:none!important;text-decoration:none!important}.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:12px}.footer-legal{text-align:right}.footer-legal a{white-space:nowrap}
       @media(max-width:900px){.footer-grid{grid-template-columns:minmax(0,1.25fr) minmax(160px,.75fr)!important;column-gap:42px!important;row-gap:34px!important}.footer-right-col{grid-column:2;grid-row:1}.footer-social-col{grid-column:1/-1;grid-row:2}.footer-bottom{grid-row:3}}
-      @media(max-width:760px){body[data-hana-page="home"] .hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;max-width:none!important;}body[data-hana-page="home"] .hero-actions .btn{min-height:62px!important;padding:10px 8px!important;}.footer-grid{display:block!important}.footer-brand-col,.footer-social-col,.footer-right-col{margin:0 0 30px!important}.footer-bottom{display:block;margin-top:10px}.footer-legal{text-align:left;margin-top:8px}.nav-dropdown-menu{min-width:min(330px,88vw)!important}}
+      @media(max-width:760px){body[data-hana-page="home"] .hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;max-width:none!important;}body[data-hana-page="home"] .hero-actions .btn{min-height:62px!important;padding:10px 8px!important;}.about-role-en{font-size:13px;letter-spacing:.08em}.footer-grid{display:block!important}.footer-brand-col,.footer-social-col,.footer-right-col{margin:0 0 30px!important}.footer-bottom{display:block;margin-top:10px}.footer-legal{text-align:left;margin-top:8px}.nav-dropdown-menu{min-width:min(330px,88vw)!important}}
     `;
     document.head.appendChild(style);
+  };
+
+  const setMeta = (selector, content) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute("content", content);
+  };
+
+  const syncHomepageIdentityAndSEO = () => {
+    const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
+    if (!isHomepage) return;
+
+    const title = "HANA SCENT ARTIST｜藝術育成・品牌合作・嗅覺藝術與調香";
+    const description = "HANA SCENT ARTIST 由嗅覺藝術家、調香師與 Creative Mentor Hana 沈秉儀創立，以藝術育成與品牌合作為核心，整合創作定位、營運規劃、香氛產品開發、PIF、品牌氣味識別與專業調香，陪伴創作者與品牌從想法走向實現。";
+    const keywords = "藝術育成, 創作者育成, Creative Mentor, 品牌合作, 品牌氣味識別, 香氛產品開發, PIF, 專業調香, 調香師, 嗅覺藝術, 感官敘事, HANA SCENT ARTIST, Hana 沈秉儀, 台北";
+
+    document.title = title;
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[name="keywords"]', keywords);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+
+    const schema = document.querySelector('script[type="application/ld+json"]');
+    if (schema) {
+      try {
+        const data = JSON.parse(schema.textContent);
+        const graph = data?.["@graph"];
+        if (Array.isArray(graph)) {
+          const org = graph.find((node) => node?.["@id"] === "https://hanascent.com/#organization");
+          if (org) {
+            org.description = "以藝術育成與品牌合作為核心，結合嗅覺藝術、專業調香、品牌氣味識別、香氛產品開發與 PIF 協作的創作與顧問品牌。";
+            org.knowsAbout = ["藝術育成","創作者育成","品牌合作","品牌氣味識別","香氛產品開發","PIF 化粧品產品資訊檔案","嗅覺藝術","專業調香教育","感官敘事","空間氣味設計"];
+          }
+          const person = graph.find((node) => node?.["@id"] === "https://hanascent.com/#hana");
+          if (person) {
+            person.jobTitle = "嗅覺藝術家、調香師、Creative Mentor、HANA SCENT ARTIST 創辦人";
+            person.description = "Hana 沈秉儀是 HANA SCENT ARTIST 創辦人，以嗅覺藝術與專業調香為創作根基，發展藝術育成、創作者陪伴、品牌氣味識別與香氛產品開發。";
+            person.knowsAbout = ["Olfactory Art","Perfumery","Creative Mentoring","藝術育成","品牌氣味識別","香氛產品開發","PIF 協作","感官敘事"];
+          }
+          const page = graph.find((node) => node?.["@id"] === "https://hanascent.com/#webpage");
+          if (page) {
+            page.name = title;
+            page.description = description;
+          }
+          schema.textContent = JSON.stringify(data);
+        }
+      } catch (_) {}
+    }
+
+    const about = document.querySelector("#about-hana");
+    if (about) {
+      const introLead = about.querySelector(".home-about-intro .lead");
+      if (introLead) introLead.textContent = "以嗅覺藝術與調香為創作根基，延伸至藝術育成與品牌合作，讓想法從創作走向實現。";
+
+      const heading = about.querySelector(".home-about-heading h2");
+      if (heading) heading.innerHTML = 'Hana 沈秉儀｜嗅覺藝術家<span class="about-role-en">OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</span>';
+
+      const profileCopy = about.querySelector(".about-profile > div");
+      if (profileCopy) {
+        profileCopy.innerHTML = `
+          <p class="about-signature">我相信氣味是一種創作語言，可以被體驗、被學習、被記住。</p>
+          <p class="lead">自 2021 年起投入嗅覺創作與教學，從專業調香、感官敘事，到品牌氣味與產品開發，持續探索氣味如何成為記憶、作品與品牌的一部分。</p>
+          <p class="lead">以嗅覺藝術與專業調香為創作根基，Hana 現將實務延伸至藝術育成與品牌合作，協助創作者與品牌釐清方向、營運、商品化與氣味識別。</p>
+          <p class="lead">目前進駐北投中心新村「此域 HINENI」，持續進行創作、教學與跨領域合作；也以 Creative Mentor 的角色，陪伴想法從創作走向實現。</p>
+          <ul class="about-credentials" aria-label="Hana 經歷與專業身份">
+            <li>OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</li>
+            <li>藝術育成｜創作者發展｜品牌方向</li>
+            <li>品牌氣味識別｜香氛產品開發｜PIF 協作</li>
+            <li>專業調香教育｜感官敘事</li>
+            <li>北投中心新村「此域 HINENI」｜中國文化大學推廣教育部講師</li>
+          </ul>
+        `;
+      }
+    }
   };
 
   const arrangeHomepageSections = () => {
@@ -40,12 +114,12 @@
     const entranceGrid = document.querySelector(".entrance-grid");
     if (entranceGrid) {
       entranceGrid.innerHTML = `
-        <article class="card entrance-card"><h3>專業調香</h3><p>從 HELORI 香氣探索、氣味藝術序曲，到進階調香學習，循序建立屬於自己的氣味創作語言。</p><a class="text-link" href="/overture-series/">進入專業調香 →</a></article>
         <article class="card entrance-card"><h3>藝術育成</h3><p>從創作、品牌與營運，到商品化、PIF 與實現，陪想法一步一步真正落地。</p><a class="text-link" href="/incubation/">認識藝術育成 →</a></article>
-        <article class="card entrance-card"><h3>品牌合作</h3><p>為品牌、空間、展覽與企業團體，從氣味識別到產品開發，建立具有記憶點的嗅覺語言。</p><a class="text-link" href="/business/">品牌合作 →</a></article>
+        <article class="card entrance-card"><h3>品牌合作</h3><p>從品牌氣味識別、香氛產品開發，到空間與企業合作，建立具有記憶點的嗅覺語言。</p><a class="text-link" href="/business/">品牌合作 →</a></article>
+        <article class="card entrance-card"><h3>專業調香</h3><p>從 HELORI 香氣探索、氣味藝術序曲，到進階調香學習，建立屬於自己的氣味創作語言。</p><a class="text-link" href="/overture-series/">進入專業調香 →</a></article>
       `;
       const entranceLead = entranceGrid.closest("section")?.querySelector(".section-head .lead");
-      if (entranceLead) entranceLead.textContent = "從專業調香、藝術育成到品牌合作，依你現在的位置，找到適合的入口。";
+      if (entranceLead) entranceLead.textContent = "以藝術育成與品牌合作為主軸，專業調香則是 HANA 的創作與教學根基。";
     }
     const news = document.querySelector("main .home-news");
     const about = document.querySelector("main .home-about");
@@ -109,7 +183,7 @@
     const addressBlock = isCiyuPage ? `<div style="margin-bottom:20px">台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/" target="_blank" rel="noopener">北投中心新村</a> D1區C棟</div>` : "";
     const courseInfoLink = isCoursePage() ? `<a href="/course-info/">課程交易與履約資訊</a>　·　` : "";
     footerGrid.innerHTML = `
-      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta">Hana 沈秉儀｜嗅覺藝術家<br>Olfactory Artist</span><span class="footer-brand-copy">以氣味譜寫無形的感官旋律</span>氣味品牌顧問｜專業調香課程<br>藝術駐村計畫　<a href="/ciyu/">此域</a></div>
+      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta">Hana 沈秉儀｜嗅覺藝術家・調香師・Creative Mentor<br>OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</span><span class="footer-brand-copy">從創作開始，讓想像真正落地。</span>藝術育成｜品牌合作｜專業調香<br>藝術駐村計畫　<a href="/ciyu/">此域 HINENI</a></div>
       <div class="footer-col footer-social-col"><div class="footer-social-links"><a class="footer-social-link" href="https://www.instagram.com/hanas.scent/" target="_blank" rel="noopener" aria-label="Instagram"><img src="/assets/footer-instagram.svg" alt=""></a><a class="footer-social-link" href="https://www.facebook.com/Hanas017" target="_blank" rel="noopener" aria-label="Facebook"><img src="/assets/footer-facebook.svg" alt=""></a><a class="footer-social-link" href="https://lin.ee/OI4bzr1" target="_blank" rel="noopener" aria-label="官方 LINE"><img src="/assets/footer-line.svg" alt=""></a><a class="footer-social-link" href="mailto:hanascent@gmail.com" aria-label="Email"><img src="/assets/footer-email.svg" alt=""></a></div></div>
       <div class="footer-col footer-right-col">${addressBlock}<div class="footer-actions"><a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a><a class="footer-action" href="/member/">訂閱氣味通信</a><a class="footer-action" href="/student-tools/">學員工具</a></div></div>
       <div class="footer-bottom"><div>© <span data-year></span> Hana Scent Artist</div><div class="footer-legal">${courseInfoLink}<a href="/terms/">消費者權益與服務條款</a>　·　<a href="/privacy/">隱私權政策</a>　·　<a href="/refund/">退換貨與退款政策</a></div></div>`;
@@ -119,6 +193,7 @@
 
   const afterCore = () => {
     installGlobalStyle();
+    syncHomepageIdentityAndSEO();
     arrangeHomepageSections();
     renderNavigation();
     renderFooter();
