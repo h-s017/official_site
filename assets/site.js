@@ -13,6 +13,8 @@
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
       .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
+      body[data-hana-page="home"] .hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+      body[data-hana-page="home"] .hero-actions .btn:last-child{grid-column:auto!important;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-brand-copy{display:block;margin-bottom:24px}
       .footer-social-col{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding:4px 0 0!important}.footer-social-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-social-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px;height:30px;border:0!important}.footer-social-link img{display:block;width:26px;height:26px;object-fit:contain}.footer-right-col .footer-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}.footer-right-col .footer-action{display:inline!important;width:auto!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;box-shadow:none!important;text-decoration:none!important}.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:12px}.footer-legal{text-align:right}.footer-legal a{white-space:nowrap}
@@ -25,6 +27,15 @@
   const arrangeHomepageSections = () => {
     const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
     if (!isHomepage) return;
+    const heroActions = document.querySelector(".hero-actions");
+    if (heroActions) {
+      heroActions.innerHTML = `
+        <a class="btn" href="/ciyu/">此域 HINENI</a>
+        <a class="btn" href="/overture-series/">專業調香</a>
+        <a class="btn" href="/incubation/">藝術育成</a>
+        <a class="btn" href="/business/">品牌合作</a>
+      `;
+    }
     const news = document.querySelector("main .home-news");
     const about = document.querySelector("main .home-about");
     if (news && about && about.nextElementSibling !== news) about.insertAdjacentElement("afterend", news);
