@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <base href="/" />
   <title>藝術育成｜從創作到商品化・PIF・創業前期營運規劃｜HANA SCENT ARTIST</title>
-  <meta name="description" content="從創作開始，讓想像真正落地。藝術育成整合創作發展、品牌方向、創業前期營運規劃、商品化、OEM／ODM、PIF 化粧品產品資訊檔案與上市前準備。" />
-  <meta name="keywords" content="藝術育成, 創作者育成, 品牌育成, 香氛品牌, 商品化整合, OEM ODM, PIF, 化粧品產品資訊檔案, 創業營運規劃, 香氛產品開發" />
+  <meta name="description" content="從創作開始，讓想像真正落地。藝術育成整合創作發展、品牌方向、創業前期營運規劃、商品化、OEM／ODM、PIF 與上市前準備。" />
+  <meta name="keywords" content="藝術育成, 創作者育成, 品牌育成, 商品化整合, OEM ODM, PIF, 創業營運規劃, 香氛產品開發" />
   <link rel="canonical" href="https://hanascent.com/incubation/" />
-  <meta property="og:title" content="藝術育成｜從創作到商品化・PIF・創業前期營運規劃" />
-  <meta property="og:description" content="從創作開始，讓想像真正落地。從氣味作品、品牌方向與營運模型，到商品化、PIF 與上市前準備。" />
+  <meta property="og:title" content="藝術育成｜從創作開始，讓想像真正落地" />
+  <meta property="og:description" content="從創作、品牌與營運，到商品化、PIF 與上市前準備。" />
   <meta property="og:url" content="https://hanascent.com/incubation/" />
   <meta property="og:type" content="website" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
         "@id": "https://hanascent.com/incubation/#webpage",
         "url": "https://hanascent.com/incubation/",
         "name": "藝術育成｜HANA SCENT ARTIST",
-        "description": "整合創作發展、品牌方向、創業前期營運規劃、商品化、OEM／ODM、PIF 與上市前準備的藝術育成服務。",
+        "description": "從創作、品牌與創業前期營運規劃，到商品化、PIF 與上市前整合的藝術育成服務。",
         "isPartOf": { "@id": "https://hanascent.com/#website" },
         "mainEntity": { "@id": "https://hanascent.com/incubation/#service" },
         "inLanguage": "zh-Hant"
@@ -31,128 +31,97 @@
         "@id": "https://hanascent.com/incubation/#service",
         "name": "藝術育成",
         "serviceType": "創作者發展、品牌方向、創業前期營運規劃、商品化整合、OEM／ODM、PIF 文件整合",
-        "provider": { "@id": "https://hanascent.com/#organization" },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "藝術育成路徑",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "創作與方向梳理" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "品牌與 IP 方向" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "創業前期營運規劃" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "商品化與 OEM／ODM 整合" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PIF 化粧品產品資訊檔案整合" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "上市前整合" } }
-          ]
-        }
+        "provider": { "@id": "https://hanascent.com/#organization" }
       }
     ]
   }
   </script>
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    .incubation-path{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .incubation-path .course-card{display:flex;flex-direction:column;min-height:300px}
-    .incubation-path .stage-no{font-size:12px;letter-spacing:.18em;color:var(--gray500);margin-bottom:28px}
-    .incubation-path .course-card p:last-child{margin-bottom:0}
-    .route-line{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .route-line div{padding:22px 12px;text-align:center;border-right:1px solid var(--line);font-size:14px;line-height:1.6}
-    .route-line div:last-child{border-right:0}
-    .finance-note{margin-top:22px;color:var(--gray500);font-size:14px;line-height:1.8}
-    .incubation-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    @media(max-width:900px){.incubation-path{grid-template-columns:repeat(2,minmax(0,1fr))}.route-line{grid-template-columns:repeat(3,minmax(0,1fr))}.route-line div:nth-child(3){border-right:0}.route-line div:nth-child(-n+3){border-bottom:1px solid var(--line)}}
-    @media(max-width:760px){.incubation-path{grid-template-columns:1fr}.route-line{grid-template-columns:1fr}.route-line div,.route-line div:nth-child(3){border-right:0;border-bottom:1px solid var(--line)}.route-line div:last-child{border-bottom:0}}
+    .incubation-intro{max-width:780px}
+    .incubation-intro p{max-width:720px}
+    .editorial-timeline{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative;margin-top:48px;padding-top:24px}
+    .editorial-timeline::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+    .timeline-step{position:relative;padding:0 20px 0 0;min-height:132px}
+    .timeline-step::before{content:"";position:absolute;top:-28px;left:0;width:7px;height:7px;border:1px solid var(--gray500);border-radius:50%;background:#fff}
+    .timeline-no{display:block;margin-bottom:16px;color:var(--gray500);font-size:11px;letter-spacing:.18em}
+    .timeline-step h3{margin:0 0 8px;font-size:20px;font-weight:500;letter-spacing:.06em}
+    .timeline-en{display:block;margin-bottom:12px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:14px;letter-spacing:.14em}
+    .timeline-note{margin:0;color:var(--gray500);font-size:13px;line-height:1.7}
+    .incubation-blocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+    .incubation-block{padding:34px 34px 8px 0;border-bottom:1px solid var(--line)}
+    .incubation-block:not(:nth-child(3n)){border-right:1px solid var(--line);padding-right:34px;margin-right:34px}
+    .incubation-block small{display:block;margin-bottom:16px;color:var(--gray500);letter-spacing:.16em}
+    .incubation-block h3{margin:0 0 18px;font-size:22px;font-weight:500}
+    .incubation-block p{max-width:520px;margin:0 0 16px;color:var(--gray700);line-height:1.9}
+    .network-band{background:var(--gray100)}
+    .network-copy{max-width:760px}
+    .network-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:42px}
+    .network-item{padding-top:18px;border-top:1px solid var(--line)}
+    .network-item b{display:block;margin-bottom:10px;font-weight:500;letter-spacing:.06em}
+    .network-item span{color:var(--gray500);font-size:14px;line-height:1.8}
+    .incubation-cta{margin-top:28px}
+    @media(max-width:900px){.editorial-timeline{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:42px}.incubation-blocks{grid-template-columns:1fr}.incubation-block,.incubation-block:not(:nth-child(3n)){margin:0;padding:30px 0;border-right:0}.network-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.editorial-timeline{display:block;padding:0 0 0 26px;margin-top:42px}.editorial-timeline::before{left:3px;right:auto;top:0;bottom:0;width:1px;height:auto}.timeline-step{min-height:0;padding:0 0 34px}.timeline-step::before{top:7px;left:-26px}.timeline-no{margin-bottom:8px}.timeline-step h3{font-size:19px}.timeline-note{font-size:13px}}
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
 
   <header class="page-hero">
-    <div class="wrap">
+    <div class="wrap incubation-intro">
       <p class="eyebrow">ART INCUBATION</p>
       <h1>藝術育成</h1>
       <p class="lead">從創作開始，讓想像真正落地。</p>
-      <p>不是把每個人帶往同一種品牌，而是依創作、產品與現實條件，找到真正能被執行的下一步。</p>
+      <p>有些作品，適合停留在作品。<br>有些想法，會慢慢長成品牌。</p>
     </div>
   </header>
 
   <main>
     <section>
       <div class="wrap">
-        <div class="section-head">
-          <div><h2>從作品，到可以被市場接住的形狀</h2></div>
-          <p>創作可以是起點，但當作品準備走向商品、品牌或市場，還需要處理定位、成本、製造、法規與營運。藝術育成把這些原本分散的工作，放回同一條發展路徑裡。</p>
-        </div>
-        <div class="route-line" aria-label="藝術育成路徑">
-          <div>01<br>創作</div>
-          <div>02<br>品牌方向</div>
-          <div>03<br>營運</div>
-          <div>04<br>商品化</div>
-          <div>05<br>PIF</div>
-          <div>06<br>上市</div>
+        <div class="section-head"><div><h2>從想像，到可以被實現的形狀</h2></div><p>每一個階段，都只是下一步。從你現在所在的位置開始就好。</p></div>
+        <div class="editorial-timeline" aria-label="藝術育成路徑">
+          <div class="timeline-step"><span class="timeline-no">01</span><h3>創作</h3><span class="timeline-en">CREATE</span><p class="timeline-note">找到作品的起點</p></div>
+          <div class="timeline-step"><span class="timeline-no">02</span><h3>品牌</h3><span class="timeline-en">IDENTITY</span><p class="timeline-note">讓創作有自己的位置</p></div>
+          <div class="timeline-step"><span class="timeline-no">03</span><h3>營運</h3><span class="timeline-en">SUSTAIN</span><p class="timeline-note">讓現實承接想像</p></div>
+          <div class="timeline-step"><span class="timeline-no">04</span><h3>商品化</h3><span class="timeline-en">COMMERCIALIZE</span><p class="timeline-note">讓作品成為產品</p></div>
+          <div class="timeline-step"><span class="timeline-no">05</span><h3>PIF</h3><span class="timeline-en">DOCUMENTATION</span><p class="timeline-note">讓產品有完整依據</p></div>
+          <div class="timeline-step"><span class="timeline-no">06</span><h3>上市</h3><span class="timeline-en">LAUNCH</span><p class="timeline-note">讓它真正走進市場</p></div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="section-head"><div><h2>育成內容</h2></div></div>
-        <div class="grid3 incubation-path">
-          <article class="course-card">
-            <div class="stage-no">01｜CREATE</div>
-            <h3>創作與方向梳理</h3>
-            <p>從作品、媒材、故事與創作動機出發，釐清真正想發展的方向。氣味創作者可由《氣味藝術序曲》建立原料、結構與配方基礎。</p>
-            <p><a class="text-link" href="/overture-series/">認識氣味藝術序曲 →</a></p>
-          </article>
-          <article class="course-card">
-            <div class="stage-no">02｜IDENTITY</div>
-            <h3>品牌與 IP 方向</h3>
-            <p>整理創作者定位、品牌語言、作品系列與市場角色，判斷要發展的是個人創作、品牌產品、授權內容，或不同形式的合作。</p>
-          </article>
-          <article class="course-card">
-            <div class="stage-no">03｜SUSTAIN</div>
-            <h3>創業前期營運規劃</h3>
-            <p>讓現實承接想像。在投入製作之前，先建立基本商業模型：啟動預算、單位成本、定價結構、毛利、現金流、損益兩平與分階段投入方式。</p>
-            <p class="finance-note">本項以創業營運與成本規劃為範圍；會計申報、稅務簽證、投資建議等專業事項，依需求轉介相應專業人員。</p>
-          </article>
-          <article class="course-card">
-            <div class="stage-no">04｜COMMERCIALIZE</div>
-            <h3>商品化整合</h3>
-            <p>把創作轉成可製造的產品。依品項協助規格整理、配方與打樣、原料與包材需求、OEM／ODM 製造端溝通，以及小量試產可行性評估。</p>
-          </article>
-          <article class="course-card">
-            <div class="stage-no">05｜PIF</div>
-            <h3>PIF 化粧品產品資訊檔案</h3>
-            <p>針對化粧品商品化需求，協助 PIF 文件盤點、資料整合、缺件追蹤與安全評估協作，並串接合作實驗室與具資格的安全資料簽署人員。</p>
-          </article>
-          <article class="course-card">
-            <div class="stage-no">06｜LAUNCH</div>
-            <h3>上市前整合</h3>
-            <p>把品牌、產品、成本、製造與必要文件重新對齊，確認產品可以用什麼規模、什麼節奏走向市場，而不是為了「先做出來」而承擔過大的前期成本。</p>
-          </article>
+        <div class="incubation-blocks">
+          <article class="incubation-block"><small>CREATE · IDENTITY</small><h3>創作與品牌方向</h3><p>整理作品、故事與創作者的位置。找到屬於你的語言，也找到它適合被看見的方式。</p><a class="text-link" href="/overture-series/">從氣味藝術序曲開始 →</a></article>
+          <article class="incubation-block"><small>SUSTAIN · COMMERCIALIZE</small><h3>營運與商品化</h3><p>從啟動預算、成本、定價與毛利，到配方、打樣、包材與製造，讓創作保有自由，也讓現實有足夠的空間承接它。</p><a class="text-link" href="/product-development/">認識香氛產品開發 →</a></article>
+          <article class="incubation-block"><small>DOCUMENTATION · LAUNCH</small><h3>PIF 與上市準備</h3><p>當產品準備走進市場，文件、法規與安全評估也必須開始被整理。讓商品化不是最後一刻才補上的工作。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="network-band">
+      <div class="wrap">
+        <div class="network-copy"><p class="eyebrow">PROFESSIONAL NETWORK</p><h2>讓創作往前走，也有人接得住。</h2><p>HANA 依不同產品與專案條件，串接香氛製造、產品開發、檢測、PIF 與安全評估等專業合作資源。從配方打樣、包材與製造，到文件與上市前準備，讓創作者不必從零開始尋找每一個環節。</p></div>
+        <div class="network-grid">
+          <div class="network-item"><b>製造</b><span>配方打樣、包材條件、充填與製造資源整合</span></div>
+          <div class="network-item"><b>檢測</b><span>依產品需求銜接相應檢測與資料準備</span></div>
+          <div class="network-item"><b>法規</b><span>PIF 文件盤點、安全評估與上市前協作</span></div>
         </div>
       </div>
     </section>
 
     <section class="dark-band">
       <div class="wrap split">
-        <div>
-          <h2>不是每個人都要從第一步開始</h2>
-          <p class="lead">你可以帶著一個作品、一個品牌想法，甚至是一個已經做到一半的產品進來。</p>
-        </div>
-        <div class="dark-panel">
-          <div class="service-list">
-            <div class="service-row"><b>還在創作階段</b><span>先建立作品與方向，不急著做品牌。</span></div>
-            <div class="service-row"><b>已經想做品牌</b><span>先確認市場角色、產品形式與營運可行性。</span></div>
-            <div class="service-row"><b>已經有產品概念</b><span>進入商品化、OEM／ODM 與供應鏈整合。</span></div>
-            <div class="service-row"><b>已準備上市</b><span>進行 PIF 文件、安評協作與上市前檢核。</span></div>
-          </div>
-          <div class="incubation-cta"><a class="btn" href="https://tally.so/r/5Bp846" target="_blank" rel="noopener">育成合作洽詢</a></div>
-        </div>
+        <div><h2>帶著一個還沒有完成的想法來。</h2><p class="lead">不需要先有完整品牌，也不需要先知道自己缺什麼。</p></div>
+        <div class="dark-panel"><p>我們從你現在所在的位置開始，確認下一步。</p><div class="incubation-cta"><a class="btn" href="https://tally.so/r/5Bp846" target="_blank" rel="noopener">育成合作洽詢</a></div></div>
       </div>
     </section>
   </main>
 
   <footer class="footer"><div class="footer-grid"><div class="footer-col">HANA SCENT ARTIST</div></div></footer>
-  <script src="/assets/site.js?v=20260917-incubation"></script>
+  <script src="/assets/site.js?v=20260917-incubation2"></script>
 </body>
 </html>
