@@ -37,6 +37,16 @@
         <a class="btn" href="/business/">品牌合作</a>
       `;
     }
+    const entranceGrid = document.querySelector(".entrance-grid");
+    if (entranceGrid) {
+      entranceGrid.innerHTML = `
+        <article class="card entrance-card"><h3>專業調香</h3><p>從 HELORI 香氣探索、氣味藝術序曲，到進階調香學習，循序建立屬於自己的氣味創作語言。</p><a class="text-link" href="/overture-series/">進入專業調香 →</a></article>
+        <article class="card entrance-card"><h3>藝術育成</h3><p>從創作、品牌與營運，到商品化、PIF 與實現，陪想法一步一步真正落地。</p><a class="text-link" href="/incubation/">認識藝術育成 →</a></article>
+        <article class="card entrance-card"><h3>品牌合作</h3><p>為品牌、空間、展覽與企業團體，從氣味識別到產品開發，建立具有記憶點的嗅覺語言。</p><a class="text-link" href="/business/">品牌合作 →</a></article>
+      `;
+      const entranceLead = entranceGrid.closest("section")?.querySelector(".section-head .lead");
+      if (entranceLead) entranceLead.textContent = "從專業調香、藝術育成到品牌合作，依你現在的位置，找到適合的入口。";
+    }
     const news = document.querySelector("main .home-news");
     const about = document.querySelector("main .home-about");
     if (news && about && about.nextElementSibling !== news) about.insertAdjacentElement("afterend", news);
