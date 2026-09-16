@@ -38,7 +38,7 @@
     nav.innerHTML = `
       <a href="/ciyu/">此域 HINENI</a>
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">調香課程</button>
+        <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">專業調香</button>
         <div class="nav-dropdown-menu" role="menu">
           <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <a href="/incubation/">藝術育成</a>
-      <a href="/business/">企業品牌合作</a>
+      <a href="/business/">品牌合作</a>
       <a href="/journal/">氣味誌</a>
     `;
 
