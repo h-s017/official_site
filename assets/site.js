@@ -48,6 +48,7 @@
           <a href="/KPIA/">KPIA 大韓專業調香師證書</a>
         </div>
       </div>
+      <a href="/incubation/">藝術育成</a>
       <a href="/business/">企業品牌合作</a>
       <a href="/journal/">氣味誌</a>
     `;
