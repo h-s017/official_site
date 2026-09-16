@@ -42,11 +42,12 @@
     .incubation-intro p{max-width:720px}
     .editorial-timeline{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative;margin-top:48px;padding-top:24px}
     .editorial-timeline::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
-    .timeline-step{position:relative;padding:0 20px 0 0;min-height:132px}
+    .timeline-step{position:relative;min-width:0;padding:0 24px 0 0;min-height:132px}
     .timeline-step::before{content:"";position:absolute;top:-28px;left:0;width:7px;height:7px;border:1px solid var(--gray500);border-radius:50%;background:#fff}
     .timeline-no{display:block;margin-bottom:16px;color:var(--gray500);font-size:11px;letter-spacing:.18em}
     .timeline-step h3{margin:0 0 8px;font-size:20px;font-weight:500;letter-spacing:.06em}
-    .timeline-en{display:block;margin-bottom:12px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:14px;letter-spacing:.14em}
+    .timeline-en{display:block;max-width:100%;margin-bottom:12px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.11em;line-height:1.25;white-space:nowrap}
+    .timeline-step:nth-child(4) .timeline-en,.timeline-step:nth-child(5) .timeline-en{font-size:11px;letter-spacing:.07em}
     .timeline-note{margin:0;color:var(--gray500);font-size:13px;line-height:1.7}
     .incubation-blocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);align-items:stretch}
     .incubation-block{display:flex;flex-direction:column;height:100%;box-sizing:border-box;padding:34px 34px 28px 0;border-bottom:1px solid var(--line)}
@@ -63,7 +64,7 @@
     .network-item span{color:var(--gray500);font-size:14px;line-height:1.8}
     .incubation-cta{margin-top:28px}
     @media(max-width:900px){.editorial-timeline{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:42px}.incubation-blocks{grid-template-columns:1fr}.incubation-block,.incubation-block:not(:nth-child(3n)){height:auto;margin:0;padding:30px 0;border-right:0}.incubation-block .text-link{margin-top:12px}.network-grid{grid-template-columns:1fr}}
-    @media(max-width:760px){.editorial-timeline{display:block;padding:0 0 0 26px;margin-top:42px}.editorial-timeline::before{left:3px;right:auto;top:0;bottom:0;width:1px;height:auto}.timeline-step{min-height:0;padding:0 0 34px}.timeline-step::before{top:7px;left:-26px}.timeline-no{margin-bottom:8px}.timeline-step h3{font-size:19px}.timeline-note{font-size:13px}}
+    @media(max-width:760px){.editorial-timeline{display:block;padding:0 0 0 26px;margin-top:42px}.editorial-timeline::before{left:3px;right:auto;top:0;bottom:0;width:1px;height:auto}.timeline-step{min-height:0;padding:0 0 34px}.timeline-step::before{top:7px;left:-26px}.timeline-no{margin-bottom:8px}.timeline-step h3{font-size:19px}.timeline-en,.timeline-step:nth-child(4) .timeline-en,.timeline-step:nth-child(5) .timeline-en{font-size:12px;letter-spacing:.1em}.timeline-note{font-size:13px}}
   </style>
 </head>
 <body>
@@ -86,7 +87,7 @@
           <div class="timeline-step"><span class="timeline-no">02</span><h3>品牌</h3><span class="timeline-en">IDENTITY</span><p class="timeline-note">讓創作有自己的位置</p></div>
           <div class="timeline-step"><span class="timeline-no">03</span><h3>營運</h3><span class="timeline-en">SUSTAIN</span><p class="timeline-note">讓現實承接想像</p></div>
           <div class="timeline-step"><span class="timeline-no">04</span><h3>商品化</h3><span class="timeline-en">COMMERCIALIZE</span><p class="timeline-note">讓想像被收藏</p></div>
-          <div class="timeline-step"><span class="timeline-no">05</span><h3>PIF</h3><span class="timeline-en">DOCUMENTATION</span><p class="timeline-note">讓安心，也有依據</p></div>
+          <div class="timeline-step"><span class="timeline-no">05</span><h3>PIF</h3><span class="timeline-en">DOCUMENTATION</span><p class="timeline-note">讓安心有所依據</p></div>
           <div class="timeline-step"><span class="timeline-no">06</span><h3>實現</h3><span class="timeline-en">REALIZE</span><p class="timeline-note">讓想法成為真實</p></div>
         </div>
       </div>
