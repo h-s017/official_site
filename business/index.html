@@ -62,13 +62,14 @@
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
     .business-services{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media(max-width:760px){.business-services{grid-template-columns:1fr}}
+    .business-hero-actions{display:flex;justify-content:center;margin-top:28px}.business-hero-link{display:inline-flex;align-items:center;gap:20px;padding:8px 2px 10px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;letter-spacing:.08em;transition:border-color .2s ease}.business-hero-link .arrow{display:inline-block;transition:transform .2s ease}.business-hero-link:hover{border-color:var(--gray700)}.business-hero-link:hover .arrow{transform:translateX(4px)}
+    @media(max-width:760px){.business-services{grid-template-columns:1fr}.business-hero-actions{width:100%}.business-hero-link{width:100%;justify-content:space-between;padding:12px 0}}
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
 
-  <header class="page-hero"><div class="wrap"><h1>品牌氣味識別與感官設計</h1><p class="lead">Scent Identity &amp; Sensory Design</p><p>讓氣味進入品牌、產品、空間與體驗。</p><div class="actions"><a class="btn" href="https://tally.so/r/5Bp846" target="_blank" rel="noopener">合作洽詢</a></div></div></header>
+  <header class="page-hero"><div class="wrap"><h1>品牌氣味識別與感官設計</h1><p class="lead">Scent Identity &amp; Sensory Design</p><p>讓氣味進入品牌、產品、空間與體驗。</p><div class="business-hero-actions"><a class="business-hero-link" href="https://tally.so/r/5Bp846" target="_blank" rel="noopener"><span>合作洽詢</span><span class="arrow" aria-hidden="true">→</span></a></div></div></header>
 
   <main>
     <section><div class="wrap"><div class="section-head"><div><h2>合作服務</h2></div></div><div class="grid3 business-services">
