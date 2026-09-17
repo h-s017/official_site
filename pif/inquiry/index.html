@@ -41,15 +41,15 @@
       <div class="wrap">
         <form id="pifInquiry" class="inquiry-form" action="mailto:hello@hanascent.com" method="post" enctype="text/plain">
           <div class="field-grid">
-            <div class="field"><label for="name">姓名 *</label><input id="name" name="姓名" required /></div>
-            <div class="field"><label for="brand">品牌／公司名稱</label><input id="brand" name="品牌／公司名稱" /></div>
+            <div class="field"><label for="name">姓名 *</label><input id="name" name="姓名" autocomplete="name" required /></div>
+            <div class="field"><label for="brand">品牌／公司名稱 *</label><input id="brand" name="品牌／公司名稱" autocomplete="organization" required /></div>
           </div>
           <div class="field-grid">
-            <div class="field"><label for="email">Email *</label><input id="email" name="Email" type="email" required /></div>
-            <div class="field"><label for="contact">電話／LINE</label><input id="contact" name="電話／LINE" /></div>
+            <div class="field"><label for="email">Email *</label><input id="email" name="Email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="contact">電話／LINE *</label><input id="contact" name="電話／LINE" autocomplete="tel" required /></div>
           </div>
 
-          <div class="field"><label for="product">產品類型 *</label><input id="product" name="產品類型" placeholder="例：香水、乳液、洗沐、其他化粧品" required /></div>
+          <div class="field"><label for="product">產品類型 *</label><select id="product" name="產品類型" required><option value="">請選擇</option><option>香水／香氛噴霧</option><option>乳液／乳霜</option><option>洗沐產品</option><option>其他化粧品</option></select></div>
 
           <div class="field"><label for="stage">產品目前階段 *</label><select id="stage" name="產品目前階段" required><option value="">請選擇</option><option>尚在開發</option><option>已有配方</option><option>已有樣品</option><option>已量產或販售</option></select></div>
 
@@ -75,6 +75,6 @@
       document.getElementById('success').style.display='block';
     });
   </script>
-  <script src="/assets/site.js?v=20260917-pif-inquiry"></script>
+  <script src="/assets/site.js?v=20260917-pif-inquiry2"></script>
 </body>
 </html>
