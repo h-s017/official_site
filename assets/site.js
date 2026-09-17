@@ -13,15 +13,12 @@
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
       .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
-      body[data-hana-page="home"] .hero-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important;width:100%!important;max-width:760px!important;}
-      body[data-hana-page="home"] .hero-actions .btn{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:76px!important;box-sizing:border-box!important;padding:12px 18px!important;text-align:center!important;white-space:nowrap!important;}
-      body[data-hana-page="home"] .hero-actions .btn:last-child{grid-column:auto!important;}
       .about-role-en{display:block;margin-top:10px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:.12em;line-height:1.45;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-brand-copy{display:block;margin-bottom:24px}
       .footer-social-col{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding:4px 0 0!important}.footer-social-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-social-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px;height:30px;border:0!important}.footer-social-link img{display:block;width:26px;height:26px;object-fit:contain}.footer-right-col .footer-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}.footer-right-col .footer-action{display:inline!important;width:auto!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;box-shadow:none!important;text-decoration:none!important}.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:12px}.footer-legal{text-align:right}.footer-legal a{white-space:nowrap}
       @media(max-width:900px){.footer-grid{grid-template-columns:minmax(0,1.25fr) minmax(160px,.75fr)!important;column-gap:42px!important;row-gap:34px!important}.footer-right-col{grid-column:2;grid-row:1}.footer-social-col{grid-column:1/-1;grid-row:2}.footer-bottom{grid-row:3}}
-      @media(max-width:760px){body[data-hana-page="home"] .hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;max-width:none!important;}body[data-hana-page="home"] .hero-actions .btn{min-height:62px!important;padding:10px 8px!important;}.about-role-en{font-size:13px;letter-spacing:.08em}.footer-grid{display:block!important}.footer-brand-col,.footer-social-col,.footer-right-col{margin:0 0 30px!important}.footer-bottom{display:block;margin-top:10px}.footer-legal{text-align:left;margin-top:8px}.nav-dropdown-menu{min-width:min(330px,88vw)!important}}
+      @media(max-width:760px){.about-role-en{font-size:13px;letter-spacing:.08em}.footer-grid{display:block!important}.footer-brand-col,.footer-social-col,.footer-right-col{margin:0 0 30px!important}.footer-bottom{display:block;margin-top:10px}.footer-legal{text-align:left;margin-top:8px}.nav-dropdown-menu{min-width:min(330px,88vw)!important}}
     `;
     document.head.appendChild(style);
   };
@@ -102,25 +99,6 @@
   const arrangeHomepageSections = () => {
     const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
     if (!isHomepage) return;
-    const heroActions = document.querySelector(".hero-actions");
-    if (heroActions) {
-      heroActions.innerHTML = `
-        <a class="btn" href="/ciyu/">此域 HINENI</a>
-        <a class="btn" href="/overture-series/">專業調香</a>
-        <a class="btn" href="/incubation/">藝術育成</a>
-        <a class="btn" href="/business/">品牌合作</a>
-      `;
-    }
-    const entranceGrid = document.querySelector(".entrance-grid");
-    if (entranceGrid) {
-      entranceGrid.innerHTML = `
-        <article class="card entrance-card"><h3>藝術育成</h3><p>從創作、品牌與營運，到商品化、PIF 與實現，陪想法一步一步真正落地。</p><a class="text-link" href="/incubation/">認識藝術育成 →</a></article>
-        <article class="card entrance-card"><h3>品牌合作</h3><p>從品牌氣味識別、香氛產品開發，到空間與企業合作，建立具有記憶點的嗅覺語言。</p><a class="text-link" href="/business/">品牌合作 →</a></article>
-        <article class="card entrance-card"><h3>專業調香</h3><p>從 HELORI 香氣探索、氣味藝術序曲，到進階調香學習，建立屬於自己的氣味創作語言。</p><a class="text-link" href="/overture-series/">進入專業調香 →</a></article>
-      `;
-      const entranceLead = entranceGrid.closest("section")?.querySelector(".section-head .lead");
-      if (entranceLead) entranceLead.textContent = "以藝術育成與品牌合作為主軸，專業調香則是 HANA 的創作與教學根基。";
-    }
     const news = document.querySelector("main .home-news");
     const about = document.querySelector("main .home-about");
     if (news && about && about.nextElementSibling !== news) about.insertAdjacentElement("afterend", news);
