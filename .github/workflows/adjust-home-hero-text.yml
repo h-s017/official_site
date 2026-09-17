@@ -1,0 +1,47 @@
+name: Adjust home hero text
+
+on:
+  push:
+    paths:
+      - '.github/workflows/adjust-home-hero-text.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enlarge and center homepage hero sentence
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          old = '.hero-text{font-size:18px!important;text-align:center!important;}'
+          new = '.hero-panel>div:first-child{grid-column:1 / -1!important;width:100%!important;}\n    .hero-text{font-size:20.67px!important;text-align:center!important;max-width:none!important;width:100%!important;margin:0 auto!important;}'
+
+          if old not in text:
+              raise SystemExit('Expected hero-text rule was not found; no changes made.')
+
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit homepage change
+        shell: bash
+        run: |
+          if git diff --quiet -- index.html; then
+            echo 'No homepage changes detected.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Adjust homepage hero text size and alignment'
+          git push
