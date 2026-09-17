@@ -20,7 +20,8 @@
     .choices label{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;font-weight:400}
     .choices input{width:auto}
     .form-note{margin-top:18px;color:var(--gray500);font-size:13px;line-height:1.8}
-    .success{display:none;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+    .form-status{display:none;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+    .form-status h2{margin:0 0 8px;font-size:22px;font-weight:500}.form-status p{margin:0;color:var(--gray700)}
     @media(max-width:760px){.field-grid,.choices{grid-template-columns:1fr}}
   </style>
 </head>
@@ -39,13 +40,14 @@
   <main>
     <section>
       <div class="wrap">
-        <form id="pifInquiry" class="inquiry-form" action="mailto:hello@hanascent.com" method="post" enctype="text/plain">
+        <form id="pifInquiry" class="inquiry-form" action="https://formspree.io/f/mnpnqglq" method="POST">
+          <input type="hidden" name="_subject" value="HANA SCENT ARTIST｜PIF 服務洽詢" />
           <div class="field-grid">
             <div class="field"><label for="name">姓名 *</label><input id="name" name="姓名" autocomplete="name" required /></div>
             <div class="field"><label for="brand">品牌／公司名稱 *</label><input id="brand" name="品牌／公司名稱" autocomplete="organization" required /></div>
           </div>
           <div class="field-grid">
-            <div class="field"><label for="email">Email *</label><input id="email" name="Email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
             <div class="field"><label for="contact">電話／LINE *</label><input id="contact" name="電話／LINE" autocomplete="tel" required /></div>
           </div>
 
@@ -61,9 +63,9 @@
           <div class="field"><label for="support">希望協助的項目</label><textarea id="support" name="希望協助的項目" placeholder="例：PIF 建檔、文件缺漏確認、檢測／安評協作、整體法規文件盤點"></textarea></div>
           <div class="field"><label for="note">補充說明</label><textarea id="note" name="補充說明"></textarea></div>
 
-          <button class="btn" type="submit">送出 PIF 洽詢</button>
-          <p class="form-note">送出後將以 Email 開啟您的預設郵件程式，確認內容後即可寄出。後續將依您提供的產品資訊與現有文件進行初步確認，再與您聯繫。</p>
-          <div class="success" id="success"><h2>資料已整理完成。</h2><p>請於開啟的 Email 視窗確認內容並寄出，我們會依案件資料進行初步盤點。</p></div>
+          <button class="btn" id="submitButton" type="submit">送出 PIF 洽詢</button>
+          <p class="form-note">送出後，我們會依您提供的產品資訊與現有文件進行初步確認，再與您聯繫。請勿於此表單提交完整配方或其他機密技術文件。</p>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
@@ -71,10 +73,37 @@
 
   <footer class="footer"><div class="footer-grid"><div class="footer-col">HANA SCENT ARTIST</div></div></footer>
   <script>
-    document.getElementById('pifInquiry').addEventListener('submit', function(){
-      document.getElementById('success').style.display='block';
+    const form = document.getElementById('pifInquiry');
+    const statusBox = document.getElementById('formStatus');
+    const submitButton = document.getElementById('submitButton');
+
+    form.addEventListener('submit', async function(event){
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = '送出中…';
+      statusBox.style.display = 'none';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) throw new Error('Submission failed');
+
+        form.reset();
+        statusBox.innerHTML = '<h2>洽詢已送出。</h2><p>我們會依您提供的資料進行初步確認，再與您聯繫。</p>';
+        statusBox.style.display = 'block';
+      } catch (error) {
+        statusBox.innerHTML = '<h2>目前無法送出。</h2><p>請稍後再試一次；若持續無法送出，請透過網站其他聯絡方式與我們聯繫。</p>';
+        statusBox.style.display = 'block';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = '送出 PIF 洽詢';
+      }
     });
   </script>
-  <script src="/assets/site.js?v=20260917-pif-inquiry2"></script>
+  <script src="/assets/site.js?v=20260917-pif-formspree"></script>
 </body>
 </html>
