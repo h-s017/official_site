@@ -2,3 +2,14 @@
 [data-hana-field][data-hana-multiline]{white-space:pre-line}
 /* Homepage news: quiet horizontal cards, user-controlled only. */
 .home-news .news-track{animation:none!important;transform:none!important;will-change:auto!important}.home-news .news-marquee{overflow-x:auto!important;overflow-y:hidden!important;-webkit-mask-image:none!important;mask-image:none!important;scrollbar-width:thin;-webkit-overflow-scrolling:touch}.home-news .news-set[aria-hidden="true"]{display:none!important}.home-news .news-marquee:hover .news-track{animation-play-state:initial!important}
+
+/* Homepage Explore: widen the desktop composition and raise typography by ~1pt. */
+@media(min-width:981px){
+  body[data-hana-page="home"] .entrance-editorial .wrap{max-width:1180px!important;}
+  body[data-hana-page="home"] .entrance-editorial-head .kicker{font-size:13px!important;}
+  body[data-hana-page="home"] .entrance-editorial-head h2{font-size:clamp(29px,3vw,41px)!important;}
+  body[data-hana-page="home"] .entrance-index{font-size:12px!important;}
+  body[data-hana-page="home"] .entrance-en{font-size:15px!important;}
+  body[data-hana-page="home"] .entrance-path h3{font-size:clamp(25px,2.5vw,33px)!important;}
+  body[data-hana-page="home"] .entrance-meta{font-size:15px!important;}
+}
