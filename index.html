@@ -162,30 +162,24 @@
     .about-credentials{list-style:none;margin:30px 0 0;padding:0;}
     .about-credentials li{margin:0;padding:11px 0;color:var(--gray700);font-size:16px!important;line-height:1.65!important;letter-spacing:.035em!important;}
 
-    /* Choose Your Entrance: three portrait cards side by side. */
-    .entrance-grid{
-      display:grid!important;
-      grid-template-columns:repeat(3,minmax(0,1fr))!important;
-      gap:22px!important;
-      align-items:stretch!important;
-    }
-    .entrance-card{
-      aspect-ratio:4 / 5;
-      min-height:0!important;
-      display:flex!important;
-      flex-direction:column!important;
-      justify-content:flex-start!important;
-      padding:30px!important;
-    }
-    .entrance-card small{
-      display:block;
-      margin-bottom:34px;
-      color:var(--gray500);
-      letter-spacing:.2em;
-    }
-    .entrance-card h3{margin-bottom:18px!important;}
-    .entrance-card p{margin:0!important;}
-    .entrance-card .text-link{margin-top:auto!important;}
+    /* Quiet, staggered editorial entrance navigation. */
+    .entrance-editorial{padding-top:62px!important;padding-bottom:72px!important;background:#fff;}
+    .entrance-editorial .wrap{max-width:980px!important;}
+    .entrance-editorial-head{margin-bottom:38px;}
+    .entrance-editorial-head .kicker{margin-bottom:8px;}
+    .entrance-editorial-head h2{margin:0;font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:.04em;}
+    .entrance-editorial-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));row-gap:18px;column-gap:18px;align-items:start;}
+    .entrance-path{position:relative;display:flex;flex-direction:column;min-height:190px;padding:24px 26px 22px;background:#fff;border:1px solid #e7e7e5;text-decoration:none;color:inherit;transition:background-color .25s ease,border-color .25s ease,transform .25s ease;}
+    .entrance-path:nth-child(1){grid-column:1 / span 6;}
+    .entrance-path:nth-child(2){grid-column:7 / span 5;margin-top:26px;}
+    .entrance-path:nth-child(3){grid-column:2 / span 7;margin-top:2px;background:#fafafa;}
+    .entrance-path:nth-child(4){grid-column:9 / span 4;margin-top:34px;}
+    .entrance-path:hover,.entrance-path:focus-visible{background:#f8f8f7;border-color:#d8d8d5;transform:translateY(-2px);}
+    .entrance-index{font-size:11px;letter-spacing:.18em;color:var(--gray500);margin-bottom:22px;}
+    .entrance-en{font-family:var(--font-serif);font-size:14px;letter-spacing:.16em;color:#222;margin-bottom:8px;}
+    .entrance-path h3{margin:0 0 22px;font-size:clamp(24px,2.5vw,32px);font-weight:500;letter-spacing:.04em;line-height:1.25;}
+    .entrance-meta{margin-top:auto;color:var(--gray700);font-size:14px;line-height:1.8;letter-spacing:.02em;}
+    .entrance-arrow{position:absolute;right:22px;bottom:18px;font-size:18px;color:#777;}
 
     /* Compact artist introduction near the top of the homepage. */
     .home-about-brief{padding-top:58px!important;padding-bottom:58px!important;background:#fff;}
@@ -210,6 +204,10 @@
       .hero-actions .btn{width:100%!important;min-width:0!important;min-height:45px!important;padding:7px 8px!important;box-sizing:border-box;text-align:center;justify-content:center!important;font-size:17px!important;line-height:1.35!important;letter-spacing:.02em!important;white-space:nowrap!important}
       .hero-title .hero-place{font-size:clamp(22px,6vw,34px)!important;letter-spacing:.035em!important;line-height:1.2!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
       main>section{padding-top:48px!important;padding-bottom:48px!important;}
+      .entrance-editorial{padding-top:46px!important;padding-bottom:54px!important;}
+      .entrance-editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+      .entrance-path:nth-child(n){grid-column:auto;margin-top:0;min-height:180px;}
+      .entrance-path:nth-child(2),.entrance-path:nth-child(4){margin-top:24px;}
       .home-about-brief{padding-top:40px!important;padding-bottom:42px!important;}
       .about-brief-grid{grid-template-columns:82px minmax(0,1fr);gap:17px;align-items:start;}
       .about-brief-portrait{width:82px;}
@@ -231,9 +229,6 @@
       .news-row>.text-link{font-size:11px!important;margin-top:2px!important}
       .grid3{gap:12px!important;}
       .card{padding:22px!important;}
-      .entrance-grid{grid-template-columns:1fr!important;gap:14px!important;}
-      .entrance-card{aspect-ratio:auto;min-height:300px!important;padding:26px!important;}
-      .entrance-card small{margin-bottom:24px;}
       .dark-band{height:auto!important;min-height:0!important;padding:52px 6vw 58px!important;}
       .dark-band .wrap{height:auto!important;min-height:0!important;}
       .about-profile{gap:28px!important;}
@@ -243,12 +238,24 @@
       .hero-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;justify-content:center!important;align-items:stretch!important;gap:12px!important;}
       .hero-actions .btn{width:100%!important;max-width:none!important;min-width:0!important;min-height:45px!important;padding:7px 6px!important;font-size:17px!important;line-height:1.25!important;letter-spacing:0!important;white-space:nowrap!important;word-break:keep-all!important;border:0.75px solid #b8b8b8!important;border-radius:2px!important;box-shadow:0 1px 4px rgba(0,0,0,.05)!important;}
       .hero-actions .btn:last-child{grid-column:1 / -1!important;}
+      .entrance-editorial-head{margin-bottom:28px;}
+      .entrance-editorial-head h2{font-size:26px;}
+      .entrance-editorial-grid{display:block;}
+      .entrance-path{width:88%;min-height:0;padding:21px 22px 20px;margin-bottom:12px!important;}
+      .entrance-path:nth-child(2){margin-left:12%!important;}
+      .entrance-path:nth-child(3){width:94%;margin-left:1%!important;background:#fafafa;}
+      .entrance-path:nth-child(4){width:82%;margin-left:18%!important;}
+      .entrance-index{margin-bottom:16px;}
+      .entrance-en{font-size:12px;margin-bottom:6px;}
+      .entrance-path h3{font-size:25px;margin-bottom:16px;}
+      .entrance-meta{font-size:13px;line-height:1.7;padding-right:24px;}
+      .entrance-arrow{right:18px;bottom:16px;}
     }
-        .news-row:has(a[href]),.card:has(a[href]){transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
+    .news-row:has(a[href]),.card:has(a[href]){transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease;}
     .news-row:has(a[href]){padding-left:18px;padding-right:18px;margin-left:-18px;margin-right:-18px;}
     .news-row:has(a[href]):hover,.news-row:has(a[href]):focus-within,.card:has(a[href]):hover,.card:has(a[href]):focus-within{background:var(--gray100);border-color:var(--gray300);}
     .card:has(a[href]):hover,.card:has(a[href]):focus-within{box-shadow:0 12px 32px rgba(0,0,0,.05);}
-    @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}}
+    @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}.entrance-path{transition:none;}}
   </style>
 </head>
 <body class="intro-open" data-hana-page="home">
@@ -298,13 +305,41 @@
       </div>
     </section>
 
-    <section>
+    <section class="entrance-editorial" aria-labelledby="entrance-title">
       <div class="wrap">
-        <div class="section-head"><p class="kicker">Choose Your Entrance</p><div><h2>關於你，和氣味的連結</h2><p class="lead">初次接觸調香，可以從 HELORI 香氣探索體驗開始；想深入學習的人進入專業調香課程；品牌、空間與企業團體合作，進入企業品牌合作。</p></div></div>
-        <div class="entrance-grid">
-          <article class="card entrance-card"><h3>HELORI 香氣探索體驗</h3><p>從香氣測驗與心村限定調香體驗，探索此刻最貼近你的香氣夥伴。</p><a class="text-link" href="/helori/">進入探索 →</a></article>
-          <article class="card entrance-card"><h3>專業調香課程</h3><p>從基礎感官訓練、配方結構，到進階調香學習，循序建立屬於自己的氣味創作語言。</p><a class="text-link" href="/courses/">查看課程 →</a></article>
-          <article class="card entrance-card"><h3>企業品牌合作</h3><p>為品牌、空間、展覽與企業團體活動設計具有記憶點的氣味語言。</p><a class="text-link" href="/business/">了解服務 →</a></article>
+        <div class="entrance-editorial-head">
+          <p class="kicker">Explore</p>
+          <h2 id="entrance-title">從這裡開始</h2>
+        </div>
+        <div class="entrance-editorial-grid">
+          <a class="entrance-path" href="/courses/">
+            <span class="entrance-index">01</span>
+            <span class="entrance-en">LEARN</span>
+            <h3>學習氣味</h3>
+            <div class="entrance-meta">專業調香<br>氣味藝術序曲</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entrance-path" href="/projects/">
+            <span class="entrance-index">02</span>
+            <span class="entrance-en">CREATE</span>
+            <h3>發展創作</h3>
+            <div class="entrance-meta">嗅覺藝術<br>創作者育成</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entrance-path" href="/business/">
+            <span class="entrance-index">03</span>
+            <span class="entrance-en">FROM IDEA TO PRODUCT</span>
+            <h3>讓作品落地</h3>
+            <div class="entrance-meta">品牌氣味・產品開發<br>PIF・法規整合</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entrance-path" href="/ciyu/">
+            <span class="entrance-index">04</span>
+            <span class="entrance-en">VISIT</span>
+            <h3>走進此域</h3>
+            <div class="entrance-meta">北投中心新村<br>氣味敘事空間</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
