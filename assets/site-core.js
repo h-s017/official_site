@@ -323,8 +323,10 @@
       .nav-dropdown-menu a{width:100%!important;padding:10px 16px!important;text-align:left!important;}
     }
     @media (max-width:420px){
-      .logo{font-size:18px!important;letter-spacing:.14em!important;gap:8px!important;}
-      .logo::before{width:22px!important;height:22px!important;flex-basis:22px!important;}
+      .site-nav{grid-template-columns:minmax(0,1fr) auto!important;column-gap:8px!important;padding-left:18px!important;padding-right:18px!important;}
+      .logo{font-size:17px!important;letter-spacing:.11em!important;gap:7px!important;overflow:visible!important;min-width:0!important;}
+      .logo::before{width:21px!important;height:21px!important;flex:0 0 21px!important;}
+      .mobile-note{font-size:11px!important;letter-spacing:.14em!important;}
     }
 
     /* Inner pages use the homepage's compact type rhythm. */
