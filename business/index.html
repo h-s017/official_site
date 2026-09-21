@@ -63,7 +63,9 @@
   <style>
     .business-services{grid-template-columns:repeat(2,minmax(0,1fr))}
     .business-hero-actions{display:flex;justify-content:center;margin-top:28px}.business-hero-link{display:inline-flex;align-items:center;gap:20px;padding:8px 2px 10px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;letter-spacing:.08em;transition:border-color .2s ease}.business-hero-link .arrow{display:inline-block;transition:transform .2s ease}.business-hero-link:hover{border-color:var(--gray700)}.business-hero-link:hover .arrow{transform:translateX(4px)}
-    @media(max-width:760px){.business-services{grid-template-columns:1fr}.business-hero-actions{width:100%}.business-hero-link{width:100%;justify-content:space-between;padding:12px 0}}
+    .business-service-actions{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px}.business-service-actions .text-link{white-space:nowrap}
+    .business-end-cta{text-align:center}.business-end-cta .lead{max-width:680px;margin-left:auto;margin-right:auto}
+    @media(max-width:760px){.business-services{grid-template-columns:1fr}.business-hero-actions{width:100%}.business-hero-link{width:100%;justify-content:space-between;padding:12px 0}.business-service-actions{display:grid;grid-template-columns:1fr;gap:8px}}
   </style>
 </head>
 <body>
@@ -73,11 +75,11 @@
 
   <main>
     <section><div class="wrap"><div class="section-head"><div><h2>合作服務</h2></div></div><div class="grid3 business-services">
-      <article class="course-card"><h3>品牌氣味識別</h3><p>Brand Scent Identity</p><p>從品牌定位、空間特質與使用情境出發，建立專屬的氣味語言，使氣味成為品牌識別的一部分。</p></article>
-      <article class="course-card"><h3>香氛產品開發</h3><p>Product Development</p><p>從氣味概念、配方開發、打樣，到後續製造與文件需求，依專案條件整合合適的生產合作方式。</p><p><a class="text-link" href="/product-development/">了解產品開發 →</a></p></article>
-      <article class="course-card"><h3>空間／場域氣味設計</h3><p>Space Scent Design</p><p>為飯店、品牌空間、展覽與商業場域建立專屬氣味，將品牌精神延伸至空間中的感官體驗。</p></article>
-      <article class="course-card"><h3>企業活動、品牌活動與感官體驗</h3><p>Sensory Experience</p><p>依企業活動、品牌企劃與 VIP 客群需求，規劃客製化氣味體驗與感官活動。</p></article>
-      <article class="course-card"><h3>品牌識別延伸</h3><p>Brand Identity Extension</p><p>依專案需求延伸品牌視覺、空間識別與相關應用。</p></article>
+      <article class="course-card"><h3>品牌氣味識別</h3><p>Brand Scent Identity</p><p>從品牌定位、空間特質與使用情境出發，建立專屬的氣味語言，使氣味成為品牌識別的一部分。</p><p class="business-service-actions"><a class="text-link" href="/business/inquiry/?service=brand-scent">品牌氣味洽詢 →</a></p></article>
+      <article class="course-card"><h3>香氛產品開發</h3><p>Product Development</p><p>從氣味概念、配方開發、打樣，到後續製造與文件需求，依專案條件整合合適的生產合作方式。</p><p class="business-service-actions"><a class="text-link" href="/product-development/">了解產品開發 →</a><a class="text-link" href="/business/inquiry/?service=product-development">開發洽詢 →</a></p></article>
+      <article class="course-card"><h3>空間／場域氣味設計</h3><p>Space Scent Design</p><p>為飯店、品牌空間、展覽與商業場域建立專屬氣味，將品牌精神延伸至空間中的感官體驗。</p><p class="business-service-actions"><a class="text-link" href="/business/inquiry/?service=space-scent">空間氣味洽詢 →</a></p></article>
+      <article class="course-card"><h3>企業活動、品牌活動與感官體驗</h3><p>Sensory Experience</p><p>依企業活動、品牌企劃與 VIP 客群需求，規劃客製化氣味體驗與感官活動。</p><p class="business-service-actions"><a class="text-link" href="/business/inquiry/?service=sensory-experience">活動洽詢 →</a></p></article>
+      <article class="course-card"><h3>品牌識別延伸</h3><p>Brand Identity Extension</p><p>依專案需求延伸品牌視覺、空間識別與相關應用。</p><p class="business-service-actions"><a class="text-link" href="/business/inquiry/?service=brand-identity">品牌識別洽詢 →</a></p></article>
     </div></div></section>
     
     <section class="dark-band"><div class="wrap split"><div><h2>合作流程</h2><p class="lead">從氣味研發開始，逐步銜接產品條件與製造資源。</p></div><div class="dark-panel"><div class="service-list">
@@ -87,6 +89,8 @@
       <div class="service-row"><b>04｜產品整合</b><span>同步整理技術與合規資訊，並依需求整合包裝與製造條件。</span></div>
       <div class="service-row"><b>05｜產品落地</b><span>依產品類型與專案規模，銜接適合的製造與分裝資源。</span></div>
     </div></div></div></section>
+
+    <section class="business-end-cta"><div class="wrap"><h2>有合作構想嗎？</h2><p class="lead">告訴我們目前的品牌、產品、空間或活動需求，我們會從專案現在的位置開始確認下一步。</p><div class="business-hero-actions"><a class="business-hero-link" href="/business/inquiry/"><span>合作洽詢</span><span class="arrow" aria-hidden="true">→</span></a></div></div></section>
 
   </main>
 
