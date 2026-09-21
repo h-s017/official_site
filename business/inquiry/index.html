@@ -91,6 +91,26 @@
     const statusBox = document.getElementById('formStatus');
     const submitButton = document.getElementById('submitButton');
 
+    const serviceMap = {
+      'brand-scent': '品牌氣味識別',
+      'product-development': '香氛產品開發',
+      'space-scent': '空間／場域氣味設計',
+      'sensory-experience': '企業／品牌／VIP 感官體驗',
+      'brand-identity': '品牌識別延伸'
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedService = params.get('service');
+    if (requestedService && serviceMap[requestedService]) {
+      const serviceInputs = form.querySelectorAll('input[name="合作項目"]');
+      serviceInputs.forEach((input) => {
+        if (input.value === serviceMap[requestedService]) input.checked = true;
+      });
+    }
+
+    const sourcePage = form.querySelector('input[name="來源頁面"]');
+    if (sourcePage) sourcePage.value = window.location.href;
+
     form.addEventListener('submit', async function(event){
       event.preventDefault();
       const checkedServices = form.querySelectorAll('input[name="合作項目"]:checked');
