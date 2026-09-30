@@ -223,7 +223,7 @@
     const items = state.posts.filter(x => !q || `${x.title || ''} ${x.summary || ''} ${x.slug || ''} ${directionLabel(x.body)}`.toLowerCase().includes(q));
     list.innerHTML = items.length ? items.map(x => {
       const frontUrl = `/blog.html?slug=${encodeURIComponent(x.slug || '')}`;
-      return `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? 'projects.html 顯示中' : '草稿'}</span><span class="badge">${escapeHtml(directionLabel(x.body))}</span><span>撰寫日 ${dateText(x.published_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><div class="button-row"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary edit-post" data-id="${x.id}">編輯</button></div></article>`;
+      return `<article class="list-item"><div><h3>${escapeHtml(x.title)}</h3><div class="meta"><span class="badge ${x.status}">${x.status === 'published' ? 'projects.html 顯示中' : '草稿'}</span><span class="badge">${escapeHtml(directionLabel(x.body))}</span>${x.featured ? '<span class="badge">首頁精選</span>' : ''}<span>撰寫日 ${dateText(x.published_at)}</span><span>/${escapeHtml(x.slug)}</span></div></div><div class="button-row"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary edit-post" data-id="${x.id}">編輯</button></div></article>`;
     }).join('') : '<div class="empty">projects.html 目前沒有可載入的氣味誌文章。若前台有文章但這裡沒有，請檢查 Supabase posts 的 select policy。</div>';
   }
   function renderAnnouncements() {
@@ -302,6 +302,7 @@
       form.elements[k].value = k === 'body' ? stripReadingDirection(v) : (v ?? '');
     });
     if (form.elements.reading_direction) form.elements.reading_direction.value = getReadingDirection(record.body);
+    if (form.elements.featured) form.elements.featured.checked = !!record.featured;
     const del = $('[id^="delete-"]', form);
     if (del) del.classList.toggle('hidden', !record.id);
     dialog.showModal();
@@ -317,7 +318,7 @@
   $('#logout')?.addEventListener('click', () => db.auth.signOut());
   $('#nav')?.addEventListener('click', e => { const b = e.target.closest('[data-view]'); if (b) showView(b.dataset.view); });
   $('#post-search')?.addEventListener('input', renderPosts);
-  $('#new-post')?.addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form'), { reading_direction: defaultDirection, status: 'draft' }));
+  $('#new-post')?.addEventListener('click', () => openRecord($('#post-dialog'), $('#post-form'), { reading_direction: defaultDirection, status: 'draft', featured: false }));
   $('#new-announcement')?.addEventListener('click', () => openRecord($('#announcement-dialog'), $('#announcement-form')));
   $('#save-page-content')?.addEventListener('click', async () => {
     const inputs = $$('[data-content-id]', $('#page-content-forms')).filter(x => x.matches('input,textarea'));
@@ -417,6 +418,7 @@
     const direction = data.reading_direction || defaultDirection;
     delete data.id;
     delete data.reading_direction;
+    data.featured = e.target.elements.featured?.checked || false;
     data.slug = slugify(data.slug || data.title);
     data.body = withReadingDirection(data.body, direction);
     data.published_at = data.status === 'published' ? (state.posts.find(x => x.id === id)?.published_at || new Date().toISOString()) : null;
