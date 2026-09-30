@@ -42,9 +42,10 @@
 .journal-hero{border-bottom:none!important;min-height:0!important;height:auto!important;padding-top:64px!important;padding-bottom:30px!important}
 .journal-hero .wrap{text-align:center}
 .journal-hero .kicker,.journal-hero h1,.journal-hero h2{margin-left:auto;margin-right:auto;text-align:center}
-.journal-filter-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
-.journal-filter-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 22px;border:1px solid #cfcfcb;background:#fff;color:#111;text-decoration:none;font-size:13px;letter-spacing:.12em;transition:background-color .22s ease,border-color .22s ease,color .22s ease}
-.journal-filter-btn:hover,.journal-filter-btn:focus-visible{background:#111;border-color:#111;color:#fff}
+.journal-filter-nav{display:flex;justify-content:center;align-items:center;gap:42px;flex-wrap:wrap;margin-top:26px}
+.journal-filter-btn{display:inline-flex;align-items:center;gap:10px;padding:0 0 5px;border:0;border-bottom:1px solid #111;background:transparent;color:#111;text-decoration:none;font-size:15px;letter-spacing:.10em;line-height:1.6;transition:opacity .2s ease,transform .2s ease}
+.journal-filter-btn::after{content:"→";font-size:17px;line-height:1}
+.journal-filter-btn:hover,.journal-filter-btn:focus-visible{background:transparent;color:#111;opacity:.6;transform:translateX(2px)}
 .journal-section{padding:54px 6vw;border-top:none}
 .journal-section .wrap{max-width:1120px;margin:0 auto}
 .journal-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
@@ -80,8 +81,8 @@
 .journal-cta-link:hover,.journal-cta-link:focus-visible{opacity:.6;transform:translateX(2px)}
 @media(max-width:760px){
   .journal-hero{min-height:0!important;height:auto!important;padding-top:44px!important;padding-bottom:24px!important}
-  .journal-filter-nav{gap:8px;margin-top:22px;padding:0 8px}
-  .journal-filter-btn{min-width:0;flex:1 1 30%;padding:11px 10px;font-size:12px;letter-spacing:.08em;white-space:nowrap}
+  .journal-filter-nav{gap:22px;margin-top:22px;padding:0 8px}
+  .journal-filter-btn{min-width:0;flex:0 0 auto;padding:0 0 4px;font-size:13px;letter-spacing:.08em;white-space:nowrap}
   .journal-section{padding:38px 6vw}
   .journal-section-head{align-items:flex-start;margin-bottom:22px}
   .journal-latest-grid{grid-template-columns:1fr}
