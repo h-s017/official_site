@@ -54,7 +54,7 @@
 
     latestRoot.hidden = false;
     latestRoot.innerHTML = `<div class="wrap">
-      <div class="journal-section-head"><div><span class="eyebrow">Latest Stories</span><h2>最新文章</h2></div><a class="journal-view-all" href="#all-articles">VIEW ALL ARTICLES →</a></div>
+      <div class="journal-section-head"><div><span class="eyebrow">Latest Stories</span><h2>最新文章</h2></div><a class="journal-view-all" href="/journal/#all-articles">VIEW ALL ARTICLES →</a></div>
       <div class="journal-latest-grid">
         <article class="journal-latest-main">${mainImage}${meta(main)}<h3><a href="${postUrl(main)}">${esc(main.title || '')}</a></h3>${main.summary ? `<p>${esc(main.summary)}</p>` : ''}</article>
         <div class="journal-latest-side">${sideHtml}</div>
