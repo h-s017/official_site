@@ -45,7 +45,7 @@
 
   function renderLatest(posts) {
     if (!latestRoot || !posts.length) return;
-    const [main, ...side] = posts.slice(0, 3);
+    const [main, ...side] = posts.slice(0, 4);
     const mainImage = main.cover_url ? `<a href="${postUrl(main)}"><img src="${esc(main.cover_url)}" alt="" loading="eager"></a>` : '';
     const sideHtml = side.map((post) => {
       const image = post.cover_url ? `<a href="${postUrl(post)}"><img src="${esc(post.cover_url)}" alt="" loading="lazy"></a>` : '';
