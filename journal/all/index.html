@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>全部文章｜氣味誌｜HANA SCENT ARTIST</title>
+  <meta name="description" content="HANA SCENT ARTIST 氣味誌全部文章，收錄嗅覺文化、氣味創作與心村札記。" />
+  <link rel="canonical" href="https://hanascent.com/journal/all/" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/hana-cms.css" />
+  <style>
+    .archive-hero{padding:72px 6vw 34px;text-align:center}
+    .archive-hero .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#777;margin:0 0 14px}
+    .archive-hero h1{margin:0;font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:.08em}
+    .archive-hero p{margin:16px auto 0;max-width:680px;color:#696f69}
+    .archive-nav{display:flex;justify-content:center;gap:38px;flex-wrap:wrap;margin-top:28px}
+    .archive-nav a{display:inline-flex;gap:9px;align-items:center;color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:4px;font-size:14px;letter-spacing:.08em}
+    .archive-nav a::after{content:"→"}
+    .archive-main{padding:44px 6vw 72px}
+    .archive-wrap{max-width:1120px;margin:0 auto}
+    .archive-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .archive-head h2{margin:0;font-size:clamp(28px,3vw,40px);font-weight:500}
+    .archive-count{font-size:13px;color:#7a807a;letter-spacing:.08em}
+    .archive-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 28px}
+    .archive-item{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
+    .archive-item img{width:150px;aspect-ratio:1/1;object-fit:cover;display:block}
+    .archive-meta{font-size:12px;color:#7a807a;letter-spacing:.08em;margin-bottom:7px}
+    .archive-item h3{margin:0 0 8px;font-size:20px;line-height:1.5;font-weight:500}
+    .archive-item h3 a{color:inherit;text-decoration:none}
+    .archive-item p{margin:0;color:#666d67;font-size:14px;line-height:1.8}
+    .archive-link{display:inline-block;margin-top:10px;color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:2px;font-size:13px}
+    .archive-empty{text-align:center;color:#777;padding:70px 0}
+    @media(max-width:800px){
+      .archive-hero{padding-top:48px}
+      .archive-nav{gap:20px}
+      .archive-main{padding-top:30px}
+      .archive-list{grid-template-columns:1fr}
+      .archive-item{grid-template-columns:96px 1fr;gap:14px}
+      .archive-item img{width:96px}
+      .archive-item p{display:none}
+    }
+  </style>
+</head>
+<body data-hana-page="journal">
+  <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
+  <header class="archive-hero">
+    <p class="kicker">Scent Journal Archive</p>
+    <h1>全部文章</h1>
+    <p>依發布時間由新到舊，瀏覽氣味誌所有已發布文章。</p>
+    <nav class="archive-nav" aria-label="閱讀方向">
+      <a href="/journal/">返回氣味誌</a>
+      <a href="/projects/olfactory-culture/">嗅覺文化</a>
+      <a href="/projects/scent-creation/">氣味創作</a>
+      <a href="/projects/heart-village-notes/">心村札記</a>
+    </nav>
+  </header>
+  <main class="archive-main">
+    <div class="archive-wrap">
+      <div class="archive-head"><h2>文章列表</h2><span class="archive-count" data-archive-count></span></div>
+      <section class="archive-list" data-archive-list><div class="archive-empty">文章載入中…</div></section>
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-grid"><div class="footer-col"><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>氣味藝術・感官體驗・空間氣味</div><div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div><div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
+  <script src="/assets/site.js?v=20260731-nav13"></script>
+  <script src="/assets/cms-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/journal-all.js?v=20261001-1"></script>
+</body>
+</html>
