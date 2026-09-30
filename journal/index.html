@@ -39,52 +39,25 @@
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/hana-cms.css" />
   <style>
-.journal-hero{border-bottom:none!important}
+.journal-hero{border-bottom:none!important;padding-bottom:34px!important}
 .journal-hero .wrap{text-align:center}
 .journal-hero .kicker,.journal-hero h1,.journal-hero h2{margin-left:auto;margin-right:auto;text-align:center}
-.journal-directions{background:#fff;color:#111;border-top:1px solid var(--line);padding:72px 0 82px}
-.journal-directions .wrap{width:min(92%,980px)}
-.journal-directions .section-head{grid-template-columns:1fr;gap:10px;text-align:left;margin-bottom:38px}
-.journal-directions .section-head p{color:var(--gray500)}
-.journal-direction-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:start}
-.journal-direction-card{position:relative;display:flex;flex-direction:column;min-height:180px;padding:26px 28px 24px;background:#fff;border:1px solid #e7e7e5;color:#111;text-decoration:none;transition:background-color .25s ease,border-color .25s ease,transform .25s ease}
-.journal-direction-card:nth-child(1){grid-column:1 / span 6}
-.journal-direction-card:nth-child(2){grid-column:7 / span 5;margin-top:34px}
-.journal-direction-card:nth-child(3){grid-column:3 / span 7;margin-top:2px;background:#fafafa}
-.journal-direction-card:hover,.journal-direction-card:focus-visible{background:#f8f8f7;border-color:#d8d8d5;transform:translateY(-2px)}
-.journal-direction-index{font-size:11px;letter-spacing:.18em;color:var(--gray500);margin-bottom:20px}
-.journal-direction-en{font-family:var(--font-serif);font-size:14px;letter-spacing:.16em;color:#222;margin-bottom:8px}
-.journal-direction-card h3{margin:0;font-size:clamp(24px,2.4vw,31px);font-weight:500;letter-spacing:.04em;line-height:1.25}
-.journal-direction-arrow{position:absolute;right:22px;bottom:18px;font-size:18px;color:#777}
+.journal-filter-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+.journal-filter-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 22px;border:1px solid #cfcfcb;background:#fff;color:#111;text-decoration:none;font-size:13px;letter-spacing:.12em;transition:background-color .22s ease,border-color .22s ease,color .22s ease}
+.journal-filter-btn:hover,.journal-filter-btn:focus-visible{background:#111;border-color:#111;color:#fff}
 .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease}
-@media(max-width:980px){
-  .journal-directions .wrap{width:min(92%,calc(100% - 40px))!important}
-  .journal-direction-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .journal-direction-card:nth-child(n){grid-column:auto;margin-top:0;min-height:190px}
-  .journal-direction-card:nth-child(2){margin-top:24px}
-  .journal-direction-card:nth-child(3){grid-column:1 / -1;width:72%;margin-left:12%;margin-top:4px}
-}
 @media(max-width:760px){
-  .journal-directions{padding:54px 0 62px}
-  .journal-directions .section-head{margin-bottom:28px}
-  .journal-direction-grid{display:block}
-  .journal-direction-card{width:88%;min-height:0;padding:22px 22px 21px;margin-bottom:12px!important}
-  .journal-direction-card:nth-child(2){margin-left:12%!important}
-  .journal-direction-card:nth-child(3){width:94%;margin-left:1%!important}
-  .journal-direction-index{margin-bottom:15px}
-  .journal-direction-en{font-size:12px;margin-bottom:6px}
-  .journal-direction-card h3{font-size:25px;margin-bottom:14px}
-  .journal-direction-arrow{right:18px;bottom:16px}
+  .journal-hero{padding-bottom:28px!important}
+  .journal-filter-nav{gap:8px;margin-top:22px;padding:0 8px}
+  .journal-filter-btn{min-width:0;flex:1 1 30%;padding:11px 10px;font-size:12px;letter-spacing:.08em;white-space:nowrap}
 }
-@media(prefers-reduced-motion:reduce){.journal-direction-card{transition:none}}
 </style>
 </head>
 <body data-hana-page="journal">
   <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
-  <header class="page-hero journal-hero"><div class="wrap"><p class="kicker">Scent Journal</p><h1 data-hana-field="hero_title">氣味誌</h1><h2 data-hana-field="hero_subtitle">從閱讀，進入氣味。</h2></div></header>
+  <header class="page-hero journal-hero"><div class="wrap"><p class="kicker">Scent Journal</p><h1 data-hana-field="hero_title">氣味誌</h1><h2 data-hana-field="hero_subtitle">從閱讀，進入氣味。</h2><nav class="journal-filter-nav" aria-label="閱讀方向"><a class="journal-filter-btn" href="/projects/olfactory-culture/">嗅覺文化</a><a class="journal-filter-btn" href="/projects/scent-creation/">氣味創作</a><a class="journal-filter-btn" href="/projects/heart-village-notes/">心村札記</a></nav></div></header>
   <main>
     <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" data-hana-blog-limit="6" data-hana-show-direction="true" hidden></section>
-    <section class="journal-directions"><div class="wrap"><div class="section-head"><p class="kicker">Reading Directions</p><h2>閱讀方向</h2></div><div class="journal-direction-grid"><a class="journal-direction-card" href="/projects/olfactory-culture/"><span class="journal-direction-index">01</span><span class="journal-direction-en">OLFACTORY CULTURE</span><h3>嗅覺文化</h3><span class="journal-direction-arrow">→</span></a><a class="journal-direction-card" href="/projects/scent-creation/"><span class="journal-direction-index">02</span><span class="journal-direction-en">SCENT CREATION</span><h3>氣味創作</h3><span class="journal-direction-arrow">→</span></a><a class="journal-direction-card" href="/projects/heart-village-notes/"><span class="journal-direction-index">03</span><span class="journal-direction-en">HEART VILLAGE NOTES</span><h3>心村札記</h3><span class="journal-direction-arrow">→</span></a></div></div></section>
     <section><div class="wrap"><div class="actions"><a class="btn" href="/courses/">查看所有課程</a><a class="btn" href="/business/">洽詢企業品牌合作</a></div></div></section>
   </main>
   <footer class="footer"><div class="footer-grid"><div class="footer-col"><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>氣味藝術・感官體驗・空間氣味</div><div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div><div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
