@@ -46,10 +46,19 @@
 .journal-filter-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 22px;border:1px solid #cfcfcb;background:#fff;color:#111;text-decoration:none;font-size:13px;letter-spacing:.12em;transition:background-color .22s ease,border-color .22s ease,color .22s ease}
 .journal-filter-btn:hover,.journal-filter-btn:focus-visible{background:#111;border-color:#111;color:#fff}
 .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease}
+.journal-cta{border-top:none!important;padding:42px 6vw 54px!important}
+.journal-cta .wrap{display:flex;justify-content:center}
+.journal-cta-links{display:flex;justify-content:center;align-items:center;gap:42px;flex-wrap:wrap}
+.journal-cta-link{display:inline-flex;align-items:center;gap:10px;padding:0 0 5px;border-bottom:1px solid #111;color:#111;text-decoration:none;font-size:17px;letter-spacing:.08em;line-height:1.6;transition:opacity .2s ease,transform .2s ease}
+.journal-cta-link::after{content:"→";font-size:18px;line-height:1}
+.journal-cta-link:hover,.journal-cta-link:focus-visible{opacity:.6;transform:translateX(2px)}
 @media(max-width:760px){
   .journal-hero{min-height:0!important;height:auto!important;padding-top:44px!important;padding-bottom:24px!important}
   .journal-filter-nav{gap:8px;margin-top:22px;padding:0 8px}
   .journal-filter-btn{min-width:0;flex:1 1 30%;padding:11px 10px;font-size:12px;letter-spacing:.08em;white-space:nowrap}
+  .journal-cta{padding:30px 6vw 42px!important}
+  .journal-cta-links{gap:24px}
+  .journal-cta-link{font-size:15px}
 }
 </style>
 </head>
@@ -58,7 +67,7 @@
   <header class="page-hero journal-hero"><div class="wrap"><p class="kicker">Scent Journal</p><h1 data-hana-field="hero_title">氣味誌</h1><h2 data-hana-field="hero_subtitle">從閱讀，進入氣味。</h2><nav class="journal-filter-nav" aria-label="閱讀方向"><a class="journal-filter-btn" href="/projects/olfactory-culture/">嗅覺文化</a><a class="journal-filter-btn" href="/projects/scent-creation/">氣味創作</a><a class="journal-filter-btn" href="/projects/heart-village-notes/">心村札記</a></nav></div></header>
   <main>
     <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" data-hana-blog-limit="6" data-hana-show-direction="true" hidden></section>
-    <section><div class="wrap"><div class="actions"><a class="btn" href="/courses/">查看所有課程</a><a class="btn" href="/business/">洽詢企業品牌合作</a></div></div></section>
+    <section class="journal-cta"><div class="wrap"><div class="journal-cta-links"><a class="journal-cta-link" href="/courses/">查看專業調香課程</a><a class="journal-cta-link" href="/business/">洽詢企業品牌合作</a></div></div></section>
   </main>
   <footer class="footer"><div class="footer-grid"><div class="footer-col"><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>氣味藝術・感官體驗・空間氣味</div><div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div><div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
   <script src="/assets/site.js?v=20260731-nav13"></script>
