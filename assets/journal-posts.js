@@ -54,7 +54,7 @@
 
     latestRoot.hidden = false;
     latestRoot.innerHTML = `<div class="wrap">
-      <div class="journal-section-head"><div><span class="eyebrow">Latest Stories</span><h2>最新文章</h2></div><a class="journal-view-all" href="/journal/#all-articles">VIEW ALL ARTICLES →</a></div>
+      <div class="journal-section-head"><div><span class="eyebrow">Latest Stories</span><h2>最新文章</h2></div><a class="journal-view-all" href="/journal/all/">VIEW ALL ARTICLES →</a></div>
       <div class="journal-latest-grid">
         <article class="journal-latest-main">${mainImage}${meta(main)}<h3><a href="${postUrl(main)}">${esc(main.title || '')}</a></h3>${main.summary ? `<p>${esc(main.summary)}</p>` : ''}</article>
         <div class="journal-latest-side">${sideHtml}</div>
@@ -80,7 +80,7 @@
     const visible = posts.slice(0, limit || 6);
     if (!visible.length) {
       allRoot.hidden = false;
-      allRoot.innerHTML = '<div class="hana-section-head"><h2>全部文章</h2></div><div class="empty">目前尚無文章。</div>';
+      allRoot.innerHTML = '<div class="hana-section-head"><h2>近期文章</h2></div><div class="empty">目前尚無文章。</div>';
       return;
     }
     const cards = visible.map((post) => {
@@ -93,7 +93,7 @@
     }).join('');
 
     allRoot.hidden = false;
-    allRoot.innerHTML = `<div class="hana-section-head"><h2>全部文章</h2></div><div class="hana-blog-grid">${cards}</div>`;
+    allRoot.innerHTML = `<div class="hana-section-head"><h2>近期文章</h2></div><div class="hana-blog-grid">${cards}</div><div style="text-align:center;margin-top:34px"><a class="text-link" href="/journal/all/">查看全部文章 →</a></div>`;
   }
 
   async function init() {
