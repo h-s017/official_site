@@ -314,7 +314,7 @@
       async function loadPosts() {
         const list = $('#posts-list');
         if (list) list.innerHTML = '<div class="empty">正在載入氣味誌文章...</div>';
-        const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false });
+        const { data, error } = await db.from('posts').select('id,title,slug,summary,cover_url,body,status,published_at,updated_at,featured').order('published_at', { ascending: false, nullsFirst: false }).order('updated_at', { ascending: false });
         if (error) {
           if (list) list.innerHTML = `<div class="empty">無法載入文章。<small>${escapeHtml(error.message)}</small></div>`;
           return;
@@ -351,7 +351,7 @@
           const frontUrl = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
           const statusLabel = post.status === 'published' ? '已發布' : '草稿';
           const coverLabel = post.cover_url ? '<span class="badge">有封面</span>' : '<span class="badge">無封面</span>';
-          return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span>${coverLabel}<span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`;
+          return `<article class="list-item"><div><h3>${escapeHtml(post.title || '未命名文章')}</h3><div class="meta"><span class="badge ${escapeHtml(post.status || '')}">${statusLabel}</span><span class="badge">${escapeHtml(direction)}</span>${coverLabel}${post.featured ? '<span class="badge">首頁精選</span>' : ''}<span>撰寫日 ${dateText(post.published_at)}</span><span>/${escapeHtml(post.slug || '')}</span></div></div><div class="row-actions"><a class="secondary" href="${frontUrl}" target="_blank" rel="noopener">查看</a><button class="secondary" type="button" data-edit-post="${escapeHtml(post.id)}">編輯</button></div></article>`;
         }).join('') : '<div class="empty">目前沒有氣味誌文章。</div>';
       }
       function renderAnnouncements() {
@@ -387,6 +387,7 @@
         form.elements.slug.value = post.slug || '';
         form.elements.status.value = post.status || 'draft';
         form.elements.reading_direction.value = getDirection(post.body);
+        if (form.elements.featured) form.elements.featured.checked = !!post.featured;
         form.elements.summary.value = post.summary || '';
         form.elements.cover_url.value = post.cover_url || '';
         form.elements.body.value = stripDirection(post.body || '');
@@ -483,6 +484,7 @@
             summary: form.elements.summary.value || '',
             cover_url: form.elements.cover_url.value || '',
             body: bodyForSave(body, form.elements.reading_direction.value || defaultDirection),
+            featured: !!form.elements.featured?.checked,
             published_at: status === 'published' ? (form.elements.published_at.value || new Date().toISOString()) : null
           };
           const result = id ? await db.from('posts').update(payload).eq('id', id) : await db.from('posts').insert(payload);
