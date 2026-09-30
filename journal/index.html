@@ -45,8 +45,32 @@
 .journal-filter-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
 .journal-filter-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 22px;border:1px solid #cfcfcb;background:#fff;color:#111;text-decoration:none;font-size:13px;letter-spacing:.12em;transition:background-color .22s ease,border-color .22s ease,color .22s ease}
 .journal-filter-btn:hover,.journal-filter-btn:focus-visible{background:#111;border-color:#111;color:#fff}
-.hana-blog{border-top:none!important;padding-top:34px!important}
-.hana-blog .section-head{display:none!important}
+.journal-section{padding:54px 6vw;border-top:1px solid var(--line)}
+.journal-section .wrap{max-width:1120px;margin:0 auto}
+.journal-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.journal-section-head h2{margin:0;font-size:clamp(24px,3vw,36px);font-weight:500;letter-spacing:.04em}
+.journal-section-head .eyebrow{display:block;margin-bottom:7px;color:#737a74;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.journal-view-all{color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:4px;font-size:13px;letter-spacing:.12em}
+.journal-latest-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.85fr);gap:24px}
+.journal-latest-main,.journal-latest-side article{background:#fff}
+.journal-latest-main img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:20px}
+.journal-latest-main h3{font-size:clamp(26px,3vw,38px);font-weight:500;line-height:1.45;margin:8px 0 12px}
+.journal-latest-main p{margin:0 0 12px;color:#656b65;font-size:15px;line-height:1.9}
+.journal-latest-side{display:grid;grid-template-rows:1fr 1fr;gap:24px}
+.journal-latest-side article{display:grid;grid-template-columns:118px 1fr;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--line);align-items:start}
+.journal-latest-side article:last-child{border-bottom:0;padding-bottom:0}
+.journal-latest-side img{width:118px;aspect-ratio:1/1;object-fit:cover}
+.journal-latest-side h3{font-size:19px;line-height:1.55;font-weight:500;margin:6px 0 8px}
+.journal-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#737a74;font-size:12px;letter-spacing:.08em}
+.journal-meta a{color:inherit;text-decoration:none}
+.journal-latest-grid a,.journal-featured-list a{color:inherit;text-decoration:none}
+.journal-featured-list{border-top:1px solid var(--line)}
+.journal-featured-item{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.journal-featured-no{font-size:13px;color:#8a8f8a;letter-spacing:.12em}
+.journal-featured-item h3{margin:0 0 5px;font-size:20px;font-weight:500;line-height:1.55}
+.journal-featured-arrow{font-size:20px}
+.hana-blog{border-top:1px solid var(--line)!important;padding-top:54px!important}
+.hana-blog .section-head{display:block!important}
 .hana-post{padding:18px;border:1px solid var(--line);background:#fff;transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease}
 .journal-cta{border-top:none!important;padding:42px 6vw 54px!important}
 .journal-cta .wrap{display:flex;justify-content:center}
@@ -58,7 +82,15 @@
   .journal-hero{min-height:0!important;height:auto!important;padding-top:44px!important;padding-bottom:24px!important}
   .journal-filter-nav{gap:8px;margin-top:22px;padding:0 8px}
   .journal-filter-btn{min-width:0;flex:1 1 30%;padding:11px 10px;font-size:12px;letter-spacing:.08em;white-space:nowrap}
-  .hana-blog{padding-top:24px!important}
+  .journal-section{padding:38px 6vw}
+  .journal-section-head{align-items:flex-start;margin-bottom:22px}
+  .journal-latest-grid{grid-template-columns:1fr}
+  .journal-latest-side{grid-template-rows:auto}
+  .journal-latest-side article{grid-template-columns:92px 1fr}
+  .journal-latest-side img{width:92px}
+  .journal-featured-item{grid-template-columns:34px minmax(0,1fr) auto;gap:12px}
+  .journal-featured-item h3{font-size:17px}
+  .hana-blog{padding-top:38px!important}
   .journal-cta{padding:30px 6vw 42px!important}
   .journal-cta-links{gap:24px}
   .journal-cta-link{font-size:15px}
@@ -69,7 +101,9 @@
   <nav class="site-nav" aria-label="主要導覽"><a class="logo" href="/">HANA SCENT ARTIST</a><div class="nav-links"></div><div class="mobile-note">MENU</div></nav>
   <header class="page-hero journal-hero"><div class="wrap"><p class="kicker">Scent Journal</p><h1 data-hana-field="hero_title">氣味誌</h1><h2 data-hana-field="hero_subtitle">從閱讀，進入氣味。</h2><nav class="journal-filter-nav" aria-label="閱讀方向"><a class="journal-filter-btn" href="/projects/olfactory-culture/">嗅覺文化</a><a class="journal-filter-btn" href="/projects/scent-creation/">氣味創作</a><a class="journal-filter-btn" href="/projects/heart-village-notes/">心村札記</a></nav></div></header>
   <main>
-    <section class="hana-blog" data-hana-blog data-hana-blog-title="最新文章" data-hana-blog-limit="6" data-hana-show-direction="true" hidden></section>
+    <section class="journal-section" data-journal-latest hidden></section>
+    <section class="journal-section" data-journal-featured hidden></section>
+    <section id="all-articles" class="hana-blog" data-hana-blog data-hana-blog-title="全部文章" data-hana-blog-limit="6" data-hana-show-direction="true" hidden></section>
     <section class="journal-cta"><div class="wrap"><div class="journal-cta-links"><a class="journal-cta-link" href="/courses/">查看專業調香課程</a><a class="journal-cta-link" href="/business/">洽詢企業品牌合作</a></div></div></section>
   </main>
   <footer class="footer"><div class="footer-grid"><div class="footer-col"><b>HANA SCENT ARTIST</b><br>Beitou Heart Village｜Olfactory Narrative Space<br>氣味藝術・感官體驗・空間氣味</div><div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div><div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
