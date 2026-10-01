@@ -13,10 +13,10 @@
   const pageMap = {
     '/overture-series/': { type: 'CollectionPage', name: '氣味藝術序曲系列', parent: ['調香課程', 'https://hanascent.com/courses/'] },
     '/practice/': { type: 'WebPage', name: '氣味自修室', parent: ['調香課程', 'https://hanascent.com/courses/'], service: '氣味自修室' },
-    '/helori/': { type: 'WebPage', name: 'HELORI 香氣探索體驗', parent: ['調香課程', 'https://hanascent.com/courses/'], service: 'HELORI 香氣探索體驗' },
+    '/helori/': { type: 'WebPage', name: 'HELORI 香氣探索體驗', parent: ['調香課程', 'https://hanascent.com/courses/'], service: 'HELORI 香氣探索體驗', serviceType: '北投調香體驗・香水體驗' },
     '/h-fugue-atelier/': { type: 'CollectionPage', name: '氣味作品' },
     '/news/': { type: 'CollectionPage', name: '最新消息' },
-    '/ciyu/programs/': { type: 'CollectionPage', name: '中心新村演出節目', parent: ['此域 Hineni', 'https://hanascent.com/ciyu/'] },
+    '/ciyu/programs/': { type: 'CollectionPage', name: '中心新村演出節目', parent: ['此域 HINENI', 'https://hanascent.com/ciyu/'] },
     '/projects/olfactory-culture/': { type: 'CollectionPage', name: '嗅覺文化', parent: ['氣味誌', 'https://hanascent.com/journal/'] },
     '/projects/scent-creation/': { type: 'CollectionPage', name: '氣味創作', parent: ['氣味誌', 'https://hanascent.com/journal/'] },
     '/projects/heart-village-notes/': { type: 'CollectionPage', name: '心村札記', parent: ['氣味誌', 'https://hanascent.com/journal/'] },
@@ -62,7 +62,12 @@
       '@id': serviceId,
       url: canonical,
       name: page.service,
+      serviceType: page.serviceType || page.service,
       description,
+      areaServed: [
+        { '@type': 'City', name: '台北市' },
+        { '@type': 'AdministrativeArea', name: '北投區' }
+      ],
       provider: { '@type': 'Organization', '@id': 'https://hanascent.com/#organization', name: 'HANA SCENT ARTIST', url: 'https://hanascent.com/' }
     });
   }
