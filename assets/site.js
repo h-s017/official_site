@@ -13,6 +13,15 @@
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
       .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
+      /* Keep the full course list reachable in short mobile/in-app viewports. */
+      @media(max-width:760px){
+        .site-nav.menu-open{max-height:100vh;max-height:100dvh;grid-template-rows:auto minmax(0,1fr)!important;}
+        .site-nav.menu-open .nav-links{min-height:0;max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px);overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;align-items:stretch!important;}
+        .site-nav .nav-links > *{flex-shrink:0;}
+        .site-nav .nav-dropdown.is-open .nav-dropdown-menu{max-height:none;overflow:visible;}
+        .site-nav .nav-dropdown-menu{min-width:0!important;}
+        .site-nav .nav-dropdown-menu a{white-space:normal!important;overflow-wrap:anywhere;}
+      }
       .about-role-en{display:block;margin-top:10px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:.12em;line-height:1.45;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-role-zh,.footer-role-en{display:block}.footer-role-zh{font-size:14px;letter-spacing:.08em;line-height:1.7}.footer-role-en{margin-top:4px;font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:.14em;line-height:1.55;color:var(--gray500)}.footer-brand-copy{display:block;margin-bottom:24px}
