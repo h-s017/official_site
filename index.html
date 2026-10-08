@@ -249,6 +249,15 @@
     .news-row:has(a[href]):hover,.news-row:has(a[href]):focus-within,.card:has(a[href]):hover,.card:has(a[href]):focus-within{background:var(--gray100);border-color:var(--gray300);}
     .card:has(a[href]):hover,.card:has(a[href]):focus-within{box-shadow:0 12px 32px rgba(0,0,0,.05);}
     @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}.entrance-path{transition:none;}}
+    /* Mobile homepage typography: targeted overrides of existing compact labels. */
+    @media(max-width:760px){
+      .entrance-en,.entrance-index{font-size:13px!important;line-height:1.6!important;}
+      .entrance-meta{font-size:16px!important;line-height:1.8!important;}
+      .entrance-path h3{font-size:clamp(25px,6.5vw,30px)!important;line-height:1.35!important;}
+      .about-brief-copy .lead,.about-brief-roles li{font-size:16px!important;line-height:1.8!important;}
+      .about-brief-copy .kicker,.about-brief-copy small{font-size:13px!important;line-height:1.65!important;}
+      .hero-text{font-size:17px!important;line-height:1.85!important;}
+    }
   </style>
 </head>
 <body class="intro-open" data-hana-page="home">
