@@ -249,6 +249,17 @@
     .news-row:has(a[href]):hover,.news-row:has(a[href]):focus-within,.card:has(a[href]):hover,.card:has(a[href]):focus-within{background:var(--gray100);border-color:var(--gray300);}
     .card:has(a[href]):hover,.card:has(a[href]):focus-within{box-shadow:0 12px 32px rgba(0,0,0,.05);}
     @media (prefers-reduced-motion:reduce){.news-row:has(a[href]),.card:has(a[href]){transition:none;}.entrance-path{transition:none;}}
+    /* Intro and homepage: fit the viewport without side scrolling. */
+    @media(max-width:760px){
+      .intro-screen,.intro-slides,.intro-slide{width:100%;max-width:100%;min-width:0;}
+      .intro-slide img{max-width:100%;}
+      .entrance-editorial-grid,.entrance-path,.home-about-brief,.about-brief-grid,.about-brief-copy{max-width:100%;min-width:0;}
+      .entrance-path:nth-child(n){box-sizing:border-box;}
+      .entrance-path:nth-child(2){width:88%!important;margin-left:12%!important;}
+      .entrance-path:nth-child(3){width:94%!important;margin-left:1%!important;}
+      .entrance-path:nth-child(4){width:82%!important;margin-left:18%!important;}
+      .entrance-meta,.about-brief-copy,.home-about-heading{overflow-wrap:anywhere;}
+    }
   </style>
 </head>
 <body class="intro-open" data-hana-page="home">
