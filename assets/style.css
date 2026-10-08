@@ -512,3 +512,20 @@ body[data-hana-page="ciyu"] .ciyu-week-block:first-child::after{
   letter-spacing:.04em;
   text-align:center;
 }
+
+/* Shared mobile intrinsic sizing: prevent unintended horizontal page scrolling.
+   Apply to public pages using /assets/style.css; do not clip the viewport. */
+@media (max-width:760px){
+  html,body{width:100%;max-width:100%;min-width:0;}
+  *,*::before,*::after{box-sizing:border-box;}
+  main,header,footer,nav,section,.wrap,.hero,.hero-shell,.hero-panel,.section-head,.split,.grid3,.business-services,.course-card,.dark-panel,.service-list,.service-row{
+    min-width:0;max-width:100%;
+  }
+  img,video,svg,canvas,iframe{max-width:100%;height:auto;}
+  input,select,textarea,button{max-width:100%;min-width:0;}
+  pre,code{overflow-wrap:anywhere;}
+  table{max-width:100%;}
+  .hero-title,.hero-title span{max-width:100%;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;}
+  .nav-links,.site-nav,.footer-grid{min-width:0;max-width:100%;}
+  .service-row,.course-card,.lead,.footer-col{overflow-wrap:anywhere;}
+}
