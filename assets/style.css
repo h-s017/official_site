@@ -512,3 +512,14 @@ body[data-hana-page="ciyu"] .ciyu-week-block:first-child::after{
   letter-spacing:.04em;
   text-align:center;
 }
+
+/* Mobile readability: retain existing editorial design and imagery. */
+@media (max-width:760px){
+  body{font-size:16px;line-height:1.8;}
+  .lead,.hero-text{font-size:17px;line-height:1.85;}
+  .eyebrow,.kicker{font-size:13px;line-height:1.6;letter-spacing:.12em;}
+  .business-services .course-card p,.service-row span{font-size:16px;line-height:1.85;}
+  .business-services .course-card h3{font-size:clamp(23px,6vw,29px);line-height:1.4;}
+  .business-hero-link,.business-service-actions .text-link{font-size:16px;line-height:1.65;}
+  .footer{font-size:15px;line-height:1.9;}
+}
