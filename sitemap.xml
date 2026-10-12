@@ -116,6 +116,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://hanascent.com/blog.html?slug=await</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hanascent.com/blog.html?slug=1821</loc>
     <lastmod>2026-08-27</lastmod>
     <priority>0.6</priority>
@@ -151,12 +156,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hanascent.com/blog.html?slug=from-perfume-product-to-scent-branding-system</loc>
+    <loc>https://hanascent.com/blog.html?slug=scent-branding-system</loc>
     <lastmod>2026-03-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hanascent.com/blog.html?slug=proust-effect-fragrance-experience</loc>
+    <loc>https://hanascent.com/blog.html?slug=prousteffect-fragranceexperience</loc>
     <lastmod>2026-03-01</lastmod>
     <priority>0.6</priority>
   </url>
