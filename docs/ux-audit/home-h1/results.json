@@ -1,0 +1,295 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "h1_accessible_name": "HANA SCENT ARTIST",
+    "h1_count": 1,
+    "layout_unchanged": true,
+    "heading_outline": [
+      {
+        "level": "H1",
+        "text": "HANA SCENT ARTIST"
+      },
+      {
+        "level": "H2",
+        "text": "創作旅程，從這裡開始"
+      },
+      {
+        "level": "H3",
+        "text": "氣味學習"
+      },
+      {
+        "level": "H3",
+        "text": "發展創作"
+      },
+      {
+        "level": "H3",
+        "text": "實現想像"
+      },
+      {
+        "level": "H3",
+        "text": "走進此域"
+      },
+      {
+        "level": "H2",
+        "text": "氣味，不只是好聞，而是能被記住的語言。"
+      },
+      {
+        "level": "H2",
+        "text": "Hana 沈秉儀｜嗅覺藝術家OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR"
+      },
+      {
+        "level": "H2",
+        "text": "最新消息"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      }
+    ],
+    "axe_heading_rules": {
+      "violations": [],
+      "passes": [
+        "empty-heading",
+        "heading-order",
+        "page-has-heading-one"
+      ]
+    }
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "result": "pass",
+    "h1_accessible_name": "HANA SCENT ARTIST",
+    "h1_count": 1,
+    "layout_unchanged": true,
+    "heading_outline": [
+      {
+        "level": "H1",
+        "text": "HANA SCENT ARTIST"
+      },
+      {
+        "level": "H2",
+        "text": "創作旅程，從這裡開始"
+      },
+      {
+        "level": "H3",
+        "text": "氣味學習"
+      },
+      {
+        "level": "H3",
+        "text": "發展創作"
+      },
+      {
+        "level": "H3",
+        "text": "實現想像"
+      },
+      {
+        "level": "H3",
+        "text": "走進此域"
+      },
+      {
+        "level": "H2",
+        "text": "氣味，不只是好聞，而是能被記住的語言。"
+      },
+      {
+        "level": "H2",
+        "text": "Hana 沈秉儀｜嗅覺藝術家OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR"
+      },
+      {
+        "level": "H2",
+        "text": "最新消息"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      }
+    ],
+    "axe_heading_rules": {
+      "violations": [],
+      "passes": [
+        "empty-heading",
+        "heading-order",
+        "page-has-heading-one"
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "h1_accessible_name": "HANA SCENT ARTIST",
+    "h1_count": 1,
+    "layout_unchanged": true,
+    "heading_outline": [
+      {
+        "level": "H1",
+        "text": "HANA SCENT ARTIST"
+      },
+      {
+        "level": "H2",
+        "text": "創作旅程，從這裡開始"
+      },
+      {
+        "level": "H3",
+        "text": "氣味學習"
+      },
+      {
+        "level": "H3",
+        "text": "發展創作"
+      },
+      {
+        "level": "H3",
+        "text": "實現想像"
+      },
+      {
+        "level": "H3",
+        "text": "走進此域"
+      },
+      {
+        "level": "H2",
+        "text": "氣味，不只是好聞，而是能被記住的語言。"
+      },
+      {
+        "level": "H2",
+        "text": "Hana 沈秉儀｜嗅覺藝術家OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR"
+      },
+      {
+        "level": "H2",
+        "text": "最新消息"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      }
+    ],
+    "axe_heading_rules": {
+      "violations": [],
+      "passes": [
+        "empty-heading",
+        "heading-order",
+        "page-has-heading-one"
+      ]
+    }
+  },
+  {
+    "viewport": [
+      320,
+      844
+    ],
+    "result": "pass",
+    "h1_accessible_name": "HANA SCENT ARTIST",
+    "h1_count": 1,
+    "layout_unchanged": true,
+    "heading_outline": [
+      {
+        "level": "H1",
+        "text": "HANA SCENT ARTIST"
+      },
+      {
+        "level": "H2",
+        "text": "創作旅程，從這裡開始"
+      },
+      {
+        "level": "H3",
+        "text": "氣味學習"
+      },
+      {
+        "level": "H3",
+        "text": "發展創作"
+      },
+      {
+        "level": "H3",
+        "text": "實現想像"
+      },
+      {
+        "level": "H3",
+        "text": "走進此域"
+      },
+      {
+        "level": "H2",
+        "text": "氣味，不只是好聞，而是能被記住的語言。"
+      },
+      {
+        "level": "H2",
+        "text": "Hana 沈秉儀｜嗅覺藝術家OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR"
+      },
+      {
+        "level": "H2",
+        "text": "最新消息"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      },
+      {
+        "level": "H3",
+        "text": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍"
+      },
+      {
+        "level": "H3",
+        "text": "心村札記｜此域｜006 具象化的ISO E SUPER"
+      }
+    ],
+    "axe_heading_rules": {
+      "violations": [],
+      "passes": [
+        "empty-heading",
+        "heading-order",
+        "page-has-heading-one"
+      ]
+    }
+  },
+  {
+    "mode": "no-js",
+    "result": "pass",
+    "h1_count": 1
+  }
+]

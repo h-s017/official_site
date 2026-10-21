@@ -174,3 +174,7 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 使用者核定可選入口並先提供預覽。`optional-enter/check.py` 的 7 情境全部通過，四 viewport 初訪未開啟藝術影像、無 intro 圖片請求、零 root 溢出；modal 背景不能聚焦，Escape／兩個關閉控制返回焦點，暫停、no-JS、儲存不可用與 reduced-motion 正常。四份 modal axe 零違規。預覽與原始結果在 `optional-enter/`。
 
 首頁 mobile 最後三次 lab 中位數：Performance 69→99、Accessibility 96→96、LCP 7.881→2.179s、CLS 0→0.0265。既有首頁對比與 h1 決策尚未完成；沒有 CrUX／RUM／INP 驗收。本階段沒有進行預約或付款。
+
+## 第四階段：首頁品牌 h1
+
+`home-h1/check.py`：四 viewport 與 no-JS 共 5/5，唯一可及 h1 為 HANA SCENT ARTIST，三項 heading axe 規則零違規；同頁移除／還原 h1 的既有 nav／hero／服務／footer 幾何相同，零水平溢出。手機／桌機預覽及 runtime 標題大綱見 `home-h1/`。未重跑 Lighthouse，未宣稱全站 AA 或實體螢幕閱讀器驗收；付款未重測。
