@@ -1,6 +1,6 @@
 # 問題清單
 
-有效問題 **10 項：P0 1（已修正）、P1 8、P2 1**。另 UX-003 撤回、不計入。正式站 56 組與最終本機 52 組跨裝置檢查已完成；未宣稱全站 WCAG 達標。除 UX-001 已修改外，其餘「修改檔案」為建議位置。
+有效問題 **10 項：P0 1（已修正）、P1 8、P2 1**。另 UX-003 撤回、不計入。正式站 56 組與最終本機 52 組跨裝置檢查已完成；未宣稱全站 WCAG 達標。第二階段另修正 UX-009、UX-010；其餘未完成項目的「修改檔案」仍為建議位置。
 
 ## UX-001｜P0：手機閉合導覽可進入隱形焦點（已修正）
 
@@ -90,8 +90,8 @@
 - 優先級：P1（已量到 lab 未達內部目標）。
 - 修改檔案：`index.html`、相關 `assets/` 圖片；不直接覆蓋原圖。
 - 驗收條件：保存構圖與品質的前後比較；設定正確寬高／比例及需要的 srcset；同條件 Lighthouse 比較，LCP≤2.5s、CLS≤0.1 另需真實資料驗證。
-- 截圖：screenshots/before-live-home-390x844-intro.png；results/lighthouse/ 保存 lab report。未做圖片轉檔，因此沒有畫質修改對照。
-- 完成狀態：已完成 Lighthouse 初始量測，首頁 mobile Performance 53、LCP 37.0s，desktop 67、LCP 5.0s；受代理、模擬節流與字體影響，非 field 數據。未做圖片／字體改版，詳見 TEST-RESULTS 與壓縮原始報告。
+- 截圖：第一階段 `screenshots/before-live-home-390x844-intro.png`；第二階段 `phase-2/screenshots/release-home-390x844.png` 及桌機對照。原始圖片保留，新增同圖尺寸／格式變體。
+- 完成狀態：第二階段已完成同圖 WebP／尺寸變體、品牌字體的傳送最佳化、首屏相同規則提前載入。Journal／消息及課程明顯改善；首頁 mobile 仍未達 Performance≥90／LCP≤2.5s，保留為持續改善事項。三次中位數見 TEST-RESULTS；未更換品牌字體、未宣稱 field 通過。
 
 ## UX-008｜共用樣式及導覽被多次覆寫
 
@@ -114,9 +114,9 @@
 - 重現步驟：載入 Journal、等待文章完成，執行 axe 4.10.3 的 WCAG 2.x A/AA tags；檢查 journal-latest-main／side 圖片 anchor 與 journal-meta。不能只在空資料 loading 時跑。
 - 使用者影響：螢幕閱讀器不知道連結目的，手機分類連結較難選取。
 - 優先級：P1。
-- 修改檔案：`assets/journal-posts.js`、`journal/index.html` 的卡片／metadata CSS；需逐個確認實際 renderer。
+- 修改檔案：`assets/journal-posts.js`、`assets/journal-all.js`、`journal/index.html`、`journal/all/index.html` 的卡片／metadata CSS。
 - 驗收條件：圖片連結有文章標題等名稱，目標及間距符合 2.5.8，對比符合 AA；不改文章、照片與服務名稱；四 viewport 重跑 axe 與人工鍵盤。
-- 完成狀態：已動態重現，未修改。
+- 完成狀態：第二階段已修正，含 `/journal/all/` 圖片連結名稱與 metadata 對比；Journal／archive 四 viewport 的 axe 均為零違規。證據：`phase-2/results/release-matrix.json`；截圖：`phase-2/screenshots/release-journal-390x844.png` 與桌機對照。
 - 截圖：screenshots/before-live-journal-390x844.png、after-local-scrolled-journal-390x844.png；具體 target 見 matrix axe.nodes。
 
 ## UX-010｜動態列表載入造成版面位移
@@ -127,9 +127,9 @@
 - 重現步驟：執行 lighthouse_batch.py、打開相應 .json.gz，查看 cumulative-layout-shift 與 layout-shift-elements，對照載入前後列表高度。
 - 使用者影響：閱讀位置與可操作內容可能移動。
 - 優先級：P1。
-- 修改檔案：`journal/index.html`、`news/index.html`、`assets/journal-posts.js` 等 renderer（調整前先核對 trace）。
+- 修改檔案：`journal/index.html`、`journal/all/index.html`、`news/index.html`、`assets/journal-posts.js`、`assets/journal-all.js`、`assets/news-archive.js`、`assets/hana-cms.js`；相關首屏規則在 `assets/runtime-layout.css`。
 - 驗收條件：同條件至少三次 lab 比較，CLS≤0.1；兼顧 loading／空／錯誤狀態，保留文章與消息；field 另需 CrUX/RUM。
-- 完成狀態：已量測，未修正；不是主張 field CLS 已失敗。
+- 完成狀態：第二階段已修正相同資料刷新造成的重建；18 個延遲／更新／空／失敗／no-JS 情境通過，Journal／archive／消息的相同資料刷新 CLS=0 且保留焦點。三次整頁 lab 結果見 TEST-RESULTS 最新補充，與 field 分開。修改包括公開快照、單一 Journal posts promise、提前載入相同規則；維護限制見 `phase-2/TECHNICAL-PLAN.md`。
 - 截圖：screenshots/before-live-journal-390x844.png、before-live-news-390x844.png；逐次位移證據以 Lighthouse 原始報告為準。
 
 ## UX-011｜獨立預約站資料步驟的表單標籤未關聯
@@ -142,5 +142,9 @@
 - 優先級：P1。
 - 修改檔案：**其他 Repository** `h-s017/reservation/index.html`，本 PR 未修改；不得藉此改付款流程。
 - 驗收條件：正常欄位具可及名稱、適當 autocomplete，honeypot 從正常鍵盤／輔具流程排除，逐步表單 axe／人工閱讀檢查；在可控測試環境完成建單至完成頁。
-- 完成狀態：已重現；獨立 Repository 後續修正，付款端驗收未完成。
+- 完成狀態：既有欄位問題仍屬獨立 Repository 後續事項。付款測試依使用者最新告知已執行，不再重跑；此前稽核未建立正式訂單的紀錄只描述當時測試範圍，不代表使用者未完成付款驗證。
 - 截圖：screenshots/before-live-booking-step4-390x844.png；results/flow-checks.json。
+
+## 第二階段狀態補充
+
+有效問題維持 10 項（P0 1、P1 8、P2 1），未以同一原因拆成多筆增加數量。UX-001 前批已發布；本批完成 UX-009 與 UX-010 的技術修正。UX-007 效能已有改善，但全頁目標仍需逐頁追蹤；首頁 ENTER／h1、課程資訊與其他品牌內容依核定表等待人工決策。UX-008 只提前輸出既有規則，未全面重構。

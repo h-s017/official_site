@@ -1,5 +1,7 @@
 # 現有設計規範與建議
 
+> 第二階段（2026-10-21）：Journal 技術方案及修正見 [TECHNICAL-PLAN](phase-2/TECHNICAL-PLAN.md)，內容決策見 [首頁／課程資訊核定表](HOME-COURSE-APPROVAL.md)。下方原階段紀錄保留；最新結果另見本檔後續補充。付款依使用者告知已測試，本階段不重測。
+
 狀態：已完成原始碼、四 viewport、computed 字級與 axe 對比盤點；保留品牌，未全面覆蓋 CSS。詳細實測值見 results/*matrix.json。
 
 | 項目 | 現況依據 | 建議／驗收方向 |
@@ -17,3 +19,9 @@
 後續統一元件應以現有 `.btn`、page hero、section head、卡片與 Footer 為單位，逐項處理 CSS 優先序。暫不做全站重構、服務改名、全面圖片深色化或新設計系統覆蓋。
 
 實測補充：首頁入口數字在 #fafafa 背景使用 #767676，axe 量到 4.35:1；Journal meta 與自修室亦有對比警示。共用導覽的 inert／aria-controls／aria-expanded 為本次技術修正，沒有增加陰影、漸層、裝飾或更換字體。
+
+## 第二階段的技術落實
+
+保留 Cormorant Garamond v21、Noto Serif TC v37、白底黑字及原攝影。Journal metadata 使用 #565b56、日期 #596159、精選序號 #626962，改善原先不足的文字對比；分類連結高度至少 32px，主要小箭頭／列表入口至少 44px，鍵盤 focus-visible 有清楚 outline。不是把全站字號、圖片背景或裝飾統一覆蓋。
+
+圖片的 width／height 與既有 CSS aspect-ratio 配合，保持既有裁切。共用規則由 `scripts/build-runtime-layout.mjs` 從原有 JS 靜態規則產生，順序不變；未做全站 CSS 架構重寫。未核定的首頁架構、服務名稱及課程說明見 HOME-COURSE-APPROVAL。

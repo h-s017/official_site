@@ -1,0 +1,166 @@
+[
+  {
+    "check": "CMS hero custom",
+    "result": "pass",
+    "src": "/assets/about-hana-900.webp",
+    "srcset": null
+  },
+  {
+    "check": "CMS hero original-default",
+    "result": "pass",
+    "src": "/assets/home-hero-1920.webp",
+    "srcset": "/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w"
+  },
+  {
+    "check": "Journal keyboard and target geometry",
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "targets": [
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      }
+    ],
+    "focus": {
+      "visible": true,
+      "outline": "solid"
+    }
+  },
+  {
+    "check": "Journal keyboard and target geometry",
+    "viewport": [
+      320,
+      844
+    ],
+    "result": "pass",
+    "targets": [
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      }
+    ],
+    "focus": {
+      "visible": true,
+      "outline": "solid"
+    }
+  },
+  {
+    "check": "Journal keyboard and target geometry",
+    "viewport": [
+      768,
+      1024
+    ],
+    "result": "pass",
+    "targets": [
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      }
+    ],
+    "focus": {
+      "visible": true,
+      "outline": "solid"
+    }
+  },
+  {
+    "check": "Journal keyboard and target geometry",
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "targets": [
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      },
+      {
+        "width": 55.84375,
+        "height": 32
+      }
+    ],
+    "focus": {
+      "visible": true,
+      "outline": "solid"
+    }
+  }
+]

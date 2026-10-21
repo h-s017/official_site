@@ -1,5 +1,7 @@
 # HANA SCENT ARTIST｜UX/UI Audit V2
 
+> 第二階段（2026-10-21）：Journal 技術方案及修正見 [TECHNICAL-PLAN](phase-2/TECHNICAL-PLAN.md)，內容決策見 [首頁／課程資訊核定表](HOME-COURSE-APPROVAL.md)。下方原階段紀錄保留；最新結果另見本檔後續補充。付款依使用者告知已測試，本階段不重測。
+
 更新：2026-10-21（Asia/Taipei）。已完成跨裝置初始稽核及共用導覽 P0 修正；使用者已授權發布完成的導覽修正，發布範圍見 RELEASE.md。全站效能／WCAG／付款完成驗收仍未完成。
 
 ## Repository 與部署來源
@@ -61,3 +63,11 @@ UX-001 為 P0，修正在 assets/site.js：收合導覽及課程 panel 使用 in
 目前有效問題 **P0 1（已修正）、P1 8、P2 1**，合計 10；另 UX-003 已撤回，不計入。ISSUES 保留證據及狀態，沒有將待審事項標為已完成。
 
 待人工決策：ENTER 是否保留為必要入口、首頁主標文案、課程資訊揭露與名稱、合報排程文字、舊生／陪同者報名引導、品牌合作回覆說明。技術後續：字體／圖片效能、CMS 版面位移、Journal 可及性及獨立預約站表單標籤。無 CrUX/RUM，不宣稱真實 LCP／INP／CLS 達標；合併與部署狀態以 RELEASE.md 所連結的 PR／Actions 記錄為準。
+
+## 第二階段補充
+
+在已發布導覽修正的 `0c47a0e` 上，完成 Journal／archive 的連結名稱、對比、觸控及資料刷新穩定性，並優化 News 的清單載入及共用圖片／字體／首屏樣式傳送。14 個主站內容入口×四 viewport 完成，沒有訪問預約站。完整技術方案與維護限制見 phase-2/TECHNICAL-PLAN.md。
+
+逐頁原始結果及截圖見 phase-2/results/release-matrix.json。Journal、archive 與消息四 viewport 的 axe 均為零；全站仍有已知其他頁對比問題，沒有宣稱全面 AA。首頁 ENTER／h1、課程排程／名稱／作品與費用揭露只列核定表，不代替品牌決策。
+
+付款測試依使用者告知已完成，本批不重跑、不建單、不改金流；早期報告中的「未完成付款」僅指當時稽核範圍。
