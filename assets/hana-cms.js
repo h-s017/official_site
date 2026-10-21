@@ -125,7 +125,16 @@
       if (!heroImageUrl) return;
       if (x.tagName === 'IMG') {
         x.addEventListener('error', () => x.removeAttribute('data-hana-hero-image-loading'), { once: true });
-        x.src = heroImageUrl;
+        const url = new URL(heroImageUrl, window.location.href);
+        if ([window.location.hostname, 'hanascent.com', 'www.hanascent.com'].includes(url.hostname) && decodeURIComponent(url.pathname) === '/assets/首頁HERO.png') {
+          x.srcset = '/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w';
+          x.sizes = '90vw';
+          x.src = '/assets/home-hero-1920.webp';
+        } else {
+          // A custom CMS image must never inherit the default image's responsive candidates.
+          x.removeAttribute('srcset'); x.removeAttribute('sizes');
+          x.src = heroImageUrl;
+        }
       } else {
         x.style.backgroundImage = `url("${heroImageUrl.replace(/["\\]/g, '\\$&')}")`;
       }
@@ -209,6 +218,7 @@
   }
   function renderPosts(items, settings) {
     document.querySelectorAll('[data-hana-blog]').forEach(root => {
+      if (root.hasAttribute('data-journal-managed')) return;
       const direction = root.dataset.hanaBlogDirection || '';
       const filtered = direction ? items.filter(post => directionFromBody(post.body) === direction) : items;
       const limit = Number(root.dataset.hanaBlogLimit || 0);
@@ -239,10 +249,11 @@
   }
   async function init() {
     const pageKey = document.body.dataset.hanaPage || '';
+    window.HANA_CMS_POSTS = Promise.resolve(db.from('posts').select('title,slug,summary,cover_url,published_at,body,status,featured').eq('status','published').order('published_at',{ascending:false}));
     const [settings, announcements, posts, pageContents] = await Promise.all([
       db.from('site_settings').select('*').eq('id',1).single(),
       db.from('announcements').select('*').eq('status','published').order('starts_at',{ascending:false, nullsFirst:false}).order('created_at',{ascending:false}),
-      db.from('posts').select('title,slug,summary,cover_url,published_at,body').eq('status','published').order('published_at',{ascending:false}),
+      window.HANA_CMS_POSTS,
       pageKey ? db.from('page_contents').select('field_key,content_type,value').eq('page_key', pageKey) : Promise.resolve({ data: [], error: null })
     ]);
     if (settings.error) throw settings.error; applySettings(settings.data || {});

@@ -1,0 +1,86 @@
+[
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 15757.656425000005,
+      "first-contentful-paint": 10723.361550000003,
+      "cumulative-layout-shift": 1.434102516356115e-05,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.92,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1769.0234,
+      "first-contentful-paint": 1467.01755,
+      "cumulative-layout-shift": 0.1486736154316247,
+      "total-blocking-time": 157
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.75,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 11381.669025,
+      "first-contentful-paint": 1229.7753750000002,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 36
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2098.08715,
+      "first-contentful-paint": 1382.9248750000002,
+      "cumulative-layout-shift": 0.0004852845287701821,
+      "total-blocking-time": 33.5
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-1.json.gz"
+  }
+]

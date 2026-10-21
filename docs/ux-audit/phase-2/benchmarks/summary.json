@@ -1,0 +1,170 @@
+[
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 37054.8625,
+      "first-contentful-paint": 12495.098999999997,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.51,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 7053.8495,
+      "first-contentful-paint": 2970.4823499999998,
+      "cumulative-layout-shift": 0.4092202070075739,
+      "total-blocking-time": 109
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 14444.24235,
+      "first-contentful-paint": 10651.05035,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.94,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1303.7336,
+      "first-contentful-paint": 1230.278,
+      "cumulative-layout-shift": 0.15074517149965072,
+      "total-blocking-time": 48
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.87
+    },
+    "metrics": {
+      "largest-contentful-paint": 16944.735199999996,
+      "first-contentful-paint": 11979.512399999996,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.98,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2438.35445,
+      "first-contentful-paint": 1234.410325,
+      "cumulative-layout-shift": 0.002228511479743385,
+      "total-blocking-time": 18.5
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 15518.690800000004,
+      "first-contentful-paint": 11895.0915,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-news-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1415.8096500000001,
+      "first-contentful-paint": 1386.841375,
+      "cumulative-layout-shift": 0.0004852845287701821,
+      "total-blocking-time": 43
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-1.json.gz"
+  }
+]

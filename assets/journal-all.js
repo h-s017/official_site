@@ -18,6 +18,9 @@
     return new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'long',day:'numeric'}).format(d);
   };
 
+  const snapshot = document.getElementById('archive-snapshot-data');
+  if (snapshot) root.querySelectorAll('time[datetime]').forEach(time => { time.textContent = formatDate(time.dateTime); });
+  const signature = posts => JSON.stringify(posts.map(p => [p.slug || '',p.title || '',p.summary || '',p.cover_url || '',p.published_at || '',getDirection(p.body)]));
   async function init(){
     const client = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
     const {data,error} = await client.from('posts')
@@ -26,6 +29,7 @@
       .order('published_at',{ascending:false});
     if (error) throw error;
     const posts = Array.isArray(data) ? data : [];
+    if (snapshot && JSON.stringify(JSON.parse(snapshot.textContent)) === signature(posts)) return;
     if (count) count.textContent = posts.length ? `${posts.length} 篇` : '';
     if (!posts.length) {
       root.innerHTML = '<div class="archive-empty">目前尚無文章。</div>';
@@ -33,14 +37,14 @@
     }
     root.innerHTML = posts.map(post => {
       const url = `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
-      const image = post.cover_url ? `<a href="${url}"><img src="${esc(post.cover_url)}" alt="" loading="lazy"></a>` : '';
+      const image = post.cover_url ? `<a href="${url}" aria-label="閱讀 ${esc(post.title || '')}"><img src="${esc(post.cover_url)}" alt="" width="150" height="150" decoding="async" loading="lazy"></a>` : '';
       const direction = labels[getDirection(post.body)];
       const date = formatDate(post.published_at);
-      return `<article class="archive-item">${image}<div><div class="archive-meta">${esc(direction)}${date ? ` · ${esc(date)}` : ''}</div><h3><a href="${url}">${esc(post.title || '')}</a></h3>${post.summary ? `<p>${esc(post.summary)}</p>` : ''}<a class="archive-link" href="${url}">閱讀文章 →</a></div></article>`;
+      return `<article class="archive-item">${image}<div><div class="archive-meta">${esc(direction)}${date ? ` · <time datetime="${esc(post.published_at)}">${esc(date)}</time>` : ''}</div><h3><a href="${url}">${esc(post.title || '')}</a></h3>${post.summary ? `<p>${esc(post.summary)}</p>` : ''}<a class="archive-link" href="${url}">閱讀文章 →</a></div></article>`;
     }).join('');
   }
 
   init().catch(() => {
-    root.innerHTML = '<div class="archive-empty">文章暫時無法載入，請稍後再試。</div>';
+    if (!snapshot) root.innerHTML = '<div class="archive-empty">文章暫時無法載入，請稍後再試。</div>';
   });
 })();

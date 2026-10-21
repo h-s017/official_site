@@ -1,5 +1,7 @@
 # 修改前後差異
 
+> 第二階段（2026-10-21）：Journal 技術方案及修正見 [TECHNICAL-PLAN](phase-2/TECHNICAL-PLAN.md)，內容決策見 [首頁／課程資訊核定表](HOME-COURSE-APPROVAL.md)。下方原階段紀錄保留；最新結果另見本檔後續補充。付款依使用者告知已測試，本階段不重測。
+
 產品變更只有 `assets/site.js`；其餘為報告、腳本與證據。本文件記錄部署前的測試對照；後續發布範圍及實際狀態見 RELEASE.md。
 
 | 項目 | Before | After（本機分支） |
@@ -19,3 +21,14 @@
 完整捲動對照：screenshots/before-local-scrolled-home-390x844.png 與 after-local-scrolled-home-390x844.png；其他頁面索引見 screenshots/README.md。早期 before-live 截圖是在進場動畫未全觸發時保存；不可把全頁圖中的透明區塊判為使用者捲動後的內容缺失。補拍使用真正的 instant 捲動，未改產品動畫。
 
 初次受阻的 before-browser.json、環境錯誤與 TLS 失敗結果保留為歷史紀錄；最新成功矩陣取代「無測試環境」狀態。稽核階段 PR 為 Draft：效能與已知 P1 尚未通過，預約正式建單／付款／完成頁尚未受控驗證。
+
+## 第二階段：Journal 技術修正
+
+- Journal 四 viewport：原先 `link-name`／`target-size`／`color-contrast` → 零 axe 違規；archive 原先兩種 → 零。可見焦點、目標幾何與公開內容 fallback 另作互動驗證。
+- 同資料延遲回傳：Journal CLS 0.611、News 0.587 → 兩者及 archive 均 0，焦點保留；Journal posts 請求由 2 次減為 1 次。這是資料刷新控制測試，不與整頁 Lighthouse CLS 混稱。
+- 公開文章／消息先由 HTML 提供；SDK 失敗與無 JavaScript 仍可閱讀，API 成功回傳更新／空集合則呈現新狀態。快照維護限制見 TECHNICAL-PLAN。
+- 首頁 HERO 2,224,150 bytes → 1920 WebP 103,420 bytes（少 95.4%）；手機依 srcset 選 17,040／44,324 bytes 版本。肖像原圖 843,655 → 88,330／27,818 bytes；logo 742,743 → 6,581 bytes（少 99.1%）。原始素材保留，沒有換圖或變更品牌字體。
+- JS 在載入後注入的相同版面規則改為首屏 stylesheet；首頁原始 HTML 符合既有最終區塊順序，避免讀取中搬移。保留 ENTER 方案等待核定。
+- 最終三次 Lighthouse 中位數與未達標項目見 TEST-RESULTS 最新段落；不以探索用報告代替最終數字。
+
+證據在 `phase-2/`；手機／桌機完整截圖分別為 `screenshots/release-journal-390x844.png`、`release-journal-1440x900.png`（相對 phase-2），其他頁依同一命名。最後本機字體與 Journal 封面尺寸修正另有 release 四 viewport 全頁截圖。

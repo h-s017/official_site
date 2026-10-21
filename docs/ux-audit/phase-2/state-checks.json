@@ -1,0 +1,344 @@
+[
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "after_cards": 1,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 5017.109375,
+    "heightAfter": 5017.109375,
+    "focusPreserved": true,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "updated",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "after_cards": 1,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 5017.109375,
+    "heightAfter": 4991.375,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "before",
+    "path": "/journal/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 0,
+    "after_cards": 1,
+    "posts_or_news_requests": 2,
+    "refreshCLS": 0.5485781990521327,
+    "heightBefore": 102,
+    "heightAfter": 4920.34375,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "no-js",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "sdk-failure",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "empty",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "after_cards": 0,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0.5627962085308057,
+    "heightBefore": 5017.109375,
+    "heightAfter": 320.359375,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "before",
+    "path": "/journal/all/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 0,
+    "after_cards": 11,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 427.359375,
+    "heightAfter": 2067.796875,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "after_cards": 11,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2344.25,
+    "heightAfter": 2344.25,
+    "focusPreserved": true,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "updated",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "after_cards": 11,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 9.432333034713092e-06,
+    "heightBefore": 2344.25,
+    "heightAfter": 2320.25,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "sdk-failure",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "no-js",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "empty",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "after_cards": 0,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2344.25,
+    "heightAfter": 427.359375,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "after_cards": 9,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2569.828125,
+    "heightAfter": 2569.828125,
+    "focusPreserved": true,
+    "result": "pass"
+  },
+  {
+    "label": "before",
+    "path": "/news/",
+    "mode": "matching",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 0,
+    "after_cards": 9,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0.5864260541985661,
+    "heightBefore": 210.90625,
+    "heightAfter": 2527.828125,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "updated",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "after_cards": 9,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2569.828125,
+    "heightAfter": 2559.015625,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "no-js",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "empty",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "after_cards": 0,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0.5874711386559728,
+    "heightBefore": 2569.828125,
+    "heightAfter": 210.90625,
+    "focusPreserved": false,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "sdk-failure",
+    "timezone": "UTC",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/",
+    "mode": "matching",
+    "timezone": "Asia/Taipei",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 1,
+    "after_cards": 1,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 5017.109375,
+    "heightAfter": 5017.109375,
+    "focusPreserved": true,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/journal/all/",
+    "mode": "matching",
+    "timezone": "Asia/Taipei",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 11,
+    "after_cards": 11,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2344.25,
+    "heightAfter": 2344.25,
+    "focusPreserved": true,
+    "result": "pass"
+  },
+  {
+    "label": "after",
+    "path": "/news/",
+    "mode": "matching",
+    "timezone": "Asia/Taipei",
+    "viewport": [
+      390,
+      844
+    ],
+    "initial_cards": 9,
+    "after_cards": 9,
+    "posts_or_news_requests": 1,
+    "refreshCLS": 0,
+    "heightBefore": 2569.828125,
+    "heightAfter": 2569.828125,
+    "focusPreserved": true,
+    "result": "pass"
+  }
+]

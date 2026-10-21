@@ -1,0 +1,800 @@
+[
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 36903.6865,
+      "first-contentful-paint": 12490.28712824593,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.68,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 7586.694125,
+      "first-contentful-paint": 3467.2284,
+      "cumulative-layout-shift": 1.434102516356115e-05,
+      "total-blocking-time": 53.49814999999944
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 14469.39945,
+      "first-contentful-paint": 10691.52145,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.94,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1314.68335,
+      "first-contentful-paint": 1229.236125,
+      "cumulative-layout-shift": 0.15074517149965072,
+      "total-blocking-time": 35
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.87
+    },
+    "metrics": {
+      "largest-contentful-paint": 16984.445200000002,
+      "first-contentful-paint": 11906.9306,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.97,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2583.4120000000003,
+      "first-contentful-paint": 1156.7822,
+      "cumulative-layout-shift": 0.002228511479743385,
+      "total-blocking-time": 17.96354999999994
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 15557.344500000008,
+      "first-contentful-paint": 12084.678100000003,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-news-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1417.9775,
+      "first-contentful-paint": 1386.34865,
+      "cumulative-layout-shift": 0.0004852845287701821,
+      "total-blocking-time": 46
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.7,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 15303.83748769492,
+      "first-contentful-paint": 2848.708286904507,
+      "cumulative-layout-shift": 0.00333022302196949,
+      "total-blocking-time": 59
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 36912.276,
+      "first-contentful-paint": 12392.4961,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.94,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1310.58365,
+      "first-contentful-paint": 1231.236375,
+      "cumulative-layout-shift": 0.15074517149965072,
+      "total-blocking-time": 26.5
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "courses",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 14406.26755,
+      "first-contentful-paint": 10475.89555,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-courses-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.97,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2486.3435,
+      "first-contentful-paint": 1234.0877499999997,
+      "cumulative-layout-shift": 0.0007968309374958209,
+      "total-blocking-time": 47.20849999999996
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "journal",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.87
+    },
+    "metrics": {
+      "largest-contentful-paint": 16863.3746,
+      "first-contentful-paint": 11738.8567,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-journal-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1902.9082499999995,
+      "first-contentful-paint": 1352.3075,
+      "cumulative-layout-shift": 0.01092985470076086,
+      "total-blocking-time": 14
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "news",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 15486.98855,
+      "first-contentful-paint": 11941.385900000001,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-news-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 37057.49055,
+      "first-contentful-paint": 12418.50965,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.79,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 5779.806799999999,
+      "first-contentful-paint": 1227.5085,
+      "cumulative-layout-shift": 1.434102516356115e-05,
+      "total-blocking-time": 54
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-3.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "courses",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 14598.164900000002,
+      "first-contentful-paint": 10663.046200000003,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-courses-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.94,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1338.4887499999998,
+      "first-contentful-paint": 1244.2611749999996,
+      "cumulative-layout-shift": 0.15074517149965072,
+      "total-blocking-time": 70
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-3.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "journal",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.31,
+      "accessibility": 0.87
+    },
+    "metrics": {
+      "largest-contentful-paint": 15570.768950000001,
+      "first-contentful-paint": 10796.9246,
+      "cumulative-layout-shift": 0.9246658566221142,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-journal-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.93,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2422.79015,
+      "first-contentful-paint": 1280.1187250000003,
+      "cumulative-layout-shift": 0.0007968309374958209,
+      "total-blocking-time": 233.45529999999985
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-3.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "news",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 15565.909599999999,
+      "first-contentful-paint": 11945.4479,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-news-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1405.79495,
+      "first-contentful-paint": 1379.829125,
+      "cumulative-layout-shift": 0.0009256805647803887,
+      "total-blocking-time": 23
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-3.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.77,
+      "accessibility": 0.95
+    },
+    "metrics": {
+      "largest-contentful-paint": 4444.9184,
+      "first-contentful-paint": 680.9318000000001,
+      "cumulative-layout-shift": 0.0003334956348685171,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-home-desktop-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.97,
+      "accessibility": 0.95
+    },
+    "metrics": {
+      "largest-contentful-paint": 1164.1886,
+      "first-contentful-paint": 313.73575000000005,
+      "cumulative-layout-shift": 0.0003334956348685171,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "after-home-desktop-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "journal",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.59,
+      "accessibility": 0.85
+    },
+    "metrics": {
+      "largest-contentful-paint": 3042.5138500000003,
+      "first-contentful-paint": 820.55465,
+      "cumulative-layout-shift": 0.6448616613884808,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "before-journal-desktop-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 790.08825,
+      "first-contentful-paint": 306.4225,
+      "cumulative-layout-shift": 0.004297708712185312,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "after-journal-desktop-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal-all",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1950.81225,
+      "first-contentful-paint": 1384.0069250000004,
+      "cumulative-layout-shift": 0.001392475984193882,
+      "total-blocking-time": 30.5
+    },
+    "warnings": [],
+    "artifact": "after-journal-all-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture-series",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1464.0879,
+      "first-contentful-paint": 1157.2337,
+      "cumulative-layout-shift": 0.001028219387426228,
+      "total-blocking-time": 56
+    },
+    "warnings": [],
+    "artifact": "after-overture-series-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.88,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 3756.5253999999995,
+      "first-contentful-paint": 1156.65675,
+      "cumulative-layout-shift": 0.053779981889385126,
+      "total-blocking-time": 106
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "kpia",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1264.4432499999998,
+      "first-contentful-paint": 1129.1193749999998,
+      "cumulative-layout-shift": 0.0004442016193798178,
+      "total-blocking-time": 34.5
+    },
+    "warnings": [],
+    "artifact": "after-kpia-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "helori",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1314.80655,
+      "first-contentful-paint": 1231.672125,
+      "cumulative-layout-shift": 0.0048205125828556135,
+      "total-blocking-time": 70.99999999999955
+    },
+    "warnings": [],
+    "artifact": "after-helori-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "practice",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.8,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 1404.9596499999998,
+      "first-contentful-paint": 1237.966375,
+      "cumulative-layout-shift": 0.006558857287334243,
+      "total-blocking-time": 824.006725
+    },
+    "warnings": [],
+    "artifact": "after-practice-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "incubation",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1254.3542,
+      "first-contentful-paint": 1132.52565,
+      "cumulative-layout-shift": 0.001066492804611007,
+      "total-blocking-time": 20.5
+    },
+    "warnings": [],
+    "artifact": "after-incubation-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "business",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1306.0179000000003,
+      "first-contentful-paint": 1235.8597500000003,
+      "cumulative-layout-shift": 0.005761289443946925,
+      "total-blocking-time": 12
+    },
+    "warnings": [],
+    "artifact": "after-business-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "product-development",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1322.1116999999997,
+      "first-contentful-paint": 1158.0239,
+      "cumulative-layout-shift": 0.001546160588635369,
+      "total-blocking-time": 75
+    },
+    "warnings": [],
+    "artifact": "after-product-development-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "contact",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1295.3075,
+      "first-contentful-paint": 1227.52775,
+      "cumulative-layout-shift": 0.002195761189292831,
+      "total-blocking-time": 43
+    },
+    "warnings": [],
+    "artifact": "after-contact-mobile-1.json.gz"
+  }
+]

@@ -1,0 +1,506 @@
+[
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.7,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 7510.91445,
+      "first-contentful-paint": 3039.4583750000006,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 64
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1654.791,
+      "first-contentful-paint": 1231.2611,
+      "cumulative-layout-shift": 0.002071556068026025,
+      "total-blocking-time": 39
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2107.5032,
+      "first-contentful-paint": 1231.4948,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 51
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1804.2174000000002,
+      "first-contentful-paint": 1355.10895,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 10
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.69,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 7881.1273,
+      "first-contentful-paint": 3306.723,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 72
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1654.9804,
+      "first-contentful-paint": 1131.2255,
+      "cumulative-layout-shift": 0.002071556068026025,
+      "total-blocking-time": 63
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.97,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2465.9135,
+      "first-contentful-paint": 1162.918125,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 11
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2109.2693999999997,
+      "first-contentful-paint": 1373.770125,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 11.5
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.67,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 7953.919799999999,
+      "first-contentful-paint": 3508.3869,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 109
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "courses",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1652.8780000000002,
+      "first-contentful-paint": 1128.5974999999999,
+      "cumulative-layout-shift": 0.002071556068026025,
+      "total-blocking-time": 35
+    },
+    "warnings": [],
+    "artifact": "after-courses-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.97,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2565.2915000000003,
+      "first-contentful-paint": 1160.6878749999998,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 22
+    },
+    "warnings": [],
+    "artifact": "after-journal-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "news",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.98,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2250.62065,
+      "first-contentful-paint": 1355.065025,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 11
+    },
+    "warnings": [],
+    "artifact": "after-news-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.92,
+      "accessibility": 0.95
+    },
+    "metrics": {
+      "largest-contentful-paint": 1636.5277999999998,
+      "first-contentful-paint": 1036.4344999999998,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "after-home-desktop-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal",
+    "sample": 1,
+    "mode": "desktop",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 577.2278000000001,
+      "first-contentful-paint": 313.05025,
+      "cumulative-layout-shift": 0.0003264979557288986,
+      "total-blocking-time": 0
+    },
+    "warnings": [],
+    "artifact": "after-journal-desktop-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "journal-all",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1658.0469500000002,
+      "first-contentful-paint": 1208.0335999999998,
+      "cumulative-layout-shift": 9.105583443430504e-06,
+      "total-blocking-time": 16.5
+    },
+    "warnings": [],
+    "artifact": "after-journal-all-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture-series",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1803.4286000000002,
+      "first-contentful-paint": 1233.8385500000002,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 40
+    },
+    "warnings": [],
+    "artifact": "after-overture-series-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.86,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 4130.362999999999,
+      "first-contentful-paint": 1168.2037500000001,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 51
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "kpia",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1654.3213,
+      "first-contentful-paint": 1231.901625,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 38
+    },
+    "warnings": [],
+    "artifact": "after-kpia-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "helori",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1802.6702,
+      "first-contentful-paint": 1352.6702,
+      "cumulative-layout-shift": 0.002341783450641868,
+      "total-blocking-time": 69
+    },
+    "warnings": [],
+    "artifact": "after-helori-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "practice",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 1654.70105,
+      "first-contentful-paint": 1226.7106749999998,
+      "cumulative-layout-shift": 0.002764191390433987,
+      "total-blocking-time": 52.00000000000023
+    },
+    "warnings": [],
+    "artifact": "after-practice-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "incubation",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1656.3982499999997,
+      "first-contentful-paint": 1153.81295,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 83
+    },
+    "warnings": [],
+    "artifact": "after-incubation-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "business",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1653.1522,
+      "first-contentful-paint": 1231.44025,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 80
+    },
+    "warnings": [],
+    "artifact": "after-business-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "product-development",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1653.6203,
+      "first-contentful-paint": 1229.8495,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 44
+    },
+    "warnings": [],
+    "artifact": "after-product-development-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "contact",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1809.2894000000001,
+      "first-contentful-paint": 1359.2894000000001,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 56.50000000000023
+    },
+    "warnings": [],
+    "artifact": "after-contact-mobile-1.json.gz"
+  }
+]

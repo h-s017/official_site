@@ -2,7 +2,7 @@
   const coreSrc = "/assets/site-core.js?v=20260906-footer-global";
 
   const installGlobalStyle = () => {
-    if (document.getElementById("hana-global-20260910")) return;
+    if (document.getElementById("hana-global-20260910") || document.getElementById("hana-layout-css")) return;
     const style = document.createElement("style");
     style.id = "hana-global-20260910";
     style.textContent = `

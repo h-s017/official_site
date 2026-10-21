@@ -37,18 +37,29 @@
 
   const postUrl = (post) => `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
 
+  const snapshot = document.getElementById('journal-snapshot-data');
+  if (snapshot) document.querySelectorAll('main time[datetime]').forEach(time => { time.textContent = formatDate(time.dateTime); });
+  const signature = (posts) => JSON.stringify(posts.map(post => [post.slug || '', post.title || '', post.summary || '', post.cover_url || '', post.published_at || '', getDirection(post.body), post.featured === true]));
+
   const meta = (post) => {
     const direction = getDirection(post.body);
     const date = formatDate(post.published_at);
     return `<div class="journal-meta"><a href="${esc(directionUrls[direction])}">${esc(directionLabels[direction])}</a>${date ? `<span>·</span><time datetime="${esc(post.published_at)}">${esc(date)}</time>` : ''}</div>`;
   };
 
+  // Immutable published cover; derivatives match the existing centered 4:3 CSS crop.
+  // Other/new CMS images retain their original URL and are never mapped by title/slug.
+  const latestImageSource = post => post.cover_url === 'https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg'
+    ? 'src="/assets/journal/await-1790701115411-main-720.webp" srcset="/assets/journal/await-1790701115411-main-480.webp 480w, /assets/journal/await-1790701115411-main-720.webp 720w" sizes="(max-width:980px) 88vw, 58vw"'
+    : `src="${esc(post.cover_url)}"`;
+
   function renderLatest(posts) {
-    if (!latestRoot || !posts.length) return;
+    if (!latestRoot) return;
+    if (!posts.length) { latestRoot.hidden = true; latestRoot.innerHTML = ''; return; }
     const [main, ...side] = posts.slice(0, 4);
-    const mainImage = main.cover_url ? `<a href="${postUrl(main)}"><img src="${esc(main.cover_url)}" alt="" loading="eager"></a>` : '';
+    const mainImage = main.cover_url ? `<a href="${postUrl(main)}" aria-label="閱讀 ${esc(main.title || '')}"><img ${latestImageSource(main)} alt="" width="1200" height="900" fetchpriority="high" decoding="async" loading="eager"></a>` : '';
     const sideHtml = side.map((post) => {
-      const image = post.cover_url ? `<a href="${postUrl(post)}"><img src="${esc(post.cover_url)}" alt="" loading="lazy"></a>` : '';
+      const image = post.cover_url ? `<a href="${postUrl(post)}" aria-label="閱讀 ${esc(post.title || '')}"><img src="${esc(post.cover_url)}" alt="" width="118" height="118" decoding="async" loading="lazy"></a>` : '';
       return `<article>${image}<div>${meta(post)}<h3><a href="${postUrl(post)}">${esc(post.title || '')}</a></h3></div></article>`;
     }).join('');
 
@@ -63,7 +74,8 @@
   }
 
   function renderFeatured(posts) {
-    if (!featuredRoot || !posts.length) return;
+    if (!featuredRoot) return;
+    if (!posts.length) { featuredRoot.hidden = true; featuredRoot.innerHTML = ''; return; }
     const rows = posts.slice(0, 5).map((post, index) => `<article class="journal-featured-item">
       <span class="journal-featured-no">${String(index + 1).padStart(2, '0')}</span>
       <div>${meta(post)}<h3><a href="${postUrl(post)}">${esc(post.title || '')}</a></h3></div>
@@ -86,7 +98,7 @@
     const cards = visible.map((post) => {
       const direction = getDirection(post.body);
       const tag = `<a class="hana-direction" href="${esc(directionUrls[direction])}">${esc(directionLabels[direction])}</a>`;
-      const image = post.cover_url ? `<img src="${esc(post.cover_url)}" alt="" loading="lazy">` : '';
+      const image = post.cover_url ? `<img src="${esc(post.cover_url)}" alt="" width="900" height="1200" decoding="async" loading="lazy">` : '';
       const url = postUrl(post);
       const date = formatDate(post.published_at);
       return `<article class="hana-post">${image}${tag}<h3><a href="${url}">${esc(post.title || '')}</a></h3><p>${esc(post.summary || '')}</p>${date ? `<time datetime="${esc(post.published_at)}">${esc(date)}</time>` : ''}<a class="text-link" href="${url}">繼續閱讀 →</a></article>`;
@@ -98,21 +110,22 @@
 
   async function init() {
     const client = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
-    const { data, error } = await client
+    const { data, error } = await (window.HANA_CMS_POSTS || client
       .from('posts')
       .select('title,slug,summary,cover_url,published_at,body,status,featured')
       .eq('status', 'published')
-      .order('published_at', { ascending: false });
+      .order('published_at', { ascending: false }));
 
     if (error) throw error;
     const posts = Array.isArray(data) ? data : [];
+    if (snapshot && JSON.stringify(JSON.parse(snapshot.textContent)) === signature(posts)) return;
     renderLatest(posts);
     renderFeatured(posts.filter((post) => post.featured === true));
     renderAll(posts);
   }
 
   init().catch(() => {
-    if (latestRoot) {
+    if (latestRoot && !snapshot) {
       latestRoot.hidden = false;
       latestRoot.innerHTML = '<div class="wrap"><div class="empty">文章暫時無法載入，請稍後再試。</div></div>';
     }

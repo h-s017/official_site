@@ -1,0 +1,227 @@
+[
+  {
+    "page": "home",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32981/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T04:58:51.089Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 37508.9932,
+        "display": "37.5 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 12761.917300000001,
+        "display": "12.8 s"
+      },
+      "speed-index": {
+        "value": 12761.917300000001,
+        "display": "12.8 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "before-home-mobile.json.gz"
+  },
+  {
+    "page": "home",
+    "mode": "desktop",
+    "url": "http://127.0.0.1:32981/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T04:59:05.629Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.68,
+      "accessibility": 0.95
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 5112.210751281975,
+        "display": "5.1 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.0003330269988763389,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 1795.766324717117,
+        "display": "1.8 s"
+      },
+      "speed-index": {
+        "value": 1795.766324717117,
+        "display": "1.8 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    },
+    "report": "before-home-desktop.json.gz"
+  },
+  {
+    "page": "courses",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32981/courses/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T04:59:19.685Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.72,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 2799.66745,
+        "display": "2.8 s"
+      },
+      "total-blocking-time": {
+        "value": 565.4232750000001,
+        "display": "570 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1349063119585501,
+        "display": "0.135"
+      },
+      "first-contentful-paint": {
+        "value": 2705.784475,
+        "display": "2.7 s"
+      },
+      "speed-index": {
+        "value": 2705.784475,
+        "display": "2.7 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "before-courses-mobile.json.gz"
+  },
+  {
+    "page": "journal",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32981/journal/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T04:59:40.398Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.87
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 16869.728250000007,
+        "display": "16.9 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 11592.250200000002,
+        "display": "11.6 s"
+      },
+      "speed-index": {
+        "value": 11592.250200000002,
+        "display": "11.6 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "before-journal-mobile.json.gz"
+  },
+  {
+    "page": "news",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32981/news/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T04:59:55.027Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 15903.77255,
+        "display": "15.9 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 12060.558,
+        "display": "12.1 s"
+      },
+      "speed-index": {
+        "value": 12060.558,
+        "display": "12.1 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "before-news-mobile.json.gz"
+  }
+]
