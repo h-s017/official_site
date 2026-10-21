@@ -38,4 +38,3 @@ Lighthouse 原始三次結果在 lighthouse/，與上一批最後版 home 三次
 本次三次 LCP 為 2.184／2.106／2.179s。CLS 仍低於 0.1；入口按鈕啟用產生少量位移，沒有宣稱零位移。原始報告、exit code、warnings 及對照見 lighthouse/、performance-comparison.json。沒有 CrUX／RUM／INP field 數據。
 
 ENTER 方案已核定並先提供預覽，完成後依既有授權提交、合併及發布；其他首頁 h1、服務文字與課程項目仍待核定，不視為本次一併同意。價格、付款及課程資料完全未動。
-
