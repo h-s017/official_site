@@ -18,5 +18,7 @@
   ],
   "lighthouse_reports": 21,
   "field_data": false,
-  "deployed": false
+  "deployed": false,
+  "snapshot": "pre-release audit",
+  "release_status_source": "See RELEASE.md and GitHub PR/Actions records"
 }

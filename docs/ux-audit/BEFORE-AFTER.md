@@ -1,6 +1,6 @@
 # 修改前後差異
 
-產品變更只有 `assets/site.js`；其餘為報告、腳本與證據。正式站未部署，正式站仍是 Before。
+產品變更只有 `assets/site.js`；其餘為報告、腳本與證據。本文件記錄部署前的測試對照；後續發布範圍及實際狀態見 RELEASE.md。
 
 | 項目 | Before | After（本機分支） |
 |---|---|---|
@@ -18,4 +18,4 @@
 
 完整捲動對照：screenshots/before-local-scrolled-home-390x844.png 與 after-local-scrolled-home-390x844.png；其他頁面索引見 screenshots/README.md。早期 before-live 截圖是在進場動畫未全觸發時保存；不可把全頁圖中的透明區塊判為使用者捲動後的內容缺失。補拍使用真正的 instant 捲動，未改產品動畫。
 
-初次受阻的 before-browser.json、環境錯誤與 TLS 失敗結果保留為歷史紀錄；最新成功矩陣取代「無測試環境」狀態。本 PR 仍為 Draft：效能與已知 P1 尚未通過，預約正式建單／付款／完成頁尚未受控驗證。
+初次受阻的 before-browser.json、環境錯誤與 TLS 失敗結果保留為歷史紀錄；最新成功矩陣取代「無測試環境」狀態。稽核階段 PR 為 Draft：效能與已知 P1 尚未通過，預約正式建單／付款／完成頁尚未受控驗證。
