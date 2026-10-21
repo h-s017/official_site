@@ -1,0 +1,69 @@
+{
+  "base": "http://127.0.0.1:8010",
+  "rows": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "checks": {
+        "closed_tab_reaches_menu": "pass",
+        "keyboard_menu_open": "pass",
+        "menu_open_moves_focus_to_visible_link": "pass",
+        "course_expanded": "pass",
+        "last_course_focusable": "pass",
+        "escape_closes_course": "pass",
+        "escape_closes_menu": "pass",
+        "resize_restores_desktop_nav": "pass"
+      },
+      "closed_second_focus": {
+        "text": "MENU",
+        "insideNav": false
+      }
+    },
+    {
+      "viewport": [
+        320,
+        844
+      ],
+      "checks": {
+        "closed_tab_reaches_menu": "pass",
+        "keyboard_menu_open": "pass",
+        "menu_open_moves_focus_to_visible_link": "pass",
+        "course_expanded": "pass",
+        "last_course_focusable": "pass",
+        "escape_closes_course": "pass",
+        "escape_closes_menu": "pass",
+        "resize_restores_desktop_nav": "pass"
+      },
+      "closed_second_focus": {
+        "text": "MENU",
+        "insideNav": false
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "checks": {
+        "keyboard_opens_desktop_course": "pass",
+        "tab_enters_course": "pass",
+        "escape_restores_course_button": "pass",
+        "mouse_hover_opens_course": "pass"
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "checks": {
+        "keyboard_opens_desktop_course": "pass",
+        "tab_enters_course": "pass",
+        "escape_restores_course_button": "pass",
+        "mouse_hover_opens_course": "pass"
+      }
+    }
+  ]
+}

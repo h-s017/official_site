@@ -1,0 +1,1018 @@
+{
+  "started_at": "2026-10-20T20:12:20.263124+00:00",
+  "base": "https://hanascent.com",
+  "label": "before-live",
+  "axe_version": "4.10.3",
+  "rows": [
+    {
+      "page": "home",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/\nCall log:\n  - navigating to \"https://hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/\nCall log:\n  - navigating to \"https://hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/\nCall log:\n  - navigating to \"https://hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/\nCall log:\n  - navigating to \"https://hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/courses/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/courses/\nCall log:\n  - navigating to \"https://hanascent.com/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/courses/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/courses/\nCall log:\n  - navigating to \"https://hanascent.com/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/courses/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/courses/\nCall log:\n  - navigating to \"https://hanascent.com/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture-series/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture-series/\nCall log:\n  - navigating to \"https://hanascent.com/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/courses/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/courses/\nCall log:\n  - navigating to \"https://hanascent.com/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture-series/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture-series/\nCall log:\n  - navigating to \"https://hanascent.com/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture-series/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture-series/\nCall log:\n  - navigating to \"https://hanascent.com/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture-series/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture-series/\nCall log:\n  - navigating to \"https://hanascent.com/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture/\nCall log:\n  - navigating to \"https://hanascent.com/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture/\nCall log:\n  - navigating to \"https://hanascent.com/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture/\nCall log:\n  - navigating to \"https://hanascent.com/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/overture/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/overture/\nCall log:\n  - navigating to \"https://hanascent.com/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/KPIA/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/KPIA/\nCall log:\n  - navigating to \"https://hanascent.com/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/KPIA/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/KPIA/\nCall log:\n  - navigating to \"https://hanascent.com/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/KPIA/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/KPIA/\nCall log:\n  - navigating to \"https://hanascent.com/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/KPIA/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/KPIA/\nCall log:\n  - navigating to \"https://hanascent.com/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/helori/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/helori/\nCall log:\n  - navigating to \"https://hanascent.com/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/helori/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/helori/\nCall log:\n  - navigating to \"https://hanascent.com/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/helori/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/helori/\nCall log:\n  - navigating to \"https://hanascent.com/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/helori/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/helori/\nCall log:\n  - navigating to \"https://hanascent.com/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/practice/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/practice/\nCall log:\n  - navigating to \"https://hanascent.com/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/practice/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/practice/\nCall log:\n  - navigating to \"https://hanascent.com/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/practice/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/practice/\nCall log:\n  - navigating to \"https://hanascent.com/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/practice/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/practice/\nCall log:\n  - navigating to \"https://hanascent.com/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/incubation/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/incubation/\nCall log:\n  - navigating to \"https://hanascent.com/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/incubation/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/incubation/\nCall log:\n  - navigating to \"https://hanascent.com/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/incubation/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/incubation/\nCall log:\n  - navigating to \"https://hanascent.com/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/business/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/business/\nCall log:\n  - navigating to \"https://hanascent.com/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/incubation/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/incubation/\nCall log:\n  - navigating to \"https://hanascent.com/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/business/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/business/\nCall log:\n  - navigating to \"https://hanascent.com/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/business/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/business/\nCall log:\n  - navigating to \"https://hanascent.com/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/business/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/business/\nCall log:\n  - navigating to \"https://hanascent.com/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/product-development/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/product-development/\nCall log:\n  - navigating to \"https://hanascent.com/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/product-development/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/product-development/\nCall log:\n  - navigating to \"https://hanascent.com/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/product-development/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/product-development/\nCall log:\n  - navigating to \"https://hanascent.com/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/product-development/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/product-development/\nCall log:\n  - navigating to \"https://hanascent.com/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/journal/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/journal/\nCall log:\n  - navigating to \"https://hanascent.com/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/journal/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/journal/\nCall log:\n  - navigating to \"https://hanascent.com/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/journal/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/journal/\nCall log:\n  - navigating to \"https://hanascent.com/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/journal/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/journal/\nCall log:\n  - navigating to \"https://hanascent.com/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/news/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/news/\nCall log:\n  - navigating to \"https://hanascent.com/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/news/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/news/\nCall log:\n  - navigating to \"https://hanascent.com/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/news/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/news/\nCall log:\n  - navigating to \"https://hanascent.com/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/news/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/news/\nCall log:\n  - navigating to \"https://hanascent.com/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/visit.html",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/visit.html\nCall log:\n  - navigating to \"https://hanascent.com/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/visit.html",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/visit.html\nCall log:\n  - navigating to \"https://hanascent.com/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/visit.html",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/visit.html\nCall log:\n  - navigating to \"https://hanascent.com/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://hanascent.com/visit.html",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://hanascent.com/visit.html\nCall log:\n  - navigating to \"https://hanascent.com/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "booking",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://reservation.hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://reservation.hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://reservation.hanascent.com/\nCall log:\n  - navigating to \"https://reservation.hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "booking",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://reservation.hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://reservation.hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://reservation.hanascent.com/\nCall log:\n  - navigating to \"https://reservation.hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "booking",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://reservation.hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://reservation.hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://reservation.hanascent.com/\nCall log:\n  - navigating to \"https://reservation.hanascent.com/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "booking",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://reservation.hanascent.com/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "https://reservation.hanascent.com/",
+          "error": "net::ERR_CERT_AUTHORITY_INVALID"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://reservation.hanascent.com/\nCall log:\n  - navigating to \"https://reservation.hanascent.com/\", waiting until \"load\"\n"
+    }
+  ],
+  "type": "lab viewport inspection; not field performance or WCAG certification",
+  "browser": "154.0.8037.57"
+}

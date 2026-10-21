@@ -1,0 +1,311 @@
+{
+  "booking": {
+    "course_config": [
+      {
+        "series": "心村限定｜Helori 香氣探索所",
+        "course": "單人調香探索課 10ML",
+        "variant": "",
+        "price": 990,
+        "regular": 1150,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "心村限定｜Helori 香氣探索所",
+        "course": "雙人調香探索課 10ML",
+        "variant": "",
+        "price": 1980,
+        "regular": 2300,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "心村限定｜Helori 香氣探索所",
+        "course": "單人調香探索課 50ML",
+        "variant": "",
+        "price": 1800,
+        "regular": 2350,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "心村限定｜Helori 香氣探索所",
+        "course": "雙人調香探索課 50ML",
+        "variant": "",
+        "price": 3600,
+        "regular": 4700,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 1｜一日專業調香師",
+        "variant": "",
+        "price": 4500,
+        "regular": null,
+        "times": [
+          "10:00–16:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 2｜調香師的和弦練習曲",
+        "variant": "",
+        "price": 6500,
+        "regular": null,
+        "times": [
+          "10:00–16:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 1 ＋ Vol. 2",
+        "variant": "",
+        "price": 10500,
+        "regular": null,
+        "times": [
+          "10:00–16:00"
+        ],
+        "requiredSlots": 2
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Basic Lab｜配方練習",
+        "price": 800,
+        "regular": null,
+        "times": [
+          "09:00–12:00",
+          "14:00–17:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Mini Work｜10ml 基本瓶器",
+        "price": 1150,
+        "regular": null,
+        "times": [
+          "09:00–12:00",
+          "14:00–17:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Full Work｜50ml 基本瓶器",
+        "price": 2080,
+        "regular": null,
+        "times": [
+          "09:00–12:00",
+          "14:00–17:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "氣味藝術序曲系列",
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Candle Work｜蠟燭",
+        "price": 1580,
+        "regular": null,
+        "times": [
+          "09:00–12:00",
+          "14:00–17:00"
+        ],
+        "requiredSlots": null
+      },
+      {
+        "series": "韓國 KPIA 調香協會系列",
+        "course": "KPIA大韓專業調香師課程",
+        "variant": "",
+        "price": 39000,
+        "regular": null,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": 12
+      },
+      {
+        "series": "韓國 KPIA 調香協會系列",
+        "course": "KPIA 專業調香師雙證書課（優惠加購無酒精香水證書）",
+        "variant": "",
+        "price": 44000,
+        "regular": null,
+        "times": [
+          "09:00–11:00",
+          "11:00–13:00",
+          "14:00–16:00",
+          "16:00–18:00"
+        ],
+        "requiredSlots": 12
+      },
+      {
+        "series": "韓國 KPIA 調香協會系列",
+        "course": "KPIA無酒精香水課程",
+        "variant": "",
+        "price": 6500,
+        "regular": null,
+        "times": [
+          "10:00–15:00"
+        ],
+        "requiredSlots": null
+      }
+    ],
+    "slot_price_groups": [
+      {
+        "course": "單人調香探索課 10ML",
+        "variant": "",
+        "price": 990
+      },
+      {
+        "course": "雙人調香探索課 10ML",
+        "variant": "",
+        "price": 1980
+      },
+      {
+        "course": "單人調香探索課 50ML",
+        "variant": "",
+        "price": 1800
+      },
+      {
+        "course": "雙人調香探索課 50ML",
+        "variant": "",
+        "price": 3600
+      },
+      {
+        "course": "KPIA大韓專業調香師課程",
+        "variant": "",
+        "price": 39000
+      },
+      {
+        "course": "KPIA 專業調香師雙證書課（優惠加購無酒精香水證書）",
+        "variant": "",
+        "price": 44000
+      },
+      {
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Basic Lab｜配方練習",
+        "price": 800
+      },
+      {
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Mini Work｜10ml 基本瓶器",
+        "price": 1150
+      },
+      {
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Full Work｜50ml 基本瓶器",
+        "price": 2080
+      },
+      {
+        "course": "Vol. 0｜氣味自修室",
+        "variant": "Candle Work｜蠟燭",
+        "price": 1580
+      },
+      {
+        "course": "KPIA無酒精香水課程",
+        "variant": "",
+        "price": 6500
+      },
+      {
+        "course": "Vol. 1｜一日專業調香師",
+        "variant": "",
+        "price": 4500
+      },
+      {
+        "course": "Vol. 2｜調香師的和弦練習曲",
+        "variant": "",
+        "price": 6500
+      },
+      {
+        "course": "Vol. 1 ＋ Vol. 2",
+        "variant": "",
+        "price": 10500
+      }
+    ],
+    "reached_step4": true,
+    "step4_axe": [
+      {
+        "id": "label",
+        "nodes": [
+          {
+            "target": [
+              "#fName"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": [
+              "#fPhone"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": [
+              "#fEmail"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": [
+              "#fLine"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "target": [
+              "#fWebsite"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      }
+    ],
+    "empty_validation": "請填寫姓名、有效手機與 Email。",
+    "limit": "Stopped before valid prepareOrder: step5 confirmation already calls POST /api/orders and creates a live order. Payment and completion not exercised."
+  },
+  "contact": {
+    "prefilled_service": "香氛產品開發",
+    "mock_failure": "目前無法送出。\n\n請稍後再試一次；若持續無法送出，請透過網站其他聯絡方式與我們聯繫。",
+    "failure_retains_name": true,
+    "button_reenabled": true,
+    "mock_success": "洽詢已送出。\n\n我們會依您提供的專案資訊進行初步確認，再與您聯繫。",
+    "success_resets_name": true,
+    "scope": "POST fulfilled inside Playwright; no message sent to Formspree or recipient."
+  },
+  "news_failure": {
+    "visible_loading": false,
+    "main_text": "目前無法載入最新消息。"
+  },
+  "live_writes": 0,
+  "blocked_mutations": [
+    "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/analytics_events"
+  ]
+}

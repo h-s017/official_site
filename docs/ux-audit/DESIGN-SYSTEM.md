@@ -1,6 +1,6 @@
 # 現有設計規範與建議
 
-狀態：原始碼盤點，未完成 computed style 或視覺驗證；未改動品牌。
+狀態：已完成原始碼、四 viewport、computed 字級與 axe 對比盤點；保留品牌，未全面覆蓋 CSS。詳細實測值見 results/*matrix.json。
 
 | 項目 | 現況依據 | 建議／驗收方向 |
 |---|---|---|
@@ -15,3 +15,5 @@
 | 動態 | 首頁 intro 15 秒輪播；消息 marquee 28/34 秒；部分 reduced-motion 規則 | 驗證鍵盤 focus 時靜止、暫停與 reduced-motion。檢查其他 transition 不可只憑已有 media query 判通過 |
 
 後續統一元件應以現有 `.btn`、page hero、section head、卡片與 Footer 為單位，逐項處理 CSS 優先序。暫不做全站重構、服務改名、全面圖片深色化或新設計系統覆蓋。
+
+實測補充：首頁入口數字在 #fafafa 背景使用 #767676，axe 量到 4.35:1；Journal meta 與自修室亦有對比警示。共用導覽的 inert／aria-controls／aria-expanded 為本次技術修正，沒有增加陰影、漸層、裝飾或更換字體。
