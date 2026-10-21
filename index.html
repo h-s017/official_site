@@ -109,15 +109,6 @@
   <link rel="preload" href="/assets/fonts/noto-serif-tc-latin-v37.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/hana-cms.css" />
-  <script>
-    (() => {
-      try {
-        if (window.sessionStorage.getItem("hana-intro-seen") === "1") {
-          document.documentElement.classList.add("skip-home-intro");
-        }
-      } catch (_) {}
-    })();
-  </script>
   <style>
     .site-nav{align-items:center!important;background:#fff!important;}
     .logo{display:inline-flex!important;align-items:center!important;gap:15px!important;}
@@ -126,21 +117,26 @@
     .nav-links a{display:inline-flex!important;align-items:center!important;height:34px!important;padding:0 0 9px!important;line-height:1!important;margin:0!important;border-bottom:1px solid transparent;}
     .nav-links a:hover,.nav-links a.active{border-color:var(--black)!important;}
 
-    .skip-home-intro .intro-screen{display:none!important;}
     body.intro-open{overflow:hidden!important;}
-    .skip-home-intro body.intro-open{overflow:auto!important;}
-    .intro-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:#fff;opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease;}
-    .intro-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none;}
+    .intro-screen{position:fixed;inset:0;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:#fff;color:#111;display:none;}
+    .intro-screen[open]{display:grid;place-items:center;}
+    .intro-screen::backdrop{background:#fff;}
+    .intro-open-button{min-height:44px;padding:8px 0;border:0;border-bottom:1px solid currentColor;background:transparent;color:#111;font:inherit;font-size:14px;letter-spacing:.08em;cursor:pointer;}
+    .intro-open-button[hidden]{display:none!important;}
+    .intro-controls{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));z-index:3;display:flex;gap:8px;}
+    .intro-controls button{min-height:44px;min-width:44px;padding:10px 14px;border:0;background:#fff;color:#111;cursor:pointer;}
+    .intro-open-button:focus-visible,.intro-screen button:focus-visible{outline:2px solid #111;outline-offset:4px;}
+    .intro-screen:not([open]) .intro-slide,.intro-screen.is-paused .intro-slide{animation-play-state:paused;}
     .intro-slides{position:absolute;inset:0;overflow:hidden;background:#fff;cursor:pointer;}
     .intro-slide{position:absolute;inset:-2%;margin:0;opacity:0;will-change:opacity,transform;animation:intro-sequence 15s ease-in-out infinite;}
     .intro-slide:nth-child(1){--intro-from:-4%;--intro-to:2%;animation-delay:0s;}
     .intro-slide:nth-child(2){--intro-from:4%;--intro-to:-2%;animation-delay:5s;}
     .intro-slide:nth-child(3){--intro-from:-4%;--intro-to:2%;animation-delay:10s;}
     .intro-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.82) contrast(.96);}
-    .intro-enter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;padding:0;border:0;background:transparent;color:#fff;font-family:var(--font-serif);font-size:clamp(26px,4vw,34px);line-height:1;letter-spacing:.2em;writing-mode:vertical-rl;text-orientation:upright;cursor:pointer;text-shadow:0 1px 4px rgba(0,0,0,.42);}
+    .intro-enter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;padding:16px 12px;min-width:44px;min-height:44px;border:0;background:rgba(0,0,0,.65);color:#fff;font-family:var(--font-serif);font-size:clamp(26px,4vw,34px);line-height:1;letter-spacing:.2em;writing-mode:vertical-rl;text-orientation:upright;cursor:pointer;text-shadow:none;}
     @keyframes intro-sequence{0%{opacity:0;transform:translateX(var(--intro-from)) scale(1.04)}8%{opacity:1}28%{opacity:1}36%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}100%{opacity:0;transform:translateX(var(--intro-to)) scale(1.08)}}
     @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3){display:grid;place-items:center;background:#fff}.intro-slide:nth-child(3) img{width:94%;height:94%;object-position:center center}.intro-enter{font-size:30px}}
-    @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}}
+    @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}.intro-pause{display:none}}
 
     /* Homepage density: preserve the current design, shorten vertical travel. */
     .hero{padding:20px 5vw 42px!important;}
@@ -262,19 +258,23 @@
       .entrance-path:nth-child(3){width:94%!important;margin-left:1%!important;}
       .entrance-path:nth-child(4){width:82%!important;margin-left:18%!important;}
       .entrance-meta,.about-brief-copy,.home-about-heading{overflow-wrap:anywhere;}
+      .home-about-heading > div{min-width:0;max-width:100%;}
+      .home-about-heading h2{white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere!important;}
+      .home-about-heading .about-role-en{white-space:normal;word-break:normal;overflow-wrap:anywhere;}
     }
   </style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
 </head>
-<body class="intro-open" data-hana-page="home">
-  <div class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 首頁入口">
+<body data-hana-page="home" data-hana-intro="optional">
+  <dialog class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 藝術影像">
+    <div class="intro-controls"><button class="intro-pause" type="button" aria-pressed="false">暫停播放</button><button class="intro-close" type="button" autofocus aria-label="關閉藝術影像">關閉 ×</button></div>
     <div class="intro-slides" aria-hidden="true">
-      <figure class="intro-slide"><img src="/assets/intro/ciyu-exterior.webp" width="1229" height="1536" alt=""></figure>
-      <figure class="intro-slide"><img src="/assets/intro/perfume-worktable.jpg?v=20260730-2" alt=""></figure>
-      <figure class="intro-slide"><img src="/assets/intro/sunlit-perfume.jpg?v=20260730-2" alt=""></figure>
+      <figure class="intro-slide"><img data-src="/assets/intro/ciyu-exterior.webp" width="1229" height="1536" alt=""></figure>
+      <figure class="intro-slide"><img data-src="/assets/intro/perfume-worktable.jpg?v=20260730-2" alt=""></figure>
+      <figure class="intro-slide"><img data-src="/assets/intro/sunlit-perfume.jpg?v=20260730-2" alt=""></figure>
     </div>
-    <button class="intro-enter" type="button">ENTER</button>
-  </div>
+    <button class="intro-enter" type="button" aria-label="ENTER，返回首頁">ENTER</button>
+  </dialog>
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="/">HANA SCENT ARTIST</a>
     <div class="nav-links"></div>
@@ -287,6 +287,7 @@
       <div class="hero-panel">
         <div>        
           <p class="hero-text">將 人、記憶、音樂、場域，轉譯成用氣味記錄的形式。</p>
+          <button class="intro-open-button" type="button" aria-haspopup="dialog" aria-controls="intro-screen" hidden>藝術影像 · ENTER</button>
         </div>
       </div>
     </div>
@@ -391,23 +392,6 @@
   <script src="/assets/cms-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="/assets/hana-cms.js?v=20260814-news2m"></script>
-  <script>
-    (() => {
-      const intro = document.getElementById("intro-screen");
-      if (!intro) return;
-      const enter = intro.querySelector(".intro-enter");
-      const closeIntro = () => {
-        intro.classList.add("is-leaving");
-        document.body.classList.remove("intro-open");
-        try { window.sessionStorage.setItem("hana-intro-seen", "1"); } catch (_) {}
-        window.setTimeout(() => intro.remove(), 720);
-      };
-      intro.addEventListener("click", closeIntro);
-      enter?.addEventListener("click", (event) => {
-        event.stopPropagation();
-        closeIntro();
-      });
-    })();
-  </script>
+  <script src="/assets/optional-intro.js"></script>
 </body>
 </html>

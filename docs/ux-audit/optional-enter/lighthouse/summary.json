@@ -1,0 +1,65 @@
+[
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 2184.186275,
+      "first-contentful-paint": 1232.373525,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 22.5
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 2106.471,
+      "first-contentful-paint": 1206.471,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 58
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": 2179.242375,
+      "first-contentful-paint": 1278.6918750000002,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 22
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-3.json.gz"
+  }
+]

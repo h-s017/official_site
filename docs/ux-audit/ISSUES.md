@@ -26,7 +26,7 @@
 - 修改檔案：`index.html:266`、`index.html:390`；首頁互動方案須審核。
 - 驗收條件：保留或調整 ENTER 須人工核定；若保留，初始焦點可見、背景不能聚焦、關閉後可繼續主流程，動畫可依使用者偏好停止；不用滑鼠也可完成入口。
 - 截圖：screenshots/before-live-home-390x844-intro.png、before-local-scrolled-home-390x844.png；intro 的完整輔具行為仍待人工測試。
-- 狀態：source 缺少焦點管理已確認；動態測試及首頁方案待審。
+- 狀態：第三階段方案已由使用者核定，改為可選藝術影像 dialog，首頁直接可用；原生 modal 隔離背景焦點，Escape／關閉／ENTER 返回觸發按鈕，提供暫停及 reduced-motion。7 情境通過、四 viewport dialog axe 零違規。證據：`optional-enter/results.json`、`optional-enter/README.md`。
 
 ## UX-003｜消息永久載入推論（撤回，不計入有效問題數）
 
@@ -148,3 +148,5 @@
 ## 第二階段狀態補充
 
 有效問題維持 10 項（P0 1、P1 8、P2 1），未以同一原因拆成多筆增加數量。UX-001 前批已發布；本批完成 UX-009 與 UX-010 的技術修正。UX-007 效能已有改善，但全頁目標仍需逐頁追蹤；首頁 ENTER／h1、課程資訊與其他品牌內容依核定表等待人工決策。UX-008 只提前輸出既有規則，未全面重構。
+
+第三階段：使用者核定 ENTER 可選方案，完成 UX-002；首頁 mobile lab 三次中位數 Performance 99、LCP 2.179s、CLS 0.0265。UX-007 仍保留其他頁效能後續，其他首頁／課程文字決策未一併核定。

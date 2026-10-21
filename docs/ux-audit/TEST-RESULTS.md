@@ -168,3 +168,9 @@ Journal 的實驗室中位數達到本次內部門檻；其中一次 LCP 仍略�
 ## 發布後正式站確認
 
 PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 15/15 程式資產 SHA-256 比對、Journal／archive／News 12/12 四 viewport（axe 零違規、零 root 溢出）、正式導航 26/26；另附正式 Journal 手機／桌機截圖。這些是唯讀發布後 smoke tests，不是另一輪 Lighthouse 或 field 驗收；付款未重測。後續提交僅保存證據，不修改產品程式。
+
+## 第三階段：ENTER 可選入口
+
+使用者核定可選入口並先提供預覽。`optional-enter/check.py` 的 7 情境全部通過，四 viewport 初訪未開啟藝術影像、無 intro 圖片請求、零 root 溢出；modal 背景不能聚焦，Escape／兩個關閉控制返回焦點，暫停、no-JS、儲存不可用與 reduced-motion 正常。四份 modal axe 零違規。預覽與原始結果在 `optional-enter/`。
+
+首頁 mobile 最後三次 lab 中位數：Performance 69→99、Accessibility 96→96、LCP 7.881→2.179s、CLS 0→0.0265。既有首頁對比與 h1 決策尚未完成；沒有 CrUX／RUM／INP 驗收。本階段沒有進行預約或付款。

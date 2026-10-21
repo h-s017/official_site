@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
-  if (isHomepage && !hasSeenIntro && !document.getElementById("intro-screen")) {
+  if (isHomepage && document.body.dataset.hanaIntro !== "optional" && !hasSeenIntro && !document.getElementById("intro-screen")) {
     document.body.classList.add("intro-open");
     const intro = document.createElement("div");
     intro.id = "intro-screen";
