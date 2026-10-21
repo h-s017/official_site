@@ -1,0 +1,137 @@
+[
+  {
+    "page": "home",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32997/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T03:23:28.215Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.55,
+      "accessibility": 0.96
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 37507.4608,
+        "display": "37.5 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 12675.9434,
+        "display": "12.7 s"
+      },
+      "speed-index": {
+        "value": 12675.9434,
+        "display": "12.7 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "after-local-home-mobile.json.gz"
+  },
+  {
+    "page": "home",
+    "mode": "desktop",
+    "url": "http://127.0.0.1:32997/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T03:23:42.851Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.66,
+      "accessibility": 0.95
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 5286.516600000001,
+        "display": "5.3 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 2025.069,
+        "display": "2.0 s"
+      },
+      "speed-index": {
+        "value": 2025.069,
+        "display": "2.0 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    },
+    "report": "after-local-home-desktop.json.gz"
+  },
+  {
+    "page": "courses",
+    "mode": "mobile",
+    "url": "http://127.0.0.1:32997/courses/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-21T03:23:57.287Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.56,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 14667.52765,
+        "display": "14.7 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 10511.33015,
+        "display": "10.5 s"
+      },
+      "speed-index": {
+        "value": 10511.33015,
+        "display": "10.5 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "after-local-courses-mobile.json.gz"
+  }
+]

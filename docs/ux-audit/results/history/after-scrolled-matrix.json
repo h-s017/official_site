@@ -1,0 +1,946 @@
+{
+  "started_at": "2026-10-21T03:19:01.543254+00:00",
+  "base": "http://127.0.0.1:8010",
+  "label": "after-scrolled",
+  "axe_version": "4.10.3",
+  "rows": [
+    {
+      "page": "home",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "home",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/courses/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/courses/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/courses/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/courses/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/courses/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/courses/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "courses",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/courses/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/courses/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/courses/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/courses/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture-series/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture-series/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture-series/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture-series/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture-series/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture-series/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture-series",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/overture-series/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture-series/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture-series/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture-series/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "overture",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/overture/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/overture/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/overture/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/overture/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/KPIA/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/KPIA/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/KPIA/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/KPIA/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/KPIA/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/KPIA/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "kpia",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/KPIA/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/KPIA/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/KPIA/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/KPIA/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/helori/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/helori/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/helori/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/helori/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/helori/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/helori/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "helori",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/helori/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/helori/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/helori/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/helori/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/practice/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/practice/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/practice/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/practice/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/practice/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/practice/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "practice",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/practice/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/practice/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/practice/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/practice/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/incubation/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/incubation/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/incubation/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/incubation/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/incubation/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/incubation/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "incubation",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/incubation/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/incubation/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/incubation/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/incubation/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/business/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/business/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/business/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/business/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/business/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/business/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "business",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/business/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/business/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/business/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/business/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/product-development/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/product-development/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/product-development/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/product-development/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/product-development/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/product-development/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "product-development",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/product-development/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/product-development/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/product-development/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/product-development/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/journal/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/journal/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/journal/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/journal/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/journal/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/journal/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/journal/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/journal/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/journal/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/journal/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/news/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/news/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/news/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/news/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/news/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/news/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/news/",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/news/",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/news/\nCall log:\n  - navigating to \"http://127.0.0.1:8010/news/\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/visit.html",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/visit.html\nCall log:\n  - navigating to \"http://127.0.0.1:8010/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "http://127.0.0.1:8010/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/visit.html",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/visit.html\nCall log:\n  - navigating to \"http://127.0.0.1:8010/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "http://127.0.0.1:8010/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/visit.html",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/visit.html\nCall log:\n  - navigating to \"http://127.0.0.1:8010/visit.html\", waiting until \"load\"\n"
+    },
+    {
+      "page": "contact",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "http://127.0.0.1:8010/visit.html",
+      "errors": [],
+      "failed_requests": [
+        {
+          "url": "http://127.0.0.1:8010/visit.html",
+          "error": "net::ERR_EMPTY_RESPONSE"
+        }
+      ],
+      "http_errors": [],
+      "capture": "failed",
+      "error": "Page.goto: net::ERR_EMPTY_RESPONSE at http://127.0.0.1:8010/visit.html\nCall log:\n  - navigating to \"http://127.0.0.1:8010/visit.html\", waiting until \"load\"\n"
+    }
+  ],
+  "type": "lab viewport inspection; not field performance or WCAG certification",
+  "browser": "154.0.8037.57"
+}

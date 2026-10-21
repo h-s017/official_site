@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-21 Asia/Taipei",
+  "chromium": "154.0.8037.57",
+  "axe-core": "4.10.3",
+  "lighthouse": "12.8.2",
+  "tls": "Enabled; environment proxy CA added to browser NSS trust during test commands",
+  "proxy": "Inherited HTTPS_PROXY; loopback bypass only for local fixture servers",
+  "initial_environment": "results/environment.txt records historical failures, superseded by successful matrix evidence",
+  "latest_before": "before-live-matrix.json",
+  "latest_after": "after-local-scrolled-matrix.json",
+  "before_local_comparison": "before-local-scrolled-matrix.json",
+  "final_nav": "after-nav-final.json",
+  "no_field_data": true
+}

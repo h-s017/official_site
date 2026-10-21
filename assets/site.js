@@ -22,6 +22,9 @@
         .site-nav .nav-dropdown-menu{min-width:0!important;}
         .site-nav .nav-dropdown-menu a{white-space:normal!important;overflow-wrap:anywhere;}
       }
+      /* Disclosure state also controls visibility; focus/hover CSS cannot expose a closed panel. */
+      .nav-dropdown:not(.is-open) .nav-dropdown-menu{opacity:0!important;visibility:hidden!important;pointer-events:none!important;}
+      .nav-dropdown.is-open .nav-dropdown-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;}
       .about-role-en{display:block;margin-top:10px;color:var(--gray500);font-family:"Cormorant Garamond",serif;font-size:clamp(14px,1.3vw,18px);font-weight:400;letter-spacing:.12em;line-height:1.45;}
       .footer-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr) minmax(200px,.8fr)!important;column-gap:clamp(42px,6vw,96px)!important;row-gap:0!important;align-items:start!important;}
       .footer-col{min-width:0;}.footer-brand-col{line-height:1.85!important}.footer-brand-title{display:block;margin-bottom:24px}.footer-brand-meta{display:block;margin-bottom:24px}.footer-role-zh,.footer-role-en{display:block}.footer-role-zh{font-size:14px;letter-spacing:.08em;line-height:1.7}.footer-role-en{margin-top:4px;font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:.14em;line-height:1.55;color:var(--gray500)}.footer-brand-copy{display:block;margin-bottom:24px}
@@ -121,8 +124,8 @@
     nav.innerHTML = `
       <a href="https://hineni.hanascent.com/">此域 HINENI</a>
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-haspopup="true" aria-expanded="false">專業調香</button>
-        <div class="nav-dropdown-menu" role="menu">
+        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">專業調香</button>
+        <div class="nav-dropdown-menu" id="hana-course-links">
           <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
           <a class="nav-subitem" href="/accord-etude/"><strong class="nav-vol">Vol. 2</strong>　調香師的和弦練習曲</a>
@@ -138,21 +141,85 @@
 
     const dropdown = nav.querySelector(".nav-dropdown");
     const button = nav.querySelector(".nav-drop-button");
-    button?.addEventListener("click", (event) => {
-      if (!window.matchMedia("(max-width:980px)").matches) return;
-      event.preventDefault();
-      const open = dropdown.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(open));
+    const courseLinks = nav.querySelector(".nav-dropdown-menu");
+    const mobileViewport = window.matchMedia("(max-width:760px)");
+    nav.id = nav.id || "hana-navigation";
+    mobileMenu?.setAttribute("aria-controls", nav.id);
+
+    const setCourseOpen = (open) => {
+      dropdown?.classList.toggle("is-open", open);
+      button?.setAttribute("aria-expanded", String(open));
+      if (courseLinks) courseLinks.inert = !open;
+    };
+    const closeMobileMenu = () => {
+      siteNav?.classList.remove("menu-open");
+      if (mobileMenu) {
+        mobileMenu.textContent = "MENU";
+        mobileMenu.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-label", "開啟導覽選單");
+      }
+      setCourseOpen(false);
+    };
+    const syncNavigationState = () => {
+      const closed = mobileViewport.matches && !siteNav?.classList.contains("menu-open");
+      if (closed && nav.contains(document.activeElement)) mobileMenu?.focus();
+      const wasClosed = nav.inert;
+      nav.inert = closed;
+      if (!closed && wasClosed && mobileViewport.matches && document.activeElement === mobileMenu) {
+        nav.querySelector("a")?.focus();
+      }
+      if (closed) setCourseOpen(false);
+    };
+    button?.addEventListener("click", () => {
+      setCourseOpen(button.getAttribute("aria-expanded") !== "true");
     });
+    button?.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowDown") return;
+      event.preventDefault();
+      setCourseOpen(true);
+      courseLinks?.querySelector("a")?.focus();
+    });
+    dropdown?.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse" && !mobileViewport.matches) setCourseOpen(true);
+    });
+    dropdown?.addEventListener("pointerleave", () => {
+      if (!dropdown.contains(document.activeElement)) setCourseOpen(false);
+    });
+    dropdown?.addEventListener("focusout", (event) => {
+      if (!dropdown.contains(event.relatedTarget)) setCourseOpen(false);
+    });
+    siteNav?.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (dropdown?.classList.contains("is-open")) {
+        event.preventDefault();
+        setCourseOpen(false);
+        button?.focus();
+      } else if (mobileViewport.matches && siteNav.classList.contains("menu-open")) {
+        event.preventDefault();
+        closeMobileMenu();
+        mobileMenu?.focus();
+      }
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (siteNav?.contains(event.target)) return;
+      setCourseOpen(false);
+      if (mobileViewport.matches) closeMobileMenu();
+    });
+    mobileViewport.addEventListener("change", () => {
+      closeMobileMenu();
+      syncNavigationState();
+    });
+    if (siteNav) new MutationObserver(syncNavigationState).observe(siteNav, {
+      attributes: true, attributeFilter: ["class"]
+    });
+    setCourseOpen(false);
+    syncNavigationState();
     nav.querySelectorAll("a").forEach((link) => {
       const href = link.getAttribute("href");
       const path = window.location.pathname;
       if (href !== "/" && path.startsWith(href)) link.classList.add("active");
       link.addEventListener("click", () => {
-        siteNav?.classList.remove("menu-open");
-        dropdown?.classList.remove("is-open");
-        button?.setAttribute("aria-expanded","false");
-        if (mobileMenu) { mobileMenu.textContent = "MENU"; mobileMenu.setAttribute("aria-expanded","false"); }
+        closeMobileMenu();
       });
     });
   };

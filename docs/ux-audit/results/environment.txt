@@ -1,0 +1,13 @@
+Audit prepared: 2026-10-21 Asia/Taipei (host commands recorded 2026-10-20 UTC).
+Git clone h-s017/official_site: exit 128; Failed to connect to proxy port 8080.
+curl https://hanascent.com/: exit 7; Failed to connect to proxy port 8080.
+Network policy: unrestricted HTTP; vpn_configured=false. Proxy preserved; no bypass attempted.
+GitHub connector: available; branch audit/ux-ui-v2 created from fd28c1bbcaf4a6236565bf4bf2539ddbe4538d6e.
+Source fetched through GitHub connector at fixed commit; not a complete clone.
+Binary assets, Google Fonts, remote SDK, CMS data and third-party forms not downloaded.
+python http.server in default sandbox: PermissionError [Errno 1] Operation not permitted.
+Additional network permission request for local server: cancelled; server not started.
+Python Playwright installed; /usr/bin/chromium present.
+Playwright Chromium launch: TargetClosedError; crashpad setsockopt Operation not permitted (1).
+No page navigation, viewport checks, screenshot, axe-core or Lighthouse completed.
+No CrUX/RUM data obtained. No field INP, LCP, CLS or WCAG conformance claim.

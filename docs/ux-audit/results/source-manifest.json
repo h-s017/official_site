@@ -1,0 +1,787 @@
+{
+  "audit_date": "2026-10-21 (Asia/Taipei)",
+  "baseline_commit": "fd28c1bbcaf4a6236565bf4bf2539ddbe4538d6e",
+  "repository": "h-s017/official_site",
+  "deployment_run": "https://github.com/h-s017/official_site/actions/runs/38419469231",
+  "deployment_branch": "main",
+  "deployment_conclusion": "success",
+  "deployment_updated_at": "2026-10-13T15:09:20Z",
+  "scope": "Source manifest; not a git clone; binary assets not downloaded",
+  "files": [
+    {
+      "path": ".github/workflows/migrate-overture.yml",
+      "sha": "af5920e88c69b214db1261207a91570ff4828c46",
+      "size": 2518
+    },
+    {
+      "path": "CNAME",
+      "sha": "4388cc5a5f63aa479e285f4cf51f8c851c15c632",
+      "size": 13
+    },
+    {
+      "path": "KPIA.html",
+      "sha": "bc66f19a8e65d00ef9333e60977ae3ae1558c061",
+      "size": 280
+    },
+    {
+      "path": "KPIA/index.html",
+      "sha": "3c928c3459361ca002db75be680ebedc1fc2a1e2",
+      "size": 6685
+    },
+    {
+      "path": "README.md",
+      "sha": "ab128770d2a0fc05bc9a614b77b9fae5277032c9",
+      "size": 623
+    },
+    {
+      "path": "about.html",
+      "sha": "94d4783dfdaf1c0b86effadc7b9b6a84e77ec8c0",
+      "size": 265
+    },
+    {
+      "path": "accord-etude/index.html",
+      "sha": "2ad5a53322fddebba8b89d3625647c1c2409c129",
+      "size": 8190
+    },
+    {
+      "path": "admin/analytics.html",
+      "sha": "acdcc66be96fa7714f99b9f1c7791cc4b7cdfd17",
+      "size": 10447
+    },
+    {
+      "path": "admin/app.js",
+      "sha": "8a4f18dfc54a2cb720f06733f119b940b22510d1",
+      "size": 28729
+    },
+    {
+      "path": "admin/ciyu-marketing/index.html",
+      "sha": "f1f51175c7994378778b643d98dfb907b41b2cf6",
+      "size": 10639
+    },
+    {
+      "path": "admin/config.js",
+      "sha": "3b9171f9ac1a2f07cf35e2106d59bd49c6f3ced4",
+      "size": 390
+    },
+    {
+      "path": "admin/emergency-actions.js",
+      "sha": "42dab3a43800dcb72105bc34e3fa8d04cc58ac90",
+      "size": 6347
+    },
+    {
+      "path": "admin/home.html",
+      "sha": "1bc110ac20696e3900e932944be5ceff548d3be7",
+      "size": 20714
+    },
+    {
+      "path": "admin/index.html",
+      "sha": "c4f62204138d23e4d8a790cd1cbb0d2b247b48e4",
+      "size": 39617
+    },
+    {
+      "path": "admin/journal-fix.js",
+      "sha": "48d80c2f6f6e9aeebb7d300df911398a4a33f0ff",
+      "size": 11825
+    },
+    {
+      "path": "admin/styles.css",
+      "sha": "a3a92654025083ffa7f98060590c8f111c0bdfc9",
+      "size": 7011
+    },
+    {
+      "path": "assets/1.png",
+      "sha": "4ca492244f1bb373ccbbe5766320a9918a50bde2",
+      "size": 474529
+    },
+    {
+      "path": "assets/2.png",
+      "sha": "8d79eaad141818f5255aeb978216ed766c571a34",
+      "size": 1850527
+    },
+    {
+      "path": "assets/3.png",
+      "sha": "690be104a75f690ae1bb14349e578fc1f2bfc6aa",
+      "size": 1497074
+    },
+    {
+      "path": "assets/4.png",
+      "sha": "c6b333cd55608b00f030d0285633159a4862205f",
+      "size": 1790852
+    },
+    {
+      "path": "assets/5.png",
+      "sha": "00e764721fbbb58335b80b0c07cf19b617ebc8ff",
+      "size": 1499370
+    },
+    {
+      "path": "assets/FIND YOUR HELORI.png",
+      "sha": "2dfb6cd53d0d7a0546b7dcb2532afeed0a2d16ee",
+      "size": 2335241
+    },
+    {
+      "path": "assets/about-me-homepage-oval-vertical-4x5.png",
+      "sha": "d6600c7b75a9479d2cdf9b420396acbdee947c2c",
+      "size": 843655
+    },
+    {
+      "path": "assets/atelier/blooming-tears.png",
+      "sha": "d088da08039a82535c6b5adbff6a919babfdaf15",
+      "size": 2461129
+    },
+    {
+      "path": "assets/atelier/intention.png",
+      "sha": "a5f7b1a07f44c70c9a7c9064c83a7ab84d507a76",
+      "size": 2518399
+    },
+    {
+      "path": "assets/atelier/summer-green.png",
+      "sha": "3b58780c14ec733e58c8db039676697b8c50da2d",
+      "size": 2098913
+    },
+    {
+      "path": "assets/cms-config.js",
+      "sha": "5be840607f3f202b72415e9a8e67c978ed8bfcc2",
+      "size": 157
+    },
+    {
+      "path": "assets/events/2026-08-aroma-idol.jpg",
+      "sha": "44fb0aa8e16e413596b88f82f9e0ae06ffaa3684",
+      "size": 275331
+    },
+    {
+      "path": "assets/events/2026-08-open-house.jpg",
+      "sha": "53a2d7c03ec8920beadd39bcdeadd0c4ce8985c9",
+      "size": 209005
+    },
+    {
+      "path": "assets/events/2026-village-on-the-air.jpg",
+      "sha": "f9a38202572d540c631377ff3fe69ca369add827",
+      "size": 381417
+    },
+    {
+      "path": "assets/footer-email.svg",
+      "sha": "ccef5bd58677e449c4a65d68a031fc5807cc8788",
+      "size": 245
+    },
+    {
+      "path": "assets/footer-facebook.svg",
+      "sha": "e637698af5f4e8cdda5c73e76f1cf3399f10bdb3",
+      "size": 208
+    },
+    {
+      "path": "assets/footer-instagram.svg",
+      "sha": "d50c9d305d5d2a9cb4c9dd14761e6214f8daef6b",
+      "size": 300
+    },
+    {
+      "path": "assets/footer-line.svg",
+      "sha": "91eab3cb283b5be47f223553802c22dd4a1a34c4",
+      "size": 450
+    },
+    {
+      "path": "assets/hana-blog.js",
+      "sha": "5f08e6e261a30846643aa46771fd7a8d66a9661a",
+      "size": 7234
+    },
+    {
+      "path": "assets/hana-cms.css",
+      "sha": "268fcd6cd151bd7f35250783731671fd58b105c4",
+      "size": 2453
+    },
+    {
+      "path": "assets/hana-cms.js",
+      "sha": "ab59818917c56dc5ca150358b3a8ecefbebba08f",
+      "size": 16541
+    },
+    {
+      "path": "assets/homepage-cover.png",
+      "sha": "ce4550e6a03340c66ffa491015ccdfbf0c3dca61",
+      "size": 430702
+    },
+    {
+      "path": "assets/intro/ciyu-exterior.png",
+      "sha": "8344773352fe53471d5c8a6f71cb4ecab10e520a",
+      "size": 463045
+    },
+    {
+      "path": "assets/intro/perfume-materials.jpg",
+      "sha": "7a456be8933da35891d4367bd6fdeb0869439015",
+      "size": 235535
+    },
+    {
+      "path": "assets/intro/perfume-notes.jpg",
+      "sha": "506232db5444fd8e06baab2244a84a4aba496353",
+      "size": 238176
+    },
+    {
+      "path": "assets/intro/perfume-worktable.jpg",
+      "sha": "d7107935a51d48b2f9a79d57c0e89e7f2fbd2cff",
+      "size": 247343
+    },
+    {
+      "path": "assets/intro/sunlit-perfume.jpg",
+      "sha": "e74089b17bbbd1ef71da5c7226b6f4ebad0213ac",
+      "size": 131758
+    },
+    {
+      "path": "assets/journal-all.js",
+      "sha": "b75bad8d234aa78c106e7d24229d015ee3969762",
+      "size": 2373
+    },
+    {
+      "path": "assets/journal-posts.js",
+      "sha": "1c14392fc62247a31b9a0f00d88da7e312e513a5",
+      "size": 5909
+    },
+    {
+      "path": "assets/logo-mark.svg",
+      "sha": "bf0cf87b349c4d3d08491efdfe9d944f071c504d",
+      "size": 973
+    },
+    {
+      "path": "assets/logo此域2.png",
+      "sha": "c409cf35dc9480342c5ce05b3c782900ea36cb74",
+      "size": 735176
+    },
+    {
+      "path": "assets/logo白.png",
+      "sha": "1b7839970c60fc176b4ae4f1d11868fa44d0a931",
+      "size": 1977740
+    },
+    {
+      "path": "assets/logo黑.png",
+      "sha": "f9c694dc46a1ac8e8ba8393d84d8d35f58db21c3",
+      "size": 742743
+    },
+    {
+      "path": "assets/member.css",
+      "sha": "777e78cdfef24864bf64972f1ff7a81197a8e182",
+      "size": 3621
+    },
+    {
+      "path": "assets/member.js",
+      "sha": "08cef7ef6ea6811cbad3efd23a0e912a79eaf637",
+      "size": 2495
+    },
+    {
+      "path": "assets/overture-series-you-are-that-perfumer.webp",
+      "sha": "f8a5287bd2334643a271581e9f002a4e7474bdd2",
+      "size": 21290
+    },
+    {
+      "path": "assets/page-schema.js",
+      "sha": "c39a033d7514260721ce96a4b07c4d320e36a089",
+      "size": 3795
+    },
+    {
+      "path": "assets/page-views.js",
+      "sha": "35fe02dc54babe2cc423a5635a791b429ff77b36",
+      "size": 6633
+    },
+    {
+      "path": "assets/site-core.js",
+      "sha": "99d616a5426be38586c031467586cd0d508ca3e9",
+      "size": 34595
+    },
+    {
+      "path": "assets/site.js",
+      "sha": "5cc52336d51257af73927787de4c0c70168aac82",
+      "size": 15531
+    },
+    {
+      "path": "assets/style.css",
+      "sha": "60f80f3f8a8daa8cd215ed7a47111540382b25e4",
+      "size": 12036
+    },
+    {
+      "path": "assets/列車出發.png",
+      "sha": "3f9040d5e6e134bed53de8f5d88ae13e63762b4f",
+      "size": 2323729
+    },
+    {
+      "path": "assets/常見問題.png",
+      "sha": "ea38998a3cfead90aa5d7a672fd062df3047fdd1",
+      "size": 2308600
+    },
+    {
+      "path": "assets/柏拉圖.jpg",
+      "sha": "f1589fbed3c290bacbea520a3e456571dd35fb3e",
+      "size": 108097
+    },
+    {
+      "path": "assets/殉情記.jpg",
+      "sha": "33c009acd8a11741707ce91165e20ca5b0768ac8",
+      "size": 32415
+    },
+    {
+      "path": "assets/氣味起源.png",
+      "sha": "074b85962df70be6268fe5ffa53d36f79b39cb1a",
+      "size": 2313779
+    },
+    {
+      "path": "assets/神秘包裹.png",
+      "sha": "f031ae75cf743659565fa20fd0341b0e6df653f5",
+      "size": 2325369
+    },
+    {
+      "path": "assets/自拍.jpg",
+      "sha": "ab387595418cb88fa39b10759457658a51a911af",
+      "size": 99275
+    },
+    {
+      "path": "assets/首頁HERO.png",
+      "sha": "695b7b823c4c6f95bd019b35b18fbd763900e2d6",
+      "size": 2224150
+    },
+    {
+      "path": "blog.html",
+      "sha": "f180676b19168d43014fda4bc97f117714f85600",
+      "size": 4735
+    },
+    {
+      "path": "business.html",
+      "sha": "2d93d339e82f16dec54ffe259d396728b2c53c77",
+      "size": 292
+    },
+    {
+      "path": "business/index.html",
+      "sha": "7da9b0045981723ba7b3809264f049e857ae8f58",
+      "size": 9408
+    },
+    {
+      "path": "business/inquiry/index.html",
+      "sha": "b9e12217841b63f1a96f075e7e542e4b66f317d3",
+      "size": 9913
+    },
+    {
+      "path": "ciyu.html",
+      "sha": "0434ea7f5d4a05d0e7ee20f186a3b8d6eeebe3e4",
+      "size": 570
+    },
+    {
+      "path": "ciyu/index.html",
+      "sha": "0434ea7f5d4a05d0e7ee20f186a3b8d6eeebe3e4",
+      "size": 570
+    },
+    {
+      "path": "ciyu/programs/index.html",
+      "sha": "4b7b3fc8982385d43551bf43e67c091a92476bdb",
+      "size": 617
+    },
+    {
+      "path": "course-info/index.html",
+      "sha": "8490536575c79817c2cd43c78e117f72204231ae",
+      "size": 2853
+    },
+    {
+      "path": "courses.html",
+      "sha": "3d3cf63d00f5b8dd322edbd1b080fb0da284e0c9",
+      "size": 289
+    },
+    {
+      "path": "courses/index.html",
+      "sha": "f6a0d89a5630cf529c269d687b56efffad46995a",
+      "size": 7946
+    },
+    {
+      "path": "docs/taipei-fringe-golden-hour-scent-bar.md",
+      "sha": "06b98d7a1d43f0712db276bc3d572f3a82901bd7",
+      "size": 2567
+    },
+    {
+      "path": "enterprise-fragrance-workshop/about.html",
+      "sha": "77682153dea228f0233d2b6833331c642e445e33",
+      "size": 436
+    },
+    {
+      "path": "enterprise-fragrance-workshop/experiences.html",
+      "sha": "47158168e4190c3fdab1ca7c3d3e890a3e49074b",
+      "size": 435
+    },
+    {
+      "path": "enterprise-fragrance-workshop/h-fugue-atelier.html",
+      "sha": "b74dd6b038a9f9fab0b73d4bdfef06e6a3d50afa",
+      "size": 477
+    },
+    {
+      "path": "enterprise-fragrance-workshop/helori-scent-lab.html",
+      "sha": "f05c7c3cfbae350a68cea5780262439a2e9b93c3",
+      "size": 438
+    },
+    {
+      "path": "enterprise-fragrance-workshop/index.html",
+      "sha": "881090ae017447b50b58f537f10ac84173ced384",
+      "size": 645
+    },
+    {
+      "path": "enterprise-fragrance-workshop/projects.html",
+      "sha": "8163df9d68de7e9ae639e73daa2edb9b4c5bc871",
+      "size": 446
+    },
+    {
+      "path": "enterprise-fragrance-workshop/scent-design.html",
+      "sha": "d8cc0af46134f0a7748395a232b1158648beb45a",
+      "size": 471
+    },
+    {
+      "path": "enterprise-fragrance-workshop/student-tools.html",
+      "sha": "4034d9266c36ef2a983edf66249d1f168c15370a",
+      "size": 454
+    },
+    {
+      "path": "enterprise-fragrance-workshop/visit.html",
+      "sha": "716fb49ec9644d169fe13f004b1b06432bf18bf5",
+      "size": 440
+    },
+    {
+      "path": "experiences.html",
+      "sha": "9be276b2102ea185ce67e9adbb0f69f9a774baca",
+      "size": 331
+    },
+    {
+      "path": "favicon.svg",
+      "sha": "d12d82a606aded80672371017df2dafca5f0ff8c",
+      "size": 1034
+    },
+    {
+      "path": "h-fugue-atelier.html",
+      "sha": "e7b351f06317b670e71f151d94a8e809f7672329",
+      "size": 398
+    },
+    {
+      "path": "h-fugue-atelier/index.html",
+      "sha": "291664a538714dcabb821d1438a3345e2593e6d7",
+      "size": 200108
+    },
+    {
+      "path": "helori-scent-lab.html",
+      "sha": "c0cf12e48f3543862668a9294d8c8e367d722778",
+      "size": 609
+    },
+    {
+      "path": "helori.html",
+      "sha": "0b738b89b2993d29321845c9679ddf1a97820166",
+      "size": 286
+    },
+    {
+      "path": "helori/experiences.html",
+      "sha": "47158168e4190c3fdab1ca7c3d3e890a3e49074b",
+      "size": 435
+    },
+    {
+      "path": "helori/index.html",
+      "sha": "2c607e0f36b1077f675f78dcd96979f30b09539d",
+      "size": 7087
+    },
+    {
+      "path": "helori/scent-design.html",
+      "sha": "d8cc0af46134f0a7748395a232b1158648beb45a",
+      "size": 471
+    },
+    {
+      "path": "home-v2/index.html",
+      "sha": "dba081459668b3ca245906e35424e4dfdea8ed10",
+      "size": 20780
+    },
+    {
+      "path": "incubation/index.html",
+      "sha": "77e10eb2ac3038072b0b3621744eb310b05f7980",
+      "size": 6393
+    },
+    {
+      "path": "index.html",
+      "sha": "5e2d02cc030900689fafc0cf2b9c5fe4dcc5acc6",
+      "size": 29334
+    },
+    {
+      "path": "journal.html",
+      "sha": "d21eee62906f655101fdb05c87d00b3ebf20ad64",
+      "size": 289
+    },
+    {
+      "path": "journal/all/index.html",
+      "sha": "33ee9a4daf67e2fc256967a04afa6ddebeb5be34",
+      "size": 4745
+    },
+    {
+      "path": "journal/index.html",
+      "sha": "ad6fcc76cb1511c1ecd8ec025237ac9b0c8f649c",
+      "size": 9147
+    },
+    {
+      "path": "kpia.html",
+      "sha": "bc66f19a8e65d00ef9333e60977ae3ae1558c061",
+      "size": 280
+    },
+    {
+      "path": "llms.txt",
+      "sha": "755d7ab98e6fd5594a82dd7f81f9f04fdc53a632",
+      "size": 3391
+    },
+    {
+      "path": "member/index.html",
+      "sha": "e2b0527275b4b7cfa647f30af618118288548282",
+      "size": 4306
+    },
+    {
+      "path": "news/index.html",
+      "sha": "dfe7f2ccc5a8b2dc9f722d5ce2857a1829a7c90f",
+      "size": 6515
+    },
+    {
+      "path": "organ/config.js",
+      "sha": "7f8905e97b8793e95826ce4bc6a47442ce15d0a2",
+      "size": 92
+    },
+    {
+      "path": "organ/index.html",
+      "sha": "ad2dc911f1124b470035622ca54931cbbaef090f",
+      "size": 96096
+    },
+    {
+      "path": "organ/manifest.json",
+      "sha": "dcc57ab94e3318d1af25c41d050c4e4c4306cdfe",
+      "size": 291
+    },
+    {
+      "path": "organ/sw.js",
+      "sha": "242657aef3cb9a6d06f564414a0be5d8d8bdb2a1",
+      "size": 1606
+    },
+    {
+      "path": "overture-series/index.html",
+      "sha": "144089ed59e01c65375c86ced1c37f03aab28910",
+      "size": 6415
+    },
+    {
+      "path": "overture.html",
+      "sha": "6cf7cde42a8533926a6debc39af4953c4268a259",
+      "size": 298
+    },
+    {
+      "path": "overture/index.html",
+      "sha": "05654dbe79b77d68ed7903607937d7b434f3ab4c",
+      "size": 9075
+    },
+    {
+      "path": "pif/index.html",
+      "sha": "f135a96bae5dcd80e7c5c4766cb6590e05775e36",
+      "size": 8598
+    },
+    {
+      "path": "pif/inquiry/index.html",
+      "sha": "d21dd4a4cfc0dcfd6833e7d90e1885eec24af3e6",
+      "size": 7155
+    },
+    {
+      "path": "practice/index.html",
+      "sha": "0ccfd31223f066869d7e5e950503eafbbdfe1709",
+      "size": 14961
+    },
+    {
+      "path": "preview/home-3-entrances/index.html",
+      "sha": "fac42f30c610b4a6d4d5505ed4686f00d426a3b0",
+      "size": 6635
+    },
+    {
+      "path": "privacy/index.html",
+      "sha": "d43a04fa65c8e6760b1c17350281d36bc562d009",
+      "size": 4961
+    },
+    {
+      "path": "product-development/index.html",
+      "sha": "df41c9bed918f497c52682dbb6e1394eac5688e3",
+      "size": 7896
+    },
+    {
+      "path": "professional-perfumer-course.html",
+      "sha": "6612adfe8c3feaf9c439d3b44f42c51bced4cd30",
+      "size": 810
+    },
+    {
+      "path": "project-docs/taipei-fringe-golden-hour-scent-bar-2026.md",
+      "sha": "a0f86b6497acacd225cea3608c3a97a162953bcf",
+      "size": 2735
+    },
+    {
+      "path": "projects.html",
+      "sha": "72cd07e1ec4ca97b39890eead1952e40ec0889d6",
+      "size": 366
+    },
+    {
+      "path": "projects/heart-village-notes/index.html",
+      "sha": "968b69e09903d40317710db098620ef944210809",
+      "size": 3311
+    },
+    {
+      "path": "projects/olfactory-culture/index.html",
+      "sha": "75804ead0270366206a4e62f331e95f1ef20bdca",
+      "size": 3329
+    },
+    {
+      "path": "projects/scent-creation/index.html",
+      "sha": "71ecb5ba6e29b15a1b686103a3b694ea83bf5e19",
+      "size": 3317
+    },
+    {
+      "path": "refund/index.html",
+      "sha": "51b81625d8d1a5d121cf1eb5478047966dfa02a7",
+      "size": 4725
+    },
+    {
+      "path": "robots.txt",
+      "sha": "d1ba508594ab18791e5db1acd3cdc66a34f38ba2",
+      "size": 67
+    },
+    {
+      "path": "scent-design.html",
+      "sha": "4f233850b5891d2db66fa032fec0ee853029e189",
+      "size": 463
+    },
+    {
+      "path": "scent-overture.html",
+      "sha": "3e99a7c0e9d6fa63cdce6e2b0e7b501be75f2d14",
+      "size": 608
+    },
+    {
+      "path": "scent-study-room/index.html",
+      "sha": "609efd24d4f65be9e4c94c1350c1765ca1587451",
+      "size": 638
+    },
+    {
+      "path": "scripts/update-sitemap.ps1",
+      "sha": "c45e3f0fc48af3ebf512f47086d902c09e6a26c7",
+      "size": 3840
+    },
+    {
+      "path": "shop/index.html",
+      "sha": "2f6d2149e76c38f69a1a023291604e43a845f485",
+      "size": 5578
+    },
+    {
+      "path": "sitemap.xml",
+      "sha": "8fdd5b6856200dfd2096f1b332dccbd04decaca5",
+      "size": 4754
+    },
+    {
+      "path": "student-tools.html",
+      "sha": "a48cf1a7d15b5c4fdae8da6c8d127203d5aae5a7",
+      "size": 390
+    },
+    {
+      "path": "student-tools/course/index.html",
+      "sha": "8d244cbe7a128f09241086a3190056501e779a9a",
+      "size": 1076
+    },
+    {
+      "path": "student-tools/index.html",
+      "sha": "2e8a48c2cd7aedd18b608d959c9033243f56c2fb",
+      "size": 7134
+    },
+    {
+      "path": "student-tools/overture/README.md",
+      "sha": "194afc90a1e97b42ea739e8fa99ee57c919e808a",
+      "size": 2671
+    },
+    {
+      "path": "student-tools/overture/access-guard.js",
+      "sha": "c5be924700f517907755cd1a6baeb0ea62e1013c",
+      "size": 256
+    },
+    {
+      "path": "student-tools/overture/assets/fragrance_pyramid_infographic_design.png",
+      "sha": "dafa2ffa02c4fc61a503728807350ba422d8f024",
+      "size": 1021293
+    },
+    {
+      "path": "student-tools/overture/assets/hla_lifecycle_newborn_updated.png",
+      "sha": "4e7f3672d369fcad587d3529e082a340bb234266",
+      "size": 1860341
+    },
+    {
+      "path": "student-tools/overture/assets/icon.svg",
+      "sha": "02b4a5586f06ec540bcea430a14c395fa8be93ed",
+      "size": 331
+    },
+    {
+      "path": "student-tools/overture/assets/life_stages_and_scent_changes_infographic.png",
+      "sha": "65f387d05806eab07b561e223142b7a62c33fb3a",
+      "size": 1704344
+    },
+    {
+      "path": "student-tools/overture/config.js",
+      "sha": "5cafd70e4a08bc94ccf616b52d45acd27d105c6f",
+      "size": 164
+    },
+    {
+      "path": "student-tools/overture/index.html",
+      "sha": "ff7ff389fca5658d3072efb54ee3bff6925bc2d3",
+      "size": 2345405
+    },
+    {
+      "path": "student-tools/overture/manifest.json",
+      "sha": "8efa95161596f2555a3e1112e2726c4861c47f80",
+      "size": 321
+    },
+    {
+      "path": "student-tools/overture/organ.html",
+      "sha": "8482a9a9561ad0f5ef22478e5bc5cde72cc315f1",
+      "size": 48938
+    },
+    {
+      "path": "student-tools/overture/sw.js",
+      "sha": "18ae60b4a55020728a4740e1e0ef356c1a0f2ec4",
+      "size": 583
+    },
+    {
+      "path": "student-tools/overture/wheel.html",
+      "sha": "5aeb4776c16c8e824bc66c13d2fd11b480e7cf6f",
+      "size": 21284
+    },
+    {
+      "path": "supabase-admin-home-updates.sql",
+      "sha": "e9a254aa788a4735b6c2a90227b6584d85488b87",
+      "size": 1238
+    },
+    {
+      "path": "supabase/2026-06-18_expand_cms.sql",
+      "sha": "f48926a9f2823ed00a2a400b3fff72f769320c17",
+      "size": 6779
+    },
+    {
+      "path": "supabase/2026-06-18_import_notion_journal.sql",
+      "sha": "cb4fd22ef830f4e2c9d0d10727baf6c93c5f76e2",
+      "size": 13888
+    },
+    {
+      "path": "supabase/2026-06-18_set_journal_cover_images.sql",
+      "sha": "73f73e3cbec9556b704ab1f3094bfeb7e83fab2b",
+      "size": 733
+    },
+    {
+      "path": "supabase/2026-06-27_course_date_time_range.sql",
+      "sha": "a503c858b47ba240b0072954267da97885c6113a",
+      "size": 639
+    },
+    {
+      "path": "supabase/2026-06-27_news_and_course_dates.sql",
+      "sha": "afb57f3ceb6194d3e4766fc8254c1ef46a7beda7",
+      "size": 2658
+    },
+    {
+      "path": "supabase/analytics_events.sql",
+      "sha": "18cc2d36830b0a653b45e764b1c6403282f68aca",
+      "size": 1974
+    },
+    {
+      "path": "terms/index.html",
+      "sha": "3a73aa55877e5788394608d0e79242d961604c87",
+      "size": 5656
+    },
+    {
+      "path": "visit.html",
+      "sha": "3ebff029d25240f36be954d65bf3d916e6c303f4",
+      "size": 3731
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+lighthouse: unavailable in current Node module resolution
+axe-core: unavailable in current Node module resolution
+playwright: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js
