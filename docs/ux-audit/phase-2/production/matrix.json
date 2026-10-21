@@ -1,0 +1,3689 @@
+{
+  "started_at": "2026-10-21T05:38:45.214471+00:00",
+  "base": "https://hanascent.com",
+  "label": "deployed",
+  "axe_version": "4.10.3",
+  "rows": [
+    {
+      "page": "journal",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.journal",
+          "status": 404
+        }
+      ],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/",
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "clsObserved": 0.03135720617137849,
+        "h1": [
+          "氣味誌"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/journal/await-1790701115411-main-720.webp",
+            "loaded": true,
+            "width": 372,
+            "height": 279
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 159,
+            "height": 212
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 159,
+            "height": 212
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 159,
+            "height": 212
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 159,
+            "height": 212
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 159,
+            "height": 212
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13px"
+          },
+          {
+            "text": "Scent Journal",
+            "font": "13px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "15px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "15px"
+          },
+          {
+            "text": "心村札記",
+            "font": "15px"
+          },
+          {
+            "text": "VIEW ALL ARTICLES →",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看全部文章 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  ".journal-view-all"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(1) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(2) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=await\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=1821\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=july-scent\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=ciyu-001\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"all/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.journal",
+          "status": 404
+        }
+      ],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/",
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "氣味誌"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/journal/await-1790701115411-main-480.webp",
+            "loaded": true,
+            "width": 343,
+            "height": 257
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 265,
+            "height": 354
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 265,
+            "height": 354
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 265,
+            "height": 354
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 265,
+            "height": 354
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 265,
+            "height": 354
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "Scent Journal",
+            "font": "13px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "13px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "13px"
+          },
+          {
+            "text": "VIEW ALL ARTICLES →",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看全部文章 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看專業調香課程",
+            "font": "15px"
+          },
+          {
+            "text": "洽詢企業品牌合作",
+            "font": "15px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  ".journal-view-all"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(1) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(2) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=await\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=1821\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=july-scent\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=ciyu-001\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"all/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.journal",
+          "status": 404
+        }
+      ],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "clsObserved": 0.0003040050114133231,
+        "h1": [
+          "氣味誌"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/journal/await-1790701115411-main-720.webp",
+            "loaded": true,
+            "width": 756,
+            "height": 567
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 263,
+            "height": 351
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 263,
+            "height": 351
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 263,
+            "height": 351
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 263,
+            "height": 351
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 263,
+            "height": 351
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13.5px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13.5px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13.5px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13.5px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13.5px"
+          },
+          {
+            "text": "Scent Journal",
+            "font": "13px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "15px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "15px"
+          },
+          {
+            "text": "心村札記",
+            "font": "15px"
+          },
+          {
+            "text": "VIEW ALL ARTICLES →",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看全部文章 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  ".journal-view-all"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(1) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(2) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=await\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=1821\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=july-scent\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=ciyu-001\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"all/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/journal/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.journal",
+          "status": 404
+        }
+      ],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "氣味誌"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/journal/await-1790701115411-main-480.webp",
+            "loaded": true,
+            "width": 282,
+            "height": 211
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 92,
+            "height": 92
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 204,
+            "height": 272
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 204,
+            "height": 272
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 204,
+            "height": 272
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 204,
+            "height": 272
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 204,
+            "height": 272
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "Scent Journal",
+            "font": "13px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "13px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "13px"
+          },
+          {
+            "text": "VIEW ALL ARTICLES →",
+            "font": "13px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "心村札記",
+            "font": "12px"
+          },
+          {
+            "text": "繼續閱讀 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看全部文章 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看專業調香課程",
+            "font": "15px"
+          },
+          {
+            "text": "洽詢企業品牌合作",
+            "font": "15px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  ".journal-view-all"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(1) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".journal-featured-item:nth-child(2) > .journal-featured-arrow"
+                ],
+                "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=await\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=1821\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=july-scent\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href=\"/blog.html?slug=ciyu-001\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".hana-post:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"all/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/news/",
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "clsObserved": 0.03135720617137849,
+        "h1": [
+          "最新消息"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13px"
+          },
+          {
+            "text": "News",
+            "font": "13px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(4) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(5) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"helori/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "a[href$=\"courses/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(9) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/news/",
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "最新消息"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "News",
+            "font": "13px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(4) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(5) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"helori/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "a[href$=\"courses/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(9) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/news/",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "clsObserved": 0.0003040050114133231,
+        "h1": [
+          "最新消息"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13.5px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13.5px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13.5px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13.5px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13.5px"
+          },
+          {
+            "text": "News",
+            "font": "13px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(4) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(5) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"helori/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "a[href$=\"courses/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(9) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "news",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/news/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/news/",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "最新消息"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "News",
+            "font": "13px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "查看內容 →",
+            "font": "15.4px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(4) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(5) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(6) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"helori/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "a[href$=\"courses/\"]"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "target": [
+                  "article:nth-child(9) > .text-link"
+                ],
+                "summary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal-all",
+      "viewport": [
+        390,
+        844
+      ],
+      "url": "https://hanascent.com/journal/all/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/all/",
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "全部文章"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/olfactory-vulgarity-or-artistry-1781817424432.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/blooming-tears-1781817438893.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804489360-lglvzi-image.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804356578-pdatb3-LINE_ALBUM_202646_260407_8.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804276040-ofsff4-693021.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "Scent Journal Archive",
+            "font": "13px"
+          },
+          {
+            "text": "返回氣味誌",
+            "font": "14px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "14px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "14px"
+          },
+          {
+            "text": "心村札記",
+            "font": "14px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal-all",
+      "viewport": [
+        768,
+        1024
+      ],
+      "url": "https://hanascent.com/journal/all/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/all/",
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "clsObserved": 0.03135720617137849,
+        "h1": [
+          "全部文章"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/olfactory-vulgarity-or-artistry-1781817424432.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/blooming-tears-1781817438893.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804489360-lglvzi-image.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804356578-pdatb3-LINE_ALBUM_202646_260407_8.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804276040-ofsff4-693021.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13px"
+          },
+          {
+            "text": "Scent Journal Archive",
+            "font": "13px"
+          },
+          {
+            "text": "返回氣味誌",
+            "font": "14px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "14px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "14px"
+          },
+          {
+            "text": "心村札記",
+            "font": "14px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal-all",
+      "viewport": [
+        1440,
+        900
+      ],
+      "url": "https://hanascent.com/journal/all/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/all/",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "clsObserved": 0.0003053665726273148,
+        "h1": [
+          "全部文章"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/olfactory-vulgarity-or-artistry-1781817424432.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/blooming-tears-1781817438893.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804489360-lglvzi-image.webp",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804356578-pdatb3-LINE_ALBUM_202646_260407_8.webp",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804276040-ofsff4-693021.jpg",
+            "loaded": true,
+            "width": 150,
+            "height": 150
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "此域 HINENI",
+            "font": "13.5px"
+          },
+          {
+            "text": "專業調香",
+            "font": "13.5px"
+          },
+          {
+            "text": "藝術育成",
+            "font": "13.5px"
+          },
+          {
+            "text": "品牌合作",
+            "font": "13.5px"
+          },
+          {
+            "text": "氣味誌",
+            "font": "13.5px"
+          },
+          {
+            "text": "Scent Journal Archive",
+            "font": "13px"
+          },
+          {
+            "text": "返回氣味誌",
+            "font": "14px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "14px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "14px"
+          },
+          {
+            "text": "心村札記",
+            "font": "14px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "",
+            "font": "14px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "button-name",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    },
+    {
+      "page": "journal-all",
+      "viewport": [
+        320,
+        844
+      ],
+      "url": "https://hanascent.com/journal/all/",
+      "errors": [],
+      "failed_requests": [],
+      "http_errors": [],
+      "status": 200,
+      "final_url": "https://hanascent.com/journal/all/",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "clsObserved": 0,
+        "h1": [
+          "全部文章"
+        ],
+        "fonts": [
+          "Cormorant Garamond",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC",
+          "Noto Serif TC"
+        ],
+        "images": [
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/await-1790701115411.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/1821-1787938089449.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/log006-isoesuper-1787603480540.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/july-scent-1790787881453.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/hana-scent-artist-space-1781817295311.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/olfactory-vulgarity-or-artistry-1781817424432.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/posts/blooming-tears-1781817438893.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804489360-lglvzi-image.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804356578-pdatb3-LINE_ALBUM_202646_260407_8.webp",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/storage/v1/object/public/site-media/1781804276040-ofsff4-693021.jpg",
+            "loaded": true,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-instagram.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-facebook.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-line.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          },
+          {
+            "src": "https://hanascent.com/assets/footer-email.svg",
+            "loaded": true,
+            "width": 26,
+            "height": 26
+          }
+        ],
+        "overflowElements": [],
+        "smallText": [
+          {
+            "text": "Scent Journal Archive",
+            "font": "13px"
+          },
+          {
+            "text": "返回氣味誌",
+            "font": "14px"
+          },
+          {
+            "text": "嗅覺文化",
+            "font": "14px"
+          },
+          {
+            "text": "氣味創作",
+            "font": "14px"
+          },
+          {
+            "text": "心村札記",
+            "font": "14px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "閱讀文章 →",
+            "font": "13px"
+          },
+          {
+            "text": "此域 HINENI",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "",
+            "font": "13px"
+          },
+          {
+            "text": "預約課程",
+            "font": "12px"
+          },
+          {
+            "text": "訂閱氣味通信",
+            "font": "12px"
+          },
+          {
+            "text": "學員工具",
+            "font": "12px"
+          },
+          {
+            "text": "消費者權益與服務條款",
+            "font": "12px"
+          },
+          {
+            "text": "隱私權政策",
+            "font": "12px"
+          },
+          {
+            "text": "退換貨與退款政策",
+            "font": "12px"
+          }
+        ],
+        "footer": true,
+        "newsText": null
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-command-name",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "avoid-inline-spacing",
+          "bypass",
+          "color-contrast",
+          "document-title",
+          "duplicate-id-aria",
+          "html-has-lang",
+          "html-lang-valid",
+          "image-alt",
+          "link-in-text-block",
+          "link-name",
+          "meta-viewport",
+          "nested-interactive",
+          "target-size"
+        ]
+      },
+      "capture": "complete"
+    }
+  ],
+  "type": "lab viewport inspection; not field performance or WCAG certification",
+  "browser": "154.0.8037.57"
+}

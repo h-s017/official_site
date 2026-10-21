@@ -1,0 +1,107 @@
+[
+  {
+    "path": "assets/style.css",
+    "status": 200,
+    "content_type": "text/css; charset=utf-8",
+    "sha256": "de257cd19f45be231ce3acd8bcfaf290f21e01a6debec097afe1aa03cef7c5eb",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/runtime-layout.css",
+    "status": 200,
+    "content_type": "text/css; charset=utf-8",
+    "sha256": "ea72c336cc5331a8e468df6f09b256de08dd3381128f4b4fb2d784ef84d8c4ed",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/journal-posts.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "4919c8457dac8edd36b28b7dfdcd76973685e354d4f98427b9426da415e91618",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/journal-all.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "31e0abbb5b0864c722bb7fa4ed24d29ecbf086b5fa495b20ca2d624a2dc5e56d",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/news-archive.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "2b59993aa6c463642187197b24f7a320d0a317c94cdfcb116024beaa5f725104",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/hana-cms.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "75bbc1762a285caaf4733c82b7d4594cbc03337e1eeea7d2db39e56fb39cad41",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/site-core.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "ba2e1ada80a189e359f1cf2035d1c6905a48bd069ec541ae9b4bd080c93fb1e9",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/site.js",
+    "status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "sha256": "0f2ed6f312fb21427c78170a8ff1ea27af40205fe2db6cd0acf82c9e609a1cff",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/fonts/cormorant-garamond-latin-v21.woff2",
+    "status": 200,
+    "content_type": "font/woff2",
+    "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/fonts/noto-serif-tc-latin-v37.woff2",
+    "status": 200,
+    "content_type": "font/woff2",
+    "sha256": "eecd3cc3508cd9a10aac5d7385e4753db2a80a2c2f16e41d0b812ef4e2e7e719",
+    "matches_commit": true
+  },
+  {
+    "path": "assets/journal/await-1790701115411-main-720.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "sha256": "80a82b81b7c25b12aef4c830dd5746c3523f4611f18299c040af52620ef45ec7",
+    "matches_commit": true
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "f348169270820fdbad5905f6a29f7c2d36907693ba5727fb7df6e5b1820ed175",
+    "matches_commit": true
+  },
+  {
+    "path": "journal/index.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "c3e789f4ca402be28eb4718e63008f682fe8e1e0043393b7716f95f322ea3084",
+    "matches_commit": true
+  },
+  {
+    "path": "journal/all/index.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "ff7100e552f86fc471e3e089fa04828d102644acfe8addb98a7358dccc2f3cc0",
+    "matches_commit": true
+  },
+  {
+    "path": "news/index.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "708425a914a31885b370fcde2677022fe27d080f744e965003b229f72e4e329a",
+    "matches_commit": true
+  }
+]

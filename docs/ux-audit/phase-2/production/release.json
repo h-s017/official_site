@@ -1,0 +1,16 @@
+{
+  "repository": "h-s017/official_site",
+  "source_branch": "main",
+  "code_commit": "6c7b91aeb546ecb9f496f1728eb4b52bcbdd5eba",
+  "merge_commit": "7a733de619964d312fead1ca530685ce68b33c27",
+  "pr": "https://github.com/h-s017/official_site/pull/13",
+  "deployment": "https://github.com/h-s017/official_site/actions/runs/39550567267",
+  "deployment_conclusion": "success",
+  "source_hashes_matched": 15,
+  "viewport_captures": 12,
+  "axe_violations": 0,
+  "root_overflow": 0,
+  "navigation_checks_passed": 26,
+  "payment_retested": false,
+  "scope": "read-only post-deployment checks; subsequent commit contains evidence only"
+}
