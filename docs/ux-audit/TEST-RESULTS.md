@@ -164,3 +164,7 @@ Journal 的實驗室中位數達到本次內部門檻；其中一次 LCP 仍略�
 - 測試 server 對 HTML／CSS／JS 使用 gzip（已確認正式 Pages 的 CSS 也使用 gzip），避免以未壓縮本機環境誤導比較；仍非正式 CDN／網路的真實使用分布。
 - 沒有 CrUX／RUM，也沒有真實使用者 INP。TBT 是實驗室指標，不能代稱 INP≤200ms。沒有宣稱 field Core Web Vitals 或全站 WCAG AA 已通過。
 - 本階段不執行預約／付款；使用者已告知付款測試完成。
+
+## 發布後正式站確認
+
+PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 15/15 程式資產 SHA-256 比對、Journal／archive／News 12/12 四 viewport（axe 零違規、零 root 溢出）、正式導航 26/26；另附正式 Journal 手機／桌機截圖。這些是唯讀發布後 smoke tests，不是另一輪 Lighthouse 或 field 驗收；付款未重測。後續提交僅保存證據，不修改產品程式。
