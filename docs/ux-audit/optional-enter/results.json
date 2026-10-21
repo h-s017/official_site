@@ -1,0 +1,204 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "default_closed": true,
+    "four_services": true,
+    "no_intro_download_before_opt_in": true,
+    "native_modal_background_focus_isolation": true,
+    "escape_and_buttons_restore_focus": true,
+    "pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "result": "pass",
+    "default_closed": true,
+    "four_services": true,
+    "no_intro_download_before_opt_in": true,
+    "native_modal_background_focus_isolation": true,
+    "escape_and_buttons_restore_focus": true,
+    "pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "23.7pt (31.6416px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button class=\"intro-enter\" type=\"button\" aria-label=\"ENTER，返回首頁\"><span class=\"en-text\">ENTER</span></button>",
+                      "target": [
+                        ".intro-enter"
+                      ]
+                    },
+                    {
+                      "html": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"90vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+                      "target": [
+                        "img[data-hana-hero-image=\"\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "default_closed": true,
+    "four_services": true,
+    "no_intro_download_before_opt_in": true,
+    "native_modal_background_focus_isolation": true,
+    "escape_and_buttons_restore_focus": true,
+    "pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "26.3pt (35.02px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button class=\"intro-enter\" type=\"button\" aria-label=\"ENTER，返回首頁\"><span class=\"en-text\">ENTER</span></button>",
+                      "target": [
+                        ".intro-enter"
+                      ]
+                    },
+                    {
+                      "html": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"90vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+                      "target": [
+                        "img[data-hana-hero-image=\"\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      320,
+      844
+    ],
+    "result": "pass",
+    "default_closed": true,
+    "four_services": true,
+    "no_intro_download_before_opt_in": true,
+    "native_modal_background_focus_isolation": true,
+    "escape_and_buttons_restore_focus": true,
+    "pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "mode": "storage-blocked",
+    "result": "pass"
+  },
+  {
+    "mode": "reduced-motion",
+    "result": "pass"
+  }
+]

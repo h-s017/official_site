@@ -1,3 +1,13 @@
+# ENTER 可選入口：第三階段
+
+2026-10-21，使用者核定 ENTER 可選方案。本階段先提供手機／桌機預覽，再依既有完成後提交、合併部署授權發布；價格、付款與課程核定項目不變。
+
+產品僅修改首頁、optional-intro.js 及 core 的 optional 標記守衛。四 viewport 初訪直接看到首頁、主動開啟才下載三張既有藝術照片；原生 modal、暫停、關閉與焦點返回通過 7 情境及四份 dialog axe。首頁三次 lab 中位數 Performance 99、Accessibility 96、LCP 2.179s、CLS 0.0265；非 field 驗收。證據與預覽見 `optional-enter/README.md`。
+
+合併及實際發布結果以本批 PR／Pages Actions 為準；下方保留前次已發布版本的證據。
+
+---
+
 # UX/UI V2 第二階段：正式發布及驗證
 
 2026-10-21。Repository：`h-s017/official_site`，GitHub Pages 由 `main` 根目錄發布至 https://hanascent.com/。
