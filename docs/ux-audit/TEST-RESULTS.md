@@ -1,3 +1,9 @@
+# 炭灰蕾絲蝴蝶結預約與移除重播入口｜2026-10-24
+
+指定新圖、入口移除、首次開場與同session不重播、炭灰樣式、尺寸、無溢出、焦點及浮動／頁尾等6情境通過；CTA axe零違規。未測正式預約或付款，未重跑Lighthouse。 [截圖及測試](booking-charcoal-lace/README.md)。
+
+---
+
 # 正圓預約按鈕｜2026-10-24
 
 正圓尺寸83.6／91.2px、文字無溢出及原有浮動操作共6情境通過；CTA axe零違規。未測預約付款或Lighthouse。 [截圖及測試](booking-circle/README.md)。
