@@ -1,0 +1,334 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "first_visit_auto_open": true,
+    "legacy_session_key_does_not_suppress_restored_intro": true,
+    "return_visit_skips": true,
+    "manual_replay": true,
+    "enter_style": {
+      "background": "rgba(0, 0, 0, 0)",
+      "width": 44,
+      "height": 220,
+      "shadow": "rgba(0, 0, 0, 0.42) 0px 1px 4px"
+    },
+    "focus_return_and_escape": true,
+    "no_upper_right_controls": true,
+    "pause_hidden_until_focused": true,
+    "keyboard_pause": true,
+    "dialog_axe": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#ffffff",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 1.39,
+                    "fontSize": "23.2pt (30.9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "fgOnShadowColor",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": "#dadada"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"intro-slides\" aria-hidden=\"true\">",
+                      "target": [
+                        ".intro-slides"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 1.39 between the foreground and shadow color (foreground color: #ffffff, text-shadow color: #dadada, font size: 23.2pt (30.9px), font weight: normal). Expected contrast ratio of 3:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.39 between the foreground and shadow color (foreground color: #ffffff, text-shadow color: #dadada, font size: 23.2pt (30.9px), font weight: normal). Expected contrast ratio of 3:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": []
+    }
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "result": "pass",
+    "first_visit_auto_open": true,
+    "legacy_session_key_does_not_suppress_restored_intro": true,
+    "return_visit_skips": true,
+    "manual_replay": true,
+    "enter_style": {
+      "background": "rgba(0, 0, 0, 0)",
+      "width": 44,
+      "height": 220.734375,
+      "shadow": "rgba(0, 0, 0, 0.42) 0px 1px 4px"
+    },
+    "focus_return_and_escape": true,
+    "no_upper_right_controls": true,
+    "pause_hidden_until_focused": true,
+    "keyboard_pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "23.7pt (31.6416px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"90vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+                      "target": [
+                        "img[data-hana-hero-image=\"\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "first_visit_auto_open": true,
+    "legacy_session_key_does_not_suppress_restored_intro": true,
+    "return_visit_skips": true,
+    "manual_replay": true,
+    "enter_style": {
+      "background": "rgba(0, 0, 0, 0)",
+      "width": 44,
+      "height": 244,
+      "shadow": "rgba(0, 0, 0, 0.42) 0px 1px 4px"
+    },
+    "focus_return_and_escape": true,
+    "no_upper_right_controls": true,
+    "pause_hidden_until_focused": true,
+    "keyboard_pause": true,
+    "dialog_axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "26.3pt (35.02px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"90vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+                      "target": [
+                        "img[data-hana-hero-image=\"\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      320,
+      844
+    ],
+    "result": "pass",
+    "first_visit_auto_open": true,
+    "legacy_session_key_does_not_suppress_restored_intro": true,
+    "return_visit_skips": true,
+    "manual_replay": true,
+    "enter_style": {
+      "background": "rgba(0, 0, 0, 0)",
+      "width": 44,
+      "height": 220,
+      "shadow": "rgba(0, 0, 0, 0.42) 0px 1px 4px"
+    },
+    "focus_return_and_escape": true,
+    "no_upper_right_controls": true,
+    "pause_hidden_until_focused": true,
+    "keyboard_pause": true,
+    "dialog_axe": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#ffffff",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 1.39,
+                    "fontSize": "23.2pt (30.9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "fgOnShadowColor",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": "#dadada"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"intro-slides\" aria-hidden=\"true\">",
+                      "target": [
+                        ".intro-slides"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 1.39 between the foreground and shadow color (foreground color: #ffffff, text-shadow color: #dadada, font size: 23.2pt (30.9px), font weight: normal). Expected contrast ratio of 3:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">ENTER</span>",
+              "target": [
+                ".intro-enter > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.39 between the foreground and shadow color (foreground color: #ffffff, text-shadow color: #dadada, font size: 23.2pt (30.9px), font weight: normal). Expected contrast ratio of 3:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": []
+    }
+  },
+  {
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "mode": "storage-blocked",
+    "result": "pass"
+  },
+  {
+    "mode": "reduced-motion",
+    "result": "pass"
+  }
+]
