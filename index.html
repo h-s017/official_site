@@ -143,20 +143,24 @@
     @media(max-width:760px){.intro-screen{height:100dvh;min-height:100svh}.intro-slide{inset:0}.intro-slide img{object-fit:cover}.intro-slide:first-child img{object-position:center 45%}.intro-slide:nth-child(3){display:grid;place-items:center;background:#fff}.intro-slide:nth-child(3) img{width:94%;height:94%;object-position:center center}.intro-enter{font-size:30px}}
     @media(prefers-reduced-motion:reduce){.intro-slide{animation:none;opacity:0}.intro-slide:first-child{opacity:1}.intro-screen{transition:none}.intro-pause{display:none}}
 
-    /* Course booking: one primary action in the hero, repeated in wide navigation. */
-    .home-booking-actions{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:24px;}
-    .home-booking-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;min-height:52px;min-width:240px;padding:13px 24px;border:1px solid #111;background:#111;color:#fff;font-family:var(--font-serif);font-size:17px;line-height:1.5;letter-spacing:.12em;text-decoration:none;}
+    /* A single viewport-fixed booking link, outside transformed hero/reveal containers. */
+    html{scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));}
+    body[data-hana-page="home"]{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));}
+    .home-booking-actions{display:flex;align-items:center;justify-content:center;margin-top:24px;}
+    .home-booking-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;min-height:52px;min-width:220px;padding:13px 24px;border:1px solid #111;background:#111;color:#fff;font-family:var(--font-serif);font-size:17px;line-height:1.5;letter-spacing:.12em;text-decoration:none;}
     @media(hover:hover){.home-booking-cta:hover{background:#333;border-color:#333;}}
     .home-booking-cta:focus-visible{outline:2px solid #111;outline-offset:4px;}
-    .home-booking-cta--nav{display:none;}
+    .home-booking-cta--floating{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:80;}
+    body.intro-open .home-booking-cta--floating,.site-nav.menu-open~.home-booking-dock .home-booking-cta--floating{visibility:hidden;pointer-events:none;}
     @media(min-width:981px){.site-nav .nav-dropdown-menu{left:auto!important;right:0!important;}}
-    @media(min-width:1200px){.home-booking-cta--nav{display:inline-flex;flex-shrink:0;min-height:44px;min-width:0;padding:10px 18px;font-size:15px;gap:18px;}}
-    @media(max-width:760px){.home-booking-actions{flex-direction:column;align-items:stretch;gap:14px;margin-top:22px;}.home-booking-actions>.home-booking-cta{width:100%;min-width:0;}.home-booking-actions>.intro-open-button{align-self:center;}}
+    @media(max-width:760px){.home-booking-cta--floating{left:auto;right:max(18px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:clamp(160px,50vw,220px);max-width:calc(100vw - 36px);min-width:0;gap:16px;padding-inline:16px;}.home-booking-actions{margin-top:22px;}}
 
-    /* Homepage density: preserve the current design, shorten vertical travel. */
-    .hero{padding:20px 5vw 42px!important;}
-    .hero-visual img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center top!important;}
-    .hero-panel{margin-top:22px!important;gap:24px!important;}
+    /* Full-width hero; retain the original artwork and reading rhythm below. */
+    .hero{padding:0 0 42px!important;}
+    .hero-shell{max-width:none;width:100%;margin:0;}
+    .hero-visual{border:0;box-shadow:none;}
+    .hero-visual img{display:block;width:100%!important;height:auto!important;object-fit:contain!important;object-position:center top!important;}
+    .hero-panel{max-width:1320px;margin-inline:auto;padding-inline:5vw;margin-top:22px!important;gap:24px!important;}
     .hero-title{margin-bottom:12px!important;}
     .hero-title .hero-place{margin-top:12px!important;}
     .hero-panel>div:first-child{grid-column:1 / -1!important;width:100%!important;}
@@ -209,7 +213,8 @@
     .home-news .wrap{max-width:860px!important}.home-news .section-head{grid-template-columns:120px 1fr;gap:24px}.news-list{border-top:1px solid var(--line)}.news-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}.news-main{min-width:0}.news-meta{display:flex;align-items:center;gap:10px;margin-bottom:7px;color:var(--gray500);font-size:11.5px!important;line-height:1.5!important;letter-spacing:.12em}.news-category{color:var(--gray700)}.news-date{color:var(--gray500);white-space:nowrap}.news-date::before{content:"·";margin-right:10px}.news-row h3{margin:0!important;font-size:16.5px!important;line-height:1.5!important;letter-spacing:.06em!important;font-weight:500}.news-row p{margin:5px 0 0!important;color:var(--gray700);font-size:14px!important;line-height:1.65!important}.news-row>.text-link{margin-top:0!important;font-size:11.5px!important;white-space:nowrap}.news-empty{margin:0;padding:18px 0;border-bottom:1px solid var(--line);color:var(--gray500);font-size:13px!important;letter-spacing:.08em}.home-news-more{display:flex;justify-content:flex-end;margin-top:16px}.about-signature{font-size:clamp(28px,4vw,52px);line-height:1.35;letter-spacing:.06em;margin:0;color:#111}.dark-band .lead{color:#fff!important;}.hero-title .hero-place{display:block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;font-size:clamp(28px,3.2vw,48px)!important;letter-spacing:.08em!important;line-height:1.18!important;max-width:100%!important;}
     @media(max-width:980px){
       .site-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto!important;align-items:center!important;column-gap:12px!important;row-gap:0!important;min-height:0!important;padding-top:18px!important;padding-bottom:18px!important;flex-wrap:nowrap!important}.logo{grid-column:1!important;grid-row:1!important;min-width:0!important;white-space:nowrap!important;gap:10px!important;font-size:clamp(20px,5.2vw,28px)!important;letter-spacing:.22em!important;overflow:hidden!important}.logo::before{width:24px;height:24px;flex:0 0 24px}.mobile-note{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:end!important;margin-left:0!important;white-space:nowrap!important;text-align:right!important}.nav-links{grid-column:1 / -1!important;grid-row:2!important}
-      .hero{padding:16px 4.5vw 34px!important;}
+      .hero{padding:0 0 34px!important;}
+      .hero-panel{padding-inline:4.5vw;}
       .hero-visual img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center top!important;}
       .hero-panel{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;align-items:start!important;margin-top:18px!important}
       .hero-title .hero-place{font-size:clamp(22px,6vw,34px)!important;letter-spacing:.035em!important;line-height:1.2!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
@@ -293,19 +298,21 @@
   <nav class="site-nav" aria-label="主要導覽">
     <a class="logo" href="/">HANA SCENT ARTIST</a>
     <div class="nav-links"></div>
-    <a class="home-booking-cta home-booking-cta--nav" href="https://reservation.hanascent.com/">課程預約<span aria-hidden="true">→</span></a>
     <div class="mobile-note">MENU</div>
   </nav>
+
+  <aside class="home-booking-dock" aria-label="課程預約">
+    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/">課程預約<span aria-hidden="true">→</span></a>
+  </aside>
 
   <header class="hero">
     <h1 class="home-semantic-title">HANA SCENT ARTIST</h1>
     <div class="hero-shell">
-      <div class="hero-visual"><img data-hana-hero-image src="/assets/home-hero-1920.webp" srcset="/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w" sizes="90vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台"></div>
+      <div class="hero-visual"><img data-hana-hero-image src="/assets/home-hero-1920.webp" srcset="/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台"></div>
       <div class="hero-panel">
         <div>        
           <p class="hero-text">將 人、記憶、音樂、場域，轉譯成用氣味記錄的形式。</p>
           <div class="home-booking-actions">
-            <a class="home-booking-cta" href="https://reservation.hanascent.com/">課程預約<span aria-hidden="true">→</span></a>
             <button class="intro-open-button" type="button" aria-haspopup="dialog" aria-controls="intro-screen" hidden>藝術影像 · ENTER</button>
           </div>
         </div>
