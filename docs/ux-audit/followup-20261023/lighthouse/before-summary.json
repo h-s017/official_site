@@ -1,0 +1,128 @@
+[
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.73,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 14470.631424999996,
+      "first-contentful-paint": 1246.9721249999998,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 168
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "overture",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.86,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 4202.4758999999995,
+      "first-contentful-paint": 1151.5948749999998,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 32
+    },
+    "warnings": [],
+    "artifact": "before-overture-mobile-1.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.75,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 7748.094225000001,
+      "first-contentful-paint": 1242.0083750000001,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 88
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "overture",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.86,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 4205.321800000001,
+      "first-contentful-paint": 1154.241,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 37
+    },
+    "warnings": [],
+    "artifact": "before-overture-mobile-2.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.75,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 8115.3042000000005,
+      "first-contentful-paint": 1229.4302500000001,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 59
+    },
+    "warnings": [],
+    "artifact": "before-home-mobile-3.json.gz"
+  },
+  {
+    "phase": "before",
+    "page": "overture",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.86,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 4204.6696,
+      "first-contentful-paint": 1155.0481000000002,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 32
+    },
+    "warnings": [],
+    "artifact": "before-overture-mobile-3.json.gz"
+  }
+]

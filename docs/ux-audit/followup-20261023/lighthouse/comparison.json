@@ -1,0 +1,138 @@
+[
+  {
+    "phase": "before",
+    "page": "home",
+    "n": 3,
+    "performance": {
+      "median": 75.0,
+      "range": [
+        73.0,
+        75.0
+      ]
+    },
+    "accessibility": 93.0,
+    "largest-contentful-paint": {
+      "median": 8115.3042000000005,
+      "range": [
+        7748.094225000001,
+        14470.631424999996
+      ]
+    },
+    "cumulative-layout-shift": {
+      "median": 0.02650410657154795,
+      "range": [
+        0.02650410657154795,
+        0.02650410657154795
+      ]
+    },
+    "total-blocking-time": {
+      "median": 88,
+      "range": [
+        59,
+        168
+      ]
+    }
+  },
+  {
+    "phase": "before",
+    "page": "overture",
+    "n": 3,
+    "performance": {
+      "median": 86.0,
+      "range": [
+        86.0,
+        86.0
+      ]
+    },
+    "accessibility": 100,
+    "largest-contentful-paint": {
+      "median": 4204.6696,
+      "range": [
+        4202.4758999999995,
+        4205.321800000001
+      ]
+    },
+    "cumulative-layout-shift": {
+      "median": 0.001935788898360862,
+      "range": [
+        0.001935788898360862,
+        0.001935788898360862
+      ]
+    },
+    "total-blocking-time": {
+      "median": 32,
+      "range": [
+        32,
+        37
+      ]
+    }
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "n": 3,
+    "performance": {
+      "median": 73.0,
+      "range": [
+        73.0,
+        76.0
+      ]
+    },
+    "accessibility": 93.0,
+    "largest-contentful-paint": {
+      "median": 9161.6147,
+      "range": [
+        6913.440500000001,
+        14772.337775000007
+      ]
+    },
+    "cumulative-layout-shift": {
+      "median": 0.02650410657154795,
+      "range": [
+        0.02650410657154795,
+        0.02650410657154795
+      ]
+    },
+    "total-blocking-time": {
+      "median": 144,
+      "range": [
+        74,
+        154
+      ]
+    }
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "n": 3,
+    "performance": {
+      "median": 100,
+      "range": [
+        99.0,
+        100
+      ]
+    },
+    "accessibility": 100,
+    "largest-contentful-paint": {
+      "median": 1731.3266,
+      "range": [
+        1727.3934,
+        1804.3436
+      ]
+    },
+    "cumulative-layout-shift": {
+      "median": 0.001935788898360862,
+      "range": [
+        0.001935788898360862,
+        0.001935788898360862
+      ]
+    },
+    "total-blocking-time": {
+      "median": 55.5,
+      "range": [
+        48,
+        55.5
+      ]
+    }
+  }
+]

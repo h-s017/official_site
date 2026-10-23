@@ -1,0 +1,26 @@
+{
+  "index.html": {
+    "bytes": 31044,
+    "sha256": "098bf44a54be47d75a5176d1b89bde31af0b87c577eb7fe9d9d93e2aecf312b9"
+  },
+  "overture/index.html": {
+    "bytes": 9753,
+    "sha256": "fb9dd4e88b799fce804564dacd88eb9c04e9d86c66ce9526fc1dfca71c7b5b6b"
+  },
+  "practice/index.html": {
+    "bytes": 15403,
+    "sha256": "7ee3d3180eee3095bcad5b880a5af94b03686ba36026355c917e03c1f952cd60"
+  },
+  "product-development/index.html": {
+    "bytes": 8362,
+    "sha256": "83b279477669cf46093694d0c2eb8e9130dd78acd6e4c9313ae23d0846ee0387"
+  },
+  "assets/courses/overture-cover-720.webp": {
+    "bytes": 49496,
+    "sha256": "b441ba8691ebc5d02345bbae169940f7d756de8b1da4dd02ca94360170d66ab9"
+  },
+  "assets/courses/overture-cover-1366.webp": {
+    "bytes": 214684,
+    "sha256": "0b426603fe0b7e85261ed5b9e26b5125cececa1a51c81fa26c6690cda75c541f"
+  }
+}

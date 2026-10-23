@@ -1,3 +1,15 @@
+# Vol.1 載入與局部文字對比｜2026-10-23
+
+本批發布範圍：Vol.1 同圖 WebP／responsive image／尺寸／lazy、首頁服務索引／氣味自修室／香氛產品開發的局部小字對比。Repository `h-s017/official_site`，Pages main 根目錄，https://hanascent.com/。基準 main `61600e4`；本批產品檔案與 SHA-256 見 `followup-20261023/product-manifest.json`。
+
+六頁四 viewport 24/24、主內容零 axe 違規及 root 溢出；ENTER 功能七情境、Vol.1 選圖兩情境通過。Vol.1 三次 lab 中位數 Performance 86→100、LCP 4.205→1.731s、CLS 維持 0.00194。首頁 lab 中位數仍為 Performance 73／LCP 9.162s，不宣稱改善。已知 CMS optional page_contents 404 與透明 ENTER 對比限制保留並記錄，非全站 AA 或 field 驗收。
+
+首頁效能試驗全數撤回，控制器、開場動畫、ENTER 透明樣式及字體均與基準相同。課程資訊只整理 C01–C06 待核定欄，價格／名稱／正文／付款未變，不重跑預約或付款。完整方案、原始測試、未達標項目與截圖見 [本批報告](followup-20261023/README.md)。
+
+依使用者既有授權完成後提交、合併並部署；實際 PR、合併及 Pages 成功狀態以 GitHub 記錄及後續發布驗證為準。下方保留歷史版本。
+
+---
+
 # 恢復原藝術開場與透明 ENTER｜2026-10-23
 
 依使用者最新核定恢復首次 session 自動藝術開場，ENTER 恢復透明底、白色直排及原文字陰影。保留關閉／暫停、Escape、焦點管理與 reduced-motion；品牌 h1、課程資料及付款不變。預覽及測試見 `restored-intro/README.md`。

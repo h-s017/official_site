@@ -1,0 +1,26 @@
+[
+  {
+    "file": "index.html",
+    "text_identical": true,
+    "links_identical": true,
+    "image_alts_identical": true
+  },
+  {
+    "file": "overture/index.html",
+    "text_identical": true,
+    "links_identical": true,
+    "image_alts_identical": true
+  },
+  {
+    "file": "practice/index.html",
+    "text_identical": true,
+    "links_identical": true,
+    "image_alts_identical": true
+  },
+  {
+    "file": "product-development/index.html",
+    "text_identical": true,
+    "links_identical": true,
+    "image_alts_identical": true
+  }
+]

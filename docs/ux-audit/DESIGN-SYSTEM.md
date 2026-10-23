@@ -25,3 +25,9 @@
 保留 Cormorant Garamond v21、Noto Serif TC v37、白底黑字及原攝影。Journal metadata 使用 #565b56、日期 #596159、精選序號 #626962，改善原先不足的文字對比；分類連結高度至少 32px，主要小箭頭／列表入口至少 44px，鍵盤 focus-visible 有清楚 outline。不是把全站字號、圖片背景或裝飾統一覆蓋。
 
 圖片的 width／height 與既有 CSS aspect-ratio 配合，保持既有裁切。共用規則由 `scripts/build-runtime-layout.mjs` 從原有 JS 靜態規則產生，順序不變；未做全站 CSS 架構重寫。未核定的首頁架構、服務名稱及課程說明見 HOME-COURSE-APPROVAL。
+
+## 2026-10-23：局部對比修正
+
+保留 Noto Serif TC／Cormorant Garamond、白底、原照片及透明白字 ENTER。只將首頁 `.entrance-index`、自修室 `.soft-band .kicker`、產品開發 `.pd-network .eyebrow`／`.pd-network-item span` 設為 #666666，避免 #767676 在 #fafafa／#f7f7f7 背景上低於 4.5:1。#666666 的計算對比約 5.50／5.36:1；沒有全域取代灰階。KPIA／HELORI 的穩定版面未重現低對比，故沒有任意加覆寫。透明 ENTER 的照片對比仍依核定保留為限制。
+
+Vol.1 使用原圖的 720w／1366w WebP，保持 1366:768 比例與原有裁切。字體子集及首頁影像預載試驗未採用，不屬於目前設計規範。

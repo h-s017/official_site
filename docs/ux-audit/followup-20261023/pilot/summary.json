@@ -1,0 +1,44 @@
+[
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.74,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 7092.955250000001,
+      "first-contentful-paint": 1228.578475,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 164
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1807.2555999999997,
+      "first-contentful-paint": 1132.6022999999998,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 43
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-1.json.gz"
+  }
+]
