@@ -178,3 +178,11 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 ## 第四階段：首頁品牌 h1
 
 `home-h1/check.py`：四 viewport 與 no-JS 共 5/5，唯一可及 h1 為 HANA SCENT ARTIST，三項 heading axe 規則零違規；同頁移除／還原 h1 的既有 nav／hero／服務／footer 幾何相同，零水平溢出。手機／桌機預覽及 runtime 標題大綱見 `home-h1/`。未重跑 Lighthouse，未宣稱全站 AA 或實體螢幕閱讀器驗收；付款未重測。
+
+## 2026-10-23：恢復藝術開場及原透明 ENTER
+
+依使用者最新指示恢復首次 session 自動藝術開場；同 session 關閉後不重複出現，首頁保留手動重播。ENTER 為原白色直排、透明背景、原文字陰影；保留 44px 觸控範圍。首次不顯示額外焦點框，鍵盤操作後顯示焦點。
+
+四 viewport＋儲存不可用／reduced-motion／no-JS 共 7 個功能情境通過；Enter／關閉／Escape、返回焦點、暫停與品牌 h1 保留。原始 axe 結果含 `color-contrast` 違規及 incomplete：透明白字在影像上的對比未全面通過，不聲稱 AA。本次依核定樣式保留透明 ENTER。證據在 `restored-intro/`。
+
+本次未重跑 Lighthouse；先前可選入口 Performance 99／LCP 2.179s 等是當時版本，不代表恢復自動開場後的效能。沒有 field CrUX／RUM／INP 驗收；付款未重測。
