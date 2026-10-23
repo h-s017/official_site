@@ -35,6 +35,26 @@
     document.head.appendChild(style);
   };
 
+  const installNavigationAppearance = () => {
+    if (document.getElementById("hana-nav-appearance-20261024")) return;
+    const style = document.createElement("style");
+    style.id = "hana-nav-appearance-20261024";
+    style.textContent = `
+      /* Translucent background; text and disclosure panels stay fully legible. */
+      .site-nav{--hana-nav-size:13.5px;--hana-menu-size:12px;background:rgba(255,255,255,.6)!important;}
+      .site-nav .nav-links{font-size:calc(var(--hana-nav-size) + 2pt)!important;color:#111;}
+      .site-nav .nav-links>a,.site-nav .nav-links>.nav-dropdown>.nav-drop-button{font-size:inherit!important;color:#111;}
+      .site-nav .mobile-note{font-size:calc(var(--hana-menu-size) + 2pt)!important;color:#111;}
+      .site-nav.menu-open{background:#fff!important;}
+      @media(max-width:1240px){.site-nav{--hana-nav-size:12px;}}
+      @media(max-width:980px){.site-nav{--hana-nav-size:13px;}}
+      @media(max-width:760px){.site-nav{--hana-nav-size:15px;}}
+      @media(max-width:420px){.site-nav{--hana-menu-size:11px;}}
+      @media(prefers-contrast:more),(prefers-reduced-transparency:reduce),(forced-colors:active){.site-nav{background:#fff!important;}}
+    `;
+    document.head.appendChild(style);
+  };
+
   const setMeta = (selector, content) => {
     const el = document.querySelector(selector);
     if (el) el.setAttribute("content", content);
@@ -249,6 +269,7 @@
 
   const afterCore = () => {
     installGlobalStyle();
+    installNavigationAppearance();
     syncHomepageIdentityAndSEO();
     arrangeHomepageSections();
     renderNavigation();

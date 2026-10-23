@@ -147,14 +147,16 @@
     html{scroll-padding-bottom:calc(128px + env(safe-area-inset-bottom,0px));}
     body[data-hana-page="home"]{padding-bottom:calc(128px + env(safe-area-inset-bottom,0px));}
     .home-booking-actions{display:flex;align-items:center;justify-content:center;margin-top:24px;}
-    .home-booking-cta{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;width:91.2px;height:91.2px;min-width:0;min-height:0;padding:7.6px;border:.75px solid #444;border-radius:50%;background:#fff;color:#444;font-family:var(--font-serif);font-size:15.2px;line-height:1.5;letter-spacing:.08em;white-space:nowrap;text-decoration:none;}
-    @media(hover:hover){.home-booking-cta:hover{background:#f7f7f7;border-color:#444;}}
-    .home-booking-bow{display:block;flex:0 0 40px;width:40px;height:40px;object-fit:contain;}
-    .home-booking-cta:focus-visible{outline:2px solid #111;outline-offset:4px;}
+    .home-booking-cta{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:86.64px;height:86.64px;min-width:0;min-height:0;padding:0 0 10px;border:.7125px solid #444;border-radius:50%;background:#fff;color:#111;opacity:.6;font-family:var(--font-serif);font-size:12.5px;line-height:1.2;letter-spacing:.02em;-webkit-text-size-adjust:100%;text-size-adjust:100%;white-space:nowrap;text-decoration:none;}
+    @media(hover:hover){.home-booking-cta:hover{background:#f7f7f7;border-color:#444;opacity:1;}}
+    .home-booking-bow{display:block;flex:0 0 44px;width:44px;height:44px;object-fit:contain;}
+    .home-booking-label{display:block;flex:0 0 auto;max-width:100%;font:inherit;line-height:1.2;letter-spacing:.02em;white-space:nowrap;}
+    .home-booking-cta:focus-visible{outline:2px solid #111;outline-offset:4px;opacity:1;}
+    @media(prefers-contrast:more),(prefers-reduced-transparency:reduce),(forced-colors:active){.home-booking-cta{opacity:1;}}
     .home-booking-cta--floating{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:80;}
     body.intro-open .home-booking-cta--floating,.site-nav.menu-open~.home-booking-dock .home-booking-cta--floating{visibility:hidden;pointer-events:none;}
     @media(min-width:981px){.site-nav .nav-dropdown-menu{left:auto!important;right:0!important;}}
-    @media(max-width:760px){.home-booking-cta--floating{left:auto;right:max(18px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:83.6px;height:83.6px;max-width:calc(100vw - 36px);padding:5.7px;}.home-booking-actions{margin-top:22px;}}
+    @media(max-width:760px){.home-booking-cta--floating{left:auto;right:max(18px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:79.42px;height:79.42px;max-width:calc(100vw - 36px);padding:0 0 10px;}.home-booking-actions{margin-top:22px;}}
 
     /* Full-width hero; retain the original artwork and reading rhythm below. */
     .hero{padding:0 0 42px!important;}
@@ -251,6 +253,8 @@
       .nav-links a{height:auto!important;padding:12px 0!important;align-items:flex-start!important}
     }
     @media(max-width:760px){
+      .hero-visual{aspect-ratio:1;overflow:hidden;}
+      .hero-visual img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;}
       .entrance-editorial-head{margin-bottom:28px;}
       .entrance-editorial-head h2{font-size:26px;}
       .entrance-editorial-grid{display:block;}
@@ -303,13 +307,13 @@
   </nav>
 
   <aside class="home-booking-dock" aria-label="課程預約">
-    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/"><img class="home-booking-bow" src="assets/hineni_lace_bow_transparent.png?v=635674932e92" alt="" width="40" height="40">課程預約</a>
+    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/"><img class="home-booking-bow" src="assets/hineni_lace_bow_transparent.png?v=635674932e92" alt="" width="44" height="44"><span class="home-booking-label">課程預約</span></a>
   </aside>
 
   <header class="hero">
     <h1 class="home-semantic-title">HANA SCENT ARTIST</h1>
     <div class="hero-shell">
-      <div class="hero-visual"><img data-hana-hero-image src="/assets/home-hero-1920.webp" srcset="/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台"></div>
+      <div class="hero-visual"><img data-hana-hero-image src="/assets/home-hero-1920.webp" srcset="/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w" sizes="(max-width:760px) 178vw, 100vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台"></div>
       <div class="hero-panel">
         <div>        
           <p class="hero-text">將 人、記憶、音樂、場域，轉譯成用氣味記錄的形式。</p>
@@ -415,7 +419,7 @@
     </div>
   </footer>
 
-  <script src="/assets/site.js?v=news-list-v1"></script>
+  <script src="/assets/site.js?v=mobile-hero-nav-v2"></script>
   <script src="/assets/cms-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="/assets/hana-cms.js?v=news-list-v1"></script>

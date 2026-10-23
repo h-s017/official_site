@@ -1,0 +1,692 @@
+[
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.34375,
+      "width": 229,
+      "height": 28.71875,
+      "top": 19.34375,
+      "right": 247,
+      "bottom": 48.0625,
+      "left": 18
+    },
+    "menu": {
+      "x": 255,
+      "y": 18,
+      "width": 47,
+      "height": 31.421875,
+      "top": 18,
+      "right": 302,
+      "bottom": 49.421875,
+      "left": 255
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 320,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.34375,
+      "width": 299,
+      "height": 28.71875,
+      "top": 19.34375,
+      "right": 317,
+      "bottom": 48.0625,
+      "left": 18
+    },
+    "menu": {
+      "x": 325,
+      "y": 18,
+      "width": 47,
+      "height": 31.421875,
+      "top": 18,
+      "right": 372,
+      "bottom": 49.421875,
+      "left": 325
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 390,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 15.6667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 171.40625,
+      "y": 14,
+      "width": 425.1875,
+      "height": 47.296875,
+      "top": 14,
+      "right": 596.59375,
+      "bottom": 61.296875,
+      "left": 171.40625
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 768,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 14.6667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 49.046875,
+      "y": 16,
+      "width": 335.03125,
+      "height": 35.1875,
+      "top": 16,
+      "right": 384.078125,
+      "bottom": 51.1875,
+      "left": 49.046875
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 981,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 14.6667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 59.9375,
+      "y": 16,
+      "width": 335.03125,
+      "height": 35.1875,
+      "top": 16,
+      "right": 394.96875,
+      "bottom": 51.1875,
+      "left": 59.9375
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 1199,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 16.1667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 72,
+      "y": 16,
+      "width": 335.03125,
+      "height": 35.1875,
+      "top": 16,
+      "right": 407.03125,
+      "bottom": 51.1875,
+      "left": 72
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/",
+    "width": 1440,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.28125,
+      "width": 229,
+      "height": 27.671875,
+      "top": 19.28125,
+      "right": 247,
+      "bottom": 46.953125,
+      "left": 18
+    },
+    "menu": {
+      "x": 255,
+      "y": 18,
+      "width": 47,
+      "height": 30.234375,
+      "top": 18,
+      "right": 302,
+      "bottom": 48.234375,
+      "left": 255
+    },
+    "overflow": false,
+    "path": "/courses/",
+    "width": 320,
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "13.1pt (17.51px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "10.3pt (13.6667px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\">MENU</div>",
+              "target": [
+                ".mobile-note"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.28125,
+      "width": 299,
+      "height": 27.671875,
+      "top": 19.28125,
+      "right": 317,
+      "bottom": 46.953125,
+      "left": 18
+    },
+    "menu": {
+      "x": 325,
+      "y": 18,
+      "width": 47,
+      "height": 30.234375,
+      "top": 18,
+      "right": 372,
+      "bottom": 48.234375,
+      "left": 325
+    },
+    "overflow": false,
+    "path": "/courses/",
+    "width": 390,
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "13.1pt (17.51px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "10.3pt (13.6667px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\">MENU</div>",
+              "target": [
+                ".mobile-note"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 15.6667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 171.40625,
+      "y": 14,
+      "width": 425.1875,
+      "height": 45.5625,
+      "top": 14,
+      "right": 596.59375,
+      "bottom": 59.5625,
+      "left": 171.40625
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/courses/",
+    "width": 768,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 16.1667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 72,
+      "y": 16,
+      "width": 335.03125,
+      "height": 35.1875,
+      "top": 16,
+      "right": 407.03125,
+      "bottom": 51.1875,
+      "left": 72
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/courses/",
+    "width": 1440,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.28125,
+      "width": 229,
+      "height": 27.671875,
+      "top": 19.28125,
+      "right": 247,
+      "bottom": 46.953125,
+      "left": 18
+    },
+    "menu": {
+      "x": 255,
+      "y": 18,
+      "width": 47,
+      "height": 30.234375,
+      "top": 18,
+      "right": 302,
+      "bottom": 48.234375,
+      "left": 255
+    },
+    "overflow": false,
+    "path": "/journal/",
+    "width": 320,
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "13.1pt (17.51px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "10.3pt (13.6667px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\">MENU</div>",
+              "target": [
+                ".mobile-note"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 17.6667,
+    "menuFont": 13.6667,
+    "logo": {
+      "x": 18,
+      "y": 19.28125,
+      "width": 299,
+      "height": 27.671875,
+      "top": 19.28125,
+      "right": 317,
+      "bottom": 46.953125,
+      "left": 18
+    },
+    "menu": {
+      "x": 325,
+      "y": 18,
+      "width": 47,
+      "height": 30.234375,
+      "top": 18,
+      "right": 372,
+      "bottom": 48.234375,
+      "left": 325
+    },
+    "overflow": false,
+    "path": "/journal/",
+    "width": 390,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 15.6667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 171.40625,
+      "y": 14,
+      "width": 425.1875,
+      "height": 45.5625,
+      "top": 14,
+      "right": 596.59375,
+      "bottom": 59.5625,
+      "left": 171.40625
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/journal/",
+    "width": 768,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  {
+    "bg": "rgba(255, 255, 255, 0.6)",
+    "opacity": "1",
+    "font": 16.1667,
+    "menuFont": 14.6667,
+    "logo": {
+      "x": 72,
+      "y": 16,
+      "width": 335.03125,
+      "height": 35.1875,
+      "top": 16,
+      "right": 407.03125,
+      "bottom": 51.1875,
+      "left": 72
+    },
+    "menu": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "overflow": false,
+    "path": "/journal/",
+    "width": 1440,
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    }
+  }
+]

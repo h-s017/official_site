@@ -1,3 +1,9 @@
+# 手機Hero與半透明導覽／圓鈕｜2026-10-24
+
+Hero／圓鈕5viewport+no-JS 6/6，另三頁導覽14/14；幾何驗證文字四角在圓內、正常與聚焦CTA axe零違規，導覽局部axe零違規。WebKit因缺依賴不可用，未做iPhone／Instagram真機；無新增Lighthouse／真實使用者效能數據，未載入預約付款。 [前後截圖、測試及限制](mobile-square-hero/README.md)。
+
+---
+
 # 首頁消息精簡列表｜2026-10-24
 
 四viewport加長內容／三則上限、API失敗及no-JS共7/7；檢查順序、無溢出、焦點、連結與觸控高度，消息區axe零違規。手機第一則240.8→127px、桌機269.3→147px。無新增Lighthouse／實際使用者效能數據，未載入預約或付款。 [前後圖及證據](news-compact/README.md)。
