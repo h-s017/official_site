@@ -205,3 +205,7 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 ## 2026-10-23：取消開場右上角字樣
 
 `clean-intro/check.py` 七情境通過；取消右上角白底控制項，保留透明 ENTER、Escape、焦點與 session；暫停改為 Tab 聚焦才在下方顯示，Space 可暫停。四 viewport 預覽及完整 axe 在 `clean-intro/`，影像文字的已知對比限制未宣稱通過。未重跑 Lighthouse／預約／付款。舊開場測試腳本屬舊版本，本批以新腳本為準。
+
+## 2026-10-23：觸控進站後標題外框
+
+`logo-focus/check.py` 重現四 viewport 的 pointer 關閉後 `focus-visible:true / outline:auto`；修正後保持焦點位置，outline:none，鍵盤操作恢復 solid 2px，四組均零溢出；另首次鍵盤關閉一情境，共 5/5。既有 clean-intro 七情境 7/7。資料及前後截圖在 logo-focus/，未做實體 Android WebView、Lighthouse 或付款測試。

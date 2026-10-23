@@ -1,0 +1,124 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "pointer": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "keyboard_same_focus": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "tab": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "manual_replay_escape_returns_focus": true
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "pointer": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "keyboard_same_focus": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "tab": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "manual_replay_escape_returns_focus": true
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "pointer": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "keyboard_same_focus": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "tab": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "manual_replay_escape_returns_focus": true
+  },
+  {
+    "viewport": [
+      320,
+      844
+    ],
+    "pointer": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "keyboard_same_focus": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "tab": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    },
+    "manual_replay_escape_returns_focus": true
+  },
+  {
+    "case": "keyboard dismissal",
+    "logo": {
+      "focused": true,
+      "focusVisible": true,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "overflow": false
+    }
+  }
+]
