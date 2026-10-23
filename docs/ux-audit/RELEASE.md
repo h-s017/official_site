@@ -1,3 +1,13 @@
+# 恢復原藝術開場與透明 ENTER｜2026-10-23
+
+依使用者最新核定恢復首次 session 自動藝術開場，ENTER 恢復透明底、白色直排及原文字陰影。保留關閉／暫停、Escape、焦點管理與 reduced-motion；品牌 h1、課程資料及付款不變。預覽及測試見 `restored-intro/README.md`。
+
+7 個功能情境通過；透明文字對比仍有 axe 違規及 incomplete，未宣稱 AA。未重測 Lighthouse，不沿用可選入口版本數值代表本版本效能。未重測預約／付款。實際合併及部署狀態以本批 PR／Actions 為準。
+
+下方保留先前版本紀錄，與本次最新指示有差異時，以本段為準。
+
+---
+
 # 首頁品牌 h1：第四階段
 
 使用者核定以既有 HANA SCENT ARTIST 作語意主標，並先提供手機／桌機預覽。h1 位於主視覺區開頭，使用輔具可讀的 visually-hidden 文字；畫面保留既有圖片品牌字。只修改 index.html 的 h1 及局部 CSS。
