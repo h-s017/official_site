@@ -37,4 +37,4 @@
 
 ## 範圍及限制
 
-只修改 `index.html` 的新原生 anchor、局部樣式及按鈕排列。發布沿用 main 根目錄的 GitHub Pages，實際狀態以本批 PR／Pages 工作為準。預覽測試沿用 Playwright／Chromium 154.0.8037.57，非實體裝置；沒有付款、CrUX／RUM／INP 或整頁 WCAG 驗收。完成後依既有流程合併、部署並確認正式站。
+只修改 `index.html` 的新原生 anchor、局部樣式及按鈕排列。發布沿用 main 根目錄的 GitHub Pages，實際狀態以本批 PR／Pages 工作為準。預覽測試沿用 Playwright／Chromium 154.0.8037.57，非實體裝置；沒有付款、CrUX／RUM／INP 或整頁 WCAG 驗收。完成後依既有流程合併、部署並確認正式站；唯讀正式驗證可設定 HANA_CTA_BASE／HANA_CTA_OUT 另存結果，仍攔截預約目標，不載入預約應用。

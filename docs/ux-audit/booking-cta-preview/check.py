@@ -2,11 +2,11 @@
 import asyncio,functools,http.server,json,os,threading
 from pathlib import Path
 from playwright.async_api import async_playwright
-ROOT=Path(__file__).resolve().parents[3];OUT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[3];OUT=Path(os.environ.get('HANA_CTA_OUT',str(Path(__file__).resolve().parent)));OUT.mkdir(parents=True,exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
  def log_message(self,*a):pass
 async def main():
- server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(ROOT)));threading.Thread(target=server.serve_forever,daemon=True).start();base='http://127.0.0.1:'+str(server.server_address[1]);rows=[]
+ server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(ROOT)));threading.Thread(target=server.serve_forever,daemon=True).start();base=os.environ.get('HANA_CTA_BASE','http://127.0.0.1:'+str(server.server_address[1]));rows=[]
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'],proxy={'server':os.environ['HTTPS_PROXY'],'bypass':'127.0.0.1,localhost'})
   for w,h in [(390,844),(768,1024),(1440,900),(320,844),(1200,900),(1199,900)]:
