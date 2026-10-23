@@ -129,6 +129,8 @@
     .intro-pause:focus{left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:3;width:auto;height:auto;min-height:44px;min-width:44px;padding:10px 14px;margin:0;overflow:visible;clip-path:none;background:#fff;color:#111;cursor:pointer;}
     .intro-open-button:focus-visible,.intro-screen button:focus-visible{outline:2px solid #111;outline-offset:4px;}
     .intro-screen.is-auto-opening .intro-enter:focus-visible{outline:none;}
+    .site-nav .logo:focus-visible{outline:2px solid #111;outline-offset:4px;}
+    .site-nav .logo:focus:not(:focus-visible),.site-nav .logo[data-intro-pointer-focus]{outline:none;}
     .intro-screen:not([open]) .intro-slide,.intro-screen.is-paused .intro-slide{animation-play-state:paused;}
     .intro-slides{position:absolute;inset:0;overflow:hidden;background:#fff;cursor:pointer;}
     .intro-slide{position:absolute;inset:-2%;margin:0;opacity:0;will-change:opacity,transform;animation:intro-sequence 15s ease-in-out infinite;}
@@ -396,6 +398,6 @@
   <script src="/assets/cms-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="/assets/hana-cms.js?v=20260814-news2m"></script>
-  <script src="/assets/optional-intro.js?v=20261023-clean-controls"></script>
+  <script src="/assets/optional-intro.js?v=20261023-pointer-focus"></script>
 </body>
 </html>
