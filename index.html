@@ -147,9 +147,9 @@
     html{scroll-padding-bottom:calc(128px + env(safe-area-inset-bottom,0px));}
     body[data-hana-page="home"]{padding-bottom:calc(128px + env(safe-area-inset-bottom,0px));}
     .home-booking-actions{display:flex;align-items:center;justify-content:center;margin-top:24px;}
-    .home-booking-cta{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3.8px;width:91.2px;height:91.2px;min-width:0;min-height:0;padding:7.6px;border:1px solid #111;border-radius:50%;background:#fff;color:#111;font-family:var(--font-serif);font-size:15.2px;line-height:1.5;letter-spacing:.08em;white-space:nowrap;text-decoration:none;}
-    @media(hover:hover){.home-booking-cta:hover{background:#f7f7f7;border-color:#111;}}
-    .home-booking-bow{display:block;flex:0 0 30.4px;width:30.4px;height:30.4px;object-fit:contain;}
+    .home-booking-cta{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;width:91.2px;height:91.2px;min-width:0;min-height:0;padding:7.6px;border:.75px solid #444;border-radius:50%;background:#fff;color:#444;font-family:var(--font-serif);font-size:15.2px;line-height:1.5;letter-spacing:.08em;white-space:nowrap;text-decoration:none;}
+    @media(hover:hover){.home-booking-cta:hover{background:#f7f7f7;border-color:#444;}}
+    .home-booking-bow{display:block;flex:0 0 40px;width:40px;height:40px;object-fit:contain;}
     .home-booking-cta:focus-visible{outline:2px solid #111;outline-offset:4px;}
     .home-booking-cta--floating{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:80;}
     body.intro-open .home-booking-cta--floating,.site-nav.menu-open~.home-booking-dock .home-booking-cta--floating{visibility:hidden;pointer-events:none;}
@@ -303,7 +303,7 @@
   </nav>
 
   <aside class="home-booking-dock" aria-label="課程預約">
-    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/"><img class="home-booking-bow" src="assets/booking-bow.webp" alt="" width="32" height="32">課程預約</a>
+    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/"><img class="home-booking-bow" src="assets/booking-lace-bow.webp" alt="" width="40" height="40">課程預約</a>
   </aside>
 
   <header class="hero">
@@ -313,9 +313,6 @@
       <div class="hero-panel">
         <div>        
           <p class="hero-text">將 人、記憶、音樂、場域，轉譯成用氣味記錄的形式。</p>
-          <div class="home-booking-actions">
-            <button class="intro-open-button" type="button" aria-haspopup="dialog" aria-controls="intro-screen" hidden>藝術影像 · ENTER</button>
-          </div>
         </div>
       </div>
     </div>
@@ -420,6 +417,6 @@
   <script src="/assets/cms-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="/assets/hana-cms.js?v=20260814-news2m"></script>
-  <script src="/assets/optional-intro.js?v=20261023-pointer-focus"></script>
+  <script src="/assets/optional-intro.js?v=charcoal-lace"></script>
 </body>
 </html>

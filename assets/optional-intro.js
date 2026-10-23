@@ -1,15 +1,13 @@
 (() => {
   const dialog = document.getElementById('intro-screen');
-  const opener = document.querySelector('.intro-open-button');
-  if (!dialog || !opener || typeof dialog.showModal !== 'function') return;
+  if (!dialog || typeof dialog.showModal !== 'function') return;
   const pause = dialog.querySelector('.intro-pause');
   // Use a new session key so visitors see the restored opening once after this release.
   const sessionKey = 'hana-intro-restored-seen';
-  let returnFocus = opener;
+  const returnFocus = document.querySelector('.site-nav .logo');
   let pointerClose = false;
   const openIntro = (automatic = false) => {
     pointerClose = false;
-    returnFocus = automatic ? document.querySelector('.site-nav .logo') : opener;
     dialog.querySelectorAll('img[data-src]').forEach(image => {
       image.src = image.dataset.src;
       image.removeAttribute('data-src');
@@ -18,8 +16,6 @@
     dialog.showModal();
     document.body.classList.add('intro-open');
   };
-  opener.hidden = false;
-  opener.addEventListener('click', () => openIntro());
   dialog.querySelectorAll('.intro-enter').forEach(button => {
     button.addEventListener('click', () => dialog.close());
   });
