@@ -1,3 +1,11 @@
+# 藝術開場：取消右上角字樣｜2026-10-23
+
+依使用者提供截圖，移除右上角「暫停播放／關閉 ×」。畫面保留原透明 ENTER；ENTER／Escape 關閉、首次 session 自動開場及重播正常。暫停保留為鍵盤聚焦時才在下方顯示的控制項。四 viewport＋三種備援／偏好共七情境通過，預覽及原始結果見 [clean-intro](clean-intro/README.md)。
+
+本批只改首頁控制項與其控制器 selector／cache query；課程價格、品牌正文、照片、動畫與付款未改。未重測付款或 Lighthouse，透明 ENTER 的已知對比限制保留。依既有授權提交、合併及部署，實際狀態以本批 PR／Pages 記錄為準。下方保留歷史。
+
+---
+
 # Vol.1 載入與局部文字對比｜2026-10-23
 
 本批發布範圍：Vol.1 同圖 WebP／responsive image／尺寸／lazy、首頁服務索引／氣味自修室／香氛產品開發的局部小字對比。Repository `h-s017/official_site`，Pages main 根目錄，https://hanascent.com/。基準 main `61600e4`；本批產品檔案與 SHA-256 見 `followup-20261023/product-manifest.json`。

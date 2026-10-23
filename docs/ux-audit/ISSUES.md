@@ -198,3 +198,7 @@ UX-007 的先前可選入口 lab 數據屬歷史，不能用來替恢復自動�
 - 證據／截圖：`followup-20261023/lighthouse/`、`loading-checks.json`、`screenshots/README.md`。撤回方案及後續技術方向見 TECHNICAL-PLAN.md。
 
 問題數仍為 P0 1（已修正）、P1 8、P2 1；UX-003 撤回。課程資訊 UX-004 待 C01–C06 核定；UX-011 屬獨立預約 Repository，付款依使用者告知完成，不重測或改動。
+
+## UX-002 最新呈現：移除右上角控制項
+
+依使用者截圖核定，移除上方「暫停播放／關閉 ×」；ENTER 與 Escape 仍關閉 modal 並歸還焦點。暫停以可及的 focus-reveal 按鈕在下方提供，維持原動畫與 reduced-motion。四 viewport＋三情境 7/7，證據 `clean-intro/`。UX-002-C 的透明 ENTER 對比限制仍在；不新增問題數、不變更價格或付款。

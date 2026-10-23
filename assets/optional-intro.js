@@ -18,7 +18,7 @@
   };
   opener.hidden = false;
   opener.addEventListener('click', () => openIntro());
-  dialog.querySelectorAll('.intro-close,.intro-enter').forEach(button => {
+  dialog.querySelectorAll('.intro-enter').forEach(button => {
     button.addEventListener('click', () => dialog.close());
   });
   pause.addEventListener('click', () => {
