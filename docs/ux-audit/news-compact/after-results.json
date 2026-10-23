@@ -1,0 +1,245 @@
+[
+  {
+    "section": {
+      "x": 0,
+      "y": 98.947265625,
+      "width": 390,
+      "height": 451.984375,
+      "top": 98.947265625,
+      "right": 390,
+      "bottom": 550.931640625,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 23.390625,
+          "y": 212.962890625,
+          "width": 343.21875,
+          "height": 126.984375,
+          "top": 212.962890625,
+          "right": 366.609375,
+          "bottom": 339.947265625,
+          "left": 23.390625
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": "｜用氣味感知，屬於你的時區｜\n\n2026 夏日 平均日落時間是18 : 21\n如果一天只有十二小時\n你的 #goldenhour 會是哪一個 21 分？"
+      },
+      {
+        "rect": {
+          "x": 23.390625,
+          "y": 339.947265625,
+          "width": 343.21875,
+          "height": 126.984375,
+          "top": 339.947265625,
+          "right": 366.609375,
+          "bottom": 466.931640625,
+          "left": 23.390625
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": "具象化的ISO E SUPER"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 174.20697021484375,
+      "width": 768,
+      "height": 490.07818603515625,
+      "top": 174.20697021484375,
+      "right": 768,
+      "bottom": 664.28515625,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 46.078125,
+          "y": 303.91009521484375,
+          "width": 675.84375,
+          "height": 146.984375,
+          "top": 303.91009521484375,
+          "right": 721.921875,
+          "bottom": 450.89447021484375,
+          "left": 46.078125
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": "｜用氣味感知，屬於你的時區｜\n\n2026 夏日 平均日落時間是18 : 21\n如果一天只有十二小時\n你的 #goldenhour 會是哪一個 21 分？"
+      },
+      {
+        "rect": {
+          "x": 46.078125,
+          "y": 450.89447021484375,
+          "width": 675.84375,
+          "height": 121.39068603515625,
+          "top": 450.89447021484375,
+          "right": 721.921875,
+          "bottom": 572.28515625,
+          "left": 46.078125
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": "具象化的ISO E SUPER"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      768,
+      1024
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 111.6654052734375,
+      "width": 1440,
+      "height": 490.078125,
+      "top": 111.6654052734375,
+      "right": 1440,
+      "bottom": 601.7435302734375,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 290,
+          "y": 241.3685302734375,
+          "width": 860,
+          "height": 146.984375,
+          "top": 241.3685302734375,
+          "right": 1150,
+          "bottom": 388.3529052734375,
+          "left": 290
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": "｜用氣味感知，屬於你的時區｜\n\n2026 夏日 平均日落時間是18 : 21\n如果一天只有十二小時\n你的 #goldenhour 會是哪一個 21 分？"
+      },
+      {
+        "rect": {
+          "x": 290,
+          "y": 388.3529052734375,
+          "width": 860,
+          "height": 121.390625,
+          "top": 388.3529052734375,
+          "right": 1150,
+          "bottom": 509.7435302734375,
+          "left": 290
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": "具象化的ISO E SUPER"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 99.5010986328125,
+      "width": 320,
+      "height": 451.984375,
+      "top": 99.5010986328125,
+      "right": 320,
+      "bottom": 551.4854736328125,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 19.1875,
+          "y": 213.5167236328125,
+          "width": 281.625,
+          "height": 126.984375,
+          "top": 213.5167236328125,
+          "right": 300.8125,
+          "bottom": 340.5010986328125,
+          "left": 19.1875
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": "｜用氣味感知，屬於你的時區｜\n\n2026 夏日 平均日落時間是18 : 21\n如果一天只有十二小時\n你的 #goldenhour 會是哪一個 21 分？"
+      },
+      {
+        "rect": {
+          "x": 19.1875,
+          "y": 340.5010986328125,
+          "width": 281.625,
+          "height": 126.984375,
+          "top": 340.5010986328125,
+          "right": 300.8125,
+          "bottom": 467.4854736328125,
+          "left": 19.1875
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": "具象化的ISO E SUPER"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      320,
+      844
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "mode": "fixture",
+    "count": 3,
+    "fallback_visible": false
+  },
+  {
+    "mode": "network-error",
+    "count": 3,
+    "fallback_visible": true
+  },
+  {
+    "mode": "no-js",
+    "count": 3,
+    "fallback_visible": true
+  }
+]
