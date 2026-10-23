@@ -113,6 +113,8 @@
     if (!isHomepage) return;
     const news = document.querySelector("main .home-news");
     const about = document.querySelector("main .home-about");
+    // The compact list has an explicit editorial position in the HTML.
+    if (news?.dataset.newsLayout === "list") return;
     if (news && about && about.nextElementSibling !== news) about.insertAdjacentElement("afterend", news);
   };
 

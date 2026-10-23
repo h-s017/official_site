@@ -91,7 +91,7 @@
   }
 
   function enhanceHomeNewsMarquee(root, list) {
-    if (!root.classList.contains('home-news')) return;
+    if (!root.classList.contains('home-news') || root.dataset.newsLayout === 'list') return;
     installHomeNewsMarqueeStyles();
     let marquee = list.parentElement;
     if (!marquee?.classList.contains('news-marquee')) {
@@ -210,7 +210,11 @@
         const body = publicCopy(x.summary || x.content || '');
         const content = body ? `<p>${esc(body)}</p>` : '';
         const linkLabel = x.link_label || '了解更多 →';
-        return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${esc(publicCopy(x.title))}</h3>${content}</div>${x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
+        const compact = root.dataset.newsLayout === 'list';
+        const title = compact && x.link_url
+          ? `<a class="news-title-link" href="${esc(x.link_url)}">${esc(publicCopy(x.title))}</a>`
+          : esc(publicCopy(x.title));
+        return `<article class="news-row" data-hana-announcement><div class="news-main"><div class="news-meta"><span class="news-category">${esc(categoryLabel)}</span><time class="news-date" datetime="${esc(sourceDate)}">${esc(dateLabel)}</time></div><h3>${title}</h3>${content}</div>${!compact && x.link_url ? `<a class="text-link" href="${esc(x.link_url)}">${esc(linkLabel)}</a>` : ''}</article>`;
       }).join('');
       list.innerHTML = rows || '<p class="news-empty">目前尚無最新消息。</p>';
       enhanceHomeNewsMarquee(root, list);
