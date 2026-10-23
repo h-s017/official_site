@@ -6,7 +6,7 @@
 
 首頁效能試驗全數撤回，控制器、開場動畫、ENTER 透明樣式及字體均與基準相同。課程資訊只整理 C01–C06 待核定欄，價格／名稱／正文／付款未變，不重跑預約或付款。完整方案、原始測試、未達標項目與截圖見 [本批報告](followup-20261023/README.md)。
 
-依使用者既有授權完成後提交、合併並部署；實際 PR、合併及 Pages 成功狀態以 GitHub 記錄及後續發布驗證為準。下方保留歷史版本。
+依使用者既有授權，[PR #18](https://github.com/h-s017/official_site/pull/18) 已合併，main `5a3f0d8`、[Pages run 39931775258](https://github.com/h-s017/official_site/actions/runs/39931775258) 成功。正式站 14/14 檔案雜湊相符、六頁四裝置 24/24 與 ENTER 七情境通過；本次後續提交只保存 docs 證據，不改產品檔案。詳見 [正式驗證](followup-20261023/PRODUCTION.md)。下方保留歷史版本。
 
 ---
 

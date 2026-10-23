@@ -1,0 +1,119 @@
+{
+  "base": "https://hanascent.com",
+  "deployment": "https://github.com/h-s017/official_site/actions/runs/39931775258",
+  "main_commit": "5a3f0d8af8d502503cb71a6ddda7d0ef4646e741",
+  "asset_matches": 14,
+  "viewport_checks": 24,
+  "main_content_axe_violations": 0,
+  "root_overflow": 0,
+  "pageerrors": 0,
+  "intro_passed": 7,
+  "intro_transparent": true,
+  "known_intro_contrast_limit": true,
+  "existing_cms_http_errors": [
+    {
+      "page": "home",
+      "viewport": [
+        768,
+        1024
+      ],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.home",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "viewport": [
+        390,
+        844
+      ],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.home",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "viewport": [
+        1440,
+        900
+      ],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.home",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "viewport": [
+        320,
+        844
+      ],
+      "http_errors": [
+        {
+          "url": "https://uzqaodfmnrjrsbvxhlmh.supabase.co/rest/v1/page_contents?select=field_key%2Ccontent_type%2Cvalue&page_key=eq.home",
+          "status": 404
+        }
+      ]
+    }
+  ],
+  "course_image_checks": [
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "image": {
+        "src": "https://hanascent.com/assets/courses/overture-cover-1366.webp",
+        "loaded": true,
+        "width": 724,
+        "height": 407
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "image": {
+        "src": "https://hanascent.com/assets/courses/overture-cover-720.webp",
+        "loaded": true,
+        "width": 346,
+        "height": 195
+      }
+    },
+    {
+      "viewport": [
+        320,
+        844
+      ],
+      "image": {
+        "src": "https://hanascent.com/assets/courses/overture-cover-720.webp",
+        "loaded": true,
+        "width": 276,
+        "height": 155
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "image": {
+        "src": "https://hanascent.com/assets/courses/overture-cover-1366.webp",
+        "loaded": true,
+        "width": 1180,
+        "height": 663
+      }
+    }
+  ],
+  "booking_or_payment_tested": false,
+  "field_performance_tested": false
+}
