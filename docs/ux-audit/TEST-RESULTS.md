@@ -209,3 +209,7 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 ## 2026-10-23：觸控進站後標題外框
 
 `logo-focus/check.py` 重現四 viewport 的 pointer 關閉後 `focus-visible:true / outline:auto`；修正後保持焦點位置，outline:none，鍵盤操作恢復 solid 2px，四組均零溢出；另首次鍵盤關閉一情境，共 5/5。既有 clean-intro 七情境 7/7。資料及前後截圖在 logo-focus/，未做實體 Android WebView、Lighthouse 或付款測試。
+
+## 2026-10-24：醒目課程預約入口
+
+`booking-cta-preview/check.py` 六 viewport（390、768、1440、320、1200、1199px）及手機／桌機 no-JS 共8/8，主要四尺寸進站首屏可見預約入口、按鈕高度≥44px、鍵盤可見、CTA 範圍 axe 零違規、根頁無橫向溢出。原藝術開場、重播／Escape／焦點正常。連結點擊以攔截回應驗證目標，不載入正式預約應用，不建立訂單／測付款。1199px 基準原有29px溢出已由局部面板右對齊修正（UX-012）。未重跑 Lighthouse，不宣稱整頁 AA／field CWV。
