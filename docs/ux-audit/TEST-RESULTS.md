@@ -1,3 +1,9 @@
+# 白底蝴蝶結課程預約｜2026-10-24
+
+五viewport及no-JS共6/6。圖片、尺寸、固定定位、鍵盤焦點、頁尾與選單／開場均通過；axe只檢查CTA。未測正式預約或付款，未重跑效能測試。 詳細圖與證據：[booking-bow](booking-bow/README.md)。
+
+---
+
 # 測試結果與驗收限制
 
 > 第二階段（2026-10-21）：Journal 技術方案及修正見 [TECHNICAL-PLAN](phase-2/TECHNICAL-PLAN.md)，內容決策見 [首頁／課程資訊核定表](HOME-COURSE-APPROVAL.md)。下方原階段紀錄保留；最新結果另見本檔後續補充。付款依使用者告知已測試，本階段不重測。
