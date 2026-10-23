@@ -170,3 +170,31 @@
 - 證據：`restored-intro/results.json`、`restored-intro/intro-390x844.png` 及桌機圖。
 
 UX-007 的先前可選入口 lab 數據屬歷史，不能用來替恢復自動開場版本宣稱效能已通過。
+
+## 2026-10-23：UX-006 本批局部對比完成
+
+- Issue ID：UX-006（既有問題切片，不另增加問題數）。
+- URL：https://hanascent.com/、https://hanascent.com/practice/、https://hanascent.com/product-development/。
+- 裝置／Viewport：390×844、768×1024、1440×900、320×844。
+- 問題描述／使用者影響：淡灰底上原 #767676 小字為 4.35:1／4.23:1，低視力使用者較難閱讀。每裝置首頁 1、自修室 2、產品開發 5 個節點。
+- 重現：新 session 首頁先關閉藝術開場；捲動至服務索引、自修室 Schedule／Alumni Companion、產品開發 network；等 reveal 完成後執行 axe color-contrast。不能把 fade 中間色誤判為最終色。
+- 優先級：P1。
+- 修改檔案：`index.html` 的 `.entrance-index`、`practice/index.html` 的 `.soft-band .kicker`、`product-development/index.html` 的 `.pd-network .eyebrow,.pd-network-item span`。
+- 驗收條件：穩定版面對比 ≥4.5:1、四 viewport 零本項 axe 違規、無 root 溢出，原版面／名稱／品牌字體保留。
+- 完成狀態：本切片完成，六頁×四 viewport 最終 24/24，主內容零 axe 違規及溢出。UX-006 的其他小字／目標尺寸仍待逐元件確認，不整筆結案；UX-002-C 透明 ENTER 不包含在此對比完成範圍。
+- 證據／截圖：`followup-20261023/results/before-stable-matrix.json`／`after-matrix.json`；`followup-20261023/screenshots/README.md`。
+
+## 2026-10-23：UX-007 Vol.1 完成，首頁持續追蹤
+
+- Issue ID：UX-007（效能子項）。
+- URL：https://hanascent.com/overture/；https://hanascent.com/。
+- 裝置：Lighthouse mobile 412×823 另配四 UI viewport，冷快取。
+- 問題／影響：Vol.1 下方封面 PNG 474KB 與首屏文字／字體競爭下載，lab LCP 約 4.205s；不是把封面誤判成 LCP 元素。首頁自動藝術開場的 lab LCP 仍偏慢。
+- 重現：相同工具、gzip server、冷瀏覽器各三次 Lighthouse；記錄 LCP 元素及依賴、所有樣本而非單取高分。
+- 優先級：P1。
+- 修改檔案：`overture/index.html`、`assets/courses/overture-cover-{720,1366}.webp`；首頁效能試驗全撤回，無相關發布修改。
+- 驗收條件：Vol.1 保留原構圖與文字，選圖符合裝置、尺寸預留，三次 lab Performance≥90／LCP≤2.5s／CLS≤0.1；field 另需真實使用者資料。
+- 完成狀態：Vol.1 三次 Performance 99–100、LCP 1.727–1.804s，CLS 0.00194；此 lab 子項完成。首頁最終 Performance 中位數 73／LCP 9.162s，仍未達標；原開場／透明 ENTER 保留，不聲稱首頁效能改善，也未聲稱 field 通過。
+- 證據／截圖：`followup-20261023/lighthouse/`、`loading-checks.json`、`screenshots/README.md`。撤回方案及後續技術方向見 TECHNICAL-PLAN.md。
+
+問題數仍為 P0 1（已修正）、P1 8、P2 1；UX-003 撤回。課程資訊 UX-004 待 C01–C06 核定；UX-011 屬獨立預約 Repository，付款依使用者告知完成，不重測或改動。

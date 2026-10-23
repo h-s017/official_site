@@ -1,0 +1,128 @@
+[
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.74,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 9892.23245,
+      "first-contentful-paint": 1225.99475,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 92
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 1,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 1,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1728.8976000000002,
+      "first-contentful-paint": 1225.93255,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 36
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-1.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.71,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 10153.640450000003,
+      "first-contentful-paint": 1156.9764999999998,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 235.50470000000007
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 2,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1728.3441,
+      "first-contentful-paint": 1237.998,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 74
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-2.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "home",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.76,
+      "accessibility": 0.93
+    },
+    "metrics": {
+      "largest-contentful-paint": 7517.8049,
+      "first-contentful-paint": 1163.00875,
+      "cumulative-layout-shift": 0.02650410657154795,
+      "total-blocking-time": 89.5
+    },
+    "warnings": [],
+    "artifact": "after-home-mobile-3.json.gz"
+  },
+  {
+    "phase": "after",
+    "page": "overture",
+    "sample": 3,
+    "mode": "mobile",
+    "code": 0,
+    "runtimeError": null,
+    "version": "12.8.2",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1806.4078,
+      "first-contentful-paint": 1133.00975,
+      "cumulative-layout-shift": 0.001935788898360862,
+      "total-blocking-time": 58.5
+    },
+    "warnings": [],
+    "artifact": "after-overture-mobile-3.json.gz"
+  }
+]

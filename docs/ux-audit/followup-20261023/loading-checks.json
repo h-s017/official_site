@@ -1,0 +1,20 @@
+[
+  {
+    "check": "course image candidate and loading",
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "current_src": "http://127.0.0.1:39603/assets/courses/overture-cover-720.webp"
+  },
+  {
+    "check": "course image candidate and loading",
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "current_src": "http://127.0.0.1:39603/assets/courses/overture-cover-1366.webp"
+  }
+]

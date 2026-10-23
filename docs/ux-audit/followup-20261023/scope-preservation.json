@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/optional-intro.js",
+    "identical_to_baseline": true,
+    "sha256": "9dd9e0d6aa688f2542b8558786e48f77b6d525088d11edcc04b92d23b1494387"
+  },
+  {
+    "file": "assets/style.css",
+    "identical_to_baseline": true,
+    "sha256": "de257cd19f45be231ce3acd8bcfaf290f21e01a6debec097afe1aa03cef7c5eb"
+  },
+  {
+    "file": "assets/runtime-layout.css",
+    "identical_to_baseline": true,
+    "sha256": "ea72c336cc5331a8e468df6f09b256de08dd3381128f4b4fb2d784ef84d8c4ed"
+  },
+  {
+    "file": "assets/site.js",
+    "identical_to_baseline": true,
+    "sha256": "0f2ed6f312fb21427c78170a8ff1ea27af40205fe2db6cd0acf82c9e609a1cff"
+  },
+  {
+    "file": "assets/site-core.js",
+    "identical_to_baseline": true,
+    "sha256": "3ac65afbf8b29146e49fa60e4745e42542316a8c5eacad22c2dff4a3ebbdf4cd"
+  },
+  {
+    "file": "assets/hana-cms.js",
+    "identical_to_baseline": true,
+    "sha256": "75bbc1762a285caaf4733c82b7d4594cbc03337e1eeea7d2db39e56fb39cad41"
+  },
+  {
+    "file": "KPIA/index.html",
+    "identical_to_baseline": true,
+    "sha256": "908e54603685876695637a31eaebf79c5d4fc2d717bd051def6b545c6f11c846"
+  },
+  {
+    "file": "helori/index.html",
+    "identical_to_baseline": true,
+    "sha256": "3677d861f6455ef95ab32616c0a3c812cd3a7b9a6cedd668d31f486ef958e364"
+  }
+]

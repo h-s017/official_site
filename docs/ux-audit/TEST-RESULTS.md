@@ -186,3 +186,16 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 四 viewport＋儲存不可用／reduced-motion／no-JS 共 7 個功能情境通過；Enter／關閉／Escape、返回焦點、暫停與品牌 h1 保留。原始 axe 結果含 `color-contrast` 違規及 incomplete：透明白字在影像上的對比未全面通過，不聲稱 AA。本次依核定樣式保留透明 ENTER。證據在 `restored-intro/`。
 
 本次未重跑 Lighthouse；先前可選入口 Performance 99／LCP 2.179s 等是當時版本，不代表恢復自動開場後的效能。沒有 field CrUX／RUM／INP 驗收；付款未重測。
+
+## 2026-10-23：Vol.1／局部對比追蹤
+
+同 main 61600e4 基準、相同 gzip fixture 與 Lighthouse 12.8.2，兩頁各前後三次冷快取。完整數據、區間、撤回試驗與限制見 [本批報告](followup-20261023/README.md)。
+
+| 頁面 | Performance 中位數前→後 | Accessibility 前→後 | LCP 秒前→後 | CLS 前→後 |
+|---|---|---|---|---|
+| 首頁（自動開場） | 75→73 | 93→93 | 8.115→9.162 | 0.0265→0.0265 |
+| Vol.1 | 86→100 | 100→100 | 4.205→1.731 | 0.00194→0.00194 |
+
+首頁 LCP 前範圍 7.748–14.471s、後 6.913–14.772s；本批只改入口索引小字色彩，不保留任何首頁效能試驗，不宣稱改善。Vol.1 三次均達 lab 內部目標；TBT 中位數 32→55.5ms，不代稱 INP。CLS 原本已低於 0.1，未作改善主張。
+
+六頁×四 viewport 最終 24/24 完成、零 axe 違規（關閉開場後內容）、零 root 溢出、零 JS pageerror；首頁既有 page_contents 404 仍回退靜態內容。ENTER 七情境通過；透明影像文字仍有 axe 對比違規及 incomplete，與主頁內容分開記錄。Vol.1 選圖與解碼兩情境通過。文字／連結／圖片 alt 保存比較與靜態語法檢查通過。未宣稱全站 AA、field CWV 或 INP 達標；不重跑預約／付款。

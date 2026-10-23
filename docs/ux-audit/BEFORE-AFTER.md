@@ -32,3 +32,12 @@
 - 最終三次 Lighthouse 中位數與未達標項目見 TEST-RESULTS 最新段落；不以探索用報告代替最終數字。
 
 證據在 `phase-2/`；手機／桌機完整截圖分別為 `screenshots/release-journal-390x844.png`、`release-journal-1440x900.png`（相對 phase-2），其他頁依同一命名。最後本機字體與 Journal 封面尺寸修正另有 release 四 viewport 全頁截圖。
+
+## 2026-10-23：本批實際發布差異
+
+- Vol.1 封面原 PNG 474,529 bytes → 1366w WebP 214,684 bytes／720w 49,496 bytes；保留原圖、構圖及文字，增加寬高、srcset、lazy、low priority。首屏 LCP 仍是文字，三次 lab LCP 中位數 4.205→1.731s、Performance 86→100，CLS 維持 0.00194。
+- 首頁服務索引、自修室 soft-band kicker、產品開發 network 小字由 #767676 改為 #666666。四種裝置每組原有 8 個低對比節點 → 0；沒有改全域品牌灰色。
+- 六頁四 viewport 回歸 24/24；ENTER 透明、自動開場與原動畫的控制器及 CSS 沒有修改。首屏效能候選（預載／AVIF／字體子集）因測試回退全數撤回，不能當作已發布改善。
+- 課程 C01–C06 只整理問題，未改價格、正式名稱、正文或付款。四份 HTML 可見文字、連結及 alt 逐項相同。
+
+[本批逐項結果、原始資料與截圖](followup-20261023/README.md)。首頁 lab 仍未達標，不以先前可選入口分數代表現在版本。

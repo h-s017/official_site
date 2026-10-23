@@ -1,5 +1,7 @@
 # HANA SCENT ARTIST｜UX/UI Audit V2
 
+> 最新追蹤（2026-10-23）：[Vol.1／局部對比報告](followup-20261023/README.md)。本批六頁四裝置；首頁效能未達標，透明 ENTER 保留。課程待核定事項見 [C01–C06](followup-20261023/COURSE-DECISIONS.md)，付款不重測。
+
 > 第二階段（2026-10-21）：Journal 技術方案及修正見 [TECHNICAL-PLAN](phase-2/TECHNICAL-PLAN.md)，內容決策見 [首頁／課程資訊核定表](HOME-COURSE-APPROVAL.md)。下方原階段紀錄保留；最新結果另見本檔後續補充。付款依使用者告知已測試，本階段不重測。
 
 更新：2026-10-21（Asia/Taipei）。已完成跨裝置初始稽核及共用導覽 P0 修正；使用者已授權發布完成的導覽修正，發布範圍見 RELEASE.md。全站效能／WCAG／付款完成驗收仍未完成。

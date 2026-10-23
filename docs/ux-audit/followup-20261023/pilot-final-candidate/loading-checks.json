@@ -1,0 +1,40 @@
+[
+  {
+    "check": "first-session preload reused, all three art images ready",
+    "result": "pass",
+    "image_entries": [
+      {
+        "initiatorType": "link",
+        "startTime": 86.10000000009313,
+        "transferSize": 209711
+      }
+    ]
+  },
+  {
+    "check": "return visit does not preload/download art",
+    "result": "pass"
+  },
+  {
+    "check": "unsupported MIME simulation selects original WebP",
+    "result": "pass",
+    "limitation": "HTML type substitution, not a physical legacy-browser test"
+  },
+  {
+    "check": "course image candidate and loading",
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "pass",
+    "current_src": "http://127.0.0.1:37989/assets/courses/overture-cover-720.webp"
+  },
+  {
+    "check": "course image candidate and loading",
+    "viewport": [
+      1440,
+      900
+    ],
+    "result": "pass",
+    "current_src": "http://127.0.0.1:37989/assets/courses/overture-cover-1366.webp"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "viewport_captures": 24,
+  "viewport_passed": 24,
+  "main_content_axe_violations": 0,
+  "root_overflow": 0,
+  "pageerrors": 0,
+  "existing_home_optional_cms_404": 4,
+  "intro_functional_scenarios": 7,
+  "intro_passed": 7,
+  "intro_contrast": "known violations/incomplete retained; no AA claim",
+  "course_image_checks": 2,
+  "course_image_passed": 2,
+  "syntax_and_runtime_layout_check": "pass",
+  "payment_tested": false,
+  "field_performance_tested": false
+}

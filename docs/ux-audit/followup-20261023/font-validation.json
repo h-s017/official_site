@@ -1,0 +1,16 @@
+{
+  "google_fonts_version": "v37",
+  "requested_weight_range": "400..900",
+  "glyph_count": 323,
+  "bytes": 139276,
+  "fontconfig": {
+    "assets/fonts/noto-serif-tc-latin-v37.woff2": [
+      "Noto Serif TC ExtraLight|131269|False",
+      "Noto Serif TC ExtraLight|131269|True"
+    ],
+    "assets/fonts/noto-serif-tc-home-vol1-v37.woff2": [
+      "Noto Serif TC ExtraLight|131269|False",
+      "Noto Serif TC ExtraLight|131269|True"
+    ]
+  }
+}
