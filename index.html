@@ -147,13 +147,14 @@
     html{scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));}
     body[data-hana-page="home"]{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));}
     .home-booking-actions{display:flex;align-items:center;justify-content:center;margin-top:24px;}
-    .home-booking-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;min-height:52px;min-width:220px;padding:13px 24px;border:1px solid #111;background:#111;color:#fff;font-family:var(--font-serif);font-size:17px;line-height:1.5;letter-spacing:.12em;text-decoration:none;}
-    @media(hover:hover){.home-booking-cta:hover{background:#333;border-color:#333;}}
+    .home-booking-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;min-width:198px;padding:6px 14px;border:1px solid #111;border-radius:999px;background:#fff;color:#111;font-family:var(--font-serif);font-size:16px;line-height:1.5;letter-spacing:.12em;text-decoration:none;}
+    @media(hover:hover){.home-booking-cta:hover{background:#f7f7f7;border-color:#111;}}
+    .home-booking-bow{display:block;flex:0 0 32px;width:32px;height:32px;object-fit:contain;}
     .home-booking-cta:focus-visible{outline:2px solid #111;outline-offset:4px;}
     .home-booking-cta--floating{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:80;}
     body.intro-open .home-booking-cta--floating,.site-nav.menu-open~.home-booking-dock .home-booking-cta--floating{visibility:hidden;pointer-events:none;}
     @media(min-width:981px){.site-nav .nav-dropdown-menu{left:auto!important;right:0!important;}}
-    @media(max-width:760px){.home-booking-cta--floating{left:auto;right:max(18px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:clamp(160px,50vw,220px);max-width:calc(100vw - 36px);min-width:0;gap:16px;padding-inline:16px;}.home-booking-actions{margin-top:22px;}}
+    @media(max-width:760px){.home-booking-cta--floating{left:auto;right:max(18px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:clamp(144px,45vw,198px);max-width:calc(100vw - 36px);min-width:0;gap:8px;padding-inline:12px;}.home-booking-actions{margin-top:22px;}}
 
     /* Full-width hero; retain the original artwork and reading rhythm below. */
     .hero{padding:0 0 42px!important;}
@@ -302,7 +303,7 @@
   </nav>
 
   <aside class="home-booking-dock" aria-label="課程預約">
-    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/">課程預約<span aria-hidden="true">→</span></a>
+    <a class="home-booking-cta home-booking-cta--floating" href="https://reservation.hanascent.com/"><img class="home-booking-bow" src="assets/booking-bow.webp" alt="" width="32" height="32">課程預約</a>
   </aside>
 
   <header class="hero">

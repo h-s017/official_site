@@ -1,0 +1,341 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "hero": {
+      "x": 0,
+      "y": 66.71875,
+      "width": 390,
+      "height": 219.375
+    },
+    "top": {
+      "rect": {
+        "x": 196.5,
+        "y": 780,
+        "width": 175.5,
+        "height": 48,
+        "top": 780,
+        "right": 372,
+        "bottom": 828,
+        "left": 196.5
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "middle": {
+      "rect": {
+        "x": 196.5,
+        "y": 780,
+        "width": 175.5,
+        "height": 48,
+        "top": 780,
+        "right": 372,
+        "bottom": 828,
+        "left": 196.5
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "bottom": {
+      "rect": {
+        "x": 196.5,
+        "y": 780,
+        "width": 175.5,
+        "height": 48,
+        "top": 780,
+        "right": 372,
+        "bottom": 828,
+        "left": 196.5
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "footer": {
+      "x": 0,
+      "y": 98.34375,
+      "width": 390,
+      "height": 645.5625
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "menu_and_intro_hide_cta": true,
+    "link_destination": "intercepted; actual booking app not loaded",
+    "errors": []
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "hero": {
+      "x": 0,
+      "y": 117.296875,
+      "width": 768,
+      "height": 432
+    },
+    "top": {
+      "rect": {
+        "x": 546,
+        "y": 952,
+        "width": 198,
+        "height": 48,
+        "top": 952,
+        "right": 744,
+        "bottom": 1000,
+        "left": 546
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "middle": {
+      "rect": {
+        "x": 546,
+        "y": 952,
+        "width": 198,
+        "height": 48,
+        "top": 952,
+        "right": 744,
+        "bottom": 1000,
+        "left": 546
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "bottom": {
+      "rect": {
+        "x": 546,
+        "y": 952,
+        "width": 198,
+        "height": 48,
+        "top": 952,
+        "right": 744,
+        "bottom": 1000,
+        "left": 546
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "footer": {
+      "x": 0,
+      "y": 435,
+      "width": 768,
+      "height": 488.75
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "menu_and_intro_hide_cta": true,
+    "link_destination": "intercepted; actual booking app not loaded",
+    "errors": []
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "hero": {
+      "x": 0,
+      "y": 68.1875,
+      "width": 1440,
+      "height": 810
+    },
+    "top": {
+      "rect": {
+        "x": 1218,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1416,
+        "bottom": 876,
+        "left": 1218
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "middle": {
+      "rect": {
+        "x": 1218,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1416,
+        "bottom": 876,
+        "left": 1218
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "bottom": {
+      "rect": {
+        "x": 1218,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1416,
+        "bottom": 876,
+        "left": 1218
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "footer": {
+      "x": 0,
+      "y": 413.515625,
+      "width": 1440,
+      "height": 386.75
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "menu_and_intro_hide_cta": true,
+    "link_destination": "intercepted; actual booking app not loaded",
+    "errors": []
+  },
+  {
+    "viewport": [
+      320,
+      844
+    ],
+    "hero": {
+      "x": 0,
+      "y": 66.71875,
+      "width": 320,
+      "height": 180
+    },
+    "top": {
+      "rect": {
+        "x": 158,
+        "y": 780,
+        "width": 144,
+        "height": 48,
+        "top": 780,
+        "right": 302,
+        "bottom": 828,
+        "left": 158
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "middle": {
+      "rect": {
+        "x": 158,
+        "y": 780,
+        "width": 144,
+        "height": 48,
+        "top": 780,
+        "right": 302,
+        "bottom": 828,
+        "left": 158
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "bottom": {
+      "rect": {
+        "x": 158,
+        "y": 780,
+        "width": 144,
+        "height": 48,
+        "top": 780,
+        "right": 302,
+        "bottom": 828,
+        "left": 158
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "footer": {
+      "x": 0,
+      "y": 98.015625,
+      "width": 320,
+      "height": 645.5625
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "menu_and_intro_hide_cta": true,
+    "link_destination": "intercepted; actual booking app not loaded",
+    "errors": []
+  },
+  {
+    "viewport": [
+      1199,
+      900
+    ],
+    "hero": {
+      "x": 0,
+      "y": 68.1875,
+      "width": 1199,
+      "height": 674.4375
+    },
+    "top": {
+      "rect": {
+        "x": 977,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1175,
+        "bottom": 876,
+        "left": 977
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "middle": {
+      "rect": {
+        "x": 977,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1175,
+        "bottom": 876,
+        "left": 977
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "bottom": {
+      "rect": {
+        "x": 977,
+        "y": 828,
+        "width": 198,
+        "height": 48,
+        "top": 828,
+        "right": 1175,
+        "bottom": 876,
+        "left": 977
+      },
+      "position": "fixed",
+      "bodyDock": true
+    },
+    "footer": {
+      "x": 0,
+      "y": 413.65625,
+      "width": 1199,
+      "height": 386.75
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "menu_and_intro_hide_cta": true,
+    "link_destination": "intercepted; actual booking app not loaded",
+    "errors": []
+  },
+  {
+    "mode": "no-js",
+    "booking_visible": true
+  }
+]
