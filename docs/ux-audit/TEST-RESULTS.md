@@ -1,3 +1,9 @@
+# 正圓預約按鈕｜2026-10-24
+
+正圓尺寸83.6／91.2px、文字無溢出及原有浮動操作共6情境通過；CTA axe零違規。未測預約付款或Lighthouse。 [截圖及測試](booking-circle/README.md)。
+
+---
+
 # 白底蝴蝶結課程預約｜2026-10-24
 
 五viewport及no-JS共6/6。圖片、尺寸、固定定位、鍵盤焦點、頁尾與選單／開場均通過；axe只檢查CTA。未測正式預約或付款，未重跑效能測試。 詳細圖與證據：[booking-bow](booking-bow/README.md)。
