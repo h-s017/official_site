@@ -1,0 +1,530 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "url": "https://hineni.hanascent.com/",
+    "status": 200,
+    "data": {
+      "title": "此域 Hineni｜北投中心新村氣味敘事空間｜HANA SCENT ARTIST",
+      "styles": [
+        "https://hineni.hanascent.com/assets/style.css",
+        null
+      ],
+      "elements": [
+        {
+          "tag": "MAIN",
+          "cls": "ciyu-page",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 390,
+            "height": 3389.140625,
+            "top": 67.578125,
+            "right": 390,
+            "bottom": 3456.71875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "HEADER",
+          "cls": "page-hero ciyu-hero",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 390,
+            "height": 1028.3125,
+            "top": 67.578125,
+            "right": 390,
+            "bottom": 1095.890625,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "ciyu-hero-image",
+          "src": "https://hineni.hanascent.com/assets/20261001_163352.jpg?v=20261002",
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 390,
+            "height": 658.3125,
+            "top": 67.578125,
+            "right": 390,
+            "bottom": 725.890625,
+            "left": 0
+          },
+          "fit": "cover",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "P",
+          "cls": "ciyu-hero-description lead",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 22,
+            "y": 856.46875,
+            "width": 346,
+            "height": 138.3125,
+            "top": 856.46875,
+            "right": 368,
+            "bottom": 994.78125,
+            "left": 22
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "A",
+          "cls": "ciyu-hero-booking",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 129.1875,
+            "y": 1018.78125,
+            "width": 131.625,
+            "height": 24,
+            "top": 1018.78125,
+            "right": 260.8125,
+            "bottom": 1042.78125,
+            "left": 129.1875
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "ciyu-events",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 1095.890625,
+            "width": 390,
+            "height": 592.328125,
+            "top": 1095.890625,
+            "right": 390,
+            "bottom": 1688.21875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "16px 0px 72px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "hineni-calendar",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 1111.890625,
+            "width": 390,
+            "height": 504.328125,
+            "top": 1111.890625,
+            "right": 390,
+            "bottom": 1616.21875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "14px 6px",
+          "background": "none"
+        },
+        {
+          "tag": "HEADER",
+          "cls": "hineni-calendar__title",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 6,
+            "y": 1125.890625,
+            "width": 378,
+            "height": 97.78125,
+            "top": 1125.890625,
+            "right": 384,
+            "bottom": 1223.671875,
+            "left": 6
+          },
+          "fit": "fill",
+          "padding": "0px 0px 12px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "ciyu-carousel-section",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 1688.21875,
+            "width": 390,
+            "height": 687.984375,
+            "top": 1688.21875,
+            "right": 390,
+            "bottom": 2376.203125,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "38px 0px 42px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-village-on-the-air.jpg",
+          "text": null,
+          "rect": {
+            "x": 11,
+            "y": 1795.109375,
+            "width": 368,
+            "height": 490.65625,
+            "top": 1795.109375,
+            "right": 379,
+            "bottom": 2285.765625,
+            "left": 11
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-08-open-house.jpg",
+          "text": null,
+          "rect": {
+            "x": 399,
+            "y": 1810.484375,
+            "width": 368,
+            "height": 459.921875,
+            "top": 1810.484375,
+            "right": 767,
+            "bottom": 2270.40625,
+            "left": 399
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-08-aroma-idol.jpg",
+          "text": null,
+          "rect": {
+            "x": 787,
+            "y": 1780.6875,
+            "width": 368,
+            "height": 519.515625,
+            "top": 1780.6875,
+            "right": 1155,
+            "bottom": 2300.203125,
+            "left": 787
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 2376.203125,
+            "width": 390,
+            "height": 1080.515625,
+            "top": 2376.203125,
+            "right": 390,
+            "bottom": 3456.71875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "72px 23.4px",
+          "background": "none"
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "url": "https://hineni.hanascent.com/",
+    "status": 200,
+    "data": {
+      "title": "此域 Hineni｜北投中心新村氣味敘事空間｜HANA SCENT ARTIST",
+      "styles": [
+        "https://hineni.hanascent.com/assets/style.css",
+        null
+      ],
+      "elements": [
+        {
+          "tag": "MAIN",
+          "cls": "ciyu-page",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 1440,
+            "height": 3841.296875,
+            "top": 67.578125,
+            "right": 1440,
+            "bottom": 3908.875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "HEADER",
+          "cls": "page-hero ciyu-hero",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 1440,
+            "height": 1030.84375,
+            "top": 67.578125,
+            "right": 1440,
+            "bottom": 1098.421875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "ciyu-hero-image",
+          "src": "https://hineni.hanascent.com/assets/20261001_163352.jpg?v=20261002",
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 67.578125,
+            "width": 1440,
+            "height": 702,
+            "top": 67.578125,
+            "right": 1440,
+            "bottom": 769.578125,
+            "left": 0
+          },
+          "fit": "cover",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "P",
+          "cls": "ciyu-hero-description lead",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 340,
+            "y": 914.15625,
+            "width": 760,
+            "height": 69.15625,
+            "top": 914.15625,
+            "right": 1100,
+            "bottom": 983.3125,
+            "left": 340
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "A",
+          "cls": "ciyu-hero-booking",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 654.1875,
+            "y": 1007.3125,
+            "width": 131.625,
+            "height": 24,
+            "top": 1007.3125,
+            "right": 785.8125,
+            "bottom": 1031.3125,
+            "left": 654.1875
+          },
+          "fit": "fill",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "ciyu-events",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 1098.421875,
+            "width": 1440,
+            "height": 1321.46875,
+            "top": 1098.421875,
+            "right": 1440,
+            "bottom": 2419.890625,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "16px 0px 72px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "hineni-calendar",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 28.796875,
+            "y": 1114.421875,
+            "width": 1382.390625,
+            "height": 1233.46875,
+            "top": 1114.421875,
+            "right": 1411.1875,
+            "bottom": 2347.890625,
+            "left": 28.796875
+          },
+          "fit": "fill",
+          "padding": "28px",
+          "background": "none"
+        },
+        {
+          "tag": "HEADER",
+          "cls": "hineni-calendar__title",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 56.796875,
+            "y": 1142.421875,
+            "width": 1326.390625,
+            "height": 85.890625,
+            "top": 1142.421875,
+            "right": 1383.1875,
+            "bottom": 1228.3125,
+            "left": 56.796875
+          },
+          "fit": "fill",
+          "padding": "0px 0px 18px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "ciyu-carousel-section",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 2419.890625,
+            "width": 1440,
+            "height": 946.46875,
+            "top": 2419.890625,
+            "right": 1440,
+            "bottom": 3366.359375,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "56px 0px 60px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-village-on-the-air.jpg",
+          "text": null,
+          "rect": {
+            "x": 450,
+            "y": 2544.359375,
+            "width": 540,
+            "height": 720,
+            "top": 2544.359375,
+            "right": 990,
+            "bottom": 3264.359375,
+            "left": 450
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-08-open-house.jpg",
+          "text": null,
+          "rect": {
+            "x": 1289.953125,
+            "y": 2544.359375,
+            "width": 576.09375,
+            "height": 720,
+            "top": 2544.359375,
+            "right": 1866.046875,
+            "bottom": 3264.359375,
+            "left": 1289.953125
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "src": "https://hanascent.com/assets/events/2026-08-aroma-idol.jpg",
+          "text": null,
+          "rect": {
+            "x": 2181,
+            "y": 2544.359375,
+            "width": 510,
+            "height": 720,
+            "top": 2544.359375,
+            "right": 2691,
+            "bottom": 3264.359375,
+            "left": 2181
+          },
+          "fit": "contain",
+          "padding": "0px",
+          "background": "none"
+        },
+        {
+          "tag": "SECTION",
+          "cls": "",
+          "src": null,
+          "text": null,
+          "rect": {
+            "x": 0,
+            "y": 3366.359375,
+            "width": 1440,
+            "height": 542.515625,
+            "top": 3366.359375,
+            "right": 1440,
+            "bottom": 3908.875,
+            "left": 0
+          },
+          "fit": "fill",
+          "padding": "96px 86.4px",
+          "background": "none"
+        }
+      ]
+    }
+  }
+]

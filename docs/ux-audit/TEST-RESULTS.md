@@ -213,3 +213,7 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 ## 2026-10-24：醒目課程預約入口
 
 `booking-cta-preview/check.py` 六 viewport（390、768、1440、320、1200、1199px）及手機／桌機 no-JS 共8/8，主要四尺寸進站首屏可見預約入口、按鈕高度≥44px、鍵盤可見、CTA 範圍 axe 零違規、根頁無橫向溢出。原藝術開場、重播／Escape／焦點正常。連結點擊以攔截回應驗證目標，不載入正式預約應用，不建立訂單／測付款。1199px 基準原有29px溢出已由局部面板右對齊修正（UX-012）。未重跑 Lighthouse，不宣稱整頁 AA／field CWV。
+
+## 2026-10-24 後續：滿寬Hero與漂浮預約
+
+實測HINENI Hero為滿寬78vh/對應clamp；HANA手機原圖內含品牌字，先採滿寬16:9保留完整文字，不聲稱相同高度。hero-floating/check.py 五viewport（390／768／1440／320／1199px）＋no-JS 共6/6，頁首／中段／頁尾按鈕座標固定、CTA高度≥52px、footer位於按鈕上方、root零溢出、CTA範圍axe零違規；開場／重播／手機選單／短螢幕正常。未測實體手機安全區／Lighthouse／field效能或付款；目的地攔截回應，不載入預約應用。資料及跨裝置截圖見hero-floating/。
