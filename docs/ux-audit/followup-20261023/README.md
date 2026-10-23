@@ -1,5 +1,7 @@
 # 手機體驗技術追蹤｜2026-10-23
 
+[PR #18](https://github.com/h-s017/official_site/pull/18) 已合併並完成 Pages 部署；正式站 14/14 檔案比對、24/24 跨裝置及七個 ENTER 情境通過。[上線證據與限制](PRODUCTION.md)。
+
 本批只發布 Vol.1 封面傳送及局部小字對比修正。首次 session 藝術開場、透明 ENTER、原動畫、品牌 h1、字體及課程內容全部保留；預約／付款未重測。基準為 `h-s017/official_site` main `61600e47002095c65361cbe0ff14c12098160737`，GitHub Pages 從 main 根目錄發布。
 
 ## 最終採用與待辦

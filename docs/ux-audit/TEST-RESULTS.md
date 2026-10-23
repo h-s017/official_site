@@ -199,3 +199,5 @@ PR #13 已合併，Pages run 39550567267 成功。`phase-2/production/` 保存 1
 首頁 LCP 前範圍 7.748–14.471s、後 6.913–14.772s；本批只改入口索引小字色彩，不保留任何首頁效能試驗，不宣稱改善。Vol.1 三次均達 lab 內部目標；TBT 中位數 32→55.5ms，不代稱 INP。CLS 原本已低於 0.1，未作改善主張。
 
 六頁×四 viewport 最終 24/24 完成、零 axe 違規（關閉開場後內容）、零 root 溢出、零 JS pageerror；首頁既有 page_contents 404 仍回退靜態內容。ENTER 七情境通過；透明影像文字仍有 axe 對比違規及 incomplete，與主頁內容分開記錄。Vol.1 選圖與解碼兩情境通過。文字／連結／圖片 alt 保存比較與靜態語法檢查通過。未宣稱全站 AA、field CWV 或 INP 達標；不重跑預約／付款。
+
+發布後：PR #18、Pages run 39931775258 成功；正式站 14 個產品／保留檔案 SHA-256 相符、六頁四 viewport 24/24 主內容零 axe 違規及 root 溢出，ENTER 七功能情境通過。沒有重跑 Lighthouse／付款，已知透明文字對比及 CMS 404 保留。[正式證據](followup-20261023/PRODUCTION.md)。後續證據提交僅修改 docs。

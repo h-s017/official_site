@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-23T09:27:40.647411+00:00",
+  "product_commit": "83e7498f8df3cf63055bcb8cf706718a21d09766",
+  "rows": [
+    {
+      "file": "index.html",
+      "url": "https://hanascent.com/?audit=83e7498",
+      "status": 200,
+      "sha256": "098bf44a54be47d75a5176d1b89bde31af0b87c577eb7fe9d9d93e2aecf312b9",
+      "expected": "098bf44a54be47d75a5176d1b89bde31af0b87c577eb7fe9d9d93e2aecf312b9",
+      "match": true
+    },
+    {
+      "file": "overture/index.html",
+      "url": "https://hanascent.com/overture/index.html?audit=83e7498",
+      "status": 200,
+      "sha256": "fb9dd4e88b799fce804564dacd88eb9c04e9d86c66ce9526fc1dfca71c7b5b6b",
+      "expected": "fb9dd4e88b799fce804564dacd88eb9c04e9d86c66ce9526fc1dfca71c7b5b6b",
+      "match": true
+    },
+    {
+      "file": "practice/index.html",
+      "url": "https://hanascent.com/practice/index.html?audit=83e7498",
+      "status": 200,
+      "sha256": "7ee3d3180eee3095bcad5b880a5af94b03686ba36026355c917e03c1f952cd60",
+      "expected": "7ee3d3180eee3095bcad5b880a5af94b03686ba36026355c917e03c1f952cd60",
+      "match": true
+    },
+    {
+      "file": "product-development/index.html",
+      "url": "https://hanascent.com/product-development/index.html?audit=83e7498",
+      "status": 200,
+      "sha256": "83b279477669cf46093694d0c2eb8e9130dd78acd6e4c9313ae23d0846ee0387",
+      "expected": "83b279477669cf46093694d0c2eb8e9130dd78acd6e4c9313ae23d0846ee0387",
+      "match": true
+    },
+    {
+      "file": "assets/courses/overture-cover-720.webp",
+      "url": "https://hanascent.com/assets/courses/overture-cover-720.webp?audit=83e7498",
+      "status": 200,
+      "sha256": "b441ba8691ebc5d02345bbae169940f7d756de8b1da4dd02ca94360170d66ab9",
+      "expected": "b441ba8691ebc5d02345bbae169940f7d756de8b1da4dd02ca94360170d66ab9",
+      "match": true
+    },
+    {
+      "file": "assets/courses/overture-cover-1366.webp",
+      "url": "https://hanascent.com/assets/courses/overture-cover-1366.webp?audit=83e7498",
+      "status": 200,
+      "sha256": "0b426603fe0b7e85261ed5b9e26b5125cececa1a51c81fa26c6690cda75c541f",
+      "expected": "0b426603fe0b7e85261ed5b9e26b5125cececa1a51c81fa26c6690cda75c541f",
+      "match": true
+    },
+    {
+      "file": "assets/optional-intro.js",
+      "url": "https://hanascent.com/assets/optional-intro.js?audit=83e7498",
+      "status": 200,
+      "sha256": "9dd9e0d6aa688f2542b8558786e48f77b6d525088d11edcc04b92d23b1494387",
+      "expected": "9dd9e0d6aa688f2542b8558786e48f77b6d525088d11edcc04b92d23b1494387",
+      "match": true
+    },
+    {
+      "file": "assets/style.css",
+      "url": "https://hanascent.com/assets/style.css?audit=83e7498",
+      "status": 200,
+      "sha256": "de257cd19f45be231ce3acd8bcfaf290f21e01a6debec097afe1aa03cef7c5eb",
+      "expected": "de257cd19f45be231ce3acd8bcfaf290f21e01a6debec097afe1aa03cef7c5eb",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-layout.css",
+      "url": "https://hanascent.com/assets/runtime-layout.css?audit=83e7498",
+      "status": 200,
+      "sha256": "ea72c336cc5331a8e468df6f09b256de08dd3381128f4b4fb2d784ef84d8c4ed",
+      "expected": "ea72c336cc5331a8e468df6f09b256de08dd3381128f4b4fb2d784ef84d8c4ed",
+      "match": true
+    },
+    {
+      "file": "assets/site.js",
+      "url": "https://hanascent.com/assets/site.js?audit=83e7498",
+      "status": 200,
+      "sha256": "0f2ed6f312fb21427c78170a8ff1ea27af40205fe2db6cd0acf82c9e609a1cff",
+      "expected": "0f2ed6f312fb21427c78170a8ff1ea27af40205fe2db6cd0acf82c9e609a1cff",
+      "match": true
+    },
+    {
+      "file": "assets/site-core.js",
+      "url": "https://hanascent.com/assets/site-core.js?audit=83e7498",
+      "status": 200,
+      "sha256": "3ac65afbf8b29146e49fa60e4745e42542316a8c5eacad22c2dff4a3ebbdf4cd",
+      "expected": "3ac65afbf8b29146e49fa60e4745e42542316a8c5eacad22c2dff4a3ebbdf4cd",
+      "match": true
+    },
+    {
+      "file": "assets/hana-cms.js",
+      "url": "https://hanascent.com/assets/hana-cms.js?audit=83e7498",
+      "status": 200,
+      "sha256": "75bbc1762a285caaf4733c82b7d4594cbc03337e1eeea7d2db39e56fb39cad41",
+      "expected": "75bbc1762a285caaf4733c82b7d4594cbc03337e1eeea7d2db39e56fb39cad41",
+      "match": true
+    },
+    {
+      "file": "KPIA/index.html",
+      "url": "https://hanascent.com/KPIA/index.html?audit=83e7498",
+      "status": 200,
+      "sha256": "908e54603685876695637a31eaebf79c5d4fc2d717bd051def6b545c6f11c846",
+      "expected": "908e54603685876695637a31eaebf79c5d4fc2d717bd051def6b545c6f11c846",
+      "match": true
+    },
+    {
+      "file": "helori/index.html",
+      "url": "https://hanascent.com/helori/index.html?audit=83e7498",
+      "status": 200,
+      "sha256": "3677d861f6455ef95ab32616c0a3c812cd3a7b9a6cedd668d31f486ef958e364",
+      "expected": "3677d861f6455ef95ab32616c0a3c812cd3a7b9a6cedd668d31f486ef958e364",
+      "match": true
+    }
+  ]
+}
