@@ -1,3 +1,9 @@
+# 消息無摘要與透明度更新｜2026-10-24
+
+四viewport＋長內容／三則上限、API失敗與no-JS共7/7，精確檢查70%圓鈕及55%導覽背景、無摘要、標題連結、原圖文字級與無溢出。局部axe零違規，半透明導覽有背景判定incomplete；非全站或真機驗收。未載入預約付款。 [截圖、結果與限制](news-title-opacity/README.md)。
+
+---
+
 # 手機Hero與半透明導覽／圓鈕｜2026-10-24
 
 Hero／圓鈕5viewport+no-JS 6/6，另三頁導覽14/14；幾何驗證文字四角在圓內、正常與聚焦CTA axe零違規，導覽局部axe零違規。WebKit因缺依賴不可用，未做iPhone／Instagram真機；無新增Lighthouse／真實使用者效能數據，未載入預約付款。 [前後截圖、測試及限制](mobile-square-hero/README.md)。

@@ -208,9 +208,9 @@
         const categoryLabels = { news:'最新消息', fragrance:'氣味發布', course:'調香課程' };
         const categoryLabel = categoryLabels[x.category] || x.category || '最新消息';
         const body = publicCopy(x.summary || x.content || '');
-        const content = body ? `<p>${esc(body)}</p>` : '';
-        const linkLabel = x.link_label || '了解更多 →';
         const compact = root.dataset.newsLayout === 'list';
+        const content = body && !compact ? `<p>${esc(body)}</p>` : '';
+        const linkLabel = x.link_label || '了解更多 →';
         const title = compact && x.link_url
           ? `<a class="news-title-link" href="${esc(x.link_url)}">${esc(publicCopy(x.title))}</a>`
           : esc(publicCopy(x.title));

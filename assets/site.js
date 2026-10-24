@@ -41,7 +41,7 @@
     style.id = "hana-nav-appearance-20261024";
     style.textContent = `
       /* Translucent background; text and disclosure panels stay fully legible. */
-      .site-nav{--hana-nav-size:13.5px;--hana-menu-size:12px;background:rgba(255,255,255,.6)!important;}
+      .site-nav{--hana-nav-size:13.5px;--hana-menu-size:12px;background:rgba(255,255,255,.55)!important;}
       .site-nav .nav-links{font-size:calc(var(--hana-nav-size) + 2pt)!important;color:#111;}
       .site-nav .nav-links>a,.site-nav .nav-links>.nav-dropdown>.nav-drop-button{font-size:inherit!important;color:#111;}
       .site-nav .mobile-note{font-size:calc(var(--hana-menu-size) + 2pt)!important;color:#111;}

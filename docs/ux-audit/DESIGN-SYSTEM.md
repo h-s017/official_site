@@ -1,3 +1,9 @@
+# 消息無摘要與透明度更新｜2026-10-24
+
+首頁消息列表不顯示摘要；圓鈕正常opacity .7，導覽背景rgba(255,255,255,.55)。44px原PNG、12.5px圓內文字、Hero比例與導覽加2pt維持，其他元件不套用此摘要移除規則。 [截圖、結果與限制](news-title-opacity/README.md)。
+
+---
+
 # 手機Hero與半透明元件｜2026-10-24
 
 ≤760px Hero採1:1；其他維持16:9。預約圓79.42／86.64px，opacity .6、focus／hover1，44px原PNG及12.5px字，line-height1.2、.02em字距。導覽半透明背景.6、文字1；展開與高對比使用實白。右側字加2pt，品牌標題不變。 [前後截圖、測試及限制](mobile-square-hero/README.md)。
