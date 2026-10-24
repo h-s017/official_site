@@ -1,0 +1,636 @@
+[
+  {
+    "section": {
+      "x": 0,
+      "y": 125.9375,
+      "width": 390,
+      "height": 396.796875,
+      "top": 125.9375,
+      "right": 390,
+      "bottom": 522.734375,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 23.390625,
+          "y": 239.953125,
+          "width": 343.21875,
+          "height": 99.390625,
+          "top": 239.953125,
+          "right": 366.609375,
+          "bottom": 339.34375,
+          "left": 23.390625
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": null
+      },
+      {
+        "rect": {
+          "x": 23.390625,
+          "y": 339.34375,
+          "width": 343.21875,
+          "height": 99.390625,
+          "top": 339.34375,
+          "right": 366.609375,
+          "bottom": 438.734375,
+          "left": 23.390625
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": null
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ],
+    "appearance": {
+      "bookingOpacity": "0.7",
+      "navBackground": "rgba(255, 255, 255, 0.55)",
+      "bow": "44px",
+      "label": "12.5px"
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "13.1pt (17.51px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "10.6pt (14.0767px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">MENU</span>",
+              "target": [
+                ".mobile-note > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 213.125,
+      "width": 768,
+      "height": 409.296875,
+      "top": 213.125,
+      "right": 768,
+      "bottom": 622.421875,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 46.078125,
+          "y": 342.828125,
+          "width": 675.84375,
+          "height": 93.796875,
+          "top": 342.828125,
+          "right": 721.921875,
+          "bottom": 436.625,
+          "left": 46.078125
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": null
+      },
+      {
+        "rect": {
+          "x": 46.078125,
+          "y": 436.625,
+          "width": 675.84375,
+          "height": 93.796875,
+          "top": 436.625,
+          "right": 721.921875,
+          "bottom": 530.421875,
+          "left": 46.078125
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": null
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      768,
+      1024
+    ],
+    "appearance": {
+      "bookingOpacity": "0.7",
+      "navBackground": "rgba(255, 255, 255, 0.55)",
+      "bow": "44px",
+      "label": "12.5px"
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "21.6pt (28.84px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "3:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "11.8pt (15.6667px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"/incubation/\">藝術育成</a>",
+              "target": [
+                "#hana-navigation > a[href$=\"incubation/\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 150.875,
+      "width": 1440,
+      "height": 409.296875,
+      "top": 150.875,
+      "right": 1440,
+      "bottom": 560.171875,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 290,
+          "y": 280.578125,
+          "width": 860,
+          "height": 93.796875,
+          "top": 280.578125,
+          "right": 1150,
+          "bottom": 374.375,
+          "left": 290
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": null
+      },
+      {
+        "rect": {
+          "x": 290,
+          "y": 374.375,
+          "width": 860,
+          "height": 93.796875,
+          "top": 374.375,
+          "right": 1150,
+          "bottom": 468.171875,
+          "left": 290
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": null
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ],
+    "appearance": {
+      "bookingOpacity": "0.7",
+      "navBackground": "rgba(255, 255, 255, 0.55)",
+      "bow": "44px",
+      "label": "12.5px"
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "14.7pt (19.57px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"/product-development/\">",
+                      "target": [
+                        "a[href$=\"product-development/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "section": {
+      "x": 0,
+      "y": 125.484375,
+      "width": 320,
+      "height": 396.796875,
+      "top": 125.484375,
+      "right": 320,
+      "bottom": 522.28125,
+      "left": 0
+    },
+    "order": [
+      "entrance-editorial",
+      "home-news",
+      "home-about"
+    ],
+    "cards": [
+      {
+        "rect": {
+          "x": 19.1875,
+          "y": 239.5,
+          "width": 281.625,
+          "height": 99.390625,
+          "top": 239.5,
+          "right": 300.8125,
+          "bottom": 338.890625,
+          "left": 19.1875
+        },
+        "title": "新氣味發表｜18 : 21 ｜下班前的玫瑰杏桃馬卡龍",
+        "summary": null
+      },
+      {
+        "rect": {
+          "x": 19.1875,
+          "y": 338.890625,
+          "width": 281.625,
+          "height": 99.390625,
+          "top": 338.890625,
+          "right": 300.8125,
+          "bottom": 438.28125,
+          "left": 19.1875
+        },
+        "title": "心村札記｜此域｜006 具象化的ISO E SUPER",
+        "summary": null
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      320,
+      844
+    ],
+    "appearance": {
+      "bookingOpacity": "0.7",
+      "navBackground": "rgba(255, 255, 255, 0.55)",
+      "bow": "44px",
+      "label": "12.5px"
+    },
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "13.1pt (17.51px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">HANA SCENT ARTIST</span>",
+              "target": [
+                ".logo > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": null,
+                    "bgColor": null,
+                    "contrastRatio": 0,
+                    "fontSize": "10.6pt (14.0767px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1",
+                    "shadowColor": null
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<nav class=\"site-nav is-scrolled\" aria-label=\"主要導覽\">",
+                      "target": [
+                        "nav"
+                      ]
+                    },
+                    {
+                      "html": "<a class=\"entrance-path\" href=\"https://hineni.hanascent.com/\">",
+                      "target": [
+                        ".entrance-path[href$=\"hineni.hanascent.com/\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"en-text\">MENU</span>",
+              "target": [
+                ".mobile-note > .en-text"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    "title_link_destination": "https://hanascent.com/blog.html?slug=1821"
+  },
+  {
+    "mode": "fixture",
+    "count": 3,
+    "fallback_visible": false
+  },
+  {
+    "mode": "network-error",
+    "count": 3,
+    "fallback_visible": true
+  },
+  {
+    "mode": "no-js",
+    "count": 3,
+    "fallback_visible": true
+  }
+]
