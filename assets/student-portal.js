@@ -5,6 +5,11 @@
  let recovery=false;
  const message=text=>{$('student-message').textContent=text;};
  $('student-menu-toggle').onclick=()=>{const toggle=$('student-menu-toggle'),open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));$('student-navigation').classList.toggle('is-open',open);};
+ const courseToggle=$('student-course-toggle'),courseLinks=$('student-course-links');
+ const setCourseOpen=open=>{courseToggle.setAttribute('aria-expanded',String(open));courseLinks.hidden=!open;courseToggle.parentElement.classList.toggle('is-open',open);};
+ courseToggle.onclick=()=>setCourseOpen(courseToggle.getAttribute('aria-expanded')!=='true');
+ document.addEventListener('click',event=>{if(!courseToggle.parentElement.contains(event.target))setCourseOpen(false);});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&courseToggle.getAttribute('aria-expanded')==='true'){setCourseOpen(false);courseToggle.focus();}});
  function mode(name){for(const form of document.querySelectorAll('[data-auth-panel]'))form.hidden=form.dataset.authPanel!==name;for(const tab of document.querySelectorAll('[data-mode]'))tab.setAttribute('aria-pressed',String(tab.dataset.mode===name));message('');}
  for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>mode(button.dataset.mode);
  async function busy(form,work){const button=form.querySelector('button[type=submit]');button.disabled=true;try{await work();}catch{message('資格審查中');}finally{button.disabled=false;}}
