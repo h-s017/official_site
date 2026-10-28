@@ -1,5 +1,7 @@
 # 學員申請與審核部署紀錄
 
+> 2026-10-29 更新：自動通知與 Auth SMTP 已接上 Resend，管理員補寄兩封顯示 Delivered。通知設定最新狀態見 [student-notifications.md](student-notifications.md)；下列初次部署時的「未實作通知／尚未發布」描述為歷史紀錄。
+
 ## 頁面與操作
 
 - 學員入口 `/student-tools/`：Email、姓名、手機、曾上課程（KPIA／KDCA／氣味藝術序曲，可複選）、個資同意、個人密碼。先驗證 Email，再等待 HANA 審核。
