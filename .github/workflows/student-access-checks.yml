@@ -1,7 +1,7 @@
 name: Student access security checks
 on:
   pull_request:
-    paths: ['assets/student-*', 'admin/students/**', 'student-tools/**', 'supabase/student-access.sql', 'tests/**', 'package.json', 'pnpm-lock.yaml', '.github/workflows/student-access-checks.yml']
+    paths: ['assets/student-*', 'admin/students/**', 'student-tools/**', 'supabase/student-*.sql', 'supabase/functions/student-notifications/**', 'tests/**', 'package.json', 'pnpm-lock.yaml', '.github/workflows/student-access-checks.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,7 +15,7 @@ jobs:
           node-version: '24'
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs
+      - run: node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs tests/student-notifications.test.cjs tests/student-mail.test.cjs tests/student-shop-access.test.cjs
       - run: |
           node --check assets/student-auth.js
           node --check assets/student-portal.js

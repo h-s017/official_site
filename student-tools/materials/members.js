@@ -17,5 +17,9 @@
  }catch{message('訂單未完成，請確認購物車及學員審核資格，稍後重試。');}finally{button.disabled=false;}};
  async function history(){const orders=await check(await db.from('material_orders').select('id,created_at,status,total,currency,items').order('created_at',{ascending:false}).limit(30));$('orderHistory').replaceChildren();if(!orders.length){$('orderHistory').textContent='目前沒有訂單';return;}for(const order of orders){const card=document.createElement('article'),h=document.createElement('h3'),p=document.createElement('p'),total=document.createElement('strong');h.textContent='訂單 '+order.id;p.textContent=new Date(order.created_at).toLocaleString('zh-TW')+' · '+({pending_confirmation:'待確認',confirmed:'已確認',cancelled:'已取消',fulfilled:'已完成'}[order.status]||order.status);total.textContent=order.currency==='TWD'&&order.status!=='pending_confirmation'?'台幣應付總額：'+money(order.total):'台幣應付總額：待 HANA 確認';card.append(h,p,total);for(const item of order.items){const line=document.createElement('p');line.textContent=item.name+' / '+item.specification+' × '+item.qty;card.append(line);}$('orderHistory').append(card);}}
  $('loadOrders').onclick=()=>history().catch(()=>message('無法載入訂單，請重新登入。'));
- identity().catch(()=>{location.replace('/student-tools/?next=materials');});
+ identity().catch(()=>{
+  const panel=document.createElement('main'),heading=document.createElement('h1'),text=document.createElement('p'),retry=document.createElement('button'),back=document.createElement('a');
+  heading.textContent='暫時無法確認學員資格';text.textContent='請稍後重試。';retry.textContent='重新載入';retry.onclick=()=>location.reload();back.href='/student-tools/';back.textContent='返回學員工具';
+  panel.append(heading,text,retry,back);document.body.replaceChildren(panel);document.body.hidden=false;
+ });
 })();
