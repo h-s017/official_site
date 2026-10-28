@@ -17,7 +17,7 @@
 
 ## 等待核准的正式資料庫變更
 
-**自動安全審查已拒絕套用，正式資料庫尚未變更。不要經由其他 API 或 SQL 路徑繞過。**
+**2026-10-28：使用者已明確核准下列正式變更，migration `student_approval_access` 已成功套用。** 初次曾被自動安全審查擋下，取得明確授權後由原生migration工具套用，沒有繞過拒絕。
 
 完整變更：`supabase/student-access.sql`。
 
@@ -27,6 +27,12 @@
 4. `material_orders` 新增插入檢查：必須為已核准學員／完成 MFA 的管理員，且訂單屬於當前帳號；前端僅保留本人訂單讀取。
 
 影響：尚未申請／未核准的舊會員會被阻擋下新訂單；不影響其既有訂單記錄。一般登入者不再可讀後台統計。管理員未完成 MFA 時不能審核或以管理員資格下單。
+
+另執行 `supabase/backfill-student-applications.sql`，將啟用前由使用者測試留下、格式有效的1筆申請補入pending；不自動核准、不新增管理員、不更改原密碼或Email驗證結果。此補入操作可重複執行而不覆寫既有審核。
+
+正式檢查確認：匿名不能執行status/review RPC；authenticated不能直接讀寫私有申請表、不能更新profiles、不能直接INSERT訂單；訂單核准trigger存在。以既有測試帳戶的資料庫角色模擬驗證pending/allowed=false及student_list拒絕通過，transaction已rollback，沒有改變實際審核結果。GitHub authorization CI通過。
+
+新資料表的advisor `RLS Enabled No Policy` 為預期的拒絕所有直接存取設計，該私有schema沒有前端表權限，僅透過具身分檢查的RPC操作；沒有為消除INFO而開放資料。既有CMS definer及leaked-password protection兩項WARN仍需分別評估，不能宣稱全部安全項目已清除。正式前端仍在草稿PR，未合併發布；管理員MFA與真實登入/審核操作仍由使用者進行。
 
 ## 核准後部署順序
 
@@ -70,4 +76,4 @@
 
 2026-10-28的使用者測試帳戶已在Auth完成Email驗證。當時正式Site URL仍為localhost:3000，且原本僅允許materials路徑，本機預覽註冊提供的redirect不在允許清單，導致信箱驗證後無法回到預覽。以上URL設定已依明確授權修正。未代寄新驗證信、未操作使用者密碼。
 
-另確認正式 `student_access_status()` 與私有申請表仍未部署。前端遇到明確的PGRST202（缺少審核RPC）時，現在顯示「帳戶登入成功、審核服務尚未啟用」而非籠統網路錯誤，保持allowed=false且不清除已驗證帳戶。其他API錯誤仍照錯誤處理，不作授權放行。此行為另有4項單元測試。新增學員的metadata已由Auth保存，但不能當作已核准；正式審核表啟用前不可聲稱已通知管理員或可購買。
+修正回跳時曾確認正式 `student_access_status()` 與私有申請表尚未部署，後續取得核准才正式啟用。前端遇到明確的PGRST202（缺少審核RPC）時，會顯示「帳戶登入成功、審核服務尚未啟用」而非籠統網路錯誤，保持allowed=false且不清除已驗證帳戶。其他API錯誤仍照錯誤處理，不作授權放行。此行為另有4項單元測試。新增學員的metadata已由Auth保存，但不能當作已核准；未實作管理員通知信，不能將註冊驗證信稱為管理員審核通知。
