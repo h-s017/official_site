@@ -1,0 +1,58 @@
+[hidden]{display:none!important}
+.student-shell{max-width:760px;margin:0 auto;padding:64px 24px}
+.student-shell h1{font-size:clamp(32px,5vw,50px);line-height:1.3}
+.student-shell p{line-height:1.85}
+.student-card{background:var(--white);border:1px solid var(--line);padding:32px;margin:24px 0}
+.student-tabs{display:flex;gap:0;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:0 0 24px}
+.student-tabs button,.student-card button,.student-actions button,.review-card button{font:inherit;letter-spacing:.08em;cursor:pointer;border:1px solid var(--ink);background:var(--white);padding:12px 20px;min-height:46px;transition:background-color .22s,color .22s}
+.student-tabs button{border:0;border-bottom:1px solid transparent;color:var(--gray500)}
+.student-tabs [aria-pressed=true]{border-bottom-color:var(--ink);color:var(--ink)}
+.student-card .primary,.review-card .approve{background:var(--ink);color:var(--white)}
+.student-card label{display:block;margin:18px 0 6px;font-size:15px}
+.student-card input:not([type=checkbox]),.student-card textarea,.student-card select{width:100%;padding:13px;box-sizing:border-box;font:inherit;border:1px solid var(--line);border-radius:0;background:var(--white)}
+.student-card fieldset{border:1px solid var(--line);margin:24px 0;padding:16px}
+.student-card legend{font-size:15px;padding:0 8px}
+.student-card .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.9}
+.student-card input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:5px;accent-color:var(--ink)}
+.student-card button{margin:18px 8px 0 0}
+.student-card .hint{font-size:13px;color:var(--gray500)}
+.student-message{min-height:24px;line-height:1.8;margin:8px 0 0;padding:4px 0;overflow-wrap:anywhere}
+.student-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;padding:20px 4vw}.student-actions a{border-bottom:1px solid}
+.review-card{padding:24px;border:1px solid var(--line);margin:20px 0;background:var(--white);overflow-wrap:anywhere}.review-card p{margin:8px 0}.review-card textarea{width:100%;box-sizing:border-box;font:inherit;padding:12px;margin:12px 0}.review-actions{display:flex;gap:12px;flex-wrap:wrap}
+#mfa-qr{width:220px;max-width:100%;height:auto}button:disabled{opacity:.55;cursor:wait}:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.student-page .student-shell{max-width:1180px;padding:24px 0 80px;width:88%}
+.student-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:9%;align-items:start}
+.student-intro{padding:28px 0;position:sticky;top:100px;color:var(--gray700)}
+.student-intro h2{color:var(--ink);line-height:1.5!important}
+.student-intro>p:not(.kicker){margin:24px 0;font-size:16px}
+.student-steps{list-style:none;padding:0;margin:36px 0;display:grid;gap:22px}
+.student-steps li{display:flex;gap:22px;padding-top:20px;border-top:1px solid var(--line)}
+.student-steps li>span{font-size:24px;color:var(--gray500);line-height:1.4;letter-spacing:.1em}
+.student-steps strong{font-weight:500;font-size:16px;letter-spacing:.08em}
+.student-steps p{font-size:14px;margin:5px 0;color:var(--gray500)}
+.student-page .student-card{margin:0 0 20px;padding:34px}
+html body.student-page .student-card h2{font-size:27px!important;line-height:1.5;letter-spacing:.1em}
+.student-card>form>p{font-size:14px;color:var(--gray700)}
+.student-account details{font-size:13px;color:var(--gray700);line-height:1.9;border-bottom:1px solid var(--line);padding-bottom:16px}
+.student-account summary{cursor:pointer;color:var(--ink);letter-spacing:.08em}
+.student-account>p{font-size:14px}
+#student-menu-toggle{display:none;background:none;border:0;padding:10px;font:inherit;letter-spacing:.12em}
+@media(max-width:900px){.student-page .student-layout{gap:6%;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.student-page .student-card{padding:26px}.student-page .site-nav{flex-wrap:wrap}#student-menu-toggle{display:block}.student-page .nav-links{display:none;flex-basis:100%;flex-wrap:wrap;padding:16px 0}.student-page .nav-links.is-open{display:flex}}
+@media(max-width:680px){.student-shell{padding:32px 16px}.student-page .student-shell{padding-top:4px}.student-layout,.student-page .student-layout{grid-template-columns:1fr;gap:24px}.student-intro{position:static;padding:0 0 16px}.student-intro h2{font-size:28px!important}.student-intro>p:not(.kicker),.student-steps,.student-intro>.text-link{display:none}.student-intro .kicker{margin-bottom:8px}.student-card{padding:22px}.student-tabs button{padding:12px 14px;font-size:14px}}
+
+/* Scent Études: retain the site's typography and place all three steps left to right. */
+.student-page .page-hero h1 span{display:block;margin-top:14px;font-size:.6em;letter-spacing:.12em}
+.student-page .page-hero .student-tagline{max-width:960px;margin:28px auto 18px!important;color:var(--ink)}
+.student-page .student-tagline strong{font-weight:600}
+.student-page .page-hero .student-description{max-width:860px;margin:0 auto!important;text-align:center;line-height:2!important;font-size:16px!important}
+.student-page .student-layout{display:block}
+.student-page .student-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:60px 0 0}
+.student-page .student-steps li{display:block;padding:24px 0 0}
+.student-page .student-steps li>span{display:block;margin:0 0 16px;font-size:14px;letter-spacing:.2em}
+.student-page .student-steps h3{margin:0 0 14px;font-size:20px;font-weight:500;letter-spacing:.07em;line-height:1.6;color:var(--ink)}
+.student-page .student-steps p{font-size:15px;line-height:1.9;color:var(--gray700)}
+.student-page .student-account{max-width:640px;margin:0 auto}
+.student-page .nav-dropdown.is-open .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
+.student-page .nav-group-label{display:block;padding:10px 16px 7px;color:var(--gray500);font-size:12px;letter-spacing:.14em}
+.student-page .nav-dropdown-menu .nav-subitem{padding-left:34px}
+@media(max-width:680px){.student-page .student-steps{grid-template-columns:repeat(3,minmax(230px,1fr));gap:24px;overflow-x:auto;padding-bottom:18px;margin:36px 0 0;scroll-snap-type:x proximity}.student-page .student-steps li{scroll-snap-align:start}.student-page .page-hero .student-description{font-size:15px!important}}
