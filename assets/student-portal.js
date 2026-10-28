@@ -12,11 +12,18 @@
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&courseToggle.getAttribute('aria-expanded')==='true'){setCourseOpen(false);courseToggle.focus();}});
  function mode(name){for(const form of document.querySelectorAll('[data-auth-panel]'))form.hidden=form.dataset.authPanel!==name;for(const tab of document.querySelectorAll('[data-mode]'))tab.setAttribute('aria-pressed',String(tab.dataset.mode===name));message('');}
  for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>mode(button.dataset.mode);
- async function busy(form,work){const button=form.querySelector('button[type=submit]');button.disabled=true;try{await work();}catch{message('資格審查中');}finally{button.disabled=false;}}
+ function operationError(error){
+  if(error?.code==='invalid_credentials')return 'Email 或密碼不正確，請重新輸入或使用忘記密碼。';
+  if(error?.code==='email_not_confirmed')return '請先完成信箱驗證，再登入。';
+  if(error?.status===429)return '操作次數過多，請稍後再試。';
+  return '操作未完成，請檢查輸入資料與網路後重試。';
+ }
+ async function busy(form,work){const button=form.querySelector('button[type=submit]');message('');button.disabled=true;try{await work();}catch(error){message(operationError(error));}finally{button.disabled=false;}}
  function application(form){const data=new FormData(form);const courses=data.getAll('courses');if(!courses.length)throw new Error('course required');return {full_name:String(data.get('name')).trim(),phone:String(data.get('phone')).replace(/[ ()-]/g,''),courses,consent_version:'2026-10-28'};}
  async function refresh(){
   $('student-content').hidden=true;
   const access=await status();
+  message('');
   $('signed-in').hidden=!access;
   if(!access){$('auth-tabs').hidden=false;mode('login');return;}
   $('auth-tabs').hidden=true;
