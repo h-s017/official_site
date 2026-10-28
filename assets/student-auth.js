@@ -8,7 +8,12 @@
  const portal='/student-tools/';
  const redirect=new URL(portal,location.origin).href;
  const check=async result=>{if(result.error)throw result.error;return result.data;};
- async function status(){const {data,error}=await db.auth.getUser();if(error||!data.user)return null;return check(await db.rpc('student_access_status'));}
+ async function status(){
+  const {data,error}=await db.auth.getUser();if(error||!data.user)return null;
+  const result=await db.rpc('student_access_status');
+  if(result.error?.code==='PGRST202')return {status:'service_pending',allowed:false,admin:false,verified:!!data.user.email_confirmed_at};
+  return check(result);
+ }
  async function requireAccess(){const access=await status();if(!access?.allowed){location.replace(portal);throw new Error('Approved student required');}return access;}
  // Only fixed same-origin destinations; never accept arbitrary return URLs.
  const next=()=>new URLSearchParams(location.search).get('next')==='materials'?'/student-tools/materials/':portal;

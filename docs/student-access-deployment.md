@@ -32,7 +32,7 @@
 
 1. 套用上列資料庫 migration，重跑 Supabase security advisor，檢查新增私有表與函式權限。
 2. 在 Supabase Auth 確認 Email provider、Email confirmations 已啟用；保持安全的 Email change 驗證，停用不需要的匿名登入。
-3. 將 `https://hanascent.com/student-tools/` 加入允許的 Redirect URL；保留既有其他合法回跳。不要使用萬用來源。
+3. 已於2026-10-28經使用者明確核准並在Supabase儲存：Site URL為 `https://hanascent.com/student-tools/`；Redirect URLs保留 `https://hanascent.com/student-tools/materials/`，新增 `https://hanascent.com/student-tools/` 與 `http://127.0.0.1:4176/student-tools/`，重載確認共3筆。沒有使用萬用來源。正式上線且本機測試結束後，應移除不再需要的本機回跳。舊信若嵌入localhost:3000不會自動更新，已驗證帳戶可直接以密碼登入。
 4. Auth 端密碼最少設 12 個字元，檢查寄信 SMTP 設定及 Auth rate limits。啟用可用的 leaked-password protection；若受方案限制需明確紀錄。前端 minlength 不可替代服務端密碼規則。
 5. 上線前配置 Supabase CAPTCHA（Turnstile 或 hCaptcha）並在 signup／password login／recovery 提交對應 `captchaToken`；此版本尚未包含 CAPTCHA site key 或 widget，因此先不要開放大規模公開註冊。不要把服務端 secret 放進 GitHub。
 6. 使用管理員本人及指定測試學員完成寄信、驗證、核准、登入、下單、拒絕、停權、忘記密碼與登出驗證。未獲指定收件人前不代寄測試信。管理員自行設定驗證器，勿將 QR code／密碼／OTP 發到聊天或存到 GitHub。
@@ -65,3 +65,9 @@
 - https://supabase.com/docs/guides/auth/password-security
 - https://supabase.com/docs/guides/auth/auth-mfa/totp
 - https://supabase.com/docs/guides/database/postgres/row-level-security
+
+## 註冊測試與登入信修正
+
+2026-10-28的使用者測試帳戶已在Auth完成Email驗證。當時正式Site URL仍為localhost:3000，且原本僅允許materials路徑，本機預覽註冊提供的redirect不在允許清單，導致信箱驗證後無法回到預覽。以上URL設定已依明確授權修正。未代寄新驗證信、未操作使用者密碼。
+
+另確認正式 `student_access_status()` 與私有申請表仍未部署。前端遇到明確的PGRST202（缺少審核RPC）時，現在顯示「帳戶登入成功、審核服務尚未啟用」而非籠統網路錯誤，保持allowed=false且不清除已驗證帳戶。其他API錯誤仍照錯誤處理，不作授權放行。此行為另有4項單元測試。新增學員的metadata已由Auth保存，但不能當作已核准；正式審核表啟用前不可聲稱已通知管理員或可購買。

@@ -18,6 +18,7 @@
   for(const panel of document.querySelectorAll('[data-auth-panel]'))panel.hidden=true;
   $('review-link').hidden=!access.admin;
   if(recovery){$('reset-form').hidden=false;message('請設定新密碼。');return;}
+  if(access.status==='service_pending'){$('access-status').textContent=access.verified?'信箱驗證已完成，帳戶登入成功。學員審核服務尚未啟用，目前暫時無法送審或購買；請保留原帳戶，無需重複註冊。':'帳戶登入成功，請先完成信箱驗證。學員審核服務尚未啟用。';return;}
   if(access.allowed){$('student-content').hidden=false;$('access-status').textContent='已通過學員資格審核';sessionStorage.setItem('hana_student_tools_unlocked','true');if(next().includes('/materials/'))location.replace(next());}
   else if(access.admin){$('access-status').textContent='管理員帳戶：請前往學員審核後台完成二階段驗證。';}
   else if(access.status==='not_applied'){$('complete-form').hidden=false;$('access-status').textContent='請補填學員資格申請。';}
