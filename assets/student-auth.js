@@ -19,7 +19,7 @@
  const check=async result=>{if(result.error)throw result.error;return result.data;};
  async function status(){
   const {data,error}=await db.auth.getUser();
-  if(error){if(error.name==='AuthSessionMissingError')return null;throw error;}
+  if(error){if(error.name==='AuthSessionMissingError'||error.status===401||error.status===403)return null;throw error;}
   if(!data.user)return null;
   const result=await db.rpc('student_access_status');
   if(result.error?.code==='PGRST202')return {status:'service_pending',allowed:false,admin:false,verified:!!data.user.email_confirmed_at};

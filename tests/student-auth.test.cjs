@@ -12,6 +12,12 @@ test('missing session still requires login',async()=>{
  const error=new Error('session missing');error.name='AuthSessionMissingError';
  assert.equal(await client({data:{user:null},error},{data:{allowed:true}}).status(),null);
 });
+test('revoked or rejected authentication still requires login',async()=>{
+ for(const status of [401,403]){
+  const error=Object.assign(new Error('authentication rejected'),{status});
+  assert.equal(await client({data:{user:null},error},{data:{allowed:true}}).status(),null);
+ }
+});
 
 test('portal and shop share browser session, but stale tabs cannot restore it after logout',async()=>{
  const key='hana-student-auth-v1';
