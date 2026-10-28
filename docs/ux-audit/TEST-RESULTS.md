@@ -1,3 +1,9 @@
+# 首頁效能重測｜main1423a14
+
+正式首頁main1423a14重測：手機首次／略過開場、桌機首次各三次Lighthouse。中位Performance為56／76／90，LCP20.94／5.92／1.83秒；CLS九輪均<0.1，桌機一輪LCP3.63秒／76分，不能宣稱穩定達標。無可用CrUX／RUM，TBT不等於INP。本批僅量測、沒有產品修改。 [完整數據、環境與限制](home-performance-retest/README.md)。
+
+---
+
 # 消息無摘要與透明度更新｜2026-10-24
 
 四viewport＋長內容／三則上限、API失敗與no-JS共7/7，精確檢查70%圓鈕及55%導覽背景、無摘要、標題連結、原圖文字級與無溢出。局部axe零違規，半透明導覽有背景判定incomplete；非全站或真機驗收。未載入預約付款。 [截圖、結果與限制](news-title-opacity/README.md)。

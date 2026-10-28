@@ -1,0 +1,1724 @@
+[
+  {
+    "mode": "first-session",
+    "viewport": [
+      390,
+      844
+    ],
+    "throttling": "none",
+    "browserContext": "fresh cold context; seen variant pre-seeds sessionStorage only",
+    "beforeInteraction": {
+      "lcp": [
+        {
+          "start": 776,
+          "duration": 0,
+          "size": 152051,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        },
+        {
+          "start": 1000,
+          "duration": 0,
+          "size": 322577,
+          "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+          "element": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 931.1999999992549,
+          "duration": 0,
+          "value": 3.8366624576906665e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\"><span class=\"en-text\">MENU</span></div>"
+          ]
+        }
+      ],
+      "events": [],
+      "longTasks": [
+        {
+          "start": 738.8000000007451,
+          "duration": 129
+        }
+      ]
+    },
+    "afterInteraction": {
+      "lcp": [
+        {
+          "start": 776,
+          "duration": 0,
+          "size": 152051,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        },
+        {
+          "start": 1000,
+          "duration": 0,
+          "size": 322577,
+          "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+          "element": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 931.1999999992549,
+          "duration": 0,
+          "value": 3.8366624576906665e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\"><span class=\"en-text\">MENU</span></div>"
+          ]
+        },
+        {
+          "start": 19832.699999999255,
+          "duration": 0,
+          "value": 3.9181308273422106e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"true\" aria-label=\"關閉導覽選單\" aria-controls=\"hana-navigation\">CLOSE</div>"
+          ]
+        },
+        {
+          "start": 19859,
+          "duration": 0,
+          "value": 0.1427079355809618,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 19876.39999999851,
+          "duration": 0,
+          "value": 0.09375329360561048,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>"
+          ]
+        },
+        {
+          "start": 19909.5,
+          "duration": 0,
+          "value": 0.0031333527998023405,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 19926.10000000149,
+          "duration": 0,
+          "value": 0.0027584858128748228,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 19942.5,
+          "duration": 0,
+          "value": 0.0030940455066148565,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 19959.60000000149,
+          "duration": 0,
+          "value": 0.0016551178095730104,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w"
+          ]
+        },
+        {
+          "start": 20249,
+          "duration": 0,
+          "value": 0.23620055380088564,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20259.699999999255,
+          "duration": 0,
+          "value": 0.23620055380088564,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20275.199999999255,
+          "duration": 0,
+          "value": 3.9181308273422106e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\">MENU</div>"
+          ]
+        },
+        {
+          "start": 20343.300000000745,
+          "duration": 0,
+          "value": 0.0025821733002403357,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20359.199999999255,
+          "duration": 0,
+          "value": 0.023094105169470587,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業調香</button>",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20375.60000000149,
+          "duration": 0,
+          "value": 0.05330969669617881,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業調香</button>"
+          ]
+        },
+        {
+          "start": 20392.10000000149,
+          "duration": 0,
+          "value": 0.040200301705072626,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 20409.10000000149,
+          "duration": 0,
+          "value": 0.030928790437917804,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/incubation/\">藝術育成</a>"
+          ]
+        },
+        {
+          "start": 20425.5,
+          "duration": 0,
+          "value": 0.02414188750382274,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/incubation/\">藝術育成</a>"
+          ]
+        },
+        {
+          "start": 20442,
+          "duration": 0,
+          "value": 0.019075706548595046,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/business/\">品牌合作</a>"
+          ]
+        },
+        {
+          "start": 20458.800000000745,
+          "duration": 0,
+          "value": 0.015119701506462812,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/business/\">品牌合作</a>"
+          ]
+        },
+        {
+          "start": 20476.60000000149,
+          "duration": 0,
+          "value": 0.012044796707863015,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 20492.10000000149,
+          "duration": 0,
+          "value": 0.00956831575159864,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 20509.199999999255,
+          "duration": 0,
+          "value": 0.007568243373265512,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 20525.60000000149,
+          "duration": 0,
+          "value": 0.005796729001482446,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20542.5,
+          "duration": 0,
+          "value": 0.004442031218413783,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 20558.800000000745,
+          "duration": 0,
+          "value": 0.0032724418322252423,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19451.5,
+          "duration": 48,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 19452.60000000149,
+          "duration": 40,
+          "name": "pointerdown",
+          "interactionId": 1545
+        },
+        {
+          "start": 19452.60000000149,
+          "duration": 40,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 19453.199999999255,
+          "duration": 40,
+          "name": "pointerup",
+          "interactionId": 1545
+        },
+        {
+          "start": 19453.199999999255,
+          "duration": 40,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 19453.199999999255,
+          "duration": 40,
+          "name": "click",
+          "interactionId": 1545
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerout",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "mouseout",
+          "interactionId": 0
+        },
+        {
+          "start": 19462.5,
+          "duration": 32,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "pointerdown",
+          "interactionId": 1552
+        },
+        {
+          "start": 19814.39999999851,
+          "duration": 16,
+          "name": "touchstart",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "gotpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerup",
+          "interactionId": 1552
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "lostpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerout",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 16,
+          "name": "touchend",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 48,
+          "name": "mouseout",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 48,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 48,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 48,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 19814.5,
+          "duration": 48,
+          "name": "click",
+          "interactionId": 1552
+        },
+        {
+          "start": 19841.699999999255,
+          "duration": 16,
+          "name": "mouseout",
+          "interactionId": 0
+        },
+        {
+          "start": 19841.699999999255,
+          "duration": 16,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "pointerdown",
+          "interactionId": 1559
+        },
+        {
+          "start": 20230.5,
+          "duration": 16,
+          "name": "touchstart",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "gotpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerup",
+          "interactionId": 1559
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "lostpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerout",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "touchend",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "mouseout",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 20230.60000000149,
+          "duration": 40,
+          "name": "click",
+          "interactionId": 1559
+        },
+        {
+          "start": 20254.10000000149,
+          "duration": 16,
+          "name": "keydown",
+          "interactionId": 1566
+        },
+        {
+          "start": 20255.800000000745,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 1566
+        },
+        {
+          "start": 20258.800000000745,
+          "duration": 24,
+          "name": "keydown",
+          "interactionId": 1573
+        },
+        {
+          "start": 20269.10000000149,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 1573
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 738.8000000007451,
+          "duration": 129
+        }
+      ]
+    },
+    "clsSessionWindow": 0,
+    "maxObservedEventDurationMs": 48,
+    "eventTimingEntryCount": 13,
+    "caveat": "Observed interaction timing samples are not field INP or a percentile."
+  },
+  {
+    "mode": "first-session",
+    "viewport": [
+      1440,
+      900
+    ],
+    "throttling": "none",
+    "browserContext": "fresh cold context; seen variant pre-seeds sessionStorage only",
+    "beforeInteraction": {
+      "lcp": [
+        {
+          "start": 664,
+          "duration": 0,
+          "size": 6440,
+          "url": "",
+          "element": "<a class=\"logo\" href=\"/\"><span class=\"en-text\">HANA SCENT ARTIST</span></a>"
+        },
+        {
+          "start": 692,
+          "duration": 0,
+          "size": 1166130,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        },
+        {
+          "start": 952,
+          "duration": 0,
+          "size": 1295165,
+          "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+          "element": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 766.2999999970198,
+          "duration": 0,
+          "value": 0.0007879550761156121,
+          "recentInput": false,
+          "sources": [
+            "<div class=\"nav-links\" id=\"hana-navigation\">\n      <a href=\"https://hineni.hanascent.com/\">此域 HINENI</a>\n      <div class=\"nav-dropdown\">\n        <button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業"
+          ]
+        }
+      ],
+      "events": [],
+      "longTasks": [
+        {
+          "start": 641.6999999992549,
+          "duration": 81
+        }
+      ]
+    },
+    "afterInteraction": {
+      "lcp": [
+        {
+          "start": 664,
+          "duration": 0,
+          "size": 6440,
+          "url": "",
+          "element": "<a class=\"logo\" href=\"/\"><span class=\"en-text\">HANA SCENT ARTIST</span></a>"
+        },
+        {
+          "start": 692,
+          "duration": 0,
+          "size": 1166130,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        },
+        {
+          "start": 952,
+          "duration": 0,
+          "size": 1295165,
+          "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+          "element": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 766.2999999970198,
+          "duration": 0,
+          "value": 0.0007879550761156121,
+          "recentInput": false,
+          "sources": [
+            "<div class=\"nav-links\" id=\"hana-navigation\">\n      <a href=\"https://hineni.hanascent.com/\">此域 HINENI</a>\n      <div class=\"nav-dropdown\">\n        <button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.699999999255,
+          "duration": 56,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 18265.79999999702,
+          "duration": 56,
+          "name": "pointerdown",
+          "interactionId": 9829
+        },
+        {
+          "start": 18265.79999999702,
+          "duration": 56,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 18266,
+          "duration": 56,
+          "name": "pointerup",
+          "interactionId": 9829
+        },
+        {
+          "start": 18266,
+          "duration": 56,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 18266,
+          "duration": 56,
+          "name": "click",
+          "interactionId": 9829
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerout",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "mouseout",
+          "interactionId": 0
+        },
+        {
+          "start": 18274.89999999851,
+          "duration": 48,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 18601.099999997765,
+          "duration": 40,
+          "name": "keydown",
+          "interactionId": 9836
+        },
+        {
+          "start": 18605.099999997765,
+          "duration": 40,
+          "name": "keyup",
+          "interactionId": 9836
+        },
+        {
+          "start": 18609.199999999255,
+          "duration": 16,
+          "name": "keydown",
+          "interactionId": 9843
+        },
+        {
+          "start": 18610.89999999851,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 9843
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 641.6999999992549,
+          "duration": 81
+        }
+      ]
+    },
+    "clsSessionWindow": 0.0007879550761156121,
+    "maxObservedEventDurationMs": 56,
+    "eventTimingEntryCount": 7,
+    "caveat": "Observed interaction timing samples are not field INP or a percentile."
+  },
+  {
+    "mode": "seen-session-cold",
+    "viewport": [
+      390,
+      844
+    ],
+    "throttling": "none",
+    "browserContext": "fresh cold context; seen variant pre-seeds sessionStorage only",
+    "beforeInteraction": {
+      "lcp": [
+        {
+          "start": 740,
+          "duration": 0,
+          "size": 152051,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 938,
+          "duration": 0,
+          "value": 3.8366624576906665e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\"><span class=\"en-text\">MENU</span></div>"
+          ]
+        }
+      ],
+      "events": [],
+      "longTasks": [
+        {
+          "start": 664.5,
+          "duration": 190
+        }
+      ]
+    },
+    "afterInteraction": {
+      "lcp": [
+        {
+          "start": 740,
+          "duration": 0,
+          "size": 152051,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 938,
+          "duration": 0,
+          "value": 3.8366624576906665e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"開啟導覽選單\" aria-controls=\"hana-navigation\"><span class=\"en-text\">MENU</span></div>"
+          ]
+        },
+        {
+          "start": 11927.300000000745,
+          "duration": 0,
+          "value": 3.128284156741936e-05,
+          "recentInput": true,
+          "sources": [
+            "<div class=\"mobile-note\" role=\"button\" tabindex=\"0\" aria-expanded=\"true\" aria-label=\"關閉導覽選單\" aria-controls=\"hana-navigation\">CLOSE</div>"
+          ]
+        },
+        {
+          "start": 11980.20000000298,
+          "duration": 0,
+          "value": 0.14178877664472944,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 11985,
+          "duration": 0,
+          "value": 0.09387393203488241,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 12017,
+          "duration": 0,
+          "value": 0.0027049647217043645,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12033.10000000149,
+          "duration": 0,
+          "value": 0.0027584858128748228,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12050.300000000745,
+          "duration": 0,
+          "value": 0.0025864286656858563,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12370.20000000298,
+          "duration": 0,
+          "value": 0.23620055380088564,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12383.300000000745,
+          "duration": 0,
+          "value": 0.2382997144389942,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12449.900000002235,
+          "duration": 0,
+          "value": 0.0026058629635452935,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12466.5,
+          "duration": 0,
+          "value": 0.02282562231868107,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業調香</button>",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12482.70000000298,
+          "duration": 0,
+          "value": 0.053404919356336594,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業調香</button>"
+          ]
+        },
+        {
+          "start": 12499.300000000745,
+          "duration": 0,
+          "value": 0.040148204693377196,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/incubation/\">藝術育成</a>",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 12516.300000000745,
+          "duration": 0,
+          "value": 0.03104600837677293,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/incubation/\">藝術育成</a>"
+          ]
+        },
+        {
+          "start": 12532.70000000298,
+          "duration": 0,
+          "value": 0.02408855032812951,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/business/\">品牌合作</a>",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/incubation/\">藝術育成</a>"
+          ]
+        },
+        {
+          "start": 12549.400000002235,
+          "duration": 0,
+          "value": 0.01924436885229615,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/business/\">品牌合作</a>"
+          ]
+        },
+        {
+          "start": 12566.20000000298,
+          "duration": 0,
+          "value": 0.015153450840182593,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>",
+            "<a href=\"/business/\">品牌合作</a>"
+          ]
+        },
+        {
+          "start": 12583.20000000298,
+          "duration": 0,
+          "value": 0.011994046159936626,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 12599.300000000745,
+          "duration": 0,
+          "value": 0.009585250823725364,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 12616,
+          "duration": 0,
+          "value": 0.007551274217720074,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\"",
+            "<a href=\"/journal/\">氣味誌</a>"
+          ]
+        },
+        {
+          "start": 12633.300000000745,
+          "duration": 0,
+          "value": 0.0058135311145302215,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12649.300000000745,
+          "duration": 0,
+          "value": 0.004425141365872285,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        },
+        {
+          "start": 12666,
+          "duration": 0,
+          "value": 0.003289397489387031,
+          "recentInput": true,
+          "sources": [
+            "<header class=\"hero\">\n    <h1 class=\"home-semantic-title\"><span class=\"en-text\">HANA SCENT ARTIST</span></h1>\n    <div class=\"hero-shell\">\n      <div class=\"hero-visual is-visible reveal-on-scroll\" style=\"--reveal-index: 0;\"><img data-hana-hero-image",
+            "<main>\n\n\n    <section class=\"entrance-editorial is-visible reveal-on-scroll\" aria-labelledby=\"entrance-title\" style=\"--reveal-index: 2;\">\n      <div class=\"wrap\">\n        <div class=\"entrance-editorial-head\">\n          <p class=\"kicker\"><span class=\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "start": 11909,
+          "duration": 56,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 11909,
+          "duration": 56,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 11909,
+          "duration": 56,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 11909,
+          "duration": 56,
+          "name": "click",
+          "interactionId": 3789
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerover",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerenter",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "pointerdown",
+          "interactionId": 3796
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 16,
+          "name": "touchstart",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "gotpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerup",
+          "interactionId": 3796
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "lostpointercapture",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerout",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "pointerleave",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "touchend",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "mouseover",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "mousedown",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "mouseup",
+          "interactionId": 0
+        },
+        {
+          "start": 12354.60000000149,
+          "duration": 40,
+          "name": "click",
+          "interactionId": 3796
+        },
+        {
+          "start": 12374,
+          "duration": 16,
+          "name": "keydown",
+          "interactionId": 3803
+        },
+        {
+          "start": 12375,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 3803
+        },
+        {
+          "start": 12377.10000000149,
+          "duration": 16,
+          "name": "keydown",
+          "interactionId": 3810
+        },
+        {
+          "start": 12381.5,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 3810
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 664.5,
+          "duration": 190
+        }
+      ]
+    },
+    "clsSessionWindow": 0,
+    "maxObservedEventDurationMs": 56,
+    "eventTimingEntryCount": 8,
+    "caveat": "Observed interaction timing samples are not field INP or a percentile."
+  },
+  {
+    "mode": "seen-session-cold",
+    "viewport": [
+      1440,
+      900
+    ],
+    "throttling": "none",
+    "browserContext": "fresh cold context; seen variant pre-seeds sessionStorage only",
+    "beforeInteraction": {
+      "lcp": [
+        {
+          "start": 640,
+          "duration": 0,
+          "size": 1166130,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 783.8000000007451,
+          "duration": 0,
+          "value": 0.0007879550761156121,
+          "recentInput": false,
+          "sources": [
+            "<div class=\"nav-links\" id=\"hana-navigation\">\n      <a href=\"https://hineni.hanascent.com/\">此域 HINENI</a>\n      <div class=\"nav-dropdown\">\n        <button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業"
+          ]
+        }
+      ],
+      "events": [],
+      "longTasks": [
+        {
+          "start": 688.9000000022352,
+          "duration": 55
+        }
+      ]
+    },
+    "afterInteraction": {
+      "lcp": [
+        {
+          "start": 640,
+          "duration": 0,
+          "size": 1166130,
+          "url": "https://hanascent.com/assets/home-hero-1920.webp",
+          "element": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/home-hero-1920.webp 1920w\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">"
+        }
+      ],
+      "shifts": [
+        {
+          "start": 783.8000000007451,
+          "duration": 0,
+          "value": 0.0007879550761156121,
+          "recentInput": false,
+          "sources": [
+            "<div class=\"nav-links\" id=\"hana-navigation\">\n      <a href=\"https://hineni.hanascent.com/\">此域 HINENI</a>\n      <div class=\"nav-dropdown\">\n        <button class=\"nav-drop-button\" type=\"button\" aria-controls=\"hana-course-links\" aria-expanded=\"false\">專業"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "start": 11094.400000002235,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 9161
+        },
+        {
+          "start": 11096.10000000149,
+          "duration": 16,
+          "name": "keydown",
+          "interactionId": 9168
+        },
+        {
+          "start": 11096.900000002235,
+          "duration": 16,
+          "name": "keyup",
+          "interactionId": 9168
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 688.9000000022352,
+          "duration": 55
+        }
+      ]
+    },
+    "clsSessionWindow": 0.0007879550761156121,
+    "maxObservedEventDurationMs": 16,
+    "eventTimingEntryCount": 3,
+    "caveat": "Observed interaction timing samples are not field INP or a percentile."
+  }
+]
