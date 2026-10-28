@@ -1,0 +1,62 @@
+[
+  {
+    "run": 1,
+    "scores": {
+      "performance": 0.76,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 5915.101399999999,
+      "total-blocking-time": 63.5,
+      "cumulative-layout-shift": 0,
+      "first-contentful-paint": 2375.3858,
+      "speed-index": 2475.0083896857086
+    },
+    "seen": {
+      "seen": "1",
+      "introOpen": false
+    },
+    "fetchTime": "2026-10-28T04:08:50.119Z",
+    "report": "returning-1-home-mobile.json.gz"
+  },
+  {
+    "run": 2,
+    "scores": {
+      "performance": 0.92,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2937.2208,
+      "total-blocking-time": 185.09840000000008,
+      "cumulative-layout-shift": 0,
+      "first-contentful-paint": 1232.7620000000002,
+      "speed-index": 2083.93766113879
+    },
+    "seen": {
+      "seen": "1",
+      "introOpen": false
+    },
+    "fetchTime": "2026-10-28T04:09:01.631Z",
+    "report": "returning-2-home-mobile.json.gz"
+  },
+  {
+    "run": 3,
+    "scores": {
+      "performance": 0.75,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 6013.7949499999995,
+      "total-blocking-time": 67,
+      "cumulative-layout-shift": 0,
+      "first-contentful-paint": 2335.9718000000003,
+      "speed-index": 2908.388575167911
+    },
+    "seen": {
+      "seen": "1",
+      "introOpen": false
+    },
+    "fetchTime": "2026-10-28T04:09:13.062Z",
+    "report": "returning-3-home-mobile.json.gz"
+  }
+]

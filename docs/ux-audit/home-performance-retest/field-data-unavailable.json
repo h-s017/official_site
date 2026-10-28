@@ -1,0 +1,5 @@
+{
+  "attempt": "Public PageSpeed Insights API for CrUX page/origin data",
+  "error": "HTTP Error 429: Too Many Requests",
+  "result": "No usable CrUX/RUM data retrieved"
+}

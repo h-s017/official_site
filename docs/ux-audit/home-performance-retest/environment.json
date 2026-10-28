@@ -1,0 +1,9 @@
+{
+  "measuredAtUtc": "2026-10-28T04:06:44.330012+00:00",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "node": "v24.19.0",
+  "lighthouse": "12.8.2",
+  "cache": "new browser/cold storage per run",
+  "network": "HTTPS through managed proxy with TLS verification",
+  "sequence": "mobile1,desktop1,mobile2,desktop2,mobile3,desktop3; no concurrent browser tests"
+}

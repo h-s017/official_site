@@ -1,0 +1,1454 @@
+{
+  "first-session-mobile": {
+    "samples": 3,
+    "scores": {
+      "performance": {
+        "median": 56,
+        "min": 45,
+        "max": 57,
+        "runs": [
+          57,
+          56,
+          45
+        ]
+      },
+      "accessibility": {
+        "median": 100,
+        "min": 100,
+        "max": 100,
+        "runs": [
+          100,
+          100,
+          100
+        ]
+      }
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "median": 20943.3512,
+        "min": 19316.10645,
+        "max": 22463.121155000004,
+        "runs": [
+          20943.3512,
+          19316.10645,
+          22463.121155000004
+        ]
+      },
+      "total-blocking-time": {
+        "median": 437,
+        "min": 53,
+        "max": 556.9999999999998,
+        "runs": [
+          556.9999999999998,
+          53,
+          437
+        ]
+      },
+      "cumulative-layout-shift": {
+        "median": 0,
+        "min": 0,
+        "max": 3.819497290592616e-05,
+        "runs": [
+          3.819497290592616e-05,
+          0,
+          0
+        ]
+      },
+      "first-contentful-paint": {
+        "median": 10917.4642,
+        "min": 1390.4868,
+        "max": 10917.6199,
+        "runs": [
+          1390.4868,
+          10917.6199,
+          10917.4642
+        ]
+      },
+      "speed-index": {
+        "median": 10917.4642,
+        "min": 5037.430203958745,
+        "max": 10917.6199,
+        "runs": [
+          5037.430203958745,
+          10917.6199,
+          10917.4642
+        ]
+      }
+    },
+    "resources": {
+      "requests": {
+        "median": 56,
+        "min": 56,
+        "max": 56,
+        "runs": [
+          56,
+          56,
+          56
+        ]
+      },
+      "transferredBytes": {
+        "median": 4026115,
+        "min": 4025909,
+        "max": 4026138,
+        "runs": [
+          4025909,
+          4026138,
+          4026115
+        ]
+      },
+      "fontCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21,
+        "runs": [
+          21,
+          21,
+          21
+        ]
+      },
+      "fontBytes": {
+        "median": 1783895,
+        "min": 1783838,
+        "max": 1784033,
+        "runs": [
+          1783895,
+          1784033,
+          1783838
+        ]
+      }
+    },
+    "runs": [
+      {
+        "report": "current-1-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:06:49.242Z",
+        "scores": {
+          "performance": 57,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 20943.3512,
+          "total-blocking-time": 556.9999999999998,
+          "cumulative-layout-shift": 3.819497290592616e-05,
+          "first-contentful-paint": 1390.4868,
+          "speed-index": 5037.430203958745
+        },
+        "lcpElement": "dialog#intro-screen > div.intro-slides > figure.intro-slide > img",
+        "lcpSnippet": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 835.6759999999999,
+            "percent": "4%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 14810.593271069385,
+            "percent": "71%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 3069.2610285286137,
+            "percent": "15%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 2227.8209004020027,
+            "percent": "11%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 56,
+        "transferredBytes": 4025909,
+        "fontCount": 21,
+        "fontBytes": 1783895,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180115,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 338921,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247646,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 132020,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117361,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104340,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103793,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99852,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97432,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97294,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96491,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "current-2-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:07:23.788Z",
+        "scores": {
+          "performance": 56,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 19316.10645,
+          "total-blocking-time": 53,
+          "cumulative-layout-shift": 0,
+          "first-contentful-paint": 10917.6199,
+          "speed-index": 10917.6199
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 847.8525,
+            "percent": "4%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 1355.7690250635528,
+            "percent": "7%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 5109.940904943311,
+            "percent": "26%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 12002.544019993136,
+            "percent": "62%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 56,
+        "transferredBytes": 4026138,
+        "fontCount": 21,
+        "fontBytes": 1784033,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180186,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 339000,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247681,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 132018,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117338,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104341,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103657,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99441,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97891,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97294,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96492,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "current-3-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:07:57.143Z",
+        "scores": {
+          "performance": 45,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 22463.121155000004,
+          "total-blocking-time": 437,
+          "cumulative-layout-shift": 0,
+          "first-contentful-paint": 10917.4642,
+          "speed-index": 10917.4642
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 782.971,
+            "percent": "3%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 2156.5215587573175,
+            "percent": "10%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 3249.884181710107,
+            "percent": "14%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 16273.744414532579,
+            "percent": "72%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 56,
+        "transferredBytes": 4026115,
+        "fontCount": 21,
+        "fontBytes": 1783838,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180163,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 338950,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247713,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 131998,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117699,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104341,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103630,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99441,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97432,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97295,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96490,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96182,
+            "type": "Font"
+          }
+        ]
+      }
+    ]
+  },
+  "first-session-desktop": {
+    "samples": 3,
+    "scores": {
+      "performance": {
+        "median": 90,
+        "min": 76,
+        "max": 93,
+        "runs": [
+          90,
+          93,
+          76
+        ]
+      },
+      "accessibility": {
+        "median": 100,
+        "min": 100,
+        "max": 100,
+        "runs": [
+          100,
+          100,
+          100
+        ]
+      }
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "median": 1829.0985999999998,
+        "min": 1495.4829500000003,
+        "max": 3630.4809259016506,
+        "runs": [
+          1829.0985999999998,
+          1495.4829500000003,
+          3630.4809259016506
+        ]
+      },
+      "total-blocking-time": {
+        "median": 2,
+        "min": 0,
+        "max": 4.5,
+        "runs": [
+          0,
+          4.5,
+          2
+        ]
+      },
+      "cumulative-layout-shift": {
+        "median": 0.001267805632168812,
+        "min": 0.001267805632168812,
+        "max": 0.001267805632168812,
+        "runs": [
+          0.001267805632168812,
+          0.001267805632168812,
+          0.001267805632168812
+        ]
+      },
+      "first-contentful-paint": {
+        "median": 555.2757,
+        "min": 531.4675,
+        "max": 1106.5908901202201,
+        "runs": [
+          531.4675,
+          555.2757,
+          1106.5908901202201
+        ]
+      },
+      "speed-index": {
+        "median": 1672.1856980231119,
+        "min": 1607.9611623353394,
+        "max": 1768.156077595093,
+        "runs": [
+          1672.1856980231119,
+          1607.9611623353394,
+          1768.156077595093
+        ]
+      }
+    },
+    "resources": {
+      "requests": {
+        "median": 56,
+        "min": 56,
+        "max": 56,
+        "runs": [
+          56,
+          56,
+          56
+        ]
+      },
+      "transferredBytes": {
+        "median": 3965038,
+        "min": 3964921,
+        "max": 3965214,
+        "runs": [
+          3965038,
+          3965214,
+          3964921
+        ]
+      },
+      "fontCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21,
+        "runs": [
+          21,
+          21,
+          21
+        ]
+      },
+      "fontBytes": {
+        "median": 1783484,
+        "min": 1783445,
+        "max": 1783535,
+        "runs": [
+          1783445,
+          1783484,
+          1783535
+        ]
+      }
+    },
+    "runs": [
+      {
+        "report": "current-1-home-desktop.json.gz",
+        "fetchTime": "2026-10-28T04:07:06.844Z",
+        "scores": {
+          "performance": 90,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 1829.0985999999998,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.001267805632168812,
+          "first-contentful-paint": 531.4675,
+          "speed-index": 1672.1856980231119
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 387.738,
+            "percent": "21%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 434.1564983921498,
+            "percent": "24%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 723.3732343360194,
+            "percent": "40%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 283.8308672718306,
+            "percent": "16%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "requests": 56,
+        "transferredBytes": 3965038,
+        "fontCount": 21,
+        "fontBytes": 1783445,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180113,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 338918,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247649,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 131980,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117339,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104337,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103629,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99441,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97431,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97295,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96543,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96491,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "current-2-home-desktop.json.gz",
+        "fetchTime": "2026-10-28T04:07:40.676Z",
+        "scores": {
+          "performance": 93,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 1495.4829500000003,
+          "total-blocking-time": 4.5,
+          "cumulative-layout-shift": 0.001267805632168812,
+          "first-contentful-paint": 555.2757,
+          "speed-index": 1607.9611623353394
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 410.4265,
+            "percent": "27%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 0,
+            "percent": "0%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 583.4905335083486,
+            "percent": "39%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 501.5659164916517,
+            "percent": "34%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "requests": 56,
+        "transferredBytes": 3965214,
+        "fontCount": 21,
+        "fontBytes": 1783484,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180145,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 338915,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247690,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 132014,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117334,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104340,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103677,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99441,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97845,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97296,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96439,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "current-3-home-desktop.json.gz",
+        "fetchTime": "2026-10-28T04:08:14.434Z",
+        "scores": {
+          "performance": 76,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 3630.4809259016506,
+          "total-blocking-time": 2,
+          "cumulative-layout-shift": 0.001267805632168812,
+          "first-contentful-paint": 1106.5908901202201,
+          "speed-index": 1768.156077595093
+        },
+        "lcpElement": "dialog#intro-screen > div.intro-slides > figure.intro-slide > img",
+        "lcpSnippet": "<img width=\"1229\" height=\"1536\" alt=\"\" src=\"/assets/intro/ciyu-exterior.webp\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 411.2575,
+            "percent": "11%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 1294.8836839280327,
+            "percent": "36%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 1171.3296106315852,
+            "percent": "32%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 753.0101313420328,
+            "percent": "21%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "requests": 56,
+        "transferredBytes": 3964921,
+        "fontCount": 21,
+        "fontBytes": 1783535,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180126,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/ciyu-exterior.webp",
+            "bytes": 338930,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/perfume-worktable.jpg?v=20260730-2",
+            "bytes": 247676,
+            "type": "Image"
+          },
+          {
+            "url": "https://hanascent.com/assets/intro/sunlit-perfume.jpg?v=20260730-2",
+            "bytes": 132000,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117339,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104340,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103677,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99439,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97432,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97294,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96543,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96440,
+            "type": "Font"
+          }
+        ]
+      }
+    ]
+  },
+  "seen-session-cold-mobile": {
+    "samples": 3,
+    "scores": {
+      "performance": {
+        "median": 76,
+        "min": 75,
+        "max": 92,
+        "runs": [
+          76,
+          92,
+          75
+        ]
+      },
+      "accessibility": {
+        "median": 100,
+        "min": 100,
+        "max": 100,
+        "runs": [
+          100,
+          100,
+          100
+        ]
+      }
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "median": 5915.101399999999,
+        "min": 2937.2208,
+        "max": 6013.7949499999995,
+        "runs": [
+          5915.101399999999,
+          2937.2208,
+          6013.7949499999995
+        ]
+      },
+      "total-blocking-time": {
+        "median": 67,
+        "min": 63.5,
+        "max": 185.09840000000008,
+        "runs": [
+          63.5,
+          185.09840000000008,
+          67
+        ]
+      },
+      "cumulative-layout-shift": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "runs": [
+          0,
+          0,
+          0
+        ]
+      },
+      "first-contentful-paint": {
+        "median": 2335.9718000000003,
+        "min": 1232.7620000000002,
+        "max": 2375.3858,
+        "runs": [
+          2375.3858,
+          1232.7620000000002,
+          2335.9718000000003
+        ]
+      },
+      "speed-index": {
+        "median": 2475.0083896857086,
+        "min": 2083.93766113879,
+        "max": 2908.388575167911,
+        "runs": [
+          2475.0083896857086,
+          2083.93766113879,
+          2908.388575167911
+        ]
+      }
+    },
+    "resources": {
+      "requests": {
+        "median": 53,
+        "min": 53,
+        "max": 53,
+        "runs": [
+          53,
+          53,
+          53
+        ]
+      },
+      "transferredBytes": {
+        "median": 3307142,
+        "min": 3307102,
+        "max": 3307204,
+        "runs": [
+          3307102,
+          3307142,
+          3307204
+        ]
+      },
+      "fontCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21,
+        "runs": [
+          21,
+          21,
+          21
+        ]
+      },
+      "fontBytes": {
+        "median": 1783552,
+        "min": 1783482,
+        "max": 1783586,
+        "runs": [
+          1783586,
+          1783482,
+          1783552
+        ]
+      }
+    },
+    "runs": [
+      {
+        "report": "returning-1-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:08:50.119Z",
+        "scores": {
+          "performance": 76,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 5915.101399999999,
+          "total-blocking-time": 63.5,
+          "cumulative-layout-shift": 0,
+          "first-contentful-paint": 2375.3858,
+          "speed-index": 2475.0083896857086
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 793.506,
+            "percent": "13%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 1109.8908195270387,
+            "percent": "19%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 2125.6661871336246,
+            "percent": "36%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 1886.0383933393355,
+            "percent": "32%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 53,
+        "transferredBytes": 3307102,
+        "fontCount": 21,
+        "fontBytes": 1783586,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180158,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117339,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104340,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103650,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99440,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97707,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97427,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96439,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.120.woff2",
+            "bytes": 95944,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.117.woff2",
+            "bytes": 95263,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.112.woff2",
+            "bytes": 95010,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "returning-2-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:09:01.631Z",
+        "scores": {
+          "performance": 92,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 2937.2208,
+          "total-blocking-time": 185.09840000000008,
+          "cumulative-layout-shift": 0,
+          "first-contentful-paint": 1232.7620000000002,
+          "speed-index": 2083.93766113879
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 758.008,
+            "percent": "26%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 24.494748284974094,
+            "percent": "1%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 1016.6715579916756,
+            "percent": "35%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 1138.0464937233503,
+            "percent": "39%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 53,
+        "transferredBytes": 3307142,
+        "fontCount": 21,
+        "fontBytes": 1783482,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180156,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117339,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104336,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103690,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99440,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97707,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97455,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96490,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.120.woff2",
+            "bytes": 95485,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.117.woff2",
+            "bytes": 95240,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.112.woff2",
+            "bytes": 95011,
+            "type": "Font"
+          }
+        ]
+      },
+      {
+        "report": "returning-3-home-mobile.json.gz",
+        "fetchTime": "2026-10-28T04:09:13.062Z",
+        "scores": {
+          "performance": 75,
+          "accessibility": 100
+        },
+        "metrics": {
+          "largest-contentful-paint": 6013.7949499999995,
+          "total-blocking-time": 67,
+          "cumulative-layout-shift": 0,
+          "first-contentful-paint": 2335.9718000000003,
+          "speed-index": 2908.388575167911
+        },
+        "lcpElement": "header.hero > div.hero-shell > div.hero-visual > img",
+        "lcpSnippet": "<img data-hana-hero-image=\"\" src=\"/assets/home-hero-1920.webp\" srcset=\"/assets/home-hero-480.webp 480w, /assets/home-hero-960.webp 960w, /assets/…\" sizes=\"(max-width:760px) 178vw, 100vw\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\" alt=\"HANA SCENT ARTIST 首頁主視覺，調香琴與專業調香工作台\">",
+        "lcpPhases": [
+          {
+            "phase": "TTFB",
+            "timing": 826.486,
+            "percent": "14%"
+          },
+          {
+            "phase": "Load Delay",
+            "timing": 1514.3340761821955,
+            "percent": "25%"
+          },
+          {
+            "phase": "Load Time",
+            "timing": 2028.119940313315,
+            "percent": "34%"
+          },
+          {
+            "phase": "Render Delay",
+            "timing": 1644.854933504489,
+            "percent": "27%"
+          }
+        ],
+        "warnings": [],
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "requests": 53,
+        "transferredBytes": 3307204,
+        "fontCount": 21,
+        "fontBytes": 1783552,
+        "topResources": [
+          {
+            "url": "https://hanascent.com/assets/hineni_lace_bow_transparent.png?v=635674932e92",
+            "bytes": 1180117,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.118.woff2",
+            "bytes": 117339,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.114.woff2",
+            "bytes": 104340,
+            "type": "Font"
+          },
+          {
+            "url": "https://hanascent.com/assets/home-hero-1920.webp",
+            "bytes": 103652,
+            "type": "Image"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.115.woff2",
+            "bytes": 99441,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.116.woff2",
+            "bytes": 97431,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.119.woff2",
+            "bytes": 97294,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.111.woff2",
+            "bytes": 96491,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.110.woff2",
+            "bytes": 96130,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.120.woff2",
+            "bytes": 95479,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.117.woff2",
+            "bytes": 95263,
+            "type": "Font"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/notoseriftc/v37/XLYgIZb5bJNDGYxLBibeHZ0BhnJsUnN3PrBufRbmGqUtcg4pzRPk5AEpzv6YzI9aTbOhf6M.113.woff2",
+            "bytes": 95227,
+            "type": "Font"
+          }
+        ]
+      }
+    ]
+  }
+}

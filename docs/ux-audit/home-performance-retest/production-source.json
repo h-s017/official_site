@@ -1,0 +1,17 @@
+{
+  "checkedAtUtc": "2026-10-28T04:06:05.195501+00:00",
+  "url": "https://hanascent.com/",
+  "status": 200,
+  "headers": {
+    "server": "envoy",
+    "content-type": "text/html; charset=utf-8",
+    "last-modified": "Sat, 24 Oct 2026 01:30:32 GMT",
+    "etag": "\"6adc0a38-8454\"",
+    "cache-control": "max-age=600",
+    "age": "0",
+    "content-length": "33876"
+  },
+  "sha256": "271fabf5cc3d59183ee47bf2bb0fd593c2dcd10062596bb4ffc98a902939dfbd",
+  "matchesMainProduct": true,
+  "mainCommit": "1423a14f6d50ee8ba479070a35c8578edea27f49"
+}

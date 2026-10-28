@@ -244,3 +244,7 @@ UX-002 最新焦點呈現補充：觸控／滑鼠點 ENTER 後返回品牌連結
 - 修改檔案：index.html的.home-booking-cta、.home-booking-label與圖文DOM。
 - 驗收條件：最新79.42px手機圓內標籤完整顯示、四角到圓心距離≤半徑-1px，無裁字；字體／圖示依最新核定12.5／44px，保持可見焦點與44px以上點擊區。
 - 完成狀態：Chromium五viewport及no-JS 6/6，手機標籤角距35.37px、半徑39.70px，餘量4.33px。20個整合情境通過；WebKit缺依賴、iPhone／Instagram真機尚未驗證，不把模擬結果當真機完成。其他證據mobile-square-hero/results.json與README.md。
+
+## UX-007／UX-008：正式首頁效能重測證據更新
+
+本批未新增Issue ID或改產品。對main1423a14的九輪Lighthouse顯示手機LCP／Performance仍未達標；字體約1.78MB、蝴蝶結原PNG約1.18MB與首屏載入鏈需後續修正。CLS實驗室九輪低於0.1，不能延伸為其他頁面、Safari或RUM通過。重現流程、範圍、全部結果與下一步見home-performance-retest/README.md；相關待改善項目仍未宣稱完成。

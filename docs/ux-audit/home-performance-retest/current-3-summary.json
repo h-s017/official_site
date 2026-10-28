@@ -1,0 +1,92 @@
+[
+  {
+    "page": "home",
+    "mode": "mobile",
+    "url": "https://hanascent.com/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-28T04:07:57.143Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.45,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 22463.121155000004,
+        "display": "22.5 s"
+      },
+      "total-blocking-time": {
+        "value": 437,
+        "display": "440 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "first-contentful-paint": {
+        "value": 10917.4642,
+        "display": "10.9 s"
+      },
+      "speed-index": {
+        "value": 10917.4642,
+        "display": "10.9 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "report": "current-3-home-mobile.json.gz"
+  },
+  {
+    "page": "home",
+    "mode": "desktop",
+    "url": "https://hanascent.com/",
+    "returncode": 0,
+    "stderr": "",
+    "version": "12.8.2",
+    "fetchTime": "2026-10-28T04:08:14.434Z",
+    "runtimeError": null,
+    "scores": {
+      "performance": 0.76,
+      "accessibility": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": {
+        "value": 3630.4809259016506,
+        "display": "3.6 s"
+      },
+      "total-blocking-time": {
+        "value": 2,
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.001267805632168812,
+        "display": "0.001"
+      },
+      "first-contentful-paint": {
+        "value": 1106.5908901202201,
+        "display": "1.1 s"
+      },
+      "speed-index": {
+        "value": 1768.156077595093,
+        "display": "1.8 s"
+      }
+    },
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    },
+    "report": "current-3-home-desktop.json.gz"
+  }
+]
