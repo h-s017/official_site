@@ -1,0 +1,8233 @@
+[
+  {
+    "id": "4601",
+    "zh": "調香圖譜套組（全12組・144種）",
+    "ko": "퍼퓨머리 아틀라스 키트 (All 12 kits 144종)",
+    "en": "Perfumery Atlas Kit (All 12 kits 144 Notes)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4601/main/4601.jpg",
+    "price": 1141000,
+    "options": [
+      {
+        "id": 422534,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 1141000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4502",
+    "zh": "基礎調香套組（84種）",
+    "ko": "퍼퓨머리 베이직 키트 (총 84종)",
+    "en": "Perfumery Basic Kit (84 Kinds)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4502/main/4502.jpg",
+    "price": 657100,
+    "options": [
+      {
+        "id": 422653,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 657100,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2124",
+    "zh": "專業調香混合套組（100ml × 144種）",
+    "ko": "프로페셔널 퍼퓨머리 블렌딩 키트 (100ml x 144종)",
+    "en": "Professional Perfumery Blending Kit (100ml x 144 Kinds)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2124/main/2124.jpg",
+    "price": 3085000,
+    "options": [
+      {
+        "id": 415525,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 3085000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4503",
+    "zh": "探索者調香混合套組（100ml × 80種）",
+    "ko": "익스플로러 퍼퓨머리 블렌딩 키트 (100ml x 80종)",
+    "en": "The Explorer Perfumery Blending Kit (100ml x 80 Kinds)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4503/main/4503.jpg",
+    "price": 1629900,
+    "options": [
+      {
+        "id": 422656,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 1629900,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4504",
+    "zh": "基礎調香套組（100ml × 84種）",
+    "ko": "퍼퓨머리 베이직 키트 (100ml x 84종)",
+    "en": "Perfumery Basic Kit (100ml x 84 Kinds)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4504/main/4504.jpg",
+    "price": 1797800,
+    "options": [
+      {
+        "id": 422657,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 1797800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3940",
+    "zh": "2025 CW新調香基底 Vol.1（20ml × 30種）",
+    "ko": "2025년 신규 CW 조향 베이스 Vol.1 (20ml x 30종)",
+    "en": "2025 New CW Perfumery Base Vol.1 (20ml x 30 Kinds)",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/3940/main/3940.jpg",
+    "price": 291600,
+    "options": [
+      {
+        "id": 421997,
+        "label": "1 Set",
+        "ko": "1 세트",
+        "price": 291600,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4256",
+    "zh": "2025 CW新調香基底 Vol.2（20ml × 34種）",
+    "ko": "2025년 신규 CW 조향 베이스 Vol.2 (20ml x 34종)",
+    "en": "2025 New CW Perfumery Base Vol.2 (20ml x 34 Kinds)",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4256/main/4256.jpg",
+    "price": 289000,
+    "options": [
+      {
+        "id": 422539,
+        "label": "1 Set",
+        "ko": "1 세트",
+        "price": 289000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3941",
+    "zh": "2025 CW新調香基底 Vol.1（100ml × 30種）",
+    "ko": "2025년 신규 CW 조향 베이스 Vol.1 (100ml x 30종)",
+    "en": "2025 New CW Perfumery Base  Vol.1 (100ml x 30 Kinds)",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/3941/main/3941.jpg",
+    "price": 799400,
+    "options": [
+      {
+        "id": 421998,
+        "label": "1 Set",
+        "ko": "1 세트",
+        "price": 799400,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4257",
+    "zh": "2025 CW新調香基底 Vol.2（100ml × 34種）",
+    "ko": "2025년 신규 CW 조향 베이스 Vol.2 (100ml x 34종)",
+    "en": "2025 New CW Perfumery Base Vol.2 (100ml x 34 Kinds)",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4257/main/4257.jpg",
+    "price": 802000,
+    "options": [
+      {
+        "id": 422540,
+        "label": "1 Set",
+        "ko": "1 세트",
+        "price": 802000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "5236",
+    "zh": "調香精選套組（3種）",
+    "ko": "퍼퓨머리 에디트 3종 키트",
+    "en": "Perfumery Edit Kit (3 Types)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/5236/main/5236.jpg",
+    "price": 79000,
+    "options": [
+      {
+        "id": 424883,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 79000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "5240",
+    "zh": "金桂調香基底",
+    "ko": "OSMANTHUS BASE (금목서 베이스)",
+    "en": "OSMANTHUS BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/5240/main/5240.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 424897,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 424898,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 424900,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 424899,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 424901,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "5239",
+    "zh": "牡丹調香基底",
+    "ko": "PEONY BASE (피오니 베이스)",
+    "en": "PEONY BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/5239/main/5239.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 424891,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 424892,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 424893,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 424894,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 424895,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3937",
+    "zh": "沉香調香基底",
+    "ko": "OUD BASE (오우드 베이스)",
+    "en": "OUD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/3937/main/3937.jpg",
+    "price": 14500,
+    "options": [
+      {
+        "id": 421990,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 14500,
+        "available": true
+      },
+      {
+        "id": 424919,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 39900,
+        "available": true
+      },
+      {
+        "id": 424920,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 196900,
+        "available": true
+      },
+      {
+        "id": 424921,
+        "label": "1L",
+        "ko": "1L",
+        "price": 361900,
+        "available": true
+      },
+      {
+        "id": 424922,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1719000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4145",
+    "zh": "青木瓜調香基底",
+    "ko": "GREEN PAPAYA BASE (그린 파파야 베이스)",
+    "en": "GREEN PAPAYA BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/4145/main/4145.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422308,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422309,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422310,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422311,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422312,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4146",
+    "zh": "蜜瓜調香基底",
+    "ko": "HONEYDEW MELON BASE (허니듀 멜론 베이스)",
+    "en": "HONEYDEW MELON BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/4146/main/4146.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422313,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422314,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422315,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422316,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422317,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4142",
+    "zh": "森林調香基底",
+    "ko": "FOREST BASE (포레스트 베이스)",
+    "en": "FOREST BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/4142/main/4142.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422293,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422294,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422295,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422296,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422297,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4153",
+    "zh": "柚子調香基底",
+    "ko": "POMELO BASE (포멜로 베이스)",
+    "en": "POMELO BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/4153/main/4153.jpg",
+    "price": 13500,
+    "options": [
+      {
+        "id": 422348,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 13500,
+        "available": true
+      },
+      {
+        "id": 422349,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 37900,
+        "available": true
+      },
+      {
+        "id": 422351,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 174500,
+        "available": true
+      },
+      {
+        "id": 422350,
+        "label": "1L",
+        "ko": "1L",
+        "price": 323900,
+        "available": true
+      },
+      {
+        "id": 422352,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1538000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4159",
+    "zh": "鬱金香調香基底",
+    "ko": "TULIP BASE (튤립 베이스)",
+    "en": "TULIP BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/4159/main/4159.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422378,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422379,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422380,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422381,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422382,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4156",
+    "zh": "番紅花調香基底",
+    "ko": "SAFFRON BASE (사프란 베이스)",
+    "en": "SAFFRON BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/4156/main/4156.jpg",
+    "price": 14500,
+    "options": [
+      {
+        "id": 422363,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 14500,
+        "available": true
+      },
+      {
+        "id": 422364,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 39900,
+        "available": true
+      },
+      {
+        "id": 422366,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 196900,
+        "available": true
+      },
+      {
+        "id": 422365,
+        "label": "1L",
+        "ko": "1L",
+        "price": 361900,
+        "available": true
+      },
+      {
+        "id": 422367,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1719000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4138",
+    "zh": "樺木焦油調香基底",
+    "ko": "BIRCH TAR BASE (버치 타르 베이스)",
+    "en": "BIRCH TAR BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/4138/main/4138.jpg",
+    "price": 14500,
+    "options": [
+      {
+        "id": 422273,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 14500,
+        "available": true
+      },
+      {
+        "id": 422274,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 39900,
+        "available": true
+      },
+      {
+        "id": 422276,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 196900,
+        "available": true
+      },
+      {
+        "id": 422275,
+        "label": "1L",
+        "ko": "1L",
+        "price": 361900,
+        "available": true
+      },
+      {
+        "id": 422277,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1719000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4265",
+    "zh": "聖誕樹調香基底",
+    "ko": "CHRISTMAS TREE BASE (크리스마스 트리 베이스)",
+    "en": "CHRISTMAS TREE BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/4265/main/4265.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 422561,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 422562,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 422563,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 422564,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 422565,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "666",
+    "zh": "蜂蜜調香基底",
+    "ko": "HONEY BASE (허니 베이스) * 기존 허니 향 동일제품",
+    "en": "HONEY BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/666/main/666.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 237,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 11842,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 11843,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 11844,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422604,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4269",
+    "zh": "岩薔薇樹脂調香基底",
+    "ko": "LABDANUM BASE (랍다넘 베이스)",
+    "en": "LABDANUM BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/4269/main/4269.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422581,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422582,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422583,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422584,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422585,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4136",
+    "zh": "龍涎香調香基底",
+    "ko": "AMBERGRIS BASE (앰버그리스 베이스)",
+    "en": "AMBERGRIS BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/4136/main/4136.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 422263,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 422264,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 422265,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 422266,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 422267,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4158",
+    "zh": "柔麂皮調香基底",
+    "ko": "SUEDERAL BASE (스웨이드 베이스)",
+    "en": "SUEDERAL BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/4158/main/4158.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 422373,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 422374,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 422375,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 422376,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 422377,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4165",
+    "zh": "肌膚調香基底",
+    "ko": "SKIN BASE  (스킨 베이스)",
+    "en": "SKIN BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/4165/main/4165.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422408,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422409,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422410,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422411,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422412,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4152",
+    "zh": "費洛蒙調香基底",
+    "ko": "PHEROMONE BASE (페로몬 베이스)",
+    "en": "PHEROMONE BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/4152/main/4152.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 422343,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 422344,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 422345,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 422346,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 422347,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4154",
+    "zh": "雨水調香基底",
+    "ko": "RAIN BASE (레인 베이스)",
+    "en": "RAIN BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4154/main/4154.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422353,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422354,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422356,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422355,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422357,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4266",
+    "zh": "亞麻調香基底",
+    "ko": "LINEN BASE (린넨 베이스)",
+    "en": "LINEN BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4266/main/4266.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422566,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422567,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422568,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422569,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422570,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4150",
+    "zh": "溫暖樹脂調香基底",
+    "ko": "WARM RESIN BASE (웜 레진 베이스) *기존 오리엔탈 베이스",
+    "en": "WARM RESIN BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/4150/main/4150.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422333,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422334,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422335,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422336,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422337,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4143",
+    "zh": "馥奇調香基底",
+    "ko": "FOUGERE BASE (푸제르 베이스)",
+    "en": "FOUGERE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4143/main/4143.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 422298,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 422299,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 422300,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 422301,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 422302,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4139",
+    "zh": "西普調香基底",
+    "ko": "CHYPRE BASE (시프레 베이스)",
+    "en": "CHYPRE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4139/main/4139.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422278,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422279,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422280,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422281,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422282,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4141",
+    "zh": "古龍調香基底",
+    "ko": "COLOGNE BASE (코롱 베이스)",
+    "en": "COLOGNE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4141/main/4141.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 422288,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 422289,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 422290,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 422291,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 422292,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4163",
+    "zh": "綠茶調香基底",
+    "ko": "GREEN TEA BASE (그린티 베이스)",
+    "en": "GREEN TEA BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4163/main/4163.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 422398,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 422399,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 422400,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 422401,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 422402,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4151",
+    "zh": "臭氧調香基底",
+    "ko": "OZONE BASE (오존 베이스)",
+    "en": "OZONE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4151/main/4151.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422338,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422339,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422340,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422341,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422342,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4157",
+    "zh": "皂香調香基底",
+    "ko": "SAVON BASE (사봉 베이스)",
+    "en": "SAVON BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4157/main/4157.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 422368,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 422369,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 422370,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 422371,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 422372,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4161",
+    "zh": "白茶調香基底",
+    "ko": "WHITE TEA BASE  (화이트티 베이스)",
+    "en": "WHITE TEA BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/4161/main/4161.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422388,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422389,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422390,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422391,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422392,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4140",
+    "zh": "干邑白蘭地調香基底",
+    "ko": "COGNAC BASE (꼬냑 베이스)",
+    "en": "COGNAC BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4140/main/4140.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 422283,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 422284,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 422285,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 422286,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 422287,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4155",
+    "zh": "蘭姆酒調香基底",
+    "ko": "RUM BASE (럼 베이스)",
+    "en": "RUM BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4155/main/4155.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422358,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422359,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422360,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422361,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422362,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4160",
+    "zh": "威士忌調香基底",
+    "ko": "WHISKEY BASE (위스키 베이스)",
+    "en": "WHISKEY BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4160/main/4160.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422383,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422384,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422385,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422386,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422387,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4148",
+    "zh": "乳香內酯調香基底",
+    "ko": "MILK LACTONE BASE (밀크락톤 베이스)",
+    "en": "MILK LACTONE BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4148/main/4148.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422323,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422324,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422325,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422326,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422327,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4162",
+    "zh": "優格調香基底",
+    "ko": "YOGURT BASE (요거트 베이스)",
+    "en": "YOGURT BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4162/main/4162.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422393,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422394,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422395,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422396,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422397,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4144",
+    "zh": "琴酒調香基底",
+    "ko": "GIN BASE (진 베이스)",
+    "en": "GIN BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4144/main/4144.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422303,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422304,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422305,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422306,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422307,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4147",
+    "zh": "奶油調香基底",
+    "ko": "BUTTER BASE (버터 베이스)",
+    "en": "BUTTER BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4147/main/4147.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422318,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422319,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422320,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422321,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422322,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4267",
+    "zh": "麵包調香基底",
+    "ko": "BREAD BASE (브레드 베이스)",
+    "en": "BREAD BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4267/main/4267.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422571,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422572,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422573,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422574,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422575,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4149",
+    "zh": "堅果調香基底",
+    "ko": "NUTS BASE (넛츠 베이스)",
+    "en": "NUTS BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4149/main/4149.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 422328,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 422329,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 422330,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 422331,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 422332,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4268",
+    "zh": "栗子調香基底",
+    "ko": "MARRON BASE (마롱 베이스)",
+    "en": "MARRON BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/4268/main/4268.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 422576,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 422577,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 422578,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 422579,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 422580,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4101",
+    "zh": "調香圖譜套組：01 芳香",
+    "ko": "퍼퓨머리 아틀라스 키트: 01 아로마틱",
+    "en": "Perfumery Atlas Kit: 01 Aromatic",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4101/main/4101.jpg",
+    "price": 108400,
+    "options": [
+      {
+        "id": 422203,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 108400,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4102",
+    "zh": "調香圖譜套組：02 綠意",
+    "ko": "퍼퓨머리 아틀라스 키트: 02 그린",
+    "en": "Perfumery Atlas Kit: 02 Green",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4102/main/4102.jpg",
+    "price": 95700,
+    "options": [
+      {
+        "id": 422204,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 95700,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4103",
+    "zh": "調香圖譜套組：03 柑橘",
+    "ko": "퍼퓨머리 아틀라스 키트: 03 시트러스",
+    "en": "Perfumery Atlas Kit: 03 Citrus",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4103/main/4103.jpg",
+    "price": 96700,
+    "options": [
+      {
+        "id": 422205,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 96700,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4104",
+    "zh": "調香圖譜套組：04 果香",
+    "ko": "퍼퓨머리 아틀라스 키트: 04 프루티",
+    "en": "Perfumery Atlas Kit: 04 Fruity",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4104/main/4104.jpg",
+    "price": 85600,
+    "options": [
+      {
+        "id": 422206,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 85600,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4105",
+    "zh": "調香圖譜套組：05 花香",
+    "ko": "퍼퓨머리 아틀라스 키트: 05 플로럴",
+    "en": "Perfumery Atlas Kit: 05 Floral",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4105/main/4105.jpg",
+    "price": 93600,
+    "options": [
+      {
+        "id": 422207,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 93600,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4106",
+    "zh": "調香圖譜套組：06 花香",
+    "ko": "퍼퓨머리 아틀라스 키트: 06 플로럴",
+    "en": "Perfumery Atlas Kit: 06 Floral",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4106/main/4106.jpg",
+    "price": 103100,
+    "options": [
+      {
+        "id": 422208,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 103100,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4107",
+    "zh": "調香圖譜套組：07 辛香／茴香",
+    "ko": "퍼퓨머리 아틀라스 키트: 07 스파이시/아니식",
+    "en": "Perfumery Atlas Kit: 07 Spicy/Anisic",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4107/main/4107.jpg",
+    "price": 114600,
+    "options": [
+      {
+        "id": 422209,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 114600,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4108",
+    "zh": "調香圖譜套組：08 木質",
+    "ko": "퍼퓨머리 아틀라스 키트: 08 우디",
+    "en": "Perfumery Atlas Kit: 08 Woody",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4108/main/4108.jpg",
+    "price": 102800,
+    "options": [
+      {
+        "id": 422210,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 102800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4109",
+    "zh": "調香圖譜套組：09 香脂",
+    "ko": "퍼퓨머리 아틀라스 키트: 09 발사믹",
+    "en": "Perfumery Atlas Kit: 09 Balsamic",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4109/main/4109.jpg",
+    "price": 109100,
+    "options": [
+      {
+        "id": 422211,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 109100,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4110",
+    "zh": "調香圖譜套組：10 動物香",
+    "ko": "퍼퓨머리 아틀라스 키트: 10 애니멀릭",
+    "en": "Perfumery Atlas Kit: 10 Animalic",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4110/main/4110.jpg",
+    "price": 109900,
+    "options": [
+      {
+        "id": 422212,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 109900,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4111",
+    "zh": "調香圖譜套組：11 現代",
+    "ko": "퍼퓨머리 아틀라스 키트: 11 모던",
+    "en": "Perfumery Atlas Kit: 11 Modern",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4111/main/4111.jpg",
+    "price": 94200,
+    "options": [
+      {
+        "id": 422213,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 94200,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "4112",
+    "zh": "調香圖譜套組：12 現代",
+    "ko": "퍼퓨머리 아틀라스 키트: 12 모던",
+    "en": "Perfumery Atlas Kit: 12 Modern",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/4112/main/4112.jpg",
+    "price": 88200,
+    "options": [
+      {
+        "id": 422235,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 88200,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3888",
+    "zh": "鹽調香基底",
+    "ko": "SALT BASE (솔트 베이스)",
+    "en": "SALT BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/3888/main/3888.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 421855,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 421856,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 421857,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 421858,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 421859,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3880",
+    "zh": "沒藥調香基底",
+    "ko": "MYRRH BASE (미르 베이스)",
+    "en": "MYRRH BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/3880/main/3880.jpg",
+    "price": 14500,
+    "options": [
+      {
+        "id": 421809,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 14500,
+        "available": true
+      },
+      {
+        "id": 421810,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 39900,
+        "available": true
+      },
+      {
+        "id": 421812,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 196900,
+        "available": true
+      },
+      {
+        "id": 421811,
+        "label": "1L",
+        "ko": "1L",
+        "price": 361900,
+        "available": true
+      },
+      {
+        "id": 421813,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1719000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3933",
+    "zh": "乳香調香基底",
+    "ko": "FRANKINCENSE BASE (프랑킨센스 베이스)",
+    "en": "FRANKINCENSE BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/3933/main/3933.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421970,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421971,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421972,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421973,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421974,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3929",
+    "zh": "黃葵籽調香基底",
+    "ko": "AMBRETTE BASE (암브레트 베이스)",
+    "en": "AMBRETTE BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/3929/main/3929.jpg",
+    "price": 12500,
+    "options": [
+      {
+        "id": 421950,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 12500,
+        "available": true
+      },
+      {
+        "id": 421951,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 35500,
+        "available": true
+      },
+      {
+        "id": 421952,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 151500,
+        "available": true
+      },
+      {
+        "id": 421953,
+        "label": "1L",
+        "ko": "1L",
+        "price": 283000,
+        "available": true
+      },
+      {
+        "id": 421954,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1344000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3926",
+    "zh": "苦橙葉調香基底",
+    "ko": "PETITGRAIN BASE (페티그레인 베이스)",
+    "en": "PETITGRAIN BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/3926/main/3926.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421935,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421936,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421937,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421938,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421939,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3895",
+    "zh": "伯爵茶調香基底",
+    "ko": "EARL GREY BASE (얼그레이 베이스)",
+    "en": "EARL GREY BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/3895/main/3895.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 421890,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 421891,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 421892,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 421893,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 421894,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3881",
+    "zh": "大黃調香基底",
+    "ko": "RHUBARB BASE (루바브 베이스)",
+    "en": "RHUBARB BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/3881/main/3881.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 421820,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 421821,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 421822,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 421823,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 421824,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3935",
+    "zh": "含羞草調香基底",
+    "ko": "MIMOSA BASE (미모사 베이스)",
+    "en": "MIMOSA BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3935/main/3935.jpg",
+    "price": 12500,
+    "options": [
+      {
+        "id": 421980,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 12500,
+        "available": true
+      },
+      {
+        "id": 421981,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 35500,
+        "available": true
+      },
+      {
+        "id": 421982,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 151500,
+        "available": true
+      },
+      {
+        "id": 421983,
+        "label": "1L",
+        "ko": "1L",
+        "price": 283000,
+        "available": true
+      },
+      {
+        "id": 421984,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1344000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3887",
+    "zh": "風信子調香基底",
+    "ko": "HYACINTH BASE (히아신스 베이스)",
+    "en": "HYACINTH BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3887/main/3887.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 421850,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 421851,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 421852,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 421853,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 421854,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3894",
+    "zh": "粉紅胡椒調香基底",
+    "ko": "PINK PEPPER BASE (핑크 페퍼 베이스)",
+    "en": "PINK PEPPER BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3894/main/3894.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421885,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421886,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421887,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421888,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421889,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3919",
+    "zh": "白松香調香基底",
+    "ko": "GALBANUM BASE (갈바넘 베이스)",
+    "en": "GALBANUM BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/3919/main/3919.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421925,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421926,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421927,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421928,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421929,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3892",
+    "zh": "羅勒調香基底",
+    "ko": "BASIL BASE (바질 베이스)",
+    "en": "BASIL BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/3892/main/3892.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421875,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421876,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421877,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421878,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421879,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3882",
+    "zh": "薄荷調香基底",
+    "ko": "MINT BASE (민트 베이스)",
+    "en": "MINT BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/3882/main/3882.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 421825,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 421826,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 421827,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 421828,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 421829,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3925",
+    "zh": "癒創木調香基底",
+    "ko": "GUAIACWOOD BASE (구아이악우드 베이스)",
+    "en": "GUAIACWOOD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/3925/main/3925.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421930,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421931,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421932,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421933,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421934,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3898",
+    "zh": "茴香調香基底",
+    "ko": "ANISE BASE (아니스 베이스)",
+    "en": "ANISE BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3898/main/3898.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421905,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421906,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421907,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421908,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421909,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3934",
+    "zh": "杜松莓調香基底",
+    "ko": "JUNIPER BERRY BASE (쥬니퍼베리 베이스)",
+    "en": "JUNIPER BERRY BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/3934/main/3934.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421975,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421976,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421977,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421978,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421979,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3927",
+    "zh": "松木調香基底",
+    "ko": "PINE BASE (파인 베이스)",
+    "en": "PINE BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/3927/main/3927.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421940,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421941,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421942,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421943,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421944,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3886",
+    "zh": "忍冬調香基底",
+    "ko": "HONEYSUCKLE BASE (허니서클 베이스)",
+    "en": "HONEYSUCKLE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3886/main/3886.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 421845,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 421846,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 421847,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 421848,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 421849,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3928",
+    "zh": "百里香調香基底",
+    "ko": "THYME BASE (타임 베이스)",
+    "en": "THYME BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/3928/main/3928.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421945,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421946,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421947,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421948,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421949,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3932",
+    "zh": "洋甘菊調香基底",
+    "ko": "CHAMOMILE BASE (카모마일 베이스)",
+    "en": "CHAMOMILE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3932/main/3932.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421965,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421966,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421967,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421968,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421969,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3884",
+    "zh": "黑胡椒調香基底",
+    "ko": "BLACK PEPPER BASE (블랙 페퍼 베이스)",
+    "en": "BLACK PEPPER BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3884/main/3884.jpg",
+    "price": 7200,
+    "options": [
+      {
+        "id": 421835,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7200,
+        "available": true
+      },
+      {
+        "id": 421836,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20500,
+        "available": true
+      },
+      {
+        "id": 421837,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 88900,
+        "available": true
+      },
+      {
+        "id": 421838,
+        "label": "1L",
+        "ko": "1L",
+        "price": 162500,
+        "available": true
+      },
+      {
+        "id": 421839,
+        "label": "5L",
+        "ko": "5L",
+        "price": 771000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3885",
+    "zh": "天芥菜調香基底",
+    "ko": "HELIOTROPE BASE (헬리오트로프 베이스)",
+    "en": "HELIOTROPE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3885/main/3885.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421840,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421841,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421842,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421843,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421844,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3890",
+    "zh": "馬鞭草調香基底",
+    "ko": "VERBENA BASE (버베나 베이스)",
+    "en": "VERBENA BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/3890/main/3890.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 421865,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 421866,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 421867,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 421868,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 421869,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3893",
+    "zh": "丁香調香基底",
+    "ko": "CLOVE BASE (클로브 베이스)",
+    "en": "CLOVE BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3893/main/3893.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421880,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421881,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421882,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421883,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421884,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3896",
+    "zh": "玫瑰草調香基底",
+    "ko": "PALMAROSA BASE (팔마로사 베이스)",
+    "en": "PALMAROSA BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/3896/main/3896.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421895,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421896,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421897,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421898,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421899,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3899",
+    "zh": "小豆蔻調香基底",
+    "ko": "CARDAMOM BASE (카다몸 베이스)",
+    "en": "CARDAMOM BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3899/main/3899.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421910,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421911,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421912,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421913,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421914,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3900",
+    "zh": "快樂鼠尾草調香基底",
+    "ko": "CLARY SAGE BASE (클라리 세이지 베이스)",
+    "en": "CLARY SAGE BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/3900/main/3900.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421915,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421916,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421917,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421918,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421919,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3918",
+    "zh": "芫荽葉調香基底",
+    "ko": "CORIANDER LEAF BASE (코리앤더 리프 베이스)",
+    "en": "CORIANDER LEAF BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3918/main/3918.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421920,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421921,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421922,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421923,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421924,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3931",
+    "zh": "胡蘿蔔籽調香基底",
+    "ko": "CARROT SEED BASE (캐롯시드 베이스)",
+    "en": "CARROT SEED BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3931/main/3931.jpg",
+    "price": 12500,
+    "options": [
+      {
+        "id": 421960,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 12500,
+        "available": true
+      },
+      {
+        "id": 421961,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 35500,
+        "available": true
+      },
+      {
+        "id": 421962,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 151500,
+        "available": true
+      },
+      {
+        "id": 421963,
+        "label": "1L",
+        "ko": "1L",
+        "price": 283000,
+        "available": true
+      },
+      {
+        "id": 421964,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1344000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3936",
+    "zh": "肉豆蔻調香基底",
+    "ko": "NUTMEG BASE (넛멕 베이스)",
+    "en": "NUTMEG BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/3936/main/3936.jpg",
+    "price": 12500,
+    "options": [
+      {
+        "id": 421985,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 12500,
+        "available": true
+      },
+      {
+        "id": 421986,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 35500,
+        "available": true
+      },
+      {
+        "id": 421987,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 151500,
+        "available": true
+      },
+      {
+        "id": 421988,
+        "label": "1L",
+        "ko": "1L",
+        "price": 283000,
+        "available": true
+      },
+      {
+        "id": 421989,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1344000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3920",
+    "zh": "韓國之香講師調香套組（100ml × 16種）",
+    "ko": "한국의 향 인스트럭터 퍼퓨머리 블렌딩 키트 (100ml x 16종)",
+    "en": "The Scents of Korea Instructor Perfumery Blending Kit (100ml x 16 Kinds)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/3920/main/3920.jpg",
+    "price": 356000,
+    "options": [
+      {
+        "id": 421646,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 356000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3673",
+    "zh": "韓國之香調香混合套組",
+    "ko": "한국의 향 퍼퓨머리 블렌딩 키트",
+    "en": "The Scents of Korea Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/3673/main/3673.jpg",
+    "price": 137500,
+    "options": [
+      {
+        "id": 421455,
+        "label": "1 Set",
+        "ko": "1 세트",
+        "price": 137500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2123",
+    "zh": "探索者調香混合套組（全5組）",
+    "ko": "익스플로러 퍼퓨머리 블렌딩 키트 (All 5 kits)",
+    "en": "The Explorer Perfumery Blending Kit (All 5 kits)",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2123/main/2123.jpg",
+    "price": 632700,
+    "options": [
+      {
+        "id": 415510,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 632700,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2112",
+    "zh": "花香調香混合套組",
+    "ko": "플로럴 퍼퓨머리 블렌딩 키트",
+    "en": "Floral Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2112/main/2112.jpg",
+    "price": 121000,
+    "options": [
+      {
+        "id": 415482,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 121000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2113",
+    "zh": "木質調香混合套組",
+    "ko": "우디 퍼퓨머리 블렌딩 키트",
+    "en": "Woody Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2113/main/2113.jpg",
+    "price": 129600,
+    "options": [
+      {
+        "id": 415483,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 129600,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2110",
+    "zh": "清新調香混合套組",
+    "ko": "프레쉬 퍼퓨머리 블렌딩 키트",
+    "en": "Fresh Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2110/main/2110.jpg",
+    "price": 120000,
+    "options": [
+      {
+        "id": 415480,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 120000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2114",
+    "zh": "香脂調香混合套組",
+    "ko": "발사믹 퍼퓨머리 블렌딩 키트",
+    "en": "Balsamic Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2114/main/2114.jpg",
+    "price": 132000,
+    "options": [
+      {
+        "id": 415484,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 132000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "2111",
+    "zh": "果香調香混合套組",
+    "ko": "프루티 퍼퓨머리 블렌딩 키트",
+    "en": "Fruity Perfumery Blending Kit",
+    "category": "調香套組",
+    "image": "https://image.candleworks.com/product/2111/main/2111.jpg",
+    "price": 127700,
+    "options": [
+      {
+        "id": 415481,
+        "label": "1 Set",
+        "ko": "1세트",
+        "price": 127700,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1747",
+    "zh": "可可調香基底",
+    "ko": "CACAO BASE (카카오 베이스)",
+    "en": "CACAO BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1747/main/1747.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412619,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412620,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414052,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412621,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416621,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1781",
+    "zh": "果仁糖調香基底",
+    "ko": "PRALINE BASE (프랄린 베이스)",
+    "en": "PRALINE BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1781/main/1781.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415339,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415340,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415341,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415342,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416625,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1720",
+    "zh": "香草調香基底",
+    "ko": "VANILLA BASE (바닐라 베이스)",
+    "en": "VANILLA BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1720/main/1720.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 418509,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 418510,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414047,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 418511,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416620,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1775",
+    "zh": "咖啡調香基底",
+    "ko": "COFFEE BASE (커피 베이스)",
+    "en": "COFFEE BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1775/main/1775.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 415315,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 415316,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 415317,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 415318,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416623,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1792",
+    "zh": "乾草調香基底",
+    "ko": "HAY BASE (헤이 베이스)",
+    "en": "HAY BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1792/main/1792.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415494,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415495,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415496,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415497,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416630,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1776",
+    "zh": "零陵香豆調香基底",
+    "ko": "TONKA BEAN BASE (통카빈 베이스)",
+    "en": "TONKA BEAN BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1776/main/1776.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415319,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415320,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415321,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415322,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416624,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1766",
+    "zh": "抹茶調香基底",
+    "ko": "MATCHA GREEN TEA BASE (말차 그린티 베이스)",
+    "en": "MATCHA GREEN TEA BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1766/main/1766.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415283,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415284,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415285,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415286,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416622,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1729",
+    "zh": "菸草調香基底",
+    "ko": "TOBACCO BASE (토바코 베이스)",
+    "en": "TOBACCO BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1729/main/1729.jpg",
+    "price": 16500,
+    "options": [
+      {
+        "id": 412173,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 16500,
+        "available": true
+      },
+      {
+        "id": 412174,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 48500,
+        "available": true
+      },
+      {
+        "id": 414077,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 201800,
+        "available": true
+      },
+      {
+        "id": 412175,
+        "label": "1L",
+        "ko": "1L",
+        "price": 363000,
+        "available": true
+      },
+      {
+        "id": 416619,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1720000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1785",
+    "zh": "肉桂調香基底",
+    "ko": "CINNAMON BASE (시나몬 베이스)",
+    "en": "CINNAMON BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/1785/main/1785.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415355,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415356,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415357,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415358,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416627,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1787",
+    "zh": "薑調香基底",
+    "ko": "GINGER BASE (진저 베이스)",
+    "en": "GINGER BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/1787/main/1787.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 415363,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 415364,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 415365,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 415366,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416628,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1783",
+    "zh": "香脂調香基底",
+    "ko": "BALSAM BASE (발삼 베이스)",
+    "en": "BALSAM BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/1783/main/1783.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415347,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415348,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415349,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415350,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416626,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1789",
+    "zh": "辛香料調香基底",
+    "ko": "SPICES BASE (스파이스 베이스)",
+    "en": "SPICES BASE",
+    "category": "辛香",
+    "image": "https://image.candleworks.com/product/1789/main/1789.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415367,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415368,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415369,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415370,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416629,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1719",
+    "zh": "白麝香調香基底",
+    "ko": "WHITE MUSK BASE (화이트 머스크 베이스)",
+    "en": "WHITE MUSK BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/1719/main/1719.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 418506,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 418507,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414080,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 418508,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416611,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1713",
+    "zh": "靈貓香調香基底",
+    "ko": "CIVET CAT BASE (시벳캣 베이스)",
+    "en": "CIVET CAT BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/1713/main/1713.jpg",
+    "price": 8900,
+    "options": [
+      {
+        "id": 418488,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8900,
+        "available": true
+      },
+      {
+        "id": 418489,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 24900,
+        "available": true
+      },
+      {
+        "id": 414079,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 109900,
+        "available": true
+      },
+      {
+        "id": 418490,
+        "label": "1L",
+        "ko": "1L",
+        "price": 199900,
+        "available": true
+      },
+      {
+        "id": 416612,
+        "label": "5L",
+        "ko": "5L",
+        "price": 949500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1724",
+    "zh": "皮革調香基底",
+    "ko": "LEATHER BASE (레더 베이스)",
+    "en": "LEATHER BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/1724/main/1724.jpg",
+    "price": 8900,
+    "options": [
+      {
+        "id": 412158,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8900,
+        "available": true
+      },
+      {
+        "id": 412159,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 24900,
+        "available": true
+      },
+      {
+        "id": 414084,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 109900,
+        "available": true
+      },
+      {
+        "id": 412160,
+        "label": "1L",
+        "ko": "1L",
+        "price": 199900,
+        "available": true
+      },
+      {
+        "id": 416605,
+        "label": "5L",
+        "ko": "5L",
+        "price": 949500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1730",
+    "zh": "琥珀調香基底",
+    "ko": "AMBER BASE (앰버 베이스)",
+    "en": "AMBER BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/1730/main/1730.jpg",
+    "price": 8900,
+    "options": [
+      {
+        "id": 412176,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8900,
+        "available": true
+      },
+      {
+        "id": 412177,
+        "label": "100m",
+        "ko": "100ml",
+        "price": 24900,
+        "available": true
+      },
+      {
+        "id": 414085,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 109900,
+        "available": true
+      },
+      {
+        "id": 412178,
+        "label": "1L",
+        "ko": "1L",
+        "price": 199900,
+        "available": true
+      },
+      {
+        "id": 416607,
+        "label": "5L",
+        "ko": "5L",
+        "price": 949500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1722",
+    "zh": "白琥珀調香基底",
+    "ko": "WHITE AMBER BASE (화이트 앰버 베이스)",
+    "en": "WHITE AMBER BASE",
+    "category": "香脂",
+    "image": "https://image.candleworks.com/product/1722/main/1722.jpg",
+    "price": 8900,
+    "options": [
+      {
+        "id": 412152,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8900,
+        "available": true
+      },
+      {
+        "id": 412153,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 24900,
+        "available": true
+      },
+      {
+        "id": 414042,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 109900,
+        "available": true
+      },
+      {
+        "id": 412154,
+        "label": "1L",
+        "ko": "1L",
+        "price": 199900,
+        "available": true
+      },
+      {
+        "id": 416603,
+        "label": "5L",
+        "ko": "5L",
+        "price": 949500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1712",
+    "zh": "海狸香調香基底",
+    "ko": "BEAVER BASE (비버 베이스)",
+    "en": "BEAVER BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/1712/main/1712.jpg",
+    "price": 8900,
+    "options": [
+      {
+        "id": 418485,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8900,
+        "available": true
+      },
+      {
+        "id": 418486,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 24900,
+        "available": true
+      },
+      {
+        "id": 414082,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 109900,
+        "available": true
+      },
+      {
+        "id": 418487,
+        "label": "1L",
+        "ko": "1L",
+        "price": 199900,
+        "available": true
+      },
+      {
+        "id": 416613,
+        "label": "5L",
+        "ko": "5L",
+        "price": 949500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1711",
+    "zh": "麝香調香基底",
+    "ko": "MUSK BASE (머스크 베이스)",
+    "en": "MUSK BASE",
+    "category": "動物香",
+    "image": "https://image.candleworks.com/product/1711/main/1711.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 418482,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 418483,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414081,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 418484,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416615,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1710",
+    "zh": "雪松調香基底",
+    "ko": "CEDARWOOD BASE (시더우드 베이스)",
+    "en": "CEDARWOOD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1710/main/1710.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 418479,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 418480,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414075,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 418481,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416614,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1723",
+    "zh": "檀香調香基底",
+    "ko": "SANDALWOOD BASE (샌달우드 베이스)",
+    "en": "SANDALWOOD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1723/main/1723.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 412155,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 412156,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414083,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 412157,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416604,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1768",
+    "zh": "玫瑰木調香基底",
+    "ko": "ROSEWOOD BASE (로즈우드 베이스)",
+    "en": "ROSEWOOD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1768/main/1768.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415291,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415292,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415293,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415294,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416616,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1726",
+    "zh": "苔蘚調香基底",
+    "ko": "MOSS BASE (모스 베이스)",
+    "en": "MOSS BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1726/main/1726.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 412164,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 412165,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414078,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 412166,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416606,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1773",
+    "zh": "白木調香基底",
+    "ko": "WHITE WOOD BASE (화이트 우드 베이스)",
+    "en": "WHITE WOOD BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1773/main/1773.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415307,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415308,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415309,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415310,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416617,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1718",
+    "zh": "岩蘭草調香基底",
+    "ko": "VETIVER BASE (베티버 베이스)",
+    "en": "VETIVER BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1718/main/1718.jpg",
+    "price": 10500,
+    "options": [
+      {
+        "id": 418503,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 10500,
+        "available": true
+      },
+      {
+        "id": 418504,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 27900,
+        "available": true
+      },
+      {
+        "id": 414076,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 121000,
+        "available": true
+      },
+      {
+        "id": 418505,
+        "label": "1L",
+        "ko": "1L",
+        "price": 215900,
+        "available": true
+      },
+      {
+        "id": 416609,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1025000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1756",
+    "zh": "檜木調香基底",
+    "ko": "HINOKI BASE (히노키 베이스)",
+    "en": "HINOKI BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1756/main/1756.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415009,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415010,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415011,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415012,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416610,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1790",
+    "zh": "橡木調香基底",
+    "ko": "OAK BASE (오크 베이스)",
+    "en": "OAK BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1790/main/1790.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415371,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415372,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415373,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415374,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416618,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1716",
+    "zh": "廣藿香調香基底",
+    "ko": "PATCHOULI BASE (패츌리 베이스)",
+    "en": "PATCHOULI BASE",
+    "category": "木質",
+    "image": "https://image.candleworks.com/product/1716/main/1716.jpg",
+    "price": 10500,
+    "options": [
+      {
+        "id": 418497,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 10500,
+        "available": true
+      },
+      {
+        "id": 418498,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 27900,
+        "available": true
+      },
+      {
+        "id": 414073,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 121000,
+        "available": true
+      },
+      {
+        "id": 418499,
+        "label": "1L",
+        "ko": "1L",
+        "price": 215900,
+        "available": true
+      },
+      {
+        "id": 416608,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1025000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1709",
+    "zh": "茉莉調香基底",
+    "ko": "JASMINE BASE (자스민 베이스)",
+    "en": "JASMINE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1709/main/1709.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 418476,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 418477,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414059,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 418478,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416585,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1736",
+    "zh": "沙巴茉莉調香基底",
+    "ko": "SAMPAQUITA BASE (자스민 삼박 베이스)",
+    "en": "SAMPAQUITA BASE (JASMINE SAMBAC BASE)",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1736/main/1736.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412515,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412516,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414063,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412517,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416593,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "6879",
+    "zh": "梔子花調香基底",
+    "ko": "GARDENIA BASE (가드니아 베이스)",
+    "en": "GARDENIA BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/6879/main/6879.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 7897,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 11380,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 11382,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 11384,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416586,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1743",
+    "zh": "百合調香基底",
+    "ko": "LILY BASE (릴리 베이스)",
+    "en": "LILY BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1743/main/1743.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412607,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412608,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414048,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412609,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416595,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1717",
+    "zh": "晚香玉調香基底",
+    "ko": "TUBEROSE BASE (튜버로즈 베이스)",
+    "en": "TUBEROSE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1717/main/1717.jpg",
+    "price": 10500,
+    "options": [
+      {
+        "id": 418500,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 10500,
+        "available": true
+      },
+      {
+        "id": 418501,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 27900,
+        "available": true
+      },
+      {
+        "id": 414060,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 121000,
+        "available": true
+      },
+      {
+        "id": 418502,
+        "label": "1L",
+        "ko": "1L",
+        "price": 215900,
+        "available": true
+      },
+      {
+        "id": 416589,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1025000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1725",
+    "zh": "鈴蘭調香基底",
+    "ko": "MUGUET BASE (뮤게 베이스)",
+    "en": "MUGUET BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1725/main/1725.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412161,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412162,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414058,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412163,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416587,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "75",
+    "zh": "小蒼蘭調香基底",
+    "ko": "FREESIA BASE (프리지아 베이스)",
+    "en": "FREESIA BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/75/main/75.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 115851,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 115853,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 115854,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 115855,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416590,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1746",
+    "zh": "五月玫瑰調香基底",
+    "ko": "ROSE DE MAI BASE (로즈 드 메이 베이스)",
+    "en": "ROSE DE MAI BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1746/main/1746.jpg",
+    "price": 14500,
+    "options": [
+      {
+        "id": 412616,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 14500,
+        "available": true
+      },
+      {
+        "id": 412617,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 39900,
+        "available": true
+      },
+      {
+        "id": 414049,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 196900,
+        "available": true
+      },
+      {
+        "id": 412618,
+        "label": "1L",
+        "ko": "1L",
+        "price": 361900,
+        "available": true
+      },
+      {
+        "id": 416597,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1719000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1735",
+    "zh": "玫瑰調香基底",
+    "ko": "ROSE BASE (로즈 베이스)",
+    "en": "ROSE BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1735/main/1735.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 412512,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 412513,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414062,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 412514,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416592,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1778",
+    "zh": "蘭花調香基底",
+    "ko": "ORCHID BASE (오키드 베이스)",
+    "en": "ORCHID BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1778/main/1778.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415327,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415328,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415329,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415330,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416600,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1757",
+    "zh": "木蘭調香基底",
+    "ko": "MAGNOLIA BASE (매그놀리아 베이스)",
+    "en": "MAGNOLIA BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1757/main/1757.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415013,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415014,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415015,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415016,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416598,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1714",
+    "zh": "鳶尾調香基底",
+    "ko": "IRIS BASE (아이리스 베이스)",
+    "en": "IRIS BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1714/main/1714.jpg",
+    "price": 13500,
+    "options": [
+      {
+        "id": 418491,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 13500,
+        "available": true
+      },
+      {
+        "id": 418492,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 37900,
+        "available": true
+      },
+      {
+        "id": 414057,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 174500,
+        "available": true
+      },
+      {
+        "id": 418493,
+        "label": "1L",
+        "ko": "1L",
+        "price": 323900,
+        "available": true
+      },
+      {
+        "id": 416588,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1538000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1782",
+    "zh": "紫羅蘭調香基底",
+    "ko": "VIOLET BASE (바이올렛 베이스)",
+    "en": "VIOLET BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1782/main/1782.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415343,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415344,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415345,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415346,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416601,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1758",
+    "zh": "紫丁香調香基底",
+    "ko": "LILAC BASE (라일락 베이스)",
+    "en": "LILAC BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1758/main/1758.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415017,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415018,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415019,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415020,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416599,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1744",
+    "zh": "椴樹花調香基底",
+    "ko": "LINDEN BLOSSOM BASE (린덴 블로썸 베이스)",
+    "en": "LINDEN BLOSSOM BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1744/main/1744.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 412610,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 412611,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414055,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 412612,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416596,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1793",
+    "zh": "橙花調香基底",
+    "ko": "ORANGE BLOSSOM BASE (오렌지 블로썸/네롤리 베이스)",
+    "en": "ORANGE BLOSSOM BASE (NEROLI)",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1793/main/1793.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415498,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415499,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415500,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415501,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416602,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1707",
+    "zh": "康乃馨調香基底",
+    "ko": "CARNATION BASE (카네이션 베이스)",
+    "en": "CARNATION BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1707/main/1707.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 418470,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 418471,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414044,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 418472,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416584,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1738",
+    "zh": "依蘭依蘭調香基底",
+    "ko": "YLANG YLANG  BASE (일랑일랑 베이스)",
+    "en": "YLANG YLANG BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1738/main/1738.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412521,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412522,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414066,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412523,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416594,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1731",
+    "zh": "天竺葵調香基底",
+    "ko": "GERANIUM BASE (제라늄 베이스)",
+    "en": "GERANIUM BASE",
+    "category": "花香",
+    "image": "https://image.candleworks.com/product/1731/main/1731.jpg",
+    "price": 8500,
+    "options": [
+      {
+        "id": 412500,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8500,
+        "available": true
+      },
+      {
+        "id": 412501,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22900,
+        "available": true
+      },
+      {
+        "id": 414071,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 102900,
+        "available": true
+      },
+      {
+        "id": 412502,
+        "label": "1L",
+        "ko": "1L",
+        "price": 185900,
+        "available": true
+      },
+      {
+        "id": 416591,
+        "label": "5L",
+        "ko": "5L",
+        "price": 883000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1706",
+    "zh": "醛香調香基底",
+    "ko": "ALDEHYDE BASE (알데하이드 베이스)",
+    "en": "ALDEHYDE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/1706/main/1706.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 418467,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 418468,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414041,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 418469,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416583,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3914",
+    "zh": "黑松調香基底",
+    "ko": "해송 베이스",
+    "en": "BLACK PINE BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3914/main/3914.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421628,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421629,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421630,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421631,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421632,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3912",
+    "zh": "寺廟線香調香基底",
+    "ko": "선향 베이스",
+    "en": "TEMPLE INCENSE BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3912/main/3912.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 421568,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 421569,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 421570,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 421571,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 421572,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3915",
+    "zh": "韓國雪松調香基底",
+    "ko": "삼나무 베이스",
+    "en": "KOREAN CEDAR BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3915/main/3915.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421588,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421589,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421590,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421591,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421592,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3916",
+    "zh": "硯台調香基底",
+    "ko": "수묵 베이스",
+    "en": "INKSTONE BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3916/main/3916.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421583,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421584,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421585,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421586,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421587,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3913",
+    "zh": "韓紙調香基底",
+    "ko": "한지 베이스",
+    "en": "HANJI BASE (KOREAN PAPER)",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3913/main/3913.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421603,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421604,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421605,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421606,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421607,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3911",
+    "zh": "韓國藥草調香基底",
+    "ko": "(단종예정) 한약재 베이스",
+    "en": "KOREAN MEDICINAL HERB BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3911/main/3911.jpg",
+    "price": 11500,
+    "options": [
+      {
+        "id": 421638,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 11500,
+        "available": true
+      },
+      {
+        "id": 421639,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 30500,
+        "available": true
+      },
+      {
+        "id": 421640,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 133700,
+        "available": true
+      },
+      {
+        "id": 421641,
+        "label": "1L",
+        "ko": "1L",
+        "price": 253000,
+        "available": true
+      },
+      {
+        "id": 421642,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1195000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3910",
+    "zh": "紅參調香基底",
+    "ko": "(단종예정) 홍삼 베이스",
+    "en": "RED GINSENG BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3910/main/3910.jpg",
+    "price": 7700,
+    "options": [
+      {
+        "id": 421563,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7700,
+        "available": true
+      },
+      {
+        "id": 421564,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21500,
+        "available": true
+      },
+      {
+        "id": 421565,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 94900,
+        "available": true
+      },
+      {
+        "id": 421566,
+        "label": "1L",
+        "ko": "1L",
+        "price": 172500,
+        "available": true
+      },
+      {
+        "id": 421567,
+        "label": "5L",
+        "ko": "5L",
+        "price": 819000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3909",
+    "zh": "山艾調香基底",
+    "ko": "산쑥 베이스",
+    "en": "MOUNTAIN WORMWOOD BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3909/main/3909.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421608,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421609,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421610,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421611,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421612,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3907",
+    "zh": "白連翹調香基底",
+    "ko": "미선나무 베이스",
+    "en": "MISEONNAMU BASE (WHITE FORSYTHIA)",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3907/main/3907.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 421618,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 421619,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 421620,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 421621,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 421622,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3908",
+    "zh": "白桔梗調香基底",
+    "ko": "백도라지꽃 베이스",
+    "en": "WHITE BELLFLOWER BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3908/main/3908.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 421613,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 421614,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 421615,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 421616,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 421617,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3904",
+    "zh": "白丁香調香基底",
+    "ko": "흰수수꽃다리 베이스",
+    "en": "WHITE LILAC BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3904/main/3904.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421573,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421574,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421575,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421576,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421577,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3906",
+    "zh": "白桂花調香基底",
+    "ko": "은목서 베이스",
+    "en": "WHITE OSMANTHUS BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3906/main/3906.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421578,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421579,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421580,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421581,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421582,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3905",
+    "zh": "夏季橘花調香基底",
+    "ko": "하귤꽃 베이스",
+    "en": "SUMMER MANDARIN BLOSSOM BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3905/main/3905.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421598,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421599,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421600,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421601,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421602,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3901",
+    "zh": "青橘調香基底",
+    "ko": "청귤 베이스",
+    "en": "GREEN MANDARIN BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3901/main/3901.jpg",
+    "price": 9500,
+    "options": [
+      {
+        "id": 421633,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 9500,
+        "available": true
+      },
+      {
+        "id": 421634,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 25500,
+        "available": true
+      },
+      {
+        "id": 421635,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 112000,
+        "available": true
+      },
+      {
+        "id": 421636,
+        "label": "1L",
+        "ko": "1L",
+        "price": 210000,
+        "available": true
+      },
+      {
+        "id": 421637,
+        "label": "5L",
+        "ko": "5L",
+        "price": 997000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3902",
+    "zh": "山葡萄調香基底",
+    "ko": "산머루 베이스",
+    "en": "MOUNTAIN GRAPE BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3902/main/3902.jpg",
+    "price": 8200,
+    "options": [
+      {
+        "id": 421593,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8200,
+        "available": true
+      },
+      {
+        "id": 421594,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22500,
+        "available": true
+      },
+      {
+        "id": 421595,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 99500,
+        "available": true
+      },
+      {
+        "id": 421596,
+        "label": "1L",
+        "ko": "1L",
+        "price": 183500,
+        "available": true
+      },
+      {
+        "id": 421597,
+        "label": "5L",
+        "ko": "5L",
+        "price": 871000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "3903",
+    "zh": "五味子調香基底",
+    "ko": "오미자 베이스",
+    "en": "FIVE-FLAVOR FRUIT BASE",
+    "category": "韓國之香",
+    "image": "https://image.candleworks.com/product/3903/main/3903.jpg",
+    "price": 8700,
+    "options": [
+      {
+        "id": 421623,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8700,
+        "available": true
+      },
+      {
+        "id": 421624,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 23500,
+        "available": true
+      },
+      {
+        "id": 421625,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 103000,
+        "available": true
+      },
+      {
+        "id": 421626,
+        "label": "1L",
+        "ko": "1L",
+        "price": 194000,
+        "available": true
+      },
+      {
+        "id": 421627,
+        "label": "5L",
+        "ko": "5L",
+        "price": 921500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1708",
+    "zh": "常春藤調香基底",
+    "ko": "IVY BASE (아이비 베이스)",
+    "en": "IVY BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1708/main/1708.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 418473,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 418474,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414070,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 418475,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416554,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1702",
+    "zh": "綠意調香基底",
+    "ko": "GREEN BASE (그린 베이스)",
+    "en": "GREEN BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1702/main/1702.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 418458,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 418459,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414064,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 418460,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416553,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1786",
+    "zh": "迷迭香調香基底",
+    "ko": "ROSEMARY BASE (로즈마리 베이스)",
+    "en": "ROSEMARY BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/1786/main/1786.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415359,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415360,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415361,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415362,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416566,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1765",
+    "zh": "草本調香基底",
+    "ko": "HERB BASE (허브 베이스)",
+    "en": "HERB BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/1765/main/1765.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 415029,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 415030,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 415031,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 415032,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416562,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1742",
+    "zh": "小黃瓜調香基底",
+    "ko": "CUCUMBER BASE (큐컴버 베이스)",
+    "en": "CUCUMBER BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1742/main/1742.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 412604,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 412605,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414053,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 412606,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416557,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1739",
+    "zh": "番茄葉調香基底",
+    "ko": "TOMATO LEAF BASE (토마토리프 베이스)",
+    "en": "TOMATO LEAF BASE",
+    "category": "綠意",
+    "image": "https://image.candleworks.com/product/1739/main/1739.jpg",
+    "price": 8500,
+    "options": [
+      {
+        "id": 412524,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8500,
+        "available": true
+      },
+      {
+        "id": 412525,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22900,
+        "available": true
+      },
+      {
+        "id": 414068,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 102900,
+        "available": true
+      },
+      {
+        "id": 412526,
+        "label": "1L",
+        "ko": "1L",
+        "price": 185900,
+        "available": true
+      },
+      {
+        "id": 416560,
+        "label": "5L",
+        "ko": "5L",
+        "price": 883000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1774",
+    "zh": "薰衣草調香基底",
+    "ko": "LAVENDER BASE (라벤더 베이스)",
+    "en": "LAVENDER BASE",
+    "category": "芳香",
+    "image": "https://image.candleworks.com/product/1774/main/1774.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415311,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415312,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415313,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415314,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416563,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1791",
+    "zh": "桃子調香基底",
+    "ko": "PEACH BASE (피치 베이스)",
+    "en": "PEACH BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1791/main/1791.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415490,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415491,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415492,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415493,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416582,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1740",
+    "zh": "草莓調香基底",
+    "ko": "STRAWBERRY BASE (스트로베리 베이스)",
+    "en": "STRAWBERRY BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1740/main/1740.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412592,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412593,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414050,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412594,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416572,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1703",
+    "zh": "黑醋栗果調香基底",
+    "ko": "CASSIS FRUIT BASE (카시스 베이스)",
+    "en": "CASSIS FRUIT BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1703/main/1703.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 418461,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 418462,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414045,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 418463,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416568,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1748",
+    "zh": "櫻桃調香基底",
+    "ko": "CHERRY BASE (체리 베이스)",
+    "en": "CHERRY BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1748/main/1748.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412622,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412623,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414051,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412624,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416574,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1764",
+    "zh": "荔枝調香基底",
+    "ko": "LYCHEE BASE (리치 베이스)",
+    "en": "LYCHEE BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1764/main/1764.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415025,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415026,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415027,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415028,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416569,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1721",
+    "zh": "覆盆子調香基底",
+    "ko": "RASPBERRY BASE (라즈베리 베이스)",
+    "en": "RASPBERRY BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1721/main/1721.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 412149,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 412150,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414046,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 412151,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416571,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1728",
+    "zh": "露莓調香基底",
+    "ko": "DEWBERRY BASE (듀베리 베이스)",
+    "en": "DEWBERRY BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1728/main/1728.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 412170,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 412171,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414074,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 412172,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416570,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1777",
+    "zh": "無花果調香基底",
+    "ko": "FIG BASE (무화과 베이스)",
+    "en": "FIG BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1777/main/1777.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415323,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415324,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415325,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415326,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416580,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1701",
+    "zh": "蘋果調香基底",
+    "ko": "APPLE BASE (애플 베이스)",
+    "en": "APPLE BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1701/main/1701.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 418455,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 418456,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414043,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 418457,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416567,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1749",
+    "zh": "杏桃調香基底",
+    "ko": "APRICOT BASE (애프리콧 베이스)",
+    "en": "APRICOT BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1749/main/1749.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415001,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415002,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415003,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415004,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416575,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1779",
+    "zh": "鳳梨調香基底",
+    "ko": "PINEAPPLE BASE (파인애플 베이스)",
+    "en": "PINEAPPLE BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1779/main/1779.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415331,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415332,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415333,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415334,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416581,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1771",
+    "zh": "芒果調香基底",
+    "ko": "MANGO BASE (망고 베이스)",
+    "en": "MANGO BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1771/main/1771.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415299,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415300,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415301,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 415302,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416578,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1767",
+    "zh": "梨調香基底",
+    "ko": "PEAR BASE (페어 베이스)",
+    "en": "PEAR BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1767/main/1767.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415287,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415288,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415289,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415290,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416576,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1769",
+    "zh": "黑莓調香基底",
+    "ko": "BLACKBERRY BASE (블랙베리 베이스)",
+    "en": "BLACKBERRY BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1769/main/1769.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415295,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415296,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415297,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415298,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416577,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1772",
+    "zh": "椰子調香基底",
+    "ko": "COCONUT BASE (코코넛 베이스)",
+    "en": "COCONUT BASE",
+    "category": "果香",
+    "image": "https://image.candleworks.com/product/1772/main/1772.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415303,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415304,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415305,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415306,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416579,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1715",
+    "zh": "海洋調香基底",
+    "ko": "MARINE BASE (마린 베이스)",
+    "en": "MARINE BASE",
+    "category": "現代",
+    "image": "https://image.candleworks.com/product/1715/main/1715.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 418494,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 418495,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 414054,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 418496,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416558,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1704",
+    "zh": "佛手柑調香基底",
+    "ko": "BERGAMOT BASE (버가못 베이스)",
+    "en": "BERGAMOT BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1704/main/1704.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 418452,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 418453,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414072,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 418454,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416552,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1705",
+    "zh": "苦檸檬調香基底",
+    "ko": "BITTER LEMON BASE (비터 레몬 베이스)",
+    "en": "BITTER LEMON BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1705/main/1705.jpg",
+    "price": 8500,
+    "options": [
+      {
+        "id": 418464,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 8500,
+        "available": true
+      },
+      {
+        "id": 418465,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 22900,
+        "available": true
+      },
+      {
+        "id": 414039,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 102900,
+        "available": true
+      },
+      {
+        "id": 418466,
+        "label": "1L",
+        "ko": "1L",
+        "price": 185900,
+        "available": true
+      },
+      {
+        "id": 416548,
+        "label": "5L",
+        "ko": "5L",
+        "price": 883000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1727",
+    "zh": "香櫞果調香基底",
+    "ko": "CITRON FRUIT BASE (시트론 프룻 베이스)",
+    "en": "CITRON FRUIT BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1727/main/1727.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 412167,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 412168,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 414040,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 412169,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416556,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1732",
+    "zh": "葡萄柚調香基底",
+    "ko": "GRAPEFRUIT BASE (그레이프프룻 베이스)",
+    "en": "GRAPEFRUIT BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1732/main/1732.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 412503,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 412504,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 414069,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 412505,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416559,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1759",
+    "zh": "柚子（Yuza）調香基底",
+    "ko": "YUZA BASE (유자 베이스)",
+    "en": "YUZA BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1759/main/1759.jpg",
+    "price": 7500,
+    "options": [
+      {
+        "id": 415021,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7500,
+        "available": true
+      },
+      {
+        "id": 415022,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 20900,
+        "available": true
+      },
+      {
+        "id": 415023,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 92900,
+        "available": true
+      },
+      {
+        "id": 415024,
+        "label": "1L",
+        "ko": "1L",
+        "price": 165900,
+        "available": true
+      },
+      {
+        "id": 416561,
+        "label": "5L",
+        "ko": "5L",
+        "price": 788000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1755",
+    "zh": "萊姆調香基底",
+    "ko": "LIME BASE (라임 베이스)",
+    "en": "LIME BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1755/main/1755.jpg",
+    "price": 7900,
+    "options": [
+      {
+        "id": 415005,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 7900,
+        "available": true
+      },
+      {
+        "id": 415006,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 21900,
+        "available": true
+      },
+      {
+        "id": 415007,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 97900,
+        "available": true
+      },
+      {
+        "id": 415008,
+        "label": "1L",
+        "ko": "1L",
+        "price": 174900,
+        "available": true
+      },
+      {
+        "id": 416555,
+        "label": "5L",
+        "ko": "5L",
+        "price": 830800,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1780",
+    "zh": "柑橘調香基底",
+    "ko": "MANDARIN/TANGERINE BASE (감귤 베이스)",
+    "en": "MANDARIN BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1780/main/1780.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415335,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415336,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415337,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415338,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416564,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1784",
+    "zh": "甜橙調香基底",
+    "ko": "ORANGE BASE (오렌지 베이스)",
+    "en": "ORANGE BASE",
+    "category": "柑橘",
+    "image": "https://image.candleworks.com/product/1784/main/1784.jpg",
+    "price": 6900,
+    "options": [
+      {
+        "id": 415351,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 6900,
+        "available": true
+      },
+      {
+        "id": 415352,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 19900,
+        "available": true
+      },
+      {
+        "id": 415353,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 87900,
+        "available": true
+      },
+      {
+        "id": 415354,
+        "label": "1L",
+        "ko": "1L",
+        "price": 155900,
+        "available": true
+      },
+      {
+        "id": 416565,
+        "label": "5L",
+        "ko": "5L",
+        "price": 740500,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  },
+  {
+    "id": "1745",
+    "zh": "麗絲玲調香基底",
+    "ko": "RIESLING BASE (화이트 와인 베이스)",
+    "en": "RIESLING BASE",
+    "category": "美食調",
+    "image": "https://image.candleworks.com/product/1745/main/1745.jpg",
+    "price": 12500,
+    "options": [
+      {
+        "id": 412613,
+        "label": "20ml",
+        "ko": "20ml",
+        "price": 12500,
+        "available": true
+      },
+      {
+        "id": 412614,
+        "label": "100ml",
+        "ko": "100ml",
+        "price": 35500,
+        "available": true
+      },
+      {
+        "id": 414056,
+        "label": "500ml",
+        "ko": "500ml",
+        "price": 151500,
+        "available": true
+      },
+      {
+        "id": 412615,
+        "label": "1L",
+        "ko": "1L",
+        "price": 283000,
+        "available": true
+      },
+      {
+        "id": 416573,
+        "label": "5L",
+        "ko": "5L",
+        "price": 1344000,
+        "available": true
+      }
+    ],
+    "date": "2026-10-12"
+  }
+]

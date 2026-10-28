@@ -1,33 +1,21 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>學員專屬工具｜HANA SCENT ARTIST</title>
-  <meta name="description" content="HANA SCENT ARTIST 學員專屬工具入口，包含課程教材、配方紀錄、原料筆記與課後補充資料。" />
-  <link rel="canonical" href="https://hanascent.com/student-tools/" />
-  <script src="/assets/page-schema.js?v=20260915"></script>
-  <link rel="stylesheet" href="/assets/style.css" />
-  <style>
-    [hidden]{display:none!important}body.is-locked{background:#f7f7f4}.gate{min-height:100vh;display:grid;place-items:center;padding:32px}.gate-card{width:min(520px,100%);background:#fff;border:1px solid var(--line);padding:44px}.gate-card h1{font-size:clamp(34px,5vw,56px);margin:12px 0 18px}.gate-card p{color:#68706a;line-height:1.8}.gate-card input{width:100%;box-sizing:border-box;margin:18px 0 12px;padding:15px 16px;border:1px solid var(--line);font:inherit}.gate-card button{width:100%;margin-top:8px}.error{min-height:24px;color:#9c3b35}.small-link{display:inline-block;margin-top:18px;color:#111;border-bottom:1px solid #111}.student-actions{display:flex;justify-content:flex-end;padding:12px 4vw 0}.student-actions button{background:none;border:0;border-bottom:1px solid #111;padding:4px 0;cursor:pointer;font:inherit}
-  </style>
-</head>
-<body class="is-locked">
-  <main id="student-gate" class="gate">
-    <section class="gate-card">
-      <p class="kicker">Student Tools</p>
-      <h1>學員專屬工具</h1>
-      <p>請輸入課後提供的密碼，進入課程教材、配方紀錄、原料筆記與課後補充資料。</p>
-      <form id="gate-form">
-        <label for="password">密碼</label>
-        <input id="password" type="password" autocomplete="current-password" autofocus />
-        <button class="btn primary" type="submit">進入學員工具</button>
-        <p id="error" class="error" role="alert"></p>
-      </form>
-      <a class="small-link" href="/courses/">返回課程頁</a>
-    </section>
-  </main>
-
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://uzqaodfmnrjrsbvxhlmh.supabase.co; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"><title>學員申請與工具｜HANA SCENT ARTIST</title><link rel="canonical" href="https://hanascent.com/student-tools/"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/student-portal.css"></head><body>
+<main class="student-shell"><a href="/">HANA SCENT ARTIST</a><p class="kicker">STUDENT ACCESS</p><h1>學員專屬工具</h1><p>第一次使用，請登記上課資料並驗證 Email。HANA 審核通過後，以個人 Email 與密碼登入，即可使用學員入口與原料購買服務。</p>
+<div id="auth-tabs" class="student-tabs"><button type="button" data-mode="login" aria-pressed="true">學員登入</button><button type="button" data-mode="register" aria-pressed="false">首次申請</button><button type="button" data-mode="forgot" aria-pressed="false">忘記密碼</button></div>
+<div class="student-card">
+<form id="login-form" data-auth-panel="login"><h2>歡迎回來</h2><label>Email<input name="email" type="email" required maxlength="254" autocomplete="username"></label><label>密碼<input name="password" type="password" required maxlength="128" autocomplete="current-password"></label><button class="primary" type="submit">登入學員工具</button></form>
+<form id="register-form" data-auth-panel="register" hidden><h2>首次學員申請</h2><p>請填寫報名時的姓名與 Email，方便核對上課紀錄。</p><label>Email<input name="email" type="email" required maxlength="254" autocomplete="email"></label><label>姓名<input name="name" required maxlength="80" autocomplete="name"></label>
+<label>手機<input name="phone" type="tel" required maxlength="24" pattern="[+0-9 ()\-]{8,24}" autocomplete="tel" placeholder="0912345678 或 +886912345678"></label>
+<fieldset><legend>曾經上過的課程（可複選）</legend><label class="check"><input type="checkbox" name="courses" value="KPIA">KPIA</label><label class="check"><input type="checkbox" name="courses" value="KDCA">KDCA</label><label class="check"><input type="checkbox" name="courses" value="氣味藝術序曲">氣味藝術序曲</label></fieldset>
+<label class="check"><input name="consent" type="checkbox" required>我已閱讀下方個資說明，同意 HANA 使用姓名、Email、手機與課程紀錄進行學員資格審核及必要的訂單聯繫。</label><label>密碼<input name="password" type="password" required minlength="12" maxlength="128" autocomplete="new-password" placeholder="至少 12 個字元，建議使用不重複的長密語"></label><label>再次輸入密碼<input name="confirm" type="password" required minlength="12" maxlength="128" autocomplete="new-password"></label><button class="primary" type="submit">建立帳戶並送出申請</button><p class="hint">請勿提供身分證字號或證件照片。手機作為審核聯繫資料，並非簡訊驗證。</p></form>
+<form id="forgot-form" data-auth-panel="forgot" hidden><h2>忘記密碼</h2><label>Email<input name="email" type="email" required maxlength="254" autocomplete="email"></label><button class="primary" type="submit">寄送密碼重設信</button></form>
+<form id="complete-form" data-auth-panel="complete" hidden><h2>補填學員申請</h2><label>姓名<input name="name" required maxlength="80" autocomplete="name"></label>
+<label>手機<input name="phone" type="tel" required maxlength="24" pattern="[+0-9 ()\-]{8,24}" autocomplete="tel" placeholder="0912345678 或 +886912345678"></label>
+<fieldset><legend>曾經上過的課程（可複選）</legend><label class="check"><input type="checkbox" name="courses" value="KPIA">KPIA</label><label class="check"><input type="checkbox" name="courses" value="KDCA">KDCA</label><label class="check"><input type="checkbox" name="courses" value="氣味藝術序曲">氣味藝術序曲</label></fieldset>
+<label class="check"><input name="consent" type="checkbox" required>我已閱讀下方個資說明，同意 HANA 使用姓名、Email、手機與課程紀錄進行學員資格審核及必要的訂單聯繫。</label><button class="primary" type="submit">送出審核</button></form>
+<form id="reset-form" data-auth-panel="reset" hidden><h2>設定新密碼</h2><label>密碼<input name="password" type="password" required minlength="12" maxlength="128" autocomplete="new-password" placeholder="至少 12 個字元，建議使用不重複的長密語"></label><label>再次輸入密碼<input name="confirm" type="password" required minlength="12" maxlength="128" autocomplete="new-password"></label><button class="primary" type="submit">更新密碼</button></form>
+<div id="signed-in" hidden><h2>學員帳戶</h2><p id="access-status"></p><button id="refresh-status" type="button">重新檢查審核結果</button><button id="student-logout" type="button">登出</button><p><a id="review-link" href="/admin/students/" hidden>管理學員申請 →</a></p></div>
+<p id="student-message" class="student-message" role="status" aria-live="polite"></p></div>
+<details><summary>申請資料與隱私說明</summary><p>姓名、Email、手機及所選課程僅供藏花香徑工作室核對學員身分、管理帳戶與必要訂單聯繫，不會自動加入行銷名單。帳戶驗證及資料儲存由 Supabase 處理，網站程式碼由 GitHub 託管，申請資料與密碼不會寫入 GitHub。密碼由驗證服務處理，審核人員無法查看密碼。</p><p>資料於學員服務及必要紀錄保存期間使用。你可透過 LINE @hscent 或 <a href="mailto:hanascent@gmail.com">hanascent@gmail.com</a> 申請查詢、更正、停用或刪除；未提供必要資料將無法核對學員資格。詳見<a href="/privacy/">隱私權政策</a>。</p></details><p><a href="/courses/">返回課程頁 →</a></p><noscript>此入口需要啟用 JavaScript 才能登入。若無法使用，請聯絡 HANA。</noscript></main>
   <div id="student-content" hidden>
     <nav class="site-nav" aria-label="主要導覽">
       <a class="logo" href="/">HANA SCENT ARTIST</a>
@@ -67,7 +55,7 @@
           </article>
           <article class="course-card">
             <div><small>STUDENT MATERIAL SHOP</small><h3>學員原料購買</h3><p>瀏覽調香原料與套組、查看規格與原價，並使用購物車整理採購清單。</p></div>
-            <a class="text-link" href="https://scent-material-library.pystar0417.chatgpt.site" target="_blank" rel="noopener">進入學員原料購買 →</a>
+            <a class="text-link" href="/student-tools/materials/">進入學員原料購買 →</a>
           </article>
           <article class="course-card">
             <div><small>MATERIALS</small><h3>原料筆記</h3><p>整理課程中使用的香調分類、原料描述、嗅覺語彙與練習方式，供課後複習。</p></div>
@@ -88,41 +76,5 @@
     </div></footer>
   </div>
 
-  <script src="/assets/site.js?v=20260702-nav2"></script>
-  <script>
-    (() => {
-      const KEY = 'hana_student_tools_unlocked';
-      const PASSWORD_HASH = '63b6b4afe76215d34934dd95159626733b6db7affd55112697670abe8d7c8b77';
-      const gate = document.getElementById('student-gate');
-      const content = document.getElementById('student-content');
-      const form = document.getElementById('gate-form');
-      const password = document.getElementById('password');
-      const error = document.getElementById('error');
-      const lock = document.getElementById('lock-tools');
 
-      const digest = async value => {
-        const bytes = new TextEncoder().encode(value);
-        const hash = await crypto.subtle.digest('SHA-256', bytes);
-        return Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
-      };
-      const unlock = () => {
-        sessionStorage.setItem(KEY, 'true');
-        gate.hidden = true;
-        content.hidden = false;
-        document.body.classList.remove('is-locked');
-      };
-      if (sessionStorage.getItem(KEY) === 'true') unlock();
-      form.addEventListener('submit', async event => {
-        event.preventDefault();
-        error.textContent = '';
-        if (await digest(password.value.trim()) === PASSWORD_HASH) unlock();
-        else error.textContent = '密碼錯誤，請確認課後提供的密碼。';
-      });
-      lock.addEventListener('click', () => {
-        sessionStorage.removeItem(KEY);
-        location.reload();
-      });
-    })();
-  </script>
-</body>
-</html>
+<script src="/assets/vendor/supabase-2.118.0.js"></script><script src="/assets/cms-config.js"></script><script src="/assets/student-auth.js"></script><script src="/assets/student-portal.js"></script></body></html>
