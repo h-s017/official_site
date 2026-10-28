@@ -1,6 +1,6 @@
 {
  "name":"hana-student-access-checks",
  "private":true,
- "scripts":{"test":"node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs tests/student-notifications.test.cjs tests/student-mail.test.cjs","preview":"node scripts/student-preview.cjs"},
+ "scripts":{"test":"node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs tests/student-notifications.test.cjs tests/student-mail.test.cjs tests/student-shop-access.test.cjs","preview":"node scripts/student-preview.cjs"},
  "devDependencies":{"@electric-sql/pglite":"0.5.12"}
 }
