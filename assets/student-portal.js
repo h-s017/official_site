@@ -4,6 +4,7 @@
  const $=id=>document.getElementById(id);
  let recovery=false;
  const message=text=>{$('student-message').textContent=text;};
+ $('student-menu-toggle').onclick=()=>{const toggle=$('student-menu-toggle'),open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));$('student-navigation').classList.toggle('is-open',open);};
  function mode(name){for(const form of document.querySelectorAll('[data-auth-panel]'))form.hidden=form.dataset.authPanel!==name;for(const tab of document.querySelectorAll('[data-mode]'))tab.setAttribute('aria-pressed',String(tab.dataset.mode===name));message('');}
  for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>mode(button.dataset.mode);
  async function busy(form,work){const button=form.querySelector('button[type=submit]');button.disabled=true;try{await work();}catch{message('操作未完成。請檢查資料、Email 驗證與網路狀態；若持續發生，請聯絡 HANA。');}finally{button.disabled=false;}}
