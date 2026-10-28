@@ -39,3 +39,17 @@ html body.student-page .student-card h2{font-size:27px!important;line-height:1.5
 #student-menu-toggle{display:none;background:none;border:0;padding:10px;font:inherit;letter-spacing:.12em}
 @media(max-width:900px){.student-page .student-layout{gap:6%;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.student-page .student-card{padding:26px}.student-page .site-nav{flex-wrap:wrap}#student-menu-toggle{display:block}.student-page .nav-links{display:none;flex-basis:100%;flex-wrap:wrap;padding:16px 0}.student-page .nav-links.is-open{display:flex}}
 @media(max-width:680px){.student-shell{padding:32px 16px}.student-page .student-shell{padding-top:4px}.student-layout,.student-page .student-layout{grid-template-columns:1fr;gap:24px}.student-intro{position:static;padding:0 0 16px}.student-intro h2{font-size:28px!important}.student-intro>p:not(.kicker),.student-steps,.student-intro>.text-link{display:none}.student-intro .kicker{margin-bottom:8px}.student-card{padding:22px}.student-tabs button{padding:12px 14px;font-size:14px}}
+
+/* Scent Études: retain the site's typography and place all three steps left to right. */
+.student-page .page-hero h1 span{display:block;margin-top:14px;font-size:.6em;letter-spacing:.12em}
+.student-page .page-hero .student-tagline{max-width:960px;margin:28px auto 18px!important;color:var(--ink)}
+.student-page .student-tagline strong{font-weight:600}
+.student-page .page-hero .student-description{max-width:860px;margin:0 auto!important;text-align:center;line-height:2!important;font-size:16px!important}
+.student-page .student-layout{display:block}
+.student-page .student-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:0 0 60px}
+.student-page .student-steps li{display:block;padding:24px 0 0}
+.student-page .student-steps li>span{display:block;margin:0 0 16px;font-size:14px;letter-spacing:.2em}
+.student-page .student-steps h3{margin:0 0 14px;font-size:20px;font-weight:500;letter-spacing:.07em;line-height:1.6;color:var(--ink)}
+.student-page .student-steps p{font-size:15px;line-height:1.9;color:var(--gray700)}
+.student-page .student-account{max-width:640px;margin:0 auto}
+@media(max-width:680px){.student-page .student-steps{grid-template-columns:repeat(3,minmax(230px,1fr));gap:24px;overflow-x:auto;padding-bottom:18px;margin-bottom:36px;scroll-snap-type:x proximity}.student-page .student-steps li{scroll-snap-align:start}.student-page .page-hero .student-description{font-size:15px!important}}
