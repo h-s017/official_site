@@ -6,8 +6,21 @@
  const message=text=>{$('student-message').textContent=text;};
  const newsletterButtons=['newsletter-unsubscribe','pending-newsletter-unsubscribe'];
  let newsletterRevision=0;
- const newsletterMessage=text=>{for(const id of ['newsletter-message','pending-newsletter-message'])$(id).textContent=text;};
- async function updateNewsletterControls(){const revision=++newsletterRevision;const subscribed=await check(await db.rpc('student_newsletter_status'));if(revision!==newsletterRevision)return;for(const id of newsletterButtons)$(id).hidden=!subscribed;}
+ let newsletterLoadFailed=false;
+ const newsletterMessage=(text,loadFailed=false)=>{newsletterLoadFailed=loadFailed;for(const id of ['newsletter-message','pending-newsletter-message'])$(id).textContent=text;};
+ async function updateNewsletterControls(){
+  const revision=++newsletterRevision;
+  try{
+   let result=await db.rpc('student_newsletter_status');
+   if(result.error&&(result.status===401||result.status===0)){
+    await check(await db.auth.getUser());
+    result=await db.rpc('student_newsletter_status');
+   }
+   const subscribed=await check(result);if(revision!==newsletterRevision)return;
+   for(const id of newsletterButtons)$(id).hidden=!subscribed;
+   if(newsletterLoadFailed)newsletterMessage('');
+  }catch{if(revision===newsletterRevision)newsletterMessage('訂閱狀態暫時無法載入，請稍後重新整理。',true);}
+ }
  for(const id of newsletterButtons)$(id).onclick=async()=>{
   newsletterRevision++;
   for(const button of newsletterButtons)$(button).disabled=true;
@@ -45,7 +58,7 @@
   $('auth-tabs').hidden=true;
   for(const panel of document.querySelectorAll('[data-auth-panel]'))panel.hidden=true;
   $('review-link').hidden=!access.admin;
-  updateNewsletterControls().catch(()=>newsletterMessage('訂閱狀態暫時無法載入，請稍後重新整理。'));
+  updateNewsletterControls();
   if(recovery){$('reset-form').hidden=false;message('請設定新密碼。');return;}
   if(access.status==='service_pending'){$('access-status').textContent=access.verified?'信箱驗證已完成，帳戶登入成功。學員審核服務尚未啟用，目前暫時無法送審或購買；請保留原帳戶，無需重複註冊。':'帳戶登入成功，請先完成信箱驗證。學員審核服務尚未啟用。';return;}
   if(access.allowed){$('student-content').hidden=false;$('access-status').textContent='已通過學員資格審核';sessionStorage.setItem('hana_student_tools_unlocked','true');if(next().includes('/materials/'))location.replace(next());}
