@@ -1,5 +1,7 @@
 # 學員通知設定狀態
 
+> 新註冊學員的氣味通信訂閱規則已改為首次註冊同意並驗證信箱後自動加入，詳見 [student-dashboard-newsletter.md](student-dashboard-newsletter.md)。下方「學員申請不自動訂閱」屬啟用本功能之前的狀態。
+
 收件管理員：hanasscent@gmail.com。
 
 2026-10-29 檢查：氣味通信的 assets/member.js 只 INSERT email_subscribers，沒有呼叫寄信服務；正式 email_subscribers 沒有寄信 trigger。原先此 Supabase 專案沒有 Edge Functions、自訂 Secrets，Auth 自訂 SMTP 關閉。後續確認已有 Resend 帳號，auth.hanascent.com 已驗證且有先前成功寄送紀錄，可沿用該網域。

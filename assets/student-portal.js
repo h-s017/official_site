@@ -4,6 +4,17 @@
  const $=id=>document.getElementById(id);
  let recovery=false;
  const message=text=>{$('student-message').textContent=text;};
+ const newsletterButtons=['newsletter-unsubscribe','pending-newsletter-unsubscribe'];
+ let newsletterRevision=0;
+ const newsletterMessage=text=>{for(const id of ['newsletter-message','pending-newsletter-message'])$(id).textContent=text;};
+ async function updateNewsletterControls(){const revision=++newsletterRevision;const subscribed=await check(await db.rpc('student_newsletter_status'));if(revision!==newsletterRevision)return;for(const id of newsletterButtons)$(id).hidden=!subscribed;}
+ for(const id of newsletterButtons)$(id).onclick=async()=>{
+  newsletterRevision++;
+  for(const button of newsletterButtons)$(button).disabled=true;
+  try{await check(await db.rpc('student_newsletter_unsubscribe'));for(const button of newsletterButtons)$(button).hidden=true;newsletterMessage('已取消氣味通信訂閱。');}
+  catch{newsletterMessage('取消未完成，請稍後重試。');}
+  finally{for(const button of newsletterButtons)$(button).disabled=false;}
+ };
  $('student-menu-toggle').onclick=()=>{const toggle=$('student-menu-toggle'),open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));$('student-navigation').classList.toggle('is-open',open);};
  const courseToggle=$('student-course-toggle'),courseLinks=$('student-course-links');
  const setCourseOpen=open=>{courseToggle.setAttribute('aria-expanded',String(open));courseLinks.hidden=!open;courseToggle.parentElement.classList.toggle('is-open',open);};
@@ -19,16 +30,22 @@
   return '操作未完成，請檢查輸入資料與網路後重試。';
  }
  async function busy(form,work){const button=form.querySelector('button[type=submit]');message('');button.disabled=true;try{await work();}catch(error){message(operationError(error));}finally{button.disabled=false;}}
- function application(form){const data=new FormData(form);const courses=data.getAll('courses');if(!courses.length)throw new Error('course required');return {full_name:String(data.get('name')).trim(),phone:String(data.get('phone')).replace(/[ ()-]/g,''),courses,consent_version:'2026-10-28'};}
+ function application(form){const data=new FormData(form);const courses=data.getAll('courses');if(!courses.length)throw new Error('course required');return {full_name:String(data.get('name')).trim(),phone:String(data.get('phone')).replace(/[ ()-]/g,''),courses,consent_version:'2026-10-28',...(form.id==='register-form'?{newsletter_consent_version:'2026-10-29'}:{})};}
  async function refresh(){
   $('student-content').hidden=true;
   const access=await status();
   message('');
+  const unlocked=!!access?.allowed&&!recovery;
+  $('student-introduction').hidden=unlocked;
+  $('student-entry').hidden=unlocked;
+  $('tools-review-link').hidden=!access?.admin;
+  for(const id of newsletterButtons)$(id).hidden=true;
   $('signed-in').hidden=!access;
   if(!access){$('auth-tabs').hidden=false;mode('login');return;}
   $('auth-tabs').hidden=true;
   for(const panel of document.querySelectorAll('[data-auth-panel]'))panel.hidden=true;
   $('review-link').hidden=!access.admin;
+  updateNewsletterControls().catch(()=>newsletterMessage('訂閱狀態暫時無法載入，請稍後重新整理。'));
   if(recovery){$('reset-form').hidden=false;message('請設定新密碼。');return;}
   if(access.status==='service_pending'){$('access-status').textContent=access.verified?'信箱驗證已完成，帳戶登入成功。學員審核服務尚未啟用，目前暫時無法送審或購買；請保留原帳戶，無需重複註冊。':'帳戶登入成功，請先完成信箱驗證。學員審核服務尚未啟用。';return;}
   if(access.allowed){$('student-content').hidden=false;$('access-status').textContent='已通過學員資格審核';sessionStorage.setItem('hana_student_tools_unlocked','true');if(next().includes('/materials/'))location.replace(next());}

@@ -15,7 +15,7 @@ jobs:
           node-version: '24'
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs tests/student-notifications.test.cjs tests/student-mail.test.cjs tests/student-shop-access.test.cjs tests/student-portal-feedback.test.cjs
+      - run: node --test tests/student-access.test.cjs tests/pricing.test.cjs tests/student-auth.test.cjs tests/student-notifications.test.cjs tests/student-mail.test.cjs tests/student-shop-access.test.cjs tests/student-portal-feedback.test.cjs tests/student-newsletter.test.cjs
       - run: |
           node --check assets/student-auth.js
           node --check assets/student-portal.js
