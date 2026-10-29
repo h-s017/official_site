@@ -56,7 +56,21 @@
  $('login-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{const form=e.target;await check(await db.auth.signInWithPassword({email:form.elements.email.value.trim(),password:form.elements.password.value}));form.elements.password.value='';await refresh();});};
  $('register-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{const form=e.target;if(form.elements.password.value!==form.elements.confirm.value){message('兩次輸入的密碼不一致。');return;}if(!form.querySelector('[name=courses]:checked')){message('請至少選擇一項曾上過的課程。');return;}const profile=application(form);await check(await db.auth.signUp({email:form.elements.email.value.trim(),password:form.elements.password.value,options:{emailRedirectTo:redirect,data:{student_application:profile}}}));form.reset();mode('login');message('若資料可受理，驗證信將寄到你的 Email。請先驗證信箱，再回來登入查看審核進度。已有帳戶請使用登入或忘記密碼。');});};
  $('complete-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{if(!e.target.querySelector('[name=courses]:checked')){message('請選擇曾上過的課程。');return;}const a=application(e.target);await check(await db.rpc('student_apply',{p_name:a.full_name,p_phone:a.phone,p_courses:a.courses,p_consent:a.consent_version}));e.target.reset();await refresh();});};
- $('forgot-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{await check(await db.auth.resetPasswordForEmail(e.target.elements.email.value.trim(),{redirectTo:redirect}));message('');});};
+ let resetSending=false,resetRetryAt=0;
+ function resetEmailButton(){
+  const button=$('forgot-form').querySelector('button[type=submit]');
+  const remaining=Math.max(0,Math.ceil((resetRetryAt-Date.now())/1000));
+  button.disabled=resetSending||remaining>0;
+  button.textContent=resetSending?'寄送中…':remaining?'稍後重寄（'+remaining+' 秒）':'寄送密碼重設信';
+  if(remaining>0)setTimeout(resetEmailButton,1000);
+ }
+ $('forgot-form').onsubmit=async e=>{
+  e.preventDefault();if(resetSending||Date.now()<resetRetryAt)return;
+  resetSending=true;message('');resetEmailButton();$('reset-email-message').textContent='寄送中…';
+  try{await check(await db.auth.resetPasswordForEmail(e.target.elements.email.value.trim(),{redirectTo:redirect}));$('reset-email-message').textContent='已寄送，請收信。';resetRetryAt=Date.now()+60000;}
+  catch(error){$('reset-email-message').textContent=operationError(error);if(error?.status===429)resetRetryAt=Date.now()+60000;}
+  finally{resetSending=false;resetEmailButton();}
+ };
  $('reset-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{const form=e.target;if(form.elements.password.value!==form.elements.confirm.value){message('兩次輸入的密碼不一致。');return;}await check(await db.auth.updateUser({password:form.elements.password.value}));form.reset();recovery=false;await db.auth.signOut({scope:'global'});await refresh();message('密碼已更新，請用新密碼重新登入。');});};
  $('student-logout').onclick=logout;$('lock-tools').onclick=logout;
  $('refresh-status').onclick=()=>refresh().catch(()=>message('無法取得最新資格，請稍後重試。'));
