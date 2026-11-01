@@ -1,13 +1,13 @@
-const CACHE_NAME = 'hana-student-organ-ifra-20261102';
+const CACHE_NAME = 'hana-student-organ-ifra-20261102b';
 const APP_ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './config.js',
-  './formula.css?v=20261102',
-  './formula-engine.js?v=20261102',
-  './formula-ui.js?v=20261102',
-  './safety-data.js?v=20261102'
+  './formula.css?v=20261102b',
+  './formula-engine.js?v=20261102b',
+  './formula-ui.js?v=20261102b',
+  './safety-data.js?v=20261102b'
 ];
 
 self.addEventListener('install', event => {

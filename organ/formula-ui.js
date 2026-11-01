@@ -53,11 +53,24 @@ function renderFormulaCalculation() {
     cell.innerHTML = result.active ? `<span class="safety-badge ${s?.level || 'review'}">${esc(s?.label || (result.errors.length?'待補資料':'待計算'))}</span><div class="safety-numbers">${esc(detail)}</div>` : '—';
   });
   const warning = document.getElementById('mixWarn');
-  warning.classList.toggle('show',calculation.errors.length > 0);
-  warning.textContent = calculation.errors.join('；');
+  const hasInput = rows.some(row => String(row.materialId || '').trim() || String(row.amount ?? '').trim());
+  const hasErrors = hasInput && calculation.errors.length > 0;
+  warning.classList.toggle('show',hasErrors);
+  warning.textContent = hasErrors ? calculation.errors.join('；') : '';
   const summary = document.getElementById('safetySummary');
+  summary.hidden = hasErrors;
   summary.className = 'safety-summary '+calculation.summary.level;
-  summary.innerHTML = `<div class="safety-title">${esc(calculation.summary.title)}</div><div class="safety-detail">${esc(HanaFormula.categories[calculation.category] || '尚未選擇類別')} · 已檢核 ${calculation.summary.checked} 項原料 · 超量／禁用 ${calculation.summary.over} · 接近上限 ${calculation.summary.near} · 待複核 ${calculation.summary.review}<br>初篩以成品重量百分比比較；複配共用受限成分仍待成分資料複核。</div>`;
+  if (!hasInput) {
+    summary.innerHTML = '<div class="safety-title">加入原料後顯示 IFRA 檢核</div>';
+  } else if (!HanaFormula.categories[calculation.category]) {
+    summary.innerHTML = '<div class="safety-title">請選擇產品類別</div>';
+  } else {
+    const detail = [HanaFormula.categories[calculation.category],`已檢核 ${calculation.summary.checked} 項`,
+      calculation.summary.over ? `超量／禁用 ${calculation.summary.over}` : '',
+      calculation.summary.near ? `接近上限 ${calculation.summary.near}` : '',
+      calculation.summary.review ? `待複核 ${calculation.summary.review}` : ''].filter(Boolean).join(' · ');
+    summary.innerHTML = `<div class="safety-title">${esc(calculation.summary.title)}</div><div class="safety-detail">${esc(detail)}</div>`;
+  }
   document.getElementById('totalG').textContent = g(calculation.stockTotalG);
   document.getElementById('totalSolventG').textContent = calculation.feasible ? g(Math.max(0,calculation.solventG)) : '—';
   document.getElementById('totalCapacity').textContent = g(calculation.mass);
