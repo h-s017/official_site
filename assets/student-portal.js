@@ -54,7 +54,7 @@
   $('tools-review-link').hidden=!access?.admin;
   for(const id of newsletterButtons)$(id).hidden=true;
   $('signed-in').hidden=!access;
-  if(!access){$('auth-tabs').hidden=false;mode('login');return;}
+  if(!access){$('auth-tabs').hidden=false;mode(new URLSearchParams(location.search).get('apply')==='1'?'register':'login');return;}
   $('auth-tabs').hidden=true;
   for(const panel of document.querySelectorAll('[data-auth-panel]'))panel.hidden=true;
   $('review-link').hidden=!access.admin;
