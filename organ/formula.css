@@ -1,0 +1,14 @@
+.calculation-guide{border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-bottom:14px;font-size:13px;background:var(--soft)}
+.calculation-guide summary{cursor:pointer;font-weight:600}.calculation-guide p{margin:8px 0}
+.safety-summary{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:14px;background:var(--soft)}
+.safety-title{font-weight:600}.safety-detail,.safety-note{font-size:12px;line-height:1.7;color:var(--muted);overflow-wrap:anywhere}
+.safety-summary.ok{background:#f1f7f2;border-color:#afc7b4}.safety-summary.over{background:#fff1ee;border-color:#df9d91}
+.safety-summary.near,.safety-summary.review{background:#fff8e8;border-color:#e3c77f}
+.safety-badge{display:inline-block;border-radius:8px;padding:3px 7px;font-size:12px;background:var(--soft);white-space:nowrap}
+.safety-badge.ok{background:#e5f1e7;color:#31543a}.safety-badge.near,.safety-badge.review{background:#fff0c8;color:#765a20}.safety-badge.over{background:#f8d9d3;color:#8a3428}
+.safety-cell{min-width:185px}.safety-numbers{font-size:12px;line-height:1.6;color:var(--muted);margin-top:5px}
+.conversion-label{font-size:11px;color:var(--muted);display:block}.r-conversion{width:100px}.totals{grid-template-columns:repeat(4,minmax(0,1fr))}
+.safety-fields{padding:12px;background:var(--soft);border:1px solid var(--line);border-radius:12px;display:grid;gap:10px}.safety-fields input,.safety-fields select{width:100%;min-width:0}
+input[readonly],select:disabled{background:var(--soft);color:var(--muted)}
+.table-wrap:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:780px){.totals{grid-template-columns:1fr 1fr}.top-actions{justify-content:flex-end}.formula-manager select{min-width:0;max-width:100%}.formula-manager-left{max-width:100%}.recipe-card{padding:12px}.header{position:relative}.tabs{top:0}.safety-fields{grid-template-columns:1fr}}
