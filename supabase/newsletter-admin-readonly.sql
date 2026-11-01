@@ -19,7 +19,7 @@ begin
     raise exception 'Invalid newsletter list filter' using errcode='22023';
   end if;
   with filtered as (
-    select id,name,email,source,interests,created_at,consent_at
+    select id,name,email,source,created_at
     from public.email_subscribers
     where (q='' or position(q in lower(name))>0 or position(q in lower(email))>0)
       and (src='' or source=src)
@@ -30,7 +30,9 @@ begin
   select jsonb_build_object(
     'total',(select count(*) from filtered),
     'offset',p_offset,'limit',p_limit,
-    'items',coalesce((select jsonb_agg(to_jsonb(p) order by p.created_at desc,p.id desc) from page p),'[]'::jsonb)
+    'items',coalesce((select jsonb_agg(
+      jsonb_build_object('name',p.name,'email',p.email,'source',p.source,'created_at',p.created_at)
+      order by p.created_at desc,p.id desc) from page p),'[]'::jsonb)
   ) into result;
   return result;
 end $$;
