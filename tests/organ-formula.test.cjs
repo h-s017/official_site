@@ -124,3 +124,12 @@ test('each formula export computes its own metadata, totals and results without 
   assert.equal(a.totals.perfumeCapacityG,10);near(a.totals.targetFragranceG,2);assert.equal(a.ifra.over,1);
   assert.equal(b.productCategory,'cat9');assert.equal(b.totals.perfumeCapacityG,30);near(b.totals.targetFragranceG,.15);assert.equal(b.ifra.over,0);
 });
+test('import preserves explicit zeros and low concentrations instead of substituting defaults',()=>{
+  const html=fs.readFileSync('organ/index.html','utf8');
+  const c={emptyFormulaData:()=>({}),uid:()=> 'imported',todayISO:()=> '2026-11-02'};
+  vm.createContext(c);
+  for(const name of ['importedRowFromPayload','importedFormulaFromPayload'])vm.runInContext(html.match(new RegExp('^function '+name+'.*$','m'))[0],c);
+  const imported=c.importedFormulaFromPayload({perfumeCapacity:0,perfumeConcentration:'0.1%',formula:[{materialId:1033,amount:0,concentration:'1%',unit:'g'}]});
+  assert.equal(imported.perfumeCapacity,'0');assert.equal(imported.perfumeConcentration,'0.1%');
+  assert.equal(imported.rows[0].amount,'0');assert.equal(imported.rows[0].concentration,'1%');
+});
