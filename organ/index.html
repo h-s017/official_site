@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>調香台 Organ｜Student App</title>
-<meta name="app-version" content="2026-11-02-student-ifra" />
+<meta name="app-version" content="2026-11-02-student-ifra-brief" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
 .warn{display:none;background:#fff7e8;border:1px solid #e9c986;color:#80602a;padding:10px 12px;border-radius:14px;margin-bottom:12px} .warn.show{display:block} .submit-msg{margin-left:10px;color:var(--muted);font-size:13px}
 @media(max-width:780px){.header{padding:14px 16px}.brand{font-size:22px}.tabs{top:66px;padding:0 10px}.panel{padding:16px}.recipe-top{grid-template-columns:1fr}.totals{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.section-title{font-size:26px}}
 </style>
-<link rel="stylesheet" href="formula.css?v=20261102">
+<link rel="stylesheet" href="formula.css?v=20261102b">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#374151">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,20 +70,20 @@
       <div class="fg"><label>備註</label><input id="quickNote" placeholder="例如：第一次試作"></div>
       <div class="fg full"><label>香水設計敘述</label><textarea id="designNote" placeholder="描述這款香水的設計概念、情感氛圍、靈感來源、目標香調方向…"></textarea></div>
     </div>
-    <details class="calculation-guide"><summary>單位與百分比怎麼填？</summary><p>先用「用量」記錄試配比例，系統再依成品總重量與目標原料濃度換算需秤量。所有百分比均為重量百分比；1、1%、1％ 都表示 1%，0.1 表示 0.1%。</p><p>原料稀釋濃度：CW 原裝香基未再稀釋請填 100%；自行配成 10% w/w 稀釋液則填 10%。此處的「原料」指供應商販售產品，不代表其中香氣分子的化學純度。配方原料佔比會先扣除自行添加的溶劑，再合計為 100%。</p><p>mL 須填該稀釋液的密度（g/mL）；滴數須填同一滴管實測的每滴重量（g/滴）。缺少換算值時暫停重量與 IFRA 判定。補加基底量＝成品總重量－所有需秤原料／稀釋液；基底須依產品選擇。</p></details>
+    <details class="calculation-guide"><summary>原料百分比怎麼填？</summary><p><strong>CW 香基：</strong>原裝未再稀釋填 100%；稀釋後填實際濃度。</p><p><strong>單體：</strong>純品填 100%；稀釋液填實際濃度，例如 10%。</p><small>以上均為重量百分比（% w/w）。</small></details>
     <div class="warn" id="mixWarn" role="status"></div>
     <div id="safetySummary" class="safety-summary neutral" role="status" aria-live="polite"></div>
     <div class="table-wrap" tabindex="0" aria-label="配方表，可左右捲動"><table><thead><tr><th>#</th><th class="name-col">原料</th><th>原料稀釋濃度 % w/w</th><th>試配用量</th><th>單位</th><th>重量換算</th><th>配方原料佔比 %</th><th>原料／稀釋液需秤 g</th><th>成品原料 % w/w</th><th>IFRA 初篩</th><th class="reason-col">選用原因</th><th></th></tr></thead><tbody id="formulaRows"></tbody></table></div>
     <div class="totals"><div class="total-box"><div class="total-label">原料／稀釋液需秤總量</div><div class="total-val" id="totalG">—</div></div><div class="total-box"><div class="total-label">補加基底量</div><div class="total-val" id="totalSolventG">—</div></div><div class="total-box"><div class="total-label">成品總重量</div><div class="total-val" id="totalCapacity">—</div></div><div class="total-box"><div class="total-label">目標原料量（不含自行稀釋溶劑）</div><div class="total-val" id="totalFragranceG">—</div></div></div>
-    <p class="safety-note">依 CW IFRA 51st 已建檔數值初篩（2026/09 資料）。不同香基可能含相同受限成分；逐項未超限仍需供應商成分資料複核複配總量。此工具不核發符合性證明。<a href="https://github.com/h-s017/myorgan/blob/bef316cd4b4c3cca452893b21d170eb45521e0ad/safety-data.js" target="_blank" rel="noopener">資料來源</a> · <a href="https://ifrafragrance.org/understanding-standards" target="_blank" rel="noopener">IFRA 標準說明</a></p>
+    <p class="safety-note">CW IFRA 51st（2026/09）初篩；複配共用受限成分仍需複核。<a href="https://github.com/h-s017/myorgan/blob/bef316cd4b4c3cca452893b21d170eb45521e0ad/safety-data.js" target="_blank" rel="noopener">資料來源</a> · <a href="https://ifrafragrance.org/understanding-standards" target="_blank" rel="noopener">IFRA 標準說明</a></p>
     <div><button class="btn" onclick="saveFormula()">儲存在本機</button> <button class="btn" onclick="downloadFormula()">下載 JSON</button> <button class="btn" onclick="document.getElementById('jsonUpload').click()">上傳 JSON</button> <input class="hidden-file" id="jsonUpload" type="file" accept="application/json,.json" onchange="importFormulaFile(event)"> <button class="btn dark" onclick="submitFormula()">送出給 Hana 老師</button><span class="submit-msg" id="submitMsg"></span></div>
   </div>
 </section>
 <div class="drawer-bg" id="drawerBg" onclick="drawerBackdrop(event)"><aside class="drawer"><div class="drawer-top"><div><div class="drawer-title" id="drawerTitle">—</div><div class="drawer-sub" id="drawerSub">—</div></div><button class="btn" onclick="closeDrawer()">關閉</button></div><div id="drawerContent"></div></aside></div>
 <script src="config.js"></script>
-<script src="safety-data.js?v=20261102"></script>
-<script src="formula-engine.js?v=20261102"></script>
-<script src="formula-ui.js?v=20261102"></script>
+<script src="safety-data.js?v=20261102b"></script>
+<script src="formula-engine.js?v=20261102b"></script>
+<script src="formula-ui.js?v=20261102b"></script>
 <script>
 const SUBMIT_FALLBACK='https://script.google.com/macros/s/AKfycbyue9QbgwV5xQQljLo6LiSzfP_rXsHL2mia72_WACBN89LA1X1sTDrYTG1WpAcQ5mooCg/exec';
 const BASES_80=[
