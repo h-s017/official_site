@@ -1,0 +1,34 @@
+name: Sync Organ safety data from My Organ
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout official site
+        uses: actions/checkout@v4
+
+      - name: Pull master safety data
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/h-s017/myorgan/main/safety-data.js \
+            --output organ/safety-data.js
+
+      - name: Commit only when changed
+        run: |
+          if git diff --quiet -- organ/safety-data.js; then
+            echo "No safety data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add organ/safety-data.js
+          git commit -m "Sync Organ safety data from myorgan"
+          git push
