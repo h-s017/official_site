@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>調香台 Organ｜Student App</title>
-<meta name="app-version" content="2026-11-02-student-ifra-brief" />
+<title>HANA 調香台 Organ｜Student</title>
+<meta name="app-version" content="2026-11-04-student-unified" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,10 +43,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-<header class="header"><div class="brand"><a href="https://www.hanascent.com/" target="_blank" rel="noopener">調香台 Organ<small>by Hana</small></a></div><div class="top-actions"><span class="pill" id="countBadge">0 種原料</span><button class="btn" id="installAppBtn" onclick="installApp()">下載成 App</button><button class="btn gold" onclick="openNewMaterial()">＋ 新增原料</button></div></header>
+<header class="header"><div class="brand"><a href="https://www.hanascent.com/" target="_blank" rel="noopener">調香台 Organ<small>HANA SCENT ARTIST · STUDENT</small></a></div><div class="top-actions"><span class="pill">STUDENT</span><span class="pill" id="countBadge">0 種原料</span><button class="btn" id="installAppBtn" onclick="installApp()">下載成 App</button><button class="btn gold" onclick="openNewMaterial()">＋ 新增原料</button></div></header>
 <nav class="tabs"><button class="tab active" onclick="switchTab('library')">單體／香基庫</button><button class="tab" onclick="switchTab('formula')">調香配方表</button></nav>
 <section class="panel active" id="panel-library">
-  <div class="toolbar-head"><div><div class="section-title">單體／香基庫</div><div class="section-sub">以 CW 販售的 KPIA 80 種香基為基準；單體由學員自行新增，並可記錄 IFRA 上限與文件來源。</div></div><button class="btn" onclick="toggleToolbar()">收合／展開搜尋</button></div>
+  <div class="toolbar-head"><div><div class="section-title">單體／香基庫</div><div class="section-sub">學生版：以 CW / KPIA 80 種香基為基準；IFRA 安全規則由 My Organ 主資料同步。單體可自行新增，未建檔資料維持待複核。</div></div><button class="btn" onclick="toggleToolbar()">收合／展開搜尋</button></div>
   <div class="toolbar" id="toolbar"><div class="search"><input id="searchInput" placeholder="搜尋英文、中文、香調、CAS…" oninput="renderLibrary()"></div><select id="scentFilter" onchange="renderLibrary()" style="min-width:150px" aria-label="香調篩選"><option value="">全部香調</option></select><button class="chip active" data-note="" onclick="setNoteFilter(this)">全部</button><button class="chip" data-note="Top" onclick="setNoteFilter(this)">Top</button><button class="chip" data-note="Middle" onclick="setNoteFilter(this)">Middle</button><button class="chip" data-note="Base" onclick="setNoteFilter(this)">Base</button><button class="chip" data-kind="香基" onclick="setKindFilter(this)">香基</button><button class="chip" onclick="sortMaterials()">英文 A–Z</button></div>
   <div class="grid" id="materialGrid"></div>
 </section>
@@ -75,7 +75,7 @@
     <div id="safetySummary" class="safety-summary neutral" role="status" aria-live="polite"></div>
     <div class="table-wrap" tabindex="0" aria-label="配方表，可左右捲動"><table><thead><tr><th>#</th><th class="name-col">原料</th><th>原料稀釋濃度 % w/w</th><th>試配用量</th><th>單位</th><th>重量換算</th><th>配方原料佔比 %</th><th>原料／稀釋液需秤 g</th><th>成品原料 % w/w</th><th>IFRA 初篩</th><th class="reason-col">選用原因</th><th></th></tr></thead><tbody id="formulaRows"></tbody></table></div>
     <div class="totals"><div class="total-box"><div class="total-label">原料／稀釋液需秤總量</div><div class="total-val" id="totalG">—</div></div><div class="total-box"><div class="total-label">補加基底量</div><div class="total-val" id="totalSolventG">—</div></div><div class="total-box"><div class="total-label">成品總重量</div><div class="total-val" id="totalCapacity">—</div></div><div class="total-box"><div class="total-label">目標原料量（不含自行稀釋溶劑）</div><div class="total-val" id="totalFragranceG">—</div></div></div>
-    <p class="safety-note">CW IFRA 51st（2026/09）初篩；複配共用受限成分仍需複核。<a href="https://github.com/h-s017/myorgan/blob/bef316cd4b4c3cca452893b21d170eb45521e0ad/safety-data.js" target="_blank" rel="noopener">資料來源</a> · <a href="https://ifrafragrance.org/understanding-standards" target="_blank" rel="noopener">IFRA 標準說明</a></p>
+    <p class="safety-note">CW IFRA 51st（2026/09）初篩；複配共用受限成分仍需複核。<a href="https://github.com/h-s017/myorgan/blob/main/safety-data.js" target="_blank" rel="noopener">資料來源</a> · <a href="https://ifrafragrance.org/understanding-standards" target="_blank" rel="noopener">IFRA 標準說明</a></p>
     <div><button class="btn" onclick="saveFormula()">儲存在本機</button> <button class="btn" onclick="downloadFormula()">下載 JSON</button> <button class="btn" onclick="document.getElementById('jsonUpload').click()">上傳 JSON</button> <input class="hidden-file" id="jsonUpload" type="file" accept="application/json,.json" onchange="importFormulaFile(event)"> <button class="btn dark" onclick="submitFormula()">送出給 Hana 老師</button><span class="submit-msg" id="submitMsg"></span></div>
   </div>
 </section>
