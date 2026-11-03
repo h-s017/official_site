@@ -98,4 +98,4 @@ window.HFUGUE_SAFETY_DATA.materialNames={
   "1079": "Coffee",
   "1080": "Moss"
 };
-window.HFUGUE_SAFETY_DATA.provenance={repository:"https://github.com/h-s017/myorgan/blob/main/safety-data.js",commit:"bef316cd4b4c3cca452893b21d170eb45521e0ad",reviewed:"2026-09",amendment:"51st",scope:"CW Perfumery Atlas / KPIA 80"};
+window.HFUGUE_SAFETY_DATA.provenance={repository:"https://github.com/h-s017/myorgan/blob/main/safety-data.js",commit:"main",reviewed:"2026-09",amendment:"51st",scope:"CW Perfumery Atlas / KPIA 80"};
