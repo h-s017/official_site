@@ -289,6 +289,7 @@
     }
   </style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
+  <link rel="stylesheet" href="/assets/home-layout.css?v=1">
 </head>
 <body data-hana-page="home" data-hana-intro="optional">
   <dialog class="intro-screen" id="intro-screen" aria-label="HANA SCENT ARTIST 藝術影像">
@@ -325,7 +326,7 @@
   <main>
 
 
-    <section class="entrance-editorial" aria-labelledby="entrance-title">
+    <section data-hana-section="entrances" class="entrance-editorial" aria-labelledby="entrance-title">
       <div class="wrap">
         <div class="entrance-editorial-head">
           <p class="kicker">Explore</p>
@@ -364,7 +365,7 @@
       </div>
     </section>
 
-    <section class="home-news" data-hana-announcements data-hana-announcements-limit="3" data-news-layout="list" data-hana-announcements-months="2">
+    <section data-hana-section="news" class="home-news" data-hana-announcements data-hana-announcements-limit="3" data-news-layout="list" data-hana-announcements-months="2">
       <div class="wrap">
         <div class="section-head"><p class="kicker">News</p><div><h2>最新消息</h2></div></div>
         <div class="news-list" aria-live="polite">
@@ -377,7 +378,7 @@
       </div>
     </section>
 
-    <section class="home-about" id="about-hana">
+    <section data-hana-section="about" class="home-about" id="about-hana">
       <div class="wrap">
         <div class="split home-about-intro">
           <div><p class="kicker">About Hana</p><h2>氣味，不只是好聞，而是能被記住的語言。</h2></div>
@@ -423,6 +424,8 @@
   <script src="/assets/cms-config.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="/assets/hana-cms.js?v=news-title-alpha-v3"></script>
+  <script defer src="/assets/home-layout-model.js?v=1"></script>
+  <script defer src="/assets/home-layout.js?v=1"></script>
   <script src="/assets/optional-intro.js?v=charcoal-lace"></script>
 </body>
 </html>
