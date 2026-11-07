@@ -6,7 +6,7 @@
   let descriptor = null, pendingRecord = null, generation = 0;
   const isHome = () => activePage.path === '/';
   const model = {
-    normalize: value => isHome() ? homeModel.normalize(value) : pageModel.normalize(value, descriptor || {}),
+    normalize: value => isHome() ? homeModel.normalize(value, descriptor || undefined) : pageModel.normalize(value, descriptor || {}),
     validateImage: homeModel.validateImage, imageUrl: homeModel.imageUrl,
     get builtins() { return isHome() ? homeModel.builtins : descriptor?.sections || []; }
   };
@@ -17,6 +17,17 @@
   let previewReady = false;
   const status = (message, error = false) => { $('#status').textContent = message; $('#status').classList.toggle('error', error); };
   const name = id => id === 'hero' ? (isHome() ? '首頁主視覺' : '頁首主視覺') : model.builtins.find(b => b.id === id)?.name || '自訂圖文區塊';
+  const fieldsOf = id => (id === 'hero' ? descriptor?.hero : descriptor?.sections?.find(x => x.id === id))?.fields || [];
+  const fieldsHtml = block => {
+    const fields = fieldsOf(block.id);
+    if (!fields.length) return '';
+    return `<details class="copy-editor" open><summary>文字與按鈕（${fields.length}）</summary><input type="search" data-copy-search placeholder="搜尋這個區塊的文字" aria-label="搜尋區塊文字"><div class="copy-list">${fields.map(field => {
+      const value = Object.hasOwn(block.copy || {}, field.id) ? block.copy[field.id] : field.value;
+      const attrs = `data-copy-field="${esc(field.id)}" data-copy-kind="${field.kind}" maxlength="10000"`;
+      const input = field.kind === 'text' ? `<textarea ${attrs} rows="${['P','LI','TD','DD'].includes(field.tag) ? 3 : 2}">${esc(value)}</textarea>` : `<input ${attrs} value="${esc(value)}">`;
+      return `<div class="copy-field" data-copy-match="${esc((field.label + ' ' + value).toLowerCase())}"><label>${esc(field.label)}${input}</label><button type="button" data-action="restore-copy" data-copy-id="${esc(field.id)}">${field.kind === 'href' ? '還原原始連結' : field.kind === 'placeholder' ? '還原原始提示' : '還原原始文字'}</button></div>`;
+    }).join('')}</div></details>`;
+  };
   const items = () => [state.hero, ...state.sections].filter(Boolean);
   function buttons() {
     $('#page-select').disabled = busy;
@@ -32,7 +43,7 @@
       <summary>${esc(name(b.id))}<span>${b.id === 'hero' ? '固定頁首' : b.visible ? '顯示' : '已隱藏'}</span></summary>
       <div class="block-body">${b.id !== 'hero' ? `<div class="block-actions"><button type="button" data-action="up" data-unavailable="${index === (state.hero ? 1 : 0)}">上移</button><button type="button" data-action="down" data-unavailable="${index === items().length - 1}">下移</button>${b.id.startsWith('custom-') ? '<button type="button" data-action="delete">刪除區塊</button>' : ''}</div><label class="check"><input type="checkbox" data-field="visible" ${b.visible ? 'checked' : ''}>顯示這個區塊</label><label>圖文排列<select data-field="layout">${[['original', '原有版面'], ['left', '左圖右文'], ['right', '右圖左文'], ['top', '上圖下文']].map(([v, l]) => `<option value="${v}" ${b.layout === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>` : ''}
       ${b.id.startsWith('custom-') ? `<label>標題<input data-field="title" maxlength="160" value="${esc(b.title)}"></label><label>內容<textarea data-field="body" maxlength="5000" rows="5">${esc(b.body)}</textarea></label><label>按鈕文字<input data-field="label" maxlength="80" value="${esc(b.label)}"></label><label>按鈕連結<input data-field="link" value="${esc(b.link)}" placeholder="https:// 或 /頁面路徑"></label>` : ''}
-      ${!isHome() && !b.id.startsWith('custom-') ? `<label>區塊標題<input data-field="title" maxlength="160" value="${esc(b.title)}" placeholder="${esc(name(b.id))}"></label>` : ''}
+      ${fieldsHtml(b)}
       <p class="hint">${isHome() ? '區塊照片' : '新增區塊照片（可搭配圖文排列）'}</p>
       <img class="photo-preview" alt="${esc(name(b.id))}照片預覽" ${b.image ? `src="${esc(b.image)}"` : 'hidden'}>
       <label>上傳照片<input type="file" data-file accept="image/jpeg,image/png,image/webp,image/gif"></label>
@@ -47,7 +58,7 @@
   }
   function openIds() { return [...$('#blocks').querySelectorAll('details[open]')].map(el => el.dataset.id); }
   function completeLoad() {
-    if (!pendingRecord || (!isHome() && !descriptor)) return;
+    if (!pendingRecord || !descriptor) return;
     const data = pendingRecord;
     updatedAt = data.updated_at;
     published = model.normalize(isHome() ? data.home_layout : data.layout);
@@ -74,7 +85,7 @@
     const request = ++generation;
     loaded = false; busy = true; dirty = false; state = null; descriptor = null; pendingRecord = null; previewReady = false;
     $('#blocks').replaceChildren(); buttons(); status(`正在載入「${activePage.name}」…`);
-    $('#preview').src = activePage.path + '?hana-layout-preview=1';
+    $('#preview').src = activePage.path + '?hana-layout-preview=1&copy-editor=2';
     const result = isHome()
       ? await db.from('site_settings').select('*').eq('id', 1).single()
       : await db.from('site_page_layouts').select('layout,updated_at').eq('page_key', activePage.path).single();
@@ -111,10 +122,23 @@
   window.addEventListener('message', e => {
     if (e.origin !== location.origin || e.source !== $('#preview').contentWindow || e.data?.type !== 'hana-layout-ready') return;
     if (isHome() ? !!e.data.path && e.data.path !== '/' : e.data.path !== activePage.path) return;
-    if (!isHome()) descriptor = e.data.descriptor;
+    descriptor = e.data.descriptor;
     previewReady = true; completeLoad(); preview();
   });
   $('#blocks').addEventListener('input', e => {
+    if (e.target.matches('[data-copy-search]')) {
+      const query = e.target.value.toLowerCase();
+      e.target.closest('.copy-editor').querySelectorAll('.copy-field').forEach(field => field.hidden = !field.dataset.copyMatch.includes(query));
+      return;
+    }
+    if (e.target.dataset.copyField && state) {
+      const block = items().find(b => b.id === e.target.closest('[data-id]').dataset.id), value = e.target.value;
+      if (e.target.dataset.copyKind === 'href' && homeModel.linkUrl(value) === null) {
+        e.target.setCustomValidity('請輸入 HTTPS、站內路徑、#錨點、mailto: 或 tel: 連結。'); e.target.reportValidity(); return;
+      }
+      e.target.setCustomValidity(''); block.copy ||= {}; block.copy[e.target.dataset.copyField] = value; block.title = '';
+      changed(); return;
+    }
     const photoField = e.target.dataset.photoField;
     if (photoField && state) {
       const b = items().find(x => x.id === e.target.closest('[data-id]').dataset.id);
@@ -156,7 +180,9 @@
     const action = e.target.closest('[data-action]')?.dataset.action;
     if (!action || busy) return;
     const id = e.target.closest('[data-id]').dataset.id, b = items().find(x => x.id === id), open = openIds();
-    if (action === 'restore-photo') {
+    if (action === 'restore-copy') {
+      delete b.copy[e.target.dataset.copyId]; b.title = '';
+    } else if (action === 'restore-photo') {
       const imageId = e.target.dataset.image;
       const original = (descriptor.hero?.id === id ? descriptor.hero : descriptor.sections.find(x => x.id === id)).images.find(x => x.id === imageId);
       Object.assign(b.images.find(x => x.id === imageId), original, { fit: 'cover', position: 'center' });
@@ -180,7 +206,7 @@
     changed(); render([...openIds(), id]);
   };
   $('#save-draft').onclick = () => {
-    if ($('#blocks').querySelector(':invalid')) return status('請先修正照片或按鈕網址。', true);
+    if ($('#blocks').querySelector(':invalid')) return status('請先修正照片或文字連結的網址。', true);
     try { localStorage.setItem(draftKey, JSON.stringify({ layout: model.normalize(state), updatedAt })); dirty = false; status('草稿已儲存於此裝置，尚未發布。'); }
     catch (_) { status('無法儲存草稿，請確認瀏覽器允許儲存資料。', true); }
   };
@@ -190,7 +216,7 @@
     dirty = false; await loadPage();
   };
   $('#publish').onclick = async () => {
-    if ($('#blocks').querySelector(':invalid')) return status('請先修正照片或按鈕網址。', true);
+    if ($('#blocks').querySelector(':invalid')) return status('請先修正照片或文字連結的網址。', true);
     if (!confirm(`將目前版面與照片發布到「${activePage.name}」？`)) return;
     busy = true; buttons(); status('正在發布…');
     try {

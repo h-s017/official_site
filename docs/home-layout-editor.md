@@ -19,6 +19,14 @@ Each additional page has its own `site_page_layouts` row and version, along with
 
 The preview keeps original form nodes and listeners but blocks link navigation and form submission. Public-page forms keep working normally.
 
+## Page copy editing
+
+All 28 supported pages expose their original block copy in the same editor: headings, paragraphs, lists, button/link labels, link destinations and form placeholders. The editor loads the existing text, supports local search and per-field restoration, and previews changes before publication. Text overrides live inside the existing layout JSON; this release needs no database migration.
+
+The text engine captures the final text nodes after the site's startup typography and homepage copy updates. Applying an override changes only those text nodes or an allowed link/placeholder attribute. It preserves native form elements, entered values, button listeners and existing image/icon nodes. HTML in text fields remains literal text. Blank text is a deliberate override, and executable link schemes are rejected. Field IDs are scoped to the page and block.
+
+Dynamic article and announcement bodies continue to use the existing article/news editors. Their page headings and surrounding static copy can be edited here.
+
 ## Release
 
 Apply `supabase/migrations/20261107180142_home_layout_editor.sql` to `hanascent-cms` before deploying this code. The migration only adds nullable `home_layout` JSON and `hero_image_alt`; it leaves existing published settings and RLS policies unchanged. Existing `can_edit_cms()` and media-upload policies continue to enforce editor authorization.
