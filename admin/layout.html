@@ -2,17 +2,18 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow"><title>首頁版面與照片｜HANA CMS</title>
-  <link rel="stylesheet" href="./layout.css">
+  <meta name="robots" content="noindex,nofollow"><title>網站版面與照片｜HANA CMS</title>
+  <link rel="stylesheet" href="./layout.css?v=all-pages-v1">
 </head>
 <body>
-  <header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1>首頁版面與照片</h1></div><a href="./">回管理中心</a></header>
+  <header class="topbar"><div><p class="eyebrow">HANA SCENT ARTIST</p><h1>網站版面與照片</h1></div><a href="./">回管理中心</a></header>
   <section id="login" class="login"><form id="login-form"><h2>登入官網後台</h2><label>電子郵件<input id="email" type="email" autocomplete="username" required></label><label>密碼<input id="password" type="password" autocomplete="current-password" required></label><button type="submit">登入</button><p id="login-error" role="alert"></p></form></section>
   <main id="editor" hidden>
+    <div class="page-picker"><label for="page-select">選擇編輯頁面</label><select id="page-select"></select></div>
     <div class="toolbar"><p id="status" role="status">正在載入…</p><div class="actions"><button id="save-draft" type="button" disabled>儲存草稿</button><button id="reset" type="button" disabled>還原已發布版面</button><button id="publish" type="button" class="primary" disabled>發布到官網</button><button id="logout" type="button">登出</button></div></div>
     <div class="workspace"><section class="controls" aria-label="區塊編輯"><p class="hint">逐區更換照片、選擇排列方式，再查看右側預覽。照片支援 JPG、PNG、WebP、GIF，單張上限 8 MB。</p><div id="blocks"></div><button id="add-block" type="button" disabled>＋ 新增圖文區塊</button></section>
-      <section class="preview-panel" aria-label="首頁預覽"><div class="preview-toolbar"><h2>即時預覽</h2><button id="desktop" aria-pressed="true" type="button">電腦</button><button id="mobile" aria-pressed="false" type="button">手機</button></div><div class="preview-scroll"><iframe id="preview" title="官網首頁版面預覽"></iframe></div></section></div>
+      <section class="preview-panel" aria-label="頁面預覽"><div class="preview-toolbar"><h2>即時預覽</h2><button id="desktop" aria-pressed="true" type="button">電腦</button><button id="mobile" aria-pressed="false" type="button">手機</button></div><div class="preview-scroll"><iframe id="preview" title="官網頁面版面預覽"></iframe></div></section></div>
   </main>
-  <script src="./config.js"></script><script src="/assets/vendor/supabase-2.118.0.js"></script><script src="/assets/home-layout-model.js"></script><script src="./layout.js"></script>
+  <script src="./config.js"></script><script src="/assets/vendor/supabase-2.118.0.js"></script><script src="/assets/home-layout-model.js"></script><script src="/assets/page-layout-catalog.js?v=1"></script><script src="/assets/page-layout-model.js?v=1"></script><script src="./layout.js?v=all-pages-v1"></script>
 </body>
 </html>
