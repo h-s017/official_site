@@ -44,5 +44,5 @@
   });
   let seen = false;
   try { seen = window.sessionStorage.getItem(sessionKey) === '1'; } catch (_) {}
-  if (!seen) openIntro(true);
+  if (!seen && !(window.parent !== window && new URLSearchParams(location.search).has('hana-layout-preview'))) openIntro(true);
 })();

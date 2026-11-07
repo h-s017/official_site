@@ -1,0 +1,14 @@
+body[data-hana-page="home"] [data-hana-section][hidden]{display:none!important}
+.hana-photo-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;align-items:center}
+.hana-block-photo{margin:0;min-width:0;width:100%}
+.hana-block-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.hana-block-copy{min-width:0;overflow-wrap:anywhere}
+.hana-custom-section{padding:64px 6vw}
+.hana-custom-section p{line-height:1.9}
+.about-profile[data-hana-layout="top"]{grid-template-columns:minmax(0,1fr)!important}
+@media(min-width:761px){
+  .hana-photo-layout[data-hana-layout="left"],.hana-photo-layout[data-hana-layout="right"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hana-photo-layout[data-hana-layout="right"]>.hana-block-photo,.about-profile[data-hana-layout="right"]>.about-portrait{order:2}
+  .hana-photo-layout[data-hana-layout="right"]>.hana-block-copy{order:1}
+}
+@media(max-width:760px){.hana-photo-layout{grid-template-columns:minmax(0,1fr)!important;gap:22px}.hana-custom-section{padding:40px 6vw}}
