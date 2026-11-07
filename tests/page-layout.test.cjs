@@ -7,6 +7,30 @@ const descriptor = { hero: { id: 'hero', images: [] }, sections: [
   { id: 'section-1', images: [{ id: 'image-1', url: '/assets/original.webp', alt: '原圖' }] },
   { id: 'section-2', images: [] }
 ] };
+test('copy overrides retain deliberate empty text and filter unknown targets by page', () => {
+  const home = require('../assets/home-layout-model.js');
+  const fields = [{ id: 'text-title', kind: 'text' }, { id: 'href-book', kind: 'href' }];
+  assert.deepEqual(home.sanitizeCopy({ 'text-title': '', 'text-forged': 'wrong page', 'href-book': '/courses/' }, fields), { 'text-title': '', 'href-book': '/courses/' });
+});
+test('text stays plain text while link fields reject executable schemes and control characters', () => {
+  const home = require('../assets/home-layout-model.js');
+  const fields = [{ id: 'text-body', kind: 'text' }, { id: 'href-link', kind: 'href' }];
+  assert.equal(home.sanitizeCopy({ 'text-body': '<script>literal</script>\n第二行', 'href-link': 'javascript:alert(1)' }, fields)['text-body'], '<script>literal</script>\n第二行');
+  for (const v of ['javascript:alert(1)', 'data:text/html,test', '//example.com', '/\\example.com', 'mailto:a@example.com\nBcc:test']) assert.equal(home.linkUrl(v), null);
+  for (const v of ['/courses/', '#schedule', 'https://example.com/', 'mailto:a@example.com', 'tel:+886-2-12345678', '']) assert.equal(home.linkUrl(v), v);
+});
+test('legacy headings migrate into registered text fields without losing newer edits', () => {
+  const desc = { sections: [{ id: 'section-1', fields: [{ id: 'text-heading', kind: 'text', heading: true }] }] };
+  assert.equal(model.normalize({ sections: [{ id: 'section-1', title: '舊版標題' }] }, desc).sections[0].copy['text-heading'], '舊版標題');
+  assert.equal(model.normalize({ sections: [{ id: 'section-1', title: '舊版標題', copy: { 'text-heading': '新版標題' } }] }, desc).sections[0].copy['text-heading'], '新版標題');
+});
+test('homepage hero and built-in sections keep their own registered copy overrides', () => {
+  const home = require('../assets/home-layout-model.js');
+  const desc = { hero: { fields: [{ id: 'text-hero', kind: 'text' }] }, sections: [{ id: 'about', fields: [{ id: 'text-about', kind: 'text' }] }] };
+  const value = home.normalize({ hero: { copy: { 'text-hero': '首頁文案' } }, sections: [{ id: 'about', copy: { 'text-about': '老師介紹', 'text-hero': 'wrong section' } }] }, desc);
+  assert.equal(value.hero.copy['text-hero'], '首頁文案');
+  assert.deepEqual(value.sections[0].copy, { 'text-about': '老師介紹' });
+});
 test('all canonical public pages have a renderer and a unique catalog entry', () => {
   assert.equal(pages.length, 28);
   assert.equal(new Set(pages.map(p => p.path)).size, pages.length);

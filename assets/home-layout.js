@@ -2,10 +2,10 @@
   'use strict';
   if (document.body.dataset.hanaPage !== 'home') return;
   const model = window.HanaHomeLayout;
-  if (!model) return;
+  if (!model || !window.HanaLayoutText) return;
   const main = document.querySelector('main');
   const preview = window.parent !== window && new URLSearchParams(location.search).has('hana-layout-preview');
-  let originals, contents, heroOriginal, portraitOriginal, settings = {}, ready = false, pending;
+  let originals, contents, heroOriginal, portraitOriginal, descriptor, copyBindings, settings = {}, ready = false, pending;
   const imageAttributes = ['src', 'srcset', 'sizes', 'alt', 'style'];
   function restoreImage(image, original) {
     for (const key of imageAttributes) {
@@ -30,9 +30,10 @@
   }
   function apply(input) {
     if (!ready) { pending = input; return; }
-    const config = model.normalize(input);
+    const config = model.normalize(input, descriptor);
     const hero = document.querySelector('[data-hana-hero-image]');
     restoreImage(hero, heroOriginal); setImage(hero, config.hero);
+    copyBindings.get('hero').apply(config.hero.copy);
     main.querySelectorAll('[data-hana-section]').forEach(x => x.remove());
     for (const block of config.sections) {
       const original = originals.get(block.id);
@@ -45,6 +46,7 @@
       }
       section.dataset.hanaSection = block.id;
       section.hidden = !block.visible;
+      if (original) copyBindings.get(block.id).apply(block.copy);
       if (!original) { section.className = 'hana-custom-section'; const wrap = document.createElement('div'); wrap.className = 'wrap'; wrap.append(content(block)); section.append(wrap); }
       if (block.id === 'about') {
         const portrait = section.querySelector('.about-portrait img');
@@ -62,18 +64,25 @@
     }
   }
   document.addEventListener('hana:cms-ready', e => {
+    window.HanaLayoutText.ready.then(() => {
     settings = e.detail || {};
     if (!ready) {
       originals = new Map([...main.querySelectorAll('[data-hana-section]')].map(x => [x.dataset.hanaSection, x]));
       contents = new Map([...originals].map(([id, section]) => [id, [...section.querySelector('.wrap').childNodes]]));
       heroOriginal = document.querySelector('[data-hana-hero-image]').cloneNode(true);
-      portraitOriginal = document.querySelector('.about-portrait img').cloneNode(true); ready = true;
+      portraitOriginal = document.querySelector('.about-portrait img').cloneNode(true);
+      copyBindings = new Map([...originals].map(([id, section]) => [id, window.HanaLayoutText.capture(section)]));
+      copyBindings.set('hero', window.HanaLayoutText.capture(document.querySelector('header.hero')));
+      descriptor = { path: '/', hero: { id: 'hero', fields: copyBindings.get('hero').fields }, sections: [...originals].map(([id]) => ({ id, fields: copyBindings.get(id).fields })) };
+      ready = true;
     }
     if (settings.home_layout || pending) apply(pending || settings.home_layout);
-    if (preview) window.parent.postMessage({ type: 'hana-layout-ready' }, location.origin);
+    if (preview) window.parent.postMessage({ type: 'hana-layout-ready', path: '/', descriptor }, location.origin);
+    });
   });
   if (preview) {
     try { sessionStorage.setItem('hana-intro-restored-seen', '1'); } catch (_) {}
+    document.addEventListener('click', event => { if (event.target.closest('a[href]')) { event.preventDefault(); event.stopImmediatePropagation(); } }, true);
     window.addEventListener('message', e => {
       if (e.origin !== location.origin || e.source !== window.parent || e.data?.type !== 'hana-layout-preview') return;
       pending = e.data.layout; apply(pending);

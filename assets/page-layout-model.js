@@ -6,6 +6,9 @@
     const v = value && typeof value === 'object' ? value : {};
     const result = base.normalize({ sections: [{ ...v, id: 'entrances' }] }).sections[0];
     result.id = fallback.id || v.id;
+    result.copy = base.sanitizeCopy(v.copy, fallback.fields);
+    const heading = fallback.fields?.find(f => f.heading);
+    if (heading && v.title && !Object.hasOwn(result.copy, heading.id)) result.copy[heading.id] = text(v.title, 160);
     result.images = (fallback.images || []).map(image => {
       const saved = Array.isArray(v.images) ? v.images.find(x => x?.id === image.id) : null;
       return { id: image.id, url: base.imageUrl(saved?.url || image.url), alt: text(saved?.alt ?? image.alt, 500),
