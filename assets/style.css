@@ -531,15 +531,48 @@ body[data-hana-page="ciyu"] .ciyu-week-block:first-child::after{
   .service-row,.course-card,.lead,.footer-col{overflow-wrap:anywhere;}
 }
 
-/* Footer readability: minimum legible type and contrast on desktop/mobile. */
+/* Footer legibility: apply to both legacy .footer and semantic new footer. */
+footer,
 .footer {
   font-size: 16px;
   line-height: 1.85;
   color: #414141;
 }
-.footer a { color: #373737; }
-.footer b { font-size: 17px; }
+footer a,
+.footer a {
+  color: #373737;
+}
+footer b,
+footer strong,
+.footer b {
+  font-size: 17px;
+}
+footer small,
+footer .footer-bottom,
+footer .footer-legal,
+footer .footer-links,
+footer .footer-nav,
+footer .copyright {
+  font-size: 15px;
+  line-height: 1.8;
+}
 @media (max-width: 760px) {
-  .footer { font-size: 15px; line-height: 1.8; }
-  .footer b { font-size: 16px; }
+  footer,
+  .footer {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  footer b,
+  footer strong,
+  .footer b {
+    font-size: 16px;
+  }
+  footer small,
+  footer .footer-bottom,
+  footer .footer-legal,
+  footer .footer-links,
+  footer .footer-nav,
+  footer .copyright {
+    font-size: 15px;
+  }
 }
