@@ -18,6 +18,12 @@
   const status = (message, error = false) => { $('#status').textContent = message; $('#status').classList.toggle('error', error); };
   const name = id => id === 'hero' ? (isHome() ? '首頁主視覺' : '頁首主視覺') : model.builtins.find(b => b.id === id)?.name || '自訂圖文區塊';
   const fieldsOf = id => (id === 'hero' ? descriptor?.hero : descriptor?.sections?.find(x => x.id === id))?.fields || [];
+  const cardOptions = b => {
+    const groups = descriptor?.cardGroups || [];
+    if (isHome() || !b.id.startsWith('custom-') || !groups.length) return '';
+    const group = groups.find(g => g.id === b.cardGroup) || groups[0];
+    return `<label>區塊格式<select data-field="template"><option value="card" ${b.template === 'card' ? 'selected' : ''}>沿用原有卡片</option><option value="section" ${b.template !== 'card' ? 'selected' : ''}>獨立圖文區塊</option></select></label>${b.template === 'card' ? `<label>放入哪一組卡片<select data-field="cardGroup">${groups.map(g=>`<option value="${esc(g.id)}" ${g.id === group.id ? 'selected' : ''}>${esc(g.name)}</option>`).join('')}</select></label><label>卡片位置<select data-field="cardIndex">${Array.from({ length: group.count + 1 }, (_,i)=>`<option value="${i}" ${b.cardIndex === i ? 'selected' : ''}>${i === group.count ? '放在原有卡片後方' : `放在第 ${i + 1} 張原有卡片前方`}</option>`).join('')}</select></label><label>卡片上方小標<input data-field="eyebrow" maxlength="80" value="${esc(b.eyebrow)}"></label><p class="hint">沿用這組原有卡片的框線、字級、間距與欄數；手機自動直排。所屬區塊隱藏時，卡片也會一起隱藏。</p>` : ''}`;
+  };
   const fieldsHtml = block => {
     const fields = fieldsOf(block.id);
     if (!fields.length) return '';
@@ -42,7 +48,7 @@
     $('#blocks').innerHTML = items().map((b, index) => `<details class="block" data-id="${esc(b.id)}" ${openIds.includes(b.id) ? 'open' : ''}>
       <summary>${esc(name(b.id))}<span>${b.id === 'hero' ? '固定頁首' : b.visible ? '顯示' : '已隱藏'}</span></summary>
       <div class="block-body">${b.id !== 'hero' ? `<div class="block-actions"><button type="button" data-action="up" data-unavailable="${index === (state.hero ? 1 : 0)}">上移</button><button type="button" data-action="down" data-unavailable="${index === items().length - 1}">下移</button>${b.id.startsWith('custom-') ? '<button type="button" data-action="delete">刪除區塊</button>' : ''}</div><label class="check"><input type="checkbox" data-field="visible" ${b.visible ? 'checked' : ''}>顯示這個區塊</label><label>圖文排列<select data-field="layout">${[['original', '原有版面'], ['left', '左圖右文'], ['right', '右圖左文'], ['top', '上圖下文']].map(([v, l]) => `<option value="${v}" ${b.layout === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>` : ''}
-      ${b.id.startsWith('custom-') ? `<label>標題<input data-field="title" maxlength="160" value="${esc(b.title)}"></label><label>內容<textarea data-field="body" maxlength="5000" rows="5">${esc(b.body)}</textarea></label><label>按鈕文字<input data-field="label" maxlength="80" value="${esc(b.label)}"></label><label>按鈕連結<input data-field="link" value="${esc(b.link)}" placeholder="https:// 或 /頁面路徑"></label>` : ''}
+      ${cardOptions(b)}${b.id.startsWith('custom-') ? `<label>標題<input data-field="title" maxlength="160" value="${esc(b.title)}"></label><label>內容<textarea data-field="body" maxlength="5000" rows="5">${esc(b.body)}</textarea></label><label>按鈕文字<input data-field="label" maxlength="80" value="${esc(b.label)}"></label><label>按鈕連結<input data-field="link" value="${esc(b.link)}" placeholder="https:// 或 /頁面路徑"></label>` : ''}
       ${fieldsHtml(b)}
       <p class="hint">${isHome() ? '區塊照片' : '新增區塊照片（可搭配圖文排列）'}</p>
       <img class="photo-preview" alt="${esc(name(b.id))}照片預覽" ${b.image ? `src="${esc(b.image)}"` : 'hidden'}>
@@ -86,7 +92,7 @@
     const request = ++generation;
     loaded = false; busy = true; dirty = false; state = null; descriptor = null; pendingRecord = null; previewReady = false;
     $('#blocks').replaceChildren(); buttons(); status(`正在載入「${activePage.name}」…`);
-    $('#preview').src = activePage.path + '?hana-layout-preview=1&photo-editor=3';
+    $('#preview').src = activePage.path + '?hana-layout-preview=1&block-editor=4';
     const result = isHome()
       ? await db.from('site_settings').select('*').eq('id', 1).single()
       : await db.from('site_page_layouts').select('layout,updated_at').eq('page_key', activePage.path).single();
@@ -155,13 +161,14 @@
     const field = e.target.dataset.field;
     if (!field || !state) return;
     const b = items().find(x => x.id === e.target.closest('[data-id]').dataset.id);
-    const value = field === 'visible' ? e.target.checked : e.target.value;
+    const value = field === 'visible' ? e.target.checked : field === 'cardIndex' ? Number(e.target.value) : e.target.value;
     if ((field === 'image' || field === 'link') && value && !model.imageUrl(value)) {
       e.target.setCustomValidity('請輸入 HTTPS 網址或以 / 開頭的站內路徑。'); e.target.reportValidity(); return;
     }
     e.target.setCustomValidity('');
     if (field === 'position') { if (value === 'custom') return; b.crop = null; e.target.querySelector('option[value="custom"]')?.remove(); }
     b[field] = value;
+    if (['template','cardGroup','cardIndex'].includes(field)) { state = model.normalize(state); changed(); render(openIds()); return; }
     if (field === 'image') { const img = e.target.closest('.block').querySelector('.photo-preview'); img.hidden = !value; if (value) img.src = value; else img.removeAttribute('src'); }
     if (field === 'visible') e.target.closest('.block').querySelector('summary span').textContent = value ? '顯示' : '已隱藏';
     changed();
@@ -192,7 +199,7 @@
       const doc = $('#preview').contentDocument;
       let image;
       if (isHome()) image = id === 'hero' ? doc?.querySelector('[data-hana-hero-image]') : id === 'about' ? doc?.querySelector('.about-portrait img') : doc?.querySelector(`[data-hana-section="${id}"] .hana-block-photo img`);
-      else image = imageId ? doc?.querySelector(`[data-page-layout-section="${id}"] [data-layout-photo-id="${imageId}"]`) : doc?.querySelector(`[data-page-layout-section="${id}"], [data-page-custom="${id}"]`)?.querySelector('.hana-page-photo img');
+      else image = imageId ? doc?.querySelector(`[data-page-layout-section="${id}"] [data-layout-photo-id="${imageId}"]`) : doc?.querySelector(`[data-page-layout-section="${id}"], [data-page-custom="${id}"], [data-page-custom-card="${id}"]`)?.querySelector('.hana-page-photo img');
       const frame = image?.closest('.hana-photo-clip') || image;
       const target = isHome() && id === 'hero' ? image?.closest('.hero-visual') : isHome() && id === 'about' ? image?.closest('.about-portrait') : !imageId ? image?.closest('.hana-block-photo,.hana-page-photo') : frame;
       const box = frame?.getBoundingClientRect(), targetBox = target?.getBoundingClientRect(), parentBox = target?.parentElement?.getBoundingClientRect();
@@ -242,6 +249,7 @@
     if (state.sections.length >= 30) return status('每頁最多可放 30 個區塊。', true);
     const id = `custom-${crypto.randomUUID()}`;
     state.sections.push({ ...homeModel.normalize().sections[0], id, title: '新增圖文區塊', layout: 'left', images: [] });
+    state = model.normalize(state);
     changed(); render([...openIds(), id]);
   };
   $('#save-draft').onclick = () => {

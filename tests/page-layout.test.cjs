@@ -46,6 +46,30 @@ test('new page defaults include only that page sections and existing photo slots
   assert.equal(result.sections[0].images[0].url, '/assets/original.webp');
   assert.equal(model.normalize(null, { sections: [] }).hero, null);
 });
+test('legacy custom course drafts inherit the matching native card group without losing content', () => {
+  const desc = { ...descriptor, cardGroups: [
+    { id: 'section-1:series', count: 3, links: ['/overture/'], labels: ['VOL. 1'] },
+    { id: 'section-2:other', count: 2, links: ['/helori/','/KPIA/'], labels: ['HELORI','KPIA'] }
+  ] };
+  const draft = { sections: [{ id: 'custom-kpia', title: 'KPIA 專業調香導師證書',
+    body: '系統進修\n課後資源', label: '查看 KPIA →', link: '/KPIA/', visible: false, image: '/assets/example.webp' }] };
+  const saved = model.normalize(draft, desc), custom = saved.sections[0];
+  assert.equal(custom.template, 'card'); assert.equal(custom.cardGroup, 'section-2:other');
+  assert.equal(custom.cardIndex, 2); assert.equal(custom.eyebrow, 'KPIA');
+  for (const key of ['title','body','label','link','visible','image']) assert.equal(custom[key], draft.sections[0][key]);
+  assert.deepEqual(model.normalize(JSON.parse(JSON.stringify(saved)), desc), saved);
+});
+test('card placement only uses registered groups and independent sections remain independent', () => {
+  const desc = { ...descriptor, cardGroups: [{ id: 'section-1:series', count: 3 }] };
+  const layout = model.normalize({ sections: [
+    { id: 'custom-card', template: 'card', cardGroup: 'body', cardIndex: 999, eyebrow: '<script>' },
+    { id: 'custom-section', template: 'section', title: '獨立內容' }
+  ] }, desc);
+  assert.equal(layout.sections[0].cardGroup, 'section-1:series');
+  assert.equal(layout.sections[0].cardIndex, 3); assert.equal(layout.sections[0].eyebrow, '<script>');
+  assert.equal(layout.sections[1].template, 'section');
+  assert.equal(model.normalize(layout, descriptor).sections[0].template, 'section');
+});
 test('normalization retains order, hidden sections, custom text and per-photo edits', () => {
   const result = model.normalize({ sections: [{ id: 'section-2', visible: false },
     { id: 'custom-demo', title: '<script>', body: '一\n二' },

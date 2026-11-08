@@ -26,7 +26,19 @@
       if (!value || typeof value.id !== 'string' || seen.has(value.id)) continue;
       if (!known.has(value.id) && !/^custom-[a-z0-9-]{1,60}$/.test(value.id)) continue;
       if (sections.length >= max && !known.has(value.id)) continue;
-      sections.push(block(value, known.get(value.id))); seen.add(value.id);
+      const item = block(value, known.get(value.id));
+      if (!known.has(value.id)) {
+        const groups = descriptor.cardGroups || [];
+        const matching = groups.find(g => g.links?.includes(item.link));
+        const group = groups.find(g => g.id === value.cardGroup) || matching || groups[0];
+        item.template = value.template === 'section' || !group ? 'section' : 'card';
+        item.cardGroup = item.template === 'card' ? group.id : '';
+        const labelIndex = group?.links?.indexOf(item.link) ?? -1;
+        item.eyebrow = text(value.eyebrow ?? (labelIndex >= 0 ? group.labels?.[labelIndex] : ''), 80);
+        item.cardIndex = Number.isInteger(value.cardIndex) && value.cardIndex >= 0
+          ? Math.min(value.cardIndex, group?.count || 0) : group?.count || 0;
+      }
+      sections.push(item); seen.add(value.id);
     }
     for (const item of originals) if (!seen.has(item.id)) sections.push(block({}, item));
     return { version: 1, hero: descriptor.hero ? block(source.hero, descriptor.hero) : null, sections };
