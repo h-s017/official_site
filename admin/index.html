@@ -415,8 +415,8 @@
           const prepared = await prepareCoverFile(file);
           if (prepared.size > 6 * 1024 * 1024) throw new Error('照片處理後仍超過 6 MB，請先縮小後再上傳。');
           const ext = ((prepared.name || '').split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg';
-          const slug = slugify(form.elements.slug.value || form.elements.title.value || 'post');
-          const path = `posts/${slug}-${Date.now()}.${ext}`;
+          // Storage keys must be ASCII; article titles and slugs may contain Chinese.
+          const path = `posts/${crypto.randomUUID()}.${ext}`;
           setCoverStatus('正在上傳照片…');
           const { data, error } = await db.storage.from(mediaBucket).upload(path, prepared, { cacheControl: '3600', upsert: false, contentType: prepared.type || undefined });
           if (error) throw error;
