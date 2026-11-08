@@ -7,7 +7,7 @@
   const model = window.HanaPageLayout, cfg = window.HANA_CMS_CONFIG, main = document.querySelector('main');
   if (!model || !cfg || !main) return;
   const preview = window.parent !== window && new URLSearchParams(location.search).has('hana-layout-preview');
-  const snapshots = new Map(); let pending, ready = false, observer, activeConfig;
+  const snapshots = new Map(), cardGroups = new Map(); let pending, ready = false, observer, activeConfig;
   const imageAttrs = ['src', 'srcset', 'sizes', 'alt', 'style'];
   function snapshot(node, id) {
     node.dataset.pageLayoutSection = id;
@@ -29,6 +29,18 @@
   const sections = [...main.children].filter(x => !['SCRIPT', 'STYLE', 'TEMPLATE', 'LINK'].includes(x.tagName));
   const descriptor = { path, hero: heroNode ? snapshot(heroNode, 'hero') : null,
     sections: sections.map((node, i) => snapshot(node, `section-${i + 1}`)) };
+  descriptor.cardGroups = [];
+  for (const [sectionId, saved] of snapshots) {
+    for (const grid of saved.node.querySelectorAll('[data-layout-card-group]')) {
+      const cards = [...grid.children].filter(node => node.matches('article') && node.querySelector('h2,h3,h4'));
+      if (!cards.length) continue;
+      const id = `${sectionId}:${grid.dataset.layoutCardGroup}`;
+      cardGroups.set(id, { grid, cards });
+      descriptor.cardGroups.push({ id, name: grid.dataset.layoutCardName || saved.heading?.textContent || '原有卡片',
+        count: cards.length, links: cards.map(card => card.querySelector('a[href]')?.getAttribute('href') || ''),
+        labels: cards.map(card => card.querySelector('small')?.textContent || '') });
+    }
+  }
   const anchor = document.createComment('page layout sections'); main.append(anchor);
   // Article feeds can refresh a whole section after the layout request has completed.
   observer = new MutationObserver(records => {
@@ -55,6 +67,19 @@
     if (block.link && block.label) { const a = document.createElement('a'); a.href = block.link; a.textContent = block.label; a.className = 'text-link'; root.append(a); }
     return root;
   }
+  function card(block, group) {
+    const sample = group.cards.find(node => node.querySelector('a[href]')?.getAttribute('href') === block.link) || group.cards[0];
+    const node = document.createElement('article'); node.className = `${sample.className} hana-page-custom-card`.trim();
+    node.dataset.pageCustomCard = block.id;
+    const content = document.createElement('div');
+    const small = document.createElement('small'); small.textContent = block.eyebrow; content.append(small);
+    if (block.title) { const h = document.createElement(sample.querySelector('h2,h3,h4').tagName); h.textContent = block.title; content.append(h); }
+    if (block.body) { const p = document.createElement('p'); p.textContent = block.body; content.append(p); }
+    if (sample.firstElementChild?.tagName === 'DIV') node.append(content); else node.append(...content.childNodes);
+    if (block.link && block.label) { const a = document.createElement('a'); a.href = block.link; a.className = sample.querySelector('a')?.className || 'text-link'; a.textContent = block.label; node.append(a); }
+    decorate(node, block);
+    return node;
+  }
   function decorate(root, block) {
     if (!block.image) return;
     const content = document.createElement('div'); content.className = 'hana-page-copy';
@@ -68,10 +93,13 @@
     if (!ready) { pending = input; return; }
     activeConfig = input; observer.disconnect();
     const config = model.normalize(input, descriptor);
-    main.querySelectorAll(':scope > [data-page-custom]').forEach(x => x.remove());
+    main.querySelectorAll('[data-page-custom],[data-page-custom-card]').forEach(x => x.remove());
+    for (const { cards } of cardGroups.values()) for (const node of cards) node.removeAttribute('data-page-empty-card');
+    const grouped = [];
     for (const block of [config.hero, ...config.sections].filter(Boolean)) {
       const saved = snapshots.get(block.id);
       let node;
+      if (!saved && block.template === 'card' && cardGroups.has(block.cardGroup)) { grouped.push(block); continue; }
       if (saved) {
         node = saved.node; saved.root.replaceChildren(...saved.children); saved.root.className = saved.originalClass; delete saved.root.dataset.pageLayout;
         for (const original of saved.images) {
@@ -99,6 +127,16 @@
         const photo = block.images.find(p => p.id === original.id);
         if (photo) window.HanaLayoutPhoto?.apply(original.image, photo);
       }
+      const banner = node.querySelector('.hana-page-photo');
+      if (banner) window.HanaLayoutPhoto?.apply(banner.querySelector('img'), block, { ratio: 4 / 3, target: banner });
+    }
+    for (const { cards } of cardGroups.values()) for (const node of cards) {
+      if (!node.textContent.trim() && !node.querySelector('img,video,iframe,form,input,svg,canvas')) node.setAttribute('data-page-empty-card', '');
+    }
+    for (const block of grouped) {
+      const group = cardGroups.get(block.cardGroup), node = card(block, group);
+      node.hidden = !block.visible;
+      group.grid.insertBefore(node, group.cards[block.cardIndex] || null);
       const banner = node.querySelector('.hana-page-photo');
       if (banner) window.HanaLayoutPhoto?.apply(banner.querySelector('img'), block, { ratio: 4 / 3, target: banner });
     }

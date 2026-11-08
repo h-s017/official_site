@@ -1,4 +1,7 @@
 [data-page-layout-section][hidden],[data-page-custom][hidden]{display:none!important}
+[data-page-custom-card][hidden],[data-page-empty-card]{display:none!important}
+.hana-page-custom-card{min-width:0;overflow-wrap:anywhere}
+.hana-page-custom-card p{white-space:pre-line}
 .hana-page-custom{padding:60px 6vw}
 .hana-page-photo-layout{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:32px!important;align-items:center!important}
 .hana-page-photo-layout>.hana-page-copy{min-width:0;width:100%;overflow-wrap:anywhere}

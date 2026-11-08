@@ -40,6 +40,14 @@ The public renderer clips zoomed content inside a frame and preserves native ima
 
 ## Release
 
+### Native course cards and existing drafts
+
+The course overview registers its series and other-course grids with `data-layout-card-group`. New custom blocks can inherit one of these card groups or remain an independent section. Card blocks reuse the group's article class, heading level, content wrapper, link styling and responsive grid. The editor provides the target group, insertion position and an optional small label.
+
+Legacy custom drafts without an explicit template adopt the group containing their destination link (or the first registered group). Titles, body text, URLs, photos, visibility and native copy overrides are preserved. Saving a draft remains local and publishing remains a separate action. Pages without registered card groups keep independent custom sections.
+
+Native cards whose visible text has all been cleared and which contain no media or interactive form content collapse after copy overrides are applied. Restoring their text restores the card. Original DOM nodes and text bindings remain intact across repeated previews.
+
 Apply `supabase/migrations/20261107180142_home_layout_editor.sql` to `hanascent-cms` before deploying this code. The migration only adds nullable `home_layout` JSON and `hero_image_alt`; it leaves existing published settings and RLS policies unchanged. Existing `can_edit_cms()` and media-upload policies continue to enforce editor authorization.
 
 A null `home_layout` keeps the current homepage layout. Once published, the JSON stores the section order, visibility, display options, photos and custom text. The legacy quick hero editor also updates the published hero block using a fresh read and version condition.
