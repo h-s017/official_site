@@ -324,3 +324,52 @@
       .footer-social-col{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding:4px 0 0!important}.footer-social-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-social-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px;height:30px;border:0!important}.footer-social-link img{display:block;width:26px;height:26px;object-fit:contain}.footer-right-col .footer-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}.footer-right-col .footer-action{display:inline!important;width:auto!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;box-shadow:none!important;text-decoration:none!important}.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--gray500);font-size:12px}.footer-legal{text-align:right}.footer-legal a{white-space:nowrap}
       @media(max-width:900px){.footer-grid{grid-template-columns:minmax(0,1.25fr) minmax(160px,.75fr)!important;column-gap:42px!important;row-gap:34px!important}.footer-right-col{grid-column:2;grid-row:1}.footer-social-col{grid-column:1/-1;grid-row:2}.footer-bottom{grid-row:3}}
       @media(max-width:760px){.about-role-en{font-size:13px;letter-spacing:.08em}.footer-grid{display:block!important}.footer-brand-col,.footer-social-col,.footer-right-col{margin:0 0 30px!important}.footer-bottom{display:block;margin-top:10px}.footer-legal{text-align:left;margin-top:8px}.nav-dropdown-menu{min-width:min(330px,88vw)!important}}
+
+/* Global footer type scale, shared by homepage and interior pages.
+   Keep footer text readable even where older layout rules set 12–14px. */
+.footer,
+footer.footer {
+  font-size: 16px !important;
+  line-height: 1.85;
+  color: #414141;
+}
+.footer .footer-col,
+.footer .footer-brand-col,
+.footer .footer-brand-copy,
+.footer .footer-brand-meta,
+.footer .footer-role-zh,
+.footer .footer-role-en,
+.footer .footer-right-col,
+.footer .footer-action,
+.footer .footer-actions a,
+.footer .footer-bottom,
+.footer .footer-legal,
+.footer .footer-legal a,
+.footer .footer-nav a {
+  font-size: 16px !important;
+  line-height: 1.8;
+  color: #414141;
+}
+.footer .footer-brand-title,
+.footer b,
+.footer strong { font-size: 17px !important; }
+.footer a { color: #373737 !important; }
+@media (max-width: 760px) {
+  .footer, footer.footer { font-size: 15px !important; }
+  .footer .footer-col,
+  .footer .footer-brand-col,
+  .footer .footer-brand-copy,
+  .footer .footer-brand-meta,
+  .footer .footer-role-zh,
+  .footer .footer-role-en,
+  .footer .footer-right-col,
+  .footer .footer-action,
+  .footer .footer-actions a,
+  .footer .footer-bottom,
+  .footer .footer-legal,
+  .footer .footer-legal a,
+  .footer .footer-nav a { font-size: 15px !important; }
+  .footer .footer-brand-title,
+  .footer b,
+  .footer strong { font-size: 16px !important; }
+}
