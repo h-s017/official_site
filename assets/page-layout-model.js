@@ -13,7 +13,8 @@
       const saved = Array.isArray(v.images) ? v.images.find(x => x?.id === image.id) : null;
       return { id: image.id, url: base.imageUrl(saved?.url || image.url), alt: text(saved?.alt ?? image.alt, 500),
         fit: saved?.fit === 'contain' ? 'contain' : 'cover',
-        position: ['top', 'bottom'].includes(saved?.position) ? saved.position : 'center' };
+        position: ['top', 'bottom'].includes(saved?.position) ? saved.position : 'center',
+        crop: base.normalizeCrop(saved?.crop), zoom: base.clamp(saved?.zoom, 1, 3, 1), placement: base.normalizePlacement(saved?.placement) };
     });
     return result;
   }

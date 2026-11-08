@@ -37,6 +37,33 @@ test('uploads match the existing bucket MIME and 8 MB size restrictions', () => 
   assert.throws(() => model.validateImage({ type: 'image/svg+xml', size: 20 }), /JPG/);
   assert.throws(() => model.validateImage({ type: 'image/png', size: 8 * 1024 * 1024 + 1 }), /8 MB/);
 });
+test('dragged crop coordinates and placement are bounded and survive serialization', () => {
+  const layout = model.normalize({ hero: { crop: { x: -20, y: 130 }, zoom: 7, placement: { width: 70, x: 80, y: 12 } } });
+  assert.deepEqual(layout.hero.crop, { x: 0, y: 100 }); assert.equal(layout.hero.zoom, 3);
+  assert.deepEqual(model.normalize(JSON.parse(JSON.stringify(layout))), layout);
+  assert.equal(model.normalizeCrop({ x: '50%', y: 50 }), null);
+  assert.equal(model.normalizeCrop({ x: Infinity, y: 50 }), null);
+  assert.equal(model.normalizePlacement([]), null);
+});
+test('existing top, center and bottom presets keep their original positions', () => {
+  assert.equal(model.imagePosition({ position: 'top' }), '50% 0%');
+  assert.equal(model.imagePosition({ position: 'bottom' }), '50% 100%');
+  assert.equal(model.imagePosition({ position: 'center' }), '50% 50%');
+  assert.equal(model.imagePosition({ position: 'top', crop: { x: 25, y: 70 } }), '25% 70%');
+});
+test('cover dragging moves the visible image with the pointer and respects non-overflowing axes', () => {
+  assert.deepEqual(model.panCrop({ x: 50, y: 50 }, 20, 20, 200, 200, 400, 200), { x: 40, y: 50 });
+  assert.deepEqual(model.panCrop({ x: 50, y: 50 }, 20, 20, 200, 200, 200, 400), { x: 50, y: 40 });
+  assert.deepEqual(model.panCrop({ x: 50, y: 50 }, 500, -500, 200, 200, 400, 200), { x: 0, y: 50 });
+});
+test('zoomed square photos can pan in both directions and invalid image sizes cannot produce NaN', () => {
+  assert.deepEqual(model.panCrop({ x: 50, y: 50 }, 50, 50, 200, 200, 200, 200, 2), { x: 25, y: 25 });
+  assert.deepEqual(model.panCrop({ x: 50, y: 50 }, 10, 10, 0, 0, 0, 0), { x: 50, y: 50 });
+});
+test('layout dragging uses available horizontal space and proportional vertical spacing', () => {
+  assert.deepEqual(model.panPlacement({ width: 50, x: 50, y: 10 }, 50, 40, 400), { width: 50, x: 75, y: 20 });
+  assert.deepEqual(model.panPlacement({ width: 100, x: 50, y: 0 }, 80, 800, 400), { width: 100, x: 50, y: 50 });
+});
 
 test('the additive migration preserves existing settings and is safe to reapply', async () => {
   const { PGlite } = require('@electric-sql/pglite');
