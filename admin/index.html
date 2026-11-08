@@ -42,6 +42,7 @@
       <nav id="nav">
         <a href="/admin/layout.html?v=block-editor-v4">網站內容與版面 →</a>
         <a href="/admin/students/">學員資格審核 →</a>
+        <a href="/admin/analytics.html">網站瀏覽統計 →</a>
         <button data-view="posts" class="active">氣味誌</button>
         <p class="nav-group-label">NEWS</p>
         <button data-view="news">最新消息</button>
@@ -378,7 +379,7 @@
           const status = dateStatusLabels[item.status] || item.status || '未設定';
           const href = item.link_url ? `<a class="link-muted" href="${escapeHtml(item.link_url)}" target="_blank" rel="noopener">報名連結</a>` : '無連結';
           return `<article class="list-item"><div><h3>${escapeHtml(item.course_title || '未命名課程')}</h3><div class="meta"><span class="badge ${escapeHtml(item.status || '')}">${escapeHtml(status)}</span><strong>${escapeHtml(item.course_date || '')}</strong><span>${escapeHtml(timeRange(item))}</span><span>${href}</span>${item.note ? `<span>${escapeHtml(item.note)}</span>` : ''}</div></div><div class="row-actions"><button class="secondary" type="button" data-edit-course-date="${escapeHtml(item.id)}">編輯</button></div></article>`;
-        }).join('') : '<div class="empty">目前沒有開課日期。</div>';
+        }).join('') : '<div class="empty">目前沒有開課日期。<small>此資料表尚無課程場次。可使用「新增開課日期」建立第一筆；儲存後請確認報名頁是否已完成相應串接。</small></div>';
       }
       function openPost(post = {}) {
         const form = $('#post-form');
