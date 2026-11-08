@@ -50,9 +50,10 @@
       <label>照片網址<input data-field="image" value="${esc(b.image)}" placeholder="https:// 或 /assets/照片"></label>
       <label>照片說明（替代文字）<input data-field="alt" maxlength="500" value="${esc(b.alt)}"></label>
       <label>照片顯示方式<select data-field="fit"><option value="cover" ${b.fit === 'cover' ? 'selected' : ''}>填滿裁切</option><option value="contain" ${b.fit === 'contain' ? 'selected' : ''}>完整顯示</option></select></label>
-      <label>裁切位置<select data-field="position">${[['center', '置中'], ['top', '靠上'], ['bottom', '靠下']].map(([v, l]) => `<option value="${v}" ${b.position === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      <label>裁切位置<select data-field="position">${(b.crop ? [['custom', '手動拖曳位置'], ['center', '置中'], ['top', '靠上'], ['bottom', '靠下']] : [['center', '置中'], ['top', '靠上'], ['bottom', '靠下']]).map(([v, l]) => `<option value="${v}" ${(b.crop ? 'custom' : b.position) === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      <button type="button" data-action="edit-photo">拖曳照片：裁切與版面位置</button>
       <button type="button" data-action="clear">${isHome() && (b.id === 'hero' || b.id === 'about') ? '還原原始照片' : '移除區塊照片'}</button>
-      ${(b.images || []).map((photo, i) => `<details class="existing-photo"><summary>原有照片 ${i + 1}</summary><div class="photo-fields"><img class="photo-preview" src="${esc(photo.url)}" alt="原有照片 ${i + 1} 預覽"><label>更換這張照片<input type="file" data-file data-image="${esc(photo.id)}" accept="image/jpeg,image/png,image/webp,image/gif"></label><label>照片網址<input data-image="${esc(photo.id)}" data-photo-field="url" value="${esc(photo.url)}"></label><label>照片說明<input data-image="${esc(photo.id)}" data-photo-field="alt" value="${esc(photo.alt)}" maxlength="500"></label><label>照片顯示方式<select data-image="${esc(photo.id)}" data-photo-field="fit"><option value="cover" ${photo.fit === 'cover' ? 'selected' : ''}>填滿裁切</option><option value="contain" ${photo.fit === 'contain' ? 'selected' : ''}>完整顯示</option></select></label><label>裁切位置<select data-image="${esc(photo.id)}" data-photo-field="position">${['center','top','bottom'].map((v,j)=>`<option value="${v}" ${photo.position===v?'selected':''}>${['置中','靠上','靠下'][j]}</option>`).join('')}</select></label><button type="button" data-action="restore-photo" data-image="${esc(photo.id)}">還原這張照片</button></div></details>`).join('')}
+      ${(b.images || []).map((photo, i) => `<details class="existing-photo"><summary>原有照片 ${i + 1}</summary><div class="photo-fields"><img class="photo-preview" src="${esc(photo.url)}" alt="原有照片 ${i + 1} 預覽"><label>更換這張照片<input type="file" data-file data-image="${esc(photo.id)}" accept="image/jpeg,image/png,image/webp,image/gif"></label><label>照片網址<input data-image="${esc(photo.id)}" data-photo-field="url" value="${esc(photo.url)}"></label><label>照片說明<input data-image="${esc(photo.id)}" data-photo-field="alt" value="${esc(photo.alt)}" maxlength="500"></label><label>照片顯示方式<select data-image="${esc(photo.id)}" data-photo-field="fit"><option value="cover" ${photo.fit === 'cover' ? 'selected' : ''}>填滿裁切</option><option value="contain" ${photo.fit === 'contain' ? 'selected' : ''}>完整顯示</option></select></label><label>裁切位置<select data-image="${esc(photo.id)}" data-photo-field="position">${(photo.crop ? ['custom','center','top','bottom'] : ['center','top','bottom']).map(v=>`<option value="${v}" ${(photo.crop ? 'custom' : photo.position)===v?'selected':''}>${{custom:'手動拖曳位置',center:'置中',top:'靠上',bottom:'靠下'}[v]}</option>`).join('')}</select></label><button type="button" data-action="edit-photo" data-image="${esc(photo.id)}">拖曳照片：裁切與版面位置</button><button type="button" data-action="restore-photo" data-image="${esc(photo.id)}">還原這張照片</button></div></details>`).join('')}
       </div></details>`).join('');
     buttons(); preview();
   }
@@ -85,7 +86,7 @@
     const request = ++generation;
     loaded = false; busy = true; dirty = false; state = null; descriptor = null; pendingRecord = null; previewReady = false;
     $('#blocks').replaceChildren(); buttons(); status(`正在載入「${activePage.name}」…`);
-    $('#preview').src = activePage.path + '?hana-layout-preview=1&copy-editor=2';
+    $('#preview').src = activePage.path + '?hana-layout-preview=1&photo-editor=3';
     const result = isHome()
       ? await db.from('site_settings').select('*').eq('id', 1).single()
       : await db.from('site_page_layouts').select('layout,updated_at').eq('page_key', activePage.path).single();
@@ -145,7 +146,9 @@
       const photo = b.images.find(x => x.id === e.target.dataset.image);
       const value = e.target.value;
       if (photoField === 'url' && !model.imageUrl(value)) { e.target.setCustomValidity('請輸入 HTTPS 網址或站內路徑。'); e.target.reportValidity(); return; }
+      if (photoField === 'position' && value === 'custom') return;
       e.target.setCustomValidity(''); photo[photoField] = value;
+      if (photoField === 'position') { photo.crop = null; e.target.querySelector('option[value="custom"]')?.remove(); }
       if (photoField === 'url') e.target.closest('.existing-photo').querySelector('img').src = value;
       changed(); return;
     }
@@ -156,7 +159,9 @@
     if ((field === 'image' || field === 'link') && value && !model.imageUrl(value)) {
       e.target.setCustomValidity('請輸入 HTTPS 網址或以 / 開頭的站內路徑。'); e.target.reportValidity(); return;
     }
-    e.target.setCustomValidity(''); b[field] = value;
+    e.target.setCustomValidity('');
+    if (field === 'position') { if (value === 'custom') return; b.crop = null; e.target.querySelector('option[value="custom"]')?.remove(); }
+    b[field] = value;
     if (field === 'image') { const img = e.target.closest('.block').querySelector('.photo-preview'); img.hidden = !value; if (value) img.src = value; else img.removeAttribute('src'); }
     if (field === 'visible') e.target.closest('.block').querySelector('summary span').textContent = value ? '顯示' : '已隱藏';
     changed();
@@ -180,15 +185,49 @@
     const action = e.target.closest('[data-action]')?.dataset.action;
     if (!action || busy) return;
     const id = e.target.closest('[data-id]').dataset.id, b = items().find(x => x.id === id), open = openIds();
-    if (action === 'restore-copy') {
+    if (action === 'edit-photo') {
+      if ($('#blocks').querySelector(':invalid')) return status('請先修正照片或連結網址。', true);
+      const imageId = e.target.dataset.image, photo = imageId ? b.images.find(p => p.id === imageId) : b, url = imageId ? photo.url : photo.image;
+      if (!url) return status('請先上傳或選擇照片。', true);
+      const doc = $('#preview').contentDocument;
+      let image;
+      if (isHome()) image = id === 'hero' ? doc?.querySelector('[data-hana-hero-image]') : id === 'about' ? doc?.querySelector('.about-portrait img') : doc?.querySelector(`[data-hana-section="${id}"] .hana-block-photo img`);
+      else image = imageId ? doc?.querySelector(`[data-page-layout-section="${id}"] [data-layout-photo-id="${imageId}"]`) : doc?.querySelector(`[data-page-layout-section="${id}"], [data-page-custom="${id}"]`)?.querySelector('.hana-page-photo img');
+      const frame = image?.closest('.hana-photo-clip') || image;
+      const target = isHome() && id === 'hero' ? image?.closest('.hero-visual') : isHome() && id === 'about' ? image?.closest('.about-portrait') : !imageId ? image?.closest('.hana-block-photo,.hana-page-photo') : frame;
+      const box = frame?.getBoundingClientRect(), targetBox = target?.getBoundingClientRect(), parentBox = target?.parentElement?.getBoundingClientRect();
+      let parentWidth = parentBox?.width || 1, parentLeft = parentBox?.left || 0;
+      if (target?.parentElement) {
+        const style = target.ownerDocument.defaultView.getComputedStyle(target.parentElement);
+        const tracks = style.display === 'grid' ? style.gridTemplateColumns.split(' ').map(Number.parseFloat).filter(Number.isFinite) : [];
+        if (tracks.length > 1 && targetBox) {
+          const gapSize = Number.parseFloat(style.columnGap) || 0;
+          let offset = Number.parseFloat(style.paddingLeft) || 0;
+          const columns = tracks.map(width => { const column = { width, left: parentLeft + offset }; offset += width + gapSize; return column; });
+          const center = targetBox.left + targetBox.width / 2;
+          const column = columns.sort((a,b) => Math.abs(center-a.left-a.width/2)-Math.abs(center-b.left-b.width/2))[0];
+          parentWidth = column.width; parentLeft = column.left;
+        }
+      }
+      const gap = parentWidth - (targetBox?.width || parentWidth);
+      const placement = photo.placement || { width: homeModel.clamp((targetBox?.width || parentWidth) / parentWidth * 100, 25, 100, 100), x: gap > 1 ? homeModel.clamp(((targetBox?.left || 0) - parentLeft) / gap * 100, 0, 100, 50) : 50, y: 0 };
+      const openedPage = activePage.path;
+      window.HanaPhotoEditor.open({ url, config: photo, ratio: box?.height > 0 ? box.width / box.height : 4 / 3, placement,
+        onApply: value => {
+          if (!state || activePage.path !== openedPage) return;
+          Object.assign(photo, value); changed(); render(open);
+        }
+      });
+      return;
+    } else if (action === 'restore-copy') {
       delete b.copy[e.target.dataset.copyId]; b.title = '';
     } else if (action === 'restore-photo') {
       const imageId = e.target.dataset.image;
       const original = (descriptor.hero?.id === id ? descriptor.hero : descriptor.sections.find(x => x.id === id)).images.find(x => x.id === imageId);
-      Object.assign(b.images.find(x => x.id === imageId), original, { fit: 'cover', position: 'center' });
+      Object.assign(b.images.find(x => x.id === imageId), original, { fit: 'cover', position: 'center', crop: null, zoom: 1, placement: null });
     } else if (action === 'clear') {
       b.image = isHome() && id === 'hero' ? '/assets/home-hero-1920.webp' : isHome() && id === 'about' ? '/assets/about-hana-900.webp' : '';
-      b.position = 'center'; b.fit = 'cover';
+      b.position = 'center'; b.fit = 'cover'; b.crop = null; b.zoom = 1; b.placement = null;
     } else if (action === 'delete') {
       if (!confirm('刪除這個圖文區塊？發布後才會從官網移除。')) return;
       state.sections = state.sections.filter(x => x.id !== id);

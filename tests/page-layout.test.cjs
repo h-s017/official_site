@@ -62,6 +62,13 @@ test('unknown page sections and forged photo slots cannot target other DOM nodes
   assert.deepEqual(result.sections.map(b => b.id), ['section-1', 'section-2']);
   assert.deepEqual(result.sections[0].images.map(x => x.id), ['image-1']);
 });
+test('existing page photos keep crop, zoom and placement independently of block banners', () => {
+  const layout = model.normalize({ sections: [{ id: 'section-1', crop: { x: 10, y: 20 }, images: [{ id: 'image-1', crop: { x: 80, y: 60 }, zoom: 1.8, placement: { width: 60, x: 70, y: 8 } }] }] }, descriptor);
+  assert.deepEqual(layout.sections[0].crop, { x: 10, y: 20 });
+  assert.deepEqual(layout.sections[0].images[0].crop, { x: 80, y: 60 });
+  assert.equal(layout.sections[0].images[0].zoom, 1.8);
+  assert.deepEqual(model.normalize(JSON.parse(JSON.stringify(layout)), descriptor), layout);
+});
 test('published page rows enforce editor authorization and isolate versions by page', async () => {
   const { PGlite } = require('@electric-sql/pglite'), db = new PGlite();
   try {

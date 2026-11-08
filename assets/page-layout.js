@@ -46,7 +46,7 @@
     if (url) { image.src = url; image.removeAttribute('srcset'); image.removeAttribute('sizes'); }
     image.alt = photo.alt || '';
     image.style.setProperty('object-fit', photo.fit, 'important');
-    image.style.setProperty('object-position', photo.position, 'important');
+    image.style.setProperty('object-position', window.HanaHomeLayout.imagePosition(photo), 'important');
   }
   function copy(block) {
     const root = document.createElement('div');
@@ -75,14 +75,16 @@
       if (saved) {
         node = saved.node; saved.root.replaceChildren(...saved.children); saved.root.className = saved.originalClass; delete saved.root.dataset.pageLayout;
         for (const original of saved.images) {
+          window.HanaLayoutPhoto?.restore(original.image);
           for (const attr of imageAttrs) {
             if (original.original.hasAttribute(attr)) original.image.setAttribute(attr, original.original.getAttribute(attr));
             else original.image.removeAttribute(attr);
           }
+          original.image.dataset.layoutPhotoId = original.id;
           const photo = block.images.find(p => p.id === original.id);
           if (photo) {
             if (photo.url !== original.url) setPhoto(original.image, photo, photo.url);
-            else { original.image.alt = photo.alt; original.image.style.setProperty('object-fit', photo.fit, 'important'); original.image.style.setProperty('object-position', photo.position, 'important'); }
+            else { original.image.alt = photo.alt; original.image.style.setProperty('object-fit', photo.fit, 'important'); original.image.style.setProperty('object-position', window.HanaHomeLayout.imagePosition(photo), 'important'); }
           }
         }
         saved.copy.apply(block.copy);
@@ -93,6 +95,12 @@
       }
       node.hidden = !block.visible;
       if (block.id !== 'hero') main.insertBefore(node, anchor);
+      if (saved) for (const original of saved.images) {
+        const photo = block.images.find(p => p.id === original.id);
+        if (photo) window.HanaLayoutPhoto?.apply(original.image, photo);
+      }
+      const banner = node.querySelector('.hana-page-photo');
+      if (banner) window.HanaLayoutPhoto?.apply(banner.querySelector('img'), block, { ratio: 4 / 3, target: banner });
     }
     observer.observe(main, { childList: true, subtree: true });
   }

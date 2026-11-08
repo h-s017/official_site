@@ -27,6 +27,17 @@ The text engine captures the final text nodes after the site's startup typograph
 
 Dynamic article and announcement bodies continue to use the existing article/news editors. Their page headings and surrounding static copy can be edited here.
 
+## Photo drag editing
+
+Every block photo and existing static photo has a “拖曳照片：裁切與版面位置” control. Its modal editor supports two independent modes:
+
+- Crop: drag the visible photo, zoom from 100% to 300%, and fine-tune with arrow keys.
+- Placement: drag the photo within its block/column, adjust its width from 25% to 100%, or resize using the corner handle. Vertical spacing scales with the containing column.
+
+Mouse and touch input use pointer capture. Changes remain local to the dialog until “套用”; cancel and Escape leave the page draft unchanged. Applied coordinates, zoom and placement use the existing layout JSON and survive draft reload/publication. Legacy top/center/bottom presets remain compatible. No schema change is needed.
+
+The public renderer clips zoomed content inside a frame and preserves native image nodes. Neutral settings restore the original structure. Placement uses flow margins so photos stay within their column without horizontal overflow.
+
 ## Release
 
 Apply `supabase/migrations/20261107180142_home_layout_editor.sql` to `hanascent-cms` before deploying this code. The migration only adds nullable `home_layout` JSON and `hero_image_alt`; it leaves existing published settings and RLS policies unchanged. Existing `can_edit_cms()` and media-upload policies continue to enforce editor authorization.

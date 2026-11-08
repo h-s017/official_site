@@ -8,6 +8,7 @@
   let originals, contents, heroOriginal, portraitOriginal, descriptor, copyBindings, settings = {}, ready = false, pending;
   const imageAttributes = ['src', 'srcset', 'sizes', 'alt', 'style'];
   function restoreImage(image, original) {
+    window.HanaLayoutPhoto?.restore(image);
     for (const key of imageAttributes) {
       if (original.hasAttribute(key)) image.setAttribute(key, original.getAttribute(key));
       else image.removeAttribute(key);
@@ -19,7 +20,7 @@
     }
     if (config.alt) image.alt = config.alt;
     image.style.setProperty('object-fit', config.fit, 'important');
-    image.style.setProperty('object-position', config.position, 'important');
+    image.style.setProperty('object-position', model.imagePosition(config), 'important');
   }
   function content(block) {
     const box = document.createElement('div'); box.className = 'hana-block-copy';
@@ -33,6 +34,7 @@
     const config = model.normalize(input, descriptor);
     const hero = document.querySelector('[data-hana-hero-image]');
     restoreImage(hero, heroOriginal); setImage(hero, config.hero);
+    window.HanaLayoutPhoto?.apply(hero, config.hero, { kind: 'hero', target: hero.closest('.hero-visual') });
     copyBindings.get('hero').apply(config.hero.copy);
     main.querySelectorAll('[data-hana-section]').forEach(x => x.remove());
     for (const block of config.sections) {
@@ -51,6 +53,7 @@
       if (block.id === 'about') {
         const portrait = section.querySelector('.about-portrait img');
         restoreImage(portrait, portraitOriginal); setImage(portrait, block);
+        window.HanaLayoutPhoto?.apply(portrait, block, { ratio: 4 / 5, target: portrait.closest('.about-portrait') });
         section.querySelector('.about-profile').dataset.hanaLayout = block.layout;
       } else if (block.image) {
         const wrap = section.querySelector('.wrap');
@@ -61,6 +64,10 @@
         wrap.dataset.hanaLayout = block.layout; wrap.classList.add('hana-photo-layout'); wrap.append(figure, copy);
       }
       main.append(section);
+      if (block.id !== 'about' && block.image) {
+        const figure = section.querySelector('.hana-block-photo');
+        window.HanaLayoutPhoto?.apply(figure.querySelector('img'), block, { ratio: 4 / 3, target: figure });
+      }
     }
   }
   document.addEventListener('hana:cms-ready', e => {
