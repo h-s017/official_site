@@ -530,3 +530,16 @@ body[data-hana-page="ciyu"] .ciyu-week-block:first-child::after{
   .nav-links,.site-nav,.footer-grid{min-width:0;max-width:100%;}
   .service-row,.course-card,.lead,.footer-col{overflow-wrap:anywhere;}
 }
+
+/* Footer readability: minimum legible type and contrast on desktop/mobile. */
+.footer {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #414141;
+}
+.footer a { color: #373737; }
+.footer b { font-size: 17px; }
+@media (max-width: 760px) {
+  .footer { font-size: 15px; line-height: 1.8; }
+  .footer b { font-size: 16px; }
+}
