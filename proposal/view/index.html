@@ -242,6 +242,17 @@ body{background:#fff;color:#303234}
 @media(max-width:640px){.quote-summary-choice{grid-template-columns:minmax(0,1fr) auto;gap:10px}.quote-summary-choice label{grid-column:1/-1}.quote-summary-choice strong{font-size:18px}.quote-summary-total{font-size:18px}}
 @media print{.quote-summary-choice{break-inside:avoid}.quote-summary-choice select{appearance:none;border:0;padding:0;background:transparent}}
 
+
+.quote-summary-subtotal,.quote-summary-design-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:17px 4px;border-bottom:1px solid #dedede;font-family:"Noto Serif TC","Microsoft JhengHei",sans-serif;font-size:18px}
+.quote-summary-subtotal{margin-top:12px;border-top:1px solid #303234}
+.quote-summary-subtotal strong,.quote-summary-design-row strong{font-size:20px;font-weight:600;text-align:right;white-space:nowrap}
+.quote-summary-design-title{font-family:var(--font-serif),serif;font-size:25px;font-weight:500;margin:30px 0 9px}
+.quote-summary-design-row label{display:flex;gap:13px;align-items:center;cursor:pointer;line-height:1.6}
+.quote-summary-design-row input{width:18px;height:18px;accent-color:#303234;flex:0 0 auto;cursor:pointer}
+.quote-summary-design-row input:disabled{cursor:default;opacity:.35}
+.quote-summary-total{margin-top:17px}
+@media(max-width:640px){.quote-summary-design-row,.quote-summary-subtotal{font-size:16px;align-items:center}.quote-summary-design-row strong,.quote-summary-subtotal strong{font-size:18px}.quote-summary-design-row label{gap:9px}.quote-summary-design-row input{width:17px;height:17px}}
+@media print{.quote-summary-design-row input{appearance:auto}}
 /* Proposal explorer: editorial visual rhythm, no fabricated product imagery. */
 .quote-explorer-section{background:#f7f7f5}
 .quote-explorer-heading{display:flex;justify-content:space-between;align-items:center;gap:34px;margin-bottom:27px}
@@ -326,7 +337,7 @@ body{background:#fff}
 <h2 class="quote-section-title">商品方案報價</h2>
 <div class="quote-pricing-header"><span>商品品項</span><span>容量</span><span>訂購數量／氣味</span><span>每瓶單價</span><span>方案總價</span></div>
 <div id="items" class="quote-pricing"></div><div id="planNotes" class="quote-plan-notes" hidden></div>
-<section id="quoteSummary" class="quote-summary" hidden><div class="quote-summary-kicker">YOUR SELECTION</div><h3>全部品項金額</h3><p class="quote-summary-description">請選擇各品項的數量方案。同一品項的不同數量為替代方案，不會重複加總。</p><div id="quoteSummaryChoices"></div><div class="quote-summary-total"><span>已選品項總價</span><strong id="quoteSummaryTotal">NT$0</strong></div><p class="quote-summary-description">以上合計只包含所選商品方案，不包含另列設計費、稅費或其他未確認的費用。</p></section>
+<section id="quoteSummary" class="quote-summary" hidden><div class="quote-summary-kicker">YOUR SELECTION</div><h3>合作報價總覽</h3><p class="quote-summary-description">每個商品可選擇一個數量方案，不同數量級距不會重複計算。以下設計服務可依需求勾選計入。</p><div id="quoteSummaryChoices"></div><div class="quote-summary-subtotal"><span>商品製作費</span><strong id="quoteProductTotal">NT$0</strong></div><h4 class="quote-summary-design-title">設計</h4><div id="quoteSummaryDesign" class="quote-summary-design"></div><div class="quote-summary-total"><span>合作方案總價</span><strong id="quoteSummaryTotal">NT$0</strong></div><p class="quote-summary-description">本金額依目前選擇試算，不代表已確認委託；未包含未列示的費用、稅費與交貨條件。香水瓶器參考單價如已包含在成品售價中，不重複加計。</p></section>
 <p id="noProducts" hidden>此報價尚未設定可發布的規格與單價，請向 HANA SCENT ARTIST 確認。</p>
 <p class="quote-disclaimer">不同數量為各自獨立的報價方案，並非合併採購。金額以新台幣計；瓶器款式、最低訂購量、稅費與交貨時程依雙方確認的正式條件為準。</p>
 </div></section>
@@ -368,11 +379,15 @@ rows.forEach((item,index)=>{const cap=item.unit==='g'?(Number(item.weight)||0)+'
 
 /* Budget comparison reads public quote prices only; it never uses internal costs. */
 const productTypes=[...new Set(rows.map(i=>String(i.name||'商品')))];productTypes.forEach(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;$('#explorerType').append(option);});
-const knownDesignTotal=Math.max(0,Number(design.logoFee??10000)||0)+Math.max(0,Number(design.labelFee??3000)||0)+(design.visualFee==null?0:Math.max(0,Number(design.visualFee)||0));
+const designItems=[{key:'logo',label:'品牌 LOGO 設計',fee:Math.max(0,Number(design.logoFee??10000)||0),available:true},{key:'label',label:'貼紙設計',fee:Math.max(0,Number(design.labelFee??3000)||0),available:true},{key:'visual',label:'視覺設計',fee:design.visualFee==null?0:Math.max(0,Number(design.visualFee)||0),available:design.visualFee!=null}];
+const summaryDesign=$('#quoteSummaryDesign');
+designItems.forEach(item=>{const line=document.createElement('div');line.className='quote-summary-design-row';const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.dataset.design=item.key;check.checked=item.available&&item.fee>0&&(item.key!=='visual');check.disabled=!item.available||item.fee===0;const name=document.createElement('span');name.textContent=item.label;label.append(check,name);const price=document.createElement('strong');price.textContent=item.available&&item.fee>0?money(item.fee):'未選擇';price.dataset.designPrice=item.key;check.addEventListener('change',()=>{price.textContent=check.checked?money(item.fee):'未選擇';updateSummary();updateExplorer();});line.append(label,price);summaryDesign.append(line);});
+const selectedDesignTotal=()=>designItems.reduce((sum,item)=>sum+($('#quoteSummaryDesign [data-design="'+item.key+'"]')?.checked?item.fee:0),0);
+const knownDesignTotal=designItems.reduce((sum,item)=>sum+(item.available&&item.fee>0?item.fee:0),0);
 const groupKeyFor=item=>String(item.name||'商品')+'｜'+(item.unit==='g'?(Number(item.weight)||0)+' g':(Number(item.ml)||0)+' mL');
 const updateExplorer=()=>{
  const budget=Math.max(0,Number($('#explorerBudget').value)||0),qty=Math.max(1,Math.floor(Number($('#explorerQty').value)||1)),category=$('#explorerType').value,scope=$('#explorerScope').value;
- const fixed=scope==='whole'?knownDesignTotal:0;
+ const fixed=scope==='whole'?selectedDesignTotal():0;
  const matches=rows.map((item,index)=>({item,index,total:goodQty(item)*goodPrice(item)+fixed,quantity:goodQty(item)})).filter(x=>category==='all'||x.item.name===category);
  matches.sort((a,b)=>Number(b.quantity>=qty&&b.total<=budget)-Number(a.quantity>=qty&&a.total<=budget)||a.total-b.total);
  const feasible=matches.filter(x=>x.quantity>=qty&&x.total<=budget).length,host=$('#explorerCards');host.replaceChildren();
@@ -392,8 +407,8 @@ const updateExplorer=()=>{
 };
 ['explorerBudget','explorerQty','explorerType','explorerScope'].forEach(id=>$('#'+id).addEventListener('input',updateExplorer));
 if(rows.length){$('#explorerSection').hidden=false;updateExplorer();}
-const updateSummary=()=>{let sum=0;$('#quoteSummaryChoices').querySelectorAll('.quote-summary-choice').forEach(w=>{const index=Number(w.querySelector('select').value);const item=Number.isInteger(index)&&index>=0?rows[index]:null;const subtotal=item?goodQty(item)*goodPrice(item):0;sum+=subtotal;w.querySelector('strong').textContent=item?money(subtotal):'未計入';});$('#quoteSummaryTotal').textContent=money(sum);};
-groups.forEach((options,key)=>{const wrap=document.createElement('div');wrap.className='quote-summary-choice';const label=document.createElement('label'),select=document.createElement('select');select.id='summary-select-'+options[0].index;label.htmlFor=select.id;label.textContent=key;const none=document.createElement('option');none.value='-1';none.textContent='不計入';select.append(none);options.forEach(({item,index})=>{const opt=document.createElement('option');opt.value=String(index);opt.textContent=goodQty(item).toLocaleString('zh-TW')+' 件｜'+money(goodPrice(item))+'／件';select.append(opt);});select.value=String(options[0].index);const total=document.createElement('strong');select.addEventListener('change',updateSummary);wrap.append(label,select,total);$('#quoteSummaryChoices').append(wrap);});if(groups.size){$('#quoteSummary').hidden=false;updateSummary();}
+const updateSummary=()=>{let sum=0;$('#quoteSummaryChoices').querySelectorAll('.quote-summary-choice').forEach(w=>{const index=Number(w.querySelector('select').value);const item=Number.isInteger(index)&&index>=0?rows[index]:null;const subtotal=item?goodQty(item)*goodPrice(item):0;sum+=subtotal;w.querySelector('strong').textContent=item?money(subtotal):'未計入';});$('#quoteProductTotal').textContent=money(sum);$('#quoteSummaryTotal').textContent=money(sum+selectedDesignTotal());};
+groups.forEach((options,key)=>{const wrap=document.createElement('div');wrap.className='quote-summary-choice';const label=document.createElement('label'),select=document.createElement('select');select.id='summary-select-'+options[0].index;label.htmlFor=select.id;label.textContent=key;const none=document.createElement('option');none.value='-1';none.textContent='不計入';select.append(none);options.forEach(({item,index})=>{const opt=document.createElement('option');opt.value=String(index);opt.textContent=goodQty(item).toLocaleString('zh-TW')+' 件｜'+money(goodPrice(item))+'／件';select.append(opt);});select.value=String(options[0].index);const total=document.createElement('strong');select.addEventListener('change',updateSummary);wrap.append(label,select,total);$('#quoteSummaryChoices').append(wrap);});if(groups.size||designItems.some(i=>i.available&&i.fee>0)){$('#quoteSummary').hidden=false;updateSummary();}
 rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=i.unit==='g'?(Number(i.weight)||0)+' g':Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶'+(Number(i.scentCount)>1?'／'+Math.floor(Number(i.scentCount))+' 款氣味':''):'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';const planTotal=document.createElement('strong');planTotal.className='quote-plan-total';planTotal.textContent=money(Number(i.qty)*Number(i.unitPrice));name.dataset.label='商品';volume.dataset.label='容量';qty.dataset.label='訂購數量';total.dataset.label='單瓶價格';planTotal.dataset.label='方案總價';row.append(name,volume,qty,total,planTotal);$('#items').append(row);if(String(i.planNote||'').trim()){const note=document.createElement('p');note.className='quote-plan-note';note.textContent=i.name+'｜'+i.qty+' 件：'+i.planNote;$('#planNotes').append(note);$('#planNotes').hidden=false;}});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
 </script>
 <script>document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());</script>
