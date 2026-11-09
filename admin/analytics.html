@@ -30,13 +30,14 @@
     <div id="status" class="status">正在載入統計資料…</div>
     <section id="app" class="hidden">
       <div class="panel" id="reservation-traffic">
-        <h2>課程預約頁｜進站統計</h2>
-        <p class="status">reservation.hanascent.com — 與各分頁統計整合於此頁</p>
-        <div id="reservation-visitor-metrics" class="metric-grid reservation-four-grid" aria-label="預約頁今日、7 天、30 天、90 天進站人次"></div>
-        <h3 class="source-heading">預約頁流量來源</h3>
+        <h2 id="selected-page-title">各分頁｜進站統計</h2>
+        <div class="page-controls"><label for="analytics-page-select">選擇統計分頁<select id="analytics-page-select"><option value="/">首頁</option></select></label></div>
+        <p id="selected-page-path" class="status"></p>
+        <div id="reservation-visitor-metrics" class="metric-grid reservation-four-grid" aria-label="所選分頁今日、7 天、30 天、90 天進站人次"></div>
+        <h3 class="source-heading">所選分頁流量來源</h3>
         <div class="table-wrap"><table class="result-table reservation-source-table"><thead><tr><th>來源</th><th>今日</th><th>7 天</th><th>30 天</th><th>90 天</th></tr></thead><tbody id="reservation-source-table"></tbody></table></div>
         <p id="reservation-visitor-note" class="status" role="status"></p>
-        <p class="status">以匿名瀏覽工作階段估算進站人次，不是可辨識個人的精確人數。來源只計預約頁進站事件，統計從追蹤上線後起算，無法回填先前訪客。</p>
+        <p class="status">依實際分頁網址篩選觀看事件；有匿名工作階段識別碼時，同一期間只計一次，其餘舊資料按觀看紀錄計算。此為估計進站人次，不是經身分驗證的不重複人數。未有追蹤的分頁不會補算歷史資料。</p>
       </div>
       <div class="panel">
         <h2>各分頁瀏覽明細</h2>
@@ -132,39 +133,62 @@
       function taipeiDate(value) {
         return new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(value);
       }
-      function renderReservationVisitors() {
-        const views = cachedRows.filter(r => r.page === 'reservation' && r.event_type === 'view');
+      const perPageRanges = [
+        {label:'今日進站',days:0},
+        {label:'最近 7 天',days:7},
+        {label:'最近 30 天',days:30},
+        {label:'最近 90 天',days:90}
+      ];
+      function pageFromView(row) {
+        if (row.event_type !== 'view') return '';
+        if (row.page === 'reservation') return 'reservation.hanascent.com/';
+        return normalizedPath(row.path);
+      }
+      function countVisits(rows) {
+        const ids = new Set();
+        rows.forEach((row,index) => ids.add(row.session_id ? 'session:' + row.session_id : 'event:' + index));
+        return ids.size;
+      }
+      function viewWithinRange(rows, days) {
         const today = taipeiDate(now);
-        const ranges = [
-          {label:'今日進站',days:0},
-          {label:'最近 7 天',days:7},
-          {label:'最近 30 天',days:30},
-          {label:'最近 90 天',days:90}
-        ];
-        const rangeRows = days => views.filter(r => {
-          const at = new Date(r.created_at);
-          return days === 0 ? taipeiDate(at) === today : at >= new Date(now.getTime() - days * 86400000);
+        return rows.filter(row => {
+          const time = new Date(row.created_at);
+          return Number.isFinite(time.getTime()) && (days === 0 ? taipeiDate(time) === today : time >= new Date(now.getTime() - days * 86400000));
         });
-        const countSessions = rows => {
-          const ids = new Set();
-          rows.forEach((r,i) => ids.add(r.session_id ? 'session:' + r.session_id : 'view:' + i));
-          return ids.size;
-        };
-        $('#reservation-visitor-metrics').innerHTML = ranges.map(({label,days}) =>
-          metric(label, countSessions(rangeRows(days)).toLocaleString('zh-TW'))
+      }
+      function displayPageName(path) {
+        if (path === 'reservation.hanascent.com/') return '課程預約頁';
+        return knownPages[path] || path;
+      }
+      function updatePageChoices() {
+        const select = $('#analytics-page-select');
+        const previous = select.value;
+        const pages = new Set(['/','reservation.hanascent.com/']);
+        cachedRows.forEach(row => { const path = pageFromView(row); if (path) pages.add(path); });
+        const ordered = [...pages].sort((a,b) => a === '/' ? -1 : b === '/' ? 1 : a === 'reservation.hanascent.com/' ? -1 : b === 'reservation.hanascent.com/' ? 1 : a.localeCompare(b));
+        select.innerHTML = ordered.map(path => '<option value="' + escapeHtml(path) + '">' + escapeHtml(displayPageName(path)) + '</option>').join('');
+        select.value = pages.has(previous) ? previous : '/';
+      }
+      function renderSelectedPage() {
+        const path = $('#analytics-page-select').value || '/';
+        const views = cachedRows.filter(row => pageFromView(row) === path);
+        const label = displayPageName(path);
+        $('#selected-page-title').textContent = label + '｜進站統計';
+        $('#selected-page-path').textContent = path.startsWith('/') ? 'hanascent.com' + path : path;
+        $('#reservation-visitor-metrics').innerHTML = perPageRanges.map(({label,days}) =>
+          metric(label, countVisits(viewWithinRange(views,days)).toLocaleString('zh-TW'))
         ).join('');
-        const labels = [['Instagram','Instagram'],['LINE','LINE'],['Google','Google'],['Direct','直接進入'],['Other','其他來源'],['Unknown','來源不明']];
-        const normalizedSource = value => {
-          const src = String(value || '').trim();
-          return ['Instagram','LINE','Google','Direct','Other'].includes(src) ? src : 'Unknown';
-        };
-        $('#reservation-source-table').innerHTML = labels.map(([source,label]) => {
-          const counts = ranges.map(({days}) => countSessions(rangeRows(days).filter(r => normalizedSource(r.source) === source)));
-          return '<tr><td>' + escapeHtml(label) + '</td>' + counts.map(n => '<td>' + n.toLocaleString('zh-TW') + '</td>').join('') + '</tr>';
+        const sourceLabels = [
+          ['Instagram','Instagram'],['LINE','LINE'],['Google','Google'],['Direct','直接進入'],['Other','其他來源'],['Unknown','來源不明']
+        ];
+        const sourceKey = value => ['Instagram','LINE','Google','Direct','Other'].includes(value) ? value : 'Unknown';
+        $('#reservation-source-table').innerHTML = sourceLabels.map(([key,name]) => {
+          const values = perPageRanges.map(({days}) => countVisits(viewWithinRange(views,days).filter(row => sourceKey(row.source) === key)));
+          return '<tr><td>' + escapeHtml(name) + '</td>' + values.map(n => '<td>' + n.toLocaleString('zh-TW') + '</td>').join('') + '</tr>';
         }).join('');
         $('#reservation-visitor-note').textContent = views.length
-          ? '已收到預約頁追蹤紀錄。若同一瀏覽工作階段重複開啟，僅計算一次。'
-          : '尚無預約頁追蹤資料：這不表示沒有人進站。請確認 reservation.hanascent.com/analytics.js 已部署且追蹤事件成功寫入。';
+          ? '已取得此分頁的觀看紀錄；可在上方選擇其他分頁查看同樣四格與來源統計。'
+          : '此分頁目前沒有追蹤事件，無法據此斷定無人進站；請確認該分頁已安裝並部署追蹤程式。';
       }
       function render(rows) {
         const viewRows = rows.filter(r => r.event_type === 'view');
@@ -222,14 +246,16 @@
         }
         cachedRows = data || [];
         renderPages();
-        renderReservationVisitors();
+        updatePageChoices();
+        renderSelectedPage();
         render(cachedRows.filter(within(30)));
-        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；預約頁顯示今日、7、30、90 天進站人次。`;
+        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；各分頁可切換查看今日、7、30、90 天進站及來源統計。`;
         $('#app').classList.remove('hidden');
       }
 
       $('#reload').addEventListener('click', load);
       $('#page-period').addEventListener('change', renderPages);
+      $('#analytics-page-select').addEventListener('change', renderSelectedPage);
             $('#page-search').addEventListener('input', renderPages);
       load();
     })();
