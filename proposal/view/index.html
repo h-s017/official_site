@@ -180,6 +180,48 @@ body{background:#fff;color:#303234}
  .quote-pricing-header:not(.quote-design-header),.quote-pricing-row:not(.quote-design-row){grid-template-columns:1.55fr .8fr 1.35fr 1.05fr 1.25fr!important;gap:10px!important}
  .quote-pricing-row:not(.quote-design-row)>.quote-plan-total{text-align:right!important}
 }
+
+/* Mobile alignment: fixed label column and consistent right-aligned values. */
+@media(max-width:640px){
+ .quote-pricing-row:not(.quote-design-row)>[data-label]{
+  display:grid!important;
+  grid-template-columns:100px minmax(0,1fr);
+  column-gap:12px;
+  align-items:start;
+  justify-content:stretch;
+  width:100%;
+  text-align:right;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+ }
+ .quote-pricing-row:not(.quote-design-row)>[data-label]::before{
+  display:block;
+  width:auto;
+  text-align:left;
+  line-height:1.65;
+  white-space:normal;
+ }
+ .quote-pricing-row:not(.quote-design-row)>.quote-plan-total{
+  display:grid!important;
+  grid-template-columns:100px minmax(0,1fr);
+  align-items:baseline;
+  text-align:right;
+ }
+ .quote-design-header,.quote-design-row{
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:start;
+  column-gap:14px;
+ }
+ .quote-design-row>span{text-align:left;line-height:1.75}
+ .quote-design-row>strong{text-align:right;white-space:nowrap;line-height:1.75}
+ .quote-designer,.quote-optional-copy,.quote-plan-note,.quote-process-note,.process-step h3,.process-step p{text-align:left}
+ .quote-plan-notes{overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+ .quote-pricing-row:not(.quote-design-row)>[data-label],
+ .quote-pricing-row:not(.quote-design-row)>.quote-plan-total{grid-template-columns:82px minmax(0,1fr);column-gap:8px}
+ .quote-design-row{column-gap:8px}
+}
 @media print{
 .site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
