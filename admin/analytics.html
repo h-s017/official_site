@@ -46,7 +46,12 @@
       </div>
 
       <div class="panel">
-        <h2>漏斗統計</h2>
+        <h2>課程預約漏斗｜官網 → reservation.hanascent.com</h2>
+        <p class="status">統計最近 30 日事件次數。各階段不是同一批人的去重轉換率；預約站資料從追蹤程式部署後才開始記錄，沒有歷史回填。</p>
+        <div id="reservation-funnel" class="funnel"></div>
+      </div>
+      <div class="panel">
+        <h2>原有漏斗統計</h2>
         <div id="funnel" class="funnel"></div>
       </div>
 
@@ -120,6 +125,15 @@
         }).join('') : '<tr><td colspan="4">所選期間找不到符合條件的分頁紀錄。</td></tr>';
       }
       function render(rows) {
+        const resSteps = [
+          ['官網點擊課程預約', count(rows,r => r.event_type === 'click_booking' && r.page !== 'reservation')],
+          ['進入預約網站', eventCount(rows,'reservation','view')],
+          ['選擇課程系列', eventCount(rows,'reservation','reservation_series_select')],
+          ['選擇課程', eventCount(rows,'reservation','reservation_course_select')],
+          ['成功建立訂單（未必付款）', eventCount(rows,'reservation','reservation_order_created')],
+          ['確認付款完成', eventCount(rows,'reservation','reservation_paid')]
+        ];
+        $('#reservation-funnel').innerHTML = resSteps.map(([label,value],i) => `<div class="funnel-row"><b>${escapeHtml(label)}</b><span>${value.toLocaleString('zh-TW')} 次</span><span>${i===0?'跨站事件紀錄':'事件數（非去重）'}</span></div>`).join('');
         const viewRows = rows.filter(r => r.event_type === 'view');
         $('#page-metrics').innerHTML = ['home','helori_quiz','helori_course'].map(page => {
           const pageRows = viewRows.filter(r => r.page === page);
@@ -176,7 +190,7 @@
         cachedRows = data || [];
         renderPages();
         render(cachedRows.filter(within(30)));
-        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；下方漏斗與來源統計仍使用最近 30 日。`;
+        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；預約漏斗與原有漏斗使用最近 30 日。`;
         $('#app').classList.remove('hidden');
       }
 
