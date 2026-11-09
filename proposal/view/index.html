@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="/assets/style.css">
 <style>
 /* Matches the HANA corporate-cooperation page, while retaining a private quote layout. */
+.quote-actions{display:flex;justify-content:flex-end;margin:-55px 0 70px}
+.quote-nav .mobile-note{cursor:pointer}
+.quote-nav .logo:focus-visible{outline:2px solid #303234;outline-offset:3px}
 [hidden]{display:none!important}
 body{background:#fff;color:#303234}
 .quote-shell{max-width:1180px;width:90%;margin:0 auto}
@@ -64,7 +67,7 @@ body{background:#fff;color:#303234}
 .quote-nav .nav-links{gap:10px}
 .quote-nav .nav-links a{font-size:13px}
 .quote-print{font-size:13px}
-.quote-hero{padding:58px 0 50px}
+.quote-hero{padding:58px 0 50px}.quote-actions{margin:-30px 0 40px}
 .quote-hero h1{font-size:34px}
 .quote-section{padding:48px 0}
 .quote-pricing-header,.quote-pricing-row{grid-template-columns:1.3fr .8fr 1fr 1.25fr;gap:6px;padding:18px 0;font-size:14px}
@@ -74,7 +77,7 @@ body{background:#fff;color:#303234}
 .quote-footer .footer-grid{padding:0 18px}
 }
 @media print{
-.site-nav .nav-links,.quote-print{display:none!important}
+.site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
 .quote-section{padding:30px 0}
 .quote-process{grid-template-columns:repeat(5,1fr)}
@@ -84,14 +87,15 @@ body{background:#fff}
 </style>
 </head>
 <body>
-<nav class="site-nav quote-nav" aria-label="網站導覽">
+<nav class="site-nav quote-nav" aria-label="主要導覽">
 <a class="logo" href="/">HANA SCENT ARTIST</a>
-<div class="nav-links"><a href="/business/">企業品牌合作</a><button type="button" class="quote-print" onclick="window.print()">列印／PDF</button></div>
+<div class="nav-links"></div>
+<div class="mobile-note">MENU</div>
 </nav>
 <main>
 <div id="missing" class="quote-error quote-shell" hidden>此報價尚未發布、已撤回，或連結不正確。請向 HANA SCENT ARTIST 索取有效連結。</div>
 <article id="quote" hidden>
-<header class="quote-hero"><div class="quote-shell">
+<header class="quote-hero"><div class="quote-shell"><div class="quote-actions"><button type="button" class="quote-print" onclick="window.print()">列印／存成 PDF</button></div>
 <div class="quote-kicker">Private Product Quotation</div>
 <h1 id="title"></h1>
 <p id="client" class="quote-client"></p>
@@ -136,5 +140,6 @@ body{background:#fff}
 (async()=>{'use strict';const $=x=>document.querySelector(x),txt=(id,value)=>$(id).textContent=value,money=n=>'NT$'+Math.round(Number(n)||0).toLocaleString('zh-TW');const id=new URLSearchParams(location.search).get('id');if(!id||!/^[0-9a-f-]{36}$/i.test(id)){ $('#missing').hidden=false;return;}try{const config=window.HANA_CMS_CONFIG,db=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});const {data,error}=await db.from('fragrance_quote_public').select('client_name,title,data').eq('share_id',id).maybeSingle();if(error||!data){$('#missing').hidden=false;return}const d=data.data||{};const design=d.design||{};txt('#logoDesignPrice',money(design.logoFee??10000));txt('#labelDesignPrice',money(design.labelFee??3000)+'／款');const designer=String(design.designerName||'').trim();if(designer){txt('#designerName',designer);$('#designerRow').hidden=false;}txt('#title',data.title);txt('#client','提案對象｜'+data.client_name);const rows=d.items||[];$('#noProducts').hidden=rows.length>0;rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶':'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';row.append(name,volume,qty,total);$('#items').append(row)});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
 </script>
 <script>document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());</script>
+<script src="/assets/site.js?v=20260918-business-inquiry"></script>
 </body>
 </html>
