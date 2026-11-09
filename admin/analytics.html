@@ -48,6 +48,7 @@
       <div class="panel">
         <h2>課程預約漏斗｜官網 → reservation.hanascent.com</h2>
         <div class="page-controls"><label for="reservation-period">預約統計期間 <select id="reservation-period"><option value="7">最近 7 日</option><option value="30" selected>最近 30 日</option><option value="90">最近 90 日</option></select></label></div>
+        <div class="metric-grid" id="reservation-today-metrics" aria-label="今日預約網站統計"></div>
         <p id="reservation-summary" class="status" role="status"></p>
         <p class="status">各階段為事件次數，並非同一批訪客的去重轉換率。預約站資料僅從追蹤功能正式上線後累積，不會回填歷史紀錄。</p>
         <div id="reservation-funnel" class="funnel"></div>
@@ -126,7 +127,15 @@
           return `<tr><td>${escapeHtml(p.label)}</td><td><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.path)}</a></td><td class="num">${p.views.toLocaleString('zh-TW')}</td><td class="num">${percent(p.views,total)}</td></tr>`;
         }).join('') : '<tr><td colspan="4">所選期間找不到符合條件的分頁紀錄。</td></tr>';
       }
+      function taipeiDate(value) {
+        return new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(value);
+      }
       function renderReservationFunnel() {
+        const today = taipeiDate(now);
+        const todayViews = count(cachedRows, r => r.page === 'reservation' && r.event_type === 'view' && taipeiDate(new Date(r.created_at)) === today);
+        const todayCourses = count(cachedRows, r => r.page === 'reservation' && r.event_type === 'reservation_course_select' && taipeiDate(new Date(r.created_at)) === today);
+        const todayPaid = count(cachedRows, r => r.page === 'reservation' && r.event_type === 'reservation_paid' && taipeiDate(new Date(r.created_at)) === today);
+        $('#reservation-today-metrics').innerHTML = metric('今日進入預約網站', todayViews) + metric('今日選擇課程', todayCourses) + metric('今日付款完成', todayPaid);
         const days = Number($('#reservation-period').value);
         const rows = cachedRows.filter(within(days));
         const resSteps = [
@@ -137,7 +146,7 @@
           ['成功建立訂單（未必付款）', eventCount(rows,'reservation','reservation_order_created')],
           ['確認付款完成', eventCount(rows,'reservation','reservation_paid')]
         ];
-        $('#reservation-summary').textContent = `最近 ${days} 日預約事件統計，含官網預約按鈕點擊及預約網站流程。`;
+        $('#reservation-summary').textContent = `今日以台灣時間 00:00 起算。以下為最近 ${days} 日預約事件統計；未收到事件時顯示 0，並不代表公開網站追蹤已成功運作。`;
         $('#reservation-funnel').innerHTML = resSteps.map(([label,value],i) => `<div class="funnel-row"><b>${escapeHtml(label)}</b><span>${value.toLocaleString('zh-TW')} 次</span><span>${i===0?'跨站事件紀錄':'事件數（非去重）'}</span></div>`).join('');
       }
       function render(rows) {
