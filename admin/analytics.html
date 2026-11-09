@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>HANA 後台｜漏斗統計</title>
+  <title>HANA 後台｜各分頁瀏覽統計</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
     .analytics-page{min-height:100vh;background:#f7f7f3;color:#151713;font-family:"Noto Serif TC","Source Han Serif TC",serif}.analytics-shell{max-width:1180px;margin:0 auto;padding:40px 22px 72px}.analytics-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:26px}.analytics-top h1{margin:6px 0 8px;font-size:34px;letter-spacing:.12em;font-weight:500}.analytics-top p{margin:0;color:#68706a;line-height:1.7}.analytics-actions{display:flex;gap:10px;flex-wrap:wrap}.analytics-actions a,.analytics-actions button{min-height:42px;border:1px solid #111;background:#fff;color:#111;padding:9px 16px;text-decoration:none;letter-spacing:.08em;cursor:pointer}.analytics-actions button:hover,.analytics-actions a:hover{background:#111;color:#fff}.status{margin:16px 0 20px;color:#68706a}.panel{background:#fff;border:1px solid #d8ddd4;padding:22px;margin-top:18px}.panel h2{margin:0 0 18px;font-size:22px;letter-spacing:.12em;font-weight:500}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{border:1px solid #e2e5df;padding:18px;background:#fafbf8}.metric small{display:block;color:#8a928b;letter-spacing:.12em;text-transform:uppercase}.metric b{display:block;margin-top:8px;font-size:34px;font-weight:500}.source-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.source{border:1px solid #e2e5df;padding:14px;background:#fafbf8}.source span{display:block;color:#68706a;font-size:13px}.source b{display:block;margin-top:6px;font-size:24px;font-weight:500}.funnel{display:grid;gap:10px}.funnel-row{display:grid;grid-template-columns:minmax(240px,1fr) 120px 120px;gap:12px;align-items:center;border:1px solid #e2e5df;background:#fafbf8;padding:14px}.funnel-row b{font-weight:500}.funnel-row span{color:#68706a}.table-wrap{overflow:auto}.result-table{width:100%;border-collapse:collapse}.result-table th,.result-table td{border-bottom:1px solid #e2e5df;text-align:left;padding:12px;white-space:nowrap}.result-table th{font-size:13px;color:#68706a;font-weight:500}.notice{border:1px solid #d8ddd4;background:#fff;padding:18px;line-height:1.8;color:#68706a}.notice code{background:#f0f1ed;padding:2px 5px}@media(max-width:860px){.analytics-top{display:grid}.metric-grid,.source-grid{grid-template-columns:1fr 1fr}.funnel-row{grid-template-columns:1fr}.analytics-top h1{font-size:28px}}@media(max-width:560px){.metric-grid,.source-grid{grid-template-columns:1fr}}
+    .page-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:12px 0 6px}.page-controls label{display:grid;gap:5px;font-size:13px;color:#424944}.page-controls select,.page-controls input{min-height:42px;padding:8px 10px;border:1px solid #cbd1c9;background:#fff;color:#151713;min-width:160px}.page-controls input{min-width:min(280px,75vw)}.page-table td:first-child{font-weight:600}.page-table td:nth-child(2){white-space:normal;overflow-wrap:anywhere;min-width:180px}.page-table a{color:#364e42}.page-table .num,.page-table th.num{text-align:right;font-variant-numeric:tabular-nums}.page-table tr:hover{background:#f7f8f5}
   </style>
 </head>
 <body class="analytics-page">
@@ -15,8 +16,8 @@
     <header class="analytics-top">
       <div>
         <p class="eyebrow">HANA SCENT ARTIST</p>
-        <h1>漏斗統計</h1>
-        <p>首頁、Find Your Helori 測驗、Helori 課程頁分開統計。資料來源：Supabase analytics_events。</p>
+        <h1>網站瀏覽統計</h1>
+        <p>查看各分頁瀏覽次數及熱門頁面。資料來源：Supabase analytics_events；下方保留原有轉換漏斗。</p>
       </div>
       <div class="analytics-actions">
         <button id="reload" type="button">重新載入</button>
@@ -27,6 +28,13 @@
 
     <div id="status" class="status">正在載入統計資料…</div>
     <section id="app" class="hidden">
+      <div class="panel">
+        <h2>各分頁瀏覽明細</h2>
+        <div class="page-controls"><label>統計期間 <select id="page-period"><option value="7">最近 7 日</option><option value="30" selected>最近 30 日</option><option value="90">最近 90 日</option></select></label><label>搜尋頁面 <input id="page-search" type="search" placeholder="輸入網址或頁面名稱"></label></div>
+        <p id="page-summary" class="status"></p>
+        <div class="table-wrap"><table class="result-table page-table"><thead><tr><th>頁面</th><th>網址</th><th class="num">瀏覽次數</th><th class="num">占比</th></tr></thead><tbody id="page-table"></tbody></table></div>
+        <p class="status">依頁面網址彙整瀏覽事件；忽略 UTM 與查詢參數。瀏覽次數並非不重複訪客，也不包含未安裝追蹤程式的頁面。</p>
+      </div>
       <div class="panel">
         <h2>頁面觀看</h2>
         <div id="page-metrics" class="metric-grid"></div>
@@ -70,7 +78,9 @@
       };
       const db = configured && window.supabase ? window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey) : null;
       const now = new Date();
-      const since = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString();
+      const since = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000).toISOString();
+      let cachedRows = [];
+      const knownPages = {'/':'首頁','/business/':'企業服務','/KPIA/':'KPIA 專業調香課程','/overture/':'氣味藝術序曲 Vol.1','/accord-etude/':'氣味藝術序曲 Vol.2','/courses/':'調香課程','/journal/':'氣味誌','/news/':'最新消息','/ciyu/':'此域 Hineni','/helori/':'Helori','/practice/':'練習與課程','/product-development/':'香氛產品開發','/student-tools/':'學員工具'};
 
       function count(rows, filter) { return rows.filter(filter).length; }
       function within(days) { const floor = new Date(now.getTime() - days * 24 * 60 * 60 * 1000); return row => new Date(row.created_at) >= floor; }
@@ -80,6 +90,35 @@
       function eventCount(rows, page, event) { return count(rows, r => r.page === page && r.event_type === event); }
       function escapeHtml(value = '') { return String(value).replace(/[&<>'"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[c])); }
 
+      function normalizedPath(raw) {
+        const value = String(raw || '').trim();
+        if (!value) return '';
+        try {
+          const u = new URL(value.startsWith('/') ? value : (value.startsWith('http') ? value : 'https://' + value));
+          let path = u.pathname.replace(/\/+/g, '/');
+          if (path === '/index.html') path = '/';
+          if (!path.endsWith('/') && !/\.[a-z0-9]{2,6}$/i.test(path)) path += '/';
+          const host = u.host.toLowerCase();
+          return host === 'hanascent.com' || host === 'www.hanascent.com' || value.startsWith('/') ? path : host + path;
+        } catch (_) { return value.split('?')[0].split('#')[0]; }
+      }
+      function renderPages() {
+        const days = Number($('#page-period').value);
+        const query = ($('#page-search').value || '').trim().toLowerCase();
+        const eligible = cachedRows.filter(r => r.event_type === 'view' && r.path && new Date(r.created_at) >= new Date(now.getTime() - days * 86400000));
+        const byPath = new Map();
+        eligible.forEach(r => {
+          const key = normalizedPath(r.path);
+          if (key) byPath.set(key, (byPath.get(key) || 0) + 1);
+        });
+        const total = [...byPath.values()].reduce((a,b) => a+b, 0);
+        const pages = [...byPath.entries()].map(([path,views]) => ({path,views,label:knownPages[path] || path})).filter(p => (p.label+' '+p.path).toLowerCase().includes(query)).sort((a,b) => b.views-a.views || a.path.localeCompare(b.path));
+        $('#page-summary').textContent = `最近 ${days} 日：${total.toLocaleString('zh-TW')} 次有網址的頁面觀看，涵蓋 ${byPath.size} 個分頁；目前顯示 ${pages.length} 個。`;
+        $('#page-table').innerHTML = pages.length ? pages.map(p => {
+          const href = p.path.startsWith('/') ? 'https://hanascent.com'+p.path : 'https://'+p.path;
+          return `<tr><td>${escapeHtml(p.label)}</td><td><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.path)}</a></td><td class="num">${p.views.toLocaleString('zh-TW')}</td><td class="num">${percent(p.views,total)}</td></tr>`;
+        }).join('') : '<tr><td colspan="4">所選期間找不到符合條件的分頁紀錄。</td></tr>';
+      }
       function render(rows) {
         const viewRows = rows.filter(r => r.event_type === 'view');
         $('#page-metrics').innerHTML = ['home','helori_quiz','helori_course'].map(page => {
@@ -129,17 +168,21 @@
         }
         $('#status').textContent = '正在載入最近 30 日資料…';
         $('#app').classList.add('hidden');
-        const { data, error } = await db.from('analytics_events').select('created_at,page,event_type,source,result_type,session_id').gte('created_at', since).order('created_at', { ascending:false }).limit(10000);
+        const { data, error } = await db.from('analytics_events').select('created_at,page,path,event_type,source,result_type,session_id').gte('created_at', since).order('created_at', { ascending:false }).limit(10000);
         if (error) {
           $('#status').innerHTML = `<div class="notice">無法載入 analytics_events。請先在 Supabase SQL Editor 執行 <code>supabase/analytics_events.sql</code>。<br>${escapeHtml(error.message || '')}</div>`;
           return;
         }
-        render(data || []);
-        $('#status').textContent = `已載入最近 30 日 ${data?.length || 0} 筆事件。`;
+        cachedRows = data || [];
+        renderPages();
+        render(cachedRows.filter(within(30)));
+        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；下方漏斗與來源統計仍使用最近 30 日。`;
         $('#app').classList.remove('hidden');
       }
 
       $('#reload').addEventListener('click', load);
+      $('#page-period').addEventListener('change', renderPages);
+      $('#page-search').addEventListener('input', renderPages);
       load();
     })();
   </script>
