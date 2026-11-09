@@ -76,6 +76,31 @@ body{background:#fff;color:#303234}
 .process-step,.process-step:nth-child(2n){border-right:0;min-height:0;padding:22px 2px;border-bottom:1px solid #dedede}
 .quote-footer .footer-grid{padding:0 18px}
 }
+
+/* Quote legibility: larger typography; numerals use the same CJK typeface as Chinese text. */
+.quote-client{font-size:20px}
+.quote-lead{font-size:19px}
+.quote-section-title{font-size:clamp(32px,3.5vw,43px)}
+.quote-section-subtitle{font-size:20px}
+.quote-pricing-header{font-size:18px}
+.quote-pricing-row{font-size:20px}
+.quote-pricing-row strong{font-size:23px}
+.quote-disclaimer,.quote-process-note{font-size:17px}
+.quote-designer{font-size:19px}
+.process-step h3{font-size:23px}
+.process-step p{font-size:17px}
+.process-num{font-family:"Noto Serif TC","Microsoft JhengHei",sans-serif;font-size:25px;line-height:1.45;font-variant-numeric:normal}
+.quote-pricing-header,.quote-pricing-row,.quote-design-row strong,.quote-designer{font-family:"Noto Serif TC","Microsoft JhengHei",sans-serif;font-variant-numeric:normal}
+@media(max-width:640px){
+ .quote-client{font-size:18px}
+ .quote-lead{font-size:18px}
+ .quote-section-title{font-size:30px}
+ .quote-pricing-header,.quote-pricing-row{font-size:16px}
+ .quote-pricing-row strong{font-size:18px}
+ .process-step h3{font-size:21px}
+ .process-step p{font-size:17px}
+ .quote-disclaimer,.quote-process-note{font-size:16px}
+}
 @media print{
 .site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
