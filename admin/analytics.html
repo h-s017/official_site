@@ -9,6 +9,7 @@
   <style>
     .analytics-page{min-height:100vh;background:#f7f7f3;color:#151713;font-family:"Noto Serif TC","Source Han Serif TC",serif}.analytics-shell{max-width:1180px;margin:0 auto;padding:40px 22px 72px}.analytics-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:26px}.analytics-top h1{margin:6px 0 8px;font-size:34px;letter-spacing:.12em;font-weight:500}.analytics-top p{margin:0;color:#68706a;line-height:1.7}.analytics-actions{display:flex;gap:10px;flex-wrap:wrap}.analytics-actions a,.analytics-actions button{min-height:42px;border:1px solid #111;background:#fff;color:#111;padding:9px 16px;text-decoration:none;letter-spacing:.08em;cursor:pointer}.analytics-actions button:hover,.analytics-actions a:hover{background:#111;color:#fff}.status{margin:16px 0 20px;color:#68706a}.panel{background:#fff;border:1px solid #d8ddd4;padding:22px;margin-top:18px}.panel h2{margin:0 0 18px;font-size:22px;letter-spacing:.12em;font-weight:500}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{border:1px solid #e2e5df;padding:18px;background:#fafbf8}.metric small{display:block;color:#8a928b;letter-spacing:.12em;text-transform:uppercase}.metric b{display:block;margin-top:8px;font-size:34px;font-weight:500}.source-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.source{border:1px solid #e2e5df;padding:14px;background:#fafbf8}.source span{display:block;color:#68706a;font-size:13px}.source b{display:block;margin-top:6px;font-size:24px;font-weight:500}.funnel{display:grid;gap:10px}.funnel-row{display:grid;grid-template-columns:minmax(240px,1fr) 120px 120px;gap:12px;align-items:center;border:1px solid #e2e5df;background:#fafbf8;padding:14px}.funnel-row b{font-weight:500}.funnel-row span{color:#68706a}.table-wrap{overflow:auto}.result-table{width:100%;border-collapse:collapse}.result-table th,.result-table td{border-bottom:1px solid #e2e5df;text-align:left;padding:12px;white-space:nowrap}.result-table th{font-size:13px;color:#68706a;font-weight:500}.notice{border:1px solid #d8ddd4;background:#fff;padding:18px;line-height:1.8;color:#68706a}.notice code{background:#f0f1ed;padding:2px 5px}@media(max-width:860px){.analytics-top{display:grid}.metric-grid,.source-grid{grid-template-columns:1fr 1fr}.funnel-row{grid-template-columns:1fr}.analytics-top h1{font-size:28px}}@media(max-width:560px){.metric-grid,.source-grid{grid-template-columns:1fr}}
     .page-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:12px 0 6px}.page-controls label{display:grid;gap:5px;font-size:13px;color:#424944}.page-controls select,.page-controls input{min-height:42px;padding:8px 10px;border:1px solid #cbd1c9;background:#fff;color:#151713;min-width:160px}.page-controls input{min-width:min(280px,75vw)}.page-table td:first-child{font-weight:600}.page-table td:nth-child(2){white-space:normal;overflow-wrap:anywhere;min-width:180px}.page-table a{color:#364e42}.page-table .num,.page-table th.num{text-align:right;font-variant-numeric:tabular-nums}.page-table tr:hover{background:#f7f8f5}
+    .reservation-four-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:16px}.reservation-four-grid .metric{min-width:0}.source-heading{font-size:18px;font-weight:500;margin:26px 0 12px}.reservation-source-table th:not(:first-child),.reservation-source-table td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}@media(max-width:850px){.reservation-four-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:450px){.reservation-four-grid .metric{padding:12px}.reservation-four-grid .metric b{font-size:26px}}
   </style>
 </head>
 <body class="analytics-page">
@@ -28,6 +29,15 @@
 
     <div id="status" class="status">正在載入統計資料…</div>
     <section id="app" class="hidden">
+      <div class="panel" id="reservation-traffic">
+        <h2>課程預約頁｜進站統計</h2>
+        <p class="status">reservation.hanascent.com — 與各分頁統計整合於此頁</p>
+        <div id="reservation-visitor-metrics" class="metric-grid reservation-four-grid" aria-label="預約頁今日、7 天、30 天、90 天進站人次"></div>
+        <h3 class="source-heading">預約頁流量來源</h3>
+        <div class="table-wrap"><table class="result-table reservation-source-table"><thead><tr><th>來源</th><th>今日</th><th>7 天</th><th>30 天</th><th>90 天</th></tr></thead><tbody id="reservation-source-table"></tbody></table></div>
+        <p id="reservation-visitor-note" class="status" role="status"></p>
+        <p class="status">以匿名瀏覽工作階段估算進站人次，不是可辨識個人的精確人數。來源只計預約頁進站事件，統計從追蹤上線後起算，無法回填先前訪客。</p>
+      </div>
       <div class="panel">
         <h2>各分頁瀏覽明細</h2>
         <div class="page-controls"><label>統計期間 <select id="page-period"><option value="7">最近 7 日</option><option value="30" selected>最近 30 日</option><option value="90">最近 90 日</option></select></label><label>搜尋頁面 <input id="page-search" type="search" placeholder="輸入網址或頁面名稱"></label></div>
@@ -45,13 +55,6 @@
         <div id="source-metrics" class="source-grid"></div>
       </div>
 
-      <div class="panel">
-        <h2>預約網站｜進站訪客</h2>
-        <p class="status">reservation.hanascent.com</p>
-        <div id="reservation-visitor-metrics" class="metric-grid" aria-label="預約頁訪客統計"></div>
-        <p id="reservation-visitor-note" class="status" role="status"></p>
-        <p class="status">以匿名瀏覽工作階段估算進站人次，非精確的不重複自然人數。只統計進入預約頁，不計算選課、訂單或付款。追蹤上線前的歷史訪客不會回填。</p>
-      </div>
       <div class="panel">
         <h2>原有漏斗統計</h2>
         <div id="funnel" class="funnel"></div>
@@ -131,25 +134,37 @@
       }
       function renderReservationVisitors() {
         const views = cachedRows.filter(r => r.page === 'reservation' && r.event_type === 'view');
-        // Count unique anonymous browser sessions, not repeat page refreshes.
-        // Fallback to event counts for any earlier records without a session ID.
-        const visitCount = rows => {
-          const keys = new Set();
-          rows.forEach((r,i) => keys.add(r.session_id ? 'session:' + r.session_id : 'legacy:' + i));
-          return keys.size;
-        };
-        const periods = [
-          ['今日進站人次', 0],
-          ['最近 7 天', 7],
-          ['最近 30 天', 30],
-          ['最近 90 天', 90]
-        ];
         const today = taipeiDate(now);
-        $('#reservation-visitor-metrics').innerHTML = periods.map(([label,days]) => {
-          const subset = views.filter(r => days === 0 ? taipeiDate(new Date(r.created_at)) === today : new Date(r.created_at) >= new Date(now.getTime() - days * 86400000));
-          return metric(label, visitCount(subset).toLocaleString('zh-TW'));
+        const ranges = [
+          {label:'今日進站',days:0},
+          {label:'最近 7 天',days:7},
+          {label:'最近 30 天',days:30},
+          {label:'最近 90 天',days:90}
+        ];
+        const rangeRows = days => views.filter(r => {
+          const at = new Date(r.created_at);
+          return days === 0 ? taipeiDate(at) === today : at >= new Date(now.getTime() - days * 86400000);
+        });
+        const countSessions = rows => {
+          const ids = new Set();
+          rows.forEach((r,i) => ids.add(r.session_id ? 'session:' + r.session_id : 'view:' + i));
+          return ids.size;
+        };
+        $('#reservation-visitor-metrics').innerHTML = ranges.map(({label,days}) =>
+          metric(label, countSessions(rangeRows(days)).toLocaleString('zh-TW'))
+        ).join('');
+        const labels = [['Instagram','Instagram'],['LINE','LINE'],['Google','Google'],['Direct','直接進入'],['Other','其他來源'],['Unknown','來源不明']];
+        const normalizedSource = value => {
+          const src = String(value || '').trim();
+          return ['Instagram','LINE','Google','Direct','Other'].includes(src) ? src : 'Unknown';
+        };
+        $('#reservation-source-table').innerHTML = labels.map(([source,label]) => {
+          const counts = ranges.map(({days}) => countSessions(rangeRows(days).filter(r => normalizedSource(r.source) === source)));
+          return '<tr><td>' + escapeHtml(label) + '</td>' + counts.map(n => '<td>' + n.toLocaleString('zh-TW') + '</td>').join('') + '</tr>';
         }).join('');
-        $('#reservation-visitor-note').textContent = views.length ? '已收到預約網站進站事件。' : '尚未收到預約網站進站事件；顯示 0 不代表網站沒有訪客，需確認追蹤程式已部署並成功寫入資料庫。';
+        $('#reservation-visitor-note').textContent = views.length
+          ? '已收到預約頁追蹤紀錄。若同一瀏覽工作階段重複開啟，僅計算一次。'
+          : '尚無預約頁追蹤資料：這不表示沒有人進站。請確認 reservation.hanascent.com/analytics.js 已部署且追蹤事件成功寫入。';
       }
       function render(rows) {
         const viewRows = rows.filter(r => r.event_type === 'view');
