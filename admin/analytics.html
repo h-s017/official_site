@@ -9,6 +9,7 @@
   <style>
     .analytics-page{min-height:100vh;background:#f7f7f3;color:#151713;font-family:"Noto Serif TC","Source Han Serif TC",serif}.analytics-shell{max-width:1180px;margin:0 auto;padding:40px 22px 72px}.analytics-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:26px}.analytics-top h1{margin:6px 0 8px;font-size:34px;letter-spacing:.12em;font-weight:500}.analytics-top p{margin:0;color:#68706a;line-height:1.7}.analytics-actions{display:flex;gap:10px;flex-wrap:wrap}.analytics-actions a,.analytics-actions button{min-height:42px;border:1px solid #111;background:#fff;color:#111;padding:9px 16px;text-decoration:none;letter-spacing:.08em;cursor:pointer}.analytics-actions button:hover,.analytics-actions a:hover{background:#111;color:#fff}.status{margin:16px 0 20px;color:#68706a}.panel{background:#fff;border:1px solid #d8ddd4;padding:22px;margin-top:18px}.panel h2{margin:0 0 18px;font-size:22px;letter-spacing:.12em;font-weight:500}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{border:1px solid #e2e5df;padding:18px;background:#fafbf8}.metric small{display:block;color:#8a928b;letter-spacing:.12em;text-transform:uppercase}.metric b{display:block;margin-top:8px;font-size:34px;font-weight:500}.source-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.source{border:1px solid #e2e5df;padding:14px;background:#fafbf8}.source span{display:block;color:#68706a;font-size:13px}.source b{display:block;margin-top:6px;font-size:24px;font-weight:500}.funnel{display:grid;gap:10px}.funnel-row{display:grid;grid-template-columns:minmax(240px,1fr) 120px 120px;gap:12px;align-items:center;border:1px solid #e2e5df;background:#fafbf8;padding:14px}.funnel-row b{font-weight:500}.funnel-row span{color:#68706a}.table-wrap{overflow:auto}.result-table{width:100%;border-collapse:collapse}.result-table th,.result-table td{border-bottom:1px solid #e2e5df;text-align:left;padding:12px;white-space:nowrap}.result-table th{font-size:13px;color:#68706a;font-weight:500}.notice{border:1px solid #d8ddd4;background:#fff;padding:18px;line-height:1.8;color:#68706a}.notice code{background:#f0f1ed;padding:2px 5px}@media(max-width:860px){.analytics-top{display:grid}.metric-grid,.source-grid{grid-template-columns:1fr 1fr}.funnel-row{grid-template-columns:1fr}.analytics-top h1{font-size:28px}}@media(max-width:560px){.metric-grid,.source-grid{grid-template-columns:1fr}}
     .page-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:12px 0 6px}.page-controls label{display:grid;gap:5px;font-size:13px;color:#424944}.page-controls select,.page-controls input{min-height:42px;padding:8px 10px;border:1px solid #cbd1c9;background:#fff;color:#151713;min-width:160px}.page-controls input{min-width:min(280px,75vw)}.page-table td:first-child{font-weight:600}.page-table td:nth-child(2){white-space:normal;overflow-wrap:anywhere;min-width:180px}.page-table a{color:#364e42}.page-table .num,.page-table th.num{text-align:right;font-variant-numeric:tabular-nums}.page-table tr:hover{background:#f7f8f5}
+    .page-open-stats{padding:0;border:0;background:none;color:#364e42;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit;text-align:left}.page-open-stats:hover{color:#111}
     .reservation-four-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:16px}.reservation-four-grid .metric{min-width:0}.source-heading{font-size:18px;font-weight:500;margin:26px 0 12px}.reservation-source-table th:not(:first-child),.reservation-source-table td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}@media(max-width:850px){.reservation-four-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:450px){.reservation-four-grid .metric{padding:12px}.reservation-four-grid .metric b{font-size:26px}}
   </style>
 </head>
@@ -30,13 +31,14 @@
     <div id="status" class="status">正在載入統計資料…</div>
     <section id="app" class="hidden">
       <div class="panel" id="reservation-traffic">
-        <h2>課程預約頁｜進站統計</h2>
-        <p class="status">reservation.hanascent.com — 與各分頁統計整合於此頁</p>
-        <div id="reservation-visitor-metrics" class="metric-grid reservation-four-grid" aria-label="預約頁今日、7 天、30 天、90 天進站人次"></div>
-        <h3 class="source-heading">預約頁流量來源</h3>
+        <h2 id="selected-page-title">各分頁｜進站統計</h2>
+        <div class="page-controls"><label for="analytics-page-select">選擇統計分頁<select id="analytics-page-select"><option value="/">首頁</option></select></label></div>
+        <p id="selected-page-path" class="status"></p>
+        <div id="reservation-visitor-metrics" class="metric-grid reservation-four-grid" aria-label="所選分頁今日、7 天、30 天、90 天進站人次"></div>
+        <h3 class="source-heading">所選分頁流量來源</h3>
         <div class="table-wrap"><table class="result-table reservation-source-table"><thead><tr><th>來源</th><th>今日</th><th>7 天</th><th>30 天</th><th>90 天</th></tr></thead><tbody id="reservation-source-table"></tbody></table></div>
         <p id="reservation-visitor-note" class="status" role="status"></p>
-        <p class="status">以匿名瀏覽工作階段估算進站人次，不是可辨識個人的精確人數。來源只計預約頁進站事件，統計從追蹤上線後起算，無法回填先前訪客。</p>
+        <p class="status">依實際分頁網址篩選觀看事件；有匿名工作階段識別碼時，同一期間只計一次，其餘舊資料按觀看紀錄計算。此為估計進站人次，不是經身分驗證的不重複人數。未有追蹤的分頁不會補算歷史資料。</p>
       </div>
       <div class="panel">
         <h2>各分頁瀏覽明細</h2>
@@ -126,45 +128,68 @@
         $('#page-summary').textContent = `最近 ${days} 日：${total.toLocaleString('zh-TW')} 次有網址的頁面觀看，涵蓋 ${byPath.size} 個分頁；目前顯示 ${pages.length} 個。`;
         $('#page-table').innerHTML = pages.length ? pages.map(p => {
           const href = p.path.startsWith('/') ? 'https://hanascent.com'+p.path : 'https://'+p.path;
-          return `<tr><td>${escapeHtml(p.label)}</td><td><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.path)}</a></td><td class="num">${p.views.toLocaleString('zh-TW')}</td><td class="num">${percent(p.views,total)}</td></tr>`;
+          return `<tr><td><button type="button" class="page-open-stats" data-page="${escapeHtml(p.path)}" aria-label="查看 ${escapeHtml(p.label)} 四格統計">${escapeHtml(p.label)}</button></td><td><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.path)}</a></td><td class="num">${p.views.toLocaleString('zh-TW')}</td><td class="num">${percent(p.views,total)}</td></tr>`;
         }).join('') : '<tr><td colspan="4">所選期間找不到符合條件的分頁紀錄。</td></tr>';
       }
       function taipeiDate(value) {
         return new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(value);
       }
-      function renderReservationVisitors() {
-        const views = cachedRows.filter(r => r.page === 'reservation' && r.event_type === 'view');
+      const perPageRanges = [
+        {label:'今日進站',days:0},
+        {label:'最近 7 天',days:7},
+        {label:'最近 30 天',days:30},
+        {label:'最近 90 天',days:90}
+      ];
+      function pageFromView(row) {
+        if (row.event_type !== 'view') return '';
+        if (row.page === 'reservation') return 'reservation.hanascent.com/';
+        return normalizedPath(row.path);
+      }
+      function countVisits(rows) {
+        const ids = new Set();
+        rows.forEach((row,index) => ids.add(row.session_id ? 'session:' + row.session_id : 'event:' + index));
+        return ids.size;
+      }
+      function viewWithinRange(rows, days) {
         const today = taipeiDate(now);
-        const ranges = [
-          {label:'今日進站',days:0},
-          {label:'最近 7 天',days:7},
-          {label:'最近 30 天',days:30},
-          {label:'最近 90 天',days:90}
-        ];
-        const rangeRows = days => views.filter(r => {
-          const at = new Date(r.created_at);
-          return days === 0 ? taipeiDate(at) === today : at >= new Date(now.getTime() - days * 86400000);
+        return rows.filter(row => {
+          const time = new Date(row.created_at);
+          return Number.isFinite(time.getTime()) && (days === 0 ? taipeiDate(time) === today : time >= new Date(now.getTime() - days * 86400000));
         });
-        const countSessions = rows => {
-          const ids = new Set();
-          rows.forEach((r,i) => ids.add(r.session_id ? 'session:' + r.session_id : 'view:' + i));
-          return ids.size;
-        };
-        $('#reservation-visitor-metrics').innerHTML = ranges.map(({label,days}) =>
-          metric(label, countSessions(rangeRows(days)).toLocaleString('zh-TW'))
+      }
+      function displayPageName(path) {
+        if (path === 'reservation.hanascent.com/') return '課程預約頁';
+        return knownPages[path] || path;
+      }
+      function updatePageChoices() {
+        const select = $('#analytics-page-select');
+        const previous = select.value;
+        const pages = new Set(['/','reservation.hanascent.com/',...Object.keys(knownPages)]);
+        cachedRows.forEach(row => { const path = pageFromView(row); if (path) pages.add(path); });
+        const ordered = [...pages].sort((a,b) => a === '/' ? -1 : b === '/' ? 1 : a === 'reservation.hanascent.com/' ? -1 : b === 'reservation.hanascent.com/' ? 1 : a.localeCompare(b));
+        select.innerHTML = ordered.map(path => '<option value="' + escapeHtml(path) + '">' + escapeHtml(displayPageName(path)) + '</option>').join('');
+        select.value = pages.has(previous) ? previous : '/';
+      }
+      function renderSelectedPage() {
+        const path = $('#analytics-page-select').value || '/';
+        const views = cachedRows.filter(row => pageFromView(row) === path);
+        const label = displayPageName(path);
+        $('#selected-page-title').textContent = label + '｜進站統計';
+        $('#selected-page-path').textContent = path.startsWith('/') ? 'hanascent.com' + path : path;
+        $('#reservation-visitor-metrics').innerHTML = perPageRanges.map(({label,days}) =>
+          metric(label, countVisits(viewWithinRange(views,days)).toLocaleString('zh-TW'))
         ).join('');
-        const labels = [['Instagram','Instagram'],['LINE','LINE'],['Google','Google'],['Direct','直接進入'],['Other','其他來源'],['Unknown','來源不明']];
-        const normalizedSource = value => {
-          const src = String(value || '').trim();
-          return ['Instagram','LINE','Google','Direct','Other'].includes(src) ? src : 'Unknown';
-        };
-        $('#reservation-source-table').innerHTML = labels.map(([source,label]) => {
-          const counts = ranges.map(({days}) => countSessions(rangeRows(days).filter(r => normalizedSource(r.source) === source)));
-          return '<tr><td>' + escapeHtml(label) + '</td>' + counts.map(n => '<td>' + n.toLocaleString('zh-TW') + '</td>').join('') + '</tr>';
+        const sourceLabels = [
+          ['Instagram','Instagram'],['LINE','LINE'],['Google','Google'],['Direct','直接進入'],['Other','其他來源'],['Unknown','來源不明']
+        ];
+        const sourceKey = value => ['Instagram','LINE','Google','Direct','Other'].includes(value) ? value : 'Unknown';
+        $('#reservation-source-table').innerHTML = sourceLabels.map(([key,name]) => {
+          const values = perPageRanges.map(({days}) => countVisits(viewWithinRange(views,days).filter(row => sourceKey(row.source) === key)));
+          return '<tr><td>' + escapeHtml(name) + '</td>' + values.map(n => '<td>' + n.toLocaleString('zh-TW') + '</td>').join('') + '</tr>';
         }).join('');
         $('#reservation-visitor-note').textContent = views.length
-          ? '已收到預約頁追蹤紀錄。若同一瀏覽工作階段重複開啟，僅計算一次。'
-          : '尚無預約頁追蹤資料：這不表示沒有人進站。請確認 reservation.hanascent.com/analytics.js 已部署且追蹤事件成功寫入。';
+          ? '已取得此分頁的觀看紀錄；可在上方選擇其他分頁查看同樣四格與來源統計。'
+          : '此分頁目前沒有追蹤事件，無法據此斷定無人進站；請確認該分頁已安裝並部署追蹤程式。';
       }
       function render(rows) {
         const viewRows = rows.filter(r => r.event_type === 'view');
@@ -222,14 +247,23 @@
         }
         cachedRows = data || [];
         renderPages();
-        renderReservationVisitors();
+        updatePageChoices();
+        renderSelectedPage();
         render(cachedRows.filter(within(30)));
-        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；預約頁顯示今日、7、30、90 天進站人次。`;
+        $('#status').textContent = `已載入最近 90 日 ${cachedRows.length} 筆事件；各分頁可切換查看今日、7、30、90 天進站及來源統計。`;
         $('#app').classList.remove('hidden');
       }
 
       $('#reload').addEventListener('click', load);
       $('#page-period').addEventListener('change', renderPages);
+      $('#analytics-page-select').addEventListener('change', renderSelectedPage);
+      $('#page-table').addEventListener('click', event => {
+        const button = event.target.closest('.page-open-stats');
+        if (!button) return;
+        $('#analytics-page-select').value = button.dataset.page;
+        renderSelectedPage();
+        $('#reservation-traffic').scrollIntoView({behavior:'smooth',block:'start'});
+      });
             $('#page-search').addEventListener('input', renderPages);
       load();
     })();
