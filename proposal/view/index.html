@@ -101,6 +101,57 @@ body{background:#fff;color:#303234}
  .process-step p{font-size:17px}
  .quote-disclaimer,.quote-process-note{font-size:16px}
 }
+
+/* Full responsive rendering: desktop tables, mobile cards, same content in both. */
+.quote-pricing-row>*,.quote-pricing-header>*{min-width:0;overflow-wrap:anywhere}
+.quote-pricing-row strong{font-variant-numeric:normal}
+@media(min-width:901px){
+ .quote-pricing-row,.quote-pricing-header{grid-template-columns:minmax(190px,2fr) minmax(110px,1fr) minmax(120px,1fr) minmax(175px,1.35fr)}
+ .quote-process{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media(min-width:641px) and (max-width:900px){
+ .quote-pricing-row,.quote-pricing-header{grid-template-columns:minmax(145px,1.6fr) minmax(85px,1fr) minmax(110px,1fr) minmax(150px,1.35fr);gap:12px}
+ .quote-pricing-row{font-size:18px}
+ .quote-pricing-row strong{font-size:21px}
+ .quote-design-row,.quote-design-header{grid-template-columns:minmax(0,2fr) minmax(155px,1fr)}
+}
+@media(max-width:640px){
+ body{overflow-x:hidden}
+ .quote-shell{width:calc(100% - 36px);max-width:100%}
+ .quote-pricing-header{display:none}
+ .quote-pricing{display:grid;grid-template-columns:1fr;gap:14px}
+ .quote-pricing-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 16px;align-items:start;margin:0;padding:20px 18px;border:1px solid #dedede;background:#fff;font-size:18px}
+ .quote-pricing-row>span,.quote-pricing-row>strong{display:flex;justify-content:space-between;gap:14px;align-items:baseline;grid-column:1/-1;text-align:right}
+ .quote-pricing-row>[data-label]::before{content:attr(data-label);font-size:15px;color:#696969;font-weight:400;white-space:nowrap;text-align:left}
+ .quote-pricing-row>strong{border-top:1px solid #e5e5e5;padding-top:13px;margin-top:2px;font-size:21px}
+ .quote-pricing-row.quote-design-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:17px 0;border:0;border-bottom:1px solid #dedede;background:transparent;font-size:18px}
+ .quote-design-header{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:16px}
+ .quote-design-row>span,.quote-design-row>strong{display:block;grid-column:auto;text-align:inherit;padding:0;margin:0;border:0}
+ .quote-design-row>strong{text-align:right;font-size:20px}
+ .quote-design-row>[data-label]::before{content:none}
+ .quote-process{grid-template-columns:1fr;gap:0}
+ .process-step,.process-step:nth-child(2n){border-right:none;border-bottom:1px solid #dedede;padding:23px 0;min-height:0}
+ .process-step h3{margin:10px 0}
+ .quote-hero{padding:58px 0 50px}
+ .quote-actions{margin:-30px 0 38px}
+ .quote-footer .footer-grid{padding:0;max-width:100%}
+ .quote-footer .footer-col,.quote-footer .footer-bottom{min-width:0;overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+ .quote-shell{width:calc(100% - 28px)}
+ .quote-pricing-row{padding:17px 14px}
+ .quote-hero h1{font-size:31px}
+ .quote-section-title{font-size:29px}
+}
+@media print{
+ .quote-pricing-header{display:grid!important}
+ .quote-pricing{display:block!important}
+ .quote-pricing-row{display:grid!important;grid-template-columns:2fr 1fr 1fr 1.35fr!important;gap:10px!important;padding:12px 4px!important;border:0;border-bottom:1px solid #dedede!important;break-inside:avoid}
+ .quote-pricing-row>span,.quote-pricing-row>strong{grid-column:auto!important;display:block!important;text-align:left!important;border:0!important;padding:0!important;margin:0!important}
+ .quote-pricing-row>[data-label]::before{display:none!important}
+ .quote-design-row{grid-template-columns:2fr 1fr!important}
+ .quote-process{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
 @media print{
 .site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
@@ -162,7 +213,7 @@ body{background:#fff}
 <script src="/admin/config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-(async()=>{'use strict';const $=x=>document.querySelector(x),txt=(id,value)=>$(id).textContent=value,money=n=>'NT$'+Math.round(Number(n)||0).toLocaleString('zh-TW');const id=new URLSearchParams(location.search).get('id');if(!id||!/^[0-9a-f-]{36}$/i.test(id)){ $('#missing').hidden=false;return;}try{const config=window.HANA_CMS_CONFIG,db=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});const {data,error}=await db.from('fragrance_quote_public').select('client_name,title,data').eq('share_id',id).maybeSingle();if(error||!data){$('#missing').hidden=false;return}const d=data.data||{};const design=d.design||{};txt('#logoDesignPrice',money(design.logoFee??10000));txt('#labelDesignPrice',money(design.labelFee??3000)+'／款');const designer=String(design.designerName||'').trim();if(designer){txt('#designerName',designer);$('#designerRow').hidden=false;}txt('#title',data.title);txt('#client','提案對象｜'+data.client_name);const rows=d.items||[];$('#noProducts').hidden=rows.length>0;rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶':'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';row.append(name,volume,qty,total);$('#items').append(row)});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
+(async()=>{'use strict';const $=x=>document.querySelector(x),txt=(id,value)=>$(id).textContent=value,money=n=>'NT$'+Math.round(Number(n)||0).toLocaleString('zh-TW');const id=new URLSearchParams(location.search).get('id');if(!id||!/^[0-9a-f-]{36}$/i.test(id)){ $('#missing').hidden=false;return;}try{const config=window.HANA_CMS_CONFIG,db=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});const {data,error}=await db.from('fragrance_quote_public').select('client_name,title,data').eq('share_id',id).maybeSingle();if(error||!data){$('#missing').hidden=false;return}const d=data.data||{};const design=d.design||{};txt('#logoDesignPrice',money(design.logoFee??10000));txt('#labelDesignPrice',money(design.labelFee??3000)+'／款');const designer=String(design.designerName||'').trim();if(designer){txt('#designerName',designer);$('#designerRow').hidden=false;}txt('#title',data.title);txt('#client','提案對象｜'+data.client_name);const rows=d.items||[];$('#noProducts').hidden=rows.length>0;rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶':'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';name.dataset.label='商品';volume.dataset.label='容量';qty.dataset.label='訂購數量';total.dataset.label='單瓶價格';row.append(name,volume,qty,total);$('#items').append(row)});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
 </script>
 <script>document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());</script>
 <script src="/assets/site.js?v=20260918-business-inquiry"></script>
