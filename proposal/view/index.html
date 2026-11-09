@@ -307,6 +307,45 @@ body{background:#fff;color:#303234}
 .process-step{break-inside:avoid;padding:14px 10px;min-height:0}
 body{background:#fff}
 }
+
+/* HANA quotation visual cleanup: spacing over redundant rules. */
+.quote-hero{border-bottom:0}
+.quote-hero:after{background:#c9cbc7;width:48px}
+.quote-section{border-bottom:0}
+.quote-section+.quote-section{border-top:1px solid #eeefed}
+.quote-pricing-header{border-top:0;background:#f8f8f6;border-bottom:0}
+.quote-pricing-row:not(.quote-design-row){border-bottom:1px solid #ececea}
+.quote-pricing-row:not(.quote-design-row):last-child{border-bottom:0}
+.quote-design-row{border-bottom:1px solid #ececea}
+.quote-design-row:last-of-type{border-bottom:0}
+.quote-summary{border-top:0;padding-top:12px}
+.quote-summary-choice{border-bottom:1px solid #eeefed}
+.quote-summary-choice:last-child{border-bottom:0}
+.quote-summary-subtotal{border:0;margin-top:0;padding:12px 4px}
+.quote-summary-subtotal:first-of-type{margin-top:14px}
+.quote-design-selection{border:0;margin-bottom:13px}
+.quote-design-selection .quote-summary-design-row{border-bottom:0}
+.quote-summary-total{border-top:1px solid #cccfcb;margin-top:14px}
+.quote-explorer-summary{border-top:0;background:#f0f1ee;padding:14px 18px}
+.quote-explorer-card{border:0;box-shadow:0 1px 0 #e6e7e4}
+.quote-explorer-card.is-match{border:0;border-top:2px solid #646e66;padding-top:22px}
+.quote-explorer-status{border-bottom:0;padding-bottom:0}
+.quote-process{border-top:0}
+.process-step{border-right:0}
+.quote-plan-notes{border-left:0;background:#f8f8f6}
+@media(max-width:900px){.process-step{border-bottom:0}}
+@media(max-width:640px){
+ .quote-pricing-row:not(.quote-design-row){border:0;border-bottom:1px solid #ebedeb;background:#fafaf8;padding:19px 15px}
+ .quote-pricing-row:not(.quote-design-row)>.quote-plan-total{border-top:0;margin-top:8px;padding-top:8px}
+ .quote-pricing-row.quote-design-row{border:0;border-bottom:1px solid #ebedeb;padding:15px 0}
+ .quote-process .process-step,.quote-process .process-step:nth-child(2n){border:0;padding:18px 0}
+ .quote-summary-total{border-top:1px solid #c9cbc8}
+}
+@media print{
+ .quote-explorer-card{box-shadow:none;border:1px solid #e4e4e1}
+ .quote-pricing-row:not(.quote-design-row){border-bottom:1px solid #ddd!important}
+ .quote-process .process-step{border-right:0!important}
+}
 </style>
 </head>
 <body>
