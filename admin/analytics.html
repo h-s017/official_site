@@ -94,7 +94,7 @@
         const value = String(raw || '').trim();
         if (!value) return '';
         try {
-          const u = new URL(value.startsWith('/') ? value : (value.startsWith('http') ? value : 'https://' + value));
+          const u = new URL(value.startsWith('/') ? value : (/^https?:\/\//i.test(value) ? value : 'https://' + value), 'https://hanascent.com');
           let path = u.pathname.replace(/\/+/g, '/');
           if (path === '/index.html') path = '/';
           if (!path.endsWith('/') && !/\.[a-z0-9]{2,6}$/i.test(path)) path += '/';
