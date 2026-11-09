@@ -152,6 +152,12 @@ body{background:#fff;color:#303234}
  .quote-design-row{grid-template-columns:2fr 1fr!important}
  .quote-process{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
+.quote-optional-copy{font-size:19px;white-space:pre-line;line-height:1.9;max-width:900px;margin:15px 0;color:#414548}
+.quote-plan-notes{margin-top:25px;padding:22px 25px;border-left:2px solid #333;background:#fafafa}
+.quote-plan-note{font-size:17px;line-height:1.85;white-space:pre-line;margin:8px 0;color:#414548}
+.quote-design-deliverables{margin:18px 0}
+.quote-contact{margin-top:25px;font-size:19px}.quote-contact a{color:#303234;text-decoration:none;border-bottom:1px solid #303234;padding-bottom:6px}
+@media(max-width:640px){.quote-optional-copy{font-size:17px}.quote-plan-note{font-size:16px}.quote-plan-notes{padding:16px}}
 @media print{
 .site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
@@ -177,11 +183,12 @@ body{background:#fff}
 <p id="client" class="quote-client"></p>
 <p class="quote-lead">依品牌需求、商品規格與製作數量，提供專屬香氛商品合作報價。</p>
 </div></header>
+<section id="briefSection" class="quote-section" hidden><div class="quote-shell"><div class="quote-section-subtitle">Understanding Your Brand</div><h2 class="quote-section-title">專屬合作摘要</h2><p id="brandBrief" class="quote-optional-copy" hidden></p><p id="recommendation" class="quote-optional-copy" hidden></p></div></section>
 <section class="quote-section"><div class="quote-shell">
 <div class="quote-section-subtitle">Product Quotation</div>
 <h2 class="quote-section-title">商品單瓶報價</h2>
 <div class="quote-pricing-header"><span>商品品項</span><span>容量</span><span>訂購數量／氣味</span><span>每瓶單價</span></div>
-<div id="items" class="quote-pricing"></div>
+<div id="items" class="quote-pricing"></div><div id="planNotes" class="quote-plan-notes" hidden></div>
 <p id="noProducts" hidden>此報價尚未設定可發布的規格與單價，請向 HANA SCENT ARTIST 確認。</p>
 <p class="quote-disclaimer">不同數量為各自獨立的報價方案，並非合併採購。金額以新台幣計；瓶器款式、最低訂購量、稅費與交貨時程依雙方確認的正式條件為準。</p>
 </div></section>
@@ -191,7 +198,7 @@ body{background:#fff}
 <div class="quote-pricing-header quote-design-header"><span>設計項目</span><span>費用</span></div>
 <div class="quote-pricing-row quote-design-row"><span>品牌 LOGO 設計</span><strong id="logoDesignPrice"></strong></div>
 <div class="quote-pricing-row quote-design-row"><span>產品貼紙設計與印刷完稿</span><strong id="labelDesignPrice"></strong></div>
-<p id="designerRow" class="quote-designer" hidden><span>設計師：</span><span id="designerName"></span></p>
+<div id="designDeliverables" hidden class="quote-design-deliverables"><p id="logoDeliverables" class="quote-optional-copy" hidden></p><p id="labelDeliverables" class="quote-optional-copy" hidden></p></div><p id="designerRow" class="quote-designer" hidden><span>設計師：</span><span id="designerName"></span></p>
 <p class="quote-disclaimer">設計費屬一次性服務，與商品單瓶報價分開列示；實際交付範圍依合作確認內容為準。</p>
 </div></section>
 <section class="quote-section"><div class="quote-shell">
@@ -207,13 +214,14 @@ body{background:#fff}
 </div>
 <p class="quote-process-note">實際打樣與製作時程依專案內容與產品條件調整。</p>
 </div></section>
+<section id="nextSection" class="quote-section" hidden><div class="quote-shell"><div class="quote-section-subtitle">Next Steps</div><h2 class="quote-section-title">合作確認與下一步</h2><p id="pendingItems" class="quote-optional-copy" hidden></p><p id="nextSteps" class="quote-optional-copy" hidden></p><p class="quote-contact"><a href="/business/inquiry/">合作洽詢 →</a></p></div></section>
 </article>
 </main>
 <footer class="footer"><div class="footer-grid"><div class="footer-col"><b>HANA SCENT ARTIST</b><br>品牌氣味設計・香氛產品開發・空間氣味設計・企業氣味體驗</div><div class="footer-col"><a href="https://hanascent.com/ciyu/"><span class="footer-place">此域 氣味敘事空間</span></a><br>台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/">北投中心新村</a> D1區C棟</div><div class="footer-col"><a href="https://hanascent.com/">hanascent.com</a><br><a href="https://reservation.hanascent.com/">預約頁面</a><br><a href="https://portaly.cc/hanascent">Portaly / LINE</a><br>營業人名稱：藏花香徑工作室<br>統一編號：61269475<br>© <span data-year></span> Hana Scent Artist</div></div></footer>
 <script src="/admin/config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-(async()=>{'use strict';const $=x=>document.querySelector(x),txt=(id,value)=>$(id).textContent=value,money=n=>'NT$'+Math.round(Number(n)||0).toLocaleString('zh-TW');const id=new URLSearchParams(location.search).get('id');if(!id||!/^[0-9a-f-]{36}$/i.test(id)){ $('#missing').hidden=false;return;}try{const config=window.HANA_CMS_CONFIG,db=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});const {data,error}=await db.from('fragrance_quote_public').select('client_name,title,data').eq('share_id',id).maybeSingle();if(error||!data){$('#missing').hidden=false;return}const d=data.data||{};const design=d.design||{};txt('#logoDesignPrice',money(design.logoFee??10000));txt('#labelDesignPrice',money(design.labelFee??3000)+'／款');const designer=String(design.designerName||'').trim();if(designer){txt('#designerName',designer);$('#designerRow').hidden=false;}txt('#title',data.title);txt('#client','提案對象｜'+data.client_name);const rows=d.items||[];$('#noProducts').hidden=rows.length>0;rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=i.unit==='g'?(Number(i.weight)||0)+' g':Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶'+(Number(i.scentCount)>1?'／'+Math.floor(Number(i.scentCount))+' 款氣味':''):'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';name.dataset.label='商品';volume.dataset.label='容量';qty.dataset.label='訂購數量';total.dataset.label='單瓶價格';row.append(name,volume,qty,total);$('#items').append(row)});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
+(async()=>{'use strict';const $=x=>document.querySelector(x),txt=(id,value)=>$(id).textContent=value,money=n=>'NT$'+Math.round(Number(n)||0).toLocaleString('zh-TW');const id=new URLSearchParams(location.search).get('id');if(!id||!/^[0-9a-f-]{36}$/i.test(id)){ $('#missing').hidden=false;return;}try{const config=window.HANA_CMS_CONFIG,db=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});const {data,error}=await db.from('fragrance_quote_public').select('client_name,title,data').eq('share_id',id).maybeSingle();if(error||!data){$('#missing').hidden=false;return}const d=data.data||{};const design=d.design||{};const optional=(selector,value,label)=>{const el=$(selector);const v=String(value||'').trim();if(!v)return false;el.textContent=label?label+'｜'+v:v;el.hidden=false;return true;};if(optional('#brandBrief',d.brandBrief,'品牌需求')|optional('#recommendation',d.recommendation,'合作建議'))$('#briefSection').hidden=false;if(optional('#pendingItems',d.pendingItems,'待確認事項')|optional('#nextSteps',d.nextSteps,'下一步'))$('#nextSection').hidden=false;if(optional('#logoDeliverables',design.logoDeliverables,'LOGO 設計交付')|optional('#labelDeliverables',design.labelDeliverables,'貼紙設計交付'))$('#designDeliverables').hidden=false;txt('#logoDesignPrice',money(design.logoFee??10000));txt('#labelDesignPrice',money(design.labelFee??3000)+'／款');const designer=String(design.designerName||'').trim();if(designer){txt('#designerName',designer);$('#designerRow').hidden=false;}txt('#title',data.title);txt('#client','提案對象｜'+data.client_name);const rows=d.items||[];$('#noProducts').hidden=rows.length>0;rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=i.unit==='g'?(Number(i.weight)||0)+' g':Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶'+(Number(i.scentCount)>1?'／'+Math.floor(Number(i.scentCount))+' 款氣味':''):'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';name.dataset.label='商品';volume.dataset.label='容量';qty.dataset.label='訂購數量';total.dataset.label='單瓶價格';row.append(name,volume,qty,total);$('#items').append(row);if(String(i.planNote||'').trim()){const note=document.createElement('p');note.className='quote-plan-note';note.textContent=i.name+'｜'+i.qty+' 件：'+i.planNote;$('#planNotes').append(note);$('#planNotes').hidden=false;}});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
 </script>
 <script>document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());</script>
 <script src="/assets/site.js?v=20260918-business-inquiry"></script>
