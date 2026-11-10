@@ -362,6 +362,46 @@ body{background:#fff}
  .process-step h3{font-size:10pt!important;line-height:1.35!important;margin:2mm 0 1mm!important}
  .process-step p{font-size:9pt!important;line-height:1.5!important}
 }
+
+/* Print-only centered cover: dedicated A4 first page. */
+@media print{
+ header.quote-hero{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:248mm!important;
+  min-height:248mm!important;
+  box-sizing:border-box!important;
+  padding:0 10mm!important;
+  margin:0!important;
+  text-align:center!important;
+  break-after:page!important;
+  page-break-after:always!important;
+ }
+ header.quote-hero>.quote-shell{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  width:100%!important;
+  max-width:165mm!important;
+  margin:auto!important;
+ }
+ header.quote-hero .quote-kicker,
+ header.quote-hero h1,
+ header.quote-hero .quote-client,
+ header.quote-hero .quote-lead{
+  text-align:center!important;
+  width:100%!important;
+  max-width:165mm!important;
+ }
+ header.quote-hero .quote-kicker{margin:0 0 6mm!important}
+ header.quote-hero h1{font-size:29pt!important;line-height:1.4!important;margin:0 0 5mm!important}
+ header.quote-hero .quote-client{margin:0 0 9mm!important;font-size:12pt!important}
+ header.quote-hero .quote-lead{margin:0 auto!important;max-width:142mm!important;font-size:11pt!important;line-height:1.9!important}
+}
 </style>
 </head>
 <body>
