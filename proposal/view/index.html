@@ -309,6 +309,59 @@ body{background:#fff}
  .quote-pricing-row:not(.quote-design-row){border-bottom:1px solid #ddd!important}
  .quote-process .process-step{border-right:0!important}
 }
+
+/* A4 print stylesheet — overrides responsive screen columns and spacing. */
+@page{size:A4 portrait;margin:14mm 13mm 15mm}
+@media print{
+ html,body,main,article#quote,.quote-shell{width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding-left:0!important;padding-right:0!important;overflow:visible!important;float:none!important;transform:none!important}
+ body{background:white!important;color:#272a28!important;font-family:"Noto Serif TC","Microsoft JhengHei",serif!important;font-size:10pt!important;line-height:1.55!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .site-nav,.quote-nav,.quote-actions,.quote-print,.mobile-note,.footer,.quote-contact{display:none!important}
+ .quote-hero{padding:0 0 7mm!important;margin:0!important;text-align:left!important;border:0!important;background:white!important}
+ .quote-hero:after{display:none!important;content:none!important}
+ .quote-kicker{font-size:11pt!important;letter-spacing:.1em!important;margin:0 0 2mm!important}
+ .quote-hero h1{font-size:24pt!important;line-height:1.3!important;letter-spacing:.03em!important;margin:0 0 3mm!important}
+ .quote-client{font-size:11pt!important;margin:2mm 0!important}
+ .quote-lead{font-size:10pt!important;line-height:1.65!important;margin:2mm 0 0!important;max-width:100%!important;text-align:left!important}
+ .quote-section,.quote-section+.quote-section{margin:0!important;padding:6mm 0!important;border:0!important;background:white!important}
+ .quote-section-subtitle{font-size:10pt!important;line-height:1.3!important;margin:0 0 1.5mm!important}
+ .quote-section-title{font-size:18pt!important;line-height:1.3!important;margin:0 0 4mm!important}
+ .quote-section-subtitle,.quote-section-title,.quote-summary h3{break-after:avoid-page;page-break-after:avoid}
+ .quote-optional-copy,.quote-disclaimer,.quote-summary-description,.quote-process-note,.quote-designer{font-size:9.5pt!important;line-height:1.65!important}
+ p{orphans:3;widows:3}
+ .quote-pricing,.quote-pricing-header,.quote-pricing-row{width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+ .quote-pricing-header,.quote-pricing-row{display:grid!important;align-items:center!important;padding:3mm 1mm!important;margin:0!important;border:0!important;border-bottom:1px solid #d9d9d6!important;background:white!important;font-family:"Noto Serif TC","Microsoft JhengHei",serif!important}
+ .quote-pricing-header{font-size:9pt!important;font-weight:600!important;border-top:1px solid #a9aba8!important;break-after:avoid-page}
+ .quote-pricing-row{font-size:10pt!important;break-inside:avoid-page;page-break-inside:avoid}
+ .quote-pricing-header:not(.quote-design-header),.quote-pricing-row:not(.quote-design-row){grid-template-columns:minmax(0,1.1fr) minmax(0,.7fr) minmax(0,1.2fr) minmax(0,1.07fr) minmax(0,1.2fr)!important;gap:2.7mm!important}
+ .quote-pricing-row>span,.quote-pricing-row>strong{display:block!important;grid-column:auto!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;font-family:"Noto Serif TC","Microsoft JhengHei",serif!important;font-size:10pt!important;line-height:1.5!important;overflow-wrap:normal!important;word-break:keep-all!important}
+ .quote-pricing-row>[data-label]::before{display:none!important}
+ .quote-pricing-header>span:last-child,.quote-pricing-row:not(.quote-design-row)>.quote-plan-total{text-align:right!important}
+ .quote-pricing-row:not(.quote-design-row)>strong{white-space:nowrap!important}
+ .quote-design-header,.quote-design-row{grid-template-columns:minmax(0,1fr) minmax(0,.45fr)!important;gap:3mm!important}
+ .quote-design-header>span:last-child,.quote-design-row>strong{text-align:right!important;white-space:nowrap!important}
+ .quote-plan-notes{margin:3mm 0!important;padding:3mm 4mm!important;border:0!important;background:#f7f7f5!important;break-inside:avoid-page}
+ .quote-summary{padding:4mm 0 0!important;margin:5mm 0 0!important;border-top:1px solid #bbb!important}
+ .quote-summary h3{font-size:16pt!important;margin:0 0 2mm!important}
+ .quote-summary-description{font-size:9pt!important;margin:2mm 0!important}
+ .quote-summary-choice{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) minmax(0,.8fr)!important;gap:3mm!important;padding:2.5mm 0!important;align-items:center!important;font-size:9.5pt!important;break-inside:avoid-page}
+ .quote-summary-choice label,.quote-summary-choice strong{font-size:9.5pt!important}
+ .quote-summary-choice select{border:0!important;appearance:none!important;background:transparent!important;padding:0!important;margin:0!important;min-height:0!important;font-size:9pt!important;width:100%!important}
+ .quote-summary-subtotal,.quote-sampling-row{font-size:10pt!important;padding:2mm 0!important;break-inside:avoid-page}
+ .quote-summary-subtotal strong,.quote-sampling-row strong{font-size:10pt!important}
+ .quote-design-selection{display:none!important}
+ .quote-summary-total{margin:3mm 0!important;padding:4mm 3mm!important;border-top:1px solid #888!important;background:#f6f6f4!important;break-inside:avoid-page}
+ .quote-summary-total span{font-size:11pt!important}
+ .quote-summary-total strong{font-size:17pt!important;white-space:nowrap!important}
+ .quote-gallery{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5mm!important}
+ .quote-gallery figure{margin:0!important;break-inside:avoid-page;page-break-inside:avoid}
+ .quote-gallery img{width:100%!important;height:auto!important;max-height:70mm!important;aspect-ratio:auto!important;object-fit:contain!important}
+ .quote-gallery figcaption{font-size:9pt!important;line-height:1.5!important}
+ .quote-process{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:2mm!important;margin-top:3mm!important;border:0!important}
+ .process-step,.process-step:nth-child(2n){min-height:0!important;padding:2mm!important;border:0!important;break-inside:avoid-page}
+ .process-num{font-size:13pt!important}
+ .process-step h3{font-size:10pt!important;line-height:1.35!important;margin:2mm 0 1mm!important}
+ .process-step p{font-size:9pt!important;line-height:1.5!important}
+}
 </style>
 </head>
 <body>
