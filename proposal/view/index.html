@@ -250,6 +250,9 @@ body{background:#fff;color:#303234}
 @media(max-width:640px){.quote-sampling-row{font-size:16px}.quote-sampling-row strong{font-size:19px}}
 .quote-summary-subtotal,.quote-summary-design-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:17px 4px;border-bottom:1px solid #dedede;font-family:"Noto Serif TC","Microsoft JhengHei",sans-serif;font-size:18px}
 .quote-summary-subtotal{margin-top:12px;border-top:1px solid #303234}
+.quote-design-fee-label{min-width:0;line-height:1.65}.quote-design-fee-label small{display:block;font-size:14px;font-weight:400;color:#666b68;line-height:1.75;margin-top:2px;overflow-wrap:anywhere}
+@media(max-width:640px){.quote-design-fee-label small{font-size:13px;line-height:1.7}}
+@media print{.quote-design-fee-label small{font-size:9pt!important;line-height:1.5!important}}
 .quote-summary-subtotal strong,.quote-summary-design-row strong{font-size:20px;font-weight:600;text-align:right;white-space:nowrap}
 .quote-design-selection{margin:0 0 18px;border-bottom:1px solid #e0e0de}
 .quote-design-selection summary{cursor:pointer;font-size:15px;color:#5a5d5b;padding:13px 4px 16px;list-style-position:inside}
@@ -425,7 +428,7 @@ body{background:#fff}
 <h2 class="quote-section-title">商品方案報價</h2>
 <div class="quote-pricing-header"><span>商品品項</span><span>容量</span><span>訂購數量／氣味</span><span>每瓶單價</span><span>方案總價</span></div>
 <div id="items" class="quote-pricing"></div><div id="planNotes" class="quote-plan-notes" hidden></div>
-<section id="quoteSummary" class="quote-summary" hidden><div class="quote-summary-kicker">YOUR SELECTION</div><h3>合作報價總覽</h3><p class="quote-summary-description">各商品依所選製作數量計價，設計服務依選擇計入。</p><div id="quoteSummaryChoices"></div><div class="quote-summary-subtotal"><span>商品製作費</span><strong id="quoteProductTotal">NT$0</strong></div><div class="quote-summary-subtotal"><span>設計費</span><strong id="quoteDesignTotal">NT$0</strong></div><div id="quoteSamplingSubtotal" class="quote-summary-subtotal" hidden><span>打樣費</span><strong id="quoteSamplingTotal">NT$0</strong></div><details class="quote-design-selection"><summary>查看／調整設計項目</summary><div id="quoteSummaryDesign" class="quote-summary-design"></div></details><div class="quote-summary-total"><span>合作總價</span><strong id="quoteSummaryTotal">NT$0</strong></div><p class="quote-summary-description">本金額依目前選擇試算，打樣費僅在已設定時加入，不代表已確認委託；未包含未列示的費用、稅費與交貨條件。香水瓶器參考單價如已包含在成品售價中，不重複加計。</p></section>
+<section id="quoteSummary" class="quote-summary" hidden><div class="quote-summary-kicker">YOUR SELECTION</div><h3>合作報價總覽</h3><p class="quote-summary-description">各商品依所選製作數量計價，設計服務依選擇計入。</p><div id="quoteSummaryChoices"></div><div class="quote-summary-subtotal"><span>商品製作費</span><strong id="quoteProductTotal">NT$0</strong></div><div class="quote-summary-subtotal"><span class="quote-design-fee-label">設計費<small>（含 LOGO 設計、貼紙設計、視覺設計、其餘個別化需求）</small></span><strong id="quoteDesignTotal">NT$0</strong></div><div id="quoteSamplingSubtotal" class="quote-summary-subtotal" hidden><span>打樣費</span><strong id="quoteSamplingTotal">NT$0</strong></div><details class="quote-design-selection"><summary>查看／調整設計項目</summary><div id="quoteSummaryDesign" class="quote-summary-design"></div></details><div class="quote-summary-total"><span>合作總價</span><strong id="quoteSummaryTotal">NT$0</strong></div><p class="quote-summary-description">本金額依目前選擇試算，打樣費僅在已設定時加入，不代表已確認委託；未包含未列示的費用、稅費與交貨條件。香水瓶器參考單價如已包含在成品售價中，不重複加計。</p></section>
 <p id="noProducts" hidden>此報價尚未設定可發布的規格與單價，請向 HANA SCENT ARTIST 確認。</p>
 <p class="quote-disclaimer">不同數量為各自獨立的報價方案，並非合併採購。金額以新台幣計；瓶器款式、最低訂購量、稅費與交貨時程依雙方確認的正式條件為準。</p>
 </div></section>
