@@ -264,46 +264,10 @@ body{background:#fff;color:#303234}
 .quote-summary-total{margin-top:17px}
 @media(max-width:640px){.quote-summary-design-row,.quote-summary-subtotal{font-size:16px;align-items:center}.quote-summary-design-row strong,.quote-summary-subtotal strong{font-size:18px}.quote-summary-design-row label{gap:9px}.quote-summary-design-row input{width:17px;height:17px}}
 @media print{.quote-summary-design-row input{appearance:auto}}
-/* Proposal explorer: editorial visual rhythm, no fabricated product imagery. */
-.quote-explorer-section{background:#f7f7f5}
-.quote-explorer-heading{display:flex;justify-content:space-between;align-items:center;gap:34px;margin-bottom:27px}
-.quote-explorer-heading .quote-section-title{margin-bottom:16px}
-.quote-explorer-intro{font-size:19px;line-height:1.85;color:#525556;max-width:690px;margin:0}
-.quote-explorer-seal{width:118px;height:118px;flex:0 0 118px;border:1px solid #a8a8a5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:36px;letter-spacing:.05em;color:#6c6d6a}
-.quote-explorer-seal span{font-size:21px;padding:0 4px}
-.quote-explorer-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:27px 0 20px}
-.quote-explorer-controls label{display:grid;gap:11px;font-size:16px;line-height:1.55;color:#4f5354}
-.quote-explorer-controls input,.quote-explorer-controls select{width:100%;min-width:0;min-height:52px;border:1px solid #a8aaa7;background:#fff;border-radius:0;padding:11px 13px;color:#303234;font:inherit;font-size:17px}
-.quote-explorer-controls input:focus-visible,.quote-explorer-controls select:focus-visible,.quote-explorer-pick:focus-visible{outline:2px solid #303234;outline-offset:3px}
-.quote-explorer-summary{font-size:17px;line-height:1.7;padding:16px 0;margin-top:7px;border-top:1px solid #c9cac7}
-.quote-explorer-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.quote-explorer-card{background:#fff;border:1px solid #d5d6d3;min-width:0;padding:23px 22px 21px;display:flex;flex-direction:column;gap:13px}
-.quote-explorer-card.is-match{border-color:#5f6861;border-top:3px solid #5f6861;padding-top:21px}
-.quote-explorer-status{align-self:flex-start;border-bottom:1px solid #979a95;color:#555b58;font-size:14px;padding:0 0 5px;line-height:1.55}
-.quote-explorer-card h3{font-family:var(--font-serif),serif;font-size:25px;font-weight:500;margin:0;line-height:1.55}
-.quote-explorer-card .spec{font-size:15px;color:#5c5e5d;line-height:1.8;margin:0}
-.quote-explorer-value{font-family:"Noto Serif TC","Microsoft JhengHei",sans-serif;font-size:clamp(22px,2.3vw,30px);font-weight:600;line-height:1.4;overflow-wrap:anywhere}
-.quote-explorer-price-label{font-size:14px;color:#6b6d6a}
-.quote-explorer-budget-note{margin:0;font-size:15px;line-height:1.7;color:#666}
-.quote-explorer-pick{margin-top:auto;min-height:46px;padding:10px 12px;border:1px solid #303234;background:#fff;color:#303234;font:inherit;font-size:15px;cursor:pointer}
-.quote-explorer-pick:hover{background:#303234;color:#fff}
-.quote-explorer-caution{margin:22px 0 0;color:#636665;font-size:15px;line-height:1.9}
 .quote-summary-kicker{font-family:"Cormorant Garamond",Georgia,serif;color:#757874;letter-spacing:.15em;font-size:16px;margin-bottom:10px}
 .quote-summary-total{background:#f7f7f5;padding:25px 22px}
 .quote-pricing-row:not(.quote-design-row)>.quote-plan-total{font-weight:650}
-.quote-hero:after{content:"";display:block;width:62px;height:1px;background:#a9aaa5;margin:45px auto -36px}
-@media(max-width:1050px){.quote-explorer-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-explorer-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){
-.quote-explorer-heading{align-items:flex-start;gap:18px}.quote-explorer-seal{width:58px;height:58px;flex-basis:58px;font-size:19px}.quote-explorer-seal span{font-size:13px;padding:0 2px}
-.quote-explorer-heading .quote-section-title{margin-bottom:10px}.quote-explorer-intro{font-size:16px}
-.quote-explorer-controls{gap:12px}.quote-explorer-controls label{font-size:14px}.quote-explorer-controls input,.quote-explorer-controls select{min-height:49px;font-size:16px;padding:8px}
-.quote-explorer-cards{grid-template-columns:minmax(0,1fr)}.quote-explorer-card{padding:21px}
-.quote-explorer-card.is-match{padding-top:19px}
-.quote-explorer-summary{font-size:16px}
-.quote-summary-total{align-items:center;padding:20px 15px}.quote-summary-total strong{white-space:nowrap}
-}
-@media(max-width:375px){.quote-explorer-controls{grid-template-columns:1fr}}
-@media print{.quote-explorer-controls,.quote-explorer-pick{display:none!important}.quote-explorer-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.quote-explorer-card{break-inside:avoid}.quote-explorer-section{background:white}}
+@media(max-width:640px){.quote-summary-total{align-items:center;padding:20px 15px}.quote-summary-total strong{white-space:nowrap}}
 @media print{
 .site-nav .nav-links,.mobile-note,.quote-print{display:none!important}
 .quote-hero{padding:40px 0}
@@ -315,7 +279,6 @@ body{background:#fff}
 
 /* HANA quotation visual cleanup: spacing over redundant rules. */
 .quote-hero{border-bottom:0}
-.quote-hero:after{background:#c9cbc7;width:48px}
 .quote-section{border-bottom:0}
 .quote-section+.quote-section{border-top:1px solid #eeefed}
 .quote-pricing-header{border-top:0;background:#f8f8f6;border-bottom:0}
@@ -331,10 +294,6 @@ body{background:#fff}
 .quote-design-selection{border:0;margin-bottom:13px}
 .quote-design-selection .quote-summary-design-row{border-bottom:0}
 .quote-summary-total{border-top:1px solid #cccfcb;margin-top:14px}
-.quote-explorer-summary{border-top:0;background:#f0f1ee;padding:14px 18px}
-.quote-explorer-card{border:0;box-shadow:0 1px 0 #e6e7e4}
-.quote-explorer-card.is-match{border:0;border-top:2px solid #646e66;padding-top:22px}
-.quote-explorer-status{border-bottom:0;padding-bottom:0}
 .quote-process{border-top:0}
 .process-step{border-right:0}
 .quote-plan-notes{border-left:0;background:#f8f8f6}
@@ -347,7 +306,6 @@ body{background:#fff}
  .quote-summary-total{border-top:1px solid #c9cbc8}
 }
 @media print{
- .quote-explorer-card{box-shadow:none;border:1px solid #e4e4e1}
  .quote-pricing-row:not(.quote-design-row){border-bottom:1px solid #ddd!important}
  .quote-process .process-step{border-right:0!important}
 }
@@ -369,19 +327,6 @@ body{background:#fff}
 <p class="quote-lead">你的氣味說書人，從品牌的特質與需求出發，讓香氣成為品牌故事。</p>
 </div></header>
 <section id="briefSection" class="quote-section" hidden><div class="quote-shell"><div class="quote-section-subtitle">Understanding Your Brand</div><h2 class="quote-section-title">專屬合作摘要</h2><p id="brandBrief" class="quote-optional-copy" hidden></p><p id="recommendation" class="quote-optional-copy" hidden></p></div></section>
-<section id="explorerSection" class="quote-section quote-explorer-section" hidden><div class="quote-shell">
-<div class="quote-section-subtitle">Explore Your Proposal</div>
-<div class="quote-explorer-heading"><div><h2 class="quote-section-title">從預算，看見適合的方案</h2><p class="quote-explorer-intro">依預算、製作數量與產品形式比較已提供的選項。每一種氣味，都可以有不同的呈現方式。</p></div><div class="quote-explorer-seal" aria-hidden="true">H<span>／</span>S</div></div>
-<div class="quote-explorer-controls">
-<label>預計預算（NT$）<input id="explorerBudget" type="number" min="0" step="1000" value="100000" inputmode="numeric"></label>
-<label>預計製作數量（件）<input id="explorerQty" type="number" min="1" step="1" value="100" inputmode="numeric"></label>
-<label>商品類型<select id="explorerType"><option value="all">全部產品</option></select></label>
-<label>預算範圍<select id="explorerScope"><option value="product">僅商品製作</option><option value="whole">含列示的設計服務費</option></select></label>
-</div>
-<div id="explorerSummary" class="quote-explorer-summary" role="status" aria-live="polite"></div>
-<div id="explorerCards" class="quote-explorer-cards"></div>
-<p class="quote-explorer-caution">比較僅以本提案已列出的方案為基準，不代表可直接製作其他數量；選擇產品仍應以品牌用途為優先。選擇含設計服務費時，亦納入已設定的打樣費；瓶器參考單價、未確認項目及稅費不另計入。</p>
-</div></section>
 <section class="quote-section"><div class="quote-shell">
 <div class="quote-section-subtitle">Product Quotation</div>
 <h2 class="quote-section-title">商品方案報價</h2>
@@ -438,8 +383,6 @@ body{background:#fff}
 const groups=new Map(),goodQty=i=>Math.max(0,Number(i.qty)||0),goodPrice=i=>Math.max(0,Number(i.unitPrice)||0);
 rows.forEach((item,index)=>{const cap=item.unit==='g'?(Number(item.weight)||0)+' g':(Number(item.ml)||0)+' mL';const key=String(item.name||'商品')+'｜'+cap;if(!groups.has(key))groups.set(key,[]);groups.get(key).push({item,index});});
 
-/* Budget comparison reads public quote prices only; it never uses internal costs. */
-const productTypes=[...new Set(rows.map(i=>String(i.name||'商品')))];productTypes.forEach(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;$('#explorerType').append(option);});
 const sampling=d.sampling&&typeof d.sampling==='object'?d.sampling:null;
 const samplingRounds=sampling&&Number.isInteger(Number(sampling.rounds))?Number(sampling.rounds):0;
 const samplingRate=sampling?Number(sampling.perRound):NaN;
@@ -448,32 +391,8 @@ const samplingTotal=hasSampling?samplingRounds*samplingRate:0;
 if(hasSampling){$('#samplingSection').hidden=false;$('#quoteSamplingSubtotal').hidden=false;txt('#samplingUnitPrice',money(samplingRate)+'／次');txt('#samplingRoundsDisplay',samplingRounds.toLocaleString('zh-TW')+' 次');txt('#samplingSubtotalDisplay',money(samplingTotal));txt('#quoteSamplingTotal',money(samplingTotal));if(String(sampling.note||'').trim()){txt('#samplingNotesDisplay',sampling.note);$('#samplingNotesDisplay').hidden=false;}}
 const designItems=[{key:'logo',label:'品牌 LOGO 設計',fee:Math.max(0,Number(design.logoFee??10000)||0),available:true},{key:'label',label:'貼紙設計',fee:Math.max(0,Number(design.labelFee??3000)||0),available:true},{key:'visual',label:'視覺設計',fee:design.visualFee==null?0:Math.max(0,Number(design.visualFee)||0),available:design.visualFee!=null}];
 const summaryDesign=$('#quoteSummaryDesign');
-designItems.forEach(item=>{const line=document.createElement('div');line.className='quote-summary-design-row';const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.dataset.design=item.key;check.checked=item.available&&item.fee>0&&(item.key!=='visual');check.disabled=!item.available||item.fee===0;const name=document.createElement('span');name.textContent=item.label;label.append(check,name);const price=document.createElement('strong');price.textContent=check.checked?money(item.fee):'未選擇';price.dataset.designPrice=item.key;check.addEventListener('change',()=>{price.textContent=check.checked?money(item.fee):'未選擇';updateSummary();updateExplorer();});line.append(label,price);summaryDesign.append(line);});
+designItems.forEach(item=>{const line=document.createElement('div');line.className='quote-summary-design-row';const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.dataset.design=item.key;check.checked=item.available&&item.fee>0&&(item.key!=='visual');check.disabled=!item.available||item.fee===0;const name=document.createElement('span');name.textContent=item.label;label.append(check,name);const price=document.createElement('strong');price.textContent=check.checked?money(item.fee):'未選擇';price.dataset.designPrice=item.key;check.addEventListener('change',()=>{price.textContent=check.checked?money(item.fee):'未選擇';updateSummary();});line.append(label,price);summaryDesign.append(line);});
 const selectedDesignTotal=()=>designItems.reduce((sum,item)=>sum+($('#quoteSummaryDesign [data-design="'+item.key+'"]')?.checked?item.fee:0),0);
-const knownDesignTotal=designItems.reduce((sum,item)=>sum+(item.available&&item.fee>0?item.fee:0),0);
-const groupKeyFor=item=>String(item.name||'商品')+'｜'+(item.unit==='g'?(Number(item.weight)||0)+' g':(Number(item.ml)||0)+' mL');
-const updateExplorer=()=>{
- const budget=Math.max(0,Number($('#explorerBudget').value)||0),qty=Math.max(1,Math.floor(Number($('#explorerQty').value)||1)),category=$('#explorerType').value,scope=$('#explorerScope').value;
- const fixed=scope==='whole'?selectedDesignTotal()+samplingTotal:0;
- const matches=rows.map((item,index)=>({item,index,total:goodQty(item)*goodPrice(item)+fixed,quantity:goodQty(item)})).filter(x=>category==='all'||x.item.name===category);
- matches.sort((a,b)=>Number(b.quantity>=qty&&b.total<=budget)-Number(a.quantity>=qty&&a.total<=budget)||a.total-b.total);
- const feasible=matches.filter(x=>x.quantity>=qty&&x.total<=budget).length,host=$('#explorerCards');host.replaceChildren();
- $('#explorerSummary').textContent=matches.length?(feasible?'有 '+feasible+' 個方案同時符合預算與數量，請再依商品用途比較。':'目前列示的方案沒有同時符合預算與數量的選項，可調整條件或洽詢其他製作規格。'):'目前沒有符合商品類型的報價。';
- matches.forEach(({item,index,total,quantity})=>{
-  const match=quantity>=qty&&total<=budget,card=document.createElement('article');card.className='quote-explorer-card'+(match?' is-match':'');
-  const status=document.createElement('span');status.className='quote-explorer-status';status.textContent=match?'符合預算與數量':quantity<qty?'未達預計數量':'高於預計預算';
-  const title=document.createElement('h3');title.textContent=item.name||'商品';
-  const spec=document.createElement('p');spec.className='spec';spec.textContent=(item.unit==='g'?(Number(item.weight)||0)+' g':(Number(item.ml)||0)+' mL')+' ／ '+quantity.toLocaleString('zh-TW')+' 件'+(Number(item.scentCount)>1?' ／ '+Math.floor(Number(item.scentCount))+' 款氣味':'')+' ／ '+money(goodPrice(item))+'／件';
-  const amountLabel=document.createElement('div');amountLabel.className='quote-explorer-price-label';amountLabel.textContent=scope==='whole'?'商品方案＋頁面列示設計費':'商品方案總價';
-  const amount=document.createElement('div');amount.className='quote-explorer-value';amount.textContent=money(total);
-  const remainder=document.createElement('p');remainder.className='quote-explorer-budget-note';remainder.textContent=total<=budget?'與預算差額 '+money(budget-total):'超出預算 '+money(total-budget);
-  const select=document.createElement('button');select.type='button';select.className='quote-explorer-pick';select.textContent='帶入全部品項合計';select.setAttribute('aria-label','選擇 '+item.name+' '+quantity+' 件方案');
-  select.addEventListener('click',()=>{const candidates=[...$('#quoteSummaryChoices').querySelectorAll('.quote-summary-choice')];const groupIndex=[...groups.keys()].indexOf(groupKeyFor(item));const box=candidates[groupIndex];if(!box)return;box.querySelector('select').value=String(index);updateSummary();$('#quoteSummary').scrollIntoView({behavior:'smooth',block:'start'});});
-  card.append(status,title,spec,amountLabel,amount,remainder,select);host.append(card);
- });
-};
-['explorerBudget','explorerQty','explorerType','explorerScope'].forEach(id=>$('#'+id).addEventListener('input',updateExplorer));
-if(rows.length){$('#explorerSection').hidden=false;updateExplorer();}
 const updateSummary=()=>{let sum=0;$('#quoteSummaryChoices').querySelectorAll('.quote-summary-choice').forEach(w=>{const index=Number(w.querySelector('select').value);const item=Number.isInteger(index)&&index>=0?rows[index]:null;const subtotal=item?goodQty(item)*goodPrice(item):0;sum+=subtotal;w.querySelector('strong').textContent=item?money(subtotal):'未計入';});$('#quoteProductTotal').textContent=money(sum);$('#quoteDesignTotal').textContent=money(selectedDesignTotal());$('#quoteSummaryTotal').textContent=money(sum+selectedDesignTotal()+samplingTotal);};
 groups.forEach((options,key)=>{const wrap=document.createElement('div');wrap.className='quote-summary-choice';const label=document.createElement('label'),select=document.createElement('select');select.id='summary-select-'+options[0].index;label.htmlFor=select.id;label.textContent=key;const none=document.createElement('option');none.value='-1';none.textContent='不計入';select.append(none);options.forEach(({item,index})=>{const opt=document.createElement('option');opt.value=String(index);opt.textContent=goodQty(item).toLocaleString('zh-TW')+' 件｜'+money(goodPrice(item))+'／件';select.append(opt);});select.value=String(options[0].index);const total=document.createElement('strong');select.addEventListener('change',updateSummary);wrap.append(label,select,total);$('#quoteSummaryChoices').append(wrap);});if(groups.size||hasSampling||designItems.some(i=>i.available&&i.fee>0)){$('#quoteSummary').hidden=false;updateSummary();}
 rows.forEach(i=>{const row=document.createElement('div');row.className='quote-pricing-row';const name=document.createElement('span');name.textContent=i.name;const volume=document.createElement('span');volume.textContent=i.unit==='g'?(Number(i.weight)||0)+' g':Number(i.ml)>0?Number(i.ml)+' mL':'容量待確認';const qty=document.createElement('span');qty.textContent=Number(i.qty)>0?Number(i.qty).toLocaleString('zh-TW')+' 瓶'+(Number(i.scentCount)>1?'／'+Math.floor(Number(i.scentCount))+' 款氣味':''):'數量待確認';const total=document.createElement('strong');total.textContent=money(i.unitPrice)+'／瓶';const planTotal=document.createElement('strong');planTotal.className='quote-plan-total';planTotal.textContent=money(Number(i.qty)*Number(i.unitPrice));name.dataset.label='商品';volume.dataset.label='容量';qty.dataset.label='訂購數量';total.dataset.label='單瓶價格';planTotal.dataset.label='方案總價';row.append(name,volume,qty,total,planTotal);$('#items').append(row);if(String(i.planNote||'').trim()){const note=document.createElement('p');note.className='quote-plan-note';note.textContent=i.name+'｜'+i.qty+' 件：'+i.planNote;$('#planNotes').append(note);$('#planNotes').hidden=false;}});$('#quote').hidden=false}catch(e){$('#missing').hidden=false;console.error(e)}})();
