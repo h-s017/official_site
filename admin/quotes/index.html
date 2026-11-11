@@ -221,7 +221,8 @@ async function save(status){
  saving=true;$('#editor').inert=true;$('#newBtn').disabled=true;$('#cloneBtn').disabled=true;
  try{
   window.HanaDevelopment.prepareSave(current,status);
-  const payload={client_name:current.client_name,title:current.title,status,cost_data:current.cost_data,public_data:current.public_data};
+  const priorTime=Date.parse(current.updated_at||'');
+  const payload={client_name:current.client_name,title:current.title,status,cost_data:current.cost_data,public_data:current.public_data,updated_at:new Date(Math.max(Date.now(),Number.isFinite(priorTime)?priorTime+1:0)).toISOString()};
   let res;
   if(current.id){let query=db.from('fragrance_quotes').update(payload).eq('id',current.id);if(current.updated_at)query=query.eq('updated_at',current.updated_at);res=await query.select().single();}
   else res=await db.from('fragrance_quotes').insert(payload).select().single();
