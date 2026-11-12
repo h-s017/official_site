@@ -455,7 +455,7 @@ body{background:#fff}
 }
 
 /* Shared Chinese/numeral family and larger on-screen quote text. */
-body,body :is(h1,h2,h3,h4,p,span,strong,small,label,input,select,button,table,output){font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif!important}
+body,body *,body *::before,body *::after{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif!important;font-variant-numeric:normal!important}
 @media screen{
  body :is(p,label,button,input,select,.quote-lead,.quote-client,.quote-pricing-row,.quote-summary-choice-label,.quote-summary-group-heading,.quote-summary-option-unit,.quote-summary-none,.quote-optional-copy,.quote-optional-label,.quote-sampling-row){font-size:20px!important}
  body :is(small,.quote-disclaimer,.quote-summary-selected,.quote-pricing-header,.quote-process-note,.process-step p){font-size:18px!important}
