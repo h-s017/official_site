@@ -45,3 +45,10 @@ test('quick client quantity reads explicit displayQty, not internal qty fallback
  assert.match(source,/data-quick="displayQty"/);
  assert.match(source,/quickRowValue\(tr,field\)\.value=input\.value/);
 });
+
+
+test('quote typography uses the same Chinese-first font for numbers and Chinese text',()=>{
+ const css=fs.readFileSync('admin/quotes/development.css','utf8');
+ assert.match(css,/body, body :where\(\*\)\s*\{\s*font-family: "Noto Serif TC"/);
+ assert.match(css,/font-variant-numeric:\s*normal/);
+});

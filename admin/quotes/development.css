@@ -49,3 +49,9 @@ body :is(p,small,a,.hint,.tag,#notice,.dev-badge,.dev-kicker,#devSaveState,.dev-
 body :is(input,textarea)::placeholder{color:#54575a;opacity:1}
 body .dev-tabs button.is-active{color:#111111}
 body .quote-quick-mode button.is-active{color:#ffffff}
+
+/* Unify Chinese and Latin numerals: use the same Chinese-first serif face across the quote workspace. */
+body, body :where(*) {
+  font-family: "Noto Serif TC", "Source Han Serif TC", "Source Han Serif", "思源宋體", "Songti TC", "PMingLiU", serif !important;
+  font-variant-numeric: normal;
+}
