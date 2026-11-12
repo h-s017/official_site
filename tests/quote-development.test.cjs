@@ -178,3 +178,13 @@ test('customer proposal applies Noto Serif TC consistently to Chinese, numerals,
  assert.match(html,/@media print/);
  assert.match(html,/href="\/assets\/style\.css"/);
 });
+
+test('customer proposal English, numbers and Chinese share one font in quote body and print',()=>{
+ const html=fs.readFileSync('proposal/view/index.html','utf8');
+ assert.match(html,/#quote,#quote \*,#quote \*::before,#quote \*::after\{/);
+ assert.match(html,/#quote :is\(\.quote-kicker,\.quote-section-subtitle,\.quote-summary-kicker,\.process-num\)/);
+ assert.match(html,/letter-spacing:normal!important/);
+ assert.match(html,/font-feature-settings:normal!important/);
+ assert.match(html,/font-family:"Noto Serif TC","Source Han Serif TC"/);
+ assert.match(html,/@media print/);
+});
