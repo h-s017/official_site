@@ -18,126 +18,62 @@ test('quick supplier panels use a matching warning selector without crashing bef
 test('explicit save operation sends the requested status and blocks edits until completion',()=>{const s=fs.readFileSync('admin/quotes/index.html','utf8');const save=s.slice(s.indexOf('async function save(status)'),s.indexOf('function updateSamplingPreview'));assert.match(save,/title:current\.title,status,cost_data/);assert.match(save,/updated_at:new Date\(Math\.max\(Date\.now\(\),Number\.isFinite\(priorTime\)\?priorTime\+1:0\)\)\.toISOString\(\)/);assert.match(save,/if\(saving\)return/);assert.match(save,/\$\('#editor'\)\.inert=true/);assert.match(save,/finally\{saving=false/);});
 
 
-test('calculated quote allocates fragrance and PIF by internal quantity, not displayed quantity',()=>{
+
+const quoteModel=()=>{
  const html=fs.readFileSync('admin/quotes/index.html','utf8');
- const start=html.indexOf('const finishedWeight=i=>');
- const end=html.indexOf('async function refresh()',start);
+ const start=html.indexOf('const isCandle=i=>'),end=html.indexOf('async function refresh()',start);
  assert.ok(start>0&&end>start);
- const source="(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(start,end)+"return {fragranceUnit,pifPerUnit,quotedCost,publicQty,internalQty};})()";
- const calc=vm.runInNewContext(source);
- const row={name:'香水',pricingMode:'calculated',qty:500,displayQty:100,fragranceTotal:40000,pifFee:30000,scentCount:1,ml:50,density:1,concentration:10,mix:0,container:0,sticker:0,box:0,pack:0,misc:0};
- assert.equal(calc.internalQty(row),500);
- assert.equal(calc.publicQty(row),100);
- assert.equal(calc.fragranceUnit(row),80);
- assert.equal(calc.pifPerUnit(row),60);
- assert.equal(calc.quotedCost(row),140);
- assert.equal(calc.quotedCost({...row,displayQty:300}),140);
- assert.equal(calc.quotedCost({...row,displayQty:0}),140);
- assert.equal(calc.quotedCost({...row,qty:100}),700);
- assert.equal(calc.quotedCost({...row,pricingMode:'supplier',supplierUnitCost:250}),250);
+ return vm.runInNewContext("(()=>{"+html.slice(start,end)+"return {yields,internalQty,publicQty,fragranceUnit,pifPerUnit,totalBatchCost,quotedCost,planMetrics};})()");
+};
+test('batch estimates bottle count from kg / density / volume and uses total batch inputs',()=>{
+ const m=quoteModel(),row={name:'香水',pricingMode:'calculated',qty:999,batchKg:30,ml:50,density:1,scentCount:2,fragranceTotal:40000,pifFee:30000,mix:500,container:60,sticker:2,box:25,pack:15,misc:0,displayQty:100,sell:650};
+ assert.equal(m.internalQty(row),600);
+ assert.equal(m.internalQty({...row,density:0.8}),750);
+ assert.equal(m.internalQty({...row,density:1.2}),500);
+ assert.equal(m.internalQty({...row,batchKg:0}),0);
+ assert.equal(m.internalQty({...row,ml:0}),0);
+ assert.equal(m.fragranceUnit(row),40000/600);
+ assert.equal(m.pifPerUnit(row),100);
+ assert.equal(m.totalBatchCost(row),176200);
+ assert.ok(Math.abs(m.quotedCost(row)-176200/600)<1e-8);
+ const p=m.planMetrics(row);
+ assert.equal(p.revenue,65000);
+ assert.equal(p.cost,176200);
+ assert.equal(p.gross,-111200);
+ assert.ok(p.margin<0&&p.markup<0);
+ const other=m.planMetrics({...row,displayQty:500,sell:550});
+ assert.equal(other.revenue,275000);
+ assert.equal(other.cost,p.cost);
+ assert.ok(other.margin>0&&other.markup>0);
+ assert.equal(m.publicQty({...row,displayQty:0}),0);
+ const vendor=m.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:250});
+ assert.equal(vendor.cost,25000);
+ assert.equal(vendor.gross,40000);
 });
-
-
-test('quick client quantity reads explicit displayQty, not internal qty fallback',()=>{
- const source=fs.readFileSync('admin/quotes/index.html','utf8');
- assert.match(source,/quick-client-qty'\)\.textContent=positiveInt\(i\.displayQty\)>0\?positiveInt\(i\.displayQty\)/);
- assert.match(source,/對客顯示瓶數尚未填寫/);
- assert.match(source,/data-quick="displayQty"/);
- assert.match(source,/quickRowValue\(tr,field\)\.value=input\.value/);
+test('scent count lives on customer quote card and estimated count remains internal',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/data-quick="scentCount"/);
+ assert.match(html,/data-quick="displayQty"/);
+ assert.doesNotMatch(html,/data-quick="qty"/);
+ assert.doesNotMatch(html,/<th>氣味款數<\/th>/);
+ assert.match(html,/<th>預估瓶數（自動計算）<\/th>/);
+ assert.match(html,/const internalQty=i=>yields\(i\)\?\.bottles\|\|0/);
+ assert.match(html,/const totalBatchCost=i=>/);
+ assert.doesNotMatch(html,/class="alt use-yield"/);
+ assert.doesNotMatch(html,/<th>產量／氣味分配<\/th>/);
 });
-
-
-test('quote typography uses the same Chinese-first font for numbers and Chinese text',()=>{
+test('customer price stays on quick card and internal unit cost is read only',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/<th>內部單瓶成本（自動計算）<\/th>/);
+ assert.match(html,/data-field="sell" type="hidden"/);
+ assert.match(html,/<output class="internal-unit-cost"/);
+ assert.match(html,/單瓶價格（NT\$）<input data-quick="sell"/);
+ assert.match(html,/quickRowValue\(tr,field\)\.value=input\.value/);
+ assert.match(html,/comparisons\.join\(' ｜ '\)/);
+ assert.doesNotMatch(html,/costComparison\+=/);
+});
+test('quote typography remains Chinese-first for all numeric fields',()=>{
  const css=fs.readFileSync('admin/quotes/development.css','utf8');
  assert.match(css,/body, body :where\(\*\)\s*\{\s*font-family: "Noto Serif TC"/);
  assert.match(css,/font-variant-numeric:\s*normal/);
-});
-
-test('cost table shows calculated internal unit cost instead of editing the selling price',()=>{
- const html=fs.readFileSync('admin/quotes/index.html','utf8');
- assert.match(html,/<th>內部單瓶成本（自動計算）<\/th>/);
- assert.doesNotMatch(html,/<th>單瓶對客價（回推輸入）<\/th>/);
- assert.match(html,/data-field="sell" type="hidden"/);
- assert.match(html,/<output class="internal-unit-cost"/);
- assert.match(html,/querySelector\('\.internal-unit-cost'\)\.textContent=supplier/);
- assert.match(html,/單瓶價格（NT\$）<input data-quick="sell"/);
- assert.doesNotMatch(html,/<button type="button" class="alt apply-row-price"/);
- assert.match(html,/quickRowValue\(tr,field\)\.value=input\.value/);
- assert.match(html,/fields\.forEach\(f=>i\[f\]=/);
-});
-
-test('quote alternatives preserve separate sale prices and allocate costs only to quoted quantity',()=>{
- const html=fs.readFileSync('admin/quotes/index.html','utf8');
- const start=html.indexOf('const finishedWeight=i=>');
- const end=html.indexOf('async function refresh()',start);
- assert.ok(start>0&&end>start);
- const model=vm.runInNewContext("(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(start,end)+"return {planMetrics,quotedCost};})()");
- const row={name:'香水',pricingMode:'calculated',qty:600,displayQty:100,sell:600,fragranceTotal:40000,pifFee:0,scentCount:1,ml:50,density:1,mix:0,container:0,sticker:0,box:0,pack:0,misc:200};
- const p=model.planMetrics(row);
- assert.equal(p.unitCost,40000/600+200);
- assert.equal(p.revenue,60000);
- assert.ok(Math.abs(p.cost-(40000/600+200)*100)<1e-8);
- assert.ok(Math.abs(p.gross-(60000-(40000/600+200)*100))<1e-8);
- assert.ok(Math.abs(p.perSold-(600-(40000/600+200)))<1e-8);
- assert.ok(p.margin>0&&p.markup>0);
- assert.equal(model.quotedCost({...row,displayQty:500}),p.unitCost);
- const larger=model.planMetrics({...row,displayQty:500});
- assert.ok(Math.abs(larger.cost-p.cost*5)<1e-8);
- assert.ok(Math.abs(larger.gross-(300000-(40000/600+200)*500))<1e-8);
- assert.ok(larger.margin>0&&larger.markup>0);
- const equal=model.planMetrics({...row,displayQty:600});
- assert.equal(equal.perSold,600-equal.unitCost);
- assert.equal(equal.margin,(equal.gross/equal.revenue)*100);
- const supplier=model.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:300,supplierQty:600});
- assert.equal(supplier.cost,30000);
- assert.equal(supplier.gross,30000);
- assert.equal(supplier.margin,50);
- const unknown=model.planMetrics({...row,qty:0});
- assert.equal(unknown.valid,false);
- assert.equal(unknown.margin,null);
-});
-
-test('cost comparison keeps alternative quote plans separate',()=>{
- const html=fs.readFileSync('admin/quotes/index.html','utf8');
- assert.match(html,/comparisons\.join\(' ｜ '\)/);
- assert.doesNotMatch(html,/costComparison\+=/);
- assert.match(html,/方案平均單瓶毛利/);
- assert.match(html,/方案毛利率/);
- assert.match(html,/方案實際加成率/);
-});
-
-test('two alternative quote plans retain independent sales prices and unit-cost allocations',()=>{
- const html=fs.readFileSync('admin/quotes/index.html','utf8');
- const a=html.indexOf('const finishedWeight=i=>');
- const b=html.indexOf('async function refresh()',a);
- const {planMetrics,quotedCost}=vm.runInNewContext("(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(a,b)+"return {planMetrics,quotedCost};})()");
- const common={name:'香水',pricingMode:'calculated',qty:600,fragranceTotal:40000,pifFee:0,scentCount:1,ml:50,density:1,mix:0,container:0,sticker:0,box:0,pack:0,misc:200};
- const a100=planMetrics({...common,displayQty:100,sell:650});
- const b500=planMetrics({...common,displayQty:500,sell:550});
- assert.equal(a100.revenue,65000);
- assert.equal(b500.revenue,275000);
- assert.equal(a100.unitCost,b500.unitCost);
- assert.ok(Math.abs(a100.cost-100*quotedCost(common))<1e-9);
- assert.ok(Math.abs(b500.cost-500*quotedCost(common))<1e-9);
- assert.ok(Math.abs(a100.gross-100*(650-quotedCost(common)))<1e-9);
- assert.ok(Math.abs(b500.gross-500*(550-quotedCost(common)))<1e-9);
- assert.equal(a100.perSold,650-a100.unitCost);
- assert.equal(b500.perSold,550-b500.unitCost);
- assert.ok(a100.margin>0&&b500.margin>0);
- const loss=planMetrics({...common,displayQty:100,sell:100});
- assert.ok(loss.gross<0&&loss.margin<0&&loss.markup<0);
-});
-
-test('quick card hides internal quantity while cost table retains its calculation input',()=>{
- const html=fs.readFileSync('admin/quotes/index.html','utf8');
- assert.doesNotMatch(html,/data-quick="qty"/);
- assert.doesNotMatch(html,/<th>產量／氣味分配<\/th>/);
- assert.doesNotMatch(html,/<td class="capacity"><\/td>/);
- assert.doesNotMatch(html,/querySelector\('\.capacity'\)/);
- assert.match(html,/<th>內部試算瓶數<\/th>/);
- assert.match(html,/data-field="'\+f\+'" type="number"/);
- assert.match(html,/const internalQty=i=>positiveInt\(i\.qty\)/);
- assert.match(html,/const fragranceUnit=i=>internalQty\(i\)>0/);
- assert.match(html,/const pifPerUnit=i=>internalQty\(i\)>0/);
- assert.match(html,/class="alt use-yield"/);
 });
