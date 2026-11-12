@@ -64,7 +64,9 @@ test('scent count lives on customer quote card and estimated count remains inter
 });
 test('customer price stays on quick card and internal unit cost is read only',()=>{
  const html=fs.readFileSync('admin/quotes/index.html','utf8');
- assert.match(html,/<th>內部單瓶成本（自動計算）<\/th>/);
+ assert.match(html,/<th>內部總成本（自動計算）<\/th>/);
+ assert.match(html,/<th>單瓶成本（自動計算）<\/th>/);
+ assert.match(html,/<output class="internal-total-cost"/);
  assert.match(html,/data-field="sell" type="hidden"/);
  assert.match(html,/<output class="internal-unit-cost"/);
  assert.match(html,/單瓶價格（NT\$）<input data-quick="sell"/);
@@ -76,4 +78,34 @@ test('quote typography remains Chinese-first for all numeric fields',()=>{
  const css=fs.readFileSync('admin/quotes/development.css','utf8');
  assert.match(css,/body, body :where\(\*\)\s*\{\s*font-family: "Noto Serif TC"/);
  assert.match(css,/font-variant-numeric:\s*normal/);
+});
+
+test('total and per-bottle costs reconcile with plan profit and service rate stays a suggestion',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ const from=html.indexOf('const isCandle=i=>'),to=html.indexOf('async function refresh()',from);
+ assert.ok(from>=0&&to>from);
+ const model=vm.runInNewContext("(()=>{"+html.slice(from,to)+"return {internalQty,totalBatchCost,quotedCost,planMetrics,suggestedPrice};})()");
+ const row={name:'香水',pricingMode:'calculated',batchKg:30,ml:50,density:1,scentCount:2,mix:500,fragranceTotal:40000,pifFee:30000,container:60,sticker:2,box:25,pack:15,misc:0,displayQty:100,sell:650,serviceRate:30};
+ const q=model.planMetrics(row);
+ assert.equal(model.internalQty(row),600);
+ assert.equal(q.cost,176200);
+ assert.ok(Math.abs(q.unitCost-176200/600)<1e-9);
+ assert.equal(q.revenue,65000);
+ assert.equal(q.gross,q.revenue-q.cost);
+ assert.equal(q.margin,q.gross/q.revenue*100);
+ assert.equal(model.suggestedPrice(row),Math.ceil(q.unitCost*1.30));
+ const withoutService=model.planMetrics({...row,serviceRate:0});
+ assert.equal(withoutService.cost,q.cost);
+ assert.equal(withoutService.revenue,q.revenue);
+ assert.equal(withoutService.gross,q.gross);
+ const supplier=model.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:250});
+ assert.equal(supplier.cost,25000);
+ assert.equal(supplier.unitCost,250);
+ assert.equal(supplier.gross,40000);
+ assert.match(html,/<output class="internal-total-cost"/);
+ assert.match(html,/<output class="internal-unit-cost"/);
+ assert.match(html,/querySelector\('\.internal-total-cost'\)\.textContent=supplier/);
+ assert.match(html,/querySelector\('\.internal-unit-cost'\)\.textContent=supplier/);
+ assert.match(html,/服務費率是內部/);
+ assert.match(html,/不自動更改上方卡片的單瓶價格/);
 });
