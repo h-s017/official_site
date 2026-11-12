@@ -36,3 +36,12 @@ test('calculated quote allocates fragrance and PIF by internal quantity, not dis
  assert.equal(calc.quotedCost({...row,qty:100}),700);
  assert.equal(calc.quotedCost({...row,pricingMode:'supplier',supplierUnitCost:250}),250);
 });
+
+
+test('quick client quantity reads explicit displayQty, not internal qty fallback',()=>{
+ const source=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(source,/quick-client-qty'\)\.textContent=positiveInt\(i\.displayQty\)>0\?positiveInt\(i\.displayQty\)/);
+ assert.match(source,/對客顯示瓶數尚未填寫/);
+ assert.match(source,/data-quick="displayQty"/);
+ assert.match(source,/quickRowValue\(tr,field\)\.value=input\.value/);
+});

@@ -121,11 +121,11 @@ function refreshQuickMetrics(card,tr){
  const rowIndex=Array.from($('#items').querySelectorAll('tr')).indexOf(tr);
  const i=readItems()[rowIndex];if(!i)return;
  const qty=publicQty(i),supplier=isSupplier(i),hasCost=supplier?i.supplierUnitCost>0:internalQty(i)>0,hasQuote=qty>0&&i.sell>0;
- card.querySelector('.quick-client-qty').textContent=qty>0?qty.toLocaleString('zh-TW')+' 件':'未設定';
+ card.querySelector('.quick-client-qty').textContent=positiveInt(i.displayQty)>0?positiveInt(i.displayQty).toLocaleString('zh-TW')+' 件':'未另行設定';
  card.querySelector('.quick-total').textContent=hasQuote?money(qty*i.sell):'—';
  card.querySelector('.quick-profit').textContent=hasQuote&&hasCost?money(supplier?qty*(i.sell-quotedCost(i)):qty*i.sell-internalQty(i)*quotedCost(i)):'—';
  const warning=card.querySelector('.quote-quick-warning');
- warning.textContent=supplier&&qty>positiveInt(i.supplierQty)?'注意：對客瓶數超過廠商供應量，請先向廠商確認。':supplier&&!hasCost?'請先輸入廠商單瓶成本，才能計算預估毛利。':!supplier&&!hasCost?'請先輸入內部試算瓶數，才能計算香精及 PIF 分攤。':!supplier&&qty!==internalQty(i)?'對客瓶數與內部試算瓶數不同：毛利總額以對客收入減去整批內部試算成本。':'';
+ warning.textContent=positiveInt(i.displayQty)===0?'對客顯示瓶數尚未填寫；目前方案總價仍暫按'+qty.toLocaleString('zh-TW')+' 件計算（沿用'+(supplier?'廠商供應瓶數':'內部試算瓶數')+'）。請填入對客顯示瓶數以明確區分內部與客戶數量。':supplier&&qty>positiveInt(i.supplierQty)?'注意：對客瓶數超過廠商供應量，請先向廠商確認。':supplier&&!hasCost?'請先輸入廠商單瓶成本，才能計算預估毛利。':!supplier&&!hasCost?'請先輸入內部試算瓶數，才能計算香精及 PIF 分攤。':!supplier&&qty!==internalQty(i)?'對客瓶數與內部試算瓶數不同：毛利總額以對客收入減去整批內部試算成本。':'';
  warning.hidden=!warning.textContent;
 }
 function renderQuickPanels(){
@@ -145,7 +145,7 @@ function renderQuickPanels(){
     '<label>對客顯示瓶數（選填）<input data-quick="displayQty" type="number" min="0" step="1" inputmode="numeric" placeholder="留白沿用方案數量"></label>'+
     '<label>單瓶對客價格（NT$）<input data-quick="sell" type="number" min="0" step="0.01" inputmode="decimal" placeholder="請輸入對客售價"></label>'+
    '</div>'+
-   '<div class="quote-quick-results"><div><span>對客顯示數量</span><strong class="quick-client-qty"></strong></div><div><span>客戶方案總價</span><strong class="quick-total"></strong></div><div><span>內部預估毛利</span><strong class="quick-profit"></strong></div></div>'+
+   '<div class="quote-quick-results"><div><span>對客顯示數量（依對客顯示瓶數欄位）</span><strong class="quick-client-qty"></strong></div><div><span>客戶方案總價</span><strong class="quick-total"></strong></div><div><span>內部預估毛利</span><strong class="quick-profit"></strong></div></div>'+
    '<p class="quote-quick-warning" hidden></p>';
   card.querySelector('.quote-quick-index').textContent='方案 '+String(index+1).padStart(2,'0');
   const size=isCandle(i)?(Number(i.weight)||0)+' g':(Number(i.ml)||0)+' mL';
