@@ -188,3 +188,17 @@ test('customer proposal English, numbers and Chinese share one font in quote bod
  assert.match(html,/font-family:"Noto Serif TC","Source Han Serif TC"/);
  assert.match(html,/@media print/);
 });
+
+test('proposal explains 200 / 300 / 400 bottle options in three independent responsive cards',()=>{
+ const html=fs.readFileSync('proposal/view/index.html','utf8');
+ assert.match(html,/const splitRecommendationPlans=\(value\)=>/);
+ assert.match(html,/\(200\|300\|400\)/);
+ assert.match(html,/matches\.length!==3/);
+ assert.match(html,/matches\.map\(m=>m\[1\]\)\.join\(','\)!=='200,300,400'/);
+ assert.match(html,/className='quote-plan-explanation-card'/);
+ assert.match(html,/body\.replaceChildren\(\);if\(prefix\)body\.append\(intro\);body\.append\(grid\)/);
+ assert.match(html,/splitRecommendationPlans\(d\.recommendation\)/);
+ assert.match(html,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+ assert.match(html,/@media\(max-width:900px\)\{\.quote-plan-explanation-grid\{grid-template-columns:1fr/);
+ assert.match(html,/@media print\{\.quote-plan-explanation-grid\{/);
+});
