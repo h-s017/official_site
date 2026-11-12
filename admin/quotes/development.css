@@ -41,3 +41,11 @@ tr.supplier-mode [data-field="supplierQty"],tr.supplier-mode [data-field="suppli
  .dev-metrics strong,.quote-quick-results strong{font-size:25px}.quote-quick-results>div:nth-child(2) strong{font-size:28px}
  .dev-fields{gap:15px}.dev-tabs{gap:5px}.dev-tabs button{padding:12px 13px}
 }
+
+/* Darker neutral text requested by Hana; retain size and font settings. */
+body{--hana-text:#202124;color:#202124}
+body :is(h1,h2,h3,h4,label,input,select,textarea,output,.table,.total,.sampling-preview,.dev-metrics,.dev-compare-row){color:#202124}
+body :is(p,small,a,.hint,.tag,#notice,.dev-badge,.dev-kicker,#devSaveState,.dev-note,.dev-compare p,.dev-log time,.quote-quick-index,.quote-quick-note,.quote-quick-warning,.dev-evidence summary,.dev-filters label,.dev-tabs button){color:#303234}
+body :is(input,textarea)::placeholder{color:#54575a;opacity:1}
+body .dev-tabs button.is-active{color:#111111}
+body .quote-quick-mode button.is-active{color:#ffffff}
