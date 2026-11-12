@@ -189,16 +189,17 @@ test('customer proposal English, numbers and Chinese share one font in quote bod
  assert.match(html,/@media print/);
 });
 
-test('proposal explains 200 / 300 / 400 bottle options in three independent responsive cards',()=>{
+test('proposal places three product descriptions into independent responsive cards',()=>{
  const html=fs.readFileSync('proposal/view/index.html','utf8');
- assert.match(html,/const splitRecommendationPlans=\(value\)=>/);
- assert.match(html,/\(200\|300\|400\)/);
- assert.match(html,/matches\.length!==3/);
- assert.match(html,/matches\.map\(m=>m\[1\]\)\.join\(','\)!=='200,300,400'/);
- assert.match(html,/className='quote-plan-explanation-card'/);
- assert.match(html,/body\.replaceChildren\(\);if\(prefix\)body\.append\(intro\);body\.append\(grid\)/);
- assert.match(html,/splitRecommendationPlans\(d\.recommendation\)/);
- assert.match(html,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
- assert.match(html,/@media\(max-width:900px\)\{\.quote-plan-explanation-grid\{grid-template-columns:1fr/);
- assert.match(html,/@media print\{\.quote-plan-explanation-grid\{/);
+ assert.match(html,/className='quote-plan-card'/);
+ assert.match(html,/className='quote-plan-card-title'/);
+ assert.match(html,/className='quote-plan-card-body'/);
+ assert.match(html,/title\.textContent=heading/);
+ assert.match(html,/detail\.textContent=bodyText/);
+ assert.match(html,/i\.name\.includes\('Scent Spray'\)/);
+ assert.match(html,/hasHeading\?lines\.slice\(1\)\.join/);
+ assert.match(html,/quote-plan-notes\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+ assert.match(html,/@media\(max-width:900px\)\{\.quote-plan-notes\{grid-template-columns:1fr/);
+ assert.match(html,/@media print\{\.quote-plan-notes\{display:block/);
+ assert.doesNotMatch(html,/splitRecommendationPlans/);
 });
