@@ -134,7 +134,7 @@ function renderQuickPanels(){
  if(!rows.length){const p=document.createElement('p');p.className='hint';p.textContent='尚未新增商品方案。請先在上方選擇品項，點選「＋ 新增報價規格」。';host.append(p);return;}
  rows.forEach((tr,index)=>{
   const i=readItems()[index],supplier=isSupplier(i),card=document.createElement('article');card.className='quote-quick-card';
-  card.innerHTML='<div class="quote-quick-card-head"><div><span class="quote-quick-index"></span><h4 class="quote-quick-name"></h4></div></div>'+
+  card.innerHTML='<div class="quote-quick-card-head"><div><span class="quote-quick-index"></span><h4 class="quote-quick-name"></h4></div><button type="button" class="alt clone-quote-plan" aria-label="複製此報價方案">複製方案</button></div>'+
    '<div class="quote-quick-mode" role="group" aria-label="選擇報價方式"><button type="button" data-pricing="calculated">自行成本試算</button><button type="button" data-pricing="supplier">廠商直接供價</button></div>'+
    '<p class="quote-quick-note"></p>'+
    '<div class="quote-quick-fields">'+
@@ -148,6 +148,7 @@ function renderQuickPanels(){
    '<div class="quote-quick-results"><div><span>對客顯示數量（依對客顯示瓶數欄位）</span><strong class="quick-client-qty"></strong></div><div><span>客戶方案總價</span><strong class="quick-total"></strong></div><div><span>內部預估毛利</span><strong class="quick-profit"></strong></div></div>'+
    '<p class="quote-quick-warning" hidden></p>';
   card.querySelector('.quote-quick-index').textContent='方案 '+String(index+1).padStart(2,'0');
+  card.querySelector('.clone-quote-plan').onclick=()=>{const items=readItems(),copy={...items[index]};items.splice(index+1,0,copy);renderItems(items);notice('已複製第 '+(index+1)+' 個方案為新方案（尚未儲存），請依需求調整瓶數、價格及成本。');};
   const size=(Number(i.ml)||0)+' mL';
   card.querySelector('.quote-quick-name').textContent=(i.displayName||i.name)+' · '+size;
   card.querySelector('.quote-quick-note').textContent=supplier?'依廠商提供的單瓶成本計算預估毛利；原香精、包材與 PIF 試算保持不變。':'依下方批量、香精、PIF 與包裝成本估算整批成本；此卡片設定對客瓶數、氣味款數與價格。';
