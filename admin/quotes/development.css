@@ -1,7 +1,7 @@
 /* HANA official-site typography and neutral colors. */
-body{background:var(--white,#fff);color:var(--hana-text,#303234);font-family:var(--font-serif);font-size:17px;line-height:1.75}
+body{background:var(--white,#fff);color:var(--hana-text,#303234);font-family:var(--hana-font-text);font-size:17px;line-height:1.75}
 h1,h2,h3,h4,button,input,select,textarea,output{font-family:inherit;color:inherit}
-h1{font-family:var(--font-serif);font-weight:400}header{border-color:var(--line);background:var(--white)}
+h1{font-family:var(--hana-font-text);font-weight:400}header{border-color:var(--line);background:var(--white)}
 main{max-width:1460px;padding-left:24px;padding-right:24px}header a,a,small,.hint,p,.tag,#notice{color:var(--gray700,#4a4a4a)}
 button{background:var(--hana-text);border-color:var(--hana-text);color:#fff}button.alt{background:#fff;color:var(--hana-text);border-color:var(--gray300)}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #aaa;outline-offset:3px}
@@ -21,4 +21,23 @@ tr.supplier-mode [data-field="supplierQty"],tr.supplier-mode [data-field="suppli
 #devPrint{display:none}body.dev-printing #devPrint{display:none}
 @media(max-width:1100px){#workspace>.twocol{grid-template-columns:1fr}#workspace>.twocol>aside{position:static}.list{max-height:240px}.dev-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){main{padding:24px 16px 70px}header{padding:15px 16px;gap:16px;flex-wrap:wrap}.dev-fields{grid-template-columns:1fr}.dev-heading h2{font-size:25px}.dev-actions>button,.dev-file{font-size:15px}.dev-tabs button{font-size:15px;padding:10px}.dev-metrics{grid-template-columns:1fr;gap:18px;padding:18px}.dev-metrics>div{display:flex;align-items:center;justify-content:space-between}.dev-metrics strong{font-size:22px;margin:0}.dev-evidence{padding:12px}.dev-log{flex-direction:column;gap:8px}.dev-section-head h3{font-size:21px}.dev-badge{font-size:13px}.dev-compare>article,.dev-compare>div{min-width:270px;flex-basis:270px}.dev-note{font-size:15px}.dev-file{width:100%;text-align:center}.dev-actions button{flex:1}#devContent{overflow-wrap:anywhere}}
-@media print{@page{size:A4;margin:18mm}.dev-printing>header,.dev-printing>main,.dev-printing>script{display:none!important}body.dev-printing{background:white!important;color:#303234!important;font-family:var(--font-serif)}body.dev-printing #devPrint{display:block!important}#devPrint h1{font-size:26px;font-weight:400;text-align:center;margin:12px 0 35px}#devPrint p{font-size:13px;white-space:pre-wrap}#devPrint table{font-size:13px;margin:25px 0}#devPrint tr{break-inside:avoid}#devPrint thead{display:table-header-group}#devPrint small{font-size:11px}}
+@media print{@page{size:A4;margin:18mm}.dev-printing>header,.dev-printing>main,.dev-printing>script{display:none!important}body.dev-printing{background:white!important;color:#303234!important;font-family:var(--hana-font-text)}body.dev-printing #devPrint{display:block!important}#devPrint h1{font-size:26px;font-weight:400;text-align:center;margin:12px 0 35px}#devPrint p{font-size:13px;white-space:pre-wrap}#devPrint table{font-size:13px;margin:25px 0}#devPrint tr{break-inside:avoid}#devPrint thead{display:table-header-group}#devPrint small{font-size:11px}}
+
+/* Hana's default: readable text; Chinese and numerals share one family. */
+@media screen{
+ body{font-size:20px;line-height:1.85}
+ body :is(input,select,textarea,button,output,table,.total,.sampling-preview,.dev-metrics,.dev-compare){font-family:var(--hana-font-text);font-variant-numeric:normal}
+ body h1{font-size:44px}body h2,.dev-heading h2{font-size:32px}body h3,.dev-section-head h3,.dev-record h3{font-size:25px}
+ body :is(label,input,select,textarea,button,.table,p,.hint,.quote-quick-fields label,.quote-quick-mode button,.quote-quick-results>div,.dev-fields label,.dev-fields input,.dev-fields select,.dev-fields textarea,.dev-tabs button,.dev-actions>button,.dev-file,.dev-filters label,.dev-filters input,.dev-filters select,.dev-version-checks label,.dev-compare-row,.dev-log){font-size:20px}
+ body :is(small,.tag,.dev-badge,.dev-kicker,#devSaveState,.dev-note,.dev-compare p,.dev-log time,.quote-quick-index,.quote-quick-note,.quote-quick-warning,.dev-evidence summary){font-size:18px}
+ .dev-metrics strong,.quote-quick-results strong{font-size:27px}.quote-quick-results>div:nth-child(2) strong,.total{font-size:30px}
+ body :is(input,select,button,.dev-file){min-height:50px}.dev-tabs button{padding:12px 15px}
+ .dev-large :is(label,input,select,textarea,button,p,.hint,.table){font-size:23px}.dev-large .dev-note{font-size:21px}
+}
+@media screen and (max-width:650px){
+ body{font-size:19px}body h1{font-size:36px}body h2,.dev-heading h2{font-size:28px}body h3,.dev-section-head h3,.dev-record h3{font-size:24px}
+ body :is(label,input,select,textarea,button,.table,p,.hint,.quote-quick-fields label,.quote-quick-mode button,.quote-quick-results>div,.dev-fields label,.dev-fields input,.dev-fields select,.dev-fields textarea,.dev-tabs button,.dev-actions>button,.dev-file,.dev-filters label,.dev-filters input,.dev-filters select,.dev-version-checks label,.dev-compare-row,.dev-log){font-size:19px}
+ body :is(small,.tag,.dev-badge,.dev-kicker,#devSaveState,.dev-note,.dev-compare p,.dev-log time,.quote-quick-index,.quote-quick-note,.quote-quick-warning,.dev-evidence summary){font-size:17px}
+ .dev-metrics strong,.quote-quick-results strong{font-size:25px}.quote-quick-results>div:nth-child(2) strong{font-size:28px}
+ .dev-fields{gap:15px}.dev-tabs{gap:5px}.dev-tabs button{padding:12px 13px}
+}

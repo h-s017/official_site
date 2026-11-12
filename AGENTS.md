@@ -6,7 +6,8 @@ User instruction confirmed 2026-11-12: all future HANA websites and web tools mu
 - Reusable, layout-free definitions: `assets/hana-brand.css` (regenerate with `node scripts/sync-brand-tokens.cjs`).
 - White backgrounds; black and neutral gray text, borders and controls. Do not invent a green, cream, or other independent palette.
 - Font family: Cormorant Garamond + Noto Serif TC and the official serif fallback stack. Follow the official Chinese/numeric typography rather than adding a sans-serif admin theme.
-- Keep form inputs at least 16px on mobile, with readable supporting text and usable controls.
+- Default to larger, readable text: 20px desktop body/forms/tables, 19px mobile; supporting text at least 18px desktop and 17px mobile. Keep a further large-text option.
+- Chinese AND digits/prices/percentages/weights/dates must use the SAME Chinese-first `Noto Serif TC` family. Do not let digits fall back to Cormorant Garamond, Georgia, a monospace font or a separate numeric font.
 - Follow `docs/HANA_WEB_DEFAULTS.md` when adding or changing a web interface.
 
 ## Quote and development management
