@@ -34,16 +34,16 @@ test('batch estimates bottle count from kg / density / volume and uses total bat
  assert.equal(m.internalQty({...row,ml:0}),0);
  assert.equal(m.fragranceUnit(row),40000/600);
  assert.equal(m.pifPerUnit(row),100);
- assert.equal(m.totalBatchCost(row),176200);
- assert.ok(Math.abs(m.quotedCost(row)-176200/600)<1e-8);
+ assert.equal(m.totalBatchCost(row),155200);
+ assert.ok(Math.abs(m.quotedCost(row)-155200/600)<1e-8);
  const p=m.planMetrics(row);
  assert.equal(p.revenue,65000);
- assert.equal(p.cost,176200);
- assert.equal(p.gross,-111200);
+ assert.equal(p.cost,155200);
+ assert.equal(p.gross,-90200);
  assert.ok(p.margin<0&&p.markup<0);
  const other=m.planMetrics({...row,displayQty:500,sell:550});
  assert.equal(other.revenue,275000);
- assert.equal(other.cost,p.cost);
+ assert.equal(other.cost,172000);
  assert.ok(other.margin>0&&other.markup>0);
  assert.equal(m.publicQty({...row,displayQty:0}),0);
  const vendor=m.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:250});
@@ -88,8 +88,8 @@ test('total and per-bottle costs reconcile with plan profit and service rate sta
  const row={name:'香水',pricingMode:'calculated',batchKg:30,ml:50,density:1,scentCount:2,mix:500,fragranceTotal:40000,pifFee:30000,container:60,sticker:2,box:25,pack:15,misc:0,displayQty:100,sell:650,serviceRate:30};
  const q=model.planMetrics(row);
  assert.equal(model.internalQty(row),600);
- assert.equal(q.cost,176200);
- assert.ok(Math.abs(q.unitCost-176200/600)<1e-9);
+ assert.equal(q.cost,155200);
+ assert.ok(Math.abs(q.unitCost-155200/600)<1e-9);
  assert.equal(q.revenue,65000);
  assert.equal(q.gross,q.revenue-q.cost);
  assert.equal(q.margin,q.gross/q.revenue*100);
@@ -115,4 +115,28 @@ test('PIF column follows fragrance total in the detailed cost table',()=>{
  assert.match(html,/<th>香精總金額 NT\$／方案<\/th><th>PIF／款（總費）<\/th><th>混料 \$\/kg<\/th>/);
  assert.match(html,/'fragranceTotal','pifFee','mix','container'/);
  assert.equal((html.match(/<th>PIF／款（總費）<\/th>/g)||[]).length,1);
+});
+
+test('mixed manufacturing and customer quantities apply each cost to the correct quantity',()=>{
+ const m=quoteModel();
+ const data={name:'香水',pricingMode:'calculated',batchKg:30,ml:50,density:1,scentCount:2,mix:500,fragranceTotal:40000,pifFee:30000,container:60,sticker:2,box:25,pack:15,misc:99,displayQty:100,sell:650};
+ // 30*500 + 40,000 + 2*30,000 + 600*60 + 100*(2+25+15).
+ assert.equal(m.internalQty(data),600);
+ assert.equal(m.totalBatchCost(data),155200);
+ assert.equal(m.planMetrics(data).gross,65000-155200);
+ // Container quantity follows manufacturing yield; sticker, box and packing follow client count.
+ assert.equal(m.totalBatchCost({...data,displayQty:200}),159400);
+ assert.equal(m.totalBatchCost({...data,container:70}),161200);
+ assert.equal(m.totalBatchCost({...data,sticker:3}),155300);
+ assert.equal(m.totalBatchCost({...data,box:26}),155300);
+ assert.equal(m.totalBatchCost({...data,pack:16}),155300);
+ assert.equal(m.totalBatchCost({...data,misc:0}),155200);
+ assert.equal(m.totalBatchCost({...data,serviceRate:100}),155200);
+ assert.equal(m.planMetrics({...data,serviceRate:100}).gross,m.planMetrics(data).gross);
+ // Supplier mode retains existing direct vendor pricing, not the formula above.
+ assert.equal(m.planMetrics({...data,pricingMode:'supplier',supplierUnitCost:250}).cost,25000);
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.doesNotMatch(html,/<th>其他／件<\/th>/);
+ assert.match(html,/data-field="misc" type="hidden"/);
+ assert.match(html,/貼紙＋外盒＋加工）× 對客顯示瓶數/);
 });
