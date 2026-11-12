@@ -33,17 +33,17 @@ test('batch estimates bottle count from kg / density / volume and uses total bat
  assert.equal(m.internalQty({...row,batchKg:0}),0);
  assert.equal(m.internalQty({...row,ml:0}),0);
  assert.equal(m.fragranceUnit(row),40000/600);
- assert.equal(m.pifPerUnit(row),100);
- assert.equal(m.totalBatchCost(row),155200);
- assert.ok(Math.abs(m.quotedCost(row)-155200/600)<1e-8);
+ assert.equal(m.pifPerUnit(row),50);
+ assert.equal(m.totalBatchCost(row),125200);
+ assert.ok(Math.abs(m.quotedCost(row)-125200/600)<1e-8);
  const p=m.planMetrics(row);
  assert.equal(p.revenue,65000);
- assert.equal(p.cost,155200);
- assert.equal(p.gross,-90200);
+ assert.equal(p.cost,125200);
+ assert.equal(p.gross,-60200);
  assert.ok(p.margin<0&&p.markup<0);
  const other=m.planMetrics({...row,displayQty:500,sell:550});
  assert.equal(other.revenue,275000);
- assert.equal(other.cost,172000);
+ assert.equal(other.cost,142000);
  assert.ok(other.margin>0&&other.markup>0);
  assert.equal(m.publicQty({...row,displayQty:0}),0);
  const vendor=m.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:250});
@@ -88,8 +88,8 @@ test('total and per-bottle costs reconcile with plan profit and service rate sta
  const row={name:'香水',pricingMode:'calculated',batchKg:30,ml:50,density:1,scentCount:2,mix:500,fragranceTotal:40000,pifFee:30000,container:60,sticker:2,box:25,pack:15,misc:0,displayQty:100,sell:650,serviceRate:30};
  const q=model.planMetrics(row);
  assert.equal(model.internalQty(row),600);
- assert.equal(q.cost,155200);
- assert.ok(Math.abs(q.unitCost-155200/600)<1e-9);
+ assert.equal(q.cost,125200);
+ assert.ok(Math.abs(q.unitCost-125200/600)<1e-9);
  assert.equal(q.revenue,65000);
  assert.equal(q.gross,q.revenue-q.cost);
  assert.equal(q.margin,q.gross/q.revenue*100);
@@ -120,18 +120,19 @@ test('PIF column follows fragrance total in the detailed cost table',()=>{
 test('mixed manufacturing and customer quantities apply each cost to the correct quantity',()=>{
  const m=quoteModel();
  const data={name:'香水',pricingMode:'calculated',batchKg:30,ml:50,density:1,scentCount:2,mix:500,fragranceTotal:40000,pifFee:30000,container:60,sticker:2,box:25,pack:15,misc:99,displayQty:100,sell:650};
- // 30*500 + 40,000 + 2*30,000 + 600*60 + 100*(2+25+15).
+ // 30*500 + 40,000 + 30,000 (total PIF once) + 600*60 + 100*(2+25+15).
  assert.equal(m.internalQty(data),600);
- assert.equal(m.totalBatchCost(data),155200);
- assert.equal(m.planMetrics(data).gross,65000-155200);
+ assert.equal(m.totalBatchCost(data),125200);
+ assert.equal(m.planMetrics(data).gross,65000-125200);
  // Container quantity follows manufacturing yield; sticker, box and packing follow client count.
- assert.equal(m.totalBatchCost({...data,displayQty:200}),159400);
- assert.equal(m.totalBatchCost({...data,container:70}),161200);
- assert.equal(m.totalBatchCost({...data,sticker:3}),155300);
- assert.equal(m.totalBatchCost({...data,box:26}),155300);
- assert.equal(m.totalBatchCost({...data,pack:16}),155300);
- assert.equal(m.totalBatchCost({...data,misc:0}),155200);
- assert.equal(m.totalBatchCost({...data,serviceRate:100}),155200);
+ assert.equal(m.totalBatchCost({...data,displayQty:200}),129400);
+ assert.equal(m.totalBatchCost({...data,container:70}),131200);
+ assert.equal(m.totalBatchCost({...data,sticker:3}),125300);
+ assert.equal(m.totalBatchCost({...data,box:26}),125300);
+ assert.equal(m.totalBatchCost({...data,pack:16}),125300);
+ assert.equal(m.totalBatchCost({...data,misc:0}),125200);
+ assert.equal(m.totalBatchCost({...data,serviceRate:100}),125200);
+ assert.equal(m.totalBatchCost({...data,scentCount:3}),125200); // PIF amount already represents the entered total.
  assert.equal(m.planMetrics({...data,serviceRate:100}).gross,m.planMetrics(data).gross);
  // Supplier mode retains existing direct vendor pricing, not the formula above.
  assert.equal(m.planMetrics({...data,pricingMode:'supplier',supplierUnitCost:250}).cost,25000);
