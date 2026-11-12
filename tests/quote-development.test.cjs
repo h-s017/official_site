@@ -52,3 +52,16 @@ test('quote typography uses the same Chinese-first font for numbers and Chinese 
  assert.match(css,/body, body :where\(\*\)\s*\{\s*font-family: "Noto Serif TC"/);
  assert.match(css,/font-variant-numeric:\s*normal/);
 });
+
+test('cost table shows calculated internal unit cost instead of editing the selling price',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/<th>內部單瓶成本（自動計算）<\/th>/);
+ assert.doesNotMatch(html,/<th>單瓶對客價（回推輸入）<\/th>/);
+ assert.match(html,/data-field="sell" type="hidden"/);
+ assert.match(html,/<output class="internal-unit-cost"/);
+ assert.match(html,/querySelector\('\.internal-unit-cost'\)\.textContent=supplier/);
+ assert.match(html,/單瓶價格（NT\$）<input data-quick="sell"/);
+ assert.doesNotMatch(html,/<button type="button" class="alt apply-row-price"/);
+ assert.match(html,/quickRowValue\(tr,field\)\.value=input\.value/);
+ assert.match(html,/fields\.forEach\(f=>i\[f\]=/);
+});
