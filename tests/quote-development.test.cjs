@@ -65,3 +65,43 @@ test('cost table shows calculated internal unit cost instead of editing the sell
  assert.match(html,/quickRowValue\(tr,field\)\.value=input\.value/);
  assert.match(html,/fields\.forEach\(f=>i\[f\]=/);
 });
+
+test('whole-plan margin signs agree with whole-plan profit when client quantity differs',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ const start=html.indexOf('const finishedWeight=i=>');
+ const end=html.indexOf('async function refresh()',start);
+ assert.ok(start>0&&end>start);
+ const model=vm.runInNewContext("(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(start,end)+"return {planMetrics,quotedCost};})()");
+ const row={name:'香水',pricingMode:'calculated',qty:600,displayQty:100,sell:600,fragranceTotal:40000,pifFee:0,scentCount:1,ml:50,density:1,mix:0,container:0,sticker:0,box:0,pack:0,misc:200};
+ const p=model.planMetrics(row);
+ assert.equal(p.unitCost,40000/600+200);
+ assert.equal(p.revenue,60000);
+ assert.equal(p.cost,160000);
+ assert.equal(p.gross,-100000);
+ assert.equal(p.perSold,-1000);
+ assert.ok(p.margin<0&&p.markup<0);
+ assert.equal(model.quotedCost({...row,displayQty:500}),p.unitCost);
+ const larger=model.planMetrics({...row,displayQty:500});
+ assert.equal(larger.cost,p.cost);
+ assert.equal(larger.gross,140000);
+ assert.ok(larger.margin>0&&larger.markup>0);
+ const equal=model.planMetrics({...row,displayQty:600});
+ assert.equal(equal.perSold,600-equal.unitCost);
+ assert.equal(equal.margin,(equal.gross/equal.revenue)*100);
+ const supplier=model.planMetrics({...row,pricingMode:'supplier',supplierUnitCost:300,supplierQty:600});
+ assert.equal(supplier.cost,30000);
+ assert.equal(supplier.gross,30000);
+ assert.equal(supplier.margin,50);
+ const unknown=model.planMetrics({...row,qty:0});
+ assert.equal(unknown.valid,false);
+ assert.equal(unknown.margin,null);
+});
+
+test('cost comparison keeps alternative quote plans separate',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/comparisons\.join\(' ｜ '\)/);
+ assert.doesNotMatch(html,/costComparison\+=/);
+ assert.match(html,/方案平均單瓶毛利/);
+ assert.match(html,/方案毛利率/);
+ assert.match(html,/方案實際加成率/);
+});
