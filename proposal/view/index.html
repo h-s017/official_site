@@ -454,8 +454,17 @@ body{background:#fff}
  .quote-summary-choice.is-selected{background:#f6f6f4!important}
 }
 
-/* Shared Chinese/numeral family and larger on-screen quote text. */
+/* All customer-facing proposal text, including Latin letters, amounts and digits,
+   uses the same Chinese-first family; no Latin display-font overrides. */
 body,body *,body *::before,body *::after{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif!important;font-variant-numeric:normal!important}
+#quote,#quote *,#quote *::before,#quote *::after{
+ font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif!important;
+ font-variant-numeric:normal!important;
+ font-feature-settings:normal!important;
+}
+#quote :is(.quote-kicker,.quote-section-subtitle,.quote-summary-kicker,.process-num){
+ letter-spacing:normal!important;
+}
 @media screen{
  body :is(p,label,button,input,select,.quote-lead,.quote-client,.quote-pricing-row,.quote-summary-choice-label,.quote-summary-group-heading,.quote-summary-option-unit,.quote-summary-none,.quote-optional-copy,.quote-optional-label,.quote-sampling-row){font-size:20px!important}
  body :is(small,.quote-disclaimer,.quote-summary-selected,.quote-pricing-header,.quote-process-note,.process-step p){font-size:18px!important}
