@@ -453,6 +453,20 @@ body{background:#fff}
  .quote-summary-none{display:none!important}
  .quote-summary-choice.is-selected{background:#f6f6f4!important}
 }
+
+/* Shared Chinese/numeral family and larger on-screen quote text. */
+body,body :is(h1,h2,h3,h4,p,span,strong,small,label,input,select,button,table,output){font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif!important}
+@media screen{
+ body :is(p,label,button,input,select,.quote-lead,.quote-client,.quote-pricing-row,.quote-summary-choice-label,.quote-summary-group-heading,.quote-summary-option-unit,.quote-summary-none,.quote-optional-copy,.quote-optional-label,.quote-sampling-row){font-size:20px!important}
+ body :is(small,.quote-disclaimer,.quote-summary-selected,.quote-pricing-header,.quote-process-note,.process-step p){font-size:18px!important}
+ .quote-summary-option-total strong,.quote-sampling-row strong,.quote-pricing-row strong{font-size:24px!important}
+}
+@media screen and (max-width:640px){
+ body :is(p,label,button,input,select,.quote-lead,.quote-client,.quote-pricing-row,.quote-summary-choice-label,.quote-summary-group-heading,.quote-summary-option-unit,.quote-summary-none,.quote-optional-copy,.quote-optional-label,.quote-sampling-row){font-size:19px!important}
+ body :is(small,.quote-disclaimer,.quote-summary-selected,.quote-pricing-header,.quote-process-note,.process-step p){font-size:17px!important}
+ .quote-pricing-header,.quote-pricing-row{grid-template-columns:1.3fr .8fr 1fr 1.1fr;overflow-wrap:anywhere}
+ .quote-summary-option-total strong,.quote-sampling-row strong,.quote-pricing-row strong{font-size:22px!important}
+}
 </style>
 </head>
 <body>

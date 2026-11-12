@@ -12,7 +12,9 @@
 - 中性色階：`#1f1f1f`、`#767676`、`#d9d9d9`、`#eeeeee`；分隔線 `#dedede`。
 - 字型：`"Cormorant Garamond","Noto Serif TC","Source Han Serif TC","Source Han Serif","思源宋體","Songti TC","PMingLiU",serif`。
 - 不另外改用綠色、奶油色或獨立無襯線後台主題。
-- 手機輸入字級至少 16px，保留清晰、可調大的字級與足夠操作區域。
+- 預設放大字級：桌面內文、欄位與表格 20px，手機 19px；輔助文字桌面至少 18px、手機至少 17px，並保留進一步放大選項。
+- 中文與數字必須使用同一字型：`Noto Serif TC` 優先，接續官網中文襯線備援字型。價格、百分比、重量、日期及表格數字都適用；不另外使用 Cormorant Garamond、Georgia、等寬字或其他數字字型。
+- 此字級與數字規則為 2026-11-12 使用者再次明確補充的長期預設。
 
 ## 套用範圍
 
