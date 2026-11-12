@@ -109,3 +109,10 @@ test('total and per-bottle costs reconcile with plan profit and service rate sta
  assert.match(html,/服務費率是內部/);
  assert.match(html,/不自動更改上方卡片的單瓶價格/);
 });
+
+test('PIF column follows fragrance total in the detailed cost table',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/<th>香精總金額 NT\$／方案<\/th><th>PIF／款（總費）<\/th><th>混料 \$\/kg<\/th>/);
+ assert.match(html,/'fragranceTotal','pifFee','mix','container'/);
+ assert.equal((html.match(/<th>PIF／款（總費）<\/th>/g)||[]).length,1);
+});
