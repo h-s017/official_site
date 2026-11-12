@@ -170,3 +170,11 @@ test('duplicate action belongs to detailed cost table and clones a separate edit
  assert.match(html,/class="alt delete-item">移除<\/button>/);
  assert.match(html,/id="cloneBtn" class="alt">複製目前報價<\/button>/);
 });
+
+test('customer proposal applies Noto Serif TC consistently to Chinese, numerals, and print',()=>{
+ const html=fs.readFileSync('proposal/view/index.html','utf8');
+ assert.match(html,/body,body \*,body \*::before,body \*::after\{font-family:"Noto Serif TC"/);
+ assert.match(html,/font-variant-numeric:normal!important/);
+ assert.match(html,/@media print/);
+ assert.match(html,/href="\/assets\/style\.css"/);
+});
