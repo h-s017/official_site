@@ -66,7 +66,7 @@ test('cost table shows calculated internal unit cost instead of editing the sell
  assert.match(html,/fields\.forEach\(f=>i\[f\]=/);
 });
 
-test('whole-plan margin signs agree with whole-plan profit when client quantity differs',()=>{
+test('quote alternatives preserve separate sale prices and allocate costs only to quoted quantity',()=>{
  const html=fs.readFileSync('admin/quotes/index.html','utf8');
  const start=html.indexOf('const finishedWeight=i=>');
  const end=html.indexOf('async function refresh()',start);
@@ -76,14 +76,14 @@ test('whole-plan margin signs agree with whole-plan profit when client quantity 
  const p=model.planMetrics(row);
  assert.equal(p.unitCost,40000/600+200);
  assert.equal(p.revenue,60000);
- assert.equal(p.cost,160000);
- assert.equal(p.gross,-100000);
- assert.equal(p.perSold,-1000);
- assert.ok(p.margin<0&&p.markup<0);
+ assert.ok(Math.abs(p.cost-(40000/600+200)*100)<1e-8);
+ assert.ok(Math.abs(p.gross-(60000-(40000/600+200)*100))<1e-8);
+ assert.ok(Math.abs(p.perSold-(600-(40000/600+200)))<1e-8);
+ assert.ok(p.margin>0&&p.markup>0);
  assert.equal(model.quotedCost({...row,displayQty:500}),p.unitCost);
  const larger=model.planMetrics({...row,displayQty:500});
- assert.equal(larger.cost,p.cost);
- assert.equal(larger.gross,140000);
+ assert.ok(Math.abs(larger.cost-p.cost*5)<1e-8);
+ assert.ok(Math.abs(larger.gross-(300000-(40000/600+200)*500))<1e-8);
  assert.ok(larger.margin>0&&larger.markup>0);
  const equal=model.planMetrics({...row,displayQty:600});
  assert.equal(equal.perSold,600-equal.unitCost);
@@ -104,4 +104,26 @@ test('cost comparison keeps alternative quote plans separate',()=>{
  assert.match(html,/方案平均單瓶毛利/);
  assert.match(html,/方案毛利率/);
  assert.match(html,/方案實際加成率/);
+});
+
+test('two alternative quote plans retain independent sales prices and unit-cost allocations',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ const a=html.indexOf('const finishedWeight=i=>');
+ const b=html.indexOf('async function refresh()',a);
+ const {planMetrics,quotedCost}=vm.runInNewContext("(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(a,b)+"return {planMetrics,quotedCost};})()");
+ const common={name:'香水',pricingMode:'calculated',qty:600,fragranceTotal:40000,pifFee:0,scentCount:1,ml:50,density:1,mix:0,container:0,sticker:0,box:0,pack:0,misc:200};
+ const a100=planMetrics({...common,displayQty:100,sell:650});
+ const b500=planMetrics({...common,displayQty:500,sell:550});
+ assert.equal(a100.revenue,65000);
+ assert.equal(b500.revenue,275000);
+ assert.equal(a100.unitCost,b500.unitCost);
+ assert.ok(Math.abs(a100.cost-100*quotedCost(common))<1e-9);
+ assert.ok(Math.abs(b500.cost-500*quotedCost(common))<1e-9);
+ assert.ok(Math.abs(a100.gross-100*(650-quotedCost(common)))<1e-9);
+ assert.ok(Math.abs(b500.gross-500*(550-quotedCost(common)))<1e-9);
+ assert.equal(a100.perSold,650-a100.unitCost);
+ assert.equal(b500.perSold,550-b500.unitCost);
+ assert.ok(a100.margin>0&&b500.margin>0);
+ const loss=planMetrics({...common,displayQty:100,sell:100});
+ assert.ok(loss.gross<0&&loss.margin<0&&loss.markup<0);
 });
