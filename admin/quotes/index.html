@@ -125,7 +125,7 @@ function refreshQuickMetrics(card,tr){
  card.querySelector('.quick-total').textContent=hasQuote?money(qty*i.sell):'—';
  card.querySelector('.quick-profit').textContent=planMetrics(i).valid?money(planMetrics(i).gross):'—';
  const warning=card.querySelector('.quote-quick-warning');
- warning.textContent=positiveInt(i.displayQty)===0?'請輸入對客顯示瓶數，以計算客戶方案總價。':supplier&&qty>positiveInt(i.supplierQty)?'注意：對客瓶數超過廠商供應量，請先向廠商確認。':supplier&&!hasCost?'請先輸入廠商單瓶成本，才能計算預估毛利。':!supplier&&!hasCost?'請填入可用總量、容量及密度，才能計算預估瓶數與成本。':!supplier&&qty!==internalQty(i)?'對客瓶數與內部試算瓶數不同：此方案毛利按對客瓶數乘以單瓶成本計算，並非整批製造收支。':'';
+ warning.textContent=positiveInt(i.displayQty)===0?'請輸入對客顯示瓶數，以計算客戶方案總價。':supplier&&qty>positiveInt(i.supplierQty)?'注意：對客瓶數超過廠商供應量，請先向廠商確認。':supplier&&!hasCost?'請先輸入廠商單瓶成本，才能計算預估毛利。':!supplier&&!hasCost?'請填入可用總量、容量及密度，才能計算預估瓶數與成本。':!supplier&&qty>internalQty(i)?'對客瓶數超過此批預估可製作瓶數，請確認是否需要增加批量。':'';
  warning.hidden=!warning.textContent;
 }
 function renderQuickPanels(){
@@ -150,7 +150,7 @@ function renderQuickPanels(){
   card.querySelector('.quote-quick-index').textContent='方案 '+String(index+1).padStart(2,'0');
   const size=isCandle(i)?(Number(i.weight)||0)+' g':(Number(i.ml)||0)+' mL';
   card.querySelector('.quote-quick-name').textContent=(i.displayName||i.name)+' · '+size;
-  card.querySelector('.quote-quick-note').textContent=supplier?'依廠商提供的單瓶成本回推毛利；原香精、包材與 PIF 試算保持不變。':'沿用自行試算的直接成本與 PIF，詳細原料與費率可展開下方試算表調整。';
+  card.querySelector('.quote-quick-note').textContent=supplier?'依廠商提供的單瓶成本計算預估毛利；原香精、包材與 PIF 試算保持不變。':'依下方批量、香精、PIF 與包裝成本估算整批成本；此卡片設定對客瓶數、氣味款數與價格。';
   card.querySelectorAll('[data-pricing]').forEach(btn=>{
    const active=btn.dataset.pricing===(supplier?'supplier':'calculated');
    btn.classList.toggle('is-active',active);
