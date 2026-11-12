@@ -158,3 +158,15 @@ test('finished weight is excluded from yield, total cost and detailed cost field
  assert.match(html,/per=\(Number\(i\.ml\)\|\|0\)\*density/);
  assert.match(html,/成品重 g 不參與試算/);
 });
+
+test('duplicate action belongs to detailed cost table and clones a separate editable plan',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.match(html,/class="alt clone-item">複製方案<\/button>/);
+ assert.match(html,/querySelectorAll\('\.clone-item'\)/);
+ assert.match(html,/const rows=readItems\(\),copy=\{\.\.\.rows\[index\]\}/);
+ assert.match(html,/rows\.splice\(index\+1,0,copy\)/);
+ assert.match(html,/renderItems\(rows\)/);
+ assert.doesNotMatch(html,/clone-quote-plan/);
+ assert.match(html,/class="alt delete-item">移除<\/button>/);
+ assert.match(html,/id="cloneBtn" class="alt">複製目前報價<\/button>/);
+});
