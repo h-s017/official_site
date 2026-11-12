@@ -141,3 +141,20 @@ test('mixed manufacturing and customer quantities apply each cost to the correct
  assert.match(html,/data-field="misc" type="hidden"/);
  assert.match(html,/貼紙＋外盒＋加工）× 對客顯示瓶數/);
 });
+
+test('finished weight is excluded from yield, total cost and detailed cost fields',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ const m=quoteModel();
+ const base={name:'容器蠟燭',pricingMode:'calculated',batchKg:12,ml:200,density:0.8,weight:100,scentCount:1,mix:500,fragranceTotal:3000,pifFee:0,container:50,sticker:2,box:3,pack:4,displayQty:40,sell:400};
+ const a=m.planMetrics(base);
+ const b=m.planMetrics({...base,weight:9999});
+ assert.equal(m.internalQty(base),75);
+ assert.equal(m.internalQty({...base,weight:9999}),75);
+ assert.equal(a.cost,b.cost);
+ assert.equal(a.gross,b.gross);
+ assert.equal(m.internalQty({...base,ml:0}),0);
+ assert.doesNotMatch(html,/<th>成品重 g<\/th>/);
+ assert.match(html,/data-field="weight" type="hidden"/);
+ assert.match(html,/per=\(Number\(i\.ml\)\|\|0\)\*density/);
+ assert.match(html,/成品重 g 不參與試算/);
+});
