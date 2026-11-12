@@ -16,3 +16,23 @@ test('merged form and customer rendering scripts parse',()=>{for(const path of [
 test('shared design definitions match official serif font stack and neutral palette',()=>{const s=fs.readFileSync('assets/style.css','utf8'),b=fs.readFileSync('assets/hana-brand.css','utf8');const root=s.match(/:root\s*\{[^}]*\}/)[0];assert.ok(b.includes(root));assert.match(b,/Cormorant Garamond/);assert.match(b,/Noto Serif TC/);const css=fs.readFileSync('admin/quotes/development.css','utf8');assert.match(css,/font-family:var\(--hana-font-text\)/);assert.match(css,/background:var\(--white/);});
 test('quick supplier panels use a matching warning selector without crashing before they mount',()=>{const s=fs.readFileSync('admin/quotes/index.html','utf8');assert.match(s,/card\.querySelector\('\.quote-quick-warning'\)/);assert.match(s,/class="quote-quick-warning" hidden/);assert.doesNotMatch(s,/querySelector\('\.quick-warning'\)/);});
 test('explicit save operation sends the requested status and blocks edits until completion',()=>{const s=fs.readFileSync('admin/quotes/index.html','utf8');const save=s.slice(s.indexOf('async function save(status)'),s.indexOf('function updateSamplingPreview'));assert.match(save,/title:current\.title,status,cost_data/);assert.match(save,/updated_at:new Date\(Math\.max\(Date\.now\(\),Number\.isFinite\(priorTime\)\?priorTime\+1:0\)\)\.toISOString\(\)/);assert.match(save,/if\(saving\)return/);assert.match(save,/\$\('#editor'\)\.inert=true/);assert.match(save,/finally\{saving=false/);});
+
+
+test('calculated quote allocates fragrance and PIF by internal quantity, not displayed quantity',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ const start=html.indexOf('const finishedWeight=i=>');
+ const end=html.indexOf('async function refresh()',start);
+ assert.ok(start>0&&end>start);
+ const source="(()=>{const isCandle=i=>i.name==='容器蠟燭';"+html.slice(start,end)+"return {fragranceUnit,pifPerUnit,quotedCost,publicQty,internalQty};})()";
+ const calc=vm.runInNewContext(source);
+ const row={name:'香水',pricingMode:'calculated',qty:500,displayQty:100,fragranceTotal:40000,pifFee:30000,scentCount:1,ml:50,density:1,concentration:10,mix:0,container:0,sticker:0,box:0,pack:0,misc:0};
+ assert.equal(calc.internalQty(row),500);
+ assert.equal(calc.publicQty(row),100);
+ assert.equal(calc.fragranceUnit(row),80);
+ assert.equal(calc.pifPerUnit(row),60);
+ assert.equal(calc.quotedCost(row),140);
+ assert.equal(calc.quotedCost({...row,displayQty:300}),140);
+ assert.equal(calc.quotedCost({...row,displayQty:0}),140);
+ assert.equal(calc.quotedCost({...row,qty:100}),700);
+ assert.equal(calc.quotedCost({...row,pricingMode:'supplier',supplierUnitCost:250}),250);
+});
