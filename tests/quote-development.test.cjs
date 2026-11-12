@@ -127,3 +127,17 @@ test('two alternative quote plans retain independent sales prices and unit-cost 
  const loss=planMetrics({...common,displayQty:100,sell:100});
  assert.ok(loss.gross<0&&loss.margin<0&&loss.markup<0);
 });
+
+test('quick card hides internal quantity while cost table retains its calculation input',()=>{
+ const html=fs.readFileSync('admin/quotes/index.html','utf8');
+ assert.doesNotMatch(html,/data-quick="qty"/);
+ assert.doesNotMatch(html,/<th>產量／氣味分配<\/th>/);
+ assert.doesNotMatch(html,/<td class="capacity"><\/td>/);
+ assert.doesNotMatch(html,/querySelector\('\.capacity'\)/);
+ assert.match(html,/<th>內部試算瓶數<\/th>/);
+ assert.match(html,/data-field="'\+f\+'" type="number"/);
+ assert.match(html,/const internalQty=i=>positiveInt\(i\.qty\)/);
+ assert.match(html,/const fragranceUnit=i=>internalQty\(i\)>0/);
+ assert.match(html,/const pifPerUnit=i=>internalQty\(i\)>0/);
+ assert.match(html,/class="alt use-yield"/);
+});
