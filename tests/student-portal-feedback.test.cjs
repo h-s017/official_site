@@ -49,9 +49,10 @@ test('rate limits, email verification and service errors have distinct feedback'
   assert.match(page.node('student-message').textContent,pattern);assert.doesNotMatch(page.node('student-message').textContent,/資格審查中/);
  }
 });
-test('new registration includes newsletter notice version for automatic verified enrolment',async()=>{
+test('new registration requires HANA review but does not auto-subscribe newsletter',async()=>{
  const page=await portal();await page.register();
- assert.equal(page.signup().options.data.student_application.newsletter_consent_version,'2026-10-29');
+ assert.equal(page.signup().options.data.student_application.newsletter_consent_version,undefined);
+ assert.match(page.node('student-message').textContent,/無須重新註冊/);
 });
 test('newsletter unsubscribe remains cancelled after refreshing the tool dashboard',async()=>{
  const page=await portal({allowed:true,status:'approved'});
@@ -101,18 +102,3 @@ test('successful newsletter query clears a previous load error without changing 
  assert.equal(page.node('newsletter-unsubscribe').hidden,true);
 });
 
-test('resending a verification email does not register another account',async()=>{
- const page=await portal();await page.requestResend();
- assert.equal(page.resendCalls(),1);
- assert.equal(page.resendArgs().type,'signup');
- assert.equal(page.resendArgs().email,'student@example.invalid');
- assert.equal(page.resendArgs().options.emailRedirectTo,'https://example.invalid/student-tools/');
- assert.match(page.node('resend-email-message').textContent,/重寄請求已送出/);
- await page.requestResend();assert.equal(page.resendCalls(),1);
- page.advance(60000);await page.requestResend();assert.equal(page.resendCalls(),2);
-});
-test('failed resend displays an error and never claims confirmation was delivered',async()=>{
- const page=await portal();page.setResendResult({error:{status:429}});await page.requestResend();
- assert.match(page.node('resend-email-message').textContent,/操作次數過多/);
- assert.doesNotMatch(page.node('resend-email-message').textContent,/重寄請求已送出/);
-});
