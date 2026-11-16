@@ -10,10 +10,10 @@
   $('previous-page').disabled=offset===0;$('next-page').disabled=rows.length<50;
   if(!rows.length)$('student-list').append(node('p','此頁沒有申請紀錄。'));
   for(const row of rows){
-   const card=node('article','');card.className='review-card';card.append(node('h2',row.full_name),node('p',row.email),node('p','手機：'+row.phone),node('p','曾上課程：'+row.courses.join('、')),node('p','申請時間：'+new Date(row.created_at).toLocaleString('zh-TW')),node('p',row.email_verified?'Email 已驗證':'Email 尚未驗證，無法核准'));
+   const card=node('article','');card.className='review-card';card.append(node('h2',row.full_name),node('p',row.email),node('p','手機：'+row.phone),node('p','曾上課程：'+row.courses.join('、')),node('p','申請時間：'+new Date(row.created_at).toLocaleString('zh-TW')),node('p',row.email_verified?'Email 已驗證':'Email 尚未完成驗證（系統尚無確認紀錄）。請學員至學員入口使用「重寄驗證信」，再重新載入此頁。'));
    const label=node('label','內部審核備註（拒絕／停權必填，不向學員顯示）');const reason=document.createElement('textarea');reason.maxLength=500;label.append(reason);card.append(label);const actions=node('div','');actions.className='review-actions';
    for(const [value,text] of [['approved','核准'],['rejected','拒絕'],['suspended','停權']]){
-    if(row.status===value)continue;const b=node('button',text);b.type='button';if(value==='approved')b.className='approve';b.disabled=value==='approved'&&!row.email_verified;
+    if(row.status===value)continue;const b=node('button',text);b.type='button';if(value==='approved')b.className='approve';b.disabled=value==='approved'&&!row.email_verified;if(b.disabled)b.title='需先由學員完成 Email 驗證後才可核准';
     b.onclick=async()=>{if(value!=='approved'&&!reason.value.trim()){say('請填寫拒絕或停權原因。');reason.focus();return;}if(!window.confirm('確認將「'+row.full_name+'」設定為「'+text+'」？'))return;for(const button of card.querySelectorAll('button'))button.disabled=true;try{await check(await db.rpc('student_review',{p_user:row.user_id,p_status:value,p_revision:row.revision,p_reason:reason.value.trim()}));say('審核已儲存，權限立即生效。');await load();}catch{say('審核未完成：資料可能已更新，或驗證已失效。請重新載入或登入。');await load().catch(()=>{$('review-panel').hidden=true;});}};
     actions.append(b);
    }card.append(actions);$('student-list').append(card);
