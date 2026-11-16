@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
-async function portal(initialAccess=null){
- const nodes=new Map();let access=initialAccess,loginError=null,authEvent,subscribed=true,signup,resetResult={data:{}},resetCalls=0,resendResult={data:{}},resendCalls=0,resendArgs=null,now=1000000;
+async function portal(initialAccess=null,enabledOAuth={}){
+ const nodes=new Map();let access=initialAccess,loginError=null,authEvent,subscribed=true,signup,resetResult={data:{}},resetCalls=0,resendResult={data:{}},resendCalls=0,resendArgs=null,now=1000000,oauthResult={data:{}},oauthCalls=[];
  const timers=[];
  const newsletterResponses=[];
  function node(id){if(!nodes.has(id)){
@@ -14,14 +14,14 @@ async function portal(initialAccess=null){
  const panels=['login','register','complete','forgot','reset'].map(mode=>{const form=node(mode+'-form');form.dataset.authPanel=mode;return form;});
  const tabs=['login','register','forgot'].map(mode=>({dataset:{mode},setAttribute(){}}));
  const document={getElementById:node,querySelectorAll:selector=>selector==='[data-auth-panel]'?panels:tabs,addEventListener(){}};
- const db={rpc:async name=>{if(name==='student_newsletter_status'&&newsletterResponses.length)return newsletterResponses.shift();if(name==='student_newsletter_unsubscribe')subscribed=false;return {data:subscribed};},auth:{getUser:async()=>({data:{user:{id:'test-user'}}}),onAuthStateChange:cb=>{authEvent=cb;},signInWithPassword:async()=>({data:{},error:loginError}),signUp:async args=>{signup=args;return {data:{}};},resetPasswordForEmail:async()=>{resetCalls++;return await resetResult;},resend:async args=>{resendCalls++;resendArgs=args;return await resendResult;}}};
- const window={HanaStudents:{db,check:async result=>{if(result.error)throw result.error;return result.data;},status:async()=>access,logout(){},redirect:'https://example.invalid/student-tools/',next:()=>'/student-tools/'}};
+ const db={rpc:async name=>{if(name==='student_newsletter_status'&&newsletterResponses.length)return newsletterResponses.shift();if(name==='student_newsletter_unsubscribe')subscribed=false;return {data:subscribed};},auth:{getUser:async()=>({data:{user:{id:'test-user'}}}),onAuthStateChange:cb=>{authEvent=cb;},signInWithPassword:async()=>({data:{},error:loginError}),signInWithOAuth:async args=>{oauthCalls.push(args);return oauthResult;},signUp:async args=>{signup=args;return {data:{}};},resetPasswordForEmail:async()=>{resetCalls++;return await resetResult;},resend:async args=>{resendCalls++;resendArgs=args;return await resendResult;}}};
+ const window={HANA_CMS_CONFIG:{studentOAuth:enabledOAuth},HanaStudents:{db,check:async result=>{if(result.error)throw result.error;return result.data;},status:async()=>access,logout(){},redirect:'https://example.invalid/student-tools/',next:()=>'/student-tools/'}};
  class FormData {get(name){return {name:'測試學員',phone:'0912345678',consent:'on'}[name];}getAll(name){return name==='courses'?['KPIA']:[];}}
- vm.runInNewContext(fs.readFileSync('assets/student-portal.js','utf8'),{window,document,FormData,Date:{now:()=>now},sessionStorage:{setItem(){}},setTimeout:(fn,delay=0)=>{if(!delay)fn();else timers.push(fn);}});
+ vm.runInNewContext(fs.readFileSync('assets/student-portal.js','utf8'),{window,document,FormData,URLSearchParams,location:{search:''},Date:{now:()=>now},sessionStorage:{setItem(){}},setTimeout:(fn,delay=0)=>{if(!delay)fn();else timers.push(fn);}});
  await settle();
  const submit=async id=>{const form=node(id);form.onsubmit({preventDefault(){},currentTarget:form,target:form});await settle();};
  return {nodes,node,setAccess:value=>{access=value;},setLoginError:value=>{loginError=value;},refresh:async()=>{authEvent('SIGNED_IN');await settle();},login:()=>submit('login-form'),register:()=>submit('register-form'),signup:()=>signup,
-  setNewsletterResponses:values=>newsletterResponses.push(...values),setResetResult:value=>{resetResult=value;},resetCalls:()=>resetCalls,requestReset:()=>{const form=node('forgot-form');return form.onsubmit({preventDefault(){},currentTarget:form,target:form});},setResendResult:value=>{resendResult=value;},resendCalls:()=>resendCalls,resendArgs:()=>resendArgs,requestResend:()=>{const form=node('resend-form');return form.onsubmit({preventDefault(){},currentTarget:form,target:form});},advance:ms=>{now+=ms;for(const fn of timers.splice(0))fn();}};
+  oauthCalls:()=>oauthCalls,setOAuthResult:value=>{oauthResult=value;},setNewsletterResponses:values=>newsletterResponses.push(...values),setResetResult:value=>{resetResult=value;},resetCalls:()=>resetCalls,requestReset:()=>{const form=node('forgot-form');return form.onsubmit({preventDefault(){},currentTarget:form,target:form});},setResendResult:value=>{resendResult=value;},resendCalls:()=>resendCalls,resendArgs:()=>resendArgs,requestResend:()=>{const form=node('resend-form');return form.onsubmit({preventDefault(){},currentTarget:form,target:form});},advance:ms=>{now+=ms;for(const fn of timers.splice(0))fn();}};
 }
 test('a failed login reports credentials, never claims pending review',async()=>{
  const page=await portal();page.setLoginError({code:'invalid_credentials'});await page.login();
@@ -102,3 +102,41 @@ test('successful newsletter query clears a previous load error without changing 
  assert.equal(page.node('newsletter-unsubscribe').hidden,true);
 });
 
+
+test('Google login is hidden until the OAuth provider is configured',async()=>{
+ const page=await portal();
+ assert.equal(page.node('student-social-auth').hidden,true);
+ assert.equal(page.node('social-google').hidden,true);
+ await page.node('social-google').onclick();
+ assert.equal(page.oauthCalls().length,0);
+});
+test('configured Google starts OAuth with fixed HANA callback, never bypasses review',async()=>{
+ const page=await portal(null,{google:true});
+ assert.equal(page.node('student-social-auth').hidden,false);
+ assert.equal(page.node('social-google').hidden,false);
+ assert.equal(page.node('social-apple').hidden,true);
+ await page.node('social-google').onclick();
+ assert.equal(page.oauthCalls().length,1);
+ assert.equal(page.oauthCalls()[0].provider,'google');
+ assert.equal(page.oauthCalls()[0].options.redirectTo,'https://example.invalid/student-tools/');
+ page.setAccess({status:'not_applied',admin:false,allowed:false});
+ await page.refresh();
+ assert.equal(page.node('complete-form').hidden,false);
+ assert.equal(page.node('student-content').hidden,true);
+ assert.equal(page.node('student-social-auth').hidden,true);
+});
+test('Apple remains a separately configurable sign in provider',async()=>{
+ const page=await portal(null,{apple:true});
+ assert.equal(page.node('social-google').hidden,true);
+ assert.equal(page.node('social-apple').hidden,false);
+ await page.node('social-apple').onclick();
+ assert.equal(page.oauthCalls()[0].provider,'apple');
+});
+test('OAuth provider setup error does not claim login succeeded',async()=>{
+ const page=await portal(null,{google:true});
+ page.setOAuthResult({error:{code:'provider_not_enabled'}});
+ await page.node('social-google').onclick();
+ assert.match(page.node('student-message').textContent,/尚未完成啟用/);
+ assert.equal(page.node('student-content').hidden,true);
+ assert.equal(page.node('social-google').disabled,false);
+});
