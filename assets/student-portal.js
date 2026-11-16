@@ -4,6 +4,16 @@
  const $=id=>document.getElementById(id);
  let recovery=false;
  const message=text=>{$('student-message').textContent=text;};
+ // OAuth UI is gated until credentials are configured in Supabase's provider settings.
+ const oauthEnabled={
+  google:window.HANA_CMS_CONFIG?.studentOAuth?.google===true,
+  apple:window.HANA_CMS_CONFIG?.studentOAuth?.apple===true
+ };
+ function socialVisibility(panel){
+  $('social-google').hidden=!oauthEnabled.google;
+  $('social-apple').hidden=!oauthEnabled.apple;
+  $('student-social-auth').hidden=!['login','register'].includes(panel)||(!oauthEnabled.google&&!oauthEnabled.apple);
+ }
  const newsletterButtons=['newsletter-unsubscribe','pending-newsletter-unsubscribe'];
  let newsletterRevision=0;
  let newsletterLoadFailed=false;
@@ -34,11 +44,12 @@
  courseToggle.onclick=()=>setCourseOpen(courseToggle.getAttribute('aria-expanded')!=='true');
  document.addEventListener('click',event=>{if(!courseToggle.parentElement.contains(event.target))setCourseOpen(false);});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&courseToggle.getAttribute('aria-expanded')==='true'){setCourseOpen(false);courseToggle.focus();}});
- function mode(name){for(const form of document.querySelectorAll('[data-auth-panel]'))form.hidden=form.dataset.authPanel!==name;for(const tab of document.querySelectorAll('[data-mode]'))tab.setAttribute('aria-pressed',String(tab.dataset.mode===name));message('');}
+ function mode(name){for(const form of document.querySelectorAll('[data-auth-panel]'))form.hidden=form.dataset.authPanel!==name;for(const tab of document.querySelectorAll('[data-mode]'))tab.setAttribute('aria-pressed',String(tab.dataset.mode===name));socialVisibility(name);message('');}
  for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>mode(button.dataset.mode);
  function operationError(error){
   if(error?.code==='invalid_credentials')return 'Email 或密碼不正確，請重新輸入或使用忘記密碼。';
   if(error?.code==='email_not_confirmed')return '目前登入設定仍要求 Email 確認，請聯絡 HANA。請勿重複註冊。';
+  if(error?.code==='provider_not_enabled')return '此登入方式尚未完成啟用，請暫時使用 Email 登入或聯絡 HANA。';
   if(error?.status===429)return '操作次數過多，請稍後再試。';
   return '操作未完成，請檢查輸入資料與網路後重試。';
  }
@@ -54,6 +65,7 @@
   $('tools-review-link').hidden=!access?.admin;
   for(const id of newsletterButtons)$(id).hidden=true;
   $('signed-in').hidden=!access;
+  if(access)$('student-social-auth').hidden=true;
   if(!access){$('auth-tabs').hidden=false;mode(new URLSearchParams(location.search).get('apply')==='1'?'register':'login');return;}
   $('auth-tabs').hidden=true;
   for(const panel of document.querySelectorAll('[data-auth-panel]'))panel.hidden=true;
@@ -65,6 +77,16 @@
   else if(access.admin){$('access-status').textContent='管理員帳戶：請前往學員審核後台完成二階段驗證。';}
   else if(access.status==='not_applied'){$('complete-form').hidden=false;$('access-status').textContent='請補填學員資格申請。';}
   else {$('access-status').textContent=({pending:'資格審查中',approved:'帳戶 Email 與已核准紀錄不一致，需要 HANA 重新確認，請聯絡我們。',rejected:'目前未通過審核，請聯絡 HANA 確認課程紀錄。',suspended:'學員權限已暫停，請聯絡 HANA。'})[access.status]||'資格尚未通過';}
+ }
+ for(const provider of ['google','apple']){
+  const button=$('social-'+provider);
+  button.onclick=async()=>{
+   if(!oauthEnabled[provider])return;
+   message('');button.disabled=true;
+   try{await check(await db.auth.signInWithOAuth({provider,options:{redirectTo:redirect}}));}
+   catch(error){message(operationError(error));}
+   finally{button.disabled=false;}
+  };
  }
  $('login-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{const form=e.target;await check(await db.auth.signInWithPassword({email:form.elements.email.value.trim(),password:form.elements.password.value}));form.elements.password.value='';await refresh();});};
  $('register-form').onsubmit=e=>{e.preventDefault();busy(e.currentTarget,async()=>{const form=e.target;if(form.elements.password.value!==form.elements.confirm.value){message('兩次輸入的密碼不一致。');return;}if(!form.querySelector('[name=courses]:checked')){message('請至少選擇一項曾上過的課程。');return;}const profile=application(form);const result=await check(await db.auth.signUp({email:form.elements.email.value.trim(),password:form.elements.password.value,options:{emailRedirectTo:redirect,data:{student_application:profile}}}));form.reset();if(result?.session){await refresh();return;}mode('login');message('註冊請求已送出。請使用原本 Email 與密碼登入查看 HANA 審核狀態；若系統仍要求驗證信箱，請聯絡 HANA，無須重新註冊。');});};
