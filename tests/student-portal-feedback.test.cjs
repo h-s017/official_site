@@ -44,7 +44,7 @@ test('only an actual server pending status shows review pending',async()=>{
  assert.equal(page.node('student-introduction').hidden,false);assert.equal(page.node('student-entry').hidden,false);
 });
 test('rate limits, email verification and service errors have distinct feedback',async()=>{
- for(const [error,pattern] of [[{status:429},/操作次數過多/],[{code:'email_not_confirmed'},/完成信箱驗證/],[new Error('network'),/操作未完成/]]){
+ for(const [error,pattern] of [[{status:429},/操作次數過多/],[{code:'email_not_confirmed'},/聯絡 HANA/],[new Error('network'),/操作未完成/]]){
   const page=await portal();page.setLoginError(error);await page.login();
   assert.match(page.node('student-message').textContent,pattern);assert.doesNotMatch(page.node('student-message').textContent,/資格審查中/);
  }
