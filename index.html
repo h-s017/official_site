@@ -287,6 +287,21 @@
       .home-about-heading h2{white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere!important;}
       .home-about-heading .about-role-en{white-space:normal;word-break:normal;overflow-wrap:anywhere;}
     }
+  
+    /* Two equal homepage service gateways, responsive and easy to tap. */
+    .entrance-editorial .wrap{max-width:1120px!important;}
+    .entrance-editorial-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px!important;}
+    .entrance-editorial-grid .entrance-path:nth-child(n){grid-column:auto!important;width:100%!important;min-height:250px!important;margin:0!important;box-sizing:border-box!important;padding:30px 34px!important;background:#fff!important;}
+    .entrance-editorial-grid .entrance-path:nth-child(2){background:#fafafa!important;}
+    .entrance-editorial-grid .entrance-index{font-family:var(--font-serif);font-size:13px!important;letter-spacing:.1em!important;color:#555!important;line-height:1.6;}
+    .entrance-editorial-grid .entrance-path h3{font-size:clamp(27px,2.75vw,37px)!important;margin:0 0 28px!important;white-space:normal!important;}
+    .entrance-editorial-grid .entrance-meta{font-size:17px!important;line-height:1.85!important;color:#343434!important;overflow-wrap:normal!important;}
+    @media(max-width:760px){
+      .entrance-editorial-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important;}
+      .entrance-editorial-grid .entrance-path:nth-child(n){width:100%!important;min-height:215px!important;margin:0!important;padding:25px 24px!important;}
+      .entrance-editorial-grid .entrance-path h3{font-size:28px!important;margin-bottom:18px!important;}
+      .entrance-editorial-grid .entrance-meta{font-size:16px!important;}
+    }
   </style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
   <link rel="stylesheet" href="/assets/home-layout.css?v=1">
@@ -329,36 +344,20 @@
     <section data-hana-section="entrances" class="entrance-editorial" aria-labelledby="entrance-title">
       <div class="wrap">
         <div class="entrance-editorial-head">
-          <p class="kicker">Explore</p>
-          <h2 id="entrance-title">創作旅程，從這裡開始</h2>
+          <p class="kicker">Explore HANA</p>
+          <h2 id="entrance-title">探索 HANA 的兩個專業領域</h2>
         </div>
         <div class="entrance-editorial-grid">
-          <a class="entrance-path" href="/courses/">
-            <span class="entrance-index">01</span>
-            <span class="entrance-en">LEARN</span>
-            <h3>氣味學習</h3>
-            <div class="entrance-meta">專業調香<br>氣味藝術序曲</div>
+          <a class="entrance-path" href="/courses/" aria-label="創作與教育：了解專業調香課程、香氣體驗、嗅覺藝術與此域 Hineni">
+            <span class="entrance-index">01 / ART &amp; EDUCATION</span>
+            <h3>創作與教育</h3>
+            <div class="entrance-meta">專業調香課程、香氣體驗<br>嗅覺藝術、此域 Hineni</div>
             <span class="entrance-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="entrance-path" href="/incubation/">
-            <span class="entrance-index">02</span>
-            <span class="entrance-en">CREATE</span>
-            <h3>發展創作</h3>
-            <div class="entrance-meta">嗅覺藝術育成<br>跨域創作育成</div>
-            <span class="entrance-arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="entrance-path" href="/product-development/">
-            <span class="entrance-index">03</span>
-            <span class="entrance-en">FROM IDEA TO PRODUCT</span>
-            <h3>實現想像</h3>
-            <div class="entrance-meta">品牌氣味・產品開發<br>PIF・法規整合</div>
-            <span class="entrance-arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="entrance-path" href="https://hineni.hanascent.com/">
-            <span class="entrance-index">04</span>
-            <span class="entrance-en">VISIT</span>
-            <h3>走進此域</h3>
-            <div class="entrance-meta">北投中心新村<br>氣味敘事空間</div>
+          <a class="entrance-path" href="/product-development/" aria-label="品牌與產品開發：了解品牌孵化、香氛與日化產品、OEM ODM 及商業設計諮詢">
+            <span class="entrance-index">02 / BRAND &amp; PRODUCT DEVELOPMENT</span>
+            <h3>品牌與產品開發</h3>
+            <div class="entrance-meta">品牌孵化、香氛與日化產品<br>OEM／ODM、商業設計諮詢</div>
             <span class="entrance-arrow" aria-hidden="true">→</span>
           </a>
         </div>
