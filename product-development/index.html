@@ -34,6 +34,17 @@
     .pd-cta-actions .btn{font-size:16px}
     @media(max-width:900px){.pd-process{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:760px){.pd-process{display:block}.pd-intro h1{font-size:34px}.pd-products span{font-size:14px}.pd-block{padding-right:0}}
+      /* Text-led capabilities and deliverables; no speculative portfolio imagery. */
+    .pd-capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .pd-capability{min-width:0;border-top:1px solid #bcbcbc;padding:23px 4px 6px}
+    .pd-capability small{display:block;margin-bottom:14px;color:#565656;font-size:13px;letter-spacing:.1em}
+    .pd-capability h3,.pd-deliverable h3{font-size:clamp(21px,2vw,26px);font-weight:500;line-height:1.4;margin:0 0 12px;color:#202020}
+    .pd-capability p,.pd-deliverable p{margin:0;font-size:16px;line-height:1.9;color:#3b3b3b}
+    .pd-deliverable-list{border-top:1px solid #bcbcbc}
+    .pd-deliverable{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;padding:24px 0;border-bottom:1px solid #d4d4d4}
+    .pd-deliverable-no{font-size:16px;letter-spacing:.12em;color:#555}
+    @media(max-width:900px){.pd-capability-grid{grid-template-columns:1fr;gap:14px}}
+    @media(max-width:760px){.pd-deliverable{grid-template-columns:40px minmax(0,1fr);gap:13px;padding:22px 0}.pd-capability h3,.pd-deliverable h3{font-size:23px}.pd-capability p,.pd-deliverable p{font-size:16px}}
   </style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
 </head>
@@ -71,6 +82,33 @@
         <div class="section-head"><div><p class="eyebrow">PRODUCT CATEGORIES</p><h2 id="pd-products-title">從氣味到生活日用品。</h2></div><p>依產品實際用途及製造條件評估開發方案，不同品項適用的法規與文件要求可能不同。</p></div>
         <div class="pd-products" aria-label="主要產品類別"><span>香水</span><span>室內噴霧</span><span>擴香</span><span>生活香氛產品</span><span>日化產品開發諮詢</span></div>
         <p class="pd-note">香氛產品以氣味設計與開發整合為核心；其他日化品項將依需求評估配方、製造可行性及專業合作資源，不代表所有品類均可自行製造。</p>
+      </div>
+    </section>
+    <section class="pd-capabilities" aria-labelledby="pd-capabilities-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">DEVELOPMENT CAPABILITIES</p><h2 id="pd-capabilities-title">我們能協助完成什麼？</h2></div>
+          <p>不必等到所有條件都準備好才開始。依品牌目前的階段，選擇需要的產品開發、設計或整合協作。</p>
+        </div>
+        <div class="pd-capability-grid">
+          <article class="pd-capability"><small>01 / PLAN</small><h3>釐清方向與可行性</h3><p>討論產品定位、目標客群、開發預算、預計數量及時程，整理能進一步執行的需求與條件。</p></article>
+          <article class="pd-capability"><small>02 / CREATE</small><h3>氣味研發與設計</h3><p>依香氛產品需求建立氣味方向、進行樣品打樣與修正，並視專案搭配品牌識別、包裝與視覺應用設計。</p></article>
+          <article class="pd-capability"><small>03 / CONNECT</small><h3>銜接製造與上市準備</h3><p>評估包材、成本、起訂量及製造條件，協助整理產品文件需求並串接適用的專業合作資源。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="pd-deliverables pd-network" aria-labelledby="pd-deliverables-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">PROJECT DELIVERABLES</p><h2 id="pd-deliverables-title">每個階段，都有清楚的交付內容。</h2></div>
+          <p>合作可從單項服務開始，也可依需求整合多個階段。具體交付成果以確認的提案與合約為準。</p>
+        </div>
+        <div class="pd-deliverable-list">
+          <div class="pd-deliverable"><span class="pd-deliverable-no">01</span><div><h3>前期規劃</h3><p>品牌定位與產品開發方向、需求摘要、預算及時程評估。</p></div></div>
+          <div class="pd-deliverable"><span class="pd-deliverable-no">02</span><div><h3>設計與打樣</h3><p>氣味樣品與配方版本紀錄、品牌識別及包裝設計稿等約定成果。</p></div></div>
+          <div class="pd-deliverable"><span class="pd-deliverable-no">03</span><div><h3>商品化準備</h3><p>包材與數量條件、成本估算、製造對接需求及適用文件清單。</p></div></div>
+        </div>
+        <p class="pd-note">上述為可能的交付類型，非單一方案的全部包含項目。製造、檢測、法定安全評估及第三方文件費用，依實際合作範圍另行確認。</p>
       </div>
     </section>
     <section aria-labelledby="pd-process-title">
