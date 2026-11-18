@@ -289,55 +289,6 @@
       .home-about-heading .about-role-en{white-space:normal;word-break:normal;overflow-wrap:anywhere;}
     }
   
-    /* Two equal homepage service gateways, responsive and easy to tap. */
-    .entrance-editorial .wrap{max-width:1120px!important;}
-    .entrance-editorial-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px!important;}
-    .entrance-editorial-grid .entrance-path:nth-child(n){grid-column:auto!important;width:100%!important;min-height:250px!important;margin:0!important;box-sizing:border-box!important;padding:30px 34px!important;background:#fff!important;}
-    .entrance-editorial-grid .entrance-path:nth-child(2){background:#fafafa!important;}
-    .entrance-editorial-grid .entrance-index{font-family:var(--font-serif);font-size:13px!important;letter-spacing:.1em!important;color:#555!important;line-height:1.6;}
-    .entrance-editorial-grid .entrance-path h3{font-size:clamp(27px,2.75vw,37px)!important;margin:0 0 28px!important;white-space:normal!important;}
-    .entrance-editorial-grid .entrance-meta{font-size:17px!important;line-height:1.85!important;color:#343434!important;overflow-wrap:normal!important;}
-    @media(max-width:760px){
-      .entrance-editorial-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important;}
-      .entrance-editorial-grid .entrance-path:nth-child(n){width:100%!important;min-height:215px!important;margin:0!important;padding:25px 24px!important;}
-      .entrance-editorial-grid .entrance-path h3{font-size:28px!important;margin-bottom:18px!important;}
-      .entrance-editorial-grid .entrance-meta{font-size:16px!important;}
-    }
-    /* Clear, action-oriented service selection immediately after the homepage hero. */
-    .entrance-editorial{padding-top:68px!important;padding-bottom:80px!important;background:#fff!important}
-    .entrance-editorial .wrap{max-width:1160px!important}
-    .entrance-editorial-head{text-align:center;margin:0 auto 32px!important}
-    .entrance-editorial-head .kicker{font-size:14px!important;letter-spacing:.16em;color:#585858}
-    .entrance-editorial-head h2{font-size:clamp(30px,3.2vw,43px)!important;font-weight:500;line-height:1.35;color:#1d1d1d}
-    .entrance-editorial-subtitle{font-size:17px;line-height:1.8;color:#4d4d4d;margin:12px auto 0}
-    .entrance-editorial-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important}
-    .entrance-editorial-grid .entrance-path:nth-child(n){display:flex!important;flex-direction:column;grid-column:auto!important;min-width:0;width:100%!important;min-height:340px!important;margin:0!important;padding:34px 36px 30px!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #ccc!important;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.025);color:#1d1d1d;text-decoration:none;transform:none}
-    .entrance-editorial-grid .entrance-path:nth-child(2){background:#fff!important;border-color:#858585!important}
-    .entrance-editorial-grid .entrance-path:hover,.entrance-editorial-grid .entrance-path:focus-visible{transform:translateY(-4px);border-color:#666!important;box-shadow:0 12px 30px rgba(0,0,0,.09)}
-    .entrance-editorial-grid .entrance-path:focus-visible{outline:2px solid #252525;outline-offset:4px}
-    .entrance-editorial-grid .entrance-index{font-family:var(--font-serif);font-size:14px!important;letter-spacing:.06em!important;color:#505050!important;line-height:1.5;margin:0 0 30px}
-    .entrance-editorial-grid .entrance-intent{font-size:17px;line-height:1.65;color:#343434;margin-bottom:9px;font-weight:500}
-    .entrance-editorial-grid .entrance-path h3{font-size:clamp(30px,2.85vw,39px)!important;margin:0 0 16px!important;line-height:1.3;letter-spacing:.025em;color:#171717}
-    .entrance-editorial-grid .entrance-meta{margin:0!important;padding:0!important;font-size:16px!important;line-height:1.85!important;color:#3f3f3f!important;overflow-wrap:normal!important}
-    .entrance-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:auto;padding-top:26px;border-top:1px solid #b9b9b6;font-size:17px;font-weight:600;line-height:1.55;letter-spacing:.04em;color:#1c1c1c}
-    .entrance-editorial-grid .entrance-path:nth-child(2) .entrance-cta{border-top-color:#808080;font-weight:700}
-    .entrance-editorial-grid .entrance-path:nth-child(2) .entrance-cta-icon{border-color:#343434}
-    .entrance-cta-icon{display:flex;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:36px;border:1px solid #777;border-radius:50%;font-family:Arial,sans-serif;font-size:21px;font-weight:400;transition:background .2s,color .2s,transform .2s}
-    .entrance-path:hover .entrance-cta-icon,.entrance-path:focus-visible .entrance-cta-icon{background:#2c2c2c;color:#fff;transform:translate(2px,-2px)}
-    @media(max-width:760px){
-      .entrance-editorial{padding:46px 0 56px!important}
-      .entrance-editorial-head{text-align:left;margin-bottom:25px!important}
-      .entrance-editorial-head h2{font-size:30px!important}
-      .entrance-editorial-subtitle{font-size:16px}
-      .entrance-editorial-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
-      .entrance-editorial-grid .entrance-path:nth-child(n){width:100%!important;min-height:300px!important;margin:0!important;padding:25px 24px!important}
-      .entrance-editorial-grid .entrance-index{font-size:12px!important;margin-bottom:20px}
-      .entrance-editorial-grid .entrance-intent{font-size:16px}
-      .entrance-editorial-grid .entrance-path h3{font-size:30px!important;margin-bottom:14px!important}
-      .entrance-editorial-grid .entrance-meta{font-size:15.5px!important;line-height:1.8!important}
-      .entrance-cta{font-size:16px;padding-top:20px;margin-top:24px}
-    }
-    @media(prefers-reduced-motion:reduce){.entrance-editorial-grid .entrance-path,.entrance-cta-icon{transition:none!important;transform:none!important}}
   </style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
   <link rel="stylesheet" href="/assets/home-layout.css?v=1">
@@ -380,24 +331,37 @@
     <section data-hana-section="entrances" class="entrance-editorial" aria-labelledby="entrance-title">
       <div class="wrap">
         <div class="entrance-editorial-head">
-          <p class="kicker">HANA SERVICES</p>
-          <h2 id="entrance-title">服務領域</h2>
-          <p class="entrance-editorial-subtitle">創作與教育・品牌與產品開發</p>
+          <p class="kicker">Explore</p>
+          <h2 id="entrance-title">創作旅程，從這裡開始</h2>
         </div>
         <div class="entrance-editorial-grid">
-          <a class="entrance-path entrance-path--education" href="/courses/" aria-label="創作與教育：前往調香課程與香氣體驗">
-            <span class="entrance-index">01 / ART &amp; EDUCATION</span>
-            <span class="entrance-intent">學習調香，認識氣味創作</span>
-            <h3>創作與教育</h3>
-            <p class="entrance-meta">專業調香課程、香氣體驗、嗅覺藝術<br>此域 Hineni・氣味敘事空間</p>
-            <span class="entrance-cta"><span>查看課程與體驗</span><span class="entrance-cta-icon" aria-hidden="true">↗</span></span>
+          <a class="entrance-path" href="/courses/">
+            <span class="entrance-index">01</span>
+            <span class="entrance-en">LEARN</span>
+            <h3>氣味學習</h3>
+            <div class="entrance-meta">專業調香<br>氣味藝術序曲</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="entrance-path entrance-path--business" href="/product-development/" aria-label="品牌與產品開發：了解品牌孵化與商品開發服務">
-            <span class="entrance-index">02 / BRAND &amp; PRODUCT DEVELOPMENT</span>
-            <span class="entrance-intent">創立品牌，開發自己的商品</span>
-            <h3>品牌與產品開發</h3>
-            <p class="entrance-meta">品牌孵化、香氛與日化產品開發<br>OEM／ODM・品牌識別與商業設計諮詢</p>
-            <span class="entrance-cta"><span>了解開發與合作服務</span><span class="entrance-cta-icon" aria-hidden="true">↗</span></span>
+          <a class="entrance-path" href="/incubation/">
+            <span class="entrance-index">02</span>
+            <span class="entrance-en">CREATE</span>
+            <h3>發展創作</h3>
+            <div class="entrance-meta">嗅覺藝術育成<br>跨域創作育成</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entrance-path" href="/product-development/">
+            <span class="entrance-index">03</span>
+            <span class="entrance-en">FROM IDEA TO PRODUCT</span>
+            <h3>實現想像</h3>
+            <div class="entrance-meta">品牌氣味・產品開發<br>PIF・法規整合</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entrance-path" href="https://hineni.hanascent.com/">
+            <span class="entrance-index">04</span>
+            <span class="entrance-en">VISIT</span>
+            <h3>走進此域</h3>
+            <div class="entrance-meta">北投中心新村<br>氣味敘事空間</div>
+            <span class="entrance-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
