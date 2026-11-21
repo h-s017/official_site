@@ -55,79 +55,6 @@
     document.head.appendChild(style);
   };
 
-  const setMeta = (selector, content) => {
-    const el = document.querySelector(selector);
-    if (el) el.setAttribute("content", content);
-  };
-
-  const syncHomepageIdentityAndSEO = () => {
-    const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
-    if (!isHomepage) return;
-
-    const title = "HANA SCENT ARTIST｜藝術育成・品牌合作・嗅覺藝術與調香";
-    const description = "HANA SCENT ARTIST 由嗅覺藝術家、調香師與 Creative Mentor Hana 沈秉儀創立，以藝術育成與品牌合作為核心，整合創作定位、營運規劃、香氛產品開發、PIF、品牌氣味識別與專業調香，陪伴創作者與品牌從想法走向實現。";
-    const keywords = "藝術育成, 創作者育成, Creative Mentor, 品牌合作, 品牌氣味識別, 香氛產品開發, PIF, 專業調香, 調香師, 嗅覺藝術, 感官敘事, HANA SCENT ARTIST, Hana 沈秉儀, 台北";
-
-    document.title = title;
-    setMeta('meta[name="description"]', description);
-    setMeta('meta[name="keywords"]', keywords);
-    setMeta('meta[property="og:title"]', title);
-    setMeta('meta[property="og:description"]', description);
-
-    const schema = document.querySelector('script[type="application/ld+json"]');
-    if (schema) {
-      try {
-        const data = JSON.parse(schema.textContent);
-        const graph = data?.["@graph"];
-        if (Array.isArray(graph)) {
-          const org = graph.find((node) => node?.["@id"] === "https://hanascent.com/#organization");
-          if (org) {
-            org.description = "以藝術育成與品牌合作為核心，結合嗅覺藝術、專業調香、品牌氣味識別、香氛產品開發與 PIF 協作的創作與顧問品牌。";
-            org.knowsAbout = ["藝術育成","創作者育成","品牌合作","品牌氣味識別","香氛產品開發","PIF 化粧品產品資訊檔案","嗅覺藝術","專業調香教育","感官敘事","空間氣味設計"];
-          }
-          const person = graph.find((node) => node?.["@id"] === "https://hanascent.com/#hana");
-          if (person) {
-            person.jobTitle = "嗅覺藝術家、調香師、Creative Mentor、HANA SCENT ARTIST 創辦人";
-            person.description = "Hana 沈秉儀是 HANA SCENT ARTIST 創辦人，以嗅覺藝術與專業調香為創作根基，發展藝術育成、創作者陪伴、品牌氣味識別與香氛產品開發。";
-            person.knowsAbout = ["Olfactory Art","Perfumery","Creative Mentoring","藝術育成","品牌氣味識別","香氛產品開發","PIF 協作","感官敘事"];
-          }
-          const page = graph.find((node) => node?.["@id"] === "https://hanascent.com/#webpage");
-          if (page) {
-            page.name = title;
-            page.description = description;
-          }
-          schema.textContent = JSON.stringify(data);
-        }
-      } catch (_) {}
-    }
-
-    const about = document.querySelector("#about-hana");
-    if (about) {
-      const introLead = about.querySelector(".home-about-intro .lead");
-      if (introLead) introLead.textContent = "以嗅覺藝術與調香為創作根基，延伸至藝術育成與品牌合作，讓想法從創作走向實現。";
-
-      const heading = about.querySelector(".home-about-heading h2");
-      if (heading) heading.innerHTML = 'Hana 沈秉儀｜嗅覺藝術家<span class="about-role-en">OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</span>';
-
-      const profileCopy = about.querySelector(".about-profile > div");
-      if (profileCopy) {
-        profileCopy.innerHTML = `
-          <p class="about-signature">我相信氣味是一種創作語言，可以被體驗、被學習、被記住。</p>
-          <p class="lead">自 2021 年起投入嗅覺創作與教學，從專業調香、感官敘事，到品牌氣味與產品開發，持續探索氣味如何成為記憶、作品與品牌的一部分。</p>
-          <p class="lead">以嗅覺藝術與專業調香為創作根基，Hana 現將實務延伸至藝術育成與品牌合作，協助創作者與品牌釐清方向、營運、商品化與氣味識別。</p>
-          <p class="lead">目前進駐北投中心新村「此域 HINENI」，持續進行創作、教學與跨領域合作；也以 Creative Mentor 的角色，陪伴想法從創作走向實現。</p>
-          <ul class="about-credentials" aria-label="Hana 經歷與專業身份">
-            <li>OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</li>
-            <li>藝術育成｜創作者發展｜品牌方向</li>
-            <li>品牌氣味識別｜香氛產品開發｜PIF 協作</li>
-            <li>專業調香教育｜感官敘事</li>
-            <li>北投中心新村「此域 HINENI」｜中國文化大學推廣教育部講師</li>
-          </ul>
-        `;
-      }
-    }
-  };
-
   const arrangeHomepageSections = () => {
     const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
     if (!isHomepage) return;
@@ -157,7 +84,7 @@
         </div>
       </div>
       <a href="/incubation/">藝術育成</a>
-      <a href="/business/">品牌合作</a>
+      <a href="/product-development/">品牌與產品開發</a>
       <a href="/journal/">氣味誌</a>
     `;
 
@@ -259,7 +186,7 @@
     const addressBlock = isCiyuPage ? `<div style="margin-bottom:20px">台北市北投區新民路42號<br><a href="https://www.beitouheartvillage.taipei/" target="_blank" rel="noopener">北投中心新村</a> D1區C棟</div>` : "";
     const courseInfoLink = isCoursePage() ? `<a href="/course-info/">課程交易與履約資訊</a>　·　` : "";
     footerGrid.innerHTML = `
-      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta"><span class="footer-role-zh">嗅覺藝術家　調香師　藝術發展顧問</span><span class="footer-role-en">OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</span></span><span class="footer-brand-copy">從創作開始，讓想像真正落地。</span>藝術育成｜品牌合作｜專業調香<br>藝術駐村計畫　<a href="https://hineni.hanascent.com/">此域 HINENI</a></div>
+      <div class="footer-col footer-brand-col"><b class="footer-brand-title">HANA SCENT ARTIST</b><span class="footer-brand-meta"><span class="footer-role-zh">嗅覺藝術家　調香師　藝術發展顧問</span><span class="footer-role-en">OLFACTORY ARTIST · PERFUMER · CREATIVE MENTOR</span></span><span class="footer-brand-copy">創作與教育・品牌與產品開發</span>北投中心新村　<a href="https://hineni.hanascent.com/">此域 HINENI</a></div>
       <div class="footer-col footer-social-col"><div class="footer-social-links"><a class="footer-social-link" href="https://www.instagram.com/hanas.scent/" target="_blank" rel="noopener" aria-label="Instagram"><img src="/assets/footer-instagram.svg" alt=""></a><a class="footer-social-link" href="https://www.facebook.com/Hanas017" target="_blank" rel="noopener" aria-label="Facebook"><img src="/assets/footer-facebook.svg" alt=""></a><a class="footer-social-link" href="https://lin.ee/OI4bzr1" target="_blank" rel="noopener" aria-label="官方 LINE"><img src="/assets/footer-line.svg" alt=""></a><a class="footer-social-link" href="mailto:hanasscent@gmail.com" aria-label="Email"><img src="/assets/footer-email.svg" alt=""></a></div></div>
       <div class="footer-col footer-right-col">${addressBlock}<div class="footer-actions"><a class="footer-action" href="https://reservation.hanascent.com/">預約課程</a><a class="footer-action" href="/member/">訂閱氣味通信</a><a class="footer-action" href="/student-tools/">學員工具</a></div></div>
       <div class="footer-bottom"><div>© <span data-year></span> Hana Scent Artist</div><div class="footer-legal">${courseInfoLink}<a href="/terms/">消費者權益與服務條款</a>　·　<a href="/privacy/">隱私權政策</a>　·　<a href="/refund/">退換貨與退款政策</a></div></div>`;
@@ -270,7 +197,6 @@
   const afterCore = () => {
     installGlobalStyle();
     installNavigationAppearance();
-    syncHomepageIdentityAndSEO();
     arrangeHomepageSections();
     renderNavigation();
     renderFooter();

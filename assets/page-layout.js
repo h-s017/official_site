@@ -28,7 +28,7 @@
   const heroNode = [...document.body.children].find(x => x.tagName === 'HEADER');
   const sections = [...main.children].filter(x => !['SCRIPT', 'STYLE', 'TEMPLATE', 'LINK'].includes(x.tagName));
   const descriptor = { path, hero: heroNode ? snapshot(heroNode, 'hero') : null,
-    sections: sections.map((node, i) => snapshot(node, `section-${i + 1}`)) };
+    sections: sections.map((node, i) => snapshot(node, node.dataset.pageLayoutSection || `section-${i + 1}`)) };
   descriptor.cardGroups = [];
   for (const [sectionId, saved] of snapshots) {
     for (const grid of saved.node.querySelectorAll('[data-layout-card-group]')) {
