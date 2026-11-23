@@ -13,6 +13,18 @@
       .nav-dropdown-menu .nav-subitem{padding-left:34px!important;}
       .nav-dropdown-menu .nav-subitem strong{font-weight:500;}
       .nav-vol,.nav-vol .en-text,.nav-vol .tc-number{font-family:"Noto Serif TC","Source Han Serif TC","Source Han Serif","Songti TC",serif!important;font-style:normal!important;letter-spacing:inherit!important;}
+      /* Course title goes to the overview; separate arrow controls the submenu. */
+      .site-nav .nav-links .nav-dropdown>.nav-course-main{display:inline-flex!important;align-items:center!important;flex:0 0 auto;height:34px!important;padding:0!important;margin:0!important;border-bottom:1px solid transparent!important;text-decoration:none!important;font-size:inherit!important;line-height:1!important;color:#111!important;white-space:nowrap!important;}
+      .site-nav .nav-links .nav-dropdown>.nav-course-main:hover,.site-nav .nav-links .nav-dropdown>.nav-course-main.active{border-bottom-color:var(--black)!important;}
+      .site-nav .nav-dropdown>.nav-drop-button{width:28px;min-width:28px;padding:0 0 0 5px!important;border-bottom:0!important;font-size:inherit!important;}
+      .site-nav .nav-dropdown>.nav-drop-button::after{margin:0!important;font-size:12px;}
+      .site-nav .nav-dropdown>.nav-drop-button:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+      @media(max-width:760px){
+        .site-nav .nav-dropdown{display:flex!important;flex-wrap:wrap;align-items:center!important;width:100%!important;}
+        .site-nav .nav-dropdown>.nav-course-main{height:44px!important;flex:1 1 auto!important;}
+        .site-nav .nav-dropdown>.nav-drop-button{width:44px!important;height:44px!important;flex:0 0 44px!important;justify-content:center!important;padding:0!important;}
+        .site-nav .nav-dropdown>.nav-dropdown-menu{flex:0 0 100%;width:100%!important;}
+      }
       /* Keep the full course list reachable in short mobile/in-app viewports. */
       @media(max-width:760px){
         .site-nav.menu-open{max-height:100vh;max-height:100dvh;grid-template-rows:auto minmax(0,1fr)!important;}
@@ -72,7 +84,8 @@
     if (!nav) return;
     nav.innerHTML = `
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">專業調香課程</button>
+        <a class="nav-course-main" href="/courses/">專業調香課程</a>
+        <button class="nav-drop-button" type="button" aria-label="展開專業調香課程子選單" aria-controls="hana-course-links" aria-expanded="false"></button>
         <div class="nav-dropdown-menu" id="hana-course-links">
           <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
