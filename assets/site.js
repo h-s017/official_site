@@ -72,7 +72,7 @@
     if (!nav) return;
     nav.innerHTML = `
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">調香師養成</button>
+        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">專業調香師</button>
         <div class="nav-dropdown-menu" id="hana-course-links">
           <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
