@@ -86,7 +86,7 @@
       <a href="/journal/">氣味誌</a>
       <a href="https://hineni.hanascent.com/">此域 HINENI</a>
       <a href="/student-tools/">學員專區</a>
-`
+    `;
 
     const dropdown = nav.querySelector(".nav-dropdown");
     const button = nav.querySelector(".nav-drop-button");
