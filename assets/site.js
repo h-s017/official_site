@@ -71,9 +71,8 @@
     const mobileMenu = document.querySelector(".mobile-note");
     if (!nav) return;
     nav.innerHTML = `
-      <a href="https://hineni.hanascent.com/">此域 HINENI</a>
       <div class="nav-dropdown">
-        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">專業調香</button>
+        <button class="nav-drop-button" type="button" aria-controls="hana-course-links" aria-expanded="false">調香師養成</button>
         <div class="nav-dropdown-menu" id="hana-course-links">
           <a class="nav-group-label" href="/overture-series/">氣味藝術序曲系列</a>
           <a class="nav-subitem" href="/overture/"><strong class="nav-vol">Vol. 1</strong>　一日專業調香師</a>
@@ -83,10 +82,11 @@
           <a href="/KPIA/">KPIA 大韓專業調香師證書</a>
         </div>
       </div>
-      <a href="/incubation/">藝術育成</a>
       <a href="/product-development/">品牌與產品開發</a>
       <a href="/journal/">氣味誌</a>
-    `;
+      <a href="https://hineni.hanascent.com/">此域 HINENI</a>
+      <a href="/student-tools/">學員專區</a>
+`
 
     const dropdown = nav.querySelector(".nav-dropdown");
     const button = nav.querySelector(".nav-drop-button");
