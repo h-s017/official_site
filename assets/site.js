@@ -80,6 +80,7 @@
           <a class="nav-subitem" href="/practice/"><strong class="nav-vol">Vol. 0</strong>　氣味自修室</a>
           <a href="/helori/">HELORI 香氣探索體驗</a>
           <a href="/KPIA/">KPIA 大韓專業調香師證書</a>
+          <a href="/business/#corporate-workshops">企業團體調香課程</a>
         </div>
       </div>
       <a href="/product-development/">品牌與產品開發</a>
