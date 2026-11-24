@@ -133,14 +133,14 @@
     for (const { cards } of cardGroups.values()) for (const node of cards) {
       if (!node.textContent.trim() && !node.querySelector('img,video,iframe,form,input,svg,canvas')) node.setAttribute('data-page-empty-card', '');
     }
-    // The course page has six curated source cards; ignore legacy extra CMS cards.
-    // This avoids recreating duplicate KPIA cards from saved layout records.
-    for (const block of path === '/courses/' ? [] : grouped) {
+    // Render newly added CMS cards in both the editor preview and the public page.
+    // Previously suppressing the whole group also hid legitimate new preview blocks.
+    for (const block of grouped) {
       const group = cardGroups.get(block.cardGroup);
       if (!group) continue;
       // On the course overview, legacy CMS card entries may duplicate courses
       // that now exist in the source HTML. Keep the source cards authoritative.
-      if (path === '/courses/') {
+      if (path === '/courses/' && !preview) {
         const sameCourse = [...group.grid.querySelectorAll('article')].some(existing => {
           const existingHref = existing.querySelector('a[href]')?.getAttribute('href');
           const existingTitle = existing.querySelector('h2,h3,h4')?.textContent.trim();
