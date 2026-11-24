@@ -64,6 +64,26 @@
         .site-nav .nav-links > .nav-dropdown > .nav-drop-button::after{transform:none!important;margin:0!important;}
         .site-nav .nav-links > .nav-dropdown > .nav-course-main:hover,.site-nav .nav-links > .nav-dropdown > .nav-course-main.active{border-bottom-color:var(--black)!important;}
       }
+      /* The generated runtime stylesheet bypasses installGlobalStyle.
+         Keep split course navigation geometry in this always-installed layer. */
+      @media(min-width:761px) and (max-width:980px){
+        .site-nav .nav-links > a,.site-nav .nav-links > .nav-dropdown > .nav-course-main{display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:auto!important;height:32px!important;padding:0!important;margin:0!important;font:inherit!important;line-height:1!important;border-bottom:1px solid transparent;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:24px!important;height:32px!important;margin:0!important;padding:0!important;border:0!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button::after{transform:none!important;margin:0!important;}
+      }
+      @media(max-width:760px){
+        .site-nav .nav-links > .nav-dropdown{display:grid!important;grid-template-columns:minmax(0,1fr) 44px;align-items:center!important;width:100%!important;height:auto!important;gap:0!important;border-bottom:1px solid var(--line);}
+        .site-nav .nav-links > a,.site-nav .nav-links > .nav-dropdown > .nav-course-main{display:flex!important;align-items:center!important;justify-content:flex-start!important;box-sizing:border-box!important;width:100%!important;height:auto!important;min-height:48px;padding:12px 0!important;margin:0!important;font:inherit!important;line-height:1.4!important;text-align:left!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-course-main{grid-column:1;grid-row:1;border:0!important;min-width:0;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button{grid-column:2;grid-row:1;display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:44px!important;min-width:44px!important;height:44px!important;padding:0!important;margin:0!important;border:0!important;background:transparent!important;color:inherit;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button::after{font-size:16px!important;line-height:1!important;margin:0!important;transform:none!important;}
+        .site-nav .nav-links > .nav-dropdown.is-open > .nav-drop-button::after{transform:rotate(180deg)!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-dropdown-menu{grid-column:1/-1;grid-row:2;box-sizing:border-box!important;width:100%!important;min-width:0!important;}
+        .site-nav .nav-links > .nav-dropdown:not(.is-open) > .nav-dropdown-menu{display:none!important;}
+        .site-nav .nav-links > .nav-dropdown.is-open > .nav-dropdown-menu{display:block!important;padding:0 0 8px 16px!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-dropdown-menu a{display:block!important;height:auto!important;min-height:0!important;padding:10px 0!important;line-height:1.5!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-dropdown-menu a.nav-subitem{padding-left:18px!important;}
+      }
       .site-nav .mobile-note{font-size:calc(var(--hana-menu-size) + 2pt)!important;color:#111;}
       .site-nav.menu-open{background:#fff!important;}
       @media(max-width:1240px){.site-nav{--hana-nav-size:12px;}}
