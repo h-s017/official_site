@@ -133,7 +133,9 @@
     for (const { cards } of cardGroups.values()) for (const node of cards) {
       if (!node.textContent.trim() && !node.querySelector('img,video,iframe,form,input,svg,canvas')) node.setAttribute('data-page-empty-card', '');
     }
-    for (const block of grouped) {
+    // The course page has six curated source cards; ignore legacy extra CMS cards.
+    // This avoids recreating duplicate KPIA cards from saved layout records.
+    for (const block of path === '/courses/' ? [] : grouped) {
       const group = cardGroups.get(block.cardGroup);
       if (!group) continue;
       // On the course overview, legacy CMS card entries may duplicate courses
