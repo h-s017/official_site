@@ -56,6 +56,14 @@
       .site-nav{--hana-nav-size:13.5px;--hana-menu-size:12px;background:rgba(255,255,255,.55)!important;}
       .site-nav .nav-links{font-size:calc(var(--hana-nav-size) + 2pt)!important;color:#111;}
       .site-nav .nav-links>a,.site-nav .nav-links>.nav-dropdown>.nav-drop-button{font-size:inherit!important;color:#111;}
+      /* Match the course link to sibling navigation links, even with page-local styles. */
+      @media(min-width:981px){
+        .site-nav .nav-links > a,.site-nav .nav-links > .nav-dropdown > .nav-course-main{display:inline-flex!important;align-items:center!important;box-sizing:border-box!important;height:34px!important;padding:0!important;margin:0!important;font:inherit!important;line-height:1!important;border-bottom:1px solid transparent;}
+        .site-nav .nav-links > .nav-dropdown{display:inline-flex!important;align-items:center!important;height:34px!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;height:34px!important;margin:0!important;padding:0 0 0 5px!important;border:0!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-drop-button::after{transform:none!important;margin:0!important;}
+        .site-nav .nav-links > .nav-dropdown > .nav-course-main:hover,.site-nav .nav-links > .nav-dropdown > .nav-course-main.active{border-bottom-color:var(--black)!important;}
+      }
       .site-nav .mobile-note{font-size:calc(var(--hana-menu-size) + 2pt)!important;color:#111;}
       .site-nav.menu-open{background:#fff!important;}
       @media(max-width:1240px){.site-nav{--hana-nav-size:12px;}}
