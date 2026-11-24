@@ -134,7 +134,19 @@
       if (!node.textContent.trim() && !node.querySelector('img,video,iframe,form,input,svg,canvas')) node.setAttribute('data-page-empty-card', '');
     }
     for (const block of grouped) {
-      const group = cardGroups.get(block.cardGroup), node = card(block, group);
+      const group = cardGroups.get(block.cardGroup);
+      if (!group) continue;
+      // On the course overview, legacy CMS card entries may duplicate courses
+      // that now exist in the source HTML. Keep the source cards authoritative.
+      if (path === '/courses/') {
+        const sameCourse = [...group.grid.querySelectorAll('article')].some(existing => {
+          const existingHref = existing.querySelector('a[href]')?.getAttribute('href');
+          const existingTitle = existing.querySelector('h2,h3,h4')?.textContent.trim();
+          return (block.link && existingHref === block.link) || (block.title && existingTitle === block.title.trim());
+        });
+        if (sameCourse) continue;
+      }
+      const node = card(block, group);
       node.hidden = !block.visible;
       group.grid.insertBefore(node, group.cards[block.cardIndex] || null);
       const banner = node.querySelector('.hana-page-photo');
