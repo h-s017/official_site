@@ -55,3 +55,18 @@ body, body :where(*) {
   font-family: "Noto Serif TC", "Source Han Serif TC", "Source Han Serif", "思源宋體", "Songti TC", "PMingLiU", serif !important;
   font-variant-numeric: normal;
 }
+
+.organ-import {margin:1.25rem 0 1.7rem;padding:1rem 0;border-block:1px solid var(--line)}
+.organ-import h3,.organ-import .toolbar {margin:.35rem 0}
+#organCount {font-weight:400}
+#organStatus:empty {display:none}
+#organPending, #organStatus {margin:1rem 0 .25rem}
+#organFile[hidden],#organView[hidden],#organPending[hidden]{display:none}
+.quote-section {padding:1rem 0;border-bottom:1px solid var(--line)}
+.quote-section summary,.quote-advanced-details summary {cursor:pointer;font-weight:600}
+#organCostDialog {width:min(33rem,calc(100% - 2rem));max-height:90vh;overflow:auto;padding:1.4rem;border:1px solid var(--line);color:var(--hana-text)}
+#organCostDialog::backdrop {background:rgb(24 24 24 / .36)}
+#organCostDialog h2 {margin:0}
+#organCostDialog button:disabled {opacity:.5}
+#developmentDetails #developmentWorkspace {border:0;padding:0}
+.organ-plan-cost {margin-top:.8rem}
