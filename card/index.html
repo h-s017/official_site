@@ -41,6 +41,23 @@
     .qr-dialog img { width: min(100%, 430px, 62vh); height: auto; image-rendering: pixelated; }
     .qr-dialog button { min-width: 110px; }
     body:has(.qr-dialog[open]) { overflow: hidden; }
+  
+    .card { min-height:100svh; display:flex; flex-direction:column; justify-content:center; gap:8px; padding:12px 18px; font-size:15px; font-weight:600; line-height:1.4; }
+    .card-brand { padding-bottom:8px; }
+    .card-brand img { width:28px; height:28px; }
+    .card-brand span { font-size:clamp(16px,4.5vw,22px); font-weight:700; }
+    .card-portrait { width:clamp(105px,21svh,170px); height:clamp(120px,24svh,195px); margin:0 auto; border-radius:50%; }
+    .card h1 { font-size:30px; font-weight:700; margin:0; line-height:1.2; }
+    #card-role { font-size:14px; font-weight:600; }
+    .card-services { padding:7px 0; margin:0; }
+    html body .card-services h2 { font-size:15px!important; font-weight:700; line-height:1.4; margin:0 0 3px; }
+    .card-services ul { font-size:14px; font-weight:600; line-height:1.5; }
+    .card-actions { gap:6px; }
+    .card-action { min-height:44px; font-size:15px; font-weight:700; padding:5px; }
+    .card .card-status { min-height:0; margin:0; font-size:12px; }
+    .card-status:empty { display:none; }
+    .card-studio { padding-top:6px; font-size:12px; font-weight:600; }
+    @media(max-height:650px){.card{gap:5px;padding:8px 16px}.card-portrait{width:100px;height:115px}.card h1{font-size:26px}.card-services ul{font-size:13px}.card-action{min-height:42px}.card-brand{padding-bottom:4px}}
   </style>
 </head>
 <body>
@@ -63,16 +80,12 @@
     </section>
     <nav class="card-actions" aria-label="聯絡與分享">
       <a class="card-action" id="phone" href="tel:+886918682098">電話聯絡</a>
-      <a class="card-action" id="line-contact" href="https://line.me/R/ti/p/~helga0417">LINE 聯絡</a>
+      <a class="card-action" id="line-contact" style="background:#06c755;border-color:#06c755;color:#102817" href="https://line.me/R/ti/p/~helga0417">加入 LINE</a>
       <a class="card-action" id="website" href="https://hanascent.com/">官方網站</a>
       <a class="card-action" id="instagram" href="https://www.instagram.com/hanas.scent/">Instagram</a>
       <a class="card-action" href="mailto:hanasscent@gmail.com">Email</a>
-      <a class="card-action" href="./hana.vcf" download="hana.vcf">儲存聯絡人</a>
-      <button class="card-action" type="button" id="copy-line" data-line-id="helga0417">複製 LINE ID</button>
-      <a class="card-action card-action-primary" id="line-share" href="https://line.me/R/share?text=Hana%20Scent%20Artist%20https%3A%2F%2Fhanascent.com%2Fcard%2F">用 LINE 分享名片</a>
-      <button class="card-action" type="button" id="native-share">手機分享</button>
-      <button class="card-action" type="button" id="copy-url">複製名片網址</button>
       <button class="card-action" type="button" id="show-qr">顯示 QR Code</button>
+      <a class="card-action card-action-primary" id="line-share" href="https://line.me/R/share?text=Hana%20Scent%20Artist%20https%3A%2F%2Fhanascent.com%2Fcard%2F">用 LINE 分享名片</a>
     </nav>
     <p class="card-status" id="card-status" role="status"></p>
     <footer class="card-studio">藏花香徑工作室</footer>
