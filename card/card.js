@@ -15,20 +15,7 @@
     }
   }
 
-  byId('copy-line').onclick = () => copy(byId('copy-line').dataset.lineId, '已複製 LINE ID');
-  byId('copy-url').onclick = () => copy(cardUrl, '已複製名片網址');
   byId('show-qr').onclick = () => byId('qr-dialog').showModal();
-  byId('native-share').onclick = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: document.title, url: cardUrl });
-        return;
-      } catch (error) {
-        if (error.name === 'AbortError') return;
-      }
-    }
-    await copy(cardUrl, '已複製名片網址');
-  };
 
   function buildFlexMessage(shareUrl) {
     const text = (value, properties = {}) => ({
@@ -65,7 +52,7 @@
           type: 'box', layout: 'vertical', paddingAll: 'sm',
           contents: [
             button('電話聯絡', byId('phone').href),
-            button('LINE 聯絡', byId('line-contact').href),
+            button('加入 LINE', byId('line-contact').href),
             button('官方網站', byId('website').href),
             button('Instagram', byId('instagram').href),
             button('分享名片', shareUrl),
