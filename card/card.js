@@ -39,7 +39,7 @@
           contents: [
             image('/assets/logo%E9%BB%91.png', 'xs', '1:1'),
             text('HANA SCENT ARTIST', { align: 'center', weight: 'bold', size: 'sm' }),
-            image('./portrait.jpg', 'lg', '160:186'),
+            image('./portrait.jpg', 'lg', '4:5'),
             text(cardName, { align: 'center', weight: 'bold', size: 'xl' }),
             text(byId('card-role').textContent, { align: 'center', size: 'sm' }),
             { type: 'separator', color: '#DEDEDE', margin: 'md' },
@@ -63,40 +63,27 @@
   }
 
   if (!liffId) return;
-
+  const appUrl = 'https://liff.line.me/' + encodeURIComponent(liffId);
   const sdk = document.createElement('script');
   sdk.src = 'https://static.line-scdn.net/liff/edge/2/sdk.js';
-  sdk.onload = async () => {
+  let ready = false, sharing = false;
+  lineShare.onclick = async (event) => {
+    event.preventDefault();
+    if (!ready) { if (!location.href.includes('liff.state') && !window.liff?.isInClient()) location.assign(appUrl); else status.textContent = 'LINE 初始化中，請稍後再試'; return; }
+    if (sharing) return;
+    sharing = true;
     try {
-      await liff.init({ liffId });
-    } catch {
-      return;
-    }
-    const appUrl = 'https://liff.line.me/' + encodeURIComponent(liffId);
-    const fallback = lineShare.href;
-    const flex = buildFlexMessage(appUrl);
-    let sharing = false;
-    lineShare.onclick = async (event) => {
-      event.preventDefault();
-      if (sharing) return;
-      sharing = true;
-      try {
-        if (!liff.isLoggedIn()) {
-          liff.login({ redirectUri: cardUrl });
-          return;
-        }
-        if (!liff.isApiAvailable('shareTargetPicker')) {
-          location.assign(fallback);
-          return;
-        }
-        const result = await liff.shareTargetPicker([flex], { isMultiple: true });
-        status.textContent = result?.status === 'success' ? '已分享 LINE 名片' : '';
-      } catch {
-        location.assign(fallback);
-      } finally {
-        sharing = false;
-      }
-    };
+      if (!liff.isLoggedIn()) { if (!liff.isInClient()) { liff.login({redirectUri:cardUrl}); return; } throw new Error('LINE 尚未登入'); }
+      if (!liff.isApiAvailable('shareTargetPicker')) throw new Error('此環境無法使用分享選擇器，請從 LINE 開啟名片');
+      const result = await liff.shareTargetPicker([buildFlexMessage(appUrl)], {isMultiple:true});
+      status.textContent = result?.status === 'success' ? '已分享 LINE 名片' : '';
+    } catch(error) { status.textContent = 'LINE 分享失敗：' + (error.message || error.code || '請重試'); }
+    finally { sharing = false; }
   };
+  sdk.onload = async () => {
+    try { await liff.init({liffId}); ready = true; }
+    catch(error) { status.textContent = 'LIFF 初始化失敗：' + (error.message || error.code || '請重試'); }
+  };
+  sdk.onerror = () => { status.textContent = 'LINE SDK 載入失敗，請重新開啟名片'; };
   document.head.append(sdk);
 })();
