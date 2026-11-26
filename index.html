@@ -288,7 +288,18 @@
       .home-about-heading .about-role-en{white-space:normal;word-break:normal;overflow-wrap:anywhere;}
     }
   
-  </style>
+  
+    /* Seasonal event entry — independent of editable homepage blocks. */
+    #heart-village-feature{background:#f4f5f1!important;padding:clamp(32px,5vw,60px) 0!important;color:#303b34!important;}
+    #heart-village-feature .heart-village-feature-grid{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;max-width:860px;margin:auto;padding-inline:24px;}
+    #heart-village-feature .heart-village-poster{display:block;max-width:240px;margin:auto;width:100%;}
+    #heart-village-feature img{display:block;width:100%;height:auto;}
+    #heart-village-feature h2{font-size:clamp(24px,3.2vw,36px);line-height:1.4;margin:8px 0 16px;color:#303b34!important;}
+    #heart-village-feature p{line-height:1.75;margin:8px 0;color:#414c44!important;}
+    #heart-village-feature .heart-village-cta{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;margin-top:14px;color:#303b34!important;text-decoration:none;border-bottom:1px solid #89988b;}
+    #heart-village-feature a:focus-visible{outline:2px solid #526357;outline-offset:4px;}
+    @media(max-width:600px){#heart-village-feature .heart-village-feature-grid{grid-template-columns:minmax(0,1fr);gap:22px;text-align:center;}#heart-village-feature .heart-village-poster{max-width:200px;}}
+</style>
   <link id="hana-layout-css" rel="stylesheet" href="/assets/runtime-layout.css" />
   <link rel="stylesheet" href="/assets/home-layout.css?v=1">
 </head>
@@ -319,6 +330,13 @@
   </header>
 
   <main>
+    <section id="heart-village-feature" class="heart-village-feature" aria-labelledby="heart-village-title">
+      <div class="wrap heart-village-feature-grid">
+        <a class="heart-village-poster" href="https://event.hanascent.com/heart-village/?utm_source=hana_website&amp;utm_medium=referral&amp;utm_campaign=heart_village_2026" aria-label="心村裡的時空旅行活動詳情"><img src="https://event.hanascent.com/poster.jpg" width="1075" height="1522" loading="lazy" decoding="async" alt="北投中心新村心村裡的時空旅行：旗袍、調香與復古攝影活動海報"></a>
+        <div class="heart-village-copy"><p class="kicker">2026.12 — 2027.01 · BEITOU</p><h2 id="heart-village-title">心村裡的時空旅行</h2><p>旗袍 × 調香 × 復古攝影</p><p>HANA SCENT ARTIST 主辦的北投跨域文化體驗，結合此域、鍾兒旗袍與羊駝創藝基地，在中心新村留下屬於自己的感官記憶。 </p><a class="heart-village-cta" href="https://event.hanascent.com/heart-village/?utm_source=hana_website&amp;utm_medium=referral&amp;utm_campaign=heart_village_2026">活動詳情與搶先預約 →</a></div>
+      </div>
+    </section>
+
 
 
     <section data-hana-section="entrances" class="entrance-editorial" aria-labelledby="entrance-title">
