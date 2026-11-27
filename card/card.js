@@ -67,14 +67,15 @@
 
   if (!liffId) return;
   const appUrl = 'https://liff.line.me/' + encodeURIComponent(liffId);
-  const shareUrl = appUrl + '/?share=1';
+  const shareUrl = appUrl + '/share/';
+  const sharePage = new URL('share/', cardUrl).href;
   const sdk = document.createElement('script');
   sdk.src = 'https://static.line-scdn.net/liff/edge/2/sdk.js';
   let ready = false, sharing = false, autoShare = false;
   const initialParams = new URLSearchParams(location.search);
   const state = initialParams.get('liff.state') || '';
-  const shareRequested = () => new URLSearchParams(location.search).get('share') === '1';
-  const shareIntent = shareRequested() || /(?:[?&])share=1(?:&|$)/.test(state);
+  const shareRequested = () => /\/card\/+share(?:\/|$)/.test(location.pathname) || new URLSearchParams(location.search).get('share') === '1';
+  const shareIntent = shareRequested() || /(?:[?&])share=1(?:&|$)/.test(state) || /(?:^|\/)share(?:\/|$|\?)/.test(state);
   const overlay = document.createElement('div');
   overlay.setAttribute('role', 'status');
   overlay.style.cssText = 'position:fixed;inset:0;background:#fff;color:#333;display:none;z-index:99999;align-items:center;justify-content:center;flex-direction:column;gap:16px;font:14px system-ui,sans-serif;text-align:center;padding:24px;';
@@ -96,6 +97,7 @@
   };
   function finish() {
     if (liff.isInClient()) { try { liff.closeWindow(); } catch {} }
+    if (/\/card\/+share(?:\/|$)/.test(location.pathname)) { location.replace(cardUrl); return; }
     overlay.style.display = 'none';
     if (shareRequested()) {
       const url = new URL(location.href); url.searchParams.delete('share');
@@ -110,7 +112,7 @@
     try {
       if (!liff.isLoggedIn()) {
         if (!liff.isInClient()) {
-          liff.login({redirectUri: autoShare ? cardUrl + '?share=1' : cardUrl});
+          liff.login({redirectUri: autoShare ? sharePage : cardUrl});
           return;
         }
         throw new Error('LINE 尚未登入');
@@ -121,7 +123,7 @@
       if (autoShare) finish();
     } catch(error) {
       status.textContent = 'LINE 分享失敗：' + (error.message || error.code || '請重試');
-      if (autoShare) showFallback('請點一下選擇分享對象');
+      if (autoShare) showFallback('無法自動開啟分享，請點選下方按鈕。' + (error.code ? '（' + error.code + '）' : ''));
     } finally { sharing = false; }
   }
   retry.onclick = openPicker;
