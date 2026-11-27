@@ -39,12 +39,17 @@
         body: {
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
-            text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333' }),
+            { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
+              { type: 'box', layout: 'vertical', flex: 0, width: '32px', contents: [{ type: 'filler' }] },
+              text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333', flex: 5 }),
+              { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
+            ] },
             { type: 'box', layout: 'horizontal', justifyContent: 'center', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
               { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } }
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
             text(byId('card-role').textContent, { size: 'xs', color: '#555555' }),
+            row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href)),
             { type: 'separator', color: '#DEDEDE', margin: 'sm' },
             text('創作與教育・品牌與產品開發', { weight: 'regular', size: 'sm' }),
             text('香氛品牌孵化・氣味研發', { size: 'sm' }),
@@ -56,7 +61,7 @@
           type: 'box', layout: 'vertical', spacing: 'xs',
           paddingTop: 'none', paddingBottom: '14px', paddingStart: '14px', paddingEnd: '14px',
           contents: [
-            row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href), iconButton('share', '分享名片', shareUrl)),
+            
             text('台北市北投區新民路42號', { size: 'xs', color: '#555555', margin: 'md' }),
           ],
         },
