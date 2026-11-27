@@ -1,7 +1,7 @@
 (() => {
   const byId = (id) => document.getElementById(id);
   const cardUrl = document.querySelector('link[rel="canonical"]').href;
-  const cardName = document.querySelector('.card h1').textContent;
+  const cardName = document.querySelector('.card h1').textContent.replace(/^Hana\s*/i, '').trim();
   const lineShare = byId('line-share');
   const status = byId('card-status');
   const liffId = document.querySelector('meta[name="line-liff-id"]').content.trim();
@@ -40,7 +40,7 @@
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
             { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
-              text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333', flex: 5, align: 'start' }),
+              text('Hana Scent Artist', { size: 'sm', weight: 'regular', color: '#333333', flex: 5, align: 'start' }),
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
             { type: 'box', layout: 'horizontal', justifyContent: 'center', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
