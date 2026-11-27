@@ -41,11 +41,15 @@
           contents: [
             { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
               { type: 'box', layout: 'vertical', flex: 0, width: '32px', contents: [{ type: 'filler' }] },
-              { type: 'box', layout: 'vertical', flex: 1, contents: [{ type: 'image', url: new URL('./brand-wordmark-v14.png', cardUrl).href, size: '160px', aspectRatio: '218:27', aspectMode: 'fit', align: 'center' }] },
+              { type: 'box', layout: 'horizontal', flex: 1, alignItems: 'center', justifyContent: 'center', spacing: 'xs', contents: [
+                { type: 'image', url: new URL('/assets/logo%E9%BB%91.png', cardUrl).href, size: '22px', aspectRatio: '1:1', aspectMode: 'fit', flex: 0 },
+                { type: 'image', url: new URL('./brand-wordmark-v14.png', cardUrl).href, size: '160px', aspectRatio: '218:27', aspectMode: 'fit', flex: 0 }
+              ] },
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
-            { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
-              { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } }
+            { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', flex: 0, paddingAll: 'none', action: { type: 'uri', label: '查看完整名片', uri: cardUrl }, contents: [
+              { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover' },
+              { type: 'image', url: new URL('./portrait-mask-v16.png', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'fit', position: 'absolute', offsetTop: '0px', offsetStart: '0px' }
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
             text('FOUNDER & PERFUMER', { size: 'sm', color: '#555555', style: 'italic', weight: 'regular' }),
