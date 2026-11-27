@@ -50,14 +50,14 @@
             text('香氛品牌孵化・氣味研發', { size: 'sm' }),
             text('香氛與日化產品開發・OEM／ODM', { size: 'sm' }),
             text('專業調香教育・企業團體課程', { size: 'sm' }),
-            text('台北市北投區新民路42號', { size: 'xs', color: '#555555', margin: 'md' }),
           ],
         },
         footer: {
           type: 'box', layout: 'vertical', spacing: 'xs',
           paddingTop: 'none', paddingBottom: '14px', paddingStart: '14px', paddingEnd: '14px',
           contents: [
-            row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href), iconButton('share', '分享名片', shareUrl))
+            row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href), iconButton('share', '分享名片', shareUrl)),
+            text('台北市北投區新民路42號', { size: 'xs', color: '#555555', margin: 'md' }),
           ],
         },
       },
