@@ -40,7 +40,8 @@
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
             { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
-              { type: 'box', layout: 'vertical', flex: 1, contents: [{ type: 'image', url: new URL('./brand-wordmark-v14.png', cardUrl).href, size: '200px', aspectRatio: '218:27', aspectMode: 'fit', align: 'start' }] },
+              { type: 'box', layout: 'vertical', flex: 0, width: '32px', contents: [{ type: 'filler' }] },
+              { type: 'box', layout: 'vertical', flex: 1, contents: [{ type: 'image', url: new URL('./brand-wordmark-v14.png', cardUrl).href, size: '160px', aspectRatio: '218:27', aspectMode: 'fit', align: 'center' }] },
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
             { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
