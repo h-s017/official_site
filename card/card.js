@@ -26,7 +26,7 @@
       backgroundColor: '#FFFFFF',
       justifyContent: 'center', alignItems: 'center',
       action: { type: 'uri', label, uri },
-      contents: [{ type: 'image', url: new URL('./icon-' + name + '-v5.png', cardUrl).href,
+      contents: [{ type: 'image', url: new URL((name === 'line' ? './icon-line-v19.png' : './icon-' + name + '-v5.png'), cardUrl).href,
         size: '28px', aspectRatio: '1:1', aspectMode: 'fit', flex: 0 }],
     });
     const row = (...contents) => ({ type: 'box', layout: 'horizontal', spacing: 'xs', contents });
