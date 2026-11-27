@@ -22,7 +22,7 @@
       type: 'text', text: value, color: '#111111', wrap: true, align: 'center', ...properties,
     });
     const iconButton = (name, label, uri) => ({
-      type: 'box', layout: 'vertical', flex: 1, height: '58px',
+      type: 'box', layout: 'vertical', flex: 1, height: '28px',
       backgroundColor: '#FFFFFF',
       justifyContent: 'center', alignItems: 'center',
       action: { type: 'uri', label, uri },
@@ -35,7 +35,7 @@
       altText: cardName + '｜HANA SCENT ARTIST 電子名片',
       contents: {
         type: 'bubble',
-        styles: { body: { backgroundColor: '#FFFFFF' }, footer: { backgroundColor: '#FFFFFF' } },
+        styles: { body: { backgroundColor: '#FFFFFF' } },
         body: {
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
@@ -48,19 +48,12 @@
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
             text('FOUNDER & PERFUMER', { size: 'sm', color: '#555555', style: 'italic', weight: 'regular' }),
-            row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href)),
-            text('創作與教育・品牌與產品開發', { weight: 'regular', size: 'sm' }),
+            { ...row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href)), margin: '16px' },
+            text('創作與教育・品牌與產品開發', { weight: 'regular', size: 'sm', margin: '16px' }),
             text('香氛品牌孵化・氣味研發', { size: 'sm' }),
             text('香氛與日化產品開發・OEM／ODM', { size: 'sm' }),
             text('專業調香教育・企業團體課程', { size: 'sm' }),
-          ],
-        },
-        footer: {
-          type: 'box', layout: 'vertical', spacing: 'xs',
-          paddingTop: 'none', paddingBottom: '14px', paddingStart: '14px', paddingEnd: '14px',
-          contents: [
-            
-            text('台北市北投區新民路42號', { size: 'xs', color: '#555555', margin: 'md' }),
+            text('台北市北投區新民路42號', { size: 'xs', color: '#555555', margin: '16px' }),
           ],
         },
       },
