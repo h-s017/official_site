@@ -39,17 +39,14 @@
         body: {
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
-            { type: 'box', layout: 'horizontal', alignItems: 'center', justifyContent: 'center', spacing: 'xs', contents: [
-              { type: 'image', url: new URL('/assets/logo%E9%BB%91.png', cardUrl).href, size: '26px', aspectRatio: '1:1', aspectMode: 'fit', flex: 0 },
-              text('HANA SCENT ARTIST', { size: 'sm', weight: 'bold', flex: 0 })
-            ] },
+            text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333' }),
             { type: 'box', layout: 'horizontal', justifyContent: 'center', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
               { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } }
             ] }] },
-            text(cardName, { weight: 'bold', size: 'xl' }),
+            text(cardName, { weight: 'regular', size: 'xl' }),
             text(byId('card-role').textContent, { size: 'xs', color: '#555555' }),
             { type: 'separator', color: '#DEDEDE', margin: 'sm' },
-            text('創作與教育・品牌與產品開發', { weight: 'bold', size: 'sm' }),
+            text('創作與教育・品牌與產品開發', { weight: 'regular', size: 'sm' }),
             text('香氛品牌孵化・氣味研發', { size: 'sm' }),
             text('香氛與日化產品開發・OEM／ODM', { size: 'sm' }),
             text('專業調香教育・企業團體課程', { size: 'sm' }),
