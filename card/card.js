@@ -48,9 +48,8 @@
               { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } }
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
-            text(byId('card-role').textContent, { size: 'xs', color: '#555555' }),
+            text('FOUNDER & PERFUMER', { size: 'sm', color: '#555555', style: 'italic', weight: 'regular' }),
             row(iconButton('phone', '電話聯絡', byId('phone').href), iconButton('line', '加入 LINE', byId('line-contact').href), iconButton('web', '官方網站', byId('website').href), iconButton('ig', 'Instagram', byId('instagram').href)),
-            { type: 'separator', color: '#DEDEDE', margin: 'sm' },
             text('創作與教育・品牌與產品開發', { weight: 'regular', size: 'sm' }),
             text('香氛品牌孵化・氣味研發', { size: 'sm' }),
             text('香氛與日化產品開發・OEM／ODM', { size: 'sm' }),
