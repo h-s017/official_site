@@ -22,7 +22,7 @@
       type: 'text', text: value, color: '#111111', wrap: true, align: 'center', ...properties,
     });
     const iconButton = (name, label, uri) => ({
-      type: 'box', layout: 'vertical', flex: 1, height: '44px',
+      type: 'box', layout: 'vertical', flex: 1, height: '58px',
       backgroundColor: '#FFFFFF',
       justifyContent: 'center', alignItems: 'center',
       action: { type: 'uri', label, uri },
@@ -40,8 +40,7 @@
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
             { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
-              { type: 'box', layout: 'vertical', flex: 0, width: '32px', contents: [{ type: 'filler' }] },
-              text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333', flex: 5 }),
+              text('HANA SCENT ARTIST', { size: 'sm', weight: 'regular', color: '#333333', flex: 5, align: 'start' }),
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
             { type: 'box', layout: 'horizontal', justifyContent: 'center', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
