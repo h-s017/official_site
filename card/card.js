@@ -47,9 +47,9 @@
               ] },
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
-            { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '140px', flex: 0, paddingAll: 'none', action: { type: 'uri', label: '查看完整名片', uri: cardUrl }, contents: [
-              { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '4:5', aspectMode: 'cover' },
-              { type: 'image', url: new URL('./portrait-mask-v17.png', cardUrl).href, size: 'full', aspectRatio: '4:5', aspectMode: 'fit', position: 'absolute', offsetTop: '0px', offsetStart: '0px' }
+            { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '144px', height: '152px', flex: 0, paddingAll: 'none', action: { type: 'uri', label: '查看完整名片', uri: cardUrl }, contents: [
+              { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: '112px', aspectRatio: '4:5', aspectMode: 'cover', position: 'absolute', offsetTop: '6px', offsetStart: '16px' },
+              { type: 'image', url: new URL('./portrait-orbit-v18.png', cardUrl).href, size: 'full', aspectRatio: '18:19', aspectMode: 'fit', position: 'absolute', offsetTop: '0px', offsetStart: '0px' }
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
             text('FOUNDER & PERFUMER', { size: 'sm', color: '#555555', style: 'italic', weight: 'regular' }),
