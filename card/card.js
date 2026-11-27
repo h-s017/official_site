@@ -32,7 +32,7 @@
     const row = (...contents) => ({ type: 'box', layout: 'horizontal', spacing: 'xs', contents });
     return {
       type: 'flex',
-      altText: cardName + '｜HANA SCENT ARTIST 電子名片',
+      altText: 'HANA SCENT ARTIST',
       contents: {
         type: 'bubble',
         styles: { body: { backgroundColor: '#FFFFFF' } },
