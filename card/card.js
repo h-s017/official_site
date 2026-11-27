@@ -40,10 +40,10 @@
           type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '14px',
           contents: [
             { type: 'box', layout: 'horizontal', alignItems: 'center', contents: [
-              text('Hana Scent Artist', { size: 'sm', weight: 'regular', color: '#333333', flex: 5, align: 'start' }),
+              { type: 'box', layout: 'vertical', flex: 1, contents: [{ type: 'image', url: new URL('./brand-wordmark-v14.png', cardUrl).href, size: '200px', aspectRatio: '218:27', aspectMode: 'fit', align: 'start' }] },
               { ...iconButton('share', '分享名片', shareUrl), flex: 0, width: '32px', height: '32px' }
             ] },
-            { type: 'box', layout: 'horizontal', justifyContent: 'center', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
+            { type: 'box', layout: 'horizontal', justifyContent: 'center', margin: '16px', contents: [{ type: 'box', layout: 'vertical', width: '112px', height: '132px', cornerRadius: '56px', flex: 0, paddingAll: 'none', contents: [
               { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'full', aspectRatio: '112:132', aspectMode: 'cover', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } }
             ] }] },
             text(cardName, { weight: 'regular', size: 'xl' }),
