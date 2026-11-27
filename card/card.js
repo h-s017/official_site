@@ -21,41 +21,44 @@
     const text = (value, properties = {}) => ({
       type: 'text', text: value, color: '#111111', wrap: true, ...properties,
     });
-    const image = (src, size, aspectRatio) => ({
-      type: 'image', url: new URL(src, cardUrl).href, size, aspectRatio, aspectMode: 'fit',
-    });
-    const button = (label, uri) => ({
-      type: 'button', style: 'link', height: 'sm', color: '#111111',
+    const button = (label, uri, color, backgroundColor) => ({
+      type: 'box', layout: 'vertical', flex: 1, height: '44px',
+      backgroundColor, cornerRadius: '8px', justifyContent: 'center', alignItems: 'center',
       action: { type: 'uri', label, uri },
+      contents: [text(label, { color, size: 'sm', weight: 'bold', align: 'center' })],
     });
     return {
       type: 'flex',
       altText: cardName + '｜HANA SCENT ARTIST 電子名片',
       contents: {
         type: 'bubble',
-        styles: { body: { backgroundColor: '#FFFFFF' }, footer: { backgroundColor: '#FFFFFF', separator: true, separatorColor: '#DEDEDE' } },
+        styles: { body: { backgroundColor: '#FFFFFF' }, footer: { backgroundColor: '#FFFFFF' } },
         body: {
-          type: 'box', layout: 'vertical', spacing: 'sm',
+          type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '16px',
           contents: [
-            image('/assets/logo%E9%BB%91.png', 'xs', '1:1'),
-            text('HANA SCENT ARTIST', { align: 'center', weight: 'bold', size: 'sm' }),
-            image('./portrait.jpg', 'lg', '4:5'),
-            text(cardName, { align: 'center', weight: 'bold', size: 'xl' }),
-            text(byId('card-role').textContent, { align: 'center', size: 'sm' }),
+            { type: 'box', layout: 'horizontal', alignItems: 'center', justifyContent: 'center', spacing: 'sm', contents: [
+              { type: 'image', url: new URL('/assets/logo%E9%BB%91.png', cardUrl).href, size: '32px', aspectRatio: '1:1', aspectMode: 'fit', flex: 0 },
+              text('HANA SCENT ARTIST', { size: 'sm', weight: 'bold', flex: 0 })
+            ] },
+            { type: 'image', url: new URL('./portrait.jpg', cardUrl).href, size: 'xl', aspectRatio: '4:5', aspectMode: 'cover', margin: 'sm', action: { type: 'uri', label: '查看完整名片', uri: cardUrl } },
+            text(cardName, { align: 'center', weight: 'bold', size: 'xl', margin: 'sm' }),
+            text(byId('card-role').textContent, { align: 'center', size: 'xs', color: '#444444' }),
             { type: 'separator', color: '#DEDEDE', margin: 'md' },
-            text(document.querySelector('.card-services h2').textContent, { weight: 'bold', size: 'sm' }),
-            ...Array.from(document.querySelectorAll('.card-services li'), (item) => text(item.textContent, { size: 'sm' })),
-            text(document.querySelector('.card-studio').textContent, { color: '#555555', size: 'xs', margin: 'md' }),
+            text('創作與教育・品牌與產品開發', { weight: 'bold', size: 'sm', margin: 'md' }),
+            text('香氛品牌孵化・氣味研發', { size: 'sm' }),
+            text('香氛與日化產品開發・OEM／ODM', { size: 'sm' }),
+            text('專業調香教育・企業團體課程', { size: 'sm' }),
+            text('藏花香徑工作室', { color: '#666666', size: 'xs', margin: 'sm' }),
           ],
         },
         footer: {
-          type: 'box', layout: 'vertical', paddingAll: 'sm',
+          type: 'box', layout: 'vertical', spacing: 'sm', paddingAll: '12px', paddingTop: '0px',
           contents: [
-            button('電話聯絡', byId('phone').href),
-            button('加入 LINE', byId('line-contact').href),
-            button('官方網站', byId('website').href),
-            button('Instagram', byId('instagram').href),
-            button('分享名片', shareUrl),
+            button('加入 LINE', byId('line-contact').href, '#FFFFFF', '#06C755'),
+            { type: 'box', layout: 'horizontal', spacing: 'sm', contents: [
+              button('官方網站', byId('website').href, '#111111', '#EEEEEE'),
+              button('分享名片', shareUrl, '#111111', '#EEEEEE')
+            ] }
           ],
         },
       },
